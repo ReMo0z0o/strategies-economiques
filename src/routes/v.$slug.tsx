@@ -124,17 +124,14 @@ function VideoView() {
           </div>
         </div>
 
-        <div className="mt-6 flex justify-end">
+        <div className="mt-6 hidden sm:flex justify-end">
           <Button
             onClick={handleShare}
             variant="outline"
-            className="w-full sm:w-auto border-ink/60 text-ink hover:bg-primary hover:text-primary-foreground hover:border-primary font-sans-ui"
+            className="border-ink/60 text-ink hover:bg-primary hover:text-primary-foreground hover:border-primary font-sans-ui"
           >
             {copied ? <Check className="h-4 w-4" /> : <Share2 className="h-4 w-4" />}
-            <span className="ml-2">
-              <span className="sm:hidden">{copied ? "Lien copié" : "Copier le lien"}</span>
-              <span className="hidden sm:inline">{copied ? "Lien copié" : "Copier le lien de partage"}</span>
-            </span>
+            <span className="ml-2">{copied ? "Lien copié" : "Copier le lien de partage"}</span>
           </Button>
         </div>
       </div>
