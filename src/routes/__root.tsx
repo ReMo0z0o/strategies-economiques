@@ -30,6 +30,16 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "Romane Tahir & Rémi de Buisseret-D — Université de Namur" },
+      { title: "Poster : AI & Music" },
+      { property: "og:title", content: "Poster : AI & Music" },
+      { name: "twitter:title", content: "Poster : AI & Music" },
+      { name: "description", content: "Poster · Intelligence artificielle · enjeux et opportunités · 2025–2026" },
+      { property: "og:description", content: "Poster · Intelligence artificielle · enjeux et opportunités · 2025–2026" },
+      { name: "twitter:description", content: "Poster · Intelligence artificielle · enjeux et opportunités · 2025–2026" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6bb8cbab-1812-4788-8bca-b893f9ac5f70" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6bb8cbab-1812-4788-8bca-b893f9ac5f70" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       {
