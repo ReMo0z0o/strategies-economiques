@@ -151,5 +151,21 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: Georgia, "Times New Roman", "Source Serif Pro", serif;
   }
+
+  h1, h2, h3, h4 {
+    font-family: Georgia, "Times New Roman", serif;
+  }
+}
+
+@utility font-sans-ui {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  max-width: 1400px;
+  width: 100%;
 }
