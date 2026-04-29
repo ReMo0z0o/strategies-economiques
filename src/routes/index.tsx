@@ -35,31 +35,34 @@ function Index() {
   return (
     <main className="min-h-screen bg-paper text-ink">
       <div className="border-b border-ink/20">
-        <div className="container py-2 flex items-center justify-between text-[11px] tracking-[0.2em] uppercase text-primary font-sans-ui">
-          <span>Poster · Intelligence artificielle · enjeux et opportunités · 2025–2026</span>
-          <span className="hidden md:inline text-ink/70">Aperçus vidéo</span>
+        <div className="container py-2 flex items-center justify-between text-[10px] sm:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase text-primary font-sans-ui">
+          <span className="truncate">
+            <span className="sm:hidden">Poster · IA · 2025–2026</span>
+            <span className="hidden sm:inline">Poster · Intelligence artificielle · enjeux et opportunités · 2025–2026</span>
+          </span>
+          <span className="hidden md:inline text-ink/70 shrink-0 ml-2">Aperçus vidéo</span>
         </div>
       </div>
 
-      <header className="container pt-10 pb-8">
-        <div className="grid md:grid-cols-[1fr_auto] gap-8 items-end border-b-2 border-ink pb-8">
+      <header className="container pt-6 sm:pt-10 pb-8">
+        <div className="grid md:grid-cols-[1fr_auto] gap-6 md:gap-8 md:items-end border-b-2 border-ink pb-6 sm:pb-8">
           <div>
-            <h1 className="text-5xl md:text-7xl font-bold leading-[0.95] text-ink">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.95] text-ink">
               L'IA dans
               <br />
               l'industrie <em className="text-primary italic font-normal">musicale</em>
             </h1>
-            <p className="mt-5 text-lg md:text-xl text-primary font-sans-ui">
+            <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-primary font-sans-ui">
               Aperçus vidéo · partage individuel pour chaque extrait
             </p>
-            <p className="mt-3 text-ink/80 max-w-2xl leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base text-ink/80 max-w-2xl leading-relaxed">
               Sélection de quatre vidéos illustrant les enjeux abordés dans le poster :
               propriété intellectuelle, éthique et avenir de la création quand la machine
               imite la voix, le style et l'œuvre en quelques secondes.
             </p>
           </div>
-          <div className="flex items-end gap-5 justify-end">
-            <div className="text-right text-sm text-ink/80 font-sans-ui leading-relaxed">
+          <div className="flex items-end gap-4 sm:gap-5 md:justify-end">
+            <div className="text-xs sm:text-sm text-ink/80 font-sans-ui leading-relaxed md:text-right">
               Romane Tahir
               <br />
               Rémi de Buisseret-D
@@ -71,14 +74,14 @@ function Index() {
             <img
               src={unamurLogo}
               alt="Logo Université de Namur"
-              className="h-20 md:h-24 w-auto object-contain shrink-0"
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain shrink-0"
             />
           </div>
         </div>
       </header>
 
       <section className="container pb-16">
-        <div className="grid gap-x-10 gap-y-12 md:grid-cols-2">
+        <div className="grid gap-x-10 gap-y-10 sm:gap-y-12 md:grid-cols-2">
           {videos.map((video, idx) => (
             <VideoCard key={video.id} video={video} index={idx + 1} />
           ))}
