@@ -29,13 +29,13 @@ const VideoCard = ({ video, index }: VideoCardProps) => {
 
   return (
     <article className="group">
-      <div className="flex items-baseline gap-3 mb-3">
+      <div className="flex items-baseline gap-2 sm:gap-3 mb-3">
         {index !== undefined && (
-          <span className="text-3xl font-bold text-primary leading-none">
+          <span className="text-2xl sm:text-3xl font-bold text-primary leading-none shrink-0">
             {index}.
           </span>
         )}
-        <h2 className="text-xl md:text-2xl font-bold text-ink uppercase tracking-wide underline underline-offset-4 decoration-ink/60">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-ink uppercase tracking-tight sm:tracking-wide underline underline-offset-4 decoration-ink/60 break-words">
           {video.title}
         </h2>
       </div>
@@ -61,7 +61,7 @@ const VideoCard = ({ video, index }: VideoCardProps) => {
         </div>
       </Link>
 
-      <div className="mt-4 flex items-start justify-between gap-4">
+      <div className="mt-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
         <p className="text-ink/85 text-sm leading-relaxed flex-1">
           {video.description}
         </p>
@@ -69,7 +69,7 @@ const VideoCard = ({ video, index }: VideoCardProps) => {
           onClick={handleShare}
           size="sm"
           variant="outline"
-          className="shrink-0 border-ink/60 text-ink hover:bg-primary hover:text-primary-foreground hover:border-primary font-sans-ui"
+          className="self-end sm:self-auto shrink-0 border-ink/60 text-ink hover:bg-primary hover:text-primary-foreground hover:border-primary font-sans-ui"
         >
           {copied ? <Check className="h-4 w-4" /> : <Share2 className="h-4 w-4" />}
           <span className="ml-2">{copied ? "Copié" : "Partager"}</span>

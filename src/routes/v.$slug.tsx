@@ -69,12 +69,12 @@ function VideoView() {
   return (
     <main className="min-h-screen bg-paper text-ink">
       <div className="border-b border-ink/20">
-        <div className="container py-2 text-[11px] tracking-[0.2em] uppercase text-primary font-sans-ui">
+        <div className="container py-2 text-[10px] sm:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase text-primary font-sans-ui truncate">
           Poster · Intelligence artificielle · aperçu vidéo
         </div>
       </div>
 
-      <div className="container py-10 max-w-5xl">
+      <div className="container py-6 sm:py-10 max-w-5xl">
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-ink/70 hover:text-primary transition-colors mb-6 font-sans-ui text-sm"
@@ -83,16 +83,16 @@ function VideoView() {
           Retour à la galerie
         </Link>
 
-        <div className="flex items-baseline gap-3 mb-2 border-b-2 border-ink pb-4">
-          <span className="text-4xl font-bold text-primary leading-none">{index}.</span>
-          <h1 className="text-3xl md:text-5xl font-bold text-ink uppercase tracking-wide">
+        <div className="flex items-baseline gap-2 sm:gap-3 mb-2 border-b-2 border-ink pb-4">
+          <span className="text-2xl sm:text-4xl font-bold text-primary leading-none shrink-0">{index}.</span>
+          <h1 className="text-xl sm:text-3xl md:text-5xl font-bold text-ink uppercase tracking-tight sm:tracking-wide break-words">
             {video.title}
           </h1>
         </div>
         <div className="mt-4 mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-          <p className="text-ink/80">{video.description}</p>
+          <p className="text-ink/80 text-sm sm:text-base">{video.description}</p>
           <div className="flex items-end gap-4 sm:justify-end">
-            <p className="text-sm text-ink/80 font-sans-ui sm:text-right leading-relaxed">
+            <p className="text-xs sm:text-sm text-ink/80 font-sans-ui sm:text-right leading-relaxed">
               Romane Tahir
               <br />
               Rémi de Buisseret-D
@@ -100,7 +100,7 @@ function VideoView() {
             <img
               src={unamurLogo}
               alt="Logo Université de Namur"
-              className="h-16 w-auto object-contain shrink-0"
+              className="h-12 sm:h-16 w-auto object-contain shrink-0"
             />
           </div>
         </div>
@@ -121,10 +121,13 @@ function VideoView() {
           <Button
             onClick={handleShare}
             variant="outline"
-            className="border-ink/60 text-ink hover:bg-primary hover:text-primary-foreground hover:border-primary font-sans-ui"
+            className="w-full sm:w-auto border-ink/60 text-ink hover:bg-primary hover:text-primary-foreground hover:border-primary font-sans-ui"
           >
             {copied ? <Check className="h-4 w-4" /> : <Share2 className="h-4 w-4" />}
-            <span className="ml-2">{copied ? "Lien copié" : "Copier le lien de partage"}</span>
+            <span className="ml-2">
+              <span className="sm:hidden">{copied ? "Lien copié" : "Copier le lien"}</span>
+              <span className="hidden sm:inline">{copied ? "Lien copié" : "Copier le lien de partage"}</span>
+            </span>
           </Button>
         </div>
       </div>
