@@ -75,20 +75,23 @@ function VideoView() {
       </div>
 
       <div className="container py-6 sm:py-10 max-w-5xl">
-        <Link
-          to="/"
-          className="sm:inline-flex hidden items-center gap-2 text-ink/70 hover:text-primary transition-colors mb-6 font-sans-ui text-sm"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Retour à la galerie
-        </Link>
-        <Link
-          to="/"
-          className="sm:hidden inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-sm border-2 border-ink bg-paper text-ink font-sans-ui text-sm font-semibold uppercase tracking-wide shadow-[3px_3px_0_0_var(--ink)] hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-[3px_3px_0_0_var(--primary)] transition-all"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Retour à la galerie
-        </Link>
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-sm border-2 border-ink bg-paper text-ink font-sans-ui text-sm font-semibold uppercase tracking-wide shadow-[3px_3px_0_0_var(--ink)] hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-[3px_3px_0_0_var(--primary)] transition-all"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Retour à la galerie
+          </Link>
+          <Button
+            onClick={handleShare}
+            variant="outline"
+            className="hidden sm:inline-flex border-ink/60 text-ink hover:bg-primary hover:text-primary-foreground hover:border-primary font-sans-ui"
+          >
+            {copied ? <Check className="h-4 w-4" /> : <Share2 className="h-4 w-4" />}
+            <span className="ml-2">{copied ? "Lien copié" : "Copier le lien de partage"}</span>
+          </Button>
+        </div>
 
         <div className="flex items-baseline gap-2 sm:gap-3 mb-2 border-b-2 border-ink pb-4">
           <span className="text-2xl sm:text-4xl font-bold text-primary leading-none shrink-0">{index}.</span>
@@ -124,16 +127,6 @@ function VideoView() {
           </div>
         </div>
 
-        <div className="mt-6 hidden sm:flex justify-end">
-          <Button
-            onClick={handleShare}
-            variant="outline"
-            className="border-ink/60 text-ink hover:bg-primary hover:text-primary-foreground hover:border-primary font-sans-ui"
-          >
-            {copied ? <Check className="h-4 w-4" /> : <Share2 className="h-4 w-4" />}
-            <span className="ml-2">{copied ? "Lien copié" : "Copier le lien de partage"}</span>
-          </Button>
-        </div>
       </div>
     </main>
   );
