@@ -74,7 +74,7 @@ function VideoView() {
         </div>
       </div>
 
-      <div className="container py-6 sm:py-10 max-w-7xl">
+      <div className="container py-6 sm:py-10 max-w-5xl">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
           <Link
             to="/"
