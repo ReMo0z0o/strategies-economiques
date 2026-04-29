@@ -99,7 +99,7 @@ function VideoView() {
         <div className="mt-4 mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <p className="text-ink/80 text-sm sm:text-base">{video.description}</p>
           <div className="flex items-end gap-4 sm:justify-end">
-            <p className="text-xs sm:text-sm text-ink/80 font-sans-ui sm:text-right leading-relaxed">
+            <p className="text-base sm:text-sm text-ink/80 font-sans-ui sm:text-right leading-relaxed">
               Romane Tahir
               <br />
               Rémi de Buisseret-D
@@ -107,7 +107,7 @@ function VideoView() {
             <img
               src={unamurLogo}
               alt="Logo Université de Namur"
-              className="h-12 sm:h-16 w-auto object-contain shrink-0"
+              className="h-20 sm:h-16 w-auto object-contain shrink-0"
             />
           </div>
         </div>
