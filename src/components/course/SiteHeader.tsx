@@ -22,8 +22,10 @@ export function SiteHeader() {
             <LineChart className="h-4.5 w-4.5" aria-hidden />
           </span>
           <span className="min-w-0 leading-tight">
+            {/* marque compacte sur mobile pour laisser la place à la navigation */}
             <span className="block truncate text-[15px] font-bold tracking-tight">
-              Stratégies économiques
+              <span className="sm:hidden">ECGEB366</span>
+              <span className="hidden sm:inline">Stratégies économiques</span>
             </span>
             <span className="hidden text-[11px] font-medium uppercase tracking-wider text-muted-foreground sm:block">
               ECGEB366 · cours interactif
