@@ -10,43 +10,89 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as VSlugRouteImport } from './routes/v.$slug'
+import { Route as TheorieIndexRouteImport } from './routes/theorie.index'
+import { Route as ExercicesIndexRouteImport } from './routes/exercices.index'
+import { Route as TheorieChapterIdRouteImport } from './routes/theorie.$chapterId'
+import { Route as ExercicesSessionSlugRouteImport } from './routes/exercices.$sessionSlug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VSlugRoute = VSlugRouteImport.update({
-  id: '/v/$slug',
-  path: '/v/$slug',
+const TheorieIndexRoute = TheorieIndexRouteImport.update({
+  id: '/theorie/',
+  path: '/theorie/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExercicesIndexRoute = ExercicesIndexRouteImport.update({
+  id: '/exercices/',
+  path: '/exercices/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TheorieChapterIdRoute = TheorieChapterIdRouteImport.update({
+  id: '/theorie/$chapterId',
+  path: '/theorie/$chapterId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExercicesSessionSlugRoute = ExercicesSessionSlugRouteImport.update({
+  id: '/exercices/$sessionSlug',
+  path: '/exercices/$sessionSlug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/v/$slug': typeof VSlugRoute
+  '/exercices/$sessionSlug': typeof ExercicesSessionSlugRoute
+  '/theorie/$chapterId': typeof TheorieChapterIdRoute
+  '/exercices/': typeof ExercicesIndexRoute
+  '/theorie/': typeof TheorieIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/v/$slug': typeof VSlugRoute
+  '/exercices/$sessionSlug': typeof ExercicesSessionSlugRoute
+  '/theorie/$chapterId': typeof TheorieChapterIdRoute
+  '/exercices': typeof ExercicesIndexRoute
+  '/theorie': typeof TheorieIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/v/$slug': typeof VSlugRoute
+  '/exercices/$sessionSlug': typeof ExercicesSessionSlugRoute
+  '/theorie/$chapterId': typeof TheorieChapterIdRoute
+  '/exercices/': typeof ExercicesIndexRoute
+  '/theorie/': typeof TheorieIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/v/$slug'
+  fullPaths:
+    | '/'
+    | '/exercices/$sessionSlug'
+    | '/theorie/$chapterId'
+    | '/exercices/'
+    | '/theorie/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/v/$slug'
-  id: '__root__' | '/' | '/v/$slug'
+  to:
+    | '/'
+    | '/exercices/$sessionSlug'
+    | '/theorie/$chapterId'
+    | '/exercices'
+    | '/theorie'
+  id:
+    | '__root__'
+    | '/'
+    | '/exercices/$sessionSlug'
+    | '/theorie/$chapterId'
+    | '/exercices/'
+    | '/theorie/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  VSlugRoute: typeof VSlugRoute
+  ExercicesSessionSlugRoute: typeof ExercicesSessionSlugRoute
+  TheorieChapterIdRoute: typeof TheorieChapterIdRoute
+  ExercicesIndexRoute: typeof ExercicesIndexRoute
+  TheorieIndexRoute: typeof TheorieIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,11 +104,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/v/$slug': {
-      id: '/v/$slug'
-      path: '/v/$slug'
-      fullPath: '/v/$slug'
-      preLoaderRoute: typeof VSlugRouteImport
+    '/theorie/': {
+      id: '/theorie/'
+      path: '/theorie'
+      fullPath: '/theorie/'
+      preLoaderRoute: typeof TheorieIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/exercices/': {
+      id: '/exercices/'
+      path: '/exercices'
+      fullPath: '/exercices/'
+      preLoaderRoute: typeof ExercicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/theorie/$chapterId': {
+      id: '/theorie/$chapterId'
+      path: '/theorie/$chapterId'
+      fullPath: '/theorie/$chapterId'
+      preLoaderRoute: typeof TheorieChapterIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/exercices/$sessionSlug': {
+      id: '/exercices/$sessionSlug'
+      path: '/exercices/$sessionSlug'
+      fullPath: '/exercices/$sessionSlug'
+      preLoaderRoute: typeof ExercicesSessionSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -70,7 +137,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  VSlugRoute: VSlugRoute,
+  ExercicesSessionSlugRoute: ExercicesSessionSlugRoute,
+  TheorieChapterIdRoute: TheorieChapterIdRoute,
+  ExercicesIndexRoute: ExercicesIndexRoute,
+  TheorieIndexRoute: TheorieIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

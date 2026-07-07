@@ -28,11 +28,6 @@
   --radius-4xl: calc(var(--radius) + 16px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-paper: var(--paper);
-  --color-paper-soft: var(--paper-soft);
-  --color-ink: var(--ink);
-  --color-background-secondary: var(--background-secondary);
-  --color-background-tertiary: var(--background-tertiary);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -47,6 +42,10 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -67,37 +66,36 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  /* Editorial poster — fond papier crème, encre bleu marine, accent orange */
-  --background: oklch(0.972 0.018 95);
-  --foreground: oklch(0.28 0.06 264);
-  --paper: oklch(0.972 0.018 95);
-  --paper-soft: oklch(0.948 0.022 90);
-  --ink: oklch(0.28 0.06 264);
-  --background-secondary: oklch(0.28 0.06 264);
-  --background-tertiary: oklch(0.36 0.06 264);
-  --card: oklch(0.972 0.018 95);
-  --card-foreground: oklch(0.28 0.06 264);
+  --radius: 0.75rem;
+  /* Plateforme pédagogique — fond clair, encre ardoise, indigo primaire */
+  --background: oklch(0.985 0.004 255);
+  --foreground: oklch(0.25 0.035 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.25 0.035 265);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.28 0.06 264);
-  --primary: oklch(0.68 0.2 41);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.36 0.06 264);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.92 0.018 90);
-  --muted-foreground: oklch(0.45 0.04 264);
-  --accent: oklch(0.68 0.18 290);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.82 0.03 264);
-  --input: oklch(0.82 0.03 264);
-  --ring: oklch(0.68 0.2 41);
-  --chart-1: oklch(0.646 0.222 41.116);
+  --popover-foreground: oklch(0.25 0.035 265);
+  --primary: oklch(0.51 0.19 272);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.955 0.012 265);
+  --secondary-foreground: oklch(0.35 0.06 270);
+  --muted: oklch(0.958 0.008 255);
+  --muted-foreground: oklch(0.5 0.025 262);
+  --accent: oklch(0.945 0.025 272);
+  --accent-foreground: oklch(0.38 0.12 272);
+  --destructive: oklch(0.577 0.215 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --success: oklch(0.56 0.13 158);
+  --success-foreground: oklch(0.99 0 0);
+  --warning: oklch(0.72 0.15 70);
+  --warning-foreground: oklch(0.3 0.06 60);
+  --border: oklch(0.905 0.01 258);
+  --input: oklch(0.905 0.01 258);
+  --ring: oklch(0.51 0.19 272);
+  --chart-1: oklch(0.51 0.19 272);
   --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --chart-3: oklch(0.646 0.222 41.116);
+  --chart-4: oklch(0.56 0.13 158);
+  --chart-5: oklch(0.627 0.2 330);
   --sidebar: oklch(0.984 0.003 247.858);
   --sidebar-foreground: oklch(0.129 0.042 264.695);
   --sidebar-primary: oklch(0.208 0.042 265.755);
@@ -115,8 +113,8 @@
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.68 0.15 272);
+  --primary-foreground: oklch(0.15 0.03 270);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
@@ -125,6 +123,10 @@
   --accent-foreground: oklch(0.984 0.003 247.858);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.984 0.003 247.858);
+  --success: oklch(0.65 0.13 158);
+  --success-foreground: oklch(0.15 0.03 158);
+  --warning: oklch(0.75 0.15 70);
+  --warning-foreground: oklch(0.2 0.05 60);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.551 0.027 264.364);
@@ -148,14 +150,28 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: Georgia, "Times New Roman", "Source Serif Pro", serif;
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4 {
-    font-family: Georgia, "Times New Roman", serif;
+  ::selection {
+    background-color: oklch(0.51 0.19 272 / 0.18);
   }
 }
 
@@ -165,7 +181,30 @@
 
 @utility container {
   margin-inline: auto;
-  padding-inline: 2rem;
-  max-width: 1400px;
+  padding-inline: 1.25rem;
+  max-width: 1240px;
   width: 100%;
+  @media (min-width: 640px) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Prose de cours : rythme vertical confortable pour la lecture longue */
+@utility course-prose {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  & > p + p {
+    margin-top: 0.875rem;
+  }
+  & strong {
+    color: var(--color-foreground);
+    font-weight: 650;
+  }
+}
+
+/* KaTeX : empêcher les débordements sur mobile */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.25rem;
 }
