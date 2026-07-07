@@ -89,7 +89,9 @@ export function CourseMap() {
         <>
           La trajectoire du cours : de la décision seule (partie A) aux interactions
           stratégiques (partie B). Le chapitre B4 mélange les deux mondes — les{" "}
-          <strong>jeux</strong> de B1 et les <strong>probabilités</strong> de A3.
+          <strong>jeux</strong> de B1 et les <strong>probabilités</strong> de A3. (La carte ne
+          garde que les stations utiles ici : B2 — contrats — et B3 — jeux répétés — sont les
+          autres étapes de la partie B.)
         </>
       }
     >

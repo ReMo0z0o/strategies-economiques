@@ -392,6 +392,7 @@ export function PollAB({
   scenario,
   question,
   options,
+  optionKeys,
   statA,
   statB,
   bias,
@@ -401,6 +402,8 @@ export function PollAB({
   question: ReactNode;
   /** les choix proposés au lecteur (version A du sondage) */
   options: ReactNode[];
+  /** étiquettes des choix (par défaut "A", "B", …) — ex. ["A1", "A2"] pour le framing */
+  optionKeys?: string[];
   statA: PollStat;
   statB: PollStat;
   /** nom du biais révélé, ex. "utilité de transaction" */
@@ -439,7 +442,9 @@ export function PollAB({
                 voted && chosen !== i && "opacity-60",
               )}
             >
-              <span className="mr-2 font-bold text-primary">{String.fromCharCode(65 + i)}</span>
+              <span className="mr-2 font-bold text-primary">
+                {optionKeys?.[i] ?? String.fromCharCode(65 + i)}
+              </span>
               {opt}
             </button>
           ))}

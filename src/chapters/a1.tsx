@@ -1462,7 +1462,7 @@ export default function Chapter() {
       {/* ============================================================ */}
       {/* B.2 — L'utilité de transaction                                */}
       {/* ============================================================ */}
-      <Section id="transaction" kicker="B.2" title="L'utilité de transaction">
+      <Section id="transaction" kicker="B.2 · Biais n°1" title="L'utilité de transaction">
         <p className="text-[1.15rem] leading-relaxed">
           Premier test — le biais du <strong>prix de référence</strong>. Lis bien la situation,
           puis vote honnêtement avant de dérouler le résultat.
@@ -1559,7 +1559,7 @@ export default function Chapter() {
       {/* ============================================================ */}
       {/* B.3 — Les coûts irrécupérables                                */}
       {/* ============================================================ */}
-      <Section id="sunk" kicker="B.3" title="Les coûts irrécupérables">
+      <Section id="sunk" kicker="B.3 · Biais n°2" title="Les coûts irrécupérables">
         <p className="text-[1.15rem] leading-relaxed">
           Un coût <strong>irrécupérable</strong> (en anglais : <em>sunk cost</em>) est un argent
           déjà dépensé qu'on ne peut plus récupérer, <strong>quoi qu'on décide ensuite.</strong>
@@ -1620,7 +1620,7 @@ export default function Chapter() {
       {/* ============================================================ */}
       {/* B.4 — L'effet de dotation                                     */}
       {/* ============================================================ */}
-      <Section id="dotation" kicker="B.4" title="L'effet de dotation">
+      <Section id="dotation" kicker="B.4 · Biais n°3" title="L'effet de dotation">
         <p className="text-[1.15rem] leading-relaxed">
           L'<strong>effet de dotation</strong> : on exige plus d'argent pour <strong>vendre</strong>{" "}
           un objet qu'on n'accepterait d'en payer pour l'<strong>acheter</strong>. Le simple fait
@@ -1776,7 +1776,7 @@ export default function Chapter() {
       {/* ============================================================ */}
       {/* B.5 — Le framing                                              */}
       {/* ============================================================ */}
-      <Section id="framing" kicker="B.5" title="Le framing">
+      <Section id="framing" kicker="B.5 · Biais n°4" title="Le framing">
         <p className="text-[1.15rem] leading-relaxed">
           Le <strong>framing</strong> (ou « cadrage ») : la <strong>manière de formuler</strong> un
           choix change la décision, même quand les options sont rigoureusement identiques.
@@ -1796,6 +1796,7 @@ export default function Chapter() {
             </>,
             <>1 chance sur 3 de sauver les 600 — 2 chances sur 3 de n'en sauver aucune</>,
           ]}
+          optionKeys={["A1", "A2"]}
           statA={{
             version: "Version A · « sauver »",
             num: "100 %",
