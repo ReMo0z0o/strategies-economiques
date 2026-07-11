@@ -128,12 +128,20 @@ function CourseHome({ courseId }: { courseId: Course["id"] }) {
               <span className="flex items-center gap-2">
                 <span className="text-2xl font-extrabold text-white">{chapterCount}</span> chapitres interactifs
               </span>
-              <span className="flex items-center gap-2">
-                <span className="text-2xl font-extrabold text-white">{tpCount}</span> séances de TP guidées
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="text-2xl font-extrabold text-white">{exerciseCount}</span> exercices résolus
-              </span>
+              {tpCount > 0 ? (
+                <>
+                  <span className="flex items-center gap-2">
+                    <span className="text-2xl font-extrabold text-white">{tpCount}</span> séances de TP guidées
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <span className="text-2xl font-extrabold text-white">{exerciseCount}</span> exercices résolus
+                  </span>
+                </>
+              ) : (
+                <span className="flex items-center gap-2">
+                  <span className="rounded-full bg-white/15 px-2.5 py-0.5 text-xs font-bold">TP bientôt disponibles</span>
+                </span>
+              )}
             </div>
           </div>
           <div className="relative hidden h-72 lg:block">
@@ -238,13 +246,30 @@ function CourseHome({ courseId }: { courseId: Course["id"] }) {
           <div className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary">
             <Dumbbell className="h-4 w-4" aria-hidden /> La pratique
           </div>
-          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
-            {tpCount} séance{tpCount > 1 ? "s" : ""} de TP, résolue{tpCount > 1 ? "s" : ""} pas à pas
-          </h2>
-          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            Les énoncés officiels du cours. Pour chaque exercice : essaie d'abord, puis révèle la résolution étape par
-            étape — chaque étape pointe vers la section de théorie qu'elle utilise.
-          </p>
+          {tpCount === 0 ? (
+            <>
+              <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
+                Les séances de TP arrivent bientôt
+              </h2>
+              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                Les exercices pratiques de ce cours seront ajoutés prochainement, résolus étape par
+                étape avec les liens vers la théorie. En attendant, entraîne-toi avec les quiz et
+                les exercices intégrés aux chapitres.
+              </p>
+            </>
+          ) : null}
+          {tpCount > 0 ? (
+            <>
+              <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
+                {tpCount} séance{tpCount > 1 ? "s" : ""} de TP, résolue{tpCount > 1 ? "s" : ""} pas à pas
+              </h2>
+              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                Les énoncés officiels du cours. Pour chaque exercice : essaie d'abord, puis révèle la
+                résolution étape par étape — chaque étape pointe vers la section de théorie qu'elle
+                utilise.
+              </p>
+            </>
+          ) : null}
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {course.tpSessions.map((session) => {
               const stats = scopeStats(progress, scopedKey(courseId, session.scope));

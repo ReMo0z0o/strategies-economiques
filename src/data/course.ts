@@ -445,9 +445,168 @@ const strategiesCourse: Course = buildCourse(
   strategiesTpData,
 );
 
+/* ------------------------------------------------------------------ */
+/* Cours « Économie industrielle »                                     */
+/* ------------------------------------------------------------------ */
+
+const industrielleParts: Part[] = [
+  {
+    id: "S",
+    title: "Partie 1 — Les structures de marché",
+    subtitle:
+      "Quand la concurrence parfaite disparaît : une seule firme (monopole) ou quelques firmes (oligopole) qui fixent prix et quantités en tenant compte de leur pouvoir de marché.",
+  },
+  {
+    id: "C",
+    title: "Partie 2 — Stratégies de prix et marchés modernes",
+    subtitle:
+      "Comment une firme exploite finement son pouvoir de marché : discrimination par les prix, tarifs en deux parties, chaînes de monopoles — et l'économie des plateformes à effets de réseau.",
+  },
+];
+
+const industrielleChaptersData: ChapterData[] = [
+  {
+    id: "ei1",
+    part: "S",
+    code: "EI1",
+    slug: "ei1",
+    title: "Le monopole",
+    tagline: "Une seule firme face au marché : comment fixe-t-elle son prix, et pourquoi est-ce inefficace ?",
+    description:
+      "De la concurrence parfaite au monopole : demande décroissante, recette marginale, maximisation du profit (Rm = Cm), pouvoir de marché et indice de Lerner, perte sèche, régulation et taxation, concurrence monopolistique.",
+    color: {
+      gradient: "from-amber-500 to-orange-600",
+      badge: "bg-amber-100 text-amber-800",
+      text: "text-amber-700",
+      soft: "bg-amber-50",
+    },
+    sections: [
+      { id: "intro", title: "Pourquoi ce chapitre ?" },
+      { id: "concurrence", title: "Rappel — la concurrence parfaite" },
+      { id: "demande", title: "Le monopole face à une demande décroissante" },
+      { id: "exemples", title: "Exemples et raisons d'être des monopoles" },
+      { id: "maximisation", title: "La maximisation du profit : Rm = Cm" },
+      { id: "recette", title: "La recette marginale est inférieure au prix" },
+      { id: "exemple-analytique", title: "Exemple analytique et graphique" },
+      { id: "pouvoir", title: "Mesurer le pouvoir de marché : élasticité, marge, Lerner" },
+      { id: "inefficacite", title: "L'inefficacité du monopole" },
+      { id: "regulation", title: "Réguler le monopole" },
+      { id: "taxation", title: "Taxer le monopole" },
+      { id: "monopolistique", title: "La concurrence monopolistique" },
+      { id: "synthese", title: "À maîtriser absolument" },
+    ],
+    tpSessions: [],
+  },
+  {
+    id: "ei2",
+    part: "S",
+    code: "EI2",
+    slug: "ei2",
+    title: "L'oligopole",
+    tagline: "Quelques firmes en interaction stratégique : Cournot, Stackelberg, Bertrand et la collusion.",
+    description:
+      "La concurrence en quantités (Cournot, iso-profits, collusion, Stackelberg, barrières à l'entrée) et la concurrence en prix (Bertrand, paradoxe du prix concurrentiel, biens différenciés).",
+    color: {
+      gradient: "from-orange-500 to-red-600",
+      badge: "bg-orange-100 text-orange-800",
+      text: "text-orange-700",
+      soft: "bg-orange-50",
+    },
+    sections: [
+      { id: "intro", title: "Pourquoi ce chapitre ?" },
+      { id: "cournot", title: "La concurrence à la Cournot" },
+      { id: "exemple-cournot", title: "Exemple d'équilibre de Cournot-Nash" },
+      { id: "isoprofit", title: "Les courbes d'iso-profit" },
+      { id: "collusion-q", title: "La collusion en quantités" },
+      { id: "stackelberg", title: "L'ordre du jeu : l'équilibre de Stackelberg" },
+      { id: "entree", title: "Empêcher l'entrée d'un concurrent" },
+      { id: "nombre-firmes", title: "Plus de firmes, est-ce toujours mieux ?" },
+      { id: "bertrand", title: "La concurrence à la Bertrand (bien homogène)" },
+      { id: "collusion-p", title: "La collusion en prix" },
+      { id: "differencies", title: "Biens différenciés et concurrence en prix" },
+      { id: "synthese", title: "À maîtriser absolument" },
+    ],
+    tpSessions: [],
+  },
+  {
+    id: "ei3",
+    part: "C",
+    code: "EI3",
+    slug: "ei3",
+    title: "Le comportement du monopole",
+    tagline: "Discriminer, tarifer en deux parties, éviter la double marge : l'art d'extraire le surplus.",
+    description:
+      "La discrimination en prix (premier, deuxième et troisième degré), la tarification en deux parties, et la double marginalisation dans les chaînes de monopoles.",
+    color: {
+      gradient: "from-rose-500 to-red-600",
+      badge: "bg-rose-100 text-rose-800",
+      text: "text-rose-700",
+      soft: "bg-rose-50",
+    },
+    sections: [
+      { id: "intro", title: "La discrimination en prix : de quoi parle-t-on ?" },
+      { id: "fil-conducteur", title: "L'exemple fil conducteur : le monopole simple" },
+      { id: "premier-degre", title: "La discrimination du premier degré" },
+      { id: "deuxieme-degre", title: "La discrimination du deuxième degré" },
+      { id: "troisieme-degre", title: "La discrimination du troisième degré" },
+      { id: "deux-parties", title: "La tarification en deux parties" },
+      { id: "double-marge", title: "La double marginalisation" },
+      { id: "synthese", title: "À maîtriser absolument" },
+    ],
+    tpSessions: [],
+  },
+  {
+    id: "ei4",
+    part: "C",
+    code: "EI4",
+    slug: "ei4",
+    title: "Les économies de réseau",
+    tagline: "Plus on est nombreux, plus ça vaut : plateformes, effets de réseau et concurrence entre réseaux.",
+    description:
+      "Effets de réseau directs et indirects, le réseau géré par un monopole (modèle de la ville linéaire), demandes auto-réalisatrices, et la concurrence entre deux réseaux sur la ligne de Hotelling.",
+    color: {
+      gradient: "from-yellow-500 to-amber-600",
+      badge: "bg-yellow-100 text-yellow-800",
+      text: "text-yellow-700",
+      soft: "bg-yellow-50",
+    },
+    sections: [
+      { id: "intro", title: "Effets de réseau directs et indirects" },
+      { id: "modele-monopole", title: "Le réseau en monopole : la ville linéaire" },
+      { id: "effets-directs-mono", title: "Effets de réseau directs en monopole" },
+      { id: "hotelling", title: "Deux réseaux en concurrence : la ligne de Hotelling" },
+      { id: "effets-directs-duo", title: "Effets de réseau directs en duopole" },
+      { id: "synthese", title: "À maîtriser absolument" },
+    ],
+    tpSessions: [],
+  },
+];
+
+const industrielleCourse: Course = buildCourse(
+  {
+    id: "industrielle",
+    slug: "industrielle",
+    code: "ÉCO INDUS",
+    title: "Économie industrielle",
+    shortTitle: "Économie industrielle",
+    tagline: "Monopole, oligopole, discrimination et plateformes : le pouvoir de marché sous toutes ses formes.",
+    description:
+      "Comment les firmes exercent leur pouvoir de marché : le monopole et son inefficacité, la concurrence entre quelques firmes (Cournot, Bertrand, Stackelberg), les stratégies de prix sophistiquées, et l'économie des plateformes à effets de réseau.",
+    theme: {
+      gradient: "from-amber-500 to-orange-600",
+      badge: "bg-amber-100 text-amber-800",
+      text: "text-amber-700",
+      soft: "bg-amber-50",
+    },
+  },
+  industrielleParts,
+  industrielleChaptersData,
+  [],
+);
+
 /** Tous les cours de la plateforme. Le contenu d'un cours peut être vide
  * (chapitres/TP à venir) : la home l'affichera comme « bientôt disponible ». */
-export const courses: Course[] = [strategiesCourse];
+export const courses: Course[] = [strategiesCourse, industrielleCourse];
 
 /* ------------------------------------------------------------------ */
 /* Helpers (bornés au cours)                                           */

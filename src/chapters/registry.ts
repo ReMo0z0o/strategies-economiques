@@ -20,7 +20,10 @@ const registry: Record<CourseId, Record<string, LazyComp>> = {
     b4: lazy(() => import("@/chapters/b4")),
   },
   industrielle: {
-    // Chapitres d'Économie industrielle — ajoutés en phase 2.
+    ei1: lazy(() => import("@/chapters/ei1")),
+    ei2: lazy(() => import("@/chapters/ei2")),
+    ei3: lazy(() => import("@/chapters/ei3")),
+    ei4: lazy(() => import("@/chapters/ei4")),
   },
 };
 
