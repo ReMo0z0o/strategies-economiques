@@ -8,8 +8,9 @@ import {
   getTpSession,
   type ChapterId,
 } from "@/data/course";
-import { markVisited, scopeStats, useProgress } from "@/lib/progress";
+import { markVisited, scopedKey, scopeStats, useProgress } from "@/lib/progress";
 import { SiteHeader } from "@/components/course/SiteHeader";
+import { useCourse } from "@/components/course/CourseContext";
 
 /* ------------------------------------------------------------------ */
 /* Section de chapitre                                                 */
@@ -94,15 +95,17 @@ export function ChapterShell({
   /** contenu additionnel affiché dans le hero (ex. mini-résumé animé) */
   heroExtra?: ReactNode;
 }) {
-  const chapter = getChapter(chapterId);
-  const { prev, next } = adjacentChapters(chapterId);
+  const { courseId, course } = useCourse();
+  const slug = course.slug;
+  const chapter = getChapter(courseId, chapterId);
+  const { prev, next } = adjacentChapters(courseId, chapterId);
   const progress = useProgress();
-  const stats = scopeStats(progress, chapterId);
+  const stats = scopeStats(progress, scopedKey(courseId, chapterId));
   const active = useScrollSpy(chapter.sections.map((s) => s.id));
 
   useEffect(() => {
-    markVisited(chapterId);
-  }, [chapterId]);
+    markVisited(scopedKey(courseId, chapterId));
+  }, [courseId, chapterId]);
 
   const quizPct =
     stats.totalQuiz > 0 ? Math.round((stats.correctQuiz / stats.totalQuiz) * 100) : 0;
@@ -115,7 +118,11 @@ export function ChapterShell({
       <div className={cn("bg-gradient-to-br text-white", chapter.color.gradient)}>
         <div className="container py-10 sm:py-14">
           <nav className="mb-4 flex items-center gap-2 text-sm text-white/80">
-            <Link to="/theorie" className="transition-colors hover:text-white">
+            <Link
+              to="/$courseSlug/theorie"
+              params={{ courseSlug: slug }}
+              className="transition-colors hover:text-white"
+            >
               Théorie
             </Link>
             <span aria-hidden>/</span>
@@ -137,12 +144,12 @@ export function ChapterShell({
               </span>
             ) : null}
             {chapter.tpSessions.map((n) => {
-              const tp = getTpSession(n);
+              const tp = getTpSession(courseId, n);
               return (
                 <Link
                   key={n}
-                  to="/exercices/$sessionSlug"
-                  params={{ sessionSlug: tp.slug }}
+                  to="/$courseSlug/exercices/$sessionSlug"
+                  params={{ courseSlug: slug, sessionSlug: tp.slug }}
                   className="inline-flex items-center gap-1.5 rounded-full bg-white/25 px-3 py-1 backdrop-blur-sm transition-colors hover:bg-white/35"
                 >
                   <Dumbbell className="h-3.5 w-3.5" aria-hidden />
@@ -205,8 +212,8 @@ export function ChapterShell({
         <div className="container grid gap-4 py-8 sm:grid-cols-2">
           {prev ? (
             <Link
-              to="/theorie/$chapterId"
-              params={{ chapterId: prev.slug }}
+              to="/$courseSlug/theorie/$chapterId"
+              params={{ courseSlug: slug, chapterId: prev.slug }}
               className="group rounded-2xl border bg-card p-4 transition-shadow hover:shadow-md"
             >
               <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -222,8 +229,8 @@ export function ChapterShell({
           )}
           {next ? (
             <Link
-              to="/theorie/$chapterId"
-              params={{ chapterId: next.slug }}
+              to="/$courseSlug/theorie/$chapterId"
+              params={{ courseSlug: slug, chapterId: next.slug }}
               className="group rounded-2xl border bg-card p-4 text-right transition-shadow hover:shadow-md"
             >
               <div className="flex items-center justify-end gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -236,7 +243,8 @@ export function ChapterShell({
             </Link>
           ) : (
             <Link
-              to="/exercices"
+              to="/$courseSlug/exercices"
+              params={{ courseSlug: slug }}
               className="group rounded-2xl border bg-card p-4 text-right transition-shadow hover:shadow-md"
             >
               <div className="flex items-center justify-end gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -252,19 +260,3 @@ export function ChapterShell({
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* Placeholder utilisé tant qu'un chapitre n'est pas encore rédigé     */
-/* ------------------------------------------------------------------ */
-
-export function ChapterPlaceholder({ chapterId }: { chapterId: ChapterId }) {
-  const chapter = getChapter(chapterId);
-  return (
-    <ChapterShell chapterId={chapterId}>
-      <Section id={chapter.sections[0].id} title={chapter.sections[0].title}>
-        <p className="text-muted-foreground">
-          Ce chapitre est en cours de rédaction. Reviens bientôt !
-        </p>
-      </Section>
-    </ChapterShell>
-  );
-}

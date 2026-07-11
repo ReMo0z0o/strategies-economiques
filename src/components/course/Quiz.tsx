@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { CheckCircle2, CircleHelp, RotateCcw, XCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { recordQuizResult, registerQuiz } from "@/lib/progress";
+import { recordQuizResult, registerQuiz, scopedKey } from "@/lib/progress";
+import { useCourseOptional } from "@/components/course/CourseContext";
 
 export interface QuizOption {
   text: ReactNode;
@@ -39,9 +40,13 @@ export function Quiz({
   const [selected, setSelected] = useState<Set<number>>(new Set());
   const [checked, setChecked] = useState(false);
 
+  // Scope préfixé par le cours courant, pour cloisonner la progression.
+  const courseCtx = useCourseOptional();
+  const fullScope = courseCtx ? scopedKey(courseCtx.courseId, scope) : scope;
+
   useEffect(() => {
-    registerQuiz(scope, id);
-  }, [scope, id]);
+    registerQuiz(fullScope, id);
+  }, [fullScope, id]);
 
   const correctSet = useMemo(
     () => new Set(options.flatMap((o, i) => (o.correct ? [i] : []))),
@@ -67,7 +72,7 @@ export function Quiz({
     if (selected.size === 0) return;
     const ok =
       selected.size === correctSet.size && [...selected].every((i) => correctSet.has(i));
-    recordQuizResult(scope, id, ok);
+    recordQuizResult(fullScope, id, ok);
     setChecked(true);
   }
 

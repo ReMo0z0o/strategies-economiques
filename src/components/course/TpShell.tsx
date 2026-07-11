@@ -2,9 +2,10 @@ import { useEffect, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, BookOpen, CheckCircle2, Dumbbell } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { getChapter, getTpSession, tpSessions } from "@/data/course";
-import { markVisited, scopeStats, useProgress } from "@/lib/progress";
+import { getChapter, getTpSession } from "@/data/course";
+import { markVisited, scopedKey, scopeStats, useProgress } from "@/lib/progress";
 import { SiteHeader } from "@/components/course/SiteHeader";
+import { useCourse } from "@/components/course/CourseContext";
 
 /**
  * Coquille de page pour une séance de TP : hero, chapitres liés, progression
@@ -15,21 +16,24 @@ export function TpShell({
   children,
   intro,
 }: {
-  sessionNumber: 1 | 2 | 3 | 4;
+  sessionNumber: number;
   /** paragraphe de mise en contexte affiché avant les exercices */
   intro?: ReactNode;
   children: ReactNode;
 }) {
-  const session = getTpSession(sessionNumber);
+  const { courseId, course } = useCourse();
+  const slug = course.slug;
+  const session = getTpSession(courseId, sessionNumber);
   const progress = useProgress();
-  const stats = scopeStats(progress, session.scope);
-  const idx = tpSessions.findIndex((s) => s.number === sessionNumber);
-  const prev = idx > 0 ? tpSessions[idx - 1] : undefined;
-  const next = idx < tpSessions.length - 1 ? tpSessions[idx + 1] : undefined;
+  const stats = scopeStats(progress, scopedKey(courseId, session.scope));
+  const sessions = course.tpSessions;
+  const idx = sessions.findIndex((s) => s.number === sessionNumber);
+  const prev = idx > 0 ? sessions[idx - 1] : undefined;
+  const next = idx >= 0 && idx < sessions.length - 1 ? sessions[idx + 1] : undefined;
 
   useEffect(() => {
-    markVisited(session.scope);
-  }, [session.scope]);
+    markVisited(scopedKey(courseId, session.scope));
+  }, [courseId, session.scope]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -39,7 +43,11 @@ export function TpShell({
       <div className="bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-950 text-white">
         <div className="container py-10 sm:py-14">
           <nav className="mb-4 flex items-center gap-2 text-sm text-white/70">
-            <Link to="/exercices" className="transition-colors hover:text-white">
+            <Link
+              to="/$courseSlug/exercices"
+              params={{ courseSlug: slug }}
+              className="transition-colors hover:text-white"
+            >
               Exercices
             </Link>
             <span aria-hidden>/</span>
@@ -65,12 +73,12 @@ export function TpShell({
               </span>
             ) : null}
             {session.chapters.map((cid) => {
-              const ch = getChapter(cid);
+              const ch = getChapter(courseId, cid);
               return (
                 <Link
                   key={cid}
-                  to="/theorie/$chapterId"
-                  params={{ chapterId: ch.slug }}
+                  to="/$courseSlug/theorie/$chapterId"
+                  params={{ courseSlug: slug, chapterId: ch.slug }}
                   className="inline-flex items-center gap-1.5 rounded-full bg-white/25 px-3 py-1 backdrop-blur-sm transition-colors hover:bg-white/35"
                 >
                   <BookOpen className="h-3.5 w-3.5" aria-hidden />
@@ -108,8 +116,8 @@ export function TpShell({
         <div className="container grid max-w-4xl gap-4 py-8 sm:grid-cols-2">
           {prev ? (
             <Link
-              to="/exercices/$sessionSlug"
-              params={{ sessionSlug: prev.slug }}
+              to="/$courseSlug/exercices/$sessionSlug"
+              params={{ courseSlug: slug, sessionSlug: prev.slug }}
               className="group rounded-2xl border bg-card p-4 transition-shadow hover:shadow-md"
             >
               <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -125,8 +133,8 @@ export function TpShell({
           )}
           {next ? (
             <Link
-              to="/exercices/$sessionSlug"
-              params={{ sessionSlug: next.slug }}
+              to="/$courseSlug/exercices/$sessionSlug"
+              params={{ courseSlug: slug, sessionSlug: next.slug }}
               className="group rounded-2xl border bg-card p-4 text-right transition-shadow hover:shadow-md"
             >
               <div className="flex items-center justify-end gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -143,15 +151,5 @@ export function TpShell({
         </div>
       </footer>
     </div>
-  );
-}
-
-export function TpPlaceholder({ sessionNumber }: { sessionNumber: 1 | 2 | 3 | 4 }) {
-  return (
-    <TpShell sessionNumber={sessionNumber}>
-      <p className="text-muted-foreground">
-        Cette séance d'exercices est en cours de rédaction. Reviens bientôt !
-      </p>
-    </TpShell>
   );
 }

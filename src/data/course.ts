@@ -1,13 +1,26 @@
 /*
- * Registre central du cours ECGEB366 — Stratégies et Décisions Économiques.
+ * Registre central des cours de la plateforme.
+ *
+ * L'app héberge plusieurs cours distincts (« strategies » = ECGEB366
+ * Stratégies et Décisions Économiques ; « industrielle » = Économie
+ * industrielle). Chaque cours possède ses propres parties, chapitres et
+ * séances de TP.
  *
  * Les ids de sections correspondent aux ancres utilisées dans les pages de
- * théorie (/theorie/<slug>#<sectionId>) : les pages de TP s'y réfèrent pour
- * relier chaque étape de résolution à la théorie correspondante.
+ * théorie (/{cours}/theorie/<slug>#<sectionId>) : les pages de TP s'y réfèrent
+ * pour relier chaque étape de résolution à la théorie correspondante.
  */
 
-export type ChapterId = "a1" | "a2" | "a3" | "b1" | "b2" | "b3" | "b4";
-export type PartId = "A" | "B";
+/** Identifiant de cours = segment d'URL de premier niveau. */
+export type CourseId = "strategies" | "industrielle";
+
+/**
+ * Ids de chapitres. Union ouverte par cours ; les ids doivent être uniques
+ * à travers TOUS les cours pour éviter toute collision (le cours « strategies »
+ * utilise a1…b4 ; les autres cours emploient un préfixe distinct).
+ */
+export type ChapterId = "a1" | "a2" | "a3" | "b1" | "b2" | "b3" | "b4" | (string & {});
+export type PartId = string;
 
 export interface ChapterSection {
   id: string;
@@ -26,6 +39,8 @@ export interface ChapterColor {
 }
 
 export interface Chapter {
+  /** cours auquel appartient ce chapitre (injecté par le registre) */
+  course: CourseId;
   id: ChapterId;
   part: PartId;
   code: string;
@@ -46,7 +61,9 @@ export interface Part {
 }
 
 export interface TpSession {
-  number: 1 | 2 | 3 | 4;
+  /** cours auquel appartient cette séance (injecté par le registre) */
+  course: CourseId;
+  number: number;
   slug: string;
   scope: string;
   title: string;
@@ -56,7 +73,32 @@ export interface TpSession {
   topics: string[];
 }
 
-export const parts: Part[] = [
+/** Un cours complet : identité, thème visuel, parties, chapitres, TP. */
+export interface Course {
+  id: CourseId;
+  /** segment d'URL, ex. "strategies" */
+  slug: string;
+  /** code académique affiché, ex. "ECGEB366" */
+  code: string;
+  /** titre complet, ex. "Stratégies et Décisions Économiques" */
+  title: string;
+  /** titre court pour le header, ex. "Stratégies économiques" */
+  shortTitle: string;
+  tagline: string;
+  description: string;
+  /** identité visuelle du cours (hero de la home, carte du hub, header) */
+  theme: ChapterColor;
+  parts: Part[];
+  chapters: Chapter[];
+  tpSessions: TpSession[];
+}
+
+/* Les tableaux de contenu ci-dessous sont déclarés sans le champ `course` ;
+ * il est injecté au moment de la construction du Course (voir plus bas). */
+type ChapterData = Omit<Chapter, "course">;
+type TpSessionData = Omit<TpSession, "course">;
+
+const strategiesParts: Part[] = [
   {
     id: "A",
     title: "Partie A — La décision individuelle",
@@ -71,7 +113,7 @@ export const parts: Part[] = [
   },
 ];
 
-export const chapters: Chapter[] = [
+const strategiesChaptersData: ChapterData[] = [
   {
     id: "a1",
     part: "A",
@@ -291,7 +333,7 @@ export const chapters: Chapter[] = [
   },
 ];
 
-export const tpSessions: TpSession[] = [
+const strategiesTpData: TpSessionData[] = [
   {
     number: 1,
     slug: "session-1",
@@ -363,29 +405,100 @@ export const tpSessions: TpSession[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* Helpers                                                             */
+/* Construction des cours                                              */
 /* ------------------------------------------------------------------ */
 
-export function getChapter(id: ChapterId): Chapter {
-  const c = chapters.find((ch) => ch.id === id);
-  if (!c) throw new Error(`Chapitre inconnu : ${id}`);
-  return c;
-}
-
-export function getSection(chapterId: ChapterId, sectionId: string): ChapterSection | undefined {
-  return getChapter(chapterId).sections.find((s) => s.id === sectionId);
-}
-
-export function adjacentChapters(id: ChapterId): { prev?: Chapter; next?: Chapter } {
-  const idx = chapters.findIndex((c) => c.id === id);
+/** Injecte le champ `course` dans les données brutes d'un cours. */
+function buildCourse(
+  meta: Omit<Course, "parts" | "chapters" | "tpSessions">,
+  parts: Part[],
+  chaptersData: ChapterData[],
+  tpData: TpSessionData[],
+): Course {
   return {
-    prev: idx > 0 ? chapters[idx - 1] : undefined,
-    next: idx < chapters.length - 1 ? chapters[idx + 1] : undefined,
+    ...meta,
+    parts,
+    chapters: chaptersData.map((c) => ({ ...c, course: meta.id })),
+    tpSessions: tpData.map((t) => ({ ...t, course: meta.id })),
   };
 }
 
-export function getTpSession(number: number): TpSession {
-  const s = tpSessions.find((t) => t.number === number);
-  if (!s) throw new Error(`Séance de TP inconnue : ${number}`);
+const strategiesCourse: Course = buildCourse(
+  {
+    id: "strategies",
+    slug: "strategies",
+    code: "ECGEB366",
+    title: "Stratégies et Décisions Économiques",
+    shortTitle: "Stratégies économiques",
+    tagline: "La décision individuelle et les interactions stratégiques.",
+    description:
+      "Comment un individu choisit seul (préférences, temps, risque), puis comment les choix s'entremêlent : théorie des jeux, contrats et incitations, coopération répétée et information incomplète.",
+    theme: {
+      gradient: "from-indigo-600 to-violet-700",
+      badge: "bg-indigo-100 text-indigo-800",
+      text: "text-indigo-700",
+      soft: "bg-indigo-50",
+    },
+  },
+  strategiesParts,
+  strategiesChaptersData,
+  strategiesTpData,
+);
+
+/** Tous les cours de la plateforme. Le contenu d'un cours peut être vide
+ * (chapitres/TP à venir) : la home l'affichera comme « bientôt disponible ». */
+export const courses: Course[] = [strategiesCourse];
+
+/* ------------------------------------------------------------------ */
+/* Helpers (bornés au cours)                                           */
+/* ------------------------------------------------------------------ */
+
+export function getCourse(idOrSlug: string): Course {
+  const c = courses.find((co) => co.id === idOrSlug || co.slug === idOrSlug);
+  if (!c) throw new Error(`Cours inconnu : ${idOrSlug}`);
+  return c;
+}
+
+export function findCourse(idOrSlug: string): Course | undefined {
+  return courses.find((co) => co.id === idOrSlug || co.slug === idOrSlug);
+}
+
+export function getChapter(courseId: CourseId, chapterId: string): Chapter {
+  const c = getCourse(courseId).chapters.find((ch) => ch.id === chapterId || ch.slug === chapterId);
+  if (!c) throw new Error(`Chapitre inconnu : ${courseId}/${chapterId}`);
+  return c;
+}
+
+export function findChapterBySlug(courseId: CourseId, slug: string): Chapter | undefined {
+  return getCourse(courseId).chapters.find((ch) => ch.slug === slug);
+}
+
+export function getSection(
+  courseId: CourseId,
+  chapterId: string,
+  sectionId: string,
+): ChapterSection | undefined {
+  return getChapter(courseId, chapterId).sections.find((s) => s.id === sectionId);
+}
+
+export function adjacentChapters(
+  courseId: CourseId,
+  chapterId: string,
+): { prev?: Chapter; next?: Chapter } {
+  const list = getCourse(courseId).chapters;
+  const idx = list.findIndex((c) => c.id === chapterId);
+  return {
+    prev: idx > 0 ? list[idx - 1] : undefined,
+    next: idx >= 0 && idx < list.length - 1 ? list[idx + 1] : undefined,
+  };
+}
+
+export function getTpSession(courseId: CourseId, number: number): TpSession {
+  const s = getCourse(courseId).tpSessions.find((t) => t.number === number);
+  if (!s) throw new Error(`Séance de TP inconnue : ${courseId}/${number}`);
   return s;
+}
+
+export function findTpSessionBySlug(courseId: CourseId, slug: string): TpSession | undefined {
+  return getCourse(courseId).tpSessions.find((t) => t.slug === slug);
 }

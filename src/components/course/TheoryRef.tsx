@@ -1,10 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { BookOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { getChapter, getSection, type ChapterId } from "@/data/course";
+import { getChapter, getCourse, getSection, type ChapterId, type CourseId } from "@/data/course";
+import { useCourse } from "@/components/course/CourseContext";
 
 export interface TheoryRefSpec {
   chapter: ChapterId;
+  /** cours cible ; par défaut le cours courant (les renvois sont intra-cours) */
+  course?: CourseId;
   /** id de section (ancre) dans le chapitre ; omis = lien vers le chapitre */
   section?: string;
   /** libellé personnalisé (par défaut : titre de la section) */
@@ -12,14 +15,23 @@ export interface TheoryRefSpec {
 }
 
 /** Pastille cliquable renvoyant vers la partie de théorie pertinente. */
-export function TheoryRef({ chapter, section, label, className }: TheoryRefSpec & { className?: string }) {
-  const ch = getChapter(chapter);
-  const sec = section ? getSection(chapter, section) : undefined;
+export function TheoryRef({
+  chapter,
+  course,
+  section,
+  label,
+  className,
+}: TheoryRefSpec & { className?: string }) {
+  const { courseId } = useCourse();
+  const targetCourseId = course ?? courseId;
+  const courseSlug = getCourse(targetCourseId).slug;
+  const ch = getChapter(targetCourseId, chapter);
+  const sec = section ? getSection(targetCourseId, chapter, section) : undefined;
   const text = label ?? sec?.title ?? ch.title;
   return (
     <Link
-      to="/theorie/$chapterId"
-      params={{ chapterId: ch.slug }}
+      to="/$courseSlug/theorie/$chapterId"
+      params={{ courseSlug, chapterId: ch.slug }}
       hash={section}
       className={cn(
         "inline-flex max-w-full items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold transition-colors",

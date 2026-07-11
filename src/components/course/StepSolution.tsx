@@ -1,8 +1,9 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { CheckCircle2, ChevronDown, Eye, ListChecks, RotateCcw, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { markExerciseDone, registerExercise, useProgress } from "@/lib/progress";
+import { markExerciseDone, registerExercise, scopedKey, useProgress } from "@/lib/progress";
 import { TheoryRefList, type TheoryRefSpec } from "@/components/course/TheoryRef";
+import { useCourseOptional } from "@/components/course/CourseContext";
 
 export interface SolutionStep {
   /** titre court de l'étape, ex. "Poser la contrainte de budget" */
@@ -51,16 +52,19 @@ export function ExerciseBlock({
 }: ExerciseBlockProps) {
   const [revealed, setRevealed] = useState(0);
   const progress = useProgress();
-  const done = (progress.doneExercises[scope] ?? []).includes(id);
+  // Scope préfixé par le cours courant, pour cloisonner la progression.
+  const courseCtx = useCourseOptional();
+  const fullScope = courseCtx ? scopedKey(courseCtx.courseId, scope) : scope;
+  const done = (progress.doneExercises[fullScope] ?? []).includes(id);
   const allRevealed = revealed >= steps.length;
 
   useEffect(() => {
-    registerExercise(scope, id);
-  }, [scope, id]);
+    registerExercise(fullScope, id);
+  }, [fullScope, id]);
 
   useEffect(() => {
-    if (allRevealed && steps.length > 0) markExerciseDone(scope, id);
-  }, [allRevealed, scope, id, steps.length]);
+    if (allRevealed && steps.length > 0) markExerciseDone(fullScope, id);
+  }, [allRevealed, fullScope, id, steps.length]);
 
   return (
     <article

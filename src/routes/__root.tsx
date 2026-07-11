@@ -25,9 +25,9 @@ function NotFoundComponent() {
   );
 }
 
-const TITLE = "Stratégies économiques — cours interactif ECGEB366";
+const TITLE = "Cours d'économie interactifs";
 const DESCRIPTION =
-  "Toute la théorie du cours ECGEB366 (décision individuelle, théorie des jeux, contrats) expliquée avec des animations interactives, des quiz de compréhension et les TP résolus étape par étape.";
+  "Des cours d'économie expliqués pas à pas : théorie claire, animations interactives, quiz de compréhension au fil de la lecture et TP résolus étape par étape.";
 
 export const Route = createRootRoute({
   head: () => ({

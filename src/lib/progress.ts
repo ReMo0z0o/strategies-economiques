@@ -1,14 +1,20 @@
 /*
  * Suivi de progression de l'étudiant, persisté en localStorage.
  *
- * Un "scope" est une page (chapitre de théorie "a1"…"b4" ou séance de TP
- * "tp1"…"tp4"). Les quiz et exercices s'enregistrent au montage, ce qui
- * permet de connaître le dénominateur (total) d'une page dès qu'elle a été
- * visitée une fois.
+ * Un "scope" est une page identifiée par cours : "{courseId}:{localId}", où
+ * localId est un id de chapitre ("a1"…) ou un scope de TP ("tp1"…). Le
+ * préfixe de cours cloisonne les deux cours dans le même stockage. Les quiz
+ * et exercices s'enregistrent au montage, ce qui permet de connaître le
+ * dénominateur (total) d'une page dès qu'elle a été visitée une fois.
  */
 import { useSyncExternalStore } from "react";
 
 export type QuizResult = "correct" | "wrong";
+
+/** Construit le scope de progression complet, préfixé par le cours. */
+export function scopedKey(courseId: string, localId: string): string {
+  return `${courseId}:${localId}`;
+}
 
 export interface ProgressState {
   /** scope -> quizId -> meilleur résultat obtenu */
@@ -23,7 +29,10 @@ export interface ProgressState {
   visited: Record<string, true>;
 }
 
-const KEY = "ecgeb366-progress-v1";
+const KEY = "eco-progress-v2";
+/** Ancienne clé mono-cours : scopes non préfixés, tous relatifs à Stratégies. */
+const LEGACY_KEY = "ecgeb366-progress-v1";
+const LEGACY_COURSE = "strategies";
 
 const EMPTY: ProgressState = {
   quiz: {},
@@ -36,19 +45,42 @@ const EMPTY: ProgressState = {
 let state: ProgressState = load();
 const listeners = new Set<() => void>();
 
+/** Préfixe toutes les clés de scope d'un Record par "{course}:". */
+function prefixRecord<T>(rec: Record<string, T>, course: string): Record<string, T> {
+  const out: Record<string, T> = {};
+  for (const [k, v] of Object.entries(rec)) out[`${course}:${k}`] = v;
+  return out;
+}
+
+/** Migre la progression mono-cours (v1) vers le format multi-cours (v2). */
+function migrateLegacy(parsed: Partial<ProgressState>): ProgressState {
+  return {
+    quiz: prefixRecord(parsed.quiz ?? {}, LEGACY_COURSE),
+    knownQuiz: prefixRecord(parsed.knownQuiz ?? {}, LEGACY_COURSE),
+    doneExercises: prefixRecord(parsed.doneExercises ?? {}, LEGACY_COURSE),
+    knownExercises: prefixRecord(parsed.knownExercises ?? {}, LEGACY_COURSE),
+    visited: prefixRecord(parsed.visited ?? {}, LEGACY_COURSE),
+  };
+}
+
 function load(): ProgressState {
   if (typeof window === "undefined") return EMPTY;
   try {
     const raw = window.localStorage.getItem(KEY);
-    if (!raw) return { ...EMPTY };
-    const parsed = JSON.parse(raw) as Partial<ProgressState>;
-    return {
-      quiz: parsed.quiz ?? {},
-      knownQuiz: parsed.knownQuiz ?? {},
-      doneExercises: parsed.doneExercises ?? {},
-      knownExercises: parsed.knownExercises ?? {},
-      visited: parsed.visited ?? {},
-    };
+    if (raw) {
+      const parsed = JSON.parse(raw) as Partial<ProgressState>;
+      return {
+        quiz: parsed.quiz ?? {},
+        knownQuiz: parsed.knownQuiz ?? {},
+        doneExercises: parsed.doneExercises ?? {},
+        knownExercises: parsed.knownExercises ?? {},
+        visited: parsed.visited ?? {},
+      };
+    }
+    // Pas de données v2 : tenter une migration depuis l'ancien format v1.
+    const legacy = window.localStorage.getItem(LEGACY_KEY);
+    if (legacy) return migrateLegacy(JSON.parse(legacy) as Partial<ProgressState>);
+    return { ...EMPTY };
   } catch {
     return { ...EMPTY };
   }
@@ -178,13 +210,24 @@ export function scopeStats(s: ProgressState, scope: string): ScopeStats {
   };
 }
 
-export function globalStats(s: ProgressState) {
+/** Agrégat des quiz pour UN cours : ne compte que les scopes "{courseId}:…". */
+export function courseStats(s: ProgressState, courseId: string) {
+  const prefix = `${courseId}:`;
   let totalQuiz = 0;
   let correctQuiz = 0;
+  let doneExercises = 0;
+  let totalExercises = 0;
   for (const scope of Object.keys(s.knownQuiz)) {
+    if (!scope.startsWith(prefix)) continue;
     const st = scopeStats(s, scope);
     totalQuiz += st.totalQuiz;
     correctQuiz += st.correctQuiz;
   }
-  return { totalQuiz, correctQuiz };
+  for (const scope of Object.keys(s.knownExercises)) {
+    if (!scope.startsWith(prefix)) continue;
+    const st = scopeStats(s, scope);
+    totalExercises += st.totalExercises;
+    doneExercises += st.doneExercises;
+  }
+  return { totalQuiz, correctQuiz, totalExercises, doneExercises };
 }
