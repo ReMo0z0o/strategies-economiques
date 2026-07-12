@@ -287,7 +287,7 @@ function CourseHome({ courseId }: { courseId: Course["id"] }) {
                     <h4 className="font-bold leading-snug">{session.title}</h4>
                     <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{session.subtitle}</p>
                     <div className="mt-2 text-xs font-semibold text-muted-foreground">
-                      {session.exerciseCount} exercices
+                      {session.exerciseCount} exercice{session.exerciseCount > 1 ? "s" : ""}
                       {stats.totalExercises > 0 ? ` · ${stats.doneExercises}/${stats.totalExercises} terminés` : ""}
                     </div>
                   </div>

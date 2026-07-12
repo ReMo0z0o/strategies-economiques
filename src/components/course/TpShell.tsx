@@ -65,7 +65,7 @@ export function TpShell({
           </p>
           <div className="mt-5 flex flex-wrap items-center gap-2 text-[13px] font-medium">
             <span className="rounded-full bg-white/15 px-3 py-1 backdrop-blur-sm">
-              {session.exerciseCount} exercices
+              {session.exerciseCount} exercice{session.exerciseCount > 1 ? "s" : ""}
             </span>
             {stats.totalExercises > 0 ? (
               <span className="rounded-full bg-white/15 px-3 py-1 backdrop-blur-sm">

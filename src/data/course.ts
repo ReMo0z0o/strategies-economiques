@@ -495,7 +495,7 @@ const industrielleChaptersData: ChapterData[] = [
       { id: "monopolistique", title: "La concurrence monopolistique" },
       { id: "synthese", title: "À maîtriser absolument" },
     ],
-    tpSessions: [],
+    tpSessions: [1],
   },
   {
     id: "ei2",
@@ -526,7 +526,7 @@ const industrielleChaptersData: ChapterData[] = [
       { id: "differencies", title: "Biens différenciés et concurrence en prix" },
       { id: "synthese", title: "À maîtriser absolument" },
     ],
-    tpSessions: [],
+    tpSessions: [2],
   },
   {
     id: "ei3",
@@ -553,7 +553,7 @@ const industrielleChaptersData: ChapterData[] = [
       { id: "double-marge", title: "La double marginalisation" },
       { id: "synthese", title: "À maîtriser absolument" },
     ],
-    tpSessions: [],
+    tpSessions: [3],
   },
   {
     id: "ei4",
@@ -578,7 +578,76 @@ const industrielleChaptersData: ChapterData[] = [
       { id: "effets-directs-duo", title: "Effets de réseau directs en duopole" },
       { id: "synthese", title: "À maîtriser absolument" },
     ],
-    tpSessions: [],
+    tpSessions: [4],
+  },
+];
+
+const industrielleTpData: TpSessionData[] = [
+  {
+    number: 1,
+    slug: "session-1",
+    scope: "tp1",
+    title: "Le monopole : l'éditeur de livres",
+    subtitle:
+      "L'exercice officiel à préparer sur le chapitre EI1 : recette marginale, optimum du monopole, Lerner, surplus, concurrence parfaite et taxation.",
+    exerciseCount: 1,
+    chapters: ["ei1"],
+    topics: [
+      "Recette totale et recette marginale",
+      "Optimum du monopole (Rm = Cm)",
+      "Élasticité, marge et indice de Lerner",
+      "Surplus et perte sèche",
+      "Comparaison avec la concurrence parfaite",
+    ],
+  },
+  {
+    number: 2,
+    slug: "session-2",
+    scope: "tp2",
+    title: "L'oligopole : bûcherons et dissuasion d'entrée",
+    subtitle:
+      "Les deux exercices officiels du chapitre EI2 : le duopole d'Alice et Baptiste (Cournot, collusion, Stackelberg), puis le monopole menacé par un entrant plus efficace.",
+    exerciseCount: 2,
+    chapters: ["ei2"],
+    topics: [
+      "Demande inverse et fonctions de réaction",
+      "Équilibre de Cournot-Nash",
+      "Collusion et incitation à dévier",
+      "Équilibre de Stackelberg",
+      "Dissuasion d'entrée et production limite",
+    ],
+  },
+  {
+    number: 3,
+    slug: "session-3",
+    scope: "tp3",
+    title: "La discrimination avec coût marginal",
+    subtitle:
+      "L'exercice officiel du chapitre EI3 : l'exemple du cours (consommateurs L et S) revisité avec un coût marginal de 2 — monopole simple, premier et deuxième degré.",
+    exerciseCount: 1,
+    chapters: ["ei3"],
+    topics: [
+      "Monopole simple sans discrimination",
+      "Discrimination du premier degré",
+      "Discrimination du deuxième degré (menu de lots)",
+      "Effet d'un coût marginal positif",
+    ],
+  },
+  {
+    number: 4,
+    slug: "session-4",
+    scope: "tp4",
+    title: "Les effets de réseau : Alice et Baptiste",
+    subtitle:
+      "L'exercice officiel du chapitre EI4 : deux consommateurs, un bien à effet de réseau — demande, matrice de jeu, équilibres de Nash multiples et anticipations.",
+    exerciseCount: 1,
+    chapters: ["ei4"],
+    topics: [
+      "Demande sans puis avec effet de réseau",
+      "Matrice de jeu acheter / ne pas acheter",
+      "Équilibres de Nash multiples",
+      "Demandes auto-réalisatrices",
+    ],
   },
 ];
 
@@ -601,7 +670,7 @@ const industrielleCourse: Course = buildCourse(
   },
   industrielleParts,
   industrielleChaptersData,
-  [],
+  industrielleTpData,
 );
 
 /** Tous les cours de la plateforme. Le contenu d'un cours peut être vide

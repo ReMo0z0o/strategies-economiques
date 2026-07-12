@@ -16,7 +16,10 @@ const registry: Record<CourseId, Record<number, LazyComp>> = {
     4: lazy(() => import("@/tp/session4")),
   },
   industrielle: {
-    // Séances de TP d'Économie industrielle — ajoutées en phase 2.
+    1: lazy(() => import("@/tp/indus-session1")),
+    2: lazy(() => import("@/tp/indus-session2")),
+    3: lazy(() => import("@/tp/indus-session3")),
+    4: lazy(() => import("@/tp/indus-session4")),
   },
 };
 

@@ -130,7 +130,7 @@ function ExercisesIndex({ courseId }: { courseId: Course["id"] }) {
                         );
                       })}
                       <span className="ml-auto inline-flex items-center gap-1 text-sm font-bold text-primary">
-                        {session.exerciseCount} exercices
+                        {session.exerciseCount} exercice{session.exerciseCount > 1 ? "s" : ""}
                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
                       </span>
                     </div>
