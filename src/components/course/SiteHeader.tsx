@@ -47,11 +47,14 @@ export function SiteHeader() {
                     <span className="hidden sm:inline">{course.shortTitle}</span>
                   </>
                 ) : (
-                  "Cours d'économie"
+                  <>
+                    <span className="sm:hidden">Projet Éco.</span>
+                    <span className="hidden sm:inline">Stratégies & décisions éco.</span>
+                  </>
                 )}
               </span>
               <span className="hidden text-[11px] font-medium uppercase tracking-wider text-muted-foreground sm:block">
-                {course ? `${course.code} · cours interactif` : "Plateforme interactive"}
+                {course ? `${course.code} · cours interactif` : "Projet interactif · 2 parties"}
               </span>
             </span>
           </Link>

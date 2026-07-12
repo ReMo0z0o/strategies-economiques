@@ -7,7 +7,7 @@ import { SiteHeader } from "@/components/course/SiteHeader";
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: [{ title: "Cours d'économie interactifs" }],
+    meta: [{ title: "Projet : stratégies et décisions économiques" }],
   }),
   component: HubPage,
 });
@@ -24,15 +24,15 @@ function HubPage() {
         <div className="container relative py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1.5 text-[13px] font-semibold backdrop-blur-sm">
             <GraduationCap className="h-4 w-4" aria-hidden />
-            Plateforme d'étude interactive
+            Projet : stratégies et décisions économiques
           </div>
           <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">
             Comprends l'économie en la <span className="text-amber-300">manipulant</span>.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/85">
-            Des cours d'économie expliqués pas à pas : théorie claire, graphiques que tu pilotes
+            Le projet en deux parties, expliqué pas à pas : théorie claire, graphiques que tu pilotes
             toi-même, quiz de compréhension au fil de la lecture, et tous les TP résolus étape par
-            étape. Choisis ton cours pour commencer.
+            étape. Choisis une partie pour commencer.
           </p>
           <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/80">
             <span className="flex items-center gap-2">
@@ -51,9 +51,9 @@ function HubPage() {
       {/* Choix du cours */}
       <section className="container py-12 sm:py-16">
         <div className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary">
-          <GraduationCap className="h-4 w-4" aria-hidden /> Les cours
+          <GraduationCap className="h-4 w-4" aria-hidden /> Le projet en deux parties
         </div>
-        <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Choisis ton cours</h2>
+        <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Choisis une partie</h2>
 
         <div className="mt-6 grid gap-5 md:grid-cols-2">
           {courses.map((course) => {
@@ -141,7 +141,7 @@ function HubPage() {
         <div className="container flex flex-col items-center justify-between gap-3 py-8 text-sm text-muted-foreground sm:flex-row">
           <span className="flex items-center gap-2">
             <LineChart className="h-4 w-4 text-primary" aria-hidden />
-            Plateforme d'étude interactive en économie
+            Projet : stratégies et décisions économiques · support d'étude interactif
           </span>
           <span>Fait par des étudiants, pour des étudiants 🧑‍🎓</span>
         </div>

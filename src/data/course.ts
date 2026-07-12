@@ -427,9 +427,9 @@ const strategiesCourse: Course = buildCourse(
   {
     id: "strategies",
     slug: "strategies",
-    code: "ECGEB366",
-    title: "Stratégies et Décisions Économiques",
-    shortTitle: "Stratégies économiques",
+    code: "Partie 1",
+    title: "Théorie de la décision et Théorie des jeux",
+    shortTitle: "Théorie de la décision & jeux",
     tagline: "La décision individuelle et les interactions stratégiques.",
     description:
       "Comment un individu choisit seul (préférences, temps, risque), puis comment les choix s'entremêlent : théorie des jeux, contrats et incitations, coopération répétée et information incomplète.",
@@ -655,7 +655,7 @@ const industrielleCourse: Course = buildCourse(
   {
     id: "industrielle",
     slug: "industrielle",
-    code: "ÉCO INDUS",
+    code: "Partie 2",
     title: "Économie industrielle",
     shortTitle: "Économie industrielle",
     tagline: "Monopole, oligopole, discrimination et plateformes : le pouvoir de marché sous toutes ses formes.",

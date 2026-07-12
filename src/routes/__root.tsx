@@ -25,9 +25,9 @@ function NotFoundComponent() {
   );
 }
 
-const TITLE = "Cours d'économie interactifs";
+const TITLE = "Projet : stratégies et décisions économiques";
 const DESCRIPTION =
-  "Des cours d'économie expliqués pas à pas : théorie claire, animations interactives, quiz de compréhension au fil de la lecture et TP résolus étape par étape.";
+  "Le projet en deux parties (Théorie de la décision et Théorie des jeux · Économie industrielle) expliqué pas à pas : théorie claire, animations interactives, quiz de compréhension au fil de la lecture et TP résolus étape par étape.";
 
 export const Route = createRootRoute({
   head: () => ({

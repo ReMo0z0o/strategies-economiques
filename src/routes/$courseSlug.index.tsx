@@ -28,7 +28,7 @@ export const Route = createFileRoute("/$courseSlug/")({
         {
           title: course
             ? `${course.shortTitle} — cours interactif`
-            : "Cours d'économie interactifs",
+            : "Projet : stratégies et décisions économiques",
         },
       ],
     };
