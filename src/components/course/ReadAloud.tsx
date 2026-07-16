@@ -7,6 +7,7 @@ import {
   pause,
   play,
   resume,
+  setVoiceGender,
   speechSupported,
   stop,
   useSpeech,
@@ -96,6 +97,19 @@ export function ReadAloudButton({
       <span className="px-1 text-[11px] font-bold tabular-nums">
         {Math.min(speech.index + 1, speech.total)}/{speech.total}
       </span>
+      <button
+        type="button"
+        onClick={() => setVoiceGender(speech.voiceGender === "female" ? "male" : "female")}
+        className="flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[12px] font-bold text-muted-foreground transition-colors hover:bg-background/60 hover:text-foreground"
+        title={
+          speech.voiceGender === "female"
+            ? "Voix féminine (cliquer pour masculine)"
+            : "Voix masculine (cliquer pour féminine)"
+        }
+        aria-label="Changer de voix : féminine ou masculine"
+      >
+        {speech.voiceGender === "female" ? "♀" : "♂"}
+      </button>
       <button
         type="button"
         onClick={cycleRate}

@@ -6,11 +6,16 @@
  * Singleton exposé via un hook useSpeech() (même patron que lib/progress.ts).
  * On lit morceau par morceau (un bloc de prose à la fois) : c'est robuste
  * entre navigateurs et ça permet de surligner le passage en cours.
+ *
+ * L'étudiant peut choisir une voix féminine ou masculine : on sélectionne la
+ * meilleure voix française du genre demandé (heuristique sur le nom), avec un
+ * repli propre si l'appareil n'en propose qu'une.
  */
 import { useSyncExternalStore } from "react";
 import type { SpeechChunk } from "@/lib/speechText";
 
 export type SpeechStatus = "idle" | "playing" | "paused";
+export type VoiceGender = "female" | "male";
 
 export interface SpeechState {
   status: SpeechStatus;
@@ -19,6 +24,7 @@ export interface SpeechState {
   index: number;
   total: number;
   rate: number;
+  voiceGender: VoiceGender;
 }
 
 const synth: SpeechSynthesis | null =
@@ -26,9 +32,28 @@ const synth: SpeechSynthesis | null =
 
 export const speechSupported = Boolean(synth);
 
-let state: SpeechState = { status: "idle", activeId: null, index: 0, total: 0, rate: 1 };
+const GENDER_KEY = "eco-voice-gender";
+
+function loadGender(): VoiceGender {
+  if (typeof window === "undefined") return "female";
+  try {
+    return window.localStorage.getItem(GENDER_KEY) === "male" ? "male" : "female";
+  } catch {
+    return "female";
+  }
+}
+
+let state: SpeechState = {
+  status: "idle",
+  activeId: null,
+  index: 0,
+  total: 0,
+  rate: 1,
+  voiceGender: loadGender(),
+};
 let chunks: SpeechChunk[] = [];
 let highlighted: HTMLElement | null = null;
+let token = 0; // jeton anti-callbacks périmés (annulations, changements de voix)
 const listeners = new Set<() => void>();
 
 function emit() {
@@ -51,26 +76,49 @@ export function useSpeech(): SpeechState {
 }
 
 /* ------------------------------------------------------------------ */
-/* Choix de la voix française                                          */
+/* Sélection de la voix française par genre                            */
 /* ------------------------------------------------------------------ */
 
-let frVoice: SpeechSynthesisVoice | null = null;
+// Heuristiques sur les noms de voix (macOS, Windows, Chrome, Android…).
+const FEMALE_RE =
+  /amélie|amelie|aurélie|aurelie|audrey|julie|hortense|virginie|marie|léa|\blea\b|chantal|sabine|céline|celine|élise|elise|charlotte|manon|alice|jolie|google|female|femme|woman/i;
+const MALE_RE =
+  /thomas|paul|claude|nicolas|henri|mathieu|matthieu|guillaume|daniel|pierre|jacques|antoine|male|homme|\bman\b/i;
 
-function pickVoice() {
+let frVoices: SpeechSynthesisVoice[] = [];
+
+function refreshVoices() {
   if (!synth) return;
-  const voices = synth.getVoices();
-  if (!voices.length) return;
-  const fr = voices.filter((v) => /^fr(-|_|$)/i.test(v.lang));
-  frVoice =
-    fr.find((v) => /amélie|amelie|audrey|virginie|thomas|google|natural|premium/i.test(v.name)) ??
-    fr[0] ??
-    null;
+  frVoices = synth.getVoices().filter((v) => /^fr(-|_|$)/i.test(v.lang));
+}
+
+/** Meilleures voix pour un genre : celles qui matchent, sinon les « neutres ». */
+function voicesForGender(gender: VoiceGender): SpeechSynthesisVoice[] {
+  const wanted = gender === "female" ? FEMALE_RE : MALE_RE;
+  const other = gender === "female" ? MALE_RE : FEMALE_RE;
+  const matches = frVoices.filter((v) => wanted.test(v.name));
+  if (matches.length) return matches;
+  const neutral = frVoices.filter((v) => !other.test(v.name));
+  return neutral.length ? neutral : frVoices;
+}
+
+function currentVoice(): SpeechSynthesisVoice | null {
+  const list = voicesForGender(state.voiceGender);
+  return list[0] ?? frVoices[0] ?? null;
+}
+
+/** Genres réellement disponibles sur l'appareil (pour l'UI). */
+export function availableGenders(): { female: boolean; male: boolean } {
+  return {
+    female: frVoices.some((v) => FEMALE_RE.test(v.name)),
+    male: frVoices.some((v) => MALE_RE.test(v.name)),
+  };
 }
 
 if (synth) {
-  pickVoice();
+  refreshVoices();
   // La liste des voix arrive de façon asynchrone sur certains navigateurs.
-  synth.addEventListener?.("voiceschanged", pickVoice);
+  synth.addEventListener?.("voiceschanged", refreshVoices);
 }
 
 /* ------------------------------------------------------------------ */
@@ -101,26 +149,25 @@ function highlight(el: HTMLElement | null) {
 /* Lecture                                                             */
 /* ------------------------------------------------------------------ */
 
-function speakIndex(i: number) {
-  if (!synth) return;
+function speakFrom(i: number, myToken: number) {
+  if (!synth || myToken !== token) return;
   if (i >= chunks.length) {
     stop();
     return;
   }
   setState({ index: i });
-  const chunk = chunks[i];
-  highlight(chunk.el ?? null);
+  highlight(chunks[i].el ?? null);
 
-  const utter = new SpeechSynthesisUtterance(chunk.text);
+  const utter = new SpeechSynthesisUtterance(chunks[i].text);
   utter.lang = "fr-FR";
   utter.rate = state.rate;
-  if (frVoice) utter.voice = frVoice;
+  const voice = currentVoice();
+  if (voice) utter.voice = voice;
   utter.onend = () => {
-    if (state.status === "playing") speakIndex(i + 1);
+    if (myToken === token && state.status === "playing") speakFrom(i + 1, myToken);
   };
   utter.onerror = () => {
-    // On saute le morceau fautif pour ne pas bloquer la lecture.
-    if (state.status === "playing") speakIndex(i + 1);
+    if (myToken === token && state.status === "playing") speakFrom(i + 1, myToken);
   };
   synth.speak(utter);
 }
@@ -128,11 +175,13 @@ function speakIndex(i: number) {
 /** Démarre la lecture d'une liste de morceaux pour l'instance `id`. */
 export function play(id: string, newChunks: SpeechChunk[]) {
   if (!synth) return;
+  token += 1;
   synth.cancel();
+  refreshVoices();
   chunks = newChunks.filter((c) => c.text.trim().length > 0);
   if (chunks.length === 0) return;
   setState({ status: "playing", activeId: id, index: 0, total: chunks.length });
-  speakIndex(0);
+  speakFrom(0, token);
 }
 
 export function pause() {
@@ -148,6 +197,7 @@ export function resume() {
 }
 
 export function stop() {
+  token += 1;
   if (synth) synth.cancel();
   clearHighlight();
   chunks = [];
@@ -161,4 +211,22 @@ export function cycleRate() {
   const idx = RATES.indexOf(state.rate);
   const next = RATES[(idx + 1) % RATES.length];
   setState({ rate: next });
+}
+
+/** Choisit la voix féminine ou masculine ; relit le morceau courant si lecture. */
+export function setVoiceGender(gender: VoiceGender) {
+  try {
+    window.localStorage.setItem(GENDER_KEY, gender);
+  } catch {
+    /* stockage indisponible : la préférence ne sera pas mémorisée */
+  }
+  const wasPlaying = state.status === "playing";
+  const at = state.index;
+  setState({ voiceGender: gender });
+  // Reprend immédiatement le passage courant avec la nouvelle voix.
+  if (synth && wasPlaying) {
+    token += 1;
+    synth.cancel();
+    speakFrom(at, token);
+  }
 }
