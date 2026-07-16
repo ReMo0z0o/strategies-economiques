@@ -27,6 +27,7 @@ export function InteractiveCard({
 }) {
   return (
     <div
+      data-no-speech="true"
       className={cn(
         "my-6 overflow-hidden rounded-2xl border-2 border-primary/25 bg-card shadow-sm",
         className,

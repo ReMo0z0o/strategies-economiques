@@ -14,7 +14,10 @@ function render(tex: string, displayMode: boolean): string {
     throwOnError: false,
     displayMode,
     strict: false,
-    output: "html",
+    // htmlAndMathml : embarque le MathML (avec le LaTeX source en annotation).
+    // Invisible à l'écran, mais lisible par les lecteurs d'écran ET récupéré
+    // par le mode « lecture à voix haute » pour énoncer les formules.
+    output: "htmlAndMathml",
   });
 }
 

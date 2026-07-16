@@ -1,9 +1,10 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { CheckCircle2, ChevronDown, Eye, ListChecks, RotateCcw, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { markExerciseDone, registerExercise, scopedKey, useProgress } from "@/lib/progress";
 import { TheoryRefList, type TheoryRefSpec } from "@/components/course/TheoryRef";
 import { useCourseOptional } from "@/components/course/CourseContext";
+import { ReadAloudButton } from "@/components/course/ReadAloud";
 
 export interface SolutionStep {
   /** titre court de l'étape, ex. "Poser la contrainte de budget" */
@@ -51,6 +52,7 @@ export function ExerciseBlock({
   className,
 }: ExerciseBlockProps) {
   const [revealed, setRevealed] = useState(0);
+  const articleRef = useRef<HTMLElement>(null);
   const progress = useProgress();
   // Scope préfixé par le cours courant, pour cloisonner la progression.
   const courseCtx = useCourseOptional();
@@ -68,6 +70,7 @@ export function ExerciseBlock({
 
   return (
     <article
+      ref={articleRef}
       id={id}
       className={cn(
         "my-8 scroll-mt-24 overflow-hidden rounded-2xl border bg-card shadow-sm",
@@ -82,6 +85,7 @@ export function ExerciseBlock({
             {number}
           </span>
           <h2 className="min-w-0 flex-1 text-lg font-bold leading-snug sm:text-xl">{title}</h2>
+          <ReadAloudButton targetRef={articleRef} label="Écouter l'exercice" />
           {done ? (
             <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-bold text-emerald-800">
               <CheckCircle2 className="h-3.5 w-3.5" aria-hidden /> Terminé

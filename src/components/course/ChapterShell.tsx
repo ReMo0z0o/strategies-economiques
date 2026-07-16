@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, BookOpenCheck, Dumbbell, ListChecks } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -11,6 +11,7 @@ import {
 import { markVisited, scopedKey, scopeStats, useProgress } from "@/lib/progress";
 import { SiteHeader } from "@/components/course/SiteHeader";
 import { useCourse } from "@/components/course/CourseContext";
+import { ReadAloudButton } from "@/components/course/ReadAloud";
 
 /* ------------------------------------------------------------------ */
 /* Section de chapitre                                                 */
@@ -31,15 +32,26 @@ export function Section({
   children: ReactNode;
   className?: string;
 }) {
+  const ref = useRef<HTMLElement>(null);
   return (
-    <section id={id} data-chapter-section={id} className={cn("scroll-mt-24 py-8 sm:py-10", className)}>
-      <header className="mb-5">
-        {kicker ? (
-          <div className="mb-1 text-sm font-bold uppercase tracking-wider text-primary">
-            {kicker}
-          </div>
-        ) : null}
-        <h2 className="text-2xl font-bold tracking-tight sm:text-[1.7rem]">{title}</h2>
+    <section
+      ref={ref}
+      id={id}
+      data-chapter-section={id}
+      className={cn("scroll-mt-24 py-8 sm:py-10", className)}
+    >
+      <header className="mb-5 flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          {kicker ? (
+            <div className="mb-1 text-sm font-bold uppercase tracking-wider text-primary">
+              {kicker}
+            </div>
+          ) : null}
+          <h2 className="text-2xl font-bold tracking-tight sm:text-[1.7rem]">{title}</h2>
+        </div>
+        <div className="mt-1">
+          <ReadAloudButton targetRef={ref} />
+        </div>
       </header>
       <div className="course-prose">{children}</div>
     </section>

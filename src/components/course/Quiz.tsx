@@ -83,6 +83,7 @@ export function Quiz({
 
   return (
     <div
+      data-no-speech="true"
       className={cn(
         "my-6 rounded-2xl border-2 bg-card p-4 shadow-sm sm:p-5",
         checked

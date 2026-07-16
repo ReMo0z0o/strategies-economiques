@@ -72,7 +72,7 @@ export function PayoffMatrix({
   const markNash = interactive && showNash;
 
   return (
-    <figure className={cn("my-6", className)}>
+    <figure data-no-speech="true" className={cn("my-6", className)}>
       <div className="overflow-x-auto">
         <div className="inline-block min-w-0 rounded-2xl border bg-card p-4 shadow-sm sm:p-5">
           <div className="mb-2 text-center text-xs font-bold uppercase tracking-wider text-muted-foreground">
