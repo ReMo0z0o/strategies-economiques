@@ -1149,7 +1149,7 @@ export default function Chapter() {
             <M tex="p = 0{,}40" /> €. S'il couvre <M tex="C" /> euros, il paie <M tex="0{,}4C" />{" "}
             tout de suite et touche <M tex="C" /> en cas de vol :
           </p>
-          <MB tex="y = 100 - 0{,}4C \ \text{(pas de vol, 70 %)} \qquad x = 100 - 0{,}4C - 70 + C = 30 + 0{,}6C \ \text{(vol, 30 %)}" />
+          <MB tex="\begin{aligned} y &= 100 - 0{,}4C && \text{(pas de vol, 70\%)} \\[2pt] x &= 100 - 0{,}4C - 70 + C = 30 + 0{,}6C && \text{(vol, 30\%)} \end{aligned}" />
           <p>
             Chaque euro couvert <em>rapproche</em> les deux scénarios : −0,40 € dans le bon,
             +0,60 € dans le mauvais. À couverture complète (<M tex="C = 70" />

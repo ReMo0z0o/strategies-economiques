@@ -209,6 +209,17 @@
   padding-block: 0.25rem;
 }
 
+/*
+ * Formule encore trop longue après réduction automatique (voir MB dans
+ * components/course/Math.tsx) : elle reste défilable horizontalement. On rend
+ * la barre de défilement discrète mais visible, pour signaler qu'il y a du
+ * contenu au-delà du bord droit.
+ */
+[data-math-scrollable="true"] {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
 /* Lecture à voix haute : surlignage du passage en cours de lecture */
 [data-speaking="true"] {
   background-color: oklch(0.51 0.19 272 / 0.12);

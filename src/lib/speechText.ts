@@ -19,8 +19,10 @@ export interface SpeechChunk {
 const SKIP_SELECTOR =
   'button, a[href], input, select, textarea, svg, canvas, [role="button"], [data-no-speech="true"], [aria-hidden="true"]';
 
-/* Éléments-blocs porteurs de prose. */
-const BLOCK_SELECTOR = "h1,h2,h3,h4,h5,h6,p,li,figcaption,blockquote,summary,dt,dd,th,td,caption";
+/* Éléments-blocs porteurs de prose. [data-math-block] = formule centrée (MB) :
+ * sans lui, seules les formules en ligne seraient énoncées. */
+const BLOCK_SELECTOR =
+  "h1,h2,h3,h4,h5,h6,p,li,figcaption,blockquote,summary,dt,dd,th,td,caption,[data-math-block]";
 
 const GREEK: Record<string, string> = {
   alpha: "alpha",
