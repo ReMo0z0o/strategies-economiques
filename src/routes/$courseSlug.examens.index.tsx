@@ -1,12 +1,20 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
-import { AlarmClock, Download, FileCheck2, FileText, GraduationCap, Printer } from "lucide-react";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import {
+  AlarmClock,
+  Download,
+  FileCheck2,
+  FileText,
+  GraduationCap,
+  ListChecks,
+  Printer,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { findCourse, type Course } from "@/data/course";
 import { examsForCourse, examPdfUrl } from "@/data/exams";
 import { SiteHeader } from "@/components/course/SiteHeader";
 import { CourseProvider } from "@/components/course/CourseContext";
 
-export const Route = createFileRoute("/$courseSlug/examens")({
+export const Route = createFileRoute("/$courseSlug/examens/")({
   loader: ({ params }) => {
     const course = findCourse(params.courseSlug);
     if (!course) throw notFound();
@@ -32,6 +40,7 @@ function ExamsRoute() {
 
 function ExamsPage({ courseId }: { courseId: Course["id"] }) {
   const course = findCourse(courseId)!;
+  const slug = course.slug;
   const exams = examsForCourse(courseId);
 
   return (
@@ -129,8 +138,16 @@ function ExamsPage({ courseId }: { courseId: Course["id"] }) {
                       className="inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-bold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                     >
                       <FileCheck2 className="h-4 w-4" aria-hidden />
-                      Corrigé détaillé (PDF)
+                      Corrigé (PDF)
                     </a>
+                    <Link
+                      to="/$courseSlug/examens/$examId"
+                      params={{ courseSlug: slug, examId: exam.id }}
+                      className="inline-flex items-center gap-2 rounded-xl border-2 border-primary/40 bg-accent/50 px-4 py-2 text-sm font-bold text-primary transition-colors hover:bg-accent"
+                    >
+                      <ListChecks className="h-4 w-4" aria-hidden />
+                      Résolution guidée pas à pas
+                    </Link>
                     <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
                       <Download className="h-3 w-3" aria-hidden /> à imprimer
                     </span>
