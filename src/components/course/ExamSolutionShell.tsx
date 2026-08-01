@@ -62,14 +62,16 @@ export function ExamSolutionShell({ examId, children }: { examId: string; childr
             </span>
             <a
               href={examPdfUrl(exam.id, "enonce")}
-              download
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full bg-white/25 px-3 py-1 backdrop-blur-sm transition-colors hover:bg-white/35"
             >
               <FileText className="h-3.5 w-3.5" aria-hidden /> Énoncé PDF
             </a>
             <a
               href={examPdfUrl(exam.id, "corrige")}
-              download
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full bg-white/25 px-3 py-1 backdrop-blur-sm transition-colors hover:bg-white/35"
             >
               <FileCheck2 className="h-3.5 w-3.5" aria-hidden /> Corrigé PDF

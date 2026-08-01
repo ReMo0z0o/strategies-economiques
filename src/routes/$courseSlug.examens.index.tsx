@@ -57,8 +57,8 @@ function ExamsPage({ courseId }: { courseId: Course["id"] }) {
           </h1>
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
             Trois examens blancs au format des vraies évaluations du cours : page de garde, barème,
-            cadres de réponse. Télécharge l'énoncé en PDF, imprime-le, lance un minuteur — et ne
-            regarde le corrigé qu'à la fin.
+            cadres de réponse. Ouvre l'énoncé en PDF, imprime-le, lance un minuteur — et ne regarde
+            le corrigé qu'à la fin.
           </p>
         </div>
       </div>
@@ -71,8 +71,9 @@ function ExamsPage({ courseId }: { courseId: Course["id"] }) {
           </div>
           <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm leading-relaxed text-amber-900">
             <li>
-              Télécharge et <strong>imprime l'énoncé</strong> (les cadres de réponse sont faits pour
-              écrire dedans, comme le jour J).
+              Ouvre l'énoncé dans le navigateur, consulte-le, puis{" "}
+              <strong>télécharge-le ou imprime-le</strong> depuis le lecteur PDF (les cadres de
+              réponse sont faits pour écrire dedans, comme le jour J).
             </li>
             <li>
               Mets un <strong>minuteur ({exams[0]?.duration ?? "…"})</strong>, sans notes ni
@@ -126,15 +127,17 @@ function ExamsPage({ courseId }: { courseId: Course["id"] }) {
                   <div className="mt-4 flex flex-wrap items-center gap-2.5">
                     <a
                       href={examPdfUrl(exam.id, "enonce")}
-                      download
+                      target="_blank"
+                      rel="noreferrer"
                       className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90"
                     >
                       <FileText className="h-4 w-4" aria-hidden />
-                      Télécharger l'énoncé (PDF)
+                      Consulter l'énoncé (PDF)
                     </a>
                     <a
                       href={examPdfUrl(exam.id, "corrige")}
-                      download
+                      target="_blank"
+                      rel="noreferrer"
                       className="inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-bold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                     >
                       <FileCheck2 className="h-4 w-4" aria-hidden />
@@ -149,7 +152,8 @@ function ExamsPage({ courseId }: { courseId: Course["id"] }) {
                       Résolution guidée pas à pas
                     </Link>
                     <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
-                      <Download className="h-3 w-3" aria-hidden /> à imprimer
+                      <Download className="h-3 w-3" aria-hidden /> s'ouvre dans un onglet ·
+                      téléchargeable depuis le lecteur
                     </span>
                   </div>
                 </div>
