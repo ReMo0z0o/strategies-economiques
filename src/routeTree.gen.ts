@@ -15,6 +15,7 @@ import { Route as ExercicesIndexRouteImport } from './routes/exercices.index'
 import { Route as CourseSlugIndexRouteImport } from './routes/$courseSlug.index'
 import { Route as TheorieChapterIdRouteImport } from './routes/theorie.$chapterId'
 import { Route as ExercicesSessionSlugRouteImport } from './routes/exercices.$sessionSlug'
+import { Route as CourseSlugExamensRouteImport } from './routes/$courseSlug.examens'
 import { Route as CourseSlugTheorieIndexRouteImport } from './routes/$courseSlug.theorie.index'
 import { Route as CourseSlugExercicesIndexRouteImport } from './routes/$courseSlug.exercices.index'
 import { Route as CourseSlugTheorieChapterIdRouteImport } from './routes/$courseSlug.theorie.$chapterId'
@@ -50,6 +51,11 @@ const ExercicesSessionSlugRoute = ExercicesSessionSlugRouteImport.update({
   path: '/exercices/$sessionSlug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CourseSlugExamensRoute = CourseSlugExamensRouteImport.update({
+  id: '/$courseSlug/examens',
+  path: '/$courseSlug/examens',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CourseSlugTheorieIndexRoute = CourseSlugTheorieIndexRouteImport.update({
   id: '/$courseSlug/theorie/',
   path: '/$courseSlug/theorie/',
@@ -76,6 +82,7 @@ const CourseSlugExercicesSessionSlugRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$courseSlug/examens': typeof CourseSlugExamensRoute
   '/exercices/$sessionSlug': typeof ExercicesSessionSlugRoute
   '/theorie/$chapterId': typeof TheorieChapterIdRoute
   '/$courseSlug/': typeof CourseSlugIndexRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$courseSlug/examens': typeof CourseSlugExamensRoute
   '/exercices/$sessionSlug': typeof ExercicesSessionSlugRoute
   '/theorie/$chapterId': typeof TheorieChapterIdRoute
   '/$courseSlug': typeof CourseSlugIndexRoute
@@ -101,6 +109,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$courseSlug/examens': typeof CourseSlugExamensRoute
   '/exercices/$sessionSlug': typeof ExercicesSessionSlugRoute
   '/theorie/$chapterId': typeof TheorieChapterIdRoute
   '/$courseSlug/': typeof CourseSlugIndexRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$courseSlug/examens'
     | '/exercices/$sessionSlug'
     | '/theorie/$chapterId'
     | '/$courseSlug/'
@@ -127,6 +137,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/$courseSlug/examens'
     | '/exercices/$sessionSlug'
     | '/theorie/$chapterId'
     | '/$courseSlug'
@@ -139,6 +150,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/$courseSlug/examens'
     | '/exercices/$sessionSlug'
     | '/theorie/$chapterId'
     | '/$courseSlug/'
@@ -152,6 +164,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CourseSlugExamensRoute: typeof CourseSlugExamensRoute
   ExercicesSessionSlugRoute: typeof ExercicesSessionSlugRoute
   TheorieChapterIdRoute: typeof TheorieChapterIdRoute
   CourseSlugIndexRoute: typeof CourseSlugIndexRoute
@@ -207,6 +220,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExercicesSessionSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$courseSlug/examens': {
+      id: '/$courseSlug/examens'
+      path: '/$courseSlug/examens'
+      fullPath: '/$courseSlug/examens'
+      preLoaderRoute: typeof CourseSlugExamensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/$courseSlug/theorie/': {
       id: '/$courseSlug/theorie/'
       path: '/$courseSlug/theorie'
@@ -240,6 +260,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CourseSlugExamensRoute: CourseSlugExamensRoute,
   ExercicesSessionSlugRoute: ExercicesSessionSlugRoute,
   TheorieChapterIdRoute: TheorieChapterIdRoute,
   CourseSlugIndexRoute: CourseSlugIndexRoute,

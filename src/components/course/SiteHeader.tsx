@@ -108,7 +108,7 @@ export function SiteHeader() {
                 to="/$courseSlug"
                 params={{ courseSlug: slug }}
                 activeOptions={{ exact: true }}
-                className="rounded-lg px-2.5 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:px-3"
+                className="hidden rounded-lg px-2.5 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:inline-flex sm:px-3"
                 activeProps={{ className: "bg-accent text-accent-foreground hover:bg-accent" }}
               >
                 Accueil
@@ -128,6 +128,14 @@ export function SiteHeader() {
                 activeProps={{ className: "bg-accent text-accent-foreground hover:bg-accent" }}
               >
                 Exercices
+              </Link>
+              <Link
+                to="/$courseSlug/examens"
+                params={{ courseSlug: slug }}
+                className="rounded-lg px-2.5 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:px-3"
+                activeProps={{ className: "bg-accent text-accent-foreground hover:bg-accent" }}
+              >
+                Examens
               </Link>
               {pct !== null ? (
                 <span

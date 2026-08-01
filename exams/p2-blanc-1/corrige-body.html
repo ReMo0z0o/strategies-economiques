@@ -1,0 +1,348 @@
+<!-- ============================================================ -->
+<!-- Question 1 — Le monopole de A à Z (40 points)                -->
+<!-- ============================================================ -->
+<section class="question">
+  <h2>Question 1 <span class="pts">(40 points)</span> — Le monopole de A à Z</h2>
+  <div class="stem">
+    <p class="note">Données : demande inverse \( p = 60 - 2y \), coût marginal constant
+      \( Cm = 12 \), pas de coût fixe.</p>
+
+    <div class="solution">
+      <div class="tag">Solution 1.1</div>
+      <p>
+        La recette totale est le prix multiplié par la quantité, où le prix se lit sur la
+        demande inverse :
+      </p>
+      <p class="math-line">\[ R(y) = p(y)\,y = (60 - 2y)\,y = 60y - 2y^2 \]</p>
+      <p>La recette marginale est la dérivée de la recette totale :</p>
+      <p class="math-line">\[ Rm(y) = \frac{dR}{dy} = 60 - 4y \]</p>
+      <p>
+        On retrouve la règle générale : avec une demande inverse linéaire \( p = a - by \), la
+        recette marginale \( Rm = a - 2by \) part de la même ordonnée à l'origine mais a une
+        pente double. En particulier \( Rm(y) &lt; p(y) \) dès que \( y &gt; 0 \) : pour vendre
+        une unité de plus, le monopole doit baisser son prix sur <em>toutes</em> les unités.
+      </p>
+      <p>La production optimale égalise recette marginale et coût marginal :</p>
+      <p class="math-line">\[ Rm(y^*) = Cm \;\;\Longleftrightarrow\;\; 60 - 4y^* = 12
+        \;\;\Longleftrightarrow\;\; 4y^* = 48 \;\;\Longleftrightarrow\;\; \boxed{\,y^* = 12\,} \]</p>
+      <p>
+        <strong>\( y^* = 12 \).</strong> (De façon équivalente, on peut maximiser directement
+        \( \Pi(y) = (60-2y)y - 12y \) : la condition de premier ordre
+        \( 60 - 4y - 12 = 0 \) donne le même résultat.)
+      </p>
+      <p class="bareme">Barème (10 pts) : recette marginale correcte 4 pts · condition
+        \( Rm = Cm \) énoncée 3 pts · résolution \( y^* = 12 \) 3 pts.</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 1.2</div>
+      <p>
+        Le prix se lit sur la <em>courbe de demande</em> à la quantité \( y^* = 12 \) — jamais
+        à l'intersection de \( Rm \) et \( Cm \) (piège classique) :
+      </p>
+      <p class="math-line">\[ p^* = 60 - 2 \times 12 = \boxed{\,36 \text{ €}\,} \]</p>
+      <p>Le profit vaut la marge unitaire multipliée par la quantité (pas de coût fixe) :</p>
+      <p class="math-line">\[ \Pi^* = (p^* - Cm)\,y^* = (36 - 12) \times 12 =
+        \boxed{\,288 \text{ €}\,} \]</p>
+      <p>
+        <strong>\( p^* = 36 \) et \( \Pi^* = 288 \).</strong>
+      </p>
+      <p class="bareme">Barème (8 pts) : prix obtenu via la demande 4 pts · profit 4 pts.
+        Un prix lu à l'intersection de \( Rm \) et \( Cm \) (12 €) ne rapporte aucun point sur
+        le prix.</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 1.3</div>
+      <p>
+        L'élasticité utilise la demande <em>directe</em> : \( y = 30 - \tfrac{1}{2}p \), donc
+        \( \tfrac{dy}{dp} = -\tfrac{1}{2} \). Au point optimal \( (y^*, p^*) = (12, 36) \) :
+      </p>
+      <p class="math-line">\[ \varepsilon = -\frac{p}{y}\,\frac{dy}{dp}
+        = -\frac{36}{12} \times \left(-\frac{1}{2}\right) = \boxed{\,\frac{3}{2}\,} \]</p>
+      <p>La marge et l'indice de Lerner :</p>
+      <p class="math-line">\[ p^* - Cm = 36 - 12 = 24 \text{ €}
+        \qquad\qquad L = \frac{p^* - Cm}{p^*} = \frac{24}{36} = \boxed{\,\frac{2}{3}\,} \]</p>
+      <p>
+        Vérification : \( \dfrac{1}{\varepsilon} = \dfrac{1}{3/2} = \dfrac{2}{3} = L \). La
+        relation \( L = 1/\varepsilon \) est bien satisfaite.
+      </p>
+      <p>
+        Remarques attendues : \( \varepsilon = 3/2 &gt; 1 \) — un monopole opère toujours dans
+        la partie élastique de la demande (sinon \( Rm \) serait négative : vendre une unité de
+        plus détruirait de la recette tout en augmentant les coûts). L'indice de Lerner, compris
+        entre 0 et 1, mesure le pouvoir de marché : ici la marge pure représente deux tiers du
+        prix, un pouvoir de marché élevé, cohérent avec une demande peu élastique.
+      </p>
+      <p class="bareme">Barème (8 pts) : élasticité 4 pts (dont 2 pour l'utilisation correcte
+        de \( dy/dp = -1/2 \), et non de la pente de la demande inverse) · marge 1 pt · Lerner
+        2 pts · vérification \( L = 1/\varepsilon \) 1 pt.</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 1.4</div>
+      <p>
+        <strong>Surplus des consommateurs au point de monopole</strong> : triangle entre la
+        courbe de demande et la ligne de prix, de 0 à \( y^* \). La demande part de 60, le prix
+        est 36 :
+      </p>
+      <p class="math-line">\[ SC^{mono} = \frac{(60 - 36) \times 12}{2} = \boxed{\,144 \text{ €}\,} \]</p>
+      <p>
+        <strong>Concurrence parfaite</strong> : les firmes sont preneuses de prix et produisent
+        jusqu'à ce que le prix égale le coût marginal :
+      </p>
+      <p class="math-line">\[ p^e = Cm = 12 \;\;\Longrightarrow\;\; 60 - 2y^e = 12
+        \;\;\Longrightarrow\;\; \boxed{\,y^e = 24\,} \]</p>
+      <p>
+        Le monopole produit donc trop peu (\( y^* = 12 &lt; 24 = y^e \)) et vend trop cher
+        (\( 36 &gt; 12 \)).
+      </p>
+      <p>
+        <strong>Perte sèche</strong> : la valeur des échanges gagnant-gagnant qui ne se font
+        pas — le triangle entre la demande et le coût marginal, entre \( y^* \) et \( y^e \).
+        Sa base verticale en \( y^* = 12 \) vaut \( p^* - Cm = 24 \) et il s'étend sur
+        \( y^e - y^* = 12 \) unités :
+      </p>
+      <p class="math-line">\[ PS = \frac{(36 - 12) \times (24 - 12)}{2} = \boxed{\,144 \text{ €}\,} \]</p>
+      <p>
+        Vérification par les surplus totaux : sous le monopole,
+        \( SC + \Pi = 144 + 288 = 432 \) ; en concurrence parfaite, tout le surplus va aux
+        consommateurs : \( \tfrac{(60-12)\times 24}{2} = 576 \). L'écart \( 576 - 432 = 144 \)
+        est bien la perte sèche : ce n'est pas un transfert vers le monopole, c'est de la
+        richesse détruite, que personne ne récupère.
+      </p>
+      <p class="bareme">Barème (9 pts) : \( SC^{mono} = 144 \) 3 pts · équilibre concurrentiel
+        \( (p^e, y^e) = (12, 24) \) 3 pts · perte sèche 144 avec le bon triangle 3 pts.</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 1.5</div>
+      <p>
+        Un monopole naturel a un coût total du type \( CT(y) = F + k\,y \) avec un coût fixe
+        \( F \) très élevé : son coût moyen \( CM(y) = F/y + k \) décroît sans cesse et reste
+        <em>toujours supérieur</em> au coût marginal \( k \).
+      </p>
+      <p>
+        Si le régulateur impose \( p = Cm = k \), la firme couvre exactement ses coûts
+        variables mais rien de son coût fixe : son profit vaut
+        \( \Pi = (k - k)\,y - F = -F &lt; 0 \). Elle fait des pertes égales à son coût fixe et,
+        à terme, quitte le marché — la régulation détruirait le marché et tous les gains de
+        l'échange qu'il permettait. Le remède serait pire que le mal.
+      </p>
+      <p>
+        On ne peut donc imposer la tarification au coût marginal que « avec autre mesure » :
+        soit subventionner le coût fixe \( F \) (mais les subventions peuvent être interdites,
+        exigent de lever des taxes distorsives ailleurs et affaiblissent les incitations de la
+        firme à réduire ses coûts — « rent seeking »), soit se rabattre sur une solution de
+        second rang comme la tarification au coût moyen (profit nul, production plus faible que
+        l'efficace mais supérieure à celle du monopole non régulé).
+      </p>
+      <p class="bareme">Barème (5 pts) : \( Cm &lt; CM \) à cause du coût fixe 2 pts · pertes
+        \( -F \) et sortie du marché 2 pts · une piste de solution (subvention ou coût moyen)
+        1 pt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Question 2 — Discrimination par les prix (35 points)         -->
+<!-- ============================================================ -->
+<section class="question">
+  <h2>Question 2 <span class="pts">(35 points)</span> — Discrimination par les prix</h2>
+  <div class="stem">
+    <p class="note">Données : demandes \( p = 20 - y_L \) (client L) et \( p = 20 - 2y_S \)
+      (client S), coût marginal constant \( Cm = 4 \), pas de coût fixe.</p>
+
+    <div class="solution">
+      <div class="tag">Solution 2.1</div>
+      <p>
+        <strong>Demande agrégée.</strong> On inverse d'abord chaque demande pour obtenir les
+        quantités en fonction du prix :
+      </p>
+      <p class="math-line">\[ y_L = 20 - p \qquad\qquad y_S = 10 - \tfrac{1}{2}p \]</p>
+      <p>puis on somme les quantités (et non les prix !) :</p>
+      <p class="math-line">\[ Y = y_L + y_S = 30 - \tfrac{3}{2}p
+        \;\;\Longleftrightarrow\;\; p = 20 - \tfrac{2}{3}Y \]</p>
+      <p>
+        <strong>Optimum du monopole simple.</strong> Le profit est
+        \( \Pi(Y) = \left(20 - \tfrac{2}{3}Y\right)Y - 4Y \). La condition de premier ordre
+        \( Rm = Cm \) s'écrit :
+      </p>
+      <p class="math-line">\[ 20 - \tfrac{4}{3}Y = 4 \;\;\Longleftrightarrow\;\;
+        \tfrac{4}{3}Y = 16 \;\;\Longleftrightarrow\;\; \boxed{\,Y^* = 12\,} \]</p>
+      <p class="math-line">\[ p^* = 20 - \tfrac{2}{3}\times 12 = \boxed{\,12 \text{ €}\,}
+        \qquad \Pi^* = (12 - 4)\times 12 = \boxed{\,96 \text{ €}\,} \]</p>
+      <p>Au prix de 12 €, chaque client achète sur sa propre demande :</p>
+      <p class="math-line">\[ y_L = 20 - 12 = 8 \text{ kilos} \qquad\qquad
+        y_S = 10 - \tfrac{12}{2} = 4 \text{ kilos} \]</p>
+      <p>
+        (Vérification : \( 8 + 4 = 12 = Y^* \).) Attention au piège : écrire \( p = Cm \) au
+        lieu de \( Rm = Cm \), ou oublier le coût marginal dans la condition de premier ordre
+        (\( Rm = 0 \)), conduit à un faux optimum.
+      </p>
+      <p class="bareme">Barème (12 pts) : agrégation correcte des demandes 3 pts ·
+        \( Rm = Cm \) et \( Y^* = 12 \) 4 pts · \( p^* = 12 \) 2 pts · quantités individuelles
+        8 et 4 1 pt · profit 96 2 pts.</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 2.2</div>
+      <p>
+        <strong>Principe.</strong> En discrimination du premier degré, le monopole connaît
+        chaque client et lui impose une offre « à prendre ou à laisser ». Pour chaque client,
+        il choisit la quantité qui maximise le surplus créé — celle où la disposition à payer
+        marginale égale le coût marginal — puis fixe le montant au niveau de la disposition à
+        payer <em>totale</em> du client (l'aire sous sa demande), pour capter tout le surplus.
+      </p>
+      <p><strong>Quantités</strong> — chaque demande croise le coût marginal :</p>
+      <p class="math-line">\[ \text{L} : \; 20 - y_l = 4 \;\Longrightarrow\; \boxed{\,y_l = 16\,}
+        \qquad\qquad \text{S} : \; 20 - 2y_s = 4 \;\Longrightarrow\; \boxed{\,y_s = 8\,} \]</p>
+      <p>
+        <strong>Montants</strong> — l'aire sous chaque demande jusqu'à la quantité offerte
+        (rectangle de hauteur 4 + triangle, ou directement le trapèze) :
+      </p>
+      <p class="math-line">\[ m_l = 20\times 16 - \tfrac{16^2}{2} = 320 - 128 =
+        \boxed{\,192 \text{ €}\,} \qquad
+        m_s = 20\times 8 - 8^2 = 160 - 64 = \boxed{\,96 \text{ €}\,} \]</p>
+      <p>
+        Chaque client accepte : l'offre lui procure exactement la valeur qu'il paie (surplus
+        nul, mais pas négatif). Le raisonnement se fait sur la valeur <em>totale</em> du lot,
+        pas unité par unité.
+      </p>
+      <p><strong>Profit</strong> — recettes moins coût de production des \( 16 + 8 = 24 \) kilos :</p>
+      <p class="math-line">\[ \Pi = (192 - 4\times 16) + (96 - 4\times 8) = 128 + 64 =
+        \boxed{\,192 \text{ €}\,} \]</p>
+      <p>
+        <strong>Efficacité.</strong> La situation est efficace au sens de Pareto : pour chaque
+        client, on produit toutes les unités dont la valeur dépasse le coût marginal, et on
+        s'arrête exactement quand les deux s'égalisent. Le surplus total est maximal
+        (192 €, contre \( 96 + 32 + 16 = 144 \) € sous le monopole simple : la perte sèche a
+        disparu). Mais ce surplus est <em>intégralement capté par le monopole</em> : le surplus
+        des consommateurs est nul. Efficacité ne veut pas dire équité — c'est la conclusion
+        officielle du cours.
+      </p>
+      <p class="bareme">Barème (15 pts) : principe des offres personnalisées 3 pts · quantités
+        16 et 8 4 pts · montants 192 et 96 4 pts · profit 192 2 pts · efficacité Pareto + SC
+        nul 2 pts.</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 2.3</div>
+      <p>Le mécanisme attendu, en trois temps :</p>
+      <p>
+        <strong>(i) Le petit lot est une bonne affaire pour L.</strong> Le montant \( m_s \)
+        est calibré pour capter exactement la disposition à payer de S. Or, à toute quantité,
+        la demande de L est au-dessus de celle de S : les \( y_s \) unités du petit lot valent
+        strictement plus pour L que pour S. En libre choix, si le monopole conservait le menu
+        du premier degré, L obtiendrait un surplus strictement positif en prenant le petit lot,
+        alors que le gros lot (qui capte tout son surplus) lui laisse zéro : L se ferait passer
+        pour un petit consommateur.
+      </p>
+      <p>
+        <strong>(ii) La contrainte d'incitation.</strong> Pour que L choisisse quand même le
+        gros lot, le monopole doit baisser son montant \( m_l \) jusqu'à ce que le surplus de L
+        sur le gros lot soit au moins égal à celui que lui procurerait le petit lot. Ce surplus
+        positif laissé à L est la <strong>rente d'information</strong> : c'est le prix que le
+        monopole paie pour que L révèle son type, et elle provient de l'avantage informationnel
+        de L (lui seul sait qu'il est un gros consommateur, et le petit lot lui offre une porte
+        de sortie).
+      </p>
+      <p>
+        <strong>(iii) La réaction du monopole.</strong> Pour réduire cette rente, il déforme le
+        petit lot <em>vers le bas</em> (quantité inférieure à la taille efficace du premier
+        degré) : moins le petit lot est attrayant pour L, moins il faut lui concéder pour le
+        garder sur le gros lot. Le monopole arbitre entre la rente concédée à L et le profit
+        perdu sur S — d'où un petit lot rationné et une perte d'efficacité par rapport au
+        premier degré.
+      </p>
+      <p class="bareme">Barème (8 pts) : (i) le petit lot vaut plus pour L que pour S, donc
+        surplus positif s'il le prend 3 pts · (ii) baisse de \( m_l \) / contrainte
+        d'incitation = rente d'information 3 pts · (iii) rationnement du petit lot pour réduire
+        la rente 2 pts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Question 3 — Bertrand avec coûts asymétriques (25 points)    -->
+<!-- ============================================================ -->
+<section class="question">
+  <h2>Question 3 <span class="pts">(25 points)</span> — Bertrand avec coûts asymétriques</h2>
+  <div class="stem">
+    <p class="note">Données : bien homogène, demande \( Q = 300 - p \), coûts marginaux
+      \( c_1 = 60 \) (Cimex) et \( c_2 = 90 \) (Bétolith), pas de coûts fixes.</p>
+
+    <div class="solution">
+      <div class="tag">Solution 3.1</div>
+      <p>Le raisonnement élimine tous les autres candidats :</p>
+      <p>
+        <strong>(i)</strong> Aucune firme ne fixe un prix inférieur à son propre coût
+        marginal : elle vendrait à perte sur chaque tonne. Bétolith ne descendra donc jamais
+        sous \( c_2 = 90 \).
+      </p>
+      <p>
+        <strong>(ii)</strong> Tout prix strictement supérieur à 90 ne peut pas être un
+        équilibre : le bien étant homogène, la firme la plus chère ne vend rien, et chacune a
+        alors intérêt à passer légèrement sous le prix de l'autre pour capter tout le marché
+        avec une marge positive. La sous-enchère se poursuit tant que les deux firmes peuvent
+        suivre, c'est-à-dire jusqu'à 90.
+      </p>
+      <p>
+        <strong>(iii)</strong> En \( p = 90 \), Bétolith ne peut plus suivre (elle refuserait
+        de vendre sous son coût marginal), tandis que Cimex conserve une marge confortable
+        (\( 90 - 60 = 30 \) par tonne). Cimex fixe donc son prix juste en dessous de 90 et sert
+        tout le marché ; Bétolith ne produit rien.
+      </p>
+      <p class="math-line">\[ \boxed{\,p^* \simeq c_2 = 90 \text{ €/tonne}\,} \qquad
+        Q^* = 300 - 90 = \boxed{\,210 \text{ tonnes}\,} \text{, toutes vendues par Cimex.} \]</p>
+      <p>
+        Remarque : Cimex aimerait vendre plus cher (seule sur le marché, elle choisirait le
+        prix de monopole \( \tfrac{300+60}{2} = 180 \)), mais tout prix au-dessus de 90
+        redonnerait à Bétolith la possibilité d'entrer avec profit. C'est la menace du
+        concurrent, même inactif, qui discipline le prix : l'avantage de coût est la seule
+        source de marge.
+      </p>
+      <p class="bareme">Barème (12 pts) : arguments (i)-(iii) du raisonnement de sous-enchère
+        8 pts · \( p^* \simeq 90 \) et identification de Cimex comme seul vendeur 2 pts ·
+        \( Q^* = 210 \) 2 pts. Un prix affirmé sans justification ne rapporte que les points de
+        résultat.</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 3.2</div>
+      <p>Cimex vend 210 tonnes à (quasiment) 90 € avec un coût marginal de 60 € :</p>
+      <p class="math-line">\[ \Pi_{Cimex} \simeq (90 - 60)\times 210 = \boxed{\,6\,300 \text{ €}\,}
+        \qquad\qquad \Pi_{B\acute{e}tolith} = \boxed{\,0 \text{ €}\,} \]</p>
+      <p>
+        Bétolith ne vend rien et n'a pas de coût fixe : son profit est nul. Le profit de Cimex
+        est positif — contrairement au cas symétrique, Bertrand ne condamne pas ici les profits
+        à zéro : la firme efficace transforme son avantage de coût \( c_2 - c_1 = 30 \) en
+        marge.
+      </p>
+      <p class="bareme">Barème (7 pts) : profit de Cimex 5 pts · profit nul de Bétolith 2 pts.</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 3.3</div>
+      <p>
+        Si \( c_1 = c_2 = 60 \), le seul équilibre de Bertrand-Nash est
+        \( p_1^* = p_2^* = 60 \) : tout prix commun supérieur à 60 est détruit par la
+        sous-enchère (baisser d'un centime double les ventes), aucune firme ne descend sous 60,
+        et en \( p = 60 \) aucune n'a de déviation profitable. Les deux firmes se partagent le
+        marché (\( Q = 240 \)) et réalisent un <strong>profit nul</strong>.
+      </p>
+      <p>
+        C'est le <strong>paradoxe de Bertrand</strong> : il suffit de <em>deux</em> firmes en
+        concurrence par les prix pour retrouver le résultat de la concurrence parfaite — prix
+        au coût marginal et pouvoir de marché entièrement volatilisé — alors que le même
+        duopole en concurrence par les quantités (Cournot) maintiendrait un prix supérieur au
+        coût marginal et des profits positifs. Le résultat est remarquable parce que l'issue
+        change du tout au tout selon l'arme stratégique (prix ou quantités), à demande et coûts
+        identiques.
+      </p>
+      <p class="bareme">Barème (6 pts) : \( p_1^* = p_2^* = c \) et profits nuls 3 pts · nom
+        « paradoxe de Bertrand » 1 pt · explication (deux firmes suffisent pour l'issue
+        concurrentielle / contraste avec Cournot) 2 pts.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,342 @@
+<section class="question" style="page-break-before: auto">
+  <h2>Question 1 <span class="pts">(40 points)</span> — Tarif en deux parties et double marginalisation</h2>
+
+  <div class="solution">
+    <div class="tag">Solution 1.1</div>
+    <p>
+      <strong>Méthode.</strong> Un tarif en deux parties se règle en deux temps : d'abord le
+      forfait maximal acceptable pour un prix par séance donné, ensuite le bon prix par séance.
+    </p>
+    <p>
+      <strong>Étape 1 — le forfait maximal.</strong> Au prix \( p \), un adhérent choisit
+      \( y = 16 - p \) séances et réalise un surplus hors forfait égal au triangle entre sa
+      demande et le prix :
+    </p>
+    <p class="math-line">\[ SC(p) = \tfrac{1}{2}\,(16 - p)\,(16 - p) = \tfrac{1}{2}(16-p)^2. \]</p>
+    <p>
+      Il accepte de s'abonner tant que \( SC(p) \ge F \). Le club capte donc le maximum en
+      <strong>saturant la condition d'acceptation</strong> : \( F = SC(p) \).
+    </p>
+    <p>
+      <strong>Étape 2 — pourquoi \( p^* = Cm \) ?</strong> Le profit par adhérent vaut
+      « profit sur les séances + forfait », c'est-à-dire \( SP + SC \) : c'est exactement l'aire
+      comprise entre la demande et la droite de coût marginal jusqu'à la quantité consommée.
+      Toute marge au-dessus de \( Cm = 4 \) réduit le nombre de séances achetées et ampute ce
+      total d'un triangle : ce que la marge rapporte sur les séances, le forfait le perd — et
+      davantage. Le club a donc intérêt à fixer le prix par séance au coût marginal et à tout
+      récupérer par le forfait. Vérification par le calcul : avec \( F = SC(p) \),
+    </p>
+    <p class="math-line">\[ \Pi(p) = \tfrac{1}{2}(16-p)^2 + (p-4)(16-p)
+      \qquad\Longrightarrow\qquad \frac{d\Pi}{dp} = -(16-p) + (16-p) - (p-4) = -(p-4), \]</p>
+    <p>qui s'annule bien en \( p = 4 \).</p>
+    <p>
+      <strong>Étape 3 — les valeurs.</strong> Avec \( p^* = 4 \) : \( y^* = 16 - 4 = 12 \)
+      séances, et le forfait capte tout le surplus au prix \( p^* = Cm \) :
+    </p>
+    <p class="math-line">\[ F^* = \tfrac{1}{2}\,(16 - 4)\times 12 = 72 \text{ €}. \]</p>
+    <p>
+      Sur les séances, la marge est nulle (\( p^* = Cm \)) : le profit par adhérent est donc
+      <strong>\( \Pi = F^* = 72 \) €</strong>. Résultat : <strong>\( p^* = 4 \) €,
+      \( F^* = 72 \) €, profit de 72 € par adhérent</strong>. La quantité (12 séances) est la
+      quantité socialement optimale — la solution est efficace, mais le club s'accapare tout le
+      gain de l'échange (surplus net de l'adhérent : 0).
+    </p>
+    <p class="bareme">Barème : 3 pts pour la logique du forfait (F = SC, condition
+      d'acceptation saturée) ; 5 pts pour la justification de p* = Cm (argument du gâteau
+      SP + SC ou dérivation) ; 4 pts pour les valeurs p* = 4, F* = 72 et le profit 72 €.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 1.2</div>
+    <p>
+      <strong>Prix uniforme (monopole simple).</strong> Sans forfait, le club margine sur les
+      séances : recette totale \( RT = (16 - y)\,y \), recette marginale de pente double
+      \( Rm = 16 - 2y \), et la condition d'optimum \( Rm = Cm \) donne :
+    </p>
+    <p class="math-line">\[ 16 - 2y = 4 \;\Longleftrightarrow\; y^u = 6, \qquad
+      p^u = 16 - 6 = 10, \qquad \Pi^u = (10 - 4)\times 6 = 36 \text{ €}. \]</p>
+    <p><strong>Comparaison des deux régimes</strong> (par adhérent) :</p>
+    <p>
+      — <strong>Profit</strong> : 72 € avec le tarif en deux parties contre 36 € au prix
+      uniforme — le forfait double le profit ici.<br>
+      — <strong>Surplus de l'adhérent</strong> : 0 € contre
+      \( \tfrac{1}{2}\times 6 \times 6 = 18 \) € : le consommateur préfère nettement le prix
+      uniforme.<br>
+      — <strong>Efficacité</strong> : le tarif en deux parties produit la quantité efficace
+      (12 séances, là où la disposition à payer rejoint \( Cm \)) et le surplus total est
+      maximal (72 €) ; le prix uniforme rationne (6 séances) et crée une perte sèche de
+      \( \tfrac{1}{2}\,(10-4)(12-6) = 18 \) € (surplus total : \( 36 + 18 = 54 < 72 \)).
+    </p>
+    <p>
+      <strong>Conclusion</strong> : le tarif en deux parties est plus profitable et plus
+      efficace que le prix uniforme, mais toute l'efficacité gagnée est confisquée par le
+      monopole — rappel : ce résultat exige des consommateurs identiques.
+    </p>
+    <p class="bareme">Barème : 4 pts pour l'équilibre au prix uniforme (y = 6, p = 10,
+      Π = 36) via Rm = Cm ; 4 pts pour la comparaison profit / surplus / efficacité.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 1.3</div>
+    <p>
+      <strong>Méthode.</strong> Jeu séquentiel : on résout par la fin (induction à rebours).
+      Les consommateurs achètent \( y = 20 - p_{av} \) ; on remonte à Aval, puis à Amont qui
+      anticipe tout.
+    </p>
+    <p>
+      <strong>Étape A — le caviste (Aval).</strong> Il achète \( y \) caisses au prix
+      \( p_{am} \) et les revend au prix \( p_{av} = 20 - y \) :
+    </p>
+    <p class="math-line">\[ \Pi_{av} = (20 - y)\,y - p_{am}\,y
+      \qquad\Longrightarrow\qquad \frac{d\Pi_{av}}{dy} = 20 - 2y - p_{am} = 0
+      \;\Longleftrightarrow\; p_{am} = 20 - 2y. \]</p>
+    <p>
+      Cette relation est la <strong>demande qu'Aval adresse à Amont</strong> : plus la
+      brasserie vend cher, moins le caviste commande (pente double de celle de la demande
+      finale).
+    </p>
+    <p>
+      <strong>Étape B — la brasserie (Amont).</strong> Elle anticipe cette demande dérivée et
+      margine sur son coût marginal de 8 :
+    </p>
+    <p class="math-line">\[ \Pi_{am} = (20 - 2y)\,y - 8y
+      \qquad\Longrightarrow\qquad 20 - 4y - 8 = 0 \;\Longleftrightarrow\; y^* = 3. \]</p>
+    <p>D'où les prix et les profits :</p>
+    <p class="math-line">\[ p_{am} = 20 - 2\times 3 = 14, \qquad p_{av} = 20 - 3 = 17, \]</p>
+    <p class="math-line">\[ \Pi_{am} = (14 - 8)\times 3 = 18, \qquad
+      \Pi_{av} = (17 - 14)\times 3 = 9, \qquad \Pi_{am} + \Pi_{av} = 27. \]</p>
+    <p>
+      <strong>Résultat : \( y^* = 3 \) caisses, \( p_{am} = 14 \), \( p_{av} = 17 \)</strong>,
+      marge de 6 pour Amont, marge de 3 pour Aval, profits 18 et 9. Deux marges s'empilent le
+      long de la chaîne, chacune gonflant le prix payé en bout de course.
+    </p>
+    <p class="bareme">Barème : 4 pts pour la demande dérivée p<sub>am</sub> = 20 − 2y (CPO
+      d'Aval) ; 4 pts pour le programme et la CPO d'Amont (y* = 3) ; 4 pts pour les prix
+      (14 et 17), les marges et les profits (18 et 9). Résoudre dans le mauvais ordre
+      (Amont sans anticiper Aval) : maximum 4 pts.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 1.4</div>
+    <p>
+      <strong>Le monopole intégré</strong> vend directement aux consommateurs avec le vrai coût
+      marginal 8 :
+    </p>
+    <p class="math-line">\[ \Pi = (20 - y)\,y - 8y \qquad\Longrightarrow\qquad
+      20 - 2y - 8 = 0 \;\Longleftrightarrow\; y = 6, \quad p = 14, \quad
+      \Pi = (14-8)\times 6 = 36. \]</p>
+    <p><strong>Comparaison</strong> :</p>
+    <p>
+      — les <strong>consommateurs gagnent</strong> : le prix final baisse de 17 à 14 et la
+      quantité double (6 contre 3) ;<br>
+      — les <strong>firmes gagnent</strong> : le profit joint passe de \( 18 + 9 = 27 \) à 36.
+    </p>
+    <p>
+      <strong>Personne n'y perd : la fusion est une amélioration parétienne.</strong> Le
+      phénomène mis en évidence est la <strong>double marginalisation</strong> : chaque maillon
+      de la chaîne margine sur son propre coût sans internaliser le tort que sa marge cause à
+      l'autre (quand Amont monte son prix, il écrase la demande et le profit d'Aval).
+      L'intégration verticale supprime l'une des deux marges — on ne margine plus qu'une fois
+      sur le vrai coût. C'est pourquoi les autorités de concurrence traitent différemment les
+      fusions <em>verticales</em> (souvent favorables aux consommateurs) et les fusions
+      <em>horizontales</em> entre concurrents (qui rapprochent du monopole).
+    </p>
+    <p class="bareme">Barème : 3 pts pour l'équilibre intégré (y = 6, p = 14, Π = 36) ;
+      3 pts pour la comparaison complète (consommateurs et firmes gagnent, amélioration
+      parétienne) ; 2 pts pour nommer et expliquer la double marginalisation.</p>
+  </div>
+</section>
+
+<section class="question">
+  <h2>Question 2 <span class="pts">(35 points)</span> — Bertrand avec biens différenciés</h2>
+
+  <div class="solution">
+    <div class="tag">Solution 2.1</div>
+    <p>
+      Le coefficient \( \tfrac{1}{2} \) mesure le <strong>degré de substituabilité</strong>
+      entre les deux cafés, c'est-à-dire l'inverse de leur degré de différenciation : la
+      demande adressée à la firme 1 <em>augmente</em> quand le prix du rival monte
+      (\( +\tfrac{1}{2}p_2 \)) — une partie des clients de Robusta bascule chez Arabica. Les
+      biens sont donc des substituts.
+    </p>
+    <p>
+      — Un coefficient <strong>proche de 0</strong> : les produits sont fortement différenciés,
+      chaque firme est quasi insensible au prix de l'autre — deux monopoles indépendants,
+      chacun sur sa clientèle.<br>
+      — Un coefficient <strong>plus élevé (proche de 1)</strong> : les cafés se ressemblent,
+      les clients basculent facilement au moindre écart de prix — la concurrence en prix
+      s'intensifie et on se rapproche du cas du bien homogène.
+    </p>
+    <p class="bareme">Barème : 2 pts pour « substituabilité / non-différenciation » avec le
+      mécanisme (des clients basculent) ; 1,5 pt par cas limite correctement interprété.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 2.2</div>
+    <p>
+      <strong>Fonction de profit de la firme 1</strong> (coût marginal 6, pas de coût fixe) :
+    </p>
+    <p class="math-line">\[ \Pi_1 = (p_1 - 6)\,q_1 = (p_1 - 6)\left(30 - p_1 + \tfrac{1}{2}p_2\right). \]</p>
+    <p>
+      La firme 1 choisit \( p_1 \) en prenant \( p_2 \) comme donné. On développe :
+      \( \Pi_1 = 30p_1 - p_1^2 + \tfrac{1}{2}p_1 p_2 - 180 + 6p_1 - 3p_2 \), puis on annule la
+      dérivée :
+    </p>
+    <p class="math-line">\[ \frac{\partial \Pi_1}{\partial p_1}
+      = 30 - 2p_1 + \tfrac{1}{2}p_2 + 6 = 36 - 2p_1 + \tfrac{1}{2}p_2 = 0
+      \qquad\Longrightarrow\qquad \boxed{\,p_1 = 18 + \tfrac{1}{4}\,p_2\,} \]</p>
+    <p>
+      et, le problème étant parfaitement symétrique,
+      <strong>\( p_2 = 18 + \tfrac{1}{4}\,p_1 \)</strong>.
+    </p>
+    <p>
+      Ces fonctions de meilleure réponse sont <strong>croissantes</strong> dans le prix du
+      rival (pente \( \tfrac{1}{4} > 0 \)) : si mon concurrent monte son prix, ma meilleure
+      réponse est de monter le mien — les prix sont des compléments stratégiques. C'est
+      l'inverse de Cournot, où les fonctions de meilleure réponse en quantités sont
+      décroissantes.
+    </p>
+    <p class="bareme">Barème : 3 pts pour la fonction de profit correcte ; 4 pts pour la CPO
+      explicite ; 3 pts pour les deux meilleures réponses p₁ = 18 + p₂/4 et p₂ = 18 + p₁/4 ;
+      2 pts pour le commentaire (croissantes, contraste avec Cournot).</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 2.3</div>
+    <p>
+      À l'équilibre de Nash, chaque prix est une meilleure réponse à l'autre. Par symétrie,
+      \( p_1 = p_2 = p \) :
+    </p>
+    <p class="math-line">\[ p = 18 + \tfrac{1}{4}p \;\Longleftrightarrow\; \tfrac{3}{4}p = 18
+      \;\Longleftrightarrow\; \boxed{\,p_1^* = p_2^* = 24\,}. \]</p>
+    <p>Quantités et profits d'équilibre :</p>
+    <p class="math-line">\[ q_1^* = q_2^* = 30 - 24 + \tfrac{1}{2}\times 24 = 18 > 0, \qquad
+      \Pi_1^* = \Pi_2^* = (24 - 6)\times 18 = 324. \]</p>
+    <p>
+      Vérification : \( 18 + \tfrac{24}{4} = 24 \) — chaque prix est bien la meilleure réponse
+      à l'autre, et les quantités d'équilibre sont positives : le modèle est cohérent.
+    </p>
+    <p class="bareme">Barème : 4 pts pour la résolution du système (p* = 24) ; 3 pts pour les
+      quantités (18) ; 3 pts pour les profits (324). La vérification n'est pas exigée mais
+      rattrape une erreur de calcul signalée.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 2.4</div>
+    <p>
+      Oui : \( p^* = 24 > 6 = Cm \) — chaque firme conserve une marge de 18 et un profit
+      strictement positif. En <strong>Bertrand homogène</strong>, l'équilibre est
+      \( p_1^* = p_2^* = Cm \) et les profits sont nuls (paradoxe de Bertrand) : toute firme
+      qui afficherait un prix supérieur à celui du rival perdrait <em>tous</em> ses clients,
+      et chacune a donc intérêt à sous-enchérir d'un centime tant que le prix dépasse le coût
+      marginal.
+    </p>
+    <p>
+      Avec des biens <strong>différenciés</strong>, ce mécanisme se grippe : baisser légèrement
+      son prix ne vole plus toute la clientèle du rival, et afficher un prix un peu plus élevé
+      ne fait plus fuir tous ses propres clients — chaque firme garde une clientèle fidèle sur
+      laquelle elle dispose d'un pouvoir de monopole partiel. La sous-enchère devient coûteuse
+      et s'arrête avant le coût marginal. D'où la leçon stratégique : la différenciation est un
+      rempart contre la guerre des prix, et les firmes ont intérêt à différencier leurs
+      produits au maximum.
+    </p>
+    <p class="bareme">Barème : 2 pts pour le constat p* &gt; Cm (marge 18) ; 3 pts pour le
+      rappel correct du Bertrand homogène (p = Cm, logique de sous-enchère) ; 3 pts pour
+      l'explication du rôle de la différenciation (clientèle fidèle, sous-enchère non
+      rentable).</p>
+  </div>
+</section>
+
+<section class="question">
+  <h2>Question 3 <span class="pts">(25 points)</span> — L'indice de Lerner en oligopole</h2>
+
+  <div class="solution">
+    <div class="tag">Solution 3.1</div>
+    <p><strong>Définition.</strong> L'indice de Lerner d'une firme est sa marge relative :</p>
+    <p class="math-line">\[ L = \frac{p - Cm}{p}, \]</p>
+    <p>
+      la fraction du prix qui est de la marge pure. Il est compris entre 0 et 1.
+    </p>
+    <p>
+      <strong>Du point de vue de la firme</strong>, c'est la mesure classique de son
+      <strong>pouvoir de marché</strong> : sa capacité à élever son prix au-dessus de son coût
+      marginal. \( L = 0 \) en concurrence parfaite (la firme subit le prix), \( L \) proche
+      de 1 pour un pouvoir de marché maximal ; pour un monopole, \( L = 1/\varepsilon \) —
+      plus la demande est rigide, plus la firme peut marginer. Étant une marge
+      <em>relative</em>, l'indice est comparable entre secteurs très différents.
+    </p>
+    <p>
+      <strong>Du point de vue de la société</strong>, il mesure l'écart à la référence
+      efficace \( p = Cm \) : plus \( L \) est élevé, plus le prix s'écarte du coût marginal,
+      plus la quantité échangée est restreinte par rapport à l'optimum social et plus la perte
+      sèche est importante. Un indice de Lerner élevé signale donc une mauvaise allocation des
+      ressources (et intéresse à ce titre les autorités de concurrence).
+    </p>
+    <p class="bareme">Barème : 3 pts pour la définition exacte (p − Cm)/p ; 2,5 pts pour
+      l'interprétation côté firme (pouvoir de marché, bornes, lien 1/ε accepté) ; 2,5 pts pour
+      l'interprétation côté société (écart à p = Cm, quantité restreinte, perte sèche).</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 3.2</div>
+    <p>
+      <strong>Le profit de la firme \( i \)</strong> (les quantités des rivales étant prises
+      comme données) :
+    </p>
+    <p class="math-line">\[ \Pi_i = \big(40 - y_i - \textstyle\sum_{j \neq i} y_j\big)\,y_i - 10\,y_i. \]</p>
+    <p><strong>Condition de premier ordre</strong> :</p>
+    <p class="math-line">\[ \frac{\partial \Pi_i}{\partial y_i}
+      = 40 - 2y_i - \sum_{j \neq i} y_j - 10 = 0. \]</p>
+    <p>
+      Les \( n \) firmes étant identiques, l'équilibre est symétrique :
+      \( y_j = y_i \) pour tout \( j \), et la somme des \( n-1 \) rivales vaut
+      \( (n-1)\,y_i \) :
+    </p>
+    <p class="math-line">\[ 30 - 2y_i - (n-1)\,y_i = 0 \;\Longleftrightarrow\; 30 = (n+1)\,y_i
+      \;\Longleftrightarrow\; \boxed{\,y_i(n) = \frac{30}{n+1}\,}. \]</p>
+    <p><strong>Quantité totale et prix</strong> :</p>
+    <p class="math-line">\[ Y(n) = \frac{30\,n}{n+1}, \qquad
+      p(n) = 40 - \frac{30\,n}{n+1} = \frac{10\,n + 40}{n+1}. \]</p>
+    <p><strong>Indice de Lerner</strong> — la marge vaut
+      \( p(n) - 10 = \dfrac{10n + 40 - 10(n+1)}{n+1} = \dfrac{30}{n+1} \), donc :</p>
+    <p class="math-line">\[ L(n) = \frac{p(n) - 10}{p(n)}
+      = \frac{30/(n+1)}{(10n+40)/(n+1)} = \frac{30}{10\,n + 40}
+      = \boxed{\,\frac{3}{n+4}\,}. \]</p>
+    <p>
+      La marge absolue \( \tfrac{30}{n+1} \) et la marge relative \( L(n) = \tfrac{3}{n+4} \)
+      sont toutes deux <strong>décroissantes en \( n \)</strong> : chaque firme supplémentaire
+      accroît la quantité totale, fait baisser le prix (\( p(n) \) décroît de 25 vers 10) et
+      érode le pouvoir de marché de chacune. Repères : \( n = 1 \) : \( p = 25 \),
+      \( L = 3/5 \) ; \( n = 2 \) : \( p = 20 \), \( L = 1/2 \).
+    </p>
+    <p class="bareme">Barème : 3 pts pour le profit et la CPO de la firme i ; 3 pts pour le
+      passage par la symétrie et y_i = 30/(n+1) ; 3 pts pour p(n) = (10n+40)/(n+1) ; 3 pts
+      pour L(n) = 3/(n+4) et le sens de variation (marge décroissante en n).</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 3.3</div>
+    <p>
+      <strong>\( n = 1 \)</strong> : \( L(1) = \tfrac{3}{5} = 0{,}6 \), avec \( p = 25 \).
+      C'est le cas du <strong>monopole</strong>, le pouvoir de marché maximal de ce marché —
+      60 % du prix est de la marge pure. (Vérification élégante : au point optimal, l'élasticité
+      de la demande vaut \( \varepsilon = \tfrac{p}{y} = \tfrac{25}{15} = \tfrac{5}{3} \), et on
+      retrouve bien \( L = 1/\varepsilon = 3/5 \).)
+    </p>
+    <p>
+      <strong>\( n \to \infty \)</strong> : \( L(n) = \tfrac{3}{n+4} \to 0 \) et
+      \( p(n) \to 10 = Cm \). L'oligopole de Cournot converge vers la
+      <strong>concurrence parfaite</strong> : prix au coût marginal, marge nulle, pouvoir de
+      marché entièrement dissipé.
+    </p>
+    <p>
+      <strong>Interprétation</strong> : le modèle de Cournot fait le pont entre les deux cas
+      polaires du cours — le monopole (\( n = 1 \)) et la concurrence parfaite
+      (\( n \to \infty \)) ; l'entrée de firmes supplémentaires érode continûment le pouvoir de
+      marché, ce que l'indice de Lerner chiffre exactement.
+    </p>
+    <p class="bareme">Barème : 1,5 pt pour L(1) = 3/5 identifié au monopole ; 1,5 pt pour la
+      limite L → 0 et p → Cm ; 2 pts pour l'interprétation (Cournot relie monopole et
+      concurrence parfaite).</p>
+  </div>
+</section>

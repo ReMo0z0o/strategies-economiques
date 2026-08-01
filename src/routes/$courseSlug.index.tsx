@@ -298,6 +298,34 @@ function CourseHome({ courseId }: { courseId: Course["id"] }) {
         </div>
       </section>
 
+      {/* Examens blancs */}
+      <section className="border-t">
+        <div className="container py-12 sm:py-14">
+          <div className="flex flex-col items-start justify-between gap-5 rounded-3xl border bg-card p-6 shadow-sm sm:flex-row sm:items-center sm:p-8">
+            <div className="min-w-0">
+              <div className="mb-1 flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary">
+                <GraduationCap className="h-4 w-4" aria-hidden /> Prêt pour le jour J ?
+              </div>
+              <h2 className="text-xl font-extrabold tracking-tight sm:text-2xl">
+                3 examens blancs à télécharger
+              </h2>
+              <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                Au format des vraies évaluations (page de garde, barème, cadres de réponse), avec
+                corrigés détaillés. Imprime, chronomètre-toi, corrige-toi.
+              </p>
+            </div>
+            <Link
+              to="/$courseSlug/examens"
+              params={{ courseSlug: slug }}
+              className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-primary px-5 py-3 text-[15px] font-bold text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Voir les examens blancs
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <footer className="border-t">
         <div className="container flex flex-col items-center justify-between gap-3 py-8 text-sm text-muted-foreground sm:flex-row">
           <span className="flex items-center gap-2">

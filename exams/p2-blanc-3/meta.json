@@ -1,0 +1,12 @@
+{
+  "kind": "Examen blanc n° 3",
+  "part": "Partie 2 — Économie industrielle",
+  "tagline": "Couvre : tarif en deux parties & double marge, Bertrand différencié, indice de Lerner & Cournot à n firmes",
+  "duration": "1h",
+  "total": 100,
+  "questions": [
+    { "n": 1, "points": 40 },
+    { "n": 2, "points": 35 },
+    { "n": 3, "points": 25 }
+  ]
+}

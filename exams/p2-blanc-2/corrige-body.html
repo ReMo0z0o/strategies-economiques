@@ -1,0 +1,342 @@
+<!-- ============================================================ -->
+<!-- Question 1 — La chaîne oligopole                              -->
+<!-- ============================================================ -->
+<section class="question" style="page-break-before:auto">
+  <h2>Question 1 <span class="pts">(45 points)</span> — Monopole, Cournot, Stackelberg, dissuasion d'entrée</h2>
+
+  <div class="solution">
+    <div class="tag">Solution 1.1</div>
+    <p>
+      Le monopole choisit sa production pour maximiser son profit. Écrivez d'abord le profit en
+      remplaçant le prix par la demande inverse :
+    </p>
+    <p class="math-line">\[\pi_K(y) = (96 - y)\,y - 24\,y = 72\,y - y^2\]</p>
+    <p>Condition du premier ordre (recette marginale = coût marginal) :</p>
+    <p class="math-line">\[\frac{d\pi_K}{dy} = 72 - 2y = 0 \;\Longleftrightarrow\; \mathbf{y^* = 36}\]</p>
+    <p>On remonte la demande inverse pour trouver le prix :</p>
+    <p class="math-line">\[p^* = 96 - 36 = \mathbf{60}\]</p>
+    <p>Le profit :</p>
+    <p class="math-line">\[\pi_K = (60 - 24) \times 36 = \mathbf{1296}\]</p>
+    <p>
+      Le surplus des consommateurs est l'aire du triangle entre la demande et le prix, de 0 à
+      \(y^*\) (hauteur : prix d'étranglement \(96\) moins prix payé \(60\)) :
+    </p>
+    <p class="math-line">\[SC = \tfrac{1}{2}\,(96 - 60) \times 36 = \mathbf{648}\]</p>
+    <p>
+      Piège classique : ne confondez pas \(Rm = Cm\) (l'optimum du monopole) avec \(p = Cm\)
+      (la référence concurrentielle). La recette marginale \(96 - 2y\) décroît deux fois plus
+      vite que la demande.
+    </p>
+    <p class="bareme">Barème (10 pts) : mise en équation du profit et CPO 3 ; \(y^* = 36\) : 2 ;
+      \(p^* = 60\) : 1,5 ; \(\pi = 1296\) : 1,5 ; \(SC = 648\) : 2.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 1.2</div>
+    <p>
+      En Cournot, chaque firme choisit sa production en prenant celle de l'autre comme donnée.
+      Profit de Kappa :
+    </p>
+    <p class="math-line">\[\pi_K = (96 - y_K - y_L)\,y_K - 24\,y_K\]</p>
+    <p class="math-line">\[\frac{\partial \pi_K}{\partial y_K} = 72 - y_L - 2\,y_K = 0
+      \;\Longleftrightarrow\; y_K = \tfrac{1}{2}\,(72 - y_L)\]</p>
+    <p>
+      C'est la <strong>fonction de meilleure réponse</strong> de Kappa. Le calcul est symétrique
+      pour Lambda (mêmes coûts) :
+    </p>
+    <p class="math-line">\[y_L = \tfrac{1}{2}\,(72 - y_K)\]</p>
+    <p>
+      À l'équilibre de Cournot-Nash, les deux conditions sont satisfaites simultanément. Par
+      symétrie \(y_K = y_L\), donc :
+    </p>
+    <p class="math-line">\[y_K = \tfrac{1}{2}(72 - y_K) \;\Longleftrightarrow\; \tfrac{3}{2}\,y_K = 36
+      \;\Longleftrightarrow\; \mathbf{y_K = y_L = 24}\]</p>
+    <p>
+      (En résolvant le système sans invoquer la symétrie, on retrouve bien sûr le même résultat :
+      \(y_K = 36 - \tfrac14(72 - y_K) \Leftrightarrow \tfrac34 y_K = 18 \Leftrightarrow y_K = 24\).)
+    </p>
+    <p>Prix et profits :</p>
+    <p class="math-line">\[p = 96 - 24 - 24 = \mathbf{48} \qquad
+      \pi_K = \pi_L = (48 - 24)\times 24 = \mathbf{576}\]</p>
+    <p>
+      Vérification d'ordre de grandeur : la production totale (48) dépasse celle du monopole
+      (36), le prix (48) est plus bas que 60 et la somme des profits (1152) est inférieure au
+      profit de monopole (1296) — tout est cohérent avec le cours.
+    </p>
+    <p class="bareme">Barème (12 pts) : dérivation des deux meilleures réponses 5 ; résolution du
+      système et \(y_K = y_L = 24\) : 4 ; \(p = 48\) : 1,5 ; profits \(576\) chacun : 1,5.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 1.3</div>
+    <p>
+      En Stackelberg, Lambda (le suiveur) observe \(y_K\) avant de choisir : elle joue donc sa
+      meilleure réponse \(y_L = \tfrac{1}{2}(72 - y_K)\). Kappa (le leader) le sait et
+      <strong>substitue cette fonction de réaction</strong> dans son propre profit :
+    </p>
+    <p class="math-line">\[\pi_K = \Bigl(96 - y_K - \tfrac{1}{2}(72 - y_K)\Bigr)\,y_K - 24\,y_K
+      = \bigl(60 - \tfrac{1}{2}\,y_K\bigr)\,y_K - 24\,y_K = \tfrac{1}{2}\,y_K\,(72 - y_K)\]</p>
+    <p class="math-line">\[\frac{d\pi_K}{dy_K} = 36 - y_K = 0 \;\Longleftrightarrow\; \mathbf{y_K = 36}\]</p>
+    <p class="math-line">\[y_L = \tfrac{1}{2}\,(72 - 36) = \mathbf{18} \qquad
+      p = 96 - 36 - 18 = \mathbf{42}\]</p>
+    <p class="math-line">\[\pi_K = (42 - 24)\times 36 = \mathbf{648} \qquad
+      \pi_L = (42 - 24)\times 18 = \mathbf{324}\]</p>
+    <p>
+      Comparaison avec Cournot : le leader produit plus (36 contre 24) et gagne plus
+      (648 contre 576) — c'est l'<strong>avantage au premier joueur</strong> ; le suiveur produit
+      moins (18 contre 24) et gagne moins (324 contre 576). La production totale augmente
+      (54 contre 48), donc le prix baisse (42 contre 48) : les consommateurs y gagnent.
+    </p>
+    <p class="bareme">Barème (10 pts) : méthode (substitution de la meilleure réponse du suiveur)
+      3 ; \(y_K = 36\) : 2 ; \(y_L = 18\) : 1,5 ; \(p = 42\) : 1 ; profits 648 et 324 : 1,5 ;
+      comparaison avec Cournot 1.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 1.4</div>
+    <p>
+      Lambda n'entrera pas si son profit d'entrée (coût fixe \(F = 144\) déduit) est négatif ou
+      nul. Si elle entre après avoir observé \(y_K\), elle joue sa meilleure réponse
+      \(y_L = \tfrac{1}{2}(72 - y_K)\). Son profit d'entrée vaut alors :
+    </p>
+    <p class="math-line">\[\pi_L = (96 - y_K - y_L)\,y_L - 24\,y_L - F = (72 - y_K - y_L)\,y_L - F\]</p>
+    <p class="math-line">\[= \Bigl(72 - y_K - \tfrac{1}{2}(72 - y_K)\Bigr)\times\tfrac{1}{2}(72 - y_K) - F
+      = \tfrac{1}{4}\,(72 - y_K)^2 - F\]</p>
+    <p>Avec \(F = 144\), Lambda préfère ne pas entrer si :</p>
+    <p class="math-line">\[\tfrac{1}{4}\,(72 - y_K)^2 - 144 \le 0
+      \;\Longleftrightarrow\; (72 - y_K)^2 \le 576
+      \;\Longleftrightarrow\; 72 - y_K \le 24
+      \;\Longleftrightarrow\; \mathbf{y_K \ge 48}\]</p>
+    <p>
+      La <strong>production limite</strong> de Kappa est donc \(\bar y_K = 48\). Vérification :
+      si \(y_K = 48\), une Lambda qui entrerait malgré tout produirait
+      \(y_L = \tfrac{1}{2}(72 - 48) = 12\), le prix vaudrait \(96 - 48 - 12 = 36\) et son profit
+      \((36 - 24)\times 12 - 144 = 0\) : elle n'entre pas. Notez que la production de monopole
+      (36) ne suffit pas à dissuader l'entrée : \(\tfrac14(72-36)^2 - 144 = 180 > 0\). Kappa doit
+      <em>surproduire</em>.
+    </p>
+    <p>Cette exclusion est-elle profitable ? Avec \(y_K = 48\) et \(y_L = 0\) :</p>
+    <p class="math-line">\[p = 96 - 48 = 48 \qquad \pi_K = (48 - 24)\times 48 = \mathbf{1152}\]</p>
+    <p>
+      C'est plus que les 648 obtenus en accommodant l'entrée (Stackelberg de la question 1.3, où
+      \(F\) ne pèse que sur Lambda). Kappa est donc tentée de produire 48 pour exclure Lambda.
+      <strong>Ce comportement est néanmoins illégal</strong> : surproduire dans le seul but
+      d'évincer un concurrent constitue un <strong>abus de position dominante</strong>, sanctionné
+      par le droit de la concurrence.
+    </p>
+    <p class="bareme">Barème (13 pts) : profit d'entrée de Lambda en fonction de \(y_K\)
+      (substitution de la meilleure réponse) 4 ; condition de non-entrée et \(\bar y_K = 48\) : 3 ;
+      vérification (\(\pi_L = 0\) en \(y_K = 48\)) 1 ; comparaison 1152 contre 648 et conclusion
+      3 ; remarque légale (abus de position dominante) 2.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Question 2 — Les effets de réseau                             -->
+<!-- ============================================================ -->
+<section class="question" style="page-break-before:auto">
+  <h2>Question 2 <span class="pts">(30 points)</span> — Les effets de réseau</h2>
+
+  <div class="solution">
+    <div class="tag">Solution 2.1</div>
+    <p>
+      Sans effet de réseau, chacun compare son bénéfice de base au prix. Anna achète si
+      \(60 - p > 0\), c'est-à-dire si \(p < 60\) ; Boris achète si \(p < 36\). La demande totale
+      est le nombre de bénéfices supérieurs au prix — une demande « en escalier » :
+    </p>
+    <p class="math-line">\[\text{si } p > 60 : y = 0 \qquad \text{(même Anna renonce)}\]</p>
+    <p class="math-line">\[\text{si } 36 < p < 60 : y = 1 \qquad \text{(seule Anna achète)}\]</p>
+    <p class="math-line">\[\text{si } p < 36 : y = 2 \qquad \text{(les deux achètent)}\]</p>
+    <p>
+      (Aux prix-frontière exacts \(p = 60\) et \(p = 36\), le consommateur concerné est
+      indifférent.) C'est une demande décroissante tout à fait ordinaire : chaque baisse de prix
+      franchit un seuil et gagne un acheteur.
+    </p>
+    <p class="bareme">Barème (6 pts) : seuils individuels (\(p < 60\), \(p < 36\)) 3 ; demande en
+      escalier correcte (0/1/2 sur les trois zones) 3.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 2.2</div>
+    <p>
+      Chaque joueur choisit Acheter ou Ne pas acheter. Le bénéfice supplémentaire \(v = 30\)
+      n'apparaît que dans la case où les deux achètent : Anna y gagne \(60 + 30 - p = 90 - p\) et
+      Boris \(36 + 30 - p = 66 - p\). Celui qui achète seul n'a pas d'interaction (pas de
+      \(v\)) ; celui qui n'achète pas obtient 0.
+    </p>
+    <table class="game">
+      <tr><td class="void"></td><td class="void"></td><th colspan="2">Boris</th></tr>
+      <tr><td class="void"></td><td class="void"></td><th>Acheter</th><th>Ne pas acheter</th></tr>
+      <tr>
+        <td class="player" rowspan="2">Anna</td>
+        <th>Acheter</th>
+        <td>\((90 - p \;;\; 66 - p)\)</td>
+        <td>\((60 - p \;;\; 0)\)</td>
+      </tr>
+      <tr>
+        <th>Ne pas acheter</th>
+        <td>\((0 \;;\; 36 - p)\)</td>
+        <td>\((0 \;;\; 0)\)</td>
+      </tr>
+    </table>
+    <p>
+      Erreur fréquente : mettre \(v\) dans les cases où un seul joueur achète. Le bénéfice de
+      réseau n'existe que si les <em>deux</em> sont sur le réseau.
+    </p>
+    <p class="bareme">Barème (8 pts) : structure de la matrice (joueurs, stratégies) 2 ; les
+      quatre cases correctes 1,5 chacune (le \(v\) uniquement dans la case Acheter/Acheter).</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 2.3</div>
+    <p>
+      Un profil est un équilibre de Nash si aucun joueur n'a intérêt à dévier unilatéralement.
+      On teste chaque case.
+    </p>
+    <p>
+      <strong>(a) Les deux achètent.</strong> Anna ne dévie pas si \(90 - p \ge 0\), soit
+      \(p \le 90\) ; Boris ne dévie pas si \(66 - p \ge 0\), soit \(p \le 66\). La condition la
+      plus exigeante est celle de Boris :
+    </p>
+    <p class="math-line">\[\text{« les deux achètent » est un équilibre de Nash} \;\Longleftrightarrow\; \mathbf{p \le 66}\]</p>
+    <p>
+      <strong>(b) Seule Anna achète.</strong> Anna doit vouloir acheter <em>seule</em> (pas de
+      \(v\)) : \(60 - p \ge 0\), soit \(p \le 60\). Et Boris doit refuser de la rejoindre alors
+      qu'en déviant il obtiendrait \(66 - p\) : il faut \(66 - p \le 0\), soit \(p \ge 66\). Les
+      deux conditions sont incompatibles (\(p \le 60\) et \(p \ge 66\)) :
+      <strong>cet équilibre n'existe pour aucun prix</strong>. La raison : ici
+      \(v = 30 > r_A - r_B = 24\), donc la disposition à payer de Boris <em>dans</em> le réseau
+      (66) dépasse celle d'Anna seule (60).
+    </p>
+    <p>
+      <strong>(c) Personne n'achète.</strong> Anna ne dévie pas si acheter seule ne rapporte
+      rien : \(60 - p \le 0\), soit \(p \ge 60\) ; pour Boris, \(36 - p \le 0\) est alors
+      automatique. Donc :
+    </p>
+    <p class="math-line">\[\text{« personne n'achète » est un équilibre de Nash} \;\Longleftrightarrow\; \mathbf{p \ge 60}\]</p>
+    <p>
+      <strong>Zone à équilibres multiples :</strong> pour \(\mathbf{60 \le p \le 66}\), « les
+      deux achètent » et « personne n'achète » sont <em>simultanément</em> des équilibres de
+      Nash. Au même prix, le marché peut aboutir au réseau complet ou au réseau vide : tout
+      dépend des anticipations de chacun sur le comportement de l'autre.
+    </p>
+    <p class="bareme">Barème (10 pts) : (a) condition \(p \le 66\) avec justification (la
+      condition la plus exigeante est celle de Boris) 3 ; (b) impossibilité démontrée 3 ; (c) condition \(p \ge 60\) : 2 ; zone
+      d'équilibres multiples \([60,\,66]\) identifiée 2. Accepter les inégalités strictes ou
+      larges (indifférence aux frontières).</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 2.4</div>
+    <p>
+      <strong>Anticipations auto-réalisatrices.</strong> Dans la zone \(60 \le p \le 66\), la
+      croyance de chacun détermine le résultat : si chacun anticipe que l'autre achète, acheter
+      est optimal et le réseau se forme ; si chacun anticipe que l'autre s'abstient, s'abstenir
+      est optimal et le réseau reste vide. Les deux « prophéties » se réalisent d'elles-mêmes —
+      le même prix est compatible avec deux équilibres.
+    </p>
+    <p>
+      <strong>Masse critique.</strong> C'est le nombre d'utilisateurs qu'il faut convaincre
+      d'avoir rejoint (ou de rejoindre) le réseau pour faire basculer les anticipations vers le
+      « bon » équilibre : au-delà, l'effet boule de neige attire les autres utilisateurs ;
+      en deçà, le réseau s'effondre. Ici, la masse critique est atteinte dès qu'un consommateur
+      est convaincu que l'autre achète.
+    </p>
+    <p>
+      <strong>Prix de lancement.</strong> Un prix bas au lancement (ici \(p < 36\)) rend l'achat
+      avantageux <em>même pour un consommateur pessimiste qui se croit seul</em> : acheter
+      devient une stratégie dominante pour Boris, et Anna suit. Le vendeur sélectionne ainsi le
+      bon équilibre et construit la masse critique, quitte à vendre à perte. Une fois le réseau
+      installé, les anticipations « tout le monde y est » lui permettent de remonter le prix
+      (jusqu'à 66 ici) sans détruire l'équilibre : les pertes initiales sont un investissement
+      dans les anticipations, pas de la générosité.
+    </p>
+    <p class="bareme">Barème (6 pts) : anticipations auto-réalisatrices reliées à la zone
+      d'équilibres multiples 2 ; masse critique 2 ; rationalité du prix de lancement (amorcer le
+      réseau puis remonter le prix) 2.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Question 3 — Réguler et taxer le monopole                     -->
+<!-- ============================================================ -->
+<section class="question" style="page-break-before:auto">
+  <h2>Question 3 <span class="pts">(25 points)</span> — Réguler et taxer le monopole</h2>
+
+  <div class="solution">
+    <div class="tag">Solution 3.1</div>
+    <p><strong>(a) Sans intervention.</strong> Le profit s'écrit :</p>
+    <p class="math-line">\[\pi(y) = (40 - y)\,y - 10\,y = 30\,y - y^2\]</p>
+    <p class="math-line">\[\frac{d\pi}{dy} = 30 - 2y = 0 \;\Longleftrightarrow\; \mathbf{y^* = 15}
+      \qquad p^* = 40 - 15 = \mathbf{25} \qquad \pi^* = (25 - 10)\times 15 = \mathbf{225}\]</p>
+    <p>
+      <strong>(b) Avec le prix plafond \(\bar p = 10\).</strong> Obligée de servir toute la
+      demande au prix 10, Sigma produit la quantité demandée à ce prix :
+    </p>
+    <p class="math-line">\[10 = 40 - y \;\Longleftrightarrow\; \mathbf{y = 30}\]</p>
+    <p>Son profit devient :</p>
+    <p class="math-line">\[\pi = (10 - 10)\times 30 = \mathbf{0}\]</p>
+    <p>
+      Comme Sigma n'a <strong>aucun coût fixe</strong>, un profit nul lui permet de rester sur le
+      marché (elle couvre exactement tous ses coûts). La régulation atteint ici l'optimum : la
+      production double (de 15 à 30), le prix tombe au coût marginal et la perte sèche du
+      monopole (\(\tfrac{1}{2}\times(25-10)\times(30-15) = 112{,}5\)) disparaît entièrement.
+      Attention : ce résultat repose sur l'absence de coût fixe. Pour un monopole
+      <em>naturel</em> (coût fixe \(F > 0\)), le même plafond imposerait une perte \(-F\) et
+      chasserait la firme du marché.
+    </p>
+    <p class="bareme">Barème (10 pts) : (a) \(y^* = 15\), \(p^* = 25\), \(\pi^* = 225\) : 4 ;
+      (b) \(y = 30\) : 2 ; profit nul 1,5 ; viabilité (pas de coût fixe) et commentaire sur
+      l'efficacité (perte sèche éliminée) 2,5.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 3.2</div>
+    <p>
+      La taxe unitaire s'ajoute au coût de chaque unité vendue : tout se passe comme si le coût
+      marginal passait de 10 à \(10 + 4 = 14\). Nouveau programme :
+    </p>
+    <p class="math-line">\[\pi(y) = (40 - y)\,y - 14\,y = 26\,y - y^2
+      \qquad \frac{d\pi}{dy} = 26 - 2y = 0 \;\Longleftrightarrow\; \mathbf{y' = 13}\]</p>
+    <p class="math-line">\[p' = 40 - 13 = \mathbf{27}\]</p>
+    <p>
+      Le prix payé par les consommateurs augmente de \(27 - 25 = \mathbf{2}\), soit
+      <strong>la moitié de la taxe</strong> (\(t/2 = 2\)). La taxe est donc
+      <strong>partagée</strong> : les consommateurs paient 2 de plus par unité ; la firme
+      supporte les 2 restants — sa marge nette par unité passe de \(25 - 10 = 15\) à
+      \(27 - 14 = 13\), et son profit chute de 225 à \((27 - 14)\times 13 = 169\).
+    </p>
+    <p>
+      Remarques. (i) Ce partage moitié-moitié est propre à la demande <em>linéaire</em> avec
+      coût marginal constant ; le cours montre qu'avec une demande iso-élastique, le monopole
+      répercute <em>plus</em> que la taxe sur ses clients. (ii) La taxe aggrave la distorsion de
+      monopole : la production, déjà trop faible (15 contre 30 à l'optimum), recule encore
+      (13).
+    </p>
+    <p class="bareme">Barème (9 pts) : coût marginal effectif \(14\) et \(y' = 13\) : 3 ;
+      \(p' = 27\) : 2 ; hausse de prix de 2 (la moitié de la taxe) et partage chiffré de
+      l'incidence 3 ; commentaire (distorsion aggravée ou spécificité de la demande linéaire) 1.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 3.3</div>
+    <p>
+      Avant taxe, Sigma choisit \(y^*\) tel que \(\frac{d\Pi(y)}{dy} = 0\). Avec un prélèvement
+      de 30 \(\%\) du profit, elle maximise son profit net :
+    </p>
+    <p class="math-line">\[(1 - 0{,}30)\,\Pi(y) = 0{,}7\,\Pi(y)\]</p>
+    <p class="math-line">\[\frac{d\,[0{,}7\,\Pi(y)]}{dy} = 0{,}7\,\frac{d\Pi(y)}{dy} = 0
+      \;\Longleftrightarrow\; \frac{d\Pi(y)}{dy} = 0 \;\Longleftrightarrow\; y = y^*\]</p>
+    <p>
+      Multiplier une fonction par une constante positive <strong>ne déplace pas son
+      maximum</strong> : la production optimale reste \(y^* = 15\), donc le prix (25) et la
+      quantité demandée ne bougent pas. Contrairement à la taxe unitaire, la taxe sur le profit
+      frappe le <em>résultat</em> et non la marge de la dernière unité : elle ne modifie ni
+      \(Rm\) ni \(Cm\). Elle est <strong>neutre</strong> — l'État capte 30 \(\%\) de la rente
+      (67,5) sans créer de perte sèche supplémentaire.
+    </p>
+    <p class="bareme">Barème (6 pts) : argument mathématique (maximiser \((1-t)\Pi\) équivaut à
+      maximiser \(\Pi\)) 4 ; interprétation (assiette sur le résultat et non sur la marge,
+      neutralité, contraste avec la taxe unitaire) 2.</p>
+  </div>
+</section>

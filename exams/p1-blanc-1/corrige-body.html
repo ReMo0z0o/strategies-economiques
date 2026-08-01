@@ -1,0 +1,656 @@
+<!-- ============================================================ -->
+<!-- Question 1 — corrigé                                          -->
+<!-- ============================================================ -->
+<section class="question">
+  <h2>Question 1 <span class="pts">(40 points)</span></h2>
+  <div class="stem">
+
+    <div class="subq"><span class="label">1.1)</span>
+      Allocation qui domine (2 ; 3 ; 2) sans être efficace au sens de Pareto. (10 points)
+    </div>
+    <div class="solution">
+      <div class="tag">Solution 1.1</div>
+      <p>
+        Une réponse possible est l'allocation <strong>(3 ; 3 ; 2)</strong>.
+      </p>
+      <p>
+        <em>Elle domine (2 ; 3 ; 2)</em> : le collègue 1 reçoit strictement plus (3 &gt; 2) et
+        les collègues 2 et 3 reçoivent autant. Personne n'est perdant et au moins une personne
+        est gagnante : c'est exactement la définition d'une amélioration de Pareto.
+      </p>
+      <p>
+        <em>Elle n'est pas efficace</em> : elle ne distribue que \( 3 + 3 + 2 = 8 \) parts sur
+        les 9 disponibles. Il reste donc une part non attribuée, et l'allocation (3 ; 3 ; 2) est
+        elle-même dominée, par exemple par <strong>(4 ; 3 ; 2)</strong> ou (3 ; 3 ; 3). Une
+        allocation est efficace au sens de Pareto seulement s'il est impossible d'améliorer le
+        sort de quelqu'un sans détériorer celui d'un autre — ce qui, avec des préférences
+        monotones, exige ici de distribuer les 9 parts.
+      </p>
+      <p>
+        Toute allocation qui (i) donne au moins autant que (2 ; 3 ; 2) à chacun avec au moins
+        une inégalité stricte et (ii) distribue au total au plus 8 parts, est acceptée.
+      </p>
+      <p class="bareme">Barème : allocation valide 4 pts ; justification de la domination 3 pts ;
+      justification de la non-efficacité (part non distribuée / allocation dominante explicite) 3 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">1.2)</span>
+      DAA moyenne (8 €) supérieure à la DAP moyenne (4 €) : pourquoi est-ce une déviation ?
+      (10 points)
+    </div>
+    <div class="solution">
+      <div class="tag">Solution 1.2</div>
+      <p>
+        Pour un être rationnel, la valeur d'un bien ne dépend que de l'usage et du plaisir
+        qu'il en retire, pas du fait de le posséder déjà ou non. La théorie rationnelle prédit
+        donc <strong>DAP = DAA</strong> : le prix minimal pour vendre la gourde doit être égal
+        au prix maximal pour l'acheter.
+      </p>
+      <p>
+        De plus, la gourde a été attribuée <em>au hasard</em> : les deux groupes (détenteurs et
+        non-détenteurs) ont donc en moyenne les mêmes préférences, et leurs évaluations moyennes
+        devraient coïncider. Observer DAA = 8 € contre DAP = 4 € — soit un rapport du simple au
+        double — contredit cette prédiction : le simple fait de <em>posséder</em> la gourde
+        (une variable non-pertinente pour sa valeur) augmente l'évaluation qu'on en fait.
+      </p>
+      <p>
+        Ce biais s'appelle <strong>l'effet de dotation</strong>.
+      </p>
+      <p class="bareme">Barème : prédiction rationnelle DAP = DAA 4 pts ; explication de la
+      déviation (randomisation → mêmes préférences moyennes, la possession est non-pertinente)
+      3 pts ; nom du biais 3 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">1.3)</span>
+      Projets dominés et projets efficaces au sens de Pareto. (10 points)
+    </div>
+    <div class="solution">
+      <div class="tag">Solution 1.3</div>
+      <p>
+        <em>a)</em> On compare les projets deux à deux. Le projet <strong>A est dominé par le
+        projet C</strong> :
+      </p>
+      <p class="math-line">
+        \( u_1(C) = 6 \ge 6 = u_1(A), \qquad u_2(C) = 3 \ge 3 = u_2(A), \qquad u_3(C) = 7 > 5 = u_3(A). \)
+      </p>
+      <p>
+        Personne ne perd au passage de A à C et l'habitant 3 y gagne strictement : C domine A
+        au sens de Pareto. Aucune autre domination n'existe : toutes les autres paires de
+        projets font au moins un gagnant <em>et</em> un perdant (par exemple B contre D :
+        l'habitant 1 préfère D, l'habitant 2 préfère B — ils sont incomparables au sens de
+        Pareto).
+      </p>
+      <p>
+        <em>b)</em> Un projet est efficace s'il n'est dominé par aucun autre. Les projets
+        efficaces sont donc <strong>B, C et D</strong> ; seul A n'est pas efficace.
+      </p>
+      <p>
+        Piège classique : D est efficace alors qu'il n'est « le meilleur » pour personne — il
+        suffit qu'aucun projet ne fasse au moins aussi bien pour <em>tous</em> les habitants à
+        la fois. Le critère de Pareto ne classe pas les alternatives efficaces entre elles.
+      </p>
+      <p class="bareme">Barème : a) identification de « A dominé par C » avec vérification des
+      trois inégalités 5 pts ; b) ensemble efficace {B, C, D} correctement justifié 5 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">1.4)</span>
+      Deux arguments pour conserver la théorie du choix rationnel. (10 points)
+    </div>
+    <div class="solution">
+      <div class="tag">Solution 1.4</div>
+      <p>Deux arguments parmi les trois vus au cours (deux suffisent) :</p>
+      <p>
+        <strong>1. Un guide normatif (benchmark).</strong> La théorie rationnelle décrit ce
+        qu'un décideur <em>devrait</em> faire pour servir au mieux ses propres objectifs.
+        Connaître ses biais, c'est justement pouvoir s'en protéger en revenant aux principes
+        rationnels : la théorie reste la référence à viser, même si les humains s'en écartent.
+      </p>
+      <p>
+        <strong>2. Le point de comparaison indispensable.</strong> Les biais comportementaux se
+        définissent précisément comme des <em>déviations par rapport à</em> la théorie
+        rationnelle. Sans ce point de référence, on ne pourrait ni les identifier, ni les
+        mesurer : la théorie comportementale a besoin de la théorie rationnelle pour exister.
+      </p>
+      <p>
+        <strong>3. Une bonne approximation.</strong> Dans les décisions familières, répétées ou
+        à enjeux importants, les comportements observés restent très proches des prédictions
+        rationnelles : le modèle rationnel demeure une bonne première approximation de la
+        réalité.
+      </p>
+      <p class="bareme">Barème : 5 pts par argument correct et développé (deux arguments
+      demandés) ; un simple mot-clé sans explication : 2 pts.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Question 2 — corrigé                                          -->
+<!-- ============================================================ -->
+<section class="question">
+  <h2>Question 2 <span class="pts">(40 points)</span></h2>
+  <div class="stem">
+    <p class="note">
+      Rappel de l'énoncé : richesse totale 10 000 € (3 600 € d'épargne + vélo de 6 400 €),
+      probabilité de vol \( \pi = 1/4 \), \( u(w) = \sqrt{w} \).
+    </p>
+
+    <div class="subq"><span class="label">2.1)</span> VMA sans assurance. (6 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 2.1</div>
+      <p>Deux scénarios : pas de vol (richesse 10 000 €, probabilité 3/4) et vol (richesse
+      10 000 − 6 400 = 3 600 €, probabilité 1/4) :</p>
+      <p class="math-line">
+        \( \mathrm{VMA} = \tfrac{3}{4} \times 10\,000 + \tfrac{1}{4} \times 3\,600
+        = 7\,500 + 900 = \mathbf{8\,400\ \text{euros}}. \)
+      </p>
+      <p class="bareme">Barème : identification correcte des deux scénarios et de leurs
+      probabilités 3 pts ; calcul exact 3 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">2.2)</span> Utilité espérée sans assurance. (8 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 2.2</div>
+      <p class="math-line">
+        \( U = \tfrac{3}{4}\,\sqrt{10\,000} + \tfrac{1}{4}\,\sqrt{3\,600}
+        = \tfrac{3}{4} \times 100 + \tfrac{1}{4} \times 60 = 75 + 15 = \mathbf{90}. \)
+      </p>
+      <p>
+        Attention au piège classique : on applique \( u \) <em>à la richesse de chaque
+        scénario</em>, puis on prend l'espérance — et non l'inverse. Ici
+        \( u(\mathrm{VMA}) = \sqrt{8\,400} \approx 91{,}65 > 90 = U \) : c'est la marque d'un
+        individu averse au risque (fonction de Bernoulli concave).
+      </p>
+      <p class="bareme">Barème : formule de l'utilité espérée 4 pts ; calcul exact 4 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">2.3)</span> Équivalent certain et prime de risque. (10 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 2.3</div>
+      <p>
+        L'équivalent certain \( EC \) est le montant sûr qui procure la même utilité que la
+        situation risquée :
+      </p>
+      <p class="math-line">
+        \( u(EC) = U \iff \sqrt{EC} = 90 \iff EC = 90^2 = \mathbf{8\,100\ \text{euros}}. \)
+      </p>
+      <p>La prime de risque (minimale) est l'écart entre la VMA et l'équivalent certain :</p>
+      <p class="math-line">
+        \( \mathrm{PRM} = \mathrm{VMA} - EC = 8\,400 - 8\,100 = \mathbf{300\ \text{euros}}. \)
+      </p>
+      <p>
+        <em>Interprétation.</em> La livreuse est indifférente entre sa situation risquée et
+        recevoir 8 100 € à coup sûr : le risque de vol « coûte » l'équivalent de 300 € de
+        richesse sûre. C'est aussi le montant maximal qu'elle accepterait de sacrifier, en plus
+        du coût attendu du sinistre, pour être débarrassée du risque.
+      </p>
+      <p class="bareme">Barème : équivalent certain (définition + valeur 8 100) 4 pts ; prime de
+      risque (définition + valeur 300) 3 pts ; interprétation 3 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">2.4)</span> Tarif de 0,25 €/€ couvert : prix juste ?
+    Couverture optimale et richesses finales. (10 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 2.4</div>
+      <p>
+        <em>Prix juste ?</em> Un euro couvert coûte à l'assureur 1 € avec probabilité 1/4 et
+        0 € sinon : sa VMA vaut \( \tfrac{1}{4} \times 1 = 0{,}25 \) €. Le tarif de 0,25 € est
+        donc exactement égal à la probabilité du sinistre : il est
+        <strong>actuariellement juste</strong>.
+      </p>
+      <p>
+        <em>Couverture optimale.</em> Si elle couvre \( C \) euros, la livreuse paie la prime
+        \( 0{,}25\,C \) dans tous les cas et touche l'indemnité \( C \) seulement en cas de
+        vol. Ses richesses d'état sont :
+      </p>
+      <p class="math-line">
+        \( y = 10\,000 - 0{,}25\,C \quad \text{(pas de vol)}, \qquad
+        x = 3\,600 - 0{,}25\,C + C = 3\,600 + 0{,}75\,C \quad \text{(vol)}. \)
+      </p>
+      <p>Elle maximise \( U(C) = \tfrac{3}{4}\,u(y) + \tfrac{1}{4}\,u(x) \). La condition de
+      premier ordre s'écrit :</p>
+      <p class="math-line">
+        \( \tfrac{1}{4} \times 0{,}75 \times u'(x) = \tfrac{3}{4} \times 0{,}25 \times u'(y)
+        \iff u'(x) = u'(y). \)
+      </p>
+      <p>
+        Comme \( u \) est strictement concave, \( u' \) est strictement décroissante, donc
+        \( u'(x) = u'(y) \) impose \( x = y \) : au prix juste, la livreuse s'assure
+        <strong>complètement</strong> (théorème du cours). On résout :
+      </p>
+      <p class="math-line">
+        \( 3\,600 + 0{,}75\,C = 10\,000 - 0{,}25\,C \iff C = \mathbf{6\,400\ \text{euros}} = L. \)
+      </p>
+      <p>
+        La prime totale vaut \( 0{,}25 \times 6\,400 = 1\,600 \) € et la richesse finale est la
+        même dans les deux scénarios : \( 10\,000 - 1\,600 = \mathbf{8\,400} \) € (en cas de
+        vol : \( 3\,600 - 1\,600 + 6\,400 = 8\,400 \) €). Remarquez que cette richesse certaine
+        de 8 400 € est exactement la VMA de la question 2.1 — l'assurance au prix juste ne
+        change pas la VMA, elle supprime seulement le risque — et qu'elle procure une utilité
+        \( \sqrt{8\,400} \approx 91{,}65 > 90 \) : la livreuse gagne bien à s'assurer.
+      </p>
+      <p class="bareme">Barème : prix juste = probabilité du sinistre 3 pts ; richesses d'état
+      correctes (prime payée dans les deux états) 3 pts ; C* = 6 400 via CPO ou théorème 2 pts ;
+      richesses finales 8 400 € dans les deux scénarios 2 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">2.5)</span> Tarif de 0,32 €/€ couvert : couverture
+    complète, partielle ou nulle ? (6 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 2.5</div>
+      <p>
+        À 0,32 € par euro couvert, le tarif est <em>au-dessus</em> du prix actuariellement
+        juste (0,25 €) : chaque euro couvert réduit désormais la VMA des actifs. La couverture
+        optimale devient <strong>partielle</strong> : \( 0 < C^{**} < 6\,400 \) €.
+      </p>
+      <p>
+        Justification par la CPO : avec \( p = 0{,}32 > \pi = 0{,}25 \), la condition de
+        premier ordre \( \pi (1-p)\, u'(x) = (1-\pi)\, p \, u'(y) \) impose
+        \( u'(x) > u'(y) \), donc \( x < y \) : il reste du risque à l'optimum, la couverture
+        n'est plus complète. C'est le repère du cours : prime juste → couverture complète ;
+        prime plus chère que juste → couverture partielle. La livreuse, averse au risque,
+        accepte de payer un peu de VMA pour réduire le risque, mais plus le prix s'écarte du
+        juste, moins elle couvre.
+      </p>
+      <p class="bareme">Barème : réponse « partielle » 3 pts ; justification (CPO ou théorème du
+      cours correctement invoqué) 3 pts.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Question 3 — corrigé                                          -->
+<!-- ============================================================ -->
+<section class="question">
+  <h2>Question 3 <span class="pts">(50 points)</span></h2>
+  <div class="stem">
+
+    <div class="subq"><span class="label">3.1)</span> Stratégie dominée du jeu 3×3. (8 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 3.1</div>
+      <p>
+        La stratégie <strong>P (Périphérie) de Boréal est strictement dominée par sa stratégie
+        G (Gare)</strong>. Quelle que soit la stratégie d'Athlex, Boréal gagne strictement plus
+        en jouant G qu'en jouant P :
+      </p>
+      <p class="math-line">
+        \( u_B(\mathrm{C},\mathrm{G}) = 40 > 35 = u_B(\mathrm{C},\mathrm{P}), \qquad
+        u_B(\mathrm{G},\mathrm{G}) = 20 > 15 = u_B(\mathrm{G},\mathrm{P}), \qquad
+        u_B(\mathrm{P},\mathrm{G}) = 35 > 10 = u_B(\mathrm{P},\mathrm{P}). \)
+      </p>
+      <p>
+        (P n'est pas dominée par C : dans la première ligne, \( 35 > 30 \).) Aucune autre
+        stratégie n'est dominée dans le jeu complet : pour Athlex, P rapporte 70 contre la
+        colonne P, ce qu'aucune autre ligne ne fait.
+      </p>
+      <p class="bareme">Barème : identification (P de Boréal, dominée par G) 4 pts ;
+      vérification des trois inégalités 4 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">3.2)</span> Élimination itérative et PSS. (12 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 3.2</div>
+      <p>
+        <em>Étape 1.</em> Par H1, Boréal (rationnel) ne joue jamais P. On élimine la colonne P.
+        Le jeu réduit est :
+      </p>
+      <table class="game">
+        <tr><td class="void"></td><td class="void"></td><th colspan="2">Boréal</th></tr>
+        <tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th></tr>
+        <tr><td class="player" rowspan="3">Athlex</td><th>C</th><td>(30 ; 30)</td><td>(60 ; 40)</td></tr>
+        <tr><th>G</th><td>(40 ; 60)</td><td>(20 ; 20)</td></tr>
+        <tr><th>P</th><td>(20 ; 55)</td><td>(25 ; 35)</td></tr>
+      </table>
+      <p>
+        <em>Étape 2.</em> Dans ce jeu réduit, la stratégie <strong>P d'Athlex est strictement
+        dominée par sa stratégie C</strong> : \( 30 > 20 \) (contre C) et \( 60 > 25 \)
+        (contre G). Comme Athlex sait que Boréal ne jouera pas P (hypothèse H2), il ne joue
+        jamais P. On élimine la ligne P :
+      </p>
+      <table class="game">
+        <tr><td class="void"></td><td class="void"></td><th colspan="2">Boréal</th></tr>
+        <tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th></tr>
+        <tr><td class="player" rowspan="2">Athlex</td><th>C</th><td>(30 ; 30)</td><td>(60 ; 40)</td></tr>
+        <tr><th>G</th><td>(40 ; 60)</td><td>(20 ; 20)</td></tr>
+      </table>
+      <p>
+        <em>Étape 3.</em> Plus aucune stratégie n'est dominée : pour Athlex, C est meilleure
+        contre G mais moins bonne contre C (\( 30 < 40 \)) ; pour Boréal, C est meilleure
+        contre G mais moins bonne contre C (\( 30 < 40 \)). L'élimination s'arrête.
+      </p>
+      <p>Les PSS sont donc les quatre profils restants :
+        <strong>(C ; C), (C ; G), (G ; C) et (G ; G)</strong>.</p>
+      <p class="bareme">Barème : élimination de la colonne P 4 pts ; élimination de la ligne P
+      dans le jeu réduit (avec justification) 4 pts ; constat d'arrêt et liste des quatre PSS
+      4 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">3.3)</span> Équilibres de Nash en stratégies pures. (10 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 3.3</div>
+      <p>
+        Méthode du soulignage : pour chaque colonne, on repère la meilleure réponse d'Athlex ;
+        pour chaque ligne, celle de Boréal.
+      </p>
+      <p>
+        Meilleures réponses d'Athlex : contre C → G (40) ; contre G → C (60) ; contre P → P (70).<br>
+        Meilleures réponses de Boréal : contre C → G (40) ; contre G → C (60) ; contre P → C (55).
+      </p>
+      <p>
+        Un équilibre de Nash est une cellule où les deux payoffs sont soulignés (chacun joue une
+        meilleure réponse à la stratégie de l'autre). Il y a exactement deux équilibres de Nash
+        en stratégies pures :
+      </p>
+      <p class="math-line">
+        \( \textbf{(C ; G)} \) avec les payoffs (60 ; 40) \(\qquad\) et \(\qquad\)
+        \( \textbf{(G ; C)} \) avec les payoffs (40 ; 60).
+      </p>
+      <p>
+        Interprétation : les deux enseignes évitent de s'installer au même endroit
+        (anti-coordination) ; chacune préférerait être celle qui obtient le Centre-ville. On
+        vérifie au passage que les deux EN font partie des PSS de la question 3.2, conformément
+        au cours (EN ⊆ PSS).
+      </p>
+      <p class="bareme">Barème : méthode des meilleures réponses correctement appliquée 4 pts ;
+      chaque équilibre correctement identifié 3 pts (aucun équilibre fantôme, sinon −2 pts par
+      erreur).</p>
+    </div>
+
+    <div class="subq"><span class="label">3.4)</span> Absence d'EN pur, puis équilibre en
+    stratégies mixtes du jeu pirate / responsable. (14 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 3.4</div>
+      <p>
+        <em>Aucun équilibre pur.</em> Meilleures réponses du pirate : contre « Surveiller A » →
+        Attaquer B (70 &gt; 10) ; contre « Surveiller B » → Attaquer A (70 &gt; 30). Meilleures
+        réponses de la responsable : contre « Attaquer A » → Surveiller A (90 &gt; 30) ; contre
+        « Attaquer B » → Surveiller B (100 &gt; 10). Dans chacune des quatre cellules, l'un des
+        deux joueurs souhaite dévier : il n'existe <strong>aucun équilibre de Nash en stratégies
+        pures</strong> (structure de type « gardien–tireur » : le pirate veut éviter la
+        surveillance, la responsable veut la rencontrer).
+      </p>
+      <p>
+        <em>Équilibre mixte — théorème d'indifférence.</em> Soit \( p \) la probabilité que le
+        pirate attaque A et \( q \) la probabilité que la responsable surveille A. À
+        l'équilibre mixte, chaque joueur rend l'<em>autre</em> indifférent entre ses deux
+        stratégies pures.
+      </p>
+      <p>Indifférence du pirate (elle détermine \( q^* \)) :</p>
+      <p class="math-line">
+        \( \underbrace{10\,q + 70\,(1-q)}_{\text{attaquer A}}
+        = \underbrace{70\,q + 30\,(1-q)}_{\text{attaquer B}}
+        \iff 70 - 60\,q = 30 + 40\,q \iff 100\,q = 40 \iff \mathbf{q^* = 0{,}4}. \)
+      </p>
+      <p>Indifférence de la responsable (elle détermine \( p^* \)) :</p>
+      <p class="math-line">
+        \( \underbrace{90\,p + 10\,(1-p)}_{\text{surveiller A}}
+        = \underbrace{30\,p + 100\,(1-p)}_{\text{surveiller B}}
+        \iff 10 + 80\,p = 100 - 70\,p \iff 150\,p = 90 \iff \mathbf{p^* = 0{,}6}. \)
+      </p>
+      <p>
+        L'unique équilibre de Nash est donc en stratégies mixtes :
+        \( (p^*;\, q^*) = (0{,}6;\, 0{,}4) \) — le pirate attaque A 6 nuits sur 10, la
+        responsable surveille A 4 nuits sur 10. Notez le réflexe d'examen : l'équation
+        d'indifférence du pirate ne contient que \( q \) (elle donne la stratégie de la
+        responsable), et réciproquement.
+      </p>
+      <p class="bareme">Barème : absence d'EN pur démontrée cellule par cellule (ou par les
+      meilleures réponses) 4 pts ; équation d'indifférence du pirate et \( q^* = 0{,}4 \)
+      4 pts ; équation d'indifférence de la responsable et \( p^* = 0{,}6 \) 4 pts ; énoncé
+      clair de l'équilibre 2 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">3.5)</span> Payoffs espérés à l'équilibre mixte. (6 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 3.5</div>
+      <p>
+        À l'équilibre mixte, chaque joueur est indifférent entre ses deux stratégies pures : il
+        suffit donc d'évaluer <em>l'une</em> d'entre elles contre la stratégie mixte adverse.
+      </p>
+      <p>Pirate (contre \( q^* = 0{,}4 \)) :</p>
+      <p class="math-line">
+        \( U_{\text{pirate}} = 10 \times 0{,}4 + 70 \times 0{,}6 = 4 + 42 = \mathbf{46}. \)
+      </p>
+      <p>(Vérification avec « Attaquer B » : \( 70 \times 0{,}4 + 30 \times 0{,}6 = 28 + 18 = 46 \) ✓.)</p>
+      <p>Responsable (contre \( p^* = 0{,}6 \)) :</p>
+      <p class="math-line">
+        \( U_{\text{resp.}} = 90 \times 0{,}6 + 10 \times 0{,}4 = 54 + 4 = \mathbf{58}. \)
+      </p>
+      <p>(Vérification avec « Surveiller B » : \( 30 \times 0{,}6 + 100 \times 0{,}4 = 18 + 40 = 58 \) ✓.)</p>
+      <p class="bareme">Barème : 3 pts par payoff espéré correct (l'astuce de l'indifférence ou
+      le calcul complet sur les quatre cellules sont tous deux acceptés).</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Question 4 — corrigé                                          -->
+<!-- ============================================================ -->
+<section class="question">
+  <h2>Question 4 <span class="pts">(40 points)</span></h2>
+  <div class="stem">
+    <p class="note">
+      Rappel de l'énoncé : \( z = 4e + x \) avec \( E(x) = 0 \), contrat \( w(z) = a + bz \),
+      coût d'effort \( c(e) = e^2 \), deux parties neutres au risque, utilité de réserve
+      \( \bar{U} = 1 \).
+    </p>
+
+    <div class="subq"><span class="label">4.1)</span> Effort optimal de la directrice. (10 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 4.1</div>
+      <p>
+        La directrice est neutre au risque : elle maximise son utilité attendue
+        \( E\big(w(z) - c(e)\big) \). Comme \( E(x) = 0 \) :
+      </p>
+      <p class="math-line">
+        \( U_a(e) = E\big(a + b\,(4e + x) - e^2\big) = a + 4b\,e - e^2. \)
+      </p>
+      <p>La condition de premier ordre donne :</p>
+      <p class="math-line">
+        \( \frac{\partial U_a}{\partial e} = 4b - 2e = 0
+        \iff \mathbf{e^*(b) = 2b}. \)
+      </p>
+      <p>
+        Le fixe \( a \) est une constante dans le programme de la directrice : il disparaît en
+        dérivant. Seule la partie <em>variable</em> du salaire (le taux \( b \)) influence
+        l'effort — \( a \) déplace le niveau de rémunération, pas l'incitation à la marge.
+      </p>
+      <p class="bareme">Barème : programme correct de l'agente (avec \( E(x) = 0 \) utilisé)
+      4 pts ; CPO et \( e^* = 2b \) 4 pts ; explication du rôle nul de \( a \) 2 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">4.2)</span> Contrat optimal \( (a^*,\, b^*) \). (14 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 4.2</div>
+      <p>La propriétaire maximise son profit attendu sous deux contraintes :</p>
+      <p class="math-line">
+        \( \max_{a,\,b}\; E(z - w) = 4e - (a + 4b\,e) \)
+      </p>
+      <p>
+        sous la <em>contrainte de participation</em> (CP) \( a + 4b\,e - e^2 \ge \bar{U} = 1 \)
+        et la <em>contrainte d'incitation</em> \( e = e^*(b) = 2b \) (la réaction de la
+        directrice calculée en 4.1).
+      </p>
+      <p>
+        <em>Étape 1 — saturer la CP.</em> Tout surplus laissé à la directrice au-delà de
+        \( \bar{U} \) est une perte pour la propriétaire (elle pourrait baisser \( a \) sans
+        modifier l'effort). À l'optimum, la CP est donc une égalité :
+      </p>
+      <p class="math-line">
+        \( a + 4b\,e - e^2 = 1 \iff a = 1 + e^2 - 4b\,e. \)
+      </p>
+      <p><em>Étape 2 — substituer dans l'objectif.</em></p>
+      <p class="math-line">
+        \( E(z - w) = 4e - a - 4b\,e = 4e - \big(1 + e^2 - 4b\,e\big) - 4b\,e = 4e - e^2 - 1. \)
+      </p>
+      <p>
+        Les termes en \( b \) se compensent : la propriétaire empoche le <em>surplus total</em>
+        de la relation, \( S(e) = 4e - e^2 \), diminué de l'utilité de réserve. Elle a donc
+        intérêt à induire l'effort qui maximise le surplus.
+      </p>
+      <p><em>Étape 3 — injecter la contrainte d'incitation</em> \( e = 2b \) et optimiser :</p>
+      <p class="math-line">
+        \( E(z - w) = 4\,(2b) - (2b)^2 - 1 = 8b - 4b^2 - 1, \qquad
+        \frac{\partial}{\partial b} = 8 - 8b = 0 \iff \mathbf{b^* = 1}. \)
+      </p>
+      <p><em>Étape 4 — récupérer \( a^* \)</em> avec \( e^* = 2b^* = 2 \) :</p>
+      <p class="math-line">
+        \( a^* = 1 + e^2 - 4b\,e = 1 + 4 - 8 = \mathbf{-3}. \)
+      </p>
+      <p>
+        Le contrat optimal est donc \( w(z) = -3 + z \) : un fixe <em>négatif</em> et la
+        totalité du chiffre d'affaires à la marge. On vérifie que l'effort induit,
+        \( e^* = 2 \), est bien celui qui maximise \( S(e) = 4e - e^2 \) (CPO : \( 4 = 2e \)) :
+        l'effort est efficace.
+      </p>
+      <p class="bareme">Barème : CP saturée et \( a \) isolé 4 pts ; substitution et apparition
+      du surplus \( 4e - e^2 - 1 \) 4 pts ; \( b^* = 1 \) via la contrainte d'incitation 4 pts ;
+      \( a^* = -3 \) 2 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">4.3)</span> Utilités attendues à l'optimum. (8 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 4.3</div>
+      <p>Avec \( b^* = 1 \), \( a^* = -3 \) et \( e^* = 2 \) : \( E(z) = 4 \times 2 = 8 \) et
+      \( E(w) = -3 + 8 = 5 \).</p>
+      <p class="math-line">
+        \( U_p = E(z - w) = 8 - 5 = \mathbf{3}, \qquad
+        U_a = E(w) - c(e^*) = 5 - 4 = \mathbf{1} = \bar{U}. \)
+      </p>
+      <p>
+        La directrice obtient exactement son utilité de réserve (CP saturée) et la propriétaire
+        s'approprie tout le surplus net : \( S(2) - \bar{U} = 4 - 1 = 3 \).
+      </p>
+      <p class="bareme">Barème : 4 pts par utilité correcte (avec le détail du calcul).</p>
+    </div>
+
+    <div class="subq"><span class="label">4.4)</span> Interprétation : « vendre l'entreprise à
+    la directrice ». (8 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 4.4</div>
+      <p>
+        Avec \( b^* = 1 \), la directrice conserve <strong>100 % du chiffre d'affaires à la
+        marge</strong> : elle devient « créancière résiduelle » (residual claimant) du résultat
+        de l'entreprise. Elle internalise alors parfaitement le rendement de son effort et
+        choisit d'elle-même l'effort efficace — l'asymétrie d'information ne coûte plus rien.
+      </p>
+      <p>
+        Le fixe négatif \( a^* = -3 \) s'interprète comme une <strong>franchise</strong> : le
+        prix que la directrice paie d'avance à la propriétaire pour « acheter » le droit de
+        garder tout le résultat. Ce transfert forfaitaire ne déforme pas les incitations ; il
+        sert uniquement à répartir le surplus, en ramenant la directrice à son utilité de
+        réserve. Tout se passe comme si la propriétaire <em>vendait l'entreprise</em> à la
+        directrice au prix de 3 (exemples du cours : licence de taxi, contrat de franchise).
+      </p>
+      <p class="bareme">Barème : rôle incitatif de \( b^* = 1 \) (créancière résiduelle, effort
+      efficace) 4 pts ; rôle distributif de la franchise \( a^* < 0 \) (extraction du surplus
+      via la CP) 4 pts.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Question 5 — corrigé                                          -->
+<!-- ============================================================ -->
+<section class="question">
+  <h2>Question 5 <span class="pts">(30 points)</span></h2>
+  <div class="stem">
+
+    <div class="subq"><span class="label">5.1)</span> Dilemme du prisonnier et horizon fini. (10 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 5.1</div>
+      <p>
+        <em>Stratégie dominante.</em> Pour Piccolo : si Rustica joue E, B rapporte 12 contre 6
+        pour E ; si Rustica joue B, B rapporte 2 contre 0 pour E. B domine donc strictement E,
+        et par symétrie il en va de même pour Rustica. L'unique équilibre de Nash du jeu en une
+        période est <strong>(B ; B)</strong>, avec les payoffs (2 ; 2) — alors que (E ; E)
+        donnerait (6 ; 6). Chacun a intérêt individuellement à trahir, mais les deux préfèrent
+        l'issue coopérative : c'est bien un dilemme du prisonnier.
+      </p>
+      <p>
+        <em>Horizon fini.</em> Par récurrence à rebours (backward induction) : à la dernière
+        période, plus aucune punition future n'est possible — chaque pizzeria joue sa stratégie
+        dominante B. À l'avant-dernière période, les deux savent que la dernière période sera
+        (B ; B) <em>quoi qu'il arrive</em> : coopérer n'achète aucune récompense future et
+        trahir ne coûte aucune punition future, donc chacune joue B. Le raisonnement remonte
+        ainsi de proche en proche jusqu'à la première période : l'unique ENPS du jeu répété un
+        nombre fini et connu de périodes est « B à toutes les périodes ». C'est le théorème de
+        l'horizon fini : aucune menace, aussi sévère soit-elle, ne peut soutenir l'entente dès
+        que l'on peut compter les périodes restantes.
+      </p>
+      <p class="bareme">Barème : stratégie dominante + EN unique (B ; B) et structure de dilemme
+      du prisonnier 5 pts ; raisonnement de backward induction / théorème de l'horizon fini
+      5 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">5.2)</span> Condition sur \( \delta \) pour que
+    (grim ; grim) soit un équilibre. (14 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 5.2</div>
+      <p>
+        <em>Payoff de la coopération.</em> Si les deux pizzerias jouent grim, personne ne
+        trahit jamais : chacune touche 6 à chaque période. Par la formule de la somme
+        géométrique \( \sum_{t=0}^{\infty} \delta^t a = a/(1-\delta) \) :
+      </p>
+      <p class="math-line">
+        \( \Pi^{\text{coop}} = 6 + 6\,\delta + 6\,\delta^2 + \cdots = \frac{6}{1-\delta}. \)
+      </p>
+      <p>
+        <em>Payoff de la meilleure déviation.</em> Supposons que Piccolo dévie (le jeu est
+        symétrique). Sa meilleure déviation consiste à jouer B dès aujourd'hui : elle empoche
+        12 en période 0. Mais dès la période 1, la grim de Rustica passe en punition : Rustica
+        joue B pour toujours, et la meilleure réponse de Piccolo est alors de jouer B aussi,
+        soit 2 par période :
+      </p>
+      <p class="math-line">
+        \( \Pi^{\text{dév}} = 12 + 2\,\delta + 2\,\delta^2 + \cdots
+        = 12 + \delta\,\frac{2}{1-\delta}. \)
+      </p>
+      <p><em>Condition d'équilibre.</em> (grim ; grim) est un équilibre de Nash si dévier ne
+      rapporte pas plus que coopérer :</p>
+      <p class="math-line">
+        \( \frac{6}{1-\delta} \ \ge\ 12 + \frac{2\,\delta}{1-\delta}. \)
+      </p>
+      <p>On multiplie les deux membres par \( (1-\delta) > 0 \) (le sens de l'inégalité est
+      conservé) :</p>
+      <p class="math-line">
+        \( 6 \ \ge\ 12\,(1-\delta) + 2\,\delta = 12 - 10\,\delta
+        \iff 10\,\delta \ge 6 \iff \boxed{\ \delta \ \ge\ \tfrac{3}{5}\ } \)
+      </p>
+      <p>
+        Pour \( \delta \ge 3/5 = 0{,}6 \), l'entente est soutenue par la menace grim ; en
+        dessous, chaque pizzeria préfère empocher le gain immédiat de la trahison.
+      </p>
+      <p class="bareme">Barème : payoff de la coopération \( 6/(1-\delta) \) 4 pts ; payoff de
+      déviation \( 12 + 2\delta/(1-\delta) \) (gain immédiat + punition perpétuelle) 5 pts ;
+      résolution correcte de l'inégalité et condition \( \delta \ge 3/5 \) 5 pts.</p>
+    </div>
+
+    <div class="subq"><span class="label">5.3)</span> Interprétation. (6 points)</div>
+    <div class="solution">
+      <div class="tag">Solution 5.3</div>
+      <p>
+        \( \delta \) mesure la <strong>patience</strong> des firmes : le poids qu'elles
+        accordent aux profits futurs par rapport aux profits immédiats (1 euro dans un mois
+        vaut \( \delta \) euro aujourd'hui). La coopération repose sur un arbitrage
+        intertemporel : trahir rapporte un bonus immédiat (12 au lieu de 6), mais coûte la
+        différence entre entente et guerre des prix (6 − 2 = 4) à <em>toutes</em> les périodes
+        futures.
+      </p>
+      <p>
+        Si les firmes sont impatientes (\( \delta < 3/5 \)), les pertes futures pèsent trop peu
+        face au gain immédiat : la menace de punition ne dissuade plus, et l'entente s'effondre.
+        Plus généralement, la coopération entre joueurs rationnels n'est possible que si
+        l'avenir compte suffisamment — c'est-à-dire si l'interaction est fréquente, durable et
+        sans fin connue.
+      </p>
+      <p class="bareme">Barème : interprétation de \( \delta \) comme patience / poids du futur
+      3 pts ; explication de l'arbitrage gain immédiat vs pertes futures et conséquence de
+      l'impatience 3 pts.</p>
+    </div>
+
+  </div>
+</section>

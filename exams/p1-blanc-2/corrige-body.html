@@ -1,0 +1,423 @@
+<!-- ==================== QUESTION 1 ==================== -->
+<section class="question">
+  <h2>Question 1 <span class="pts">(50 points)</span> — Self-contrôle : l'abonnement à la salle d'escalade</h2>
+  <div class="stem">
+
+    <div class="solution">
+      <div class="tag">Solution 1.1</div>
+      <p>Avec abonnement (\( a = 1 \)), les préférences de la période 0 s'écrivent :</p>
+      <p class="math-line">\[ U_0(1,k) = -\beta\frac{k^2}{2} - \beta C + \beta b k \]</p>
+      <p>La condition de premier ordre (CPO) \( \tfrac{\partial U_0(1,k)}{\partial k} = 0 \) donne :</p>
+      <p class="math-line">\[ \beta\,(-k + b) = 0 \quad\Longrightarrow\quad \boxed{k^* = b = \textbf{12 séances}} \]</p>
+      <p>
+        Remarquez que \( \beta \) se simplifie : vu de la période 0, <em>tous</em> les termes sont
+        futurs et sont rabotés par le même facteur. Le biais ne déforme donc pas le plan
+        <em>souhaité</em>.
+      </p>
+      <p class="bareme">Barème : écrire \( U_0(1,k) \) (3 pts) ; poser la CPO (3 pts) ; \( k^* = 12 \) (2 pts).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 1.2</div>
+      <p>Sans abonnement (\( a = 0 \)), chaque séance coûte \( p = 2 \) :</p>
+      <p class="math-line">\[ U_0(0,k) = -\beta\frac{k^2}{2} - \beta p k + \beta b k \]</p>
+      <p>La CPO donne :</p>
+      <p class="math-line">\[ \beta\,(-k - p + b) = 0 \quad\Longrightarrow\quad \boxed{k^* = b - p = 12 - 2 = \textbf{10 séances}} \]</p>
+      <p>
+        Il souhaite plus de séances avec abonnement (12) que sans (10) : ce n'est pas du
+        self-contrôle, mais un simple effet de coût marginal (0 avec abonnement, \( p = 2 \) sans).
+      </p>
+      <p class="bareme">Barème : écrire \( U_0(0,k) \) (3 pts) ; CPO (3 pts) ; \( k^* = 10 \) (2 pts).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 1.3</div>
+      <p>
+        Le naïf croit que \( \hat\beta = 1 \) : il pense que son « moi de la période 1 » exécutera
+        fidèlement le plan souhaité en période 0 — soit 12 séances avec abonnement (1.1) et
+        10 séances sans (1.2). Il prend l'abonnement si \( U_0(1,12) > U_0(0,10) \) :
+      </p>
+      <p class="math-line">\[ U_0(1,12) = \tfrac{1}{2}\Bigl(-\tfrac{12^2}{2} - 16 + 12\times 12\Bigr) = \tfrac{1}{2}\,(-72 - 16 + 144) = \tfrac{1}{2}\times 56 = 28 \]</p>
+      <p class="math-line">\[ U_0(0,10) = \tfrac{1}{2}\Bigl(-\tfrac{10^2}{2} - 2\times 10 + 12\times 10\Bigr) = \tfrac{1}{2}\,(-50 - 20 + 120) = \tfrac{1}{2}\times 50 = 25 \]</p>
+      <p>
+        Comme \( 28 > 25 \), <strong>le grimpeur naïf prend l'abonnement</strong>.
+      </p>
+      <p>
+        <em>Piège :</em> le \( k^* \) n'est pas le même dans les deux options — il faut comparer
+        chaque option <em>à son propre</em> nombre de séances souhaité.
+      </p>
+      <p class="bareme">Barème : comprendre que le naïf évalue les plans souhaités (3 pts) ; \( U_0(1,12) = 28 \) (3 pts) ; \( U_0(0,10) = 25 \) (3 pts) ; conclusion (1 pt).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 1.4</div>
+      <p>
+        En période 1, c'est \( U_1 \) qui commande, avec \( a = 1 \) déjà fixé (il a payé
+        l'abonnement) :
+      </p>
+      <p class="math-line">\[ U_1(1,k) = -\frac{k^2}{2} - C + \beta b k \]</p>
+      <p>La CPO donne :</p>
+      <p class="math-line">\[ -k + \beta b = 0 \quad\Longrightarrow\quad \boxed{k = \beta b = \tfrac{1}{2}\times 12 = \textbf{6 séances}} \]</p>
+      <p>
+        Le naïf ne fera que 6 séances, la moitié des 12 qu'il souhaitait : au moment d'agir, le
+        coût d'effort est immédiat (pas de \( \beta \)) alors que le bénéfice est futur et raboté
+        par \( \beta = \tfrac{1}{2} \).
+      </p>
+      <p class="bareme">Barème : utiliser \( U_1(1,k) \) (3 pts) ; CPO et \( k = 6 \) (4 pts) ; commentaire (1 pt).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 1.5</div>
+      <p>
+        Le sophistiqué (\( \hat\beta = \beta = \tfrac{1}{2} \)) anticipe correctement le
+        comportement de son futur moi.
+      </p>
+      <p>
+        <strong>Avec abonnement</strong>, il sait qu'il fera \( k = \beta b = 6 \) séances (calcul
+        de la question 1.4). Il évalue ce programme avec \( U_0 \) :
+      </p>
+      <p class="math-line">\[ U_0(1,6) = \tfrac{1}{2}\Bigl(-\tfrac{6^2}{2} - 16 + 12\times 6\Bigr) = \tfrac{1}{2}\,(-18 - 16 + 72) = \tfrac{1}{2}\times 38 = 19 \]</p>
+      <p>
+        <strong>Sans abonnement</strong>, son futur moi maximisera
+        \( U_1(0,k) = -\tfrac{k^2}{2} - pk + \beta b k \), dont la CPO donne :
+      </p>
+      <p class="math-line">\[ -k - p + \beta b = 0 \quad\Longrightarrow\quad k = \beta b - p = 6 - 2 = 4 \text{ séances} \]</p>
+      <p class="math-line">\[ U_0(0,4) = \tfrac{1}{2}\Bigl(-\tfrac{4^2}{2} - 2\times 4 + 12\times 4\Bigr) = \tfrac{1}{2}\,(-8 - 8 + 48) = \tfrac{1}{2}\times 32 = 16 \]</p>
+      <p>
+        Comme \( 19 > 16 \), <strong>le grimpeur sophistiqué prend lui aussi l'abonnement</strong>.
+      </p>
+      <p class="bareme">Barème : anticiper \( k = 6 \) avec abonnement (2 pts) ; \( U_0(1,6) = 19 \) (3 pts) ; anticiper \( k = 4 \) sans abonnement (2 pts) ; \( U_0(0,4) = 16 \) (2 pts) ; conclusion (1 pt).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 1.6</div>
+      <p>
+        Le sophistiqué effectuera 6 séances. Payées à l'unité, elles auraient coûté
+        \( p \times k = 2 \times 6 = 12 \), contre \( C = 16 \) pour l'abonnement :
+        <strong>non, l'abonnement n'est pas l'option la moins chère</strong> pour ce nombre de
+        séances (surcoût de 4).
+      </p>
+      <p>
+        Mais la comparaison « 16 contre 12 » repose sur un contrefactuel trompeur : sans
+        abonnement, le sophistiqué ne ferait pas 6 séances, mais seulement <strong>4</strong>
+        (question 1.5). Le vrai choix est entre \( U_0(1,6) = 19 \) et \( U_0(0,4) = 16 \).
+        L'abonnement joue le rôle de <strong>commitment device</strong> : en ramenant le coût
+        marginal d'une séance à zéro, il pousse le « moi de la période 1 » à se rapprocher du
+        programme souhaité. Le sophistiqué <strong>paie 4 de plus pour se lier les mains</strong>.
+        (Le naïf, lui, prend l'abonnement pour une tout autre raison : il croit — à tort — qu'il
+        fera 12 séances.)
+      </p>
+      <p class="bareme">Barème : comparaison \( 12 &lt; 16 \) (2 pts) ; identifier le bon contrefactuel (4 séances sans abonnement) (2 pts) ; interprétation « commitment device » (2 pts).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== QUESTION 2 ==================== -->
+<section class="question">
+  <h2>Question 2 <span class="pts">(40 points)</span> — Combien investir dans le projet risqué ?</h2>
+  <div class="stem">
+
+    <div class="solution">
+      <div class="tag">Solution 2.1</div>
+      <p>
+        Si elle investit \( A \), elle conserve \( 900 - A \) euros sûrs. En cas de réussite,
+        chaque euro investi rapporte 4 euros : elle récupère \( 4A \). En cas d'échec, elle ne
+        récupère rien. La valeur finale du portefeuille est donc :
+      </p>
+      <p class="math-line">\[ \text{réussite : } 900 - A + 4A = 900 + 3A \qquad\qquad \text{échec : } 900 - A \]</p>
+      <p>Son utilité espérée s'écrit :</p>
+      <p class="math-line">\[ U(A) = \tfrac{1}{2}\sqrt{900 + 3A} + \tfrac{1}{2}\sqrt{900 - A} \]</p>
+      <p class="bareme">Barème : richesse en cas de réussite (3 pts) ; en cas d'échec (2 pts) ; \( U(A) \) (3 pts).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 2.2</div>
+      <p>On dérive \( U(A) \) par rapport à \( A \) :</p>
+      <p class="math-line">\[ U'(A) = \tfrac{1}{2}\cdot\frac{3}{2\sqrt{900+3A}} - \tfrac{1}{2}\cdot\frac{1}{2\sqrt{900-A}} = \frac{3}{4\sqrt{900+3A}} - \frac{1}{4\sqrt{900-A}} \]</p>
+      <p>La CPO \( U'(A^*) = 0 \) donne :</p>
+      <p class="math-line">\[ \frac{3}{\sqrt{900+3A^*}} = \frac{1}{\sqrt{900-A^*}} \quad\Longleftrightarrow\quad 3\sqrt{900-A^*} = \sqrt{900+3A^*} \]</p>
+      <p>On élève au carré (les deux membres sont positifs) :</p>
+      <p class="math-line">\[ 9\,(900 - A^*) = 900 + 3A^* \quad\Longleftrightarrow\quad 8100 - 9A^* = 900 + 3A^* \quad\Longleftrightarrow\quad 7200 = 12A^* \]</p>
+      <p class="math-line">\[ \boxed{A^* = \textbf{600 euros}} \]</p>
+      <p>
+        Vérifications : \( A^* = 600 \in (0\,;\,900) \) — solution intérieure — et \( U(A) \) est
+        concave (somme de fonctions concaves), donc la CPO caractérise bien un maximum.
+      </p>
+      <p class="bareme">Barème : dérivée correcte (5 pts) ; poser la CPO (3 pts) ; résolution (4 pts) ; \( A^* = 600 \) et vérification intérieure/maximum (2 pts).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 2.3</div>
+      <p>Avec \( A^* = 600 \), le portefeuille vaut \( 900 + 3\times 600 = 2700 \) (réussite) ou \( 900 - 600 = 300 \) (échec). D'où :</p>
+      <p class="math-line">\[ U(A^*) = \tfrac{1}{2}\sqrt{2700} + \tfrac{1}{2}\sqrt{300} = \tfrac{1}{2}\,(30\sqrt{3} + 10\sqrt{3}) = 20\sqrt{3} \approx \textbf{34,64} \]</p>
+      <p>L'équivalent certain \( EC \) est le montant sûr qui procure la même utilité : \( \sqrt{EC} = 20\sqrt{3} \), donc</p>
+      <p class="math-line">\[ \boxed{EC = (20\sqrt{3})^2 = 400 \times 3 = \textbf{1 200 euros}} \]</p>
+      <p>
+        Comme \( EC = 1200 > 900 = w \) (ou de manière équivalente
+        \( U(A^*) \approx 34{,}64 > 30 = u(900) \)), investir \( A^* \) vaut strictement mieux que
+        ne rien investir : le portefeuille risqué optimal « vaut », en euros sûrs, 300 de plus que
+        la richesse initiale. (Remarque : la VMA du portefeuille est
+        \( \tfrac{1}{2}\times 2700 + \tfrac{1}{2}\times 300 = 1500 \) ; la prime de risque vaut
+        donc \( 1500 - 1200 = 300 \) euros.)
+      </p>
+      <p class="bareme">Barème : \( U(A^*) = 20\sqrt{3} \approx 34{,}64 \) (4 pts) ; \( EC = 1200 \) (4 pts) ; comparaison à 900 et interprétation (2 pts).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 2.4</div>
+      <p>
+        <strong>Plus faible.</strong> Plus la fonction d'utilité de Bernoulli est concave, plus
+        l'individu est averse au risque (théorème de l'aversion au risque) : le scénario d'échec
+        pèse alors plus lourd dans l'utilité espérée, et le « coût en utilité » de chaque euro
+        supplémentaire exposé au risque augmente. Le sommet de la fonction \( U(A) \) se déplace
+        vers la gauche : \( A^* \) diminue. C'est la conclusion du cours (chapitre A3) : à projet
+        identique, un investisseur en \( \ln(w) \), plus concave que \( \sqrt{w} \), investit un
+        montant optimal plus petit — l'aversion au risque explique l'argent « qui dort » sur les
+        comptes.
+      </p>
+      <p class="bareme">Barème : réponse « plus faible » (3 pts) ; explication par la concavité / le poids du scénario d'échec (5 pts).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== QUESTION 3 ==================== -->
+<section class="question">
+  <h2>Question 3 <span class="pts">(50 points)</span> — Le jeu d'implantation commerciale</h2>
+  <div class="stem">
+
+    <div class="solution">
+      <div class="tag">Solution 3.1</div>
+      <p>
+        L'enseigne B possède <strong>quatre nœuds de décision</strong> : après (E, I), après
+        (E, N), après (O, I) et après (O, N). Une stratégie doit prescrire une action à
+        <em>chacun</em> de ces nœuds, même ceux qui ne seront jamais atteints. Un exemple :
+      </p>
+      <p class="math-line">\[ S_B = (\,\text{I si (E, I)}\;;\ \text{N si (E, N)}\;;\ \text{I si (O, I)}\;;\ \text{N si (O, N)}\,) \]</p>
+      <p>Tout autre quadruplet d'actions est également accepté.</p>
+      <p class="bareme">Barème : 6 pts pour un quadruplet complet (0 pt si la « stratégie » ne couvre qu'un ou deux nœuds : c'est l'erreur classique).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 3.2</div>
+      <p>
+        L'enseigne A joue à <strong>deux nœuds</strong> (après E et après O) et dispose de 2
+        actions à chacun : elle a donc \( 2 \times 2 = 4 \) stratégies :
+      </p>
+      <p class="math-line">\[ \mathcal{S}_A = \bigl\{\, (\text{I si E};\ \text{I si O}),\ (\text{I si E};\ \text{N si O}),\ (\text{N si E};\ \text{I si O}),\ (\text{N si E};\ \text{N si O}) \,\bigr\} \]</p>
+      <p class="bareme">Barème : 2 pts par stratégie correctement écrite (les 4 doivent être conditionnelles à la zone choisie).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 3.3</div>
+      <p><strong>Étape 1 — les quatre nœuds de B</strong> (on compare le 3<sup>e</sup> payoff) :</p>
+      <ul>
+        <li>Nœud (E, I) : I donne 3, N donne 0 \( \Rightarrow \) B joue <strong>I</strong>.</li>
+        <li>Nœud (E, N) : I donne 6, N donne 0 \( \Rightarrow \) B joue <strong>I</strong>.</li>
+        <li>Nœud (O, I) : I donne \( -2 \), N donne 0 \( \Rightarrow \) B joue <strong>N</strong> (la petite zone ne supporte pas deux magasins).</li>
+        <li>Nœud (O, N) : I donne 4, N donne 0 \( \Rightarrow \) B joue <strong>I</strong>.</li>
+      </ul>
+      <p><strong>Étape 2 — les deux nœuds de A</strong> (A anticipe les réponses de B ; on compare le 2<sup>e</sup> payoff) :</p>
+      <ul>
+        <li>Après E : I \( \rightarrow \) B joue I \( \rightarrow \) A obtient 3 ; N \( \rightarrow \) B joue I \( \rightarrow \) A obtient 0. Donc A joue <strong>I</strong>.</li>
+        <li>Après O : I \( \rightarrow \) B joue N \( \rightarrow \) A obtient 5 ; N \( \rightarrow \) B joue I \( \rightarrow \) A obtient 0. Donc A joue <strong>I</strong>.</li>
+      </ul>
+      <p><strong>Étape 3 — la racine</strong> (la commune anticipe tout ; on compare le 1<sup>er</sup> payoff) :</p>
+      <ul>
+        <li>E \( \rightarrow \) (E, I, I) \( \rightarrow \) C obtient 8 ; O \( \rightarrow \) (O, I, N) \( \rightarrow \) C obtient 3. Donc C choisit <strong>E</strong>.</li>
+      </ul>
+      <p>L'ENPS est donc :</p>
+      <p class="math-line">\[ S^*_C = \text{E} \]</p>
+      <p class="math-line">\[ S^*_A = (\,\text{I si E}\;;\ \text{I si O}\,) \]</p>
+      <p class="math-line">\[ S^*_B = (\,\text{I si (E, I)}\;;\ \text{I si (E, N)}\;;\ \text{N si (O, I)}\;;\ \text{I si (O, N)}\,) \]</p>
+      <p class="bareme">Barème : 2 pts par nœud de B (8 pts) ; 3 pts par nœud de A (6 pts) ; racine (3 pts) ; écriture des trois stratégies complètes sur les lignes (3 pts). Une stratégie « incomplète » (qui ne couvre pas tous les nœuds du joueur) fait perdre les points d'écriture.</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 3.4</div>
+      <p>
+        Le long du chemin d'équilibre : la commune aménage la <strong>zone Est</strong>, l'enseigne
+        A <strong>investit</strong>, puis l'enseigne B <strong>investit</strong> aussi. Le résultat
+        effectif est (E, I, I) avec les payoffs :
+      </p>
+      <p class="math-line">\[ (\,C\;;\ A\;;\ B\,) = (\,8\;;\ 3\;;\ 3\,) \]</p>
+      <p class="bareme">Barème : zone Est (2 pts) ; les deux enseignes investissent (2 pts) ; payoffs (8 ; 3 ; 3) (2 pts).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 3.5</div>
+      <p>Considérez le profil suivant (une réponse parmi d'autres possibles) :</p>
+      <p class="math-line">\[ S_C = \text{E} \;;\qquad S_A = (\,\text{I si E}\;;\ \text{N si O}\,) \;;\qquad S_B = (\,\text{I}\;;\ \text{I}\;;\ \text{I}\;;\ \text{I}\,) \]</p>
+      <p>
+        où B « menace » d'investir <em>partout</em>, y compris au nœud (O, I) — autrement dit :
+        « si la commune aménage l'Ouest et que A s'y installe, nous ouvrirons quand même, tant pis
+        pour les pertes ».
+      </p>
+      <p><strong>C'est bien un équilibre de Nash :</strong></p>
+      <ul>
+        <li><strong>C</strong> : avec ces stratégies, E \( \rightarrow \) (E, I, I) \( \rightarrow \) 8, tandis que O \( \rightarrow \) A joue N, B joue I \( \rightarrow \) 2. Donc E est optimal.</li>
+        <li><strong>A</strong> : étant donné \( S_C = \) E, jouer I rapporte 3, jouer N rapporterait 0 (B investirait) : I si E est optimal. Son action au nœud O, jamais atteint, n'affecte pas son payoff (et N y est d'ailleurs la meilleure réponse à la menace de B).</li>
+        <li><strong>B</strong> : seul le nœud (E, I) est atteint ; y jouer I rapporte 3 &gt; 0. Ses actions aux trois autres nœuds, jamais atteints, n'affectent pas son payoff. Aucune déviation profitable.</li>
+      </ul>
+      <p>
+        <strong>Mais il n'est pas parfait en sous-jeux :</strong> dans le sous-jeu qui commence au
+        nœud (O, I), la stratégie de B prescrit I, qui rapporte \( -2 \), alors que N rapporte 0.
+        B ne joue donc pas une meilleure réponse dans ce sous-jeu : la menace d'une « guerre
+        d'implantation » à l'Ouest est <strong>non crédible</strong> — si ce nœud était
+        effectivement atteint, B ne la mettrait pas à exécution. La backward induction (question
+        3.3) élimine précisément ce type de menaces.
+      </p>
+      <p class="bareme">Barème : proposer un profil complet dont le comportement hors chemin n'est pas optimal (4 pts) ; vérifier qu'aucun joueur ne peut dévier profitablement (3 pts) ; identifier le sous-jeu où la stratégie n'est pas une meilleure réponse et parler de menace non crédible (3 pts). Tout autre équilibre de Nash non parfait en sous-jeux correctement vérifié est accepté.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== QUESTION 4 ==================== -->
+<section class="question">
+  <h2>Question 4 <span class="pts">(30 points)</span> — La guerre des prix des deux stations-service</h2>
+  <div class="stem">
+
+    <div class="solution">
+      <div class="tag">Solution 4.1</div>
+      <p>Pour chaque station, B <strong>domine strictement</strong> H :</p>
+      <ul>
+        <li>si la rivale joue H : \( 14 > 8 \) ;</li>
+        <li>si la rivale joue B : \( 4 > 0 \).</li>
+      </ul>
+      <p>
+        Une station rationnelle joue donc B quoi que fasse l'autre. (B, B) est un équilibre de
+        Nash : aucune ne gagne à dévier seule (elle passerait de 4 à 0). Il est <em>unique</em> :
+        dans tout profil où une station joue H, celle-ci obtiendrait strictement plus en passant
+        à B (stratégie strictement dominante), donc aucun autre profil n'est un équilibre.
+        Remarquez la structure de dilemme du prisonnier : (B, B) donne (4 ; 4) alors que (H, H)
+        donnerait (8 ; 8).
+      </p>
+      <p class="bareme">Barème : dominance stricte de B pour chaque station (4 pts) ; (B, B) est un EN (2 pts) ; argument d'unicité (2 pts).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 4.2</div>
+      <p>
+        On montre que grim est une meilleure réponse à grim. Comme le jeu répété est identique à
+        chaque date, on peut sans perte de généralité placer une éventuelle première déviation en
+        \( t = 0 \).
+      </p>
+      <p><strong>Payoff de la coopération</strong> (personne ne dévie jamais) : 8 chaque semaine,</p>
+      <p class="math-line">\[ \Pi^{C} = 8 + 8\delta + 8\delta^2 + \dots = \frac{8}{1-\delta} \]</p>
+      <p>
+        <strong>Payoff de la meilleure déviation</strong> : la station qui dévie joue B pendant que
+        la rivale joue encore H, et empoche 14 la première semaine. Dès la semaine suivante, la
+        rivale (qui joue grim) joue B pour toujours ; la meilleure suite pour la déviatrice est
+        alors de jouer B aussi, ce qui rapporte 4 chaque semaine :
+      </p>
+      <p class="math-line">\[ \Pi^{D} = 14 + 4\delta + 4\delta^2 + \dots = 14 + \delta\,\frac{4}{1-\delta} \]</p>
+      <p><strong>Condition d'équilibre</strong> : coopérer doit rapporter au moins autant que dévier,</p>
+      <p class="math-line">\[ \frac{8}{1-\delta} \;\ge\; 14 + \frac{4\delta}{1-\delta} \]</p>
+      <p>On multiplie par \( (1-\delta) > 0 \) :</p>
+      <p class="math-line">\[ 8 \;\ge\; 14\,(1-\delta) + 4\delta = 14 - 10\delta \quad\Longleftrightarrow\quad 10\delta \ge 6 \quad\Longleftrightarrow\quad \boxed{\delta \ge \tfrac{3}{5}} \]</p>
+      <p>
+        Par symétrie, le même calcul vaut pour l'autre station : (grim, grim) est un équilibre si
+        et seulement si \( \delta \ge \tfrac{3}{5} \). Interprétation des trois morceaux : 8/(1−δ)
+        = la collusion éternelle, 14 = la tentation immédiate, 4δ/(1−δ) = la punition éternelle
+        <em>qui commence la semaine suivante</em> (d'où le \( \delta \) devant — l'oublier est la
+        faute classique).
+      </p>
+      <p class="bareme">Barème : \( \Pi^{C} = 8/(1-\delta) \) (3 pts) ; \( \Pi^{D} = 14 + 4\delta/(1-\delta) \) avec justification de la « meilleure » déviation (5 pts) ; résolution de l'inégalité jusqu'à \( \delta \ge 3/5 \) (6 pts).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 4.3</div>
+      <p>
+        Avec deux semaines de détection, la déviatrice touche 14 en \( t = 0 \) <em>et</em> en
+        \( t = 1 \) (la rivale, qui n'a rien vu, affiche toujours H), puis la punition commence en
+        \( t = 2 \) :
+      </p>
+      <p class="math-line">\[ \Pi^{D}_{\text{retard}} = 14 + 14\delta + \frac{4\delta^2}{1-\delta} \]</p>
+      <p>La condition devient :</p>
+      <p class="math-line">\[ \frac{8}{1-\delta} \;\ge\; 14\,(1+\delta) + \frac{4\delta^2}{1-\delta} \quad\Longleftrightarrow\quad 8 \;\ge\; 14\,(1-\delta^2) + 4\delta^2 = 14 - 10\delta^2 \]</p>
+      <p class="math-line">\[ \Longleftrightarrow\quad \delta^2 \ge \tfrac{3}{5} \quad\Longleftrightarrow\quad \boxed{\delta \ge \sqrt{\tfrac{3}{5}} \approx 0{,}77} \]</p>
+      <p>
+        La condition est <strong>plus stricte</strong> que \( \delta \ge 3/5 = 0{,}60 \) : la
+        tentation dure désormais deux semaines et la punition est repoussée d'autant, donc il faut
+        des joueurs plus patients pour soutenir la collusion. Enseignement général : plus la
+        détection des déviations est lente, plus la collusion est difficile à soutenir.
+      </p>
+      <p class="bareme">Barème : payoff de déviation \( 14 + 14\delta + 4\delta^2/(1-\delta) \) (3 pts) ; résolution jusqu'à \( \delta \ge \sqrt{3/5} \approx 0{,}77 \) (3 pts) ; comparaison et interprétation (2 pts).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== QUESTION 5 ==================== -->
+<section class="question">
+  <h2>Question 5 <span class="pts">(30 points)</span> — Questions de compréhension</h2>
+  <div class="stem">
+
+    <div class="solution">
+      <div class="tag">Solution 5.1</div>
+      <p>
+        C'est l'<strong>effet de dotation</strong> (« endowment effect ») : le simple fait de
+        posséder un objet gonfle la valeur qu'on lui attribue. Ici, la disposition à accepter des
+        détenteurs (DAA = 9 euros) est plus du double de la disposition à payer des non-détenteurs
+        (DAP = 4 euros).
+      </p>
+      <p>
+        C'est une déviation par rapport à la théorie rationnelle : la valeur qu'un individu attache
+        au mug ne devrait pas dépendre du fait qu'il le possède déjà. Comme les mugs ont été
+        distribués <em>au hasard</em>, les deux groupes ont en moyenne les mêmes préférences ; pour
+        des individus rationnels on devrait donc observer DAA \( \approx \) DAP (les effets de
+        richesse liés à quelques euros sont négligeables). L'écart observé s'explique par
+        l'aversion aux pertes : céder le mug est ressenti comme une <em>perte</em>, l'acquérir
+        comme un simple gain, et les pertes pèsent plus lourd.
+      </p>
+      <p class="bareme">Barème : nommer l'effet de dotation (3 pts) ; expliquer DAA &gt; DAP / rôle de l'aversion aux pertes (3 pts) ; expliquer pourquoi la rationalité impose DAA \( \approx \) DAP entre deux groupes tirés au sort (4 pts).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 5.2</div>
+      <p>
+        Un <strong>commitment device</strong> est un dispositif par lequel un individu restreint
+        volontairement (ou renchérit) ses <em>propres</em> options futures, afin de forcer son
+        « moi futur » à suivre le plan jugé optimal aujourd'hui. Exemples : un compte d'épargne
+        bloqué jusqu'à une date donnée, une application qui bloque les réseaux sociaux pendant le
+        blocus, Ulysse qui se fait attacher au mât, ou l'abonnement de la question 1.
+      </p>
+      <p>
+        Un individu rationnel (\( \beta = 1 \)) a des préférences <em>cohérentes dans le temps</em> :
+        le plan qu'il juge optimal en période 0 est exactement celui qu'il voudra encore exécuter
+        au moment d'agir. Restreindre ses options futures ne peut donc jamais améliorer son sort :
+        l'option qu'il aurait choisie reste disponible sans le dispositif, et la restriction ne
+        peut que lui faire rater des options utiles si les circonstances changent. Il n'accepterait
+        donc jamais de payer pour un tel dispositif — seul un individu au biais de self-contrôle
+        (\( \beta &lt; 1 \)) et <em>conscient</em> de ce biais (sophistiqué) est prêt à le faire.
+      </p>
+      <p class="bareme">Barème : définition (3 pts) ; exemple pertinent (3 pts) ; argument « préférences cohérentes \( \Rightarrow \) restreindre ses options ne rapporte rien, donc aucune disposition à payer » (4 pts).</p>
+    </div>
+
+    <div class="solution">
+      <div class="tag">Solution 5.3</div>
+      <p>
+        Le <strong>type</strong> d'un joueur correspond à sa <strong>fonction de gain</strong> :
+        dire qu'un joueur peut être de plusieurs types, c'est dire qu'il existe plusieurs tables de
+        gains possibles pour lui, dont une seule est la vraie. Chaque joueur connaît son propre
+        type ; ses adversaires, eux, n'ont qu'une <em>croyance</em> (une distribution de
+        probabilité sur les types possibles), et l'on représente le tirage du type par un joueur
+        fictif, la Nature, en tête de l'arbre.
+      </p>
+      <p>
+        Dans un jeu bayésien, une <strong>stratégie</strong> n'est plus une simple action mais une
+        <strong>règle d'action</strong> : elle spécifie une action pour <em>chaque type possible</em>
+        du joueur.
+      </p>
+      <p>
+        Mini-exemple : avec \( k = 2 \) types et \( n = 3 \) actions, une stratégie est un tableau
+        complet « type \( \rightarrow \) action » ; il y a 3 choix pour le premier type et 3 pour
+        le second, soit
+      </p>
+      <p class="math-line">\[ n^k = 3^2 = \textbf{9 stratégies} \]</p>
+      <p>
+        (Piège classique : répondre 3, par réflexe des jeux à information complète, ou 6 en
+        multipliant \( n \times k \).)
+      </p>
+      <p class="bareme">Barème : type = fonction de gain (+ chacun connaît son propre type) (3 pts) ; stratégie = règle d'action, une action par type (4 pts) ; \( 3^2 = 9 \) avec justification (3 pts).</p>
+    </div>
+  </div>
+</section>

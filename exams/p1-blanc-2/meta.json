@@ -1,0 +1,14 @@
+{
+  "kind": "Examen blanc n° 2",
+  "part": "Partie 1 — Théorie de la décision et Théorie des jeux",
+  "tagline": "Couvre : self-contrôle, investissement risqué, jeux séquentiels & ENPS, collusion répétée, concepts",
+  "duration": "2h",
+  "total": 200,
+  "questions": [
+    { "n": 1, "points": 50 },
+    { "n": 2, "points": 40 },
+    { "n": 3, "points": 50 },
+    { "n": 4, "points": 30 },
+    { "n": 5, "points": 30 }
+  ]
+}

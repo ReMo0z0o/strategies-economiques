@@ -1,0 +1,296 @@
+<!-- ==================== QUESTION 1 ==================== -->
+<section class="question">
+  <h2>Question 1 <span class="pts">(50 points)</span></h2>
+  <div class="stem">
+    <p>
+      Une salle d'escalade de bloc vient d'ouvrir à Jambes. Elle propose deux tarifications à un
+      grimpeur débutant : soit il paie un prix \( p = 2 \) pour chacune de ses séances, soit il
+      prend un abonnement au prix \( C = 16 \) et peut alors grimper autant de fois qu'il le
+      désire. Il y a trois périodes : la période 0 durant laquelle le grimpeur décide de prendre
+      un abonnement ou non, la période 1 durant laquelle il effectue un nombre \( k \) de séances,
+      et la période 2 durant laquelle il reçoit un bénéfice (santé et progression) \( b = 12 \)
+      pour chaque séance effectuée en période 1.
+    </p>
+    <p>
+      Le grimpeur a un problème de self-contrôle. Ses préférences en période 0 sur le nombre de
+      séances et sur le fait de prendre un abonnement (\( a = 1 \)) ou pas (\( a = 0 \)) sont
+      représentées par
+    </p>
+    <p class="math-line">
+      \[ U_0(a,k) = \underbrace{-\beta\frac{k^2}{2} - \beta\bigl[aC + (1-a)pk\bigr]}_{\text{période 1}} + \underbrace{\beta b k}_{\text{période 2}} \]
+    </p>
+    <p>
+      où le premier terme capture le coût d'effort des séances (l'escalade est un
+      <em>bien d'investissement</em>) et où le biais de self-contrôle est
+      \( \beta = \tfrac{1}{2} \). Étant donné son problème de self-contrôle, ses préférences en
+      période 1 sont représentées par
+    </p>
+    <p class="math-line">
+      \[ U_1(a,k) = \underbrace{-\frac{k^2}{2} - \bigl[aC + (1-a)pk\bigr]}_{\text{période 1}} + \underbrace{\beta b k}_{\text{période 2}} \]
+    </p>
+    <p>
+      où \( a \) est fixé à la valeur choisie en période 0.
+    </p>
+    <p class="note">
+      Note — On suppose un facteur d'escompte \( \delta = 1 \). \( U_0 \) suppose que le montant
+      dû à la salle est payé en période 1 : le self-contrôle n'affecte que la décision de grimper,
+      pas l'allocation des coûts monétaires dans le temps.
+    </p>
+
+    <div class="subq"><span class="label">1.1)</span> En période 0, combien de séances le grimpeur
+      souhaite-t-il effectuer s'il prend un abonnement (\( a = 1 \)) ? Détaillez votre calcul.
+      (8 points)</div>
+    <div class="answer-box" style="--h:6cm"></div>
+
+    <div class="subq"><span class="label">1.2)</span> En période 0, combien de séances
+      souhaite-t-il effectuer s'il ne prend pas d'abonnement (\( a = 0 \)) ? (8 points)</div>
+    <div class="answer-box" style="--h:6cm"></div>
+
+    <div class="subq"><span class="label">1.3)</span> Si le grimpeur est naïf à propos de son
+      problème de self-contrôle (\( \hat\beta = 1 \)), va-t-il prendre un abonnement en
+      période 0 ? Détaillez votre raisonnement. (10 points)</div>
+    <div class="answer-box" style="--h:8cm"></div>
+
+    <div class="subq"><span class="label">1.4)</span> Étant donné le choix tarifaire effectué à la
+      question 1.3, combien de séances le grimpeur naïf va-t-il <em>réellement</em> effectuer en
+      période 1 ? (8 points)</div>
+    <div class="answer-box" style="--h:6cm"></div>
+
+    <div class="subq"><span class="label">1.5)</span> Si le grimpeur est sophistiqué à propos de
+      son problème de self-contrôle (\( \hat\beta = \beta \)), va-t-il prendre un abonnement en
+      période 0 ? Détaillez votre raisonnement. (10 points)</div>
+    <div class="answer-box" style="--h:9cm"></div>
+
+    <div class="subq"><span class="label">1.6)</span> Pour le nombre de séances que le grimpeur
+      sophistiqué effectuera réellement, l'abonnement est-il l'option tarifaire la moins chère ?
+      Expliquez pourquoi le sophistiqué choisit néanmoins cette option (3 à 5 lignes). (6 points)</div>
+    <div class="answer-box" style="--h:6cm"></div>
+  </div>
+</section>
+
+<!-- ==================== QUESTION 2 ==================== -->
+<section class="question">
+  <h2>Question 2 <span class="pts">(40 points)</span></h2>
+  <div class="stem">
+    <p>
+      Considérez une investisseuse rationnelle disposant d'une richesse \( w = 900 \) euros et
+      ayant la fonction d'utilité de Bernoulli
+    </p>
+    <p class="math-line">\[ u(w) = \sqrt{w} \qquad \text{où } w \text{ est un montant en euros.} \]</p>
+    <p>
+      Une jeune entreprise lui propose d'investir un montant \( A \in [0\,;\,900] \) de son choix
+      dans un projet risqué. Avec une probabilité \( \tfrac{1}{2} \), le projet réussit et chaque
+      euro investi lui rapporte 4 euros ; avec une probabilité \( \tfrac{1}{2} \), le projet
+      échoue et chaque euro investi est perdu.
+    </p>
+
+    <div class="subq"><span class="label">2.1)</span> Exprimez la valeur finale de son
+      portefeuille (argent conservé + résultat du projet) dans chacun des deux scénarios, puis
+      écrivez son utilité espérée \( U(A) \). (8 points)</div>
+    <div class="answer-box" style="--h:6cm"></div>
+
+    <div class="subq"><span class="label">2.2)</span> Calculez le montant optimal \( A^* \) que
+      l'investisseuse choisit d'investir. Détaillez la dérivation complète (condition de premier
+      ordre). (14 points)</div>
+    <div class="answer-box" style="--h:10cm"></div>
+    <div class="answer-line">\( A^* \) : <span class="blank"></span></div>
+
+    <div class="subq"><span class="label">2.3)</span> Calculez l'utilité espérée à l'optimum
+      \( U(A^*) \) ainsi que l'équivalent certain du portefeuille optimal. Comparez cet équivalent
+      certain à la richesse initiale et interprétez brièvement. (10 points)</div>
+    <div class="answer-box" style="--h:8cm"></div>
+
+    <div class="subq"><span class="label">2.4)</span> Sans refaire de calcul : si l'investisseuse
+      était plus averse au risque (par exemple avec \( u(w) = \ln(w) \), plus concave), le montant
+      optimal investi serait-il plus élevé, plus faible ou inchangé ? Expliquez (3 à 5 lignes).
+      (8 points)</div>
+    <div class="answer-box" style="--h:6cm"></div>
+  </div>
+</section>
+
+<!-- ==================== QUESTION 3 ==================== -->
+<section class="question">
+  <h2>Question 3 <span class="pts">(50 points)</span></h2>
+  <div class="stem">
+    <p>
+      Considérez le jeu séquentiel suivant. La commune de Hombourg souhaite attirer des enseignes
+      d'ameublement sur son territoire. Elle doit choisir laquelle de ses deux zones commerciales
+      aménager : la <strong>zone Est (E)</strong>, vaste et située le long de la nationale, ou la
+      <strong>zone Ouest (O)</strong>, plus petite. Une fois la zone aménagée, l'enseigne A décide
+      d'y <strong>investir (I)</strong> — c'est-à-dire d'y construire un magasin — ou de
+      <strong>ne pas investir (N)</strong>. Après avoir observé la décision de A, l'enseigne B
+      décide à son tour d'investir (I) ou non (N). Il y a donc trois joueurs : la commune (C),
+      l'enseigne A et l'enseigne B. La représentation en forme extensive du jeu est donnée
+      ci-dessous.
+    </p>
+
+    <div class="figure">
+      <svg viewBox="0 0 760 315" width="700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arbre du jeu : la commune choisit E ou O, puis l'enseigne A choisit I ou N, puis l'enseigne B choisit I ou N">
+        <g stroke="#111827" stroke-width="1.5">
+          <line x1="380" y1="30" x2="190" y2="118"/>
+          <line x1="380" y1="30" x2="570" y2="118"/>
+          <line x1="190" y1="118" x2="95"  y2="206"/>
+          <line x1="190" y1="118" x2="285" y2="206"/>
+          <line x1="570" y1="118" x2="475" y2="206"/>
+          <line x1="570" y1="118" x2="665" y2="206"/>
+          <line x1="95"  y1="206" x2="57"  y2="272"/>
+          <line x1="95"  y1="206" x2="133" y2="272"/>
+          <line x1="285" y1="206" x2="247" y2="272"/>
+          <line x1="285" y1="206" x2="323" y2="272"/>
+          <line x1="475" y1="206" x2="437" y2="272"/>
+          <line x1="475" y1="206" x2="513" y2="272"/>
+          <line x1="665" y1="206" x2="627" y2="272"/>
+          <line x1="665" y1="206" x2="703" y2="272"/>
+        </g>
+        <g fill="#111827">
+          <circle cx="380" cy="30"  r="4"/>
+          <circle cx="190" cy="118" r="4"/>
+          <circle cx="570" cy="118" r="4"/>
+          <circle cx="95"  cy="206" r="4"/>
+          <circle cx="285" cy="206" r="4"/>
+          <circle cx="475" cy="206" r="4"/>
+          <circle cx="665" cy="206" r="4"/>
+        </g>
+        <g font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="bold" fill="#111827">
+          <text x="380" y="16" text-anchor="middle">C</text>
+          <text x="174" y="112" text-anchor="end">A</text>
+          <text x="586" y="112" text-anchor="start">A</text>
+          <text x="80"  y="200" text-anchor="end">B</text>
+          <text x="300" y="200" text-anchor="start">B</text>
+          <text x="460" y="200" text-anchor="end">B</text>
+          <text x="680" y="200" text-anchor="start">B</text>
+        </g>
+        <g font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#111827">
+          <text x="273" y="66"  text-anchor="end">E</text>
+          <text x="487" y="66"  text-anchor="start">O</text>
+          <text x="132" y="156" text-anchor="end">I</text>
+          <text x="248" y="156" text-anchor="start">N</text>
+          <text x="512" y="156" text-anchor="end">I</text>
+          <text x="628" y="156" text-anchor="start">N</text>
+          <text x="68"  y="238" text-anchor="end">I</text>
+          <text x="122" y="238" text-anchor="start">N</text>
+          <text x="258" y="238" text-anchor="end">I</text>
+          <text x="312" y="238" text-anchor="start">N</text>
+          <text x="448" y="238" text-anchor="end">I</text>
+          <text x="502" y="238" text-anchor="start">N</text>
+          <text x="638" y="238" text-anchor="end">I</text>
+          <text x="692" y="238" text-anchor="start">N</text>
+        </g>
+        <g font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#111827" text-anchor="middle">
+          <text x="57"  y="294">(8; 3; 3)</text>
+          <text x="133" y="294">(5; 7; 0)</text>
+          <text x="247" y="294">(4; 0; 6)</text>
+          <text x="323" y="294">(0; 0; 0)</text>
+          <text x="437" y="294">(6; −2; −2)</text>
+          <text x="513" y="294">(3; 5; 0)</text>
+          <text x="627" y="294">(2; 0; 4)</text>
+          <text x="703" y="294">(1; 0; 0)</text>
+        </g>
+      </svg>
+      <div class="caption">
+        Forme extensive du jeu d'implantation. Les payoffs se lisent (C&nbsp;; A&nbsp;; B).
+        Actions : E = aménager la zone Est, O = aménager la zone Ouest ; I = investir,
+        N = ne pas investir.
+      </div>
+    </div>
+
+    <div class="subq"><span class="label">3.1)</span> Donnez un exemple de stratégie pour
+      l'enseigne B. (6 points)</div>
+    <div class="answer-box" style="--h:3.5cm"></div>
+
+    <div class="subq"><span class="label">3.2)</span> Donnez l'ensemble des stratégies de
+      l'enseigne A. (8 points)</div>
+    <div class="answer-box" style="--h:4.5cm"></div>
+
+    <div class="subq"><span class="label">3.3)</span> En utilisant le raisonnement de backward
+      induction, identifiez un équilibre de Nash parfait en sous-jeux (ENPS). Détaillez votre
+      raisonnement dans le cadre et notez la réponse sur les lignes en bas. (20 points)</div>
+    <div class="answer-box" style="--h:11cm"></div>
+    <div class="answer-line">\( S^*_C \) : <span class="blank"></span></div>
+    <div class="answer-line">\( S^*_A \) : <span class="blank"></span></div>
+    <div class="answer-line">\( S^*_B \) : <span class="blank"></span></div>
+
+    <div class="subq"><span class="label">3.4)</span> Selon cet ENPS, quel est le résultat
+      effectif du jeu : quelle zone est aménagée, quelle(s) enseigne(s) investissent, et quels
+      sont les payoffs des trois joueurs ? (6 points)</div>
+    <div class="answer-line">Zone aménagée : <span class="blank"></span></div>
+    <div class="answer-line">Enseigne(s) qui investissent : <span class="blank"></span></div>
+    <div class="answer-line">Payoffs (C&nbsp;; A&nbsp;; B) : <span class="blank"></span></div>
+
+    <div class="subq" style="page-break-before:always"><span class="label">3.5)</span> Donnez un équilibre de Nash de ce jeu qui
+      n'est <em>pas</em> parfait en sous-jeux. Vérifiez qu'il s'agit bien d'un équilibre de Nash,
+      puis expliquez précisément pourquoi il n'est pas parfait en sous-jeux : quelle menace n'est
+      pas crédible ? (10 points)</div>
+    <div class="answer-box" style="--h:9cm"></div>
+  </div>
+</section>
+
+<!-- ==================== QUESTION 4 ==================== -->
+<section class="question">
+  <h2>Question 4 <span class="pts">(30 points)</span></h2>
+  <div class="stem">
+    <p>
+      Deux stations-service, Rivoli (station 1) et Grandsart (station 2), sont installées face à
+      face à l'entrée d'un village. Chaque lundi matin, chacune affiche simultanément soit un
+      <strong>prix élevé (H)</strong>, soit un <strong>prix cassé (B)</strong>, pour la semaine.
+      Les profits hebdomadaires (en centaines d'euros) sont donnés par la matrice suivante :
+    </p>
+
+    <table class="game">
+      <tr><td class="void"></td><td class="void"></td><th colspan="2">Station 2 (Grandsart)</th></tr>
+      <tr><td class="void"></td><td class="void"></td><th>H</th><th>B</th></tr>
+      <tr><td class="player" rowspan="2">Station 1 (Rivoli)</td><th>H</th><td>(8&nbsp;; 8)</td><td>(0&nbsp;; 14)</td></tr>
+      <tr><th>B</th><td>(14&nbsp;; 0)</td><td>(4&nbsp;; 4)</td></tr>
+    </table>
+
+    <div class="subq"><span class="label">4.1)</span> Montrez que, si ce jeu n'est joué qu'une
+      seule fois, (B, B) est l'<em>unique</em> équilibre de Nash. Détaillez votre raisonnement.
+      (8 points)</div>
+    <div class="answer-box" style="--h:6cm"></div>
+
+    <div class="subq" style="page-break-before:always"><span class="label">4.2)</span> Le jeu est maintenant répété à l'infini et
+      chaque station observe le prix de sa rivale à la fin de chaque semaine. Les deux stations
+      ont le même facteur d'escompte \( \delta \in (0,1) \) et cherchent à soutenir la collusion
+      (H, H) à l'aide de stratégies <em>grim</em> : jouer H tant que personne n'a jamais joué B,
+      et jouer B pour toujours dès qu'un prix B a été observé. Montrez que (grim, grim) est un
+      équilibre si et seulement si \( \delta \ge \tfrac{3}{5} \). Détaillez le calcul. (14 points)</div>
+    <div class="answer-box" style="--h:10cm"></div>
+
+    <div class="subq"><span class="label">4.3)</span> Supposez maintenant que la détection soit
+      retardée : une station qui casse son prix n'est repérée par sa rivale qu'au bout de deux
+      semaines. Une station qui dévie touche donc son profit de déviation pendant deux semaines
+      (\( t = 0 \) et \( t = 1 \)), et la punition ne commence qu'en \( t = 2 \). Établissez la
+      nouvelle condition sur \( \delta \) pour que la collusion soit soutenable, puis comparez-la
+      à celle de la question 4.2 et interprétez (2 à 3 lignes). (8 points)</div>
+    <div class="answer-box" style="--h:8cm"></div>
+  </div>
+</section>
+
+<!-- ==================== QUESTION 5 ==================== -->
+<section class="question">
+  <h2>Question 5 <span class="pts">(30 points)</span></h2>
+  <div class="stem">
+    <div class="subq"><span class="label">5.1)</span> Lors d'une brocante organisée par un
+      kot-à-projet namurois, la moitié des visiteurs, tirés au sort à l'entrée, reçoivent
+      gratuitement un mug sérigraphié. Une heure plus tard, on interroge tous les visiteurs : ceux
+      qui ont reçu un mug ne sont disposés à le céder que contre 9 euros au moins (en moyenne),
+      tandis que ceux qui n'en ont pas reçu ne sont disposés à payer que 4 euros au plus (en
+      moyenne) pour en obtenir un. Quel biais comportemental cette observation illustre-t-elle ?
+      Expliquez en quoi elle constitue une déviation par rapport à la théorie de la décision
+      rationnelle. (10 points)</div>
+    <div class="answer-box" style="--h:7cm"></div>
+
+    <div class="subq"><span class="label">5.2)</span> Qu'est-ce qu'un « commitment device » ?
+      Donnez un exemple concret, puis expliquez pourquoi un individu rationnel
+      (\( \beta = 1 \)) n'a jamais besoin d'un tel dispositif — et n'est en particulier jamais
+      prêt à payer pour en obtenir un. (10 points)</div>
+    <div class="answer-box" style="--h:7cm"></div>
+
+    <div class="subq" style="page-break-before:always"><span class="label">5.3)</span> Dans un jeu à information incomplète (jeu
+      bayésien) : qu'est-ce que le <em>type</em> d'un joueur ? Qu'est-ce qu'une
+      <em>stratégie</em> ? Illustrez à l'aide du mini-exemple suivant : un joueur peut être de 2
+      types possibles et dispose de 3 actions possibles — combien de stratégies possède-t-il ?
+      Justifiez. (10 points)</div>
+    <div class="answer-box" style="--h:7cm"></div>
+  </div>
+</section>

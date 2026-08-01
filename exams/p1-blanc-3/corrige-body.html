@@ -1,0 +1,449 @@
+<!-- ==================== QUESTION 1 ==================== -->
+<section class="question" style="page-break-before:auto">
+  <h2>Question 1 <span class="pts">(50 points) — Offre de travail et redistribution</span></h2>
+
+  <div class="solution">
+    <div class="tag">Solution 1.1</div>
+    <p>
+      Les ressources d'un travailleur ont deux origines : le revenu net de son travail et le
+      transfert forfaitaire \( M(t) \). Un travailleur de type \( i \in \{H, B\} \) partage sa
+      dotation \( L = 1 \) entre loisir \( l_i \) et travail \( 1 - l_i \) ; son revenu du travail
+      net est donc \( s_i(1-t)(1-l_i) \). La contrainte de budget s'écrit :
+    </p>
+    \[ p\,c_i \;\le\; s_i(1-t)(1-l_i) + M(t) \]
+    <p>Avec \( t = 0{,}2 \) et \( p = 1 \), le salaire net vaut \( 20 \times 0{,}8 = 16 \) pour le
+      type H et \( 10 \times 0{,}8 = 8 \) pour le type B :</p>
+    \[ \text{Type H} : \quad c_H \le 16\,(1-l_H) + M(t) \qquad\qquad \text{Type B} : \quad c_B \le 8\,(1-l_B) + M(t) \]
+    <p>
+      <strong>Piège signalé :</strong> comme \( N \) est très grand, chaque travailleur traite
+      \( M(t) \) comme une <strong>donnée</strong> : son choix individuel de travail a un impact
+      négligeable sur la caisse commune. Il serait incorrect de remplacer \( M(t) \) par sa
+      formule de financement dans la contrainte individuelle.
+    </p>
+    <p class="bareme">Barème : 5 points par contrainte (revenu net du travail correctement écrit : 3 ; transfert M(t) ajouté comme donnée : 2).</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 1.2</div>
+    <p>Pour le type \( i \), le Lagrangien s'écrit (avec \( p = 1 \)) :</p>
+    \[ \mathcal{L}_i = c_i + 4\ln(l_i) - \lambda_i\Bigl(c_i - s_i(1-t)(1-l_i) - M(t)\Bigr) \]
+    <p>Les conditions de premier ordre :</p>
+    \[ \frac{\partial \mathcal{L}_i}{\partial c_i} = 1 - \lambda_i = 0 \qquad (1) \]
+    \[ \frac{\partial \mathcal{L}_i}{\partial l_i} = \frac{4}{l_i} - \lambda_i\, s_i(1-t) = 0 \qquad (2) \]
+    \[ \frac{\partial \mathcal{L}_i}{\partial \lambda_i} = 0 \;\Longleftrightarrow\; c_i = s_i(1-t)(1-l_i) + M(t) \qquad (3) \]
+    <p>
+      L'équation (1) donne \( \lambda_i = 1 \). En l'injectant dans (2) :
+    </p>
+    \[ l_i^* = \frac{4}{s_i(1-t)} \]
+    <p>Avec \( t = 0{,}2 \) :</p>
+    \[ l_H^* = \frac{4}{20 \times 0{,}8} = \frac{4}{16} = \frac{1}{4} \qquad ; \qquad l_B^* = \frac{4}{10 \times 0{,}8} = \frac{4}{8} = \frac{1}{2} \]
+    <p>Les temps de travail optimaux sont donc :</p>
+    <p style="text-align:center"><strong>\( 1 - l_H^* = \dfrac{3}{4} \)</strong> pour le type H
+      et <strong>\( 1 - l_B^* = \dfrac{1}{2} \)</strong> pour le type B.</p>
+    <p>
+      Intuition : le type B travaille moins car son salaire net (8) rémunère plus faiblement
+      chaque heure de travail — le loisir lui « coûte » moins cher.
+    </p>
+    <p class="bareme">Barème : Lagrangien correct : 5 ; les trois CPO : 4 ; formule du loisir optimal : 3 ; valeurs numériques des deux temps de travail : 3.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 1.3</div>
+    <p>Le revenu net du travail est \( s_i(1-t)(1-l_i^*) \) :</p>
+    \[ \text{Type H} : \quad 20 \times 0{,}8 \times \frac{3}{4} = \mathbf{12} \]
+    \[ \text{Type B} : \quad 10 \times 0{,}8 \times \frac{1}{2} = \mathbf{4} \]
+    <p class="bareme">Barème : 4 points par revenu net.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 1.4</div>
+    <p>D'après 1.2), le loisir optimal vaut :</p>
+    \[ l_i^*(t) = \frac{4}{s_i(1-t)} \]
+    <p>
+      Quand \( t \) augmente, \( (1-t) \) diminue, donc \( l_i^*(t) \) <strong>augmente</strong>
+      pour les deux types : l'offre de travail \( 1 - l_i^*(t) \) <strong>diminue</strong>.
+    </p>
+    <p>
+      <strong>Intuition :</strong> la taxe réduit le salaire net \( s_i(1-t) \), qui est le
+      <em>coût d'opportunité du loisir</em> (la consommation à laquelle on renonce pour une heure
+      de loisir en plus). Le loisir devenant moins cher, le travailleur en prend davantage — il
+      travaille moins. Remarquez aussi que \( M(t) \) n'apparaît pas dans la formule : avec ces
+      préférences quasi-linéaires, le montant reçu ne modifie pas l'offre de travail ; seul joue
+      l'effet d'incitation de la taxe.
+    </p>
+    <p class="bareme">Barème : effet formel (l* croissant en t, offre de travail décroissante) : 4 ; intuition économique (coût d'opportunité du loisir / effet d'incitation) : 4.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 1.5</div>
+    <p>
+      Rappel : une allocation domine une autre au sens de Pareto si elle donne à <em>chacun</em>
+      une utilité au moins aussi élevée, et à au moins un individu une utilité strictement plus
+      élevée. On compare les utilités des deux types entre les deux taux :
+    </p>
+    <ul>
+      <li>Type H : \( U_H = 8{,}45 \) pour \( t = 0{,}2 \) contre \( 5{,}83 \) pour
+        \( t = 0{,}5 \) → H préfère \( t = 0{,}2 \) ;</li>
+      <li>Type B : \( U_B = 3{,}23 \) pour \( t = 0{,}2 \) contre \( 3{,}61 \) pour
+        \( t = 0{,}5 \) → B préfère \( t = 0{,}5 \).</li>
+    </ul>
+    <p>
+      Passer d'un taux à l'autre fait un gagnant <em>et</em> un perdant : il n'y a pas
+      d'unanimité. <strong>Aucune des deux allocations ne domine l'autre au sens de
+      Pareto.</strong> Le critère de Pareto est muet pour départager ces deux taux : le choix
+      entre eux exige un jugement de valeur supplémentaire (arbitrage équité–efficacité).
+    </p>
+    <p class="bareme">Barème : définition ou critère de domination correctement mobilisé : 3 ; comparaison des deux types : 4 ; conclusion (pas de domination, pas d'unanimité) : 2.</p>
+  </div>
+</section>
+
+<!-- ==================== QUESTION 2 ==================== -->
+<section class="question">
+  <h2>Question 2 <span class="pts">(40 points) — Loteries et attitudes face au risque</span></h2>
+
+  <div class="solution">
+    <div class="tag">Solution 2.1</div>
+    <p>
+      <strong>Théorème du cours :</strong> un individu est averse au risque si et seulement si sa
+      fonction d'utilité de Bernoulli est <strong>concave</strong>, c'est-à-dire si son utilité
+      marginale de la richesse est décroissante : \( u''(w) < 0 \) pour tout \( w > 0 \).
+    </p>
+    <p>On dérive deux fois :</p>
+    \[ u'(w) = \frac{1}{2\sqrt{w}} > 0 \qquad ; \qquad u''(w) = -\frac{1}{4}\,w^{-3/2} < 0 \]
+    <p>
+      Comme \( u'' < 0 \) pour tout \( w > 0 \), la fonction \( \sqrt{w} \) est concave :
+      <strong>l'individu est averse au risque</strong>. (Chaque euro supplémentaire apporte moins
+      d'utilité que le précédent : un pari équilibré « +z ou −z » fait perdre plus d'utilité
+      qu'il n'en rapporte.)
+    </p>
+    <p class="bareme">Barème : énoncé du théorème (aversion ⇔ concavité / u'' &lt; 0) : 4 ; calcul de u'' et conclusion : 4.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 2.2</div>
+    <p>La valeur monétaire attendue du pari est la moyenne pondérée des gains :</p>
+    \[ \mathrm{VMA} = \frac{1}{2}\times 84 + \frac{1}{2}\times(-39) = 42 - 19{,}5 = \mathbf{22{,}50 \text{ euros}} \]
+    <p>
+      Un individu neutre au risque ne classe les actifs que par leur VMA : comme
+      \( 22{,}50 > 0 \), il <strong>accepterait</strong> le pari.
+    </p>
+    <p class="bareme">Barème : calcul de la VMA : 4 ; réponse pour l'individu neutre au risque : 2.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 2.3</div>
+    <p>
+      On raisonne toujours sur les <strong>richesses finales</strong>, pas sur les gains isolés.
+      S'il accepte, sa richesse finale vaut \( 400 + 84 = 484 \) (pile) ou \( 400 - 39 = 361 \)
+      (face) :
+    </p>
+    \[ U(\text{accepter}) = \frac{1}{2}\sqrt{484} + \frac{1}{2}\sqrt{361} = \frac{1}{2}\times 22 + \frac{1}{2}\times 19 = \mathbf{20{,}5} \]
+    <p>S'il refuse, il garde 400 euros sûrs :</p>
+    \[ U(\text{refuser}) = u(400) = \sqrt{400} = 20 \]
+    <p>
+      Comme \( 20{,}5 > 20 \), <strong>l'individu accepte le pari</strong> : bien qu'averse au
+      risque, il trouve la compensation (VMA de 22,50 euros) suffisante.
+    </p>
+    <p class="bareme">Barème : richesses finales correctes : 3 ; calcul de l'utilité espérée : 4 ; comparaison avec u(400) et décision : 3.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 2.4</div>
+    <p>
+      La richesse finale risquée est l'actif \( a_r \) : 484 euros avec probabilité 1/2, 361
+      euros avec probabilité 1/2. Sa VMA vaut :
+    </p>
+    \[ \mathrm{VMA}(a_r) = \frac{1}{2}\times 484 + \frac{1}{2}\times 361 = 422{,}50 \text{ euros} \quad (= 400 + 22{,}50) \]
+    <p>
+      L'équivalent certain \( C \) est le montant sûr procurant la même utilité que l'actif
+      risqué : \( u(C) = U(a_r) \), soit :
+    </p>
+    \[ \sqrt{C} = 20{,}5 \quad\Longrightarrow\quad C = (20{,}5)^2 = \mathbf{420{,}25 \text{ euros}} \]
+    <p>La prime de risque minimale :</p>
+    \[ \mathrm{PRM} = \mathrm{VMA}(a_r) - C = 422{,}50 - 420{,}25 = \mathbf{2{,}25 \text{ euros}} \]
+    <p>
+      Vérification de cohérence : l'individu est averse au risque, donc
+      \( C < \mathrm{VMA} \) et \( \mathrm{PRM} > 0 \) — c'est bien le cas. Interprétation : il
+      est indifférent entre sa position risquée et 420,25 euros cash ; il exige un « rabais » de
+      2,25 euros sur la moyenne pour supporter le risque.
+    </p>
+    <p class="bareme">Barème : équation u(C) = U(a_r) et calcul de C : 5 ; VMA de la richesse finale et PRM : 5. Accepter aussi le raisonnement mené sur les gains nets (C − 400 = 20,25 et PRM identique).</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 2.5</div>
+    <p>
+      <strong>Le décideur rationnel</strong> évalue toujours son <strong>portefeuille complet</strong>
+      de richesses finales. Au moment de la seconde proposition, ses actifs ne sont plus
+      « 400 euros sûrs » : ils comprennent déjà le premier pari en cours. Il doit donc comparer
+      l'utilité espérée de la loterie « deux paris » (qui agrège les quatre combinaisons
+      pile/face possibles, avec notamment la compensation entre un gain sur l'un et une perte sur
+      l'autre) à l'utilité espérée de la loterie « un seul pari ». La condition d'acceptation est
+      donc différente de celle de la question 2.3.
+    </p>
+    <p>
+      <strong>Un individu au cadrage étroit</strong>, lui, évalue chaque pari « dans sa bulle »,
+      isolément de son portefeuille : il raisonnerait comme si le second pari était le premier,
+      en ignorant le risque déjà en cours (par exemple en repartant de sa richesse certaine, ou
+      d'un équivalent certain du premier pari). Il néglige la façon dont les deux paris
+      s'agrègent — c'est précisément le biais de cadrage étroit.
+    </p>
+    <p class="bareme">Barème : raisonnement rationnel (comparer U(deux paris) à U(un pari), portefeuille complet) : 3 ; description du cadrage étroit (évaluation isolée du second pari) : 3.</p>
+  </div>
+</section>
+
+<!-- ==================== QUESTION 3 ==================== -->
+<section class="question">
+  <h2>Question 3 <span class="pts">(50 points) — Jeu bayésien</span></h2>
+
+  <div class="solution">
+    <div class="tag">Solution 3.1</div>
+    <p>
+      Dans un jeu bayésien, une stratégie du joueur informé n'est plus une simple action mais une
+      <strong>règle d'action</strong> : elle spécifie une action pour <em>chaque type possible</em>
+      du joueur. Maxime a 2 types et 2 actions, il dispose donc de \( 2^2 = 4 \) stratégies :
+    </p>
+    <ul>
+      <li>(T si sérieux · T si paresseux)</li>
+      <li>(T si sérieux · R si paresseux)</li>
+      <li>(R si sérieux · T si paresseux)</li>
+      <li>(R si sérieux · R si paresseux)</li>
+    </ul>
+    <p>
+      (Léa, qui n'a qu'un seul type, conserve de simples actions comme stratégies : A ou S.)
+    </p>
+    <p class="bareme">Barème : définition de la règle d'action (une action par type) : 5 ; énumération complète des 4 stratégies (ou formule 2² = 4 avec la liste) : 5.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 3.2</div>
+    <p>
+      Chaque type de Maxime connaît sa propre matrice : il compare des gains certains, colonne
+      par colonne.
+    </p>
+    <p><strong>Type sérieux</strong> (première matrice) :</p>
+    <ul>
+      <li>si Léa joue A : Travailler donne 4, Se reposer donne 1 → Travailler ;</li>
+      <li>si Léa joue S : Travailler donne 3, Se reposer donne 0 → Travailler.</li>
+    </ul>
+    <p><strong>Travailler est dominant pour le type sérieux.</strong></p>
+    <p><strong>Type paresseux</strong> (seconde matrice) :</p>
+    <ul>
+      <li>si Léa joue A : Travailler donne 1, Se reposer donne 3 → Se reposer ;</li>
+      <li>si Léa joue S : Travailler donne 0, Se reposer donne 2 → Se reposer.</li>
+    </ul>
+    <p><strong>Se reposer est dominant pour le type paresseux.</strong></p>
+    <p>
+      Quelle que soit l'action de Léa, la meilleure réponse de Maxime est donc la règle d'action
+      <strong>(T si sérieux · R si paresseux)</strong>.
+    </p>
+    <p class="bareme">Barème : 6 points par type (comparaison des deux colonnes : 4 ; conclusion de dominance : 2).</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 3.3</div>
+    <p>
+      D'après 3.2), à l'équilibre Maxime joue nécessairement (T si sérieux · R si paresseux),
+      car cette règle est dominante type par type. Léa, qui ne connaît pas le type, calcule ses
+      <strong>espérances de gain</strong> face à cette règle, avec sa croyance
+      \( p = 0{,}8 \) :
+    </p>
+    \[ E[\text{A}] = 0{,}8 \times \underbrace{6}_{\text{sérieux} \to \text{T}} + 0{,}2 \times \underbrace{0}_{\text{paresseux} \to \text{R}} = \mathbf{4{,}8} \]
+    \[ E[\text{S}] = 0{,}8 \times 3 + 0{,}2 \times 2 = 2{,}4 + 0{,}4 = \mathbf{2{,}8} \]
+    <p>
+      Comme \( 4{,}8 > 2{,}8 \), la meilleure réponse de Léa est <strong>Ambitieux</strong>. Les
+      deux stratégies sont des meilleures réponses mutuelles (la règle de Maxime est dominante,
+      donc c'est en particulier une meilleure réponse à A). L'équilibre de Nash bayésien est :
+    </p>
+    <p style="text-align:center"><strong>( Ambitieux ; (T si sérieux · R si paresseux) )</strong></p>
+    <p class="bareme">Barème : fixer la règle de Maxime issue de 3.2 : 4 ; calcul des deux espérances de Léa : 8 ; vérification des meilleures réponses mutuelles et écriture correcte de l'ENB (stratégie de Maxime = règle complète, pas une action) : 6.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 3.4</div>
+    <p>
+      La règle de Maxime ne dépend pas de \( p \) (chaque type compare des gains certains).
+      Seules les espérances de Léa bougent. Pour une croyance \( p \) quelconque :
+    </p>
+    \[ E[\text{A}] = 6p \qquad ; \qquad E[\text{S}] = 3p + 2(1-p) = 2 + p \]
+    <p>Léa préfère A si et seulement si :</p>
+    \[ 6p > 2 + p \quad\Longleftrightarrow\quad 5p > 2 \quad\Longleftrightarrow\quad p > \frac{2}{5} \]
+    <p>
+      La valeur seuil est <strong>\( p^* = \dfrac{2}{5} = 0{,}4 \)</strong>.
+    </p>
+    <ul>
+      <li>Si \( p > 0{,}4 \) : ENB = ( A ; (T si sérieux · R si paresseux) ) ;</li>
+      <li>Si \( p < 0{,}4 \) : ENB = <strong>( S ; (T si sérieux · R si paresseux) )</strong> —
+        Maxime étant probablement paresseux, Léa préfère le dossier standard, moins risqué ;</li>
+      <li>Si \( p = 0{,}4 \) : Léa est indifférente, les deux profils sont des ENB.</li>
+    </ul>
+    <p class="bareme">Barème : espérances en fonction de p : 4 ; calcul du seuil 2/5 : 3 ; description de l'équilibre sous le seuil : 3.</p>
+  </div>
+</section>
+
+<!-- ==================== QUESTION 4 ==================== -->
+<section class="question">
+  <h2>Question 4 <span class="pts">(30 points) — Stratégies mixtes</span></h2>
+
+  <div class="solution">
+    <div class="tag">Solution 4.1</div>
+    <p>On identifie les meilleures réponses pures de chacun :</p>
+    <ul>
+      <li>Contrebandier : face à Route → Montagne (4 &gt; −4) ; face à Montagne → Route (8 &gt; −4).</li>
+      <li>Douanier : face à Route → Route (6 &gt; 0) ; face à Montagne → Montagne (2 &gt; 0).</li>
+    </ul>
+    <p>
+      Examinons les quatre profils : en (Route ; Route), le contrebandier dévie vers Montagne ;
+      en (Route ; Montagne), le douanier dévie vers Route ; en (Montagne ; Route), le douanier
+      dévie vers Montagne ; en (Montagne ; Montagne), le contrebandier dévie vers Route. Aucune
+      case n'est faite de meilleures réponses mutuelles :
+      <strong>il n'existe aucun équilibre de Nash en stratégies pures</strong>. C'est la signature
+      d'un jeu de conflit : le « perdant » de chaque case a toujours intérêt à changer de
+      stratégie, chacun veut être imprévisible.
+    </p>
+    <p class="bareme">Barème : meilleures réponses correctes : 3 ; vérification des 4 profils et conclusion : 3.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 4.2</div>
+    <p>
+      <strong>Théorème d'indifférence :</strong> dans un équilibre de Nash mixte, chaque joueur
+      est indifférent entre les stratégies pures qu'il utilise. L'indifférence de chaque joueur
+      détermine la stratégie de <em>l'autre</em>.
+    </p>
+    <p><strong>Indifférence du contrebandier</strong> (elle donne \( q^* \)) :</p>
+    \[ \underbrace{q\,(-4) + (1-q)\,8}_{\text{Route}} = \underbrace{q\,(4) + (1-q)\,(-4)}_{\text{Montagne}} \]
+    \[ 8 - 12q = -4 + 8q \quad\Longleftrightarrow\quad 12 = 20q \quad\Longleftrightarrow\quad \mathbf{q^* = \frac{3}{5} = 0{,}6} \]
+    <p><strong>Indifférence du douanier</strong> (elle donne \( p^* \)) :</p>
+    \[ \underbrace{p\,(6) + (1-p)\,0}_{\text{Route}} = \underbrace{p\,(0) + (1-p)\,2}_{\text{Montagne}} \]
+    \[ 6p = 2 - 2p \quad\Longleftrightarrow\quad 8p = 2 \quad\Longleftrightarrow\quad \mathbf{p^* = \frac{1}{4} = 0{,}25} \]
+    <p>
+      L'équilibre de Nash en stratégies mixtes est donc
+      \( (p^*, q^*) = \bigl(\tfrac{1}{4},\ \tfrac{3}{5}\bigr) \) : le contrebandier passe par la
+      route 1 fois sur 4, le douanier y patrouille 3 fois sur 5.
+    </p>
+    <p class="bareme">Barème : 6 points par équation d'indifférence (mise en équation : 4 ; résolution : 2). Retirer 3 points si les équations sont croisées à l'envers (indifférence du contrebandier utilisée pour trouver p*).</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 4.3</div>
+    <p>
+      À l'équilibre, chaque joueur obtient le même payoff espéré avec chacune de ses stratégies
+      pures (théorème d'indifférence). Il suffit donc d'évaluer l'une d'elles :
+    </p>
+    \[ U_C = 8 - 12\,q^* = 8 - 12 \times \frac{3}{5} = \mathbf{0{,}8} \qquad ; \qquad U_D = 6\,p^* = 6 \times \frac{1}{4} = \mathbf{1{,}5} \]
+    <p>
+      (Vérification : Montagne donne \( -4 + 8 \times 0{,}6 = 0{,}8 \) au contrebandier, et la
+      colonne Montagne donne \( 2 - 2 \times 0{,}25 = 1{,}5 \) au douanier.)
+    </p>
+    <p class="bareme">Barème : 3 points par payoff espéré.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 4.4</div>
+    <p>
+      Seuls les gains du contrebandier changent : son équation d'indifférence est modifiée, et
+      c'est elle qui détermine \( q^* \) :
+    </p>
+    \[ 28(1-q) - 4q = 4q - 4(1-q) \quad\Longleftrightarrow\quad 28 - 32q = -4 + 8q \quad\Longleftrightarrow\quad \mathbf{q^* = \frac{32}{40} = \frac{4}{5}} \]
+    <p>
+      Les gains du douanier n'ayant pas changé, son équation d'indifférence est inchangée :
+      \( p^* = \tfrac{1}{4} \) reste identique.
+    </p>
+    <p>
+      <strong>C'est donc le douanier qui modifie son comportement</strong> : il patrouille sur la
+      route plus souvent (4 fois sur 5 au lieu de 3 fois sur 5), tandis que le contrebandier
+      passe par la route exactement aussi souvent qu'avant. Le résultat est paradoxal : la fraude
+      devenue plus attractive ne rend pas le contrebandier plus actif à l'équilibre — elle rend
+      le douanier plus vigilant. L'explication : à l'équilibre mixte, la stratégie de chaque
+      joueur sert à <strong>maintenir l'autre indifférent</strong>. Pour dissuader un
+      contrebandier davantage attiré par la route, le douanier doit y patrouiller plus souvent ;
+      le comportement du contrebandier, lui, est fixé par les gains (inchangés) du douanier.
+    </p>
+    <p class="bareme">Barème : nouveau q* = 4/5 et p* inchangé : 3 ; identification du douanier et explication du paradoxe (chacun maintient l'autre indifférent) : 3.</p>
+  </div>
+</section>
+
+<!-- ==================== QUESTION 5 ==================== -->
+<section class="question">
+  <h2>Question 5 <span class="pts">(30 points) — Stackelberg et ENPS</span></h2>
+
+  <div class="solution">
+    <div class="tag">Solution 5.1</div>
+    <p>
+      On résout par backward induction : d'abord le follower, puis le leader qui anticipe la
+      réaction du follower.
+    </p>
+    <p><strong>Étape 1 — le follower.</strong> La firme 2 observe \( q_1 \) et maximise :</p>
+    \[ \pi_2 = (80 - q_1 - q_2 - 20)\,q_2 = (60 - q_1 - q_2)\,q_2 \]
+    \[ \frac{\partial \pi_2}{\partial q_2} = 60 - q_1 - 2q_2 = 0 \quad\Longrightarrow\quad q_2^*(q_1) = 30 - \frac{q_1}{2} \]
+    <p><strong>Étape 2 — le leader.</strong> La firme 1 intègre cette réaction dans son profit :</p>
+    \[ \pi_1 = \Bigl(60 - q_1 - \bigl(30 - \tfrac{q_1}{2}\bigr)\Bigr)q_1 = \Bigl(30 - \frac{q_1}{2}\Bigr)q_1 \]
+    \[ \frac{\partial \pi_1}{\partial q_1} = 30 - q_1 = 0 \quad\Longrightarrow\quad \mathbf{q_1^* = 30} \]
+    <p><strong>Étape 3 — les valeurs d'équilibre.</strong></p>
+    \[ q_2^* = 30 - \frac{30}{2} = \mathbf{15} \qquad ; \qquad Q = 45 \qquad ; \qquad p^* = 80 - 45 = \mathbf{35} \]
+    \[ \pi_1 = (35 - 20)\times 30 = \mathbf{450} \qquad ; \qquad \pi_2 = (35 - 20)\times 15 = \mathbf{225} \]
+    <p class="bareme">Barème : fonction de réaction du follower : 4 ; maximisation du leader : 4 ; prix et profits : 4.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 5.2</div>
+    <p>On calcule les payoffs des quatre profils (avec \( \pi_i = (80 - Q - 20)\,q_i \)) :</p>
+    <ul>
+      <li>[30] contre [\( 30 - \tfrac{1}{2}q_1 \)] : \( q_2 = 15 \), \( p = 35 \) →
+        \( \pi_1 = 450 \), \( \pi_2 = 225 \) (l'issue de Stackelberg) ;</li>
+      <li>[30] contre [20] : \( Q = 50 \), \( p = 30 \) → \( \pi_1 = 10 \times 30 = 300 \),
+        \( \pi_2 = 10 \times 20 = 200 \) ;</li>
+      <li>[20] contre [\( 30 - \tfrac{1}{2}q_1 \)] : \( q_2 = 30 - 10 = 20 \), \( Q = 40 \),
+        \( p = 40 \) → \( \pi_1 = \pi_2 = 20 \times 20 = 400 \) ;</li>
+      <li>[20] contre [20] : \( Q = 40 \), \( p = 40 \) → \( \pi_1 = \pi_2 = 400 \).</li>
+    </ul>
+    <table class="game">
+      <tr><td class="void"></td><td class="void"></td><th colspan="2">Firme 2</th></tr>
+      <tr><td class="void"></td><td class="void"></td><th>\( q_2 = 30 - \tfrac{1}{2}q_1 \)</th><th>\( q_2 = 20 \) quel que soit \( q_1 \)</th></tr>
+      <tr><td class="player" rowspan="2">Firme 1</td><th>\( q_1 = 30 \)</th><td>(450&nbsp;;&nbsp;225)</td><td>(300&nbsp;;&nbsp;200)</td></tr>
+      <tr><th>\( q_1 = 20 \)</th><td>(400&nbsp;;&nbsp;400)</td><td>(400&nbsp;;&nbsp;400)</td></tr>
+    </table>
+    <p><strong>Recherche des équilibres de Nash</strong> (meilleures réponses mutuelles) :</p>
+    <ul>
+      <li><strong>( [30] ; [\( 30 - \tfrac{1}{2}q_1 \)] )</strong> : la firme 1 obtient 450 ; dévier
+        vers [20] donnerait 400 → elle reste. La firme 2 obtient 225 ; dévier vers [20]
+        donnerait 200 → elle reste. <strong>C'est un équilibre de Nash</strong>, et c'est
+        exactement l'issue de Stackelberg de la question 5.1).</li>
+      <li><strong>( [20] ; [20] )</strong> : la firme 1 obtient 400 ; dévier vers [30] donnerait
+        300 → elle reste. La firme 2 obtient 400 ; dévier vers la fonction de réaction donnerait
+        aussi 400 (face à \( q_1 = 20 \), la fonction prescrit justement 20) → aucune déviation
+        strictement profitable. <strong>C'est aussi un équilibre de Nash.</strong></li>
+      <li>( [30] ; [20] ) : la firme 1 préfère dévier vers [20] (400 &gt; 300) → pas un équilibre.</li>
+      <li>( [20] ; [\( 30 - \tfrac{1}{2}q_1 \)] ) : la firme 1 préfère dévier vers [30]
+        (450 &gt; 400) → pas un équilibre.</li>
+    </ul>
+    <p>Le jeu réduit possède donc <strong>deux équilibres de Nash</strong>, dont l'issue de Stackelberg.</p>
+    <p class="bareme">Barème : les quatre paires de payoffs : 6 (1,5 par case) ; identification des deux équilibres de Nash avec justification : 6.</p>
+  </div>
+
+  <div class="solution">
+    <div class="tag">Solution 5.3</div>
+    <p>
+      Un ENPS exige que la stratégie de chaque joueur soit optimale <strong>dans chaque
+      sous-jeu</strong>, même ceux qui ne sont pas atteints à l'équilibre.
+    </p>
+    <p>
+      La stratégie [\( q_2 = 30 - \tfrac{1}{2}q_1 \)] prescrit la meilleure réponse de la firme 2
+      dans <em>tous</em> les sous-jeux (après chaque \( q_1 \) possible). L'équilibre
+      ( [30] ; [\( 30 - \tfrac{1}{2}q_1 \)] ) survit donc à la backward induction :
+      <strong>c'est l'ENPS</strong>.
+    </p>
+    <p>
+      L'équilibre ( [20] ; [\( q_2 = 20 \) quel que soit \( q_1 \)] ) repose au contraire sur une
+      <strong>menace non crédible</strong>. La stratégie « produire 20 quoi qu'il arrive » n'est
+      pas optimale dans le sous-jeu qui suit \( q_1 = 30 \) : la firme 2 y obtiendrait
+      \( (80 - 50 - 20)\times 20 = 200 \), alors que sa meilleure réponse \( q_2 = 15 \) lui
+      rapporte 225. Cette « menace » de saturer le marché dissuade le leader de produire 30 dans
+      la forme normale, mais si le leader produisait effectivement 30, la firme 2 n'aurait pas
+      intérêt à l'exécuter. La backward induction élimine ce type d'équilibre : seul l'équilibre
+      de Stackelberg est parfait en sous-jeux.
+    </p>
+    <p class="bareme">Barème : définition/critère de l'ENPS (optimalité dans chaque sous-jeu) : 2 ; caractère non crédible de la menace « 20 quel que soit q₁ » démontré dans le sous-jeu q₁ = 30 (200 &lt; 225) : 4.</p>
+  </div>
+</section>
