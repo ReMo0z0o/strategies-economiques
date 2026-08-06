@@ -1,0 +1,2597 @@
+<section class="chapter">
+  <div class="chapter-tag">Chapitre 1 — Question 1 · 40 points</div>
+  <h1>Question 1 — Préférences, efficacité de Pareto et biais comportementaux</h1>
+  <p class="chapter-intro">
+    Quatre sous-questions, dix points chacune, et pas un seul calcul difficile : cette question ne
+    teste que des <em>définitions</em> et ta capacité à les appliquer à des chiffres. C'est la
+    question la plus rentable de tout l'examen — à condition de connaître ces définitions au mot
+    près. On va donc les construire ensemble, en partant vraiment de zéro : je ne suppose rien.
+  </p>
+
+  <h2>Vue d'avion : ce que la question 1 te demande</h2>
+
+  <p>
+    Avant d'entrer dans le détail, regardons la question de loin. Elle est découpée en quatre
+    morceaux, appelés <span class="term">sous-questions</span> et numérotés 1.1, 1.2, 1.3 et 1.4.
+    Chacun vaut 10 points. Un point capital pour ta stratégie d'examen : ces quatre morceaux sont
+    <strong>indépendants</strong>. Rater le 1.1 n'empêche absolument pas de réussir le 1.3. Tu peux
+    les traiter dans l'ordre que tu veux.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left">Sous-question</th>
+      <th class="left">Ce qu'elle teste vraiment</th>
+      <th>Points</th>
+    </tr>
+    <tr>
+      <td class="left"><strong>1.1</strong> Le gâteau en 9 parts</td>
+      <td class="left">Sais-tu construire un exemple qui vérifie deux définitions à la fois
+        (« domine » et « pas efficace ») ?</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>1.2</strong> Les gourdes distribuées au hasard</td>
+      <td class="left">Sais-tu dire ce que la théorie rationnelle <em>prédit</em>, constater que la
+        réalité s'en écarte, et nommer le biais ?</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>1.3</strong> Les quatre projets de parc</td>
+      <td class="left">Sais-tu appliquer mécaniquement la définition de la domination à un tableau
+        de chiffres ?</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>1.4</strong> Faut-il jeter la théorie ?</td>
+      <td class="left">Sais-tu restituer et <em>développer</em> deux arguments du cours ?</td>
+      <td>10</td>
+    </tr>
+  </table>
+
+  <p>
+    Tu remarques quelque chose ? Trois de ces quatre morceaux (1.1, 1.2 et 1.3) reposent sur
+    exactement <strong>deux idées</strong> : le <span class="term">critère de Pareto</span> d'un
+    côté, l'<span class="term">effet de dotation</span> de l'autre. Si tu comprends vraiment ces
+    deux idées, tu as 30 points. Le quatrième morceau est une question de cours pure : il faut
+    savoir réciter deux arguments.
+  </p>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — la structure d'une réponse sur une question de concepts</div>
+    <p>
+      Sur ce type de question, un correcteur cherche trois choses dans ta copie, et il les cherche
+      dans cet ordre. Écris toujours tes réponses en respectant ces trois temps :
+    </p>
+    <ol>
+      <li><strong>La définition</strong>, énoncée précisément, avant même de regarder les données.
+        C'est souvent la moitié des points.</li>
+      <li><strong>L'application</strong> aux chiffres de l'énoncé : on vérifie la définition
+        <em>ligne par ligne</em>, en recopiant les nombres.</li>
+      <li><strong>La conclusion</strong>, en une phrase qui répond littéralement à la question
+        posée.</li>
+    </ol>
+    <p>
+      Une réponse qui donne le bon résultat sans la définition ni la vérification perd typiquement
+      la moitié des points. Tu verras dans ce chapitre que le barème officiel le confirme
+      systématiquement.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>1.1 — Construire une allocation qui domine sans être efficace</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 1.1 (10 points)</div>
+    <p>
+      Neuf parts égales d'un gâteau doivent être réparties entre trois collègues qui ne se soucient
+      que de leur propre consommation (plus de parts, c'est toujours mieux). Donnez une allocation
+      \( (x_1;\, x_2;\, x_3) \) qui domine l'allocation \( (2;\, 3;\, 2) \) au sens de Pareto
+      <em>sans être elle-même efficace</em> au sens de Pareto. Justifiez brièvement les deux
+      propriétés.
+    </p>
+  </div>
+
+  <h3>Étape zéro — traduisons la question en français simple</h3>
+
+  <p>
+    La première chose à faire devant un énoncé, c'est de le lire <em>lentement</em> et de décoder
+    chaque groupe de mots. Un énoncé d'examen est écrit de façon très dense : presque chaque mot
+    est là pour une raison. Voici la traduction, morceau par morceau.
+  </p>
+
+  <dl class="lexique">
+    <dt>« Neuf parts égales d'un gâteau »</dt>
+    <dd>
+      Il y a exactement 9 objets à distribuer, et ils sont tous identiques. Le mot
+      <strong>égales</strong> est important : une part vaut une part, on n'a pas à se demander si
+      celle-ci est plus grosse que celle-là. Le nombre 9 est la <em>ressource totale</em> : c'est
+      un plafond qu'on ne pourra jamais dépasser.
+    </dd>
+
+    <dt>« doivent être réparties entre trois collègues »</dt>
+    <dd>
+      Il y a 3 personnes. On va les numéroter 1, 2 et 3. « Répartir » veut dire : décider combien
+      de parts va à chacun. Attention, l'énoncé dit « réparties », pas « toutes réparties » : rien
+      n'oblige à tout distribuer. On verra que c'est exactement là que se joue la question.
+    </dd>
+
+    <dt>« qui ne se soucient que de leur propre consommation »</dt>
+    <dd>
+      Chaque collègue regarde uniquement <em>son</em> assiette. Il se fiche complètement de ce que
+      reçoivent les autres. Il n'est ni jaloux, ni généreux. En clair : le bonheur du collègue 2 ne
+      dépend que du nombre de parts que le collègue 2 reçoit, et de rien d'autre.
+    </dd>
+
+    <dt>« plus de parts, c'est toujours mieux »</dt>
+    <dd>
+      C'est une hypothèse sur les goûts : personne n'est jamais rassasié. Recevoir 4 parts est
+      strictement mieux que d'en recevoir 3, toujours, même si on a déjà beaucoup mangé. En
+      vocabulaire du cours, cela s'appelle la <span class="term">monotonie</span> des préférences.
+      On y revient en détail dans deux pages.
+    </dd>
+
+    <dt>« Donnez une allocation \( (x_1;\, x_2;\, x_3) \) »</dt>
+    <dd>
+      On te demande de <strong>fabriquer</strong> un exemple et de l'écrire. Tu n'as pas à faire de
+      calcul : tu dois proposer trois nombres. La notation est expliquée juste après.
+    </dd>
+
+    <dt>« qui domine l'allocation \( (2;\, 3;\, 2) \) au sens de Pareto »</dt>
+    <dd>
+      Première clause du cahier des charges. « Dominer au sens de Pareto », c'est un terme
+      technique précis, qui n'a rien à voir avec « écraser » ou « être plus grand ». On le définit
+      complètement plus bas.
+    </dd>
+
+    <dt>« sans être elle-même efficace au sens de Pareto »</dt>
+    <dd>
+      Deuxième clause du cahier des charges, et c'est le vrai piège de la question. Le mot
+      <strong>sans</strong> impose une propriété <em>négative</em> : ton allocation ne doit
+      <em>pas</em> être efficace. Beaucoup d'étudiants lisent trop vite et proposent une allocation
+      efficace : ils perdent la moitié des points.
+    </dd>
+
+    <dt>« Justifiez brièvement les deux propriétés »</dt>
+    <dd>
+      On ne veut pas seulement ton allocation : on veut la <strong>preuve</strong> qu'elle vérifie
+      les deux clauses. Deux justifications séparées, donc. Le barème officiel donne 4 points pour
+      l'allocation, 3 points pour la première justification, 3 points pour la seconde.
+    </dd>
+  </dl>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi l'énoncé insiste-t-il sur « qui ne se soucient que de leur propre consommation » ?</div>
+    <p>
+      Parce que sans cette phrase, on ne pourrait rien conclure. Imagine un collègue jaloux : lui
+      donner une part de plus pourrait le rendre malheureux s'il voit que les autres en ont plus
+      encore. Ou un collègue généreux : lui retirer une part pour la donner à un ami pourrait le
+      rendre <em>plus</em> heureux. Dans ces cas-là, « plus de parts pour moi = plus de bonheur »
+      serait faux, et toute la question s'écroulerait.
+    </p>
+    <p>
+      Cette phrase te garantit donc une règle simple et mécanique :
+      <strong>le bonheur du collègue \( i \) se mesure exactement par le nombre de parts qu'il
+      reçoit</strong>. C'est ce qui va rendre les vérifications immédiates.
+    </p>
+  </div>
+
+  <h3>Le cours dont tu as besoin</h3>
+
+  <h4>1) Ce qu'est une allocation</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — allocation</div>
+    <p>
+      Une <span class="term">allocation</span> est une description complète de « qui reçoit quoi ».
+      C'est simplement une liste : le premier nombre est ce que reçoit la personne 1, le deuxième
+      ce que reçoit la personne 2, et ainsi de suite.
+    </p>
+  </div>
+
+  <p>
+    Exemple de la vie quotidienne : vous êtes trois colocataires et vous commandez une pizza de 8
+    parts. Dire « Léa en prend 4, Sam 3, Nour 1 » est une allocation. La liste \( (4;\, 3;\, 1) \)
+    <em>est</em> cette phrase, écrite en abrégé. Une allocation n'est donc rien d'autre qu'un
+    partage, écrit de façon compacte.
+  </p>
+
+  <div class="box box-rappel">
+    <div class="box-title">Décodage de la notation \( (x_1;\, x_2;\, x_3) \)</div>
+    <p>
+      Cette écriture se lit à voix haute : « <em>x indice un, point-virgule, x indice deux,
+      point-virgule, x indice trois</em> ». Décomposons :
+    </p>
+    <ul>
+      <li>la lettre \( x \) veut dire « quantité reçue » ; c'est un nom de variable, on aurait pu
+        l'appeler autrement ;</li>
+      <li>le petit chiffre en bas s'appelle un <span class="term">indice</span>. Il ne multiplie
+        rien, il ne met à aucune puissance : il sert seulement d'étiquette. \( x_2 \) se lit « x
+        indice deux » et signifie « le nombre de parts reçues par la personne numéro 2 » ;</li>
+      <li>les parenthèses et les points-virgules servent à dire « voici une liste ordonnée » ;</li>
+      <li>l'ordre compte : \( (4;\, 3;\, 1) \) et \( (1;\, 3;\, 4) \) sont deux partages
+        <em>différents</em>, même s'ils utilisent les mêmes chiffres. Dans le premier, c'est la
+        personne 1 qui est gâtée ; dans le second, c'est la personne 3.</li>
+    </ul>
+    <p>
+      Quand on écrit \( x_i \), la lettre \( i \) est un indice « générique » : ça se lit « x
+      indice i » et ça veut dire « la part de la personne \( i \), quelle qu'elle soit ». C'est
+      une façon de parler des trois personnes d'un coup.
+    </p>
+  </div>
+
+  <h4>2) Ce qu'est une allocation faisable (et pourquoi 9 est une contrainte)</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — allocation faisable (ou réalisable)</div>
+    <p>
+      Une allocation est <span class="term">faisable</span> si on peut réellement la mettre en
+      œuvre avec ce dont on dispose. Ici, la ressource totale est de 9 parts. Une allocation
+      \( (x_1;\, x_2;\, x_3) \) est donc faisable si
+    </p>
+    <p>\[ x_1 + x_2 + x_3 \le 9 \]</p>
+    <p>
+      et si aucun \( x_i \) n'est négatif (on ne peut pas donner un nombre négatif de parts).
+    </p>
+  </div>
+
+  <p>
+    Le symbole \( \le \) se lit « inférieur ou égal à ». Il autorise donc <em>deux</em> situations
+    très différentes, et cette distinction est le cœur de la question&nbsp;1.1 :
+  </p>
+
+  <ul>
+    <li>
+      <strong>Cas 1 : \( x_1 + x_2 + x_3 = 9 \).</strong> On a tout distribué. Il ne reste rien sur
+      la table. Exemple : \( (3;\, 3;\, 3) \), ou \( (9;\, 0;\, 0) \), ou \( (5;\, 2;\, 2) \).
+    </li>
+    <li>
+      <strong>Cas 2 : \( x_1 + x_2 + x_3 &lt; 9 \).</strong> On n'a pas tout distribué : des parts
+      restent dans la boîte. Exemple : \( (2;\, 3;\, 2) \), qui n'utilise que 7 parts. Il en reste
+      2 sur la table, que personne ne mange.
+    </li>
+  </ul>
+
+  <p>
+    Le symbole \( &lt; \) se lit « strictement inférieur à ». « Strictement » veut dire : vraiment
+    plus petit, l'égalité est exclue. On retrouvera sans arrêt cette distinction entre
+    \( \le \) (« au moins aussi bien ») et \( &lt; \) ou \( &gt; \) (« vraiment mieux ») dans tout
+    le chapitre. Elle est fondamentale.
+  </p>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple concret — le gaspillage</div>
+    <p>
+      Le cas 2 correspond à une situation absurde de la vie quotidienne : vous êtes trois, il y a 9
+      parts de gâteau, vous en mangez 7, et vous laissez les 2 dernières se dessécher dans la
+      boîte alors que tout le monde a encore faim. C'est faisable — rien ne l'interdit
+      physiquement — mais c'est du <strong>gaspillage</strong>. Retiens cette image : dans ce
+      chapitre, « pas efficace » veut essentiellement dire « il y a du gaspillage ».
+    </p>
+  </div>
+
+  <h4>3) « Plus, c'est mieux » : la monotonie des préférences</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — préférences monotones</div>
+    <p>
+      Des préférences sont <span class="term">monotones</span> si un individu préfère toujours
+      strictement <em>plus</em> d'un bien à <em>moins</em> de ce bien. Autrement dit : il n'est
+      jamais rassasié, jamais indifférent à une unité supplémentaire.
+    </p>
+  </div>
+
+  <p>
+    Dans notre problème, c'est exactement ce que dit la parenthèse « plus de parts, c'est toujours
+    mieux ». Concrètement, cela signifie :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ 4 \text{ parts} \;\succ\; 3 \text{ parts} \;\succ\; 2 \text{ parts} \]
+      <div class="why">le symbole \( \succ \) se lit « est strictement préféré à ». C'est le
+        « plus grand que » de la satisfaction : la pointe vise toujours l'option la moins bonne.</div>
+    </div>
+  </div>
+
+  <p>
+    Deux autres symboles de préférence apparaissent dans le cours, autant les connaître tout de
+    suite : \( x \sim y \) se lit « x est indifférent à y » (les deux options procurent exactement
+    la même satisfaction), et \( x \succsim y \) se lit « x est au moins aussi bien que y »
+    (c'est-à-dire : soit strictement préféré, soit indifférent). C'est le « supérieur ou égal » de
+    la satisfaction.
+  </p>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple concret — la monotonie dans la vraie vie</div>
+    <p>
+      La monotonie est une hypothèse simplificatrice, et elle est parfois fausse ! Si tu as déjà
+      mangé six parts de gâteau, la septième te dégoûte peut-être : tes préférences ne seraient
+      alors pas monotones sur le gâteau. Mais remplace « part de gâteau » par « euro » : là,
+      personne ne refuse un euro de plus. C'est pour cela que la monotonie est une hypothèse
+      raisonnable en économie, et l'énoncé te dit explicitement de la supposer ici. Tu n'as pas à
+      la discuter : on te la donne.
+    </p>
+  </div>
+
+  <h4>4) Traduire le bonheur en nombres : la fonction d'utilité</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — fonction d'utilité</div>
+    <p>
+      Une <span class="term">fonction d'utilité</span> \( U_i \) est une machine qui prend une
+      situation et rend un nombre : plus le nombre est grand, plus la personne \( i \) est
+      contente. On la note \( U_i(x) \), ce qui se lit « U indice i de x » et signifie « le niveau
+      de satisfaction que la personne \( i \) retire de l'allocation \( x \) ».
+    </p>
+    <p>
+      Seul l'<strong>ordre</strong> des nombres compte, pas leur valeur absolue. Dire « cette
+      option me donne 7 et celle-là 3 » veut seulement dire « je préfère la première ». Ça ne veut
+      pas dire qu'elle me rend « deux fois plus » heureux.
+    </p>
+  </div>
+
+  <p>
+    Dans notre problème, la fonction d'utilité est la plus simple du monde. Comme chaque collègue
+    ne regarde que sa propre assiette et que plus, c'est mieux, on peut prendre :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ U_1(x) = x_1, \qquad U_2(x) = x_2, \qquad U_3(x) = x_3 \]
+      <div class="why">l'utilité de chaque collègue est tout simplement le nombre de parts qu'il
+        reçoit. Je peux donc raisonner directement sur les parts, sans jamais calculer d'utilité.</div>
+    </div>
+  </div>
+
+  <p>
+    Retiens cette simplification : dans toute la question 1.1, « comparer les utilités » revient à
+    « comparer les nombres de parts ». Il n'y a rien de plus à faire.
+  </p>
+
+  <h4>5) La notion centrale : la domination au sens de Pareto</h4>
+
+  <p>
+    Nous y voilà. Vilfredo Pareto était un économiste italien du début du 20<sup>e</sup> siècle. Il
+    cherchait un moyen de dire « cette situation est meilleure que celle-là » <em>sans</em> avoir à
+    trancher entre les gens — sans avoir à dire « le bonheur de Paul compte plus que celui de
+    Marie ». Sa réponse est d'une simplicité désarmante : on ne se prononce que dans le cas où
+    <strong>tout le monde est d'accord</strong>.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — domination au sens de Pareto</div>
+    <p>
+      On dit que l'allocation \( x \) <span class="term">domine</span> l'allocation \( y \) au sens
+      de Pareto lorsque les deux conditions suivantes sont vérifiées <em>en même temps</em> :
+    </p>
+    <ul>
+      <li>
+        <strong>personne n'y perd</strong> : pour <em>chaque</em> individu \( i \), on a
+        \( U_i(x) \ge U_i(y) \) ;
+      </li>
+      <li>
+        <strong>au moins une personne y gagne</strong> : il existe <em>au moins un</em> individu
+        \( j \) pour lequel \( U_j(x) &gt; U_j(y) \) (inégalité stricte).
+      </li>
+    </ul>
+    <p>
+      On dit alors aussi que passer de \( y \) à \( x \) est une
+      <span class="term">amélioration au sens de Pareto</span>.
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Comment lire ces deux lignes à voix haute</div>
+    <p>
+      \( U_i(x) \ge U_i(y) \) se lit : « U indice i de x est supérieur ou égal à U indice i de y »,
+      c'est-à-dire « la personne i trouve x au moins aussi bien que y ». Le « pour chaque
+      individu i » signifie qu'il faut vérifier cette ligne <strong>une fois par personne</strong>,
+      sans en oublier aucune.
+    </p>
+    <p>
+      \( U_j(x) &gt; U_j(y) \) se lit : « U indice j de x est strictement supérieur à U indice j de
+      y ». Le « il existe au moins un individu j » signifie qu'une seule personne suffit : on n'a
+      pas besoin que tout le monde gagne.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple concret — le covoiturage</div>
+    <p>
+      Tu vas au même endroit que ton voisin, chacun dans sa voiture. Vous décidez de covoiturer :
+      vous partagez l'essence, personne ne fait de détour, et vous êtes tous les deux gagnants.
+      C'est une amélioration de Pareto : personne n'y perd, au moins un y gagne. Personne ne peut
+      raisonnablement s'y opposer.
+    </p>
+    <p>
+      À l'inverse, augmenter les impôts des riches pour financer une aide aux pauvres n'est
+      <em>pas</em> une amélioration de Pareto : il y a des gagnants <em>et</em> des perdants. Ça ne
+      veut pas dire que c'est une mauvaise politique ! Ça veut simplement dire que le critère de
+      Pareto, à lui seul, refuse de se prononcer dessus.
+    </p>
+  </div>
+
+  <p>
+    Ce dernier point mérite d'être souligné, parce qu'il surprend toujours : le critère de Pareto
+    est <strong>volontairement muet</strong> dans la plupart des cas. Dès qu'une personne gagne et
+    qu'une autre perd, il déclare les deux situations <span class="term">incomparables</span>. Ce
+    n'est pas un défaut, c'est le prix de sa neutralité : il ne veut jamais avoir à dire qui compte
+    le plus.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 540 400" width="100%" style="max-width:12cm" role="img" aria-label="Diagramme des utilités de deux habitants : autour du point y, la zone en haut à droite contient les allocations qui dominent y, celle en bas à gauche celles qui sont dominées, les deux autres coins sont incomparables">
+      <defs>
+        <pattern id="q1-hachures-domine" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="9" stroke="#4b5563" stroke-width="1.4"></line>
+        </pattern>
+        <marker id="q1-fleche-noire" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="#111827"></path>
+        </marker>
+      </defs>
+      <rect x="255" y="45" width="240" height="150" fill="url(#q1-hachures-domine)" stroke="#111827" stroke-width="1.6"></rect>
+      <rect x="70" y="195" width="185" height="145" fill="#e5e7eb" stroke="#111827" stroke-width="1.6" stroke-dasharray="7 4"></rect>
+      <rect x="70" y="45" width="185" height="150" fill="none" stroke="#9ca3af" stroke-width="1"></rect>
+      <rect x="255" y="195" width="240" height="145" fill="none" stroke="#9ca3af" stroke-width="1"></rect>
+      <line x1="70" y1="30" x2="70" y2="340" stroke="#111827" stroke-width="1.6"></line>
+      <line x1="70" y1="340" x2="510" y2="340" stroke="#111827" stroke-width="1.6"></line>
+      <text x="510" y="362" font-size="12.5" text-anchor="end" fill="#111827">utilité de l'habitant 1</text>
+      <text x="20" y="200" font-size="12.5" text-anchor="middle" fill="#111827" transform="rotate(-90 20 200)">utilité de l'habitant 2</text>
+      <line x1="70" y1="195" x2="255" y2="195" stroke="#111827" stroke-width="1" stroke-dasharray="4 4"></line>
+      <line x1="255" y1="195" x2="255" y2="340" stroke="#111827" stroke-width="1" stroke-dasharray="4 4"></line>
+      <circle cx="255" cy="195" r="6.5" fill="#111827"></circle>
+      <text x="243" y="215" font-size="13" text-anchor="end" fill="#111827">allocation y</text>
+      <text x="243" y="231" font-size="11.5" text-anchor="end" fill="#4b5563">(le point de départ)</text>
+      <text x="375" y="95" font-size="14" text-anchor="middle" fill="#111827" font-weight="bold">ces allocations dominent y</text>
+      <text x="375" y="118" font-size="12" text-anchor="middle" fill="#111827">personne n'y perd,</text>
+      <text x="375" y="136" font-size="12" text-anchor="middle" fill="#111827">au moins un y gagne</text>
+      <text x="162" y="270" font-size="13" text-anchor="middle" fill="#111827" font-weight="bold">dominées par y</text>
+      <text x="162" y="288" font-size="11.5" text-anchor="middle" fill="#4b5563">(tout le monde y perd</text>
+      <text x="162" y="304" font-size="11.5" text-anchor="middle" fill="#4b5563">ou reste au même point)</text>
+      <text x="162" y="110" font-size="12.5" text-anchor="middle" fill="#4b5563">incomparables</text>
+      <text x="162" y="128" font-size="11.5" text-anchor="middle" fill="#4b5563">1 perd, 2 gagne</text>
+      <text x="375" y="262" font-size="12.5" text-anchor="middle" fill="#4b5563">incomparables</text>
+      <text x="375" y="280" font-size="11.5" text-anchor="middle" fill="#4b5563">1 gagne, 2 perd</text>
+      <line x1="270" y1="182" x2="330" y2="150" stroke="#111827" stroke-width="1.6" marker-end="url(#q1-fleche-noire)"></line>
+      <text x="88" y="382" font-size="11.5" fill="#4b5563">Zone hachurée = améliorations de Pareto · zone grisée = détériorations</text>
+    </svg>
+    <figcaption>
+      La domination, vue géométriquement. On place ici deux habitants seulement, pour pouvoir
+      dessiner. Chaque point du plan est une allocation ; sa position horizontale donne l'utilité
+      de l'habitant 1, sa position verticale celle de l'habitant 2. Partant du point \( y \), tout
+      ce qui est en haut à droite (zone hachurée, bords inclus sauf \( y \) lui-même) domine
+      \( y \). Les deux autres coins font un gagnant et un perdant : le critère de Pareto refuse
+      de les classer.
+    </figcaption>
+  </figure>
+
+  <h4>6) L'efficacité au sens de Pareto</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — efficacité au sens de Pareto</div>
+    <p>
+      Une allocation \( x \) est <span class="term">efficace</span> (on dit aussi
+      <em>Pareto-optimale</em>) si <strong>aucune allocation faisable ne la domine</strong>.
+    </p>
+    <p>
+      Formulé autrement, et c'est la formule à retenir par cœur : il est
+      <strong>impossible d'améliorer le sort d'une personne sans dégrader celui d'une autre</strong>.
+    </p>
+  </div>
+
+  <p>
+    Fais bien attention à la différence de <em>nature</em> entre les deux notions qu'on vient de
+    voir. C'est le point que les étudiants confondent le plus souvent :
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left"></th>
+      <th class="left">« \( x \) domine \( y \) »</th>
+      <th class="left">« \( x \) est efficace »</th>
+    </tr>
+    <tr>
+      <th class="left">Combien d'allocations sont concernées ?</th>
+      <td class="left">Deux : \( x \) et \( y \). C'est une <strong>comparaison</strong>.</td>
+      <td class="left">Toutes : on teste \( x \) contre <em>toutes</em> les allocations faisables.
+        C'est un <strong>classement</strong>.</td>
+    </tr>
+    <tr>
+      <th class="left">Question posée</th>
+      <td class="left">« Est-ce que \( x \) est mieux que <em>cette</em> allocation-là ? »</td>
+      <td class="left">« Est-ce qu'on peut encore faire mieux à partir de \( x \) ? »</td>
+    </tr>
+    <tr>
+      <th class="left">Réponse possible</th>
+      <td class="left">oui / non / incomparables</td>
+      <td class="left">oui / non</td>
+    </tr>
+  </table>
+
+  <p>
+    Cette différence explique pourquoi la question 1.1 a un sens. Une allocation peut très bien
+    dominer une autre <em>et</em> ne pas être efficace elle-même. Elle est meilleure que le point
+    de départ, mais on peut encore l'améliorer. C'est comme monter de la cave au rez-de-chaussée :
+    tu es monté (tu domines la cave), mais tu n'es pas au dernier étage (tu n'es pas efficace).
+  </p>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — « efficace » ne veut pas dire « juste »</div>
+    <p>
+      C'est l'erreur la plus répandue et la plus lourdement sanctionnée du chapitre. L'allocation
+      \( (9;\, 0;\, 0) \) — le collègue 1 mange tout le gâteau, les deux autres n'ont rien — est
+      <strong>parfaitement efficace</strong> au sens de Pareto ! Vérifions : pour donner une part
+      au collègue 2, il faudrait la reprendre au collègue 1, qui y perdrait. Impossible d'améliorer
+      quelqu'un sans nuire à quelqu'un : c'est bien la définition de l'efficacité.
+    </p>
+    <p>
+      Et pendant ce temps, l'allocation bien plus égalitaire \( (2;\, 2;\, 2) \) n'est
+      <strong>pas</strong> efficace, puisqu'elle laisse 3 parts pourrir sur la table.
+    </p>
+    <p>
+      Conclusion à écrire en gros dans ta tête : <strong>efficace ≠ juste ≠ égalitaire</strong>.
+      L'efficacité de Pareto vérifie seulement qu'on ne gaspille pas de bien-être. C'est
+      nécessaire, mais très très loin d'être suffisant pour parler de justice.
+    </p>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi, avec des préférences monotones, « efficace » = « tout distribuer »</div>
+    <p>
+      C'est le raisonnement clé de la question 1.1, alors prenons-le lentement.
+    </p>
+    <p>
+      Suppose qu'une allocation laisse au moins une part non distribuée. Alors je peux prendre
+      cette part et la donner à n'importe qui — disons au collègue 1. Que se passe-t-il ?
+    </p>
+    <ul>
+      <li>Les collègues 2 et 3 ne perdent rien : leur assiette n'a pas bougé.</li>
+      <li>Le collègue 1 gagne strictement, <em>parce que</em> ses préférences sont monotones
+        (plus, c'est mieux).</li>
+    </ul>
+    <p>
+      J'ai donc construit une allocation qui domine celle de départ. Or « être efficace », c'est
+      justement « n'être dominé par aucune allocation faisable ». Conclusion : une allocation qui
+      laisse des parts sur la table <strong>ne peut jamais être efficace</strong>.
+    </p>
+    <p>
+      Et inversement : si tout est distribué, donner une part à quelqu'un oblige à la retirer à
+      quelqu'un d'autre, qui y perd. On ne peut plus améliorer personne sans nuire à personne :
+      l'allocation est efficace. Donc ici, <strong>efficace ⟺ les 9 parts sont distribuées</strong>.
+    </p>
+  </div>
+
+  <h3>La résolution pas à pas</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Je compte ce que distribue l'allocation de départ</div>
+    <p>
+      Avant toute chose, je regarde le point de départ \( (2;\, 3;\, 2) \) et je fais la seule
+      opération arithmétique de toute la question : je l'additionne.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ 2 + 3 + 2 = 7 \]
+        <div class="why">j'additionne les parts des trois collègues pour savoir combien de parts
+          sont réellement distribuées.</div>
+      </div>
+      <div class="step">
+        \[ 9 - 7 = 2 \]
+        <div class="why">je soustrais du total disponible : il reste 2 parts sur la table, que
+          personne ne mange. C'est cette découverte qui rend la question facile.</div>
+      </div>
+    </div>
+    <p>
+      <strong>Pourquoi je fais ça en premier ?</strong> Parce que l'énoncé me demande une
+      allocation qui n'est pas efficace, et que je viens de voir que « pas efficace » = « il reste
+      des parts ». Il me faut donc savoir combien de marge j'ai. Réponse : 2 parts de marge. C'est
+      exactement ce qu'il faut : une pour améliorer quelqu'un, une pour rester inefficace.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Je transforme la consigne en cahier des charges</div>
+    <p>
+      La question demande deux choses en même temps. Je les écris noir sur blanc, sous forme de
+      liste, pour être sûr de n'en oublier aucune :
+    </p>
+    <ul>
+      <li>
+        <strong>Clause A</strong> — mon allocation \( (x_1;\, x_2;\, x_3) \) doit dominer
+        \( (2;\, 3;\, 2) \) : donc \( x_1 \ge 2 \), \( x_2 \ge 3 \), \( x_3 \ge 2 \), avec au moins
+        une de ces trois inégalités qui est <em>stricte</em>.
+      </li>
+      <li>
+        <strong>Clause B</strong> — mon allocation ne doit <em>pas</em> être efficace : donc elle
+        doit laisser au moins une part non distribuée, c'est-à-dire
+        \( x_1 + x_2 + x_3 \le 8 \).
+      </li>
+    </ul>
+    <p>
+      <strong>Pourquoi ai-je le droit d'écrire la clause B comme ça ?</strong> Parce que je viens
+      de démontrer, dans l'encadré « Pourquoi… » plus haut, qu'avec des préférences monotones une
+      allocation est efficace exactement quand elle distribue les 9 parts. Ne pas être efficace,
+      c'est donc en distribuer au plus 8.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Je construis l'allocation</div>
+    <p>
+      Maintenant, la stratégie est évidente. Il y a 2 parts sur la table ; je vais en distribuer
+      <strong>une seule</strong>, et laisser l'autre. Pourquoi une seule ? Parce que :
+    </p>
+    <ul>
+      <li>distribuer <em>zéro</em> part ne ferait gagner personne : la clause A serait violée ;</li>
+      <li>distribuer les <em>deux</em> parts amènerait le total à 9 : l'allocation serait efficace,
+        et la clause B serait violée.</li>
+    </ul>
+    <p>
+      Une seule part, donc. Je la donne au collègue 1 (le choix est arbitraire, j'aurais pu la
+      donner au 2 ou au 3). Ma proposition est :
+    </p>
+    <div class="result">
+      <div class="result-title">Allocation proposée</div>
+      <p>\[ (x_1;\, x_2;\, x_3) = (3;\, 3;\, 2) \]</p>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Je vérifie la clause A : elle domine bien \( (2;\, 3;\, 2) \)</div>
+    <p>
+      <strong>Comment je m'y prends, et pourquoi.</strong> La domination de Pareto se vérifie
+      <em>individu par individu</em> — c'est écrit dans la définition : « pour chaque individu
+      \( i \) ». Je vais donc écrire une ligne par collègue, en comparant sa part dans ma nouvelle
+      allocation à sa part dans l'ancienne. Trois collègues, trois lignes. Aucune ne doit manquer.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ x_1 = 3 \;&gt;\; 2 \]
+        <div class="why">collègue 1 : il avait 2 parts, il en a maintenant 3. Il gagne
+          <em>strictement</em>. Voilà mon « au moins une personne y gagne ».</div>
+      </div>
+      <div class="step">
+        \[ x_2 = 3 \;\ge\; 3 \]
+        <div class="why">collègue 2 : sa part n'a pas bougé. Il ne perd rien — c'est tout ce que
+          la définition exige de lui.</div>
+      </div>
+      <div class="step">
+        \[ x_3 = 2 \;\ge\; 2 \]
+        <div class="why">collègue 3 : sa part n'a pas bougé non plus. Il ne perd rien.</div>
+      </div>
+    </div>
+    <p>
+      Je relis la définition et je coche : « personne n'y perd » ✓ (les trois inégalités vont dans
+      le bon sens) ; « au moins une personne y gagne » ✓ (le collègue 1, avec une inégalité
+      stricte). Les deux conditions sont réunies :
+      <strong>\( (3;\, 3;\, 2) \) domine \( (2;\, 3;\, 2) \) au sens de Pareto.</strong>
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">5.</span> Je vérifie la clause B : elle n'est pas efficace</div>
+    <p>
+      <strong>Comment je m'y prends, et pourquoi.</strong> La façon la plus convaincante de prouver
+      qu'une allocation n'est pas efficace, c'est d'<em>exhiber</em> une allocation faisable qui la
+      domine. Une seule suffit : l'efficacité exige qu'<em>aucune</em> allocation ne domine, donc
+      un seul contre-exemple la détruit. Je commence par compter :
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ 3 + 3 + 2 = 8 \;&lt;\; 9 \]
+        <div class="why">mon allocation ne distribue que 8 parts sur les 9 disponibles : il reste
+          une part sur la table.</div>
+      </div>
+      <div class="step">
+        \[ (4;\, 3;\, 2) \text{ domine } (3;\, 3;\, 2) \]
+        <div class="why">je donne la dernière part au collègue 1 : il passe de 3 à 4 (il gagne
+          strictement), les collègues 2 et 3 ne bougent pas (ils ne perdent rien). C'est bien une
+          domination, et elle est faisable puisque \( 4+3+2=9 \le 9 \).</div>
+      </div>
+    </div>
+    <p>
+      Il existe donc une allocation faisable qui domine la mienne. Par définition,
+      <strong>\( (3;\, 3;\, 2) \) n'est pas efficace au sens de Pareto</strong>. J'aurais tout
+      aussi bien pu proposer \( (3;\, 4;\, 2) \), \( (3;\, 3;\, 3) \) ou \( (3;\, 3;\, 2) \) plus
+      la part au collègue 3 : n'importe laquelle fait l'affaire, il suffit d'en citer une.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 560 252" width="100%" style="max-width:12cm" role="img" aria-label="Les neuf parts du gâteau représentées par neuf cases, pour trois allocations successives : deux trois deux qui laisse deux parts, trois trois deux qui laisse une part, trois trois trois qui distribue tout">
+      <text x="6" y="14" font-size="11.5" fill="#4b5563">Une case = une part. Le chiffre est le numéro du collègue qui la reçoit.</text>
+      <text x="6" y="52" font-size="13" fill="#111827" font-weight="bold">(2 ; 3 ; 2)</text>
+      <text x="6" y="68" font-size="11" fill="#4b5563">7 parts sur 9</text>
+      <rect x="150" y="32" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="167" y="55" font-size="16" text-anchor="middle" fill="#111827">1</text>
+      <rect x="189" y="32" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="206" y="55" font-size="16" text-anchor="middle" fill="#111827">1</text>
+      <rect x="228" y="32" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="245" y="55" font-size="16" text-anchor="middle" fill="#111827">2</text>
+      <rect x="267" y="32" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="284" y="55" font-size="16" text-anchor="middle" fill="#111827">2</text>
+      <rect x="306" y="32" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="323" y="55" font-size="16" text-anchor="middle" fill="#111827">2</text>
+      <rect x="345" y="32" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="362" y="55" font-size="16" text-anchor="middle" fill="#111827">3</text>
+      <rect x="384" y="32" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="401" y="55" font-size="16" text-anchor="middle" fill="#111827">3</text>
+      <rect x="423" y="32" width="34" height="34" fill="#f3f4f6" stroke="#111827" stroke-width="1.4" stroke-dasharray="5 3"></rect>
+      <line x1="423" y1="66" x2="457" y2="32" stroke="#9ca3af" stroke-width="1.2"></line>
+      <rect x="462" y="32" width="34" height="34" fill="#f3f4f6" stroke="#111827" stroke-width="1.4" stroke-dasharray="5 3"></rect>
+      <line x1="462" y1="66" x2="496" y2="32" stroke="#9ca3af" stroke-width="1.2"></line>
+      <text x="496" y="86" font-size="11.5" text-anchor="end" fill="#4b5563">point de départ : 2 parts restent sur la table</text>
+      <text x="6" y="124" font-size="13" fill="#111827" font-weight="bold">(3 ; 3 ; 2)</text>
+      <text x="6" y="140" font-size="11" fill="#4b5563">8 parts sur 9</text>
+      <rect x="150" y="104" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="167" y="127" font-size="16" text-anchor="middle" fill="#111827">1</text>
+      <rect x="189" y="104" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="206" y="127" font-size="16" text-anchor="middle" fill="#111827">1</text>
+      <rect x="228" y="104" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="2.6"></rect>
+      <text x="245" y="127" font-size="16" text-anchor="middle" fill="#111827" font-weight="bold">1</text>
+      <rect x="267" y="104" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="284" y="127" font-size="16" text-anchor="middle" fill="#111827">2</text>
+      <rect x="306" y="104" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="323" y="127" font-size="16" text-anchor="middle" fill="#111827">2</text>
+      <rect x="345" y="104" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="362" y="127" font-size="16" text-anchor="middle" fill="#111827">2</text>
+      <rect x="384" y="104" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="401" y="127" font-size="16" text-anchor="middle" fill="#111827">3</text>
+      <rect x="423" y="104" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="440" y="127" font-size="16" text-anchor="middle" fill="#111827">3</text>
+      <rect x="462" y="104" width="34" height="34" fill="#f3f4f6" stroke="#111827" stroke-width="1.4" stroke-dasharray="5 3"></rect>
+      <line x1="462" y1="138" x2="496" y2="104" stroke="#9ca3af" stroke-width="1.2"></line>
+      <text x="496" y="158" font-size="11.5" text-anchor="end" fill="#4b5563">notre réponse : la case en gras est la part ajoutée ; il en reste 1</text>
+      <text x="6" y="196" font-size="13" fill="#111827" font-weight="bold">(3 ; 3 ; 3)</text>
+      <text x="6" y="212" font-size="11" fill="#4b5563">9 parts sur 9</text>
+      <rect x="150" y="176" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="167" y="199" font-size="16" text-anchor="middle" fill="#111827">1</text>
+      <rect x="189" y="176" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="206" y="199" font-size="16" text-anchor="middle" fill="#111827">1</text>
+      <rect x="228" y="176" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="245" y="199" font-size="16" text-anchor="middle" fill="#111827">1</text>
+      <rect x="267" y="176" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="284" y="199" font-size="16" text-anchor="middle" fill="#111827">2</text>
+      <rect x="306" y="176" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="323" y="199" font-size="16" text-anchor="middle" fill="#111827">2</text>
+      <rect x="345" y="176" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="362" y="199" font-size="16" text-anchor="middle" fill="#111827">2</text>
+      <rect x="384" y="176" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="401" y="199" font-size="16" text-anchor="middle" fill="#111827">3</text>
+      <rect x="423" y="176" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="440" y="199" font-size="16" text-anchor="middle" fill="#111827">3</text>
+      <rect x="462" y="176" width="34" height="34" fill="#ffffff" stroke="#111827" stroke-width="2.6"></rect>
+      <text x="479" y="199" font-size="16" text-anchor="middle" fill="#111827" font-weight="bold">3</text>
+      <text x="496" y="230" font-size="11.5" text-anchor="end" fill="#4b5563">tout est distribué : cette allocation-là est efficace</text>
+    </svg>
+    <figcaption>
+      Toute la question 1.1 sur un seul dessin. En haut, le point de départ laisse 2 parts sur la
+      table. Au milieu, notre réponse : on en distribue <em>une seule</em>, donc quelqu'un gagne
+      (domination ✓) mais il en reste encore une (pas efficace ✓). En bas, ce qu'il ne fallait
+      <em>pas</em> répondre : tout distribuer rend l'allocation efficace, et la deuxième clause de
+      l'énoncé n'est plus respectée.
+    </figcaption>
+  </figure>
+
+  <div class="result">
+    <div class="result-title">Résultat — question 1.1</div>
+    <p>
+      L'allocation \( (3;\, 3;\, 2) \) convient. Elle <strong>domine</strong> \( (2;\, 3;\, 2) \)
+      car le collègue 1 gagne strictement (3 &gt; 2) tandis que les collègues 2 et 3 gardent
+      exactement ce qu'ils avaient. Elle <strong>n'est pas efficace</strong> car elle ne distribue
+      que \( 3+3+2 = 8 \) parts sur 9 : la neuvième part reste sur la table, si bien que
+      \( (4;\, 3;\, 2) \) la domine.
+    </p>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie</div>
+    <p>
+      Je propose l'allocation \( (3;\, 3;\, 2) \).
+    </p>
+    <p>
+      <strong>Elle domine \( (2;\, 3;\, 2) \) au sens de Pareto.</strong> Une allocation \( x \)
+      domine \( y \) si personne n'y perd et si au moins une personne y gagne. Ici : le collègue 1
+      passe de 2 à 3 parts (\( 3 &gt; 2 \), gain strict), le collègue 2 reste à 3 parts
+      (\( 3 \ge 3 \)) et le collègue 3 reste à 2 parts (\( 2 \ge 2 \)). Comme les préférences sont
+      monotones, plus de parts signifie plus d'utilité : personne n'est perdant, le collègue 1 est
+      strictement gagnant.
+    </p>
+    <p>
+      <strong>Elle n'est pas efficace au sens de Pareto.</strong> Elle ne distribue que
+      \( 3 + 3 + 2 = 8 \) parts sur les 9 disponibles : une part reste non attribuée. Elle est donc
+      elle-même dominée, par exemple par \( (4;\, 3;\, 2) \) — le collègue 1 gagne encore une part
+      et personne ne perd rien. Comme une allocation est efficace seulement si aucune allocation
+      faisable ne la domine, \( (3;\, 3;\, 2) \) n'est pas efficace : avec des préférences
+      monotones, l'efficacité exigerait de distribuer les 9 parts.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">D'autres réponses acceptées — et deux réponses refusées</div>
+    <p>
+      Le corrigé accepte <em>toute</em> allocation qui (i) donne au moins autant que
+      \( (2;\, 3;\, 2) \) à chacun, avec au moins une inégalité stricte, et (ii) distribue au total
+      au plus 8 parts. Ta réponse n'a donc pas besoin d'être identique à la mienne pour valoir 10
+      points. Vérifie simplement les deux clauses.
+    </p>
+    <p><strong>Acceptées</strong> (total ≤ 8, personne ne perd, au moins un gagne) :</p>
+    <ul>
+      <li>\( (3;\, 3;\, 2) \) — total 8 ✓</li>
+      <li>\( (2;\, 4;\, 2) \) — total 8 ✓</li>
+      <li>\( (2;\, 3;\, 3) \) — total 8 ✓</li>
+    </ul>
+    <p><strong>Refusées</strong>, et il faut comprendre pourquoi :</p>
+    <ul>
+      <li>
+        \( (3;\, 3;\, 3) \) — elle domine bien \( (2;\, 3;\, 2) \), mais son total vaut 9 : tout est
+        distribué, donc elle <em>est</em> efficace. La deuxième clause n'est pas respectée.
+      </li>
+      <li>
+        \( (4;\, 2;\, 2) \) — son total vaut 8, donc elle n'est pas efficace ✓, mais le collègue 2
+        passe de 3 à 2 parts : il <strong>perd</strong>. Il n'y a donc pas domination. La première
+        clause n'est pas respectée.
+      </li>
+    </ul>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les pièges de la question 1.1</div>
+    <p>
+      <strong>Piège n° 1 — répondre \( (3;\, 3;\, 3) \).</strong> C'est le réflexe naturel :
+      « distribuons tout, ce sera mieux ». Mais l'énoncé demande explicitement une allocation
+      <em>non</em> efficace. En distribuant les 9 parts, tu produis une allocation efficace et tu
+      perds les 3 points de la deuxième justification, parfois plus.
+    </p>
+    <p>
+      <strong>Piège n° 2 — donner l'allocation sans les preuves.</strong> Écrire seulement
+      « \( (3;\, 3;\, 2) \) » rapporte 4 points sur 10. Les 6 points restants sont dans les deux
+      justifications, chacune devant citer la définition <em>puis</em> l'appliquer aux nombres.
+    </p>
+    <p>
+      <strong>Piège n° 3 — retirer une part à quelqu'un.</strong> Toute allocation où l'un des
+      trois collègues reçoit <em>moins</em> qu'avant casse immédiatement la domination, même si
+      deux autres gagnent beaucoup. La domination exige que <em>personne</em> ne perde. Une seule
+      exception ? Il n'y en a pas.
+    </p>
+    <p>
+      <strong>Piège n° 4 — confondre « dominée » et « pas efficace ».</strong> Dire « elle n'est
+      pas efficace car elle est dominée » est correct <em>à condition</em> de dire par quoi. Le
+      correcteur veut voir une allocation dominante explicite, par exemple \( (4;\, 3;\, 2) \).
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — reconnaître ce type de question</div>
+    <p>
+      <strong>Le signal :</strong> l'énoncé te demande de <em>construire un exemple</em> vérifiant
+      deux propriétés dont l'une est niée (« qui domine … sans être efficace », « qui est efficace
+      sans être équitable », etc.).
+    </p>
+    <p><strong>Le réflexe en quatre temps :</strong></p>
+    <ol>
+      <li>Écris les deux clauses séparément, en inégalités, avant de chercher quoi que ce soit.</li>
+      <li>Traduis chaque clause en une contrainte sur les chiffres (ici : « personne ne perd »
+        devient trois inégalités ; « pas efficace » devient « total ≤ 8 »).</li>
+      <li>Choisis l'exemple le plus <em>paresseux</em> possible qui satisfait tout : ici, ajouter
+        une seule part à une seule personne. Un exemple minimal est plus facile à justifier
+        qu'un exemple compliqué.</li>
+      <li>Justifie chaque clause séparément, en recopiant la définition puis en la vérifiant sur
+        les nombres. Pour une propriété niée, exhibe toujours un contre-exemple concret.</li>
+    </ol>
+  </div>
+
+  <hr class="soft">
+
+  <h2>1.2 — L'expérience des gourdes : l'effet de dotation</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 1.2 (10 points)</div>
+    <p>
+      Lors d'une expérience en auditoire, on distribue gratuitement et <em>au hasard</em> une
+      gourde frappée du logo de l'université à la moitié des étudiants. On demande ensuite à chaque
+      détenteur le prix minimal auquel il accepterait de vendre sa gourde (sa disposition à
+      accepter, DAA) et à chaque non-détenteur le prix maximal qu'il serait prêt à payer pour en
+      obtenir une (sa disposition à payer, DAP). Résultat : DAA moyenne = 8 euros, DAP moyenne =
+      4 euros. Pourquoi ce résultat constitue-t-il une déviation par rapport à la théorie de la
+      décision rationnelle ? Comment appelle-t-on ce biais ?
+    </p>
+  </div>
+
+  <h3>Étape zéro — traduisons la question en français simple</h3>
+
+  <p>
+    Cet énoncé est long, mais il ne contient que deux nombres : 8 et 4. Tout le reste est le
+    <em>décor</em> de l'expérience — et ce décor est là pour verrouiller le raisonnement. Décodons
+    mot à mot.
+  </p>
+
+  <dl class="lexique">
+    <dt>« Lors d'une expérience en auditoire »</dt>
+    <dd>
+      On est dans une <span class="term">expérience de laboratoire</span> : un chercheur crée une
+      situation contrôlée, avec de vraies personnes, et observe ce qu'elles font. Ce n'est pas un
+      sondage d'opinion, ce n'est pas une simulation. Ce sont de vrais choix de vrais étudiants.
+    </dd>
+
+    <dt>« on distribue gratuitement »</dt>
+    <dd>
+      Les étudiants qui reçoivent la gourde ne l'ont pas payée. Cela compte : ils n'ont donc pas pu
+      « choisir » la gourde parce qu'ils l'aimaient. Elle leur est simplement tombée dessus.
+    </dd>
+
+    <dt>« et <em>au hasard</em> »</dt>
+    <dd>
+      C'est le mot le plus important de l'énoncé, et il est mis en italique exprès. On appelle cela
+      la <span class="term">randomisation</span> ou <em>assignation aléatoire</em>. Le tirage au
+      sort décide qui reçoit une gourde. On verra dans deux pages que ce mot vaut à lui seul
+      3 points au barème.
+    </dd>
+
+    <dt>« à la moitié des étudiants »</dt>
+    <dd>
+      L'auditoire est coupé en deux groupes de taille comparable : les
+      <span class="term">détenteurs</span> (ceux qui ont une gourde) et les
+      <span class="term">non-détenteurs</span> (ceux qui n'en ont pas).
+    </dd>
+
+    <dt>« le prix minimal auquel il accepterait de vendre sa gourde (sa disposition à accepter, DAA) »</dt>
+    <dd>
+      On demande aux détenteurs : « à partir de quel prix acceptes-tu de te séparer de ta
+      gourde ? ». C'est un prix de <strong>vente</strong>, et c'est un
+      <strong>minimum</strong> : en dessous, la personne refuse ; au-dessus, elle accepte.
+    </dd>
+
+    <dt>« le prix maximal qu'il serait prêt à payer pour en obtenir une (sa disposition à payer, DAP) »</dt>
+    <dd>
+      On demande aux non-détenteurs : « jusqu'à combien es-tu prêt à débourser pour en avoir
+      une ? ». C'est un prix d'<strong>achat</strong>, et c'est un <strong>maximum</strong> :
+      au-dessus, la personne renonce ; en dessous, elle achète.
+    </dd>
+
+    <dt>« DAA moyenne = 8 euros, DAP moyenne = 4 euros »</dt>
+    <dd>
+      Le mot <strong>moyenne</strong> compte. On ne compare pas deux individus, on compare deux
+      groupes entiers. Les détenteurs demandent en moyenne 8 € pour vendre ; les non-détenteurs
+      offrent en moyenne 4 € pour acheter. Le rapport est du simple au double.
+    </dd>
+
+    <dt>« Pourquoi ce résultat constitue-t-il une déviation par rapport à la théorie de la décision rationnelle ? »</dt>
+    <dd>
+      Le mot <span class="term">déviation</span> veut dire « écart par rapport à une prédiction ».
+      La question t'oblige donc à faire deux choses dans cet ordre : (1) dire ce que la théorie
+      rationnelle <em>prédit</em>, (2) montrer que l'observation ne colle pas. Si tu ne commences
+      pas par la prédiction, tu n'as rien démontré.
+    </dd>
+
+    <dt>« Comment appelle-t-on ce biais ? »</dt>
+    <dd>
+      On te demande un <strong>nom</strong>, précis, celui du cours. Trois points sont attachés à ce
+      seul mot.
+    </dd>
+  </dl>
+
+  <div class="box box-methode">
+    <div class="box-title">Le plan de réponse est écrit dans la question</div>
+    <p>
+      Regarde bien : la question est en deux morceaux (« pourquoi une déviation ? » puis « comment
+      appelle-t-on ce biais ? »). Ton plan de copie est donc imposé, en trois temps :
+    </p>
+    <ol>
+      <li>ce que prédit la théorie rationnelle, et <em>pourquoi</em> elle le prédit ;</li>
+      <li>pourquoi la randomisation rend cette prédiction testable sur des <em>moyennes</em> de
+        groupes ;</li>
+      <li>le constat du chiffre observé, puis le nom du biais.</li>
+    </ol>
+  </div>
+
+  <h3>Le cours dont tu as besoin</h3>
+
+  <h4>1) Ce qu'est une expérience de laboratoire, et pourquoi on tire au sort</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — expérience de laboratoire</div>
+    <p>
+      Une <span class="term">expérience de laboratoire</span> consiste à placer de vraies personnes
+      dans une situation de choix construite par le chercheur, où toutes les conditions sont
+      contrôlées, afin d'observer leur comportement réel plutôt que ce qu'elles déclarent.
+    </p>
+  </div>
+
+  <p>
+    L'intérêt est énorme : dans la vraie vie, quand deux personnes se comportent différemment, on
+    ne sait jamais si c'est parce qu'elles sont différentes ou parce que leur situation est
+    différente. En laboratoire, on peut faire varier <em>une seule chose</em> et tout garder
+    identique par ailleurs. C'est là qu'intervient le tirage au sort.
+  </p>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi le mot « au hasard » est décisif</div>
+    <p>
+      Imagine un instant que les gourdes aient été distribuées <strong>autrement</strong> qu'au
+      hasard : par exemple aux étudiants du premier rang, ou aux premiers arrivés, ou à ceux qui
+      lèvent la main. On observerait alors DAA = 8 € et DAP = 4 €, et un sceptique aurait beau jeu
+      de dire :
+    </p>
+    <p>
+      « Ce n'est pas un biais du tout. Ceux qui ont la gourde sont simplement des gens qui aiment
+      les gourdes — ils se sont manifestés, ou ils sont plus motivés. Normal qu'ils la valorisent
+      davantage. »
+    </p>
+    <p>
+      Cette explication concurrente est parfaitement raisonnable, et elle détruirait toute la
+      démonstration. Le tirage au sort la <strong>tue</strong> : puisque c'est le hasard qui a
+      décidé, les deux groupes sont, <em>en moyenne</em>, composés du même type de personnes, avec
+      les mêmes goûts pour les gourdes, le même âge, le même budget, tout. Sur un grand nombre
+      d'étudiants, la seule différence <em>systématique</em> entre le groupe A et le groupe B est
+      celle qu'on a créée exprès : <strong>posséder la gourde ou non</strong>.
+    </p>
+    <p>
+      Donc si les deux groupes annoncent des valeurs différentes, cette différence ne peut venir
+      que de la possession. C'est exactement ce que l'on veut démontrer — et c'est pour cela que
+      ce petit mot vaut 3 points.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple concret — le même principe qu'un essai clinique</div>
+    <p>
+      Pour tester un médicament, on ne donne pas le traitement aux volontaires et le placebo aux
+      autres : on <strong>tire au sort</strong>. Sinon, si les personnes traitées guérissent mieux,
+      on ne saurait jamais si c'est le médicament qui agit ou si les volontaires étaient déjà en
+      meilleure santé au départ. Le tirage au sort garantit que les deux groupes sont comparables
+      avant l'expérience. L'expérience des gourdes utilise exactement la même astuce.
+    </p>
+  </div>
+
+  <h4>2) Deux notions à ne jamais confondre : la DAP et la DAA</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — disposition à payer (DAP) et disposition à accepter (DAA)</div>
+    <p>
+      La <span class="term">disposition à payer</span> (DAP) est le montant <strong>maximal</strong>
+      que tu accepterais de débourser pour <em>acquérir</em> un bien que tu n'as pas.
+    </p>
+    <p>
+      La <span class="term">disposition à accepter</span> (DAA) est le montant
+      <strong>minimal</strong> que tu exigerais pour <em>te séparer</em> d'un bien que tu possèdes
+      déjà.
+    </p>
+    <p>
+      Les deux se lisent « d-a-p » et « d-a-a ». Moyen mnémotechnique : <strong>P</strong> comme
+      <em>payer</em> (j'achète, je n'ai pas le bien) ; <strong>A</strong> comme
+      <em>accepter</em> (j'accepte de l'argent, donc je vends, donc je l'ai).
+    </p>
+  </div>
+
+  <p>
+    Ces deux nombres répondent en réalité à la <em>même</em> question : « combien vaut cette gourde
+    pour moi ? ». La seule différence est le point de vue : dans un cas je suis acheteur, dans
+    l'autre je suis vendeur.
+  </p>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple concret — ton vélo</div>
+    <p>
+      Tu as un vieux vélo dans ta cave. Quelqu'un te propose 150 € : tu refuses. 250 € : tu
+      hésites. 300 € : tu vends. Ta DAA est donc d'environ 280 €.
+    </p>
+    <p>
+      Maintenant, imagine que tu n'aies pas ce vélo, mais qu'on t'en propose exactement le même sur
+      une brocante. Jusqu'à combien monterais-tu ? Si tu réponds « 150 €, pas plus », alors ta DAP
+      vaut 150 €. Tu viens de manifester un effet de dotation sur ton propre vélo : le même objet
+      vaut 280 € quand il est à toi, et 150 € quand il ne l'est pas.
+    </p>
+  </div>
+
+  <h4>3) Ce que la théorie du choix rationnel affirme, exactement</h4>
+
+  <p>
+    Il faut être très précis ici, parce que la question porte littéralement là-dessus. La théorie
+    du choix rationnel n'affirme <em>pas</em> que les gens sont intelligents, ni égoïstes, ni bons
+    en calcul. Elle affirme que leurs choix sont <strong>cohérents</strong>.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — la théorie du choix rationnel</div>
+    <p>
+      Un individu <span class="term">rationnel</span> a des préférences cohérentes (transitives,
+      monotones, complètes, continues) et choisit toujours, parmi les options qui lui sont
+      accessibles, celle qu'il préfère. Une conséquence directe et centrale :
+    </p>
+    <p>
+      <strong>une décision rationnelle n'est jamais influencée par une variable
+      non-pertinente.</strong>
+    </p>
+  </div>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — variable non-pertinente</div>
+    <p>
+      Une <span class="term">variable non-pertinente</span> est une information qui ne change
+      <em>rien</em> aux conséquences réelles de ton choix. Un individu rationnel doit donc l'ignorer
+      complètement.
+    </p>
+    <p>
+      Exemple du cours : que la calculatrice coûte 15 € ou 200 €, la vraie question reste « est-ce
+      que je marche 20 minutes pour économiser 5 € ? ». Le prix total est ici non-pertinent — et
+      pourtant 82 % des gens marchent dans le premier cas contre 25 % dans le second.
+    </p>
+  </div>
+
+  <p>
+    Applique maintenant ce principe à la gourde. La question « combien vaut cette gourde pour
+    moi ? » a une réponse qui dépend de l'usage que j'en ferai : est-ce que je vais boire dedans,
+    est-ce que le logo me plaît, est-ce que j'en ai déjà trois. En revanche, le fait qu'elle soit
+    <em>actuellement</em> dans mon sac ou dans celui du voisin ne change rien à cet usage futur.
+    C'est donc une variable non-pertinente. La théorie prédit :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \text{DAP} = \text{DAA} \]
+      <div class="why">la valeur d'un bien est la même que je l'aie ou non ; le prix minimal pour
+        le vendre doit donc être égal au prix maximal pour l'acheter.</div>
+    </div>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi cette égalité doit tenir, vue autrement</div>
+    <p>
+      Suppose un instant qu'un individu ait DAA = 8 € et DAP = 4 € pour le même objet. Regarde ce
+      que ça implique : à 6 €, il refuse de vendre la gourde qu'il a (6 &lt; 8) et il refuse aussi
+      de l'acheter s'il ne l'a pas (6 &gt; 4). Autrement dit, dans les deux cas il garde sa
+      situation initiale — quelle qu'elle soit. Sa réponse dépend donc du point de départ, pas de
+      ses goûts. Ce sont deux évaluations différentes du même objet, ce qui est exactement une
+      incohérence.
+    </p>
+    <p>
+      Un être rationnel a <strong>un seul</strong> prix de réserve pour un bien donné. En dessous,
+      il préfère l'argent ; au-dessus, il préfère le bien. Ce prix ne bouge pas selon qu'il est
+      acheteur ou vendeur.
+    </p>
+  </div>
+
+  <h4>4) Ce qu'est un biais</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — biais (comportemental)</div>
+    <p>
+      Un <span class="term">biais</span> est un écart <strong>systématique</strong> et
+      <strong>prévisible</strong> entre ce que fait réellement un individu et ce que prédit la
+      théorie du choix rationnel.
+    </p>
+    <p>
+      Les deux adjectifs sont essentiels. « Systématique » veut dire : ce n'est pas une erreur de
+      distraction, on l'observe encore et encore. « Prévisible » veut dire : l'écart va
+      <em>toujours dans le même sens</em>. On sait à l'avance que la DAA sera supérieure à la DAP,
+      jamais l'inverse.
+    </p>
+  </div>
+
+  <p>
+    Note bien la structure logique de cette définition : un biais est défini <em>par rapport à</em>
+    la théorie rationnelle. Sans la théorie, le mot « biais » n'a aucun sens — un écart, oui, mais
+    un écart par rapport à quoi ? Garde cette remarque en tête : c'est déjà l'un des arguments de
+    la question 1.4.
+  </p>
+
+  <h4>5) L'effet de dotation, et le mécanisme qui l'explique</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — effet de dotation (<em>endowment effect</em>)</div>
+    <p>
+      L'<span class="term">effet de dotation</span> est le biais qui fait qu'on exige plus d'argent
+      pour <strong>vendre</strong> un objet qu'on n'accepterait d'en payer pour l'<strong>acheter</strong>.
+      Le simple fait de posséder un bien gonfle sa valeur perçue. On l'observe sous la forme
+    </p>
+    <p>\[ \text{DAA} \;&gt;\; \text{DAP} \]</p>
+    <p>
+      alors que la théorie rationnelle exige l'égalité. Le mot « dotation » vient de « être doté
+      de », c'est-à-dire « posséder ».
+    </p>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">D'où vient cet effet ? L'aversion aux pertes</div>
+    <p>
+      L'explication du cours s'appelle l'<span class="term">aversion aux pertes</span>
+      (<em>loss aversion</em>) : psychologiquement, <strong>perdre quelque chose fait plus mal que
+      gagner la même chose ne fait plaisir</strong>. Les mesures expérimentales donnent un rapport
+      d'environ deux pour un : perdre 50 € pèse à peu près autant que gagner 100 €.
+    </p>
+    <p>
+      Comment cela produit-il l'effet de dotation ? En trois temps :
+    </p>
+    <ol>
+      <li>
+        Dès qu'on me donne la gourde, elle entre dans mon <span class="term">point de
+        référence</span> : mentalement, elle fait désormais partie de « ma situation normale ».
+      </li>
+      <li>
+        Me la reprendre est alors codé par mon cerveau comme une <strong>perte</strong>, et les
+        pertes pèsent lourd.
+      </li>
+      <li>
+        Pour accepter cette perte, il me faut donc une compensation élevée : ma DAA gonfle. À
+        l'inverse, ne pas acheter une gourde que je n'ai pas n'est pas une perte, juste un gain
+        auquel je renonce : ma DAP reste modeste.
+      </li>
+    </ol>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemples concrets — l'effet de dotation partout autour de toi</div>
+    <p>
+      <strong>L'immobilier.</strong> Les propriétaires ont tendance à mettre leur maison en vente
+      au-dessus de sa valeur de marché, simplement parce que c'est <em>la leur</em> — quitte à
+      attendre des mois de plus.
+    </p>
+    <p>
+      <strong>L'antidote (expérience du cours).</strong> On demande à des étudiants combien ils
+      paieraient pour faire passer leur risque de mourir de 1/1000 à 0 : réponse moyenne
+      127 000 €. Puis combien ils exigeraient pour <em>accepter</em> un risque supplémentaire de
+      1/1000 : réponse moyenne 438 000 €. C'est le même millième de risque vital dans les deux
+      cas, mais plus de trois fois plus cher quand il s'agit de le vendre.
+    </p>
+    <p>
+      <strong>Les essais gratuits de 30 jours.</strong> Les entreprises connaissent parfaitement
+      l'effet de dotation. Une fois que l'objet est chez toi, le rendre est vécu comme une perte —
+      et tu le gardes.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 520 344" width="100%" style="max-width:12cm" role="img" aria-label="Deux barres comparant la disposition à accepter de 8 euros et la disposition à payer de 4 euros, avec en pointillés le niveau prédit par la théorie rationnelle">
+      <defs>
+        <pattern id="q1-hachures-dap" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="8" stroke="#4b5563" stroke-width="1.3"></line>
+        </pattern>
+        <marker id="q1-fleche-haut" markerWidth="9" markerHeight="9" refX="4.5" refY="8" orient="auto">
+          <path d="M4.5,0 L9,9 L0,9 z" fill="#111827"></path>
+        </marker>
+        <marker id="q1-fleche-bas" markerWidth="9" markerHeight="9" refX="4.5" refY="1" orient="auto">
+          <path d="M4.5,9 L0,0 L9,0 z" fill="#111827"></path>
+        </marker>
+      </defs>
+      <line x1="70" y1="40" x2="70" y2="280" stroke="#111827" stroke-width="1.6"></line>
+      <line x1="70" y1="280" x2="490" y2="280" stroke="#111827" stroke-width="1.6"></line>
+      <text x="62" y="284" font-size="12" text-anchor="end" fill="#4b5563">0</text>
+      <line x1="64" y1="228" x2="70" y2="228" stroke="#111827" stroke-width="1.2"></line>
+      <text x="58" y="232" font-size="12" text-anchor="end" fill="#4b5563">2</text>
+      <line x1="64" y1="176" x2="70" y2="176" stroke="#111827" stroke-width="1.2"></line>
+      <text x="58" y="180" font-size="12" text-anchor="end" fill="#4b5563">4</text>
+      <line x1="64" y1="124" x2="70" y2="124" stroke="#111827" stroke-width="1.2"></line>
+      <text x="58" y="128" font-size="12" text-anchor="end" fill="#4b5563">6</text>
+      <line x1="64" y1="72" x2="70" y2="72" stroke="#111827" stroke-width="1.2"></line>
+      <text x="58" y="76" font-size="12" text-anchor="end" fill="#4b5563">8</text>
+      <text x="70" y="28" font-size="12" fill="#4b5563">euros</text>
+      <line x1="140" y1="72" x2="470" y2="72" stroke="#111827" stroke-width="1.3" stroke-dasharray="7 5"></line>
+      <rect x="140" y="72" width="90" height="208" fill="#e5e7eb" stroke="#111827" stroke-width="2"></rect>
+      <text x="185" y="100" font-size="17" text-anchor="middle" fill="#111827" font-weight="bold">8 €</text>
+      <rect x="300" y="176" width="90" height="104" fill="url(#q1-hachures-dap)" stroke="#111827" stroke-width="2"></rect>
+      <text x="345" y="204" font-size="17" text-anchor="middle" fill="#111827" font-weight="bold">4 €</text>
+      <rect x="300" y="72" width="90" height="104" fill="none" stroke="#111827" stroke-width="1.6" stroke-dasharray="6 4"></rect>
+      <text x="345" y="128" font-size="11.5" text-anchor="middle" fill="#4b5563">prédit par</text>
+      <text x="345" y="144" font-size="11.5" text-anchor="middle" fill="#4b5563">la théorie</text>
+      <text x="345" y="160" font-size="11.5" text-anchor="middle" fill="#4b5563">rationnelle</text>
+      <line x1="425" y1="176" x2="425" y2="72" stroke="#111827" stroke-width="1.8" marker-end="url(#q1-fleche-haut)" marker-start="url(#q1-fleche-bas)"></line>
+      <text x="435" y="110" font-size="12" fill="#111827" font-weight="bold">écart : 4 €</text>
+      <text x="435" y="127" font-size="11.5" fill="#4b5563">= le biais</text>
+      <text x="185" y="302" font-size="14" text-anchor="middle" fill="#111827" font-weight="bold">DAA = 8 €</text>
+      <text x="185" y="320" font-size="11.5" text-anchor="middle" fill="#4b5563">détenteurs :</text>
+      <text x="185" y="336" font-size="11.5" text-anchor="middle" fill="#4b5563">prix minimal pour vendre</text>
+      <text x="345" y="302" font-size="14" text-anchor="middle" fill="#111827" font-weight="bold">DAP = 4 €</text>
+      <text x="345" y="320" font-size="11.5" text-anchor="middle" fill="#4b5563">non-détenteurs :</text>
+      <text x="345" y="336" font-size="11.5" text-anchor="middle" fill="#4b5563">prix maximal pour acheter</text>
+    </svg>
+    <figcaption>
+      La prédiction et l'observation sur le même dessin. La théorie rationnelle exige que les deux
+      barres aient <em>exactement</em> la même hauteur (trait pointillé horizontal, et rectangle en
+      pointillé au-dessus de la barre DAP). L'observation donne une barre deux fois plus courte.
+      L'écart de 4 € entre les deux, c'est précisément l'effet de dotation, mesuré en euros.
+    </figcaption>
+  </figure>
+
+  <h3>La résolution pas à pas</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Je repère qui répond à quoi</div>
+    <p>
+      Première chose : je m'assure de ne pas inverser les deux groupes, parce que c'est l'erreur
+      la plus fréquente et elle rend toute la réponse incompréhensible.
+    </p>
+    <table class="compare">
+      <tr>
+        <th class="left">Groupe</th>
+        <th class="left">Question posée</th>
+        <th class="left">Grandeur mesurée</th>
+        <th>Résultat</th>
+      </tr>
+      <tr>
+        <td class="left">Détenteurs (ils ont la gourde)</td>
+        <td class="left">« À partir de combien la vends-tu ? »</td>
+        <td class="left">DAA — disposition à accepter</td>
+        <td>8 €</td>
+      </tr>
+      <tr>
+        <td class="left">Non-détenteurs (ils n'en ont pas)</td>
+        <td class="left">« Jusqu'à combien la paies-tu ? »</td>
+        <td class="left">DAP — disposition à payer</td>
+        <td>4 €</td>
+      </tr>
+    </table>
+    <p>
+      <strong>Pourquoi je commence par là ?</strong> Parce que les deux sigles se ressemblent et que
+      les intervertir inverse toute la conclusion. Retiens l'ancrage : celui qui
+      <em>a</em> le bien est celui qui <em>vend</em>, donc c'est lui la DAA.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> J'énonce la prédiction rationnelle — et je la justifie</div>
+    <p>
+      <strong>Pourquoi commencer par la prédiction ?</strong> Parce que la question demande une
+      « déviation », et qu'une déviation se mesure toujours <em>par rapport à</em> quelque chose. Si
+      je n'ai pas posé la référence, je n'ai rien montré du tout.
+    </p>
+    <p>
+      Pour un individu rationnel, la valeur d'un bien dépend uniquement de l'usage et du plaisir
+      qu'il en tirera. Le fait de le posséder <em>déjà</em> ne change en rien cet usage futur :
+      c'est une variable non-pertinente. Donc :
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ \text{DAA} = \text{DAP} \]
+        <div class="why">un seul prix de réserve par bien et par personne : le prix minimal pour
+          vendre doit coïncider avec le prix maximal pour acheter.</div>
+      </div>
+    </div>
+    <p>
+      Le barème officiel donne <strong>4 points</strong> pour cette seule ligne, correctement
+      justifiée. C'est le morceau le plus rentable de la question.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> J'utilise la randomisation pour éliminer l'explication concurrente</div>
+    <p>
+      <strong>Pourquoi cette étape est indispensable.</strong> On compare ici des
+      <em>moyennes de groupes</em>, pas la DAA et la DAP d'une même personne. Un correcteur exigeant
+      pourrait objecter : « et si les détenteurs aimaient simplement plus les gourdes que les
+      non-détenteurs ? Alors DAA &gt; DAP serait normal, sans aucun biais. »
+    </p>
+    <p>
+      La réponse tient en un mot de l'énoncé : les gourdes ont été distribuées
+      <strong>au hasard</strong>. Le tirage au sort garantit que les deux groupes ont, en moyenne,
+      les mêmes goûts, le même budget, le même tout. La seule différence systématique entre eux est
+      celle qu'on a fabriquée exprès : la possession.
+    </p>
+    <p>
+      Donc toute différence observée entre les deux moyennes <em>doit</em> venir de la possession —
+      et de rien d'autre. Le barème récompense cet argument à hauteur de <strong>3 points</strong>.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Je constate l'écart et je le quantifie</div>
+    <div class="calc">
+      <div class="step">
+        \[ \text{DAA} = 8\ \text{euros} \;&gt;\; 4\ \text{euros} = \text{DAP} \]
+        <div class="why">j'écris l'observation sous la même forme que la prédiction, pour que la
+          contradiction saute aux yeux.</div>
+      </div>
+      <div class="step">
+        \[ \frac{8}{4} = 2 \]
+        <div class="why">je divise pour mesurer l'ampleur : la DAA vaut le double de la DAP. Ce
+          n'est pas un petit écart de mesure, c'est un rapport du simple au double.</div>
+      </div>
+    </div>
+    <p>
+      La prédiction disait « égalité » ; on observe « du simple au double ». La prédiction de la
+      théorie rationnelle est donc violée : c'est bien une <strong>déviation</strong>. Et comme
+      cette déviation est systématique (on l'obtient dans toutes les répétitions de l'expérience) et
+      prévisible (toujours dans le même sens, jamais DAP &gt; DAA), c'est un
+      <strong>biais</strong>, pas une erreur de mesure.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">5.</span> Je nomme le biais et j'explique son mécanisme</div>
+    <p>
+      Le nom demandé est l'<strong>effet de dotation</strong> (en anglais
+      <em>endowment effect</em>). Trois points sont attachés à ce seul mot : ne le noie pas au
+      milieu d'une phrase, écris-le en toutes lettres et souligne-le.
+    </p>
+    <p>
+      Si tu as le temps, ajoute une phrase sur le mécanisme, qui montre que tu comprends au lieu de
+      réciter : l'effet de dotation s'explique par l'<strong>aversion aux pertes</strong>. Une fois
+      la gourde en poche, elle entre dans le point de référence ; s'en séparer est vécu comme une
+      perte, et les pertes pèsent psychologiquement plus lourd que les gains équivalents. Il faut
+      donc une compensation plus élevée pour vendre que ce qu'on aurait accepté de payer pour
+      acheter.
+    </p>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat — question 1.2</div>
+    <p>
+      La théorie rationnelle prédit <strong>DAA = DAP</strong>, car la possession est une variable
+      non-pertinente pour la valeur d'un bien. La distribution <em>au hasard</em> garantit que les
+      deux groupes ont en moyenne les mêmes préférences, donc que leurs évaluations moyennes
+      devraient coïncider. Observer 8 € contre 4 € — un rapport du simple au double — contredit
+      cette prédiction : c'est l'<strong>effet de dotation</strong>, lui-même expliqué par
+      l'aversion aux pertes.
+    </p>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie</div>
+    <p>
+      Pour un individu rationnel, la valeur d'un bien ne dépend que de l'usage et du plaisir qu'il
+      en retire, pas du fait de le posséder déjà ou non : la possession est une variable
+      non-pertinente. La théorie de la décision rationnelle prédit donc
+      <strong>DAA = DAP</strong> — le prix minimal exigé pour vendre la gourde doit être égal au
+      prix maximal qu'on accepterait de payer pour l'acheter.
+    </p>
+    <p>
+      De plus, les gourdes ont été attribuées <em>au hasard</em>. Les deux groupes (détenteurs et
+      non-détenteurs) ont donc en moyenne les mêmes préférences, et leurs évaluations moyennes
+      devraient coïncider. On ne peut pas expliquer l'écart par une différence de goûts entre les
+      deux groupes.
+    </p>
+    <p>
+      Or on observe DAA = 8 € contre DAP = 4 €, soit un rapport du simple au double. Le simple fait
+      de <em>posséder</em> la gourde augmente donc l'évaluation qu'on en fait, ce qui contredit la
+      prédiction rationnelle : c'est une déviation systématique.
+    </p>
+    <p>
+      Ce biais s'appelle l'<strong>effet de dotation</strong>. Il s'explique par l'aversion aux
+      pertes : une fois la gourde possédée, s'en séparer est ressenti comme une perte, et les pertes
+      pèsent plus lourd que les gains équivalents.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les pièges de la question 1.2</div>
+    <p>
+      <strong>Piège n° 1 — sauter la prédiction rationnelle.</strong> Beaucoup d'étudiants écrivent
+      directement « c'est l'effet de dotation » et récoltent 3 points sur 10. La question demande
+      <em>pourquoi c'est une déviation</em> : sans énoncer DAA = DAP, il n'y a pas de déviation à
+      montrer.
+    </p>
+    <p>
+      <strong>Piège n° 2 — oublier le mot « au hasard ».</strong> C'est le détail que l'énoncé a
+      pris la peine de mettre en italique. Sans lui, l'explication « les détenteurs aiment plus les
+      gourdes » reste possible et la démonstration ne tient pas. 3 points perdus.
+    </p>
+    <p>
+      <strong>Piège n° 3 — inverser DAA et DAP.</strong> Écrire « la DAP des détenteurs » n'a aucun
+      sens : les détenteurs ne paient rien, ils vendent. Répète-toi : <em>je possède donc je vends
+      donc DAA ; je ne possède pas donc j'achète donc DAP</em>.
+    </p>
+    <p>
+      <strong>Piège n° 4 — dire que DAA &gt; DAP est ce que prédit la théorie.</strong> Non !
+      DAA &gt; DAP est ce qu'on <em>observe</em>. La théorie rationnelle, elle, exige l'égalité.
+      Confondre prédiction théorique et observation empirique est l'erreur conceptuelle la plus
+      grave de tout le chapitre.
+    </p>
+    <p>
+      <strong>Piège n° 5 — chercher un autre nom.</strong> Ce n'est ni le framing (là, c'est la
+      formulation qui change), ni les coûts irrécupérables (là, c'est de l'argent déjà dépensé), ni
+      l'utilité de transaction (là, c'est le plaisir de la bonne affaire). Le déclencheur ici est la
+      <em>possession</em> : c'est l'effet de dotation, et rien d'autre.
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — reconnaître ce type de question</div>
+    <p>
+      <strong>Le signal :</strong> on te décrit une expérience, on te donne deux chiffres qui
+      devraient être égaux (ou deux pourcentages qui devraient être identiques), et on te demande
+      pourquoi c'est une « déviation », une « anomalie » ou une « violation ».
+    </p>
+    <p><strong>Le réflexe en quatre temps, toujours le même :</strong></p>
+    <ol>
+      <li><strong>Quelle est la variable qui change entre les deux groupes ?</strong> Ici : posséder
+        la gourde ou non.</li>
+      <li><strong>Cette variable est-elle pertinente ?</strong> Ici : non, elle ne change pas
+        l'usage futur de la gourde. Donc la théorie rationnelle prédit le même résultat des deux
+        côtés.</li>
+      <li><strong>Écris la prédiction sous forme d'égalité</strong> (DAA = DAP, ou « le même
+        pourcentage dans les deux versions »), puis constate l'écart avec les chiffres donnés.</li>
+      <li><strong>Nomme le biais</strong> en te demandant ce qui déclenche l'écart : possession →
+        effet de dotation ; formulation gains/pertes → framing ; argent déjà dépensé → coûts
+        irrécupérables ; prix de référence → utilité de transaction.</li>
+    </ol>
+  </div>
+
+  <hr class="soft">
+
+  <h2>1.3 — Le tableau des projets : lesquels sont dominés, lesquels sont efficaces</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 1.3 (10 points)</div>
+    <p>
+      Une commune doit choisir l'emplacement d'un nouveau parc parmi quatre projets (A, B, C et D).
+      Les utilités des trois habitants concernés sont données dans le tableau ci-dessous.
+      a) Y a-t-il un ou plusieurs projets dominés au sens de Pareto ? Le cas échéant, précisez par
+      quel projet et vérifiez-le. b) Quels projets sont efficaces au sens de Pareto ? Détaillez
+      votre raisonnement.
+    </p>
+    <table class="data">
+      <tr><th></th><th>Projet A</th><th>Projet B</th><th>Projet C</th><th>Projet D</th></tr>
+      <tr><th>Habitant 1</th><td>6</td><td>4</td><td>6</td><td>5</td></tr>
+      <tr><th>Habitant 2</th><td>3</td><td>5</td><td>3</td><td>4</td></tr>
+      <tr><th>Habitant 3</th><td>5</td><td>5</td><td>7</td><td>5</td></tr>
+    </table>
+  </div>
+
+  <h3>Étape zéro — traduisons la question en français simple</h3>
+
+  <dl class="lexique">
+    <dt>« Une commune doit choisir l'emplacement d'un nouveau parc parmi quatre projets »</dt>
+    <dd>
+      Le décor n'a aucune importance mathématique : parc, école ou rond-point, cela ne change rien.
+      Ce qui compte, c'est qu'il y a <strong>quatre options</strong>, exclusives (on n'en choisit
+      qu'une), qu'on va nommer A, B, C, D. Elles jouent exactement le rôle des « allocations » de
+      la question 1.1.
+    </dd>
+
+    <dt>« Les utilités des trois habitants concernés »</dt>
+    <dd>
+      Il y a <strong>trois personnes</strong>, et pour chaque projet on te donne directement leur
+      niveau de satisfaction sous forme de nombre. Tu n'as donc rien à calculer : le travail de
+      traduction « situation → nombre » a déjà été fait pour toi.
+    </dd>
+
+    <dt>« a) Y a-t-il un ou plusieurs projets dominés au sens de Pareto ? »</dt>
+    <dd>
+      « Dominé » est la forme passive de « domine ». Un projet X est <em>dominé</em> s'il existe un
+      autre projet Y qui le domine. La question te demande de faire l'inventaire complet.
+    </dd>
+
+    <dt>« Le cas échéant, précisez par quel projet et vérifiez-le »</dt>
+    <dd>
+      « Le cas échéant » veut dire « s'il y en a ». Deux exigences derrière : nommer le
+      <strong>dominateur</strong> (dire « A est dominé » ne suffit pas, il faut dire par qui) et
+      <strong>vérifier</strong>, c'est-à-dire écrire les trois inégalités habitant par habitant.
+    </dd>
+
+    <dt>« b) Quels projets sont efficaces au sens de Pareto ? Détaillez votre raisonnement »</dt>
+    <dd>
+      On demande la <em>liste</em> des projets efficaces. « Détaillez » signifie qu'il faut
+      justifier pour <strong>chacun</strong> — y compris pour ceux qui sont efficaces, en disant
+      pourquoi aucun autre projet ne les domine.
+    </dd>
+  </dl>
+
+  <div class="box box-rappel">
+    <div class="box-title">Comment lire ce tableau — et une notation à décoder</div>
+    <p>
+      Le tableau se lit comme une grille de bataille navale. Les <strong>colonnes</strong> sont les
+      projets ; les <strong>lignes</strong> sont les habitants. Chaque case donne l'utilité d'un
+      habitant sous un projet.
+    </p>
+    <p>
+      On note \( u_i(X) \) — lu « u indice i de X » — l'utilité de l'habitant \( i \) si le projet
+      \( X \) est retenu. Par exemple, en croisant la ligne « Habitant 3 » et la colonne
+      « Projet C », on lit 7, ce qui s'écrit \( u_3(C) = 7 \) et se lit « l'utilité de l'habitant 3
+      sous le projet C vaut 7 ».
+    </p>
+    <p>
+      Il est très utile de relire chaque colonne comme un <span class="term">profil</span>, c'est-à-dire
+      la liste des trois utilités du projet :
+    </p>
+    <p>\[ A = (6;\, 3;\, 5), \quad B = (4;\, 5;\, 5) \]</p>
+    <p>\[ C = (6;\, 3;\, 7), \quad D = (5;\, 4;\, 5) \]</p>
+    <p>
+      L'ordre est toujours (habitant 1 ; habitant 2 ; habitant 3). Sous cette forme, la question 1.3
+      devient rigoureusement la même chose que la question 1.1 : comparer des listes de trois
+      nombres.
+    </p>
+  </div>
+
+  <h3>Le cours dont tu as besoin</h3>
+
+  <h4>1) Les deux mêmes définitions, transposées aux projets</h4>
+
+  <p>
+    Bonne nouvelle : il n'y a <em>aucune</em> notion nouvelle par rapport à la question 1.1. Les
+    définitions sont identiques, seuls les mots du décor changent. Voici la traduction.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left">En 1.1 (le gâteau)</th>
+      <th class="left">En 1.3 (les projets)</th>
+    </tr>
+    <tr>
+      <td class="left">une allocation \( (x_1;\, x_2;\, x_3) \)</td>
+      <td class="left">un projet, décrit par son profil d'utilités \( (u_1;\, u_2;\, u_3) \)</td>
+    </tr>
+    <tr>
+      <td class="left">l'utilité de chacun = son nombre de parts</td>
+      <td class="left">l'utilité de chacun est donnée directement dans le tableau</td>
+    </tr>
+    <tr>
+      <td class="left">les allocations faisables = celles qui respectent les 9 parts</td>
+      <td class="left">les options faisables = les quatre projets A, B, C, D, un point c'est tout</td>
+    </tr>
+  </table>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — domination et efficacité, version « projets »</div>
+    <p>
+      Le projet \( X \) <strong>domine</strong> le projet \( Y \) au sens de Pareto si :
+    </p>
+    <ul>
+      <li>\( u_i(X) \ge u_i(Y) \) pour <em>tous</em> les habitants \( i \) — personne ne perd en
+        passant de \( Y \) à \( X \) ;</li>
+      <li>\( u_j(X) &gt; u_j(Y) \) pour <em>au moins un</em> habitant \( j \) — quelqu'un y gagne
+        strictement.</li>
+    </ul>
+    <p>
+      Un projet est <strong>efficace</strong> au sens de Pareto s'il n'est dominé par
+      <em>aucun</em> des autres projets disponibles.
+    </p>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi on compare habitant par habitant, et jamais autrement</div>
+    <p>
+      Il est très tentant d'additionner les colonnes et de comparer les totaux. Résistons, et
+      voyons pourquoi c'est faux. Les totaux valent ici : A → 14, B → 14, C → 16, D → 14.
+    </p>
+    <p>
+      Si on suivait la somme, on conclurait « C est le meilleur, les trois autres sont à égalité ».
+      Mais c'est un <em>tout autre critère</em> — celui de la somme des utilités — qui suppose
+      qu'on a le droit de compenser la perte d'une personne par le gain d'une autre. Le critère de
+      Pareto refuse précisément cela : il ne veut jamais dire « le bonheur de l'habitant 1 vaut
+      celui de l'habitant 2 ».
+    </p>
+    <p>
+      La domination de Pareto se vérifie donc <strong>individu par individu</strong>, ligne par
+      ligne. C'est le sens du « pour tous les habitants \( i \) » dans la définition : c'est une
+      condition qui doit tenir séparément pour chacun, pas en moyenne, pas en total.
+    </p>
+  </div>
+
+  <h4>2) Combien de comparaisons faut-il faire ?</h4>
+
+  <p>
+    Avant de foncer, comptons le travail. La domination est une relation entre <em>deux</em>
+    projets. Avec 4 projets, le nombre de paires différentes vaut :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \frac{4 \times 3}{2} = 6 \text{ paires} \]
+      <div class="why">chacun des 4 projets peut être comparé aux 3 autres, ce qui ferait 12
+        comparaisons ; mais comparer A à B et B à A, c'est examiner la même paire, d'où la division
+        par 2.</div>
+    </div>
+  </div>
+
+  <p>
+    Les six paires sont : A–B, A–C, A–D, B–C, B–D, C–D. Pour chacune, je vais examiner les trois
+    lignes du tableau et regarder <em>dans quel sens</em> penche chaque habitant. Trois issues sont
+    possibles :
+  </p>
+
+  <ul>
+    <li>tous les habitants penchent du même côté (ou sont indifférents), avec au moins un strict :
+      il y a <strong>domination</strong> ;</li>
+    <li>un habitant penche d'un côté et un autre habitant de l'autre côté : les deux projets sont
+      <strong>incomparables</strong> au sens de Pareto (aucun ne domine l'autre) ;</li>
+    <li>tous les habitants sont exactement indifférents : les deux projets sont
+      <strong>équivalents</strong> (ce cas n'apparaît pas ici).</li>
+  </ul>
+
+  <div class="box box-methode">
+    <div class="box-title">Le raccourci qui fait gagner du temps</div>
+    <p>
+      Dès que tu trouves <strong>un</strong> habitant qui préfère X et <strong>un</strong> habitant
+      qui préfère Y, tu peux t'arrêter net : la paire est incomparable, inutile de regarder les
+      autres lignes. Une seule ligne « qui tire dans le mauvais sens » suffit à casser une
+      domination.
+    </p>
+    <p>
+      Pratiquement : commence par la ligne où les deux projets diffèrent le plus, c'est souvent là
+      que la contradiction apparaît.
+    </p>
+  </div>
+
+  <h3>La résolution pas à pas — partie a)</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Je réécris les quatre profils</div>
+    <p>
+      <strong>Pourquoi ?</strong> Parce que lire un tableau en colonnes est source d'erreurs : on
+      saute une ligne, on décale un chiffre. En réécrivant chaque projet comme une liste
+      horizontale, je transforme le problème en une comparaison de listes, exactement comme en 1.1.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ A = (6;\, 3;\, 5) \qquad B = (4;\, 5;\, 5) \]
+        <div class="why">je lis la colonne « Projet A » de haut en bas : 6 pour l'habitant 1, 3
+          pour l'habitant 2, 5 pour l'habitant 3. Puis idem pour B.</div>
+      </div>
+      <div class="step">
+        \[ C = (6;\, 3;\, 7) \qquad D = (5;\, 4;\, 5) \]
+        <div class="why">idem pour les colonnes C et D. L'ordre des trois nombres est toujours
+          (habitant 1 ; habitant 2 ; habitant 3).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Je balaie les six paires, méthodiquement</div>
+    <p>
+      Pour chaque paire, j'indique entre parenthèses qui est avantagé par l'habitant considéré. Le
+      verdict tombe dès qu'on trouve deux habitants qui tirent dans des directions opposées.
+    </p>
+    <table class="compare">
+      <tr>
+        <th>Paire</th>
+        <th>Habitant 1</th>
+        <th>Habitant 2</th>
+        <th>Habitant 3</th>
+        <th class="left">Verdict</th>
+      </tr>
+      <tr>
+        <td>A – B</td>
+        <td>6 &gt; 4 (A)</td>
+        <td>3 &lt; 5 (B)</td>
+        <td>5 = 5</td>
+        <td class="left">incomparables</td>
+      </tr>
+      <tr>
+        <td class="hl">A – C</td>
+        <td>6 = 6</td>
+        <td>3 = 3</td>
+        <td>5 &lt; 7 (C)</td>
+        <td class="left"><strong>C domine A</strong></td>
+      </tr>
+      <tr>
+        <td>A – D</td>
+        <td>6 &gt; 5 (A)</td>
+        <td>3 &lt; 4 (D)</td>
+        <td>5 = 5</td>
+        <td class="left">incomparables</td>
+      </tr>
+      <tr>
+        <td>B – C</td>
+        <td>4 &lt; 6 (C)</td>
+        <td>5 &gt; 3 (B)</td>
+        <td>5 &lt; 7 (C)</td>
+        <td class="left">incomparables</td>
+      </tr>
+      <tr>
+        <td>B – D</td>
+        <td>4 &lt; 5 (D)</td>
+        <td>5 &gt; 4 (B)</td>
+        <td>5 = 5</td>
+        <td class="left">incomparables</td>
+      </tr>
+      <tr>
+        <td>C – D</td>
+        <td>6 &gt; 5 (C)</td>
+        <td>3 &lt; 4 (D)</td>
+        <td>7 &gt; 5 (C)</td>
+        <td class="left">incomparables</td>
+      </tr>
+    </table>
+    <p>
+      Regarde la logique ligne par ligne. Dans la paire A–B, l'habitant 1 préfère A et l'habitant 2
+      préfère B : deux habitants tirent dans des sens opposés, donc aucun des deux projets ne peut
+      dominer l'autre. Même chose pour A–D, B–C, B–D et C–D. Une seule ligne du tableau échappe à
+      cette règle : la paire A–C.
+    </p>
+    <p>
+      Attention au cas C–D, qui piège les lecteurs rapides : C est meilleur pour deux habitants sur
+      trois (l'habitant 1 et l'habitant 3). Ce n'est pas suffisant ! L'habitant 2 y perd
+      (3 &lt; 4), donc C ne domine pas D. La domination exige l'unanimité, pas une majorité.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Je vérifie soigneusement la seule domination trouvée</div>
+    <p>
+      Le barème demande explicitement une vérification. J'écris donc les trois inégalités, une par
+      habitant, en les orientant toutes dans le même sens (C à gauche, A à droite) pour que la
+      lecture soit immédiate.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ u_1(C) = 6 \;\ge\; 6 = u_1(A) \]
+        <div class="why">habitant 1 : les deux projets lui donnent exactement 6. Il ne perd rien en
+          passant de A à C. Condition « personne ne perd » respectée pour lui.</div>
+      </div>
+      <div class="step">
+        \[ u_2(C) = 3 \;\ge\; 3 = u_2(A) \]
+        <div class="why">habitant 2 : même utilité dans les deux projets. Il ne perd rien non plus.</div>
+      </div>
+      <div class="step">
+        \[ u_3(C) = 7 \;&gt;\; 5 = u_3(A) \]
+        <div class="why">habitant 3 : il passe de 5 à 7, il gagne <em>strictement</em>. Voilà le
+          « au moins un y gagne » exigé par la définition.</div>
+      </div>
+    </div>
+    <p>
+      Les deux conditions de la définition sont réunies : personne ne perd au passage de A à C, et
+      l'habitant 3 y gagne strictement. Donc <strong>C domine A au sens de Pareto</strong>, et A est
+      le seul projet dominé.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 520 336" width="100%" style="max-width:12cm" role="img" aria-label="Profils d'utilité des projets A et C : utilités identiques pour les habitants 1 et 2, utilité strictement supérieure de C pour l'habitant 3">
+      <defs>
+        <marker id="q1-fleche-gain" markerWidth="9" markerHeight="9" refX="4.5" refY="8" orient="auto">
+          <path d="M4.5,0 L9,9 L0,9 z" fill="#111827"></path>
+        </marker>
+      </defs>
+      <line x1="90" y1="36" x2="90" y2="270" stroke="#111827" stroke-width="1.5"></line>
+      <line x1="90" y1="270" x2="470" y2="270" stroke="#111827" stroke-width="1.5"></line>
+      <text x="90" y="26" font-size="12" fill="#4b5563">utilité de chaque habitant</text>
+      <line x1="84" y1="270" x2="90" y2="270" stroke="#111827" stroke-width="1.1"></line>
+      <text x="78" y="274" font-size="12" text-anchor="end" fill="#4b5563">0</text>
+      <line x1="84" y1="214" x2="90" y2="214" stroke="#111827" stroke-width="1.1"></line>
+      <text x="78" y="218" font-size="12" text-anchor="end" fill="#4b5563">2</text>
+      <line x1="84" y1="158" x2="90" y2="158" stroke="#111827" stroke-width="1.1"></line>
+      <text x="78" y="162" font-size="12" text-anchor="end" fill="#4b5563">4</text>
+      <line x1="84" y1="102" x2="90" y2="102" stroke="#111827" stroke-width="1.1"></line>
+      <text x="78" y="106" font-size="12" text-anchor="end" fill="#4b5563">6</text>
+      <line x1="84" y1="46" x2="90" y2="46" stroke="#111827" stroke-width="1.1"></line>
+      <text x="78" y="50" font-size="12" text-anchor="end" fill="#4b5563">8</text>
+      <text x="212" y="64" font-size="11.5" text-anchor="middle" fill="#4b5563">mêmes utilités : personne n'y perd</text>
+      <polyline points="150,102 275,186 400,130" fill="none" stroke="#4b5563" stroke-width="2" stroke-dasharray="7 5"></polyline>
+      <polyline points="150,102 275,186 400,74" fill="none" stroke="#111827" stroke-width="2.8"></polyline>
+      <circle cx="150" cy="102" r="8" fill="#ffffff" stroke="#4b5563" stroke-width="2"></circle>
+      <circle cx="275" cy="186" r="8" fill="#ffffff" stroke="#4b5563" stroke-width="2"></circle>
+      <circle cx="400" cy="130" r="8" fill="#ffffff" stroke="#4b5563" stroke-width="2"></circle>
+      <circle cx="150" cy="102" r="4.5" fill="#111827"></circle>
+      <circle cx="275" cy="186" r="4.5" fill="#111827"></circle>
+      <circle cx="400" cy="74" r="4.5" fill="#111827"></circle>
+      <line x1="400" y1="120" x2="400" y2="86" stroke="#111827" stroke-width="2" marker-end="url(#q1-fleche-gain)"></line>
+      <text x="414" y="98" font-size="12" fill="#111827" font-weight="bold">+2 pour</text>
+      <text x="414" y="114" font-size="12" fill="#111827" font-weight="bold">l'habitant 3</text>
+      <text x="150" y="292" font-size="12.5" text-anchor="middle" fill="#111827">Habitant 1</text>
+      <text x="275" y="292" font-size="12.5" text-anchor="middle" fill="#111827">Habitant 2</text>
+      <text x="400" y="292" font-size="12.5" text-anchor="middle" fill="#111827">Habitant 3</text>
+      <line x1="100" y1="320" x2="130" y2="320" stroke="#4b5563" stroke-width="2" stroke-dasharray="7 5"></line>
+      <circle cx="115" cy="320" r="6" fill="#ffffff" stroke="#4b5563" stroke-width="2"></circle>
+      <text x="138" y="324" font-size="12" fill="#111827">Projet A (6 ; 3 ; 5)</text>
+      <line x1="280" y1="320" x2="310" y2="320" stroke="#111827" stroke-width="2.8"></line>
+      <circle cx="295" cy="320" r="4.5" fill="#111827"></circle>
+      <text x="318" y="324" font-size="12" fill="#111827">Projet C (6 ; 3 ; 7)</text>
+    </svg>
+    <figcaption>
+      « C domine A », vu comme un dessin. Le profil de C (trait plein) ne passe <em>jamais</em> en
+      dessous de celui de A (trait pointillé) : c'est la condition « personne n'y perd ». Et il
+      passe strictement au-dessus pour l'habitant 3 : c'est la condition « au moins un y gagne ».
+      Une domination se reconnaît donc à l'œil : une courbe entièrement au-dessus ou au niveau de
+      l'autre, qui la dépasse au moins une fois.
+    </figcaption>
+  </figure>
+
+  <h3>La résolution pas à pas — partie b)</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Je passe de la liste des dominations à la liste des projets efficaces</div>
+    <p>
+      <strong>Pourquoi c'est presque déjà fini.</strong> Un projet est efficace s'il n'est dominé
+      par aucun autre. Or je viens d'établir la liste <em>complète</em> des dominations en balayant
+      les six paires : il n'y en a qu'une seule, C domine A. Tout projet autre que A n'est donc
+      dominé par personne.
+    </p>
+    <p>
+      Mais le barème demande de « détailler le raisonnement ». Je reprends donc chaque projet et je
+      dis explicitement pourquoi il est, ou n'est pas, dominé.
+    </p>
+    <table class="compare">
+      <tr>
+        <th>Projet</th>
+        <th class="left">Est-il dominé ? Par qui, ou pourquoi pas</th>
+        <th>Efficace ?</th>
+      </tr>
+      <tr>
+        <td>A (6 ; 3 ; 5)</td>
+        <td class="left">Oui : C fait aussi bien pour les habitants 1 et 2, et strictement mieux
+          pour l'habitant 3.</td>
+        <td><strong>non</strong></td>
+      </tr>
+      <tr>
+        <td>B (4 ; 5 ; 5)</td>
+        <td class="left">Non : A, C et D donnent tous 3 ou 4 à l'habitant 2, contre 5 sous B.
+          Aucun ne peut donc dominer B.</td>
+        <td><strong>oui</strong></td>
+      </tr>
+      <tr>
+        <td>C (6 ; 3 ; 7)</td>
+        <td class="left">Non : A et D donnent 5 à l'habitant 3, contre 7 sous C ; B ne donne que 4
+          à l'habitant 1, contre 6 sous C.</td>
+        <td><strong>oui</strong></td>
+      </tr>
+      <tr>
+        <td>D (5 ; 4 ; 5)</td>
+        <td class="left">Non : A et C feraient perdre l'habitant 2 (3 &lt; 4) et B ferait perdre
+          l'habitant 1 (4 &lt; 5). Détail à l'étape 5.</td>
+        <td><strong>oui</strong></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">5.</span> Le cas de D, en détail, parce que c'est le piège de la question</div>
+    <p>
+      Le projet D est celui qui trouble le plus les étudiants : il n'est le <em>meilleur</em> pour
+      personne. L'habitant 1 préfère A ou C (6 &gt; 5), l'habitant 2 préfère B (5 &gt; 4),
+      l'habitant 3 préfère C (7 &gt; 5). Pourtant, D est efficace. Vérifions-le en testant les
+      trois dominateurs possibles.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ \text{A domine-t-il D ?} \quad u_2(A) = 3 \;&lt;\; 4 = u_2(D) \]
+        <div class="why">l'habitant 2 perdrait en passant de D à A. Une seule perte suffit :
+          <strong>non</strong>, A ne domine pas D. Inutile de regarder les autres lignes.</div>
+      </div>
+      <div class="step">
+        \[ \text{B domine-t-il D ?} \quad u_1(B) = 4 \;&lt;\; 5 = u_1(D) \]
+        <div class="why">l'habitant 1 perdrait en passant de D à B. <strong>Non</strong>, B ne
+          domine pas D.</div>
+      </div>
+      <div class="step">
+        \[ \text{C domine-t-il D ?} \quad u_2(C) = 3 \;&lt;\; 4 = u_2(D) \]
+        <div class="why">l'habitant 2 perdrait en passant de D à C. <strong>Non</strong>, C ne
+          domine pas D — et ce, même si C est meilleur pour les deux autres habitants.</div>
+      </div>
+    </div>
+    <p>
+      Aucun des trois autres projets ne domine D : D est donc <strong>efficace</strong>. La leçon
+      est importante et vaut pour tous les exercices de ce type : pour être efficace, un projet n'a
+      pas besoin d'être le préféré de qui que ce soit. Il lui suffit qu'aucune autre option ne fasse
+      <em>au moins aussi bien pour tout le monde à la fois</em>.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 540 326" width="100%" style="max-width:12cm" role="img" aria-label="Graphe des relations entre les quatre projets : une seule flèche de domination va de C vers A, toutes les autres paires sont incomparables">
+      <defs>
+        <marker id="q1-fleche-domine" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#111827"></path>
+        </marker>
+      </defs>
+      <line x1="140" y1="116" x2="140" y2="206" stroke="#9ca3af" stroke-width="1.6" stroke-dasharray="3 4"></line>
+      <line x1="400" y1="116" x2="400" y2="206" stroke="#9ca3af" stroke-width="1.6" stroke-dasharray="3 4"></line>
+      <line x1="210" y1="247" x2="330" y2="247" stroke="#9ca3af" stroke-width="1.6" stroke-dasharray="3 4"></line>
+      <line x1="212" y1="110" x2="328" y2="212" stroke="#9ca3af" stroke-width="1.6" stroke-dasharray="3 4"></line>
+      <line x1="212" y1="212" x2="328" y2="110" stroke="#9ca3af" stroke-width="1.6" stroke-dasharray="3 4"></line>
+      <rect x="70" y="34" width="140" height="82" fill="#f3f4f6" stroke="#111827" stroke-width="2.4" rx="5"></rect>
+      <text x="140" y="60" font-size="15" text-anchor="middle" fill="#111827" font-weight="bold">Projet A</text>
+      <text x="140" y="82" font-size="13" text-anchor="middle" fill="#111827">(6 ; 3 ; 5)</text>
+      <text x="140" y="104" font-size="11.5" text-anchor="middle" fill="#4b5563">DOMINÉ — pas efficace</text>
+      <rect x="330" y="34" width="140" height="82" fill="#ffffff" stroke="#111827" stroke-width="1.4" rx="5"></rect>
+      <text x="400" y="60" font-size="15" text-anchor="middle" fill="#111827" font-weight="bold">Projet C</text>
+      <text x="400" y="82" font-size="13" text-anchor="middle" fill="#111827">(6 ; 3 ; 7)</text>
+      <text x="400" y="104" font-size="11.5" text-anchor="middle" fill="#4b5563">efficace</text>
+      <rect x="70" y="206" width="140" height="82" fill="#ffffff" stroke="#111827" stroke-width="1.4" rx="5"></rect>
+      <text x="140" y="232" font-size="15" text-anchor="middle" fill="#111827" font-weight="bold">Projet B</text>
+      <text x="140" y="254" font-size="13" text-anchor="middle" fill="#111827">(4 ; 5 ; 5)</text>
+      <text x="140" y="276" font-size="11.5" text-anchor="middle" fill="#4b5563">efficace</text>
+      <rect x="330" y="206" width="140" height="82" fill="#ffffff" stroke="#111827" stroke-width="1.4" rx="5"></rect>
+      <text x="400" y="232" font-size="15" text-anchor="middle" fill="#111827" font-weight="bold">Projet D</text>
+      <text x="400" y="254" font-size="13" text-anchor="middle" fill="#111827">(5 ; 4 ; 5)</text>
+      <text x="400" y="276" font-size="11.5" text-anchor="middle" fill="#4b5563">efficace</text>
+      <line x1="326" y1="66" x2="216" y2="66" stroke="#111827" stroke-width="2.6" marker-end="url(#q1-fleche-domine)"></line>
+      <text x="270" y="52" font-size="12.5" text-anchor="middle" fill="#111827" font-weight="bold">C domine A</text>
+      <text x="270" y="88" font-size="11" text-anchor="middle" fill="#4b5563">(grâce à l'habitant 3)</text>
+      <line x1="70" y1="312" x2="106" y2="312" stroke="#111827" stroke-width="2.6" marker-end="url(#q1-fleche-domine)"></line>
+      <text x="114" y="316" font-size="11.5" fill="#4b5563">flèche pleine : domine</text>
+      <line x1="280" y1="312" x2="316" y2="312" stroke="#9ca3af" stroke-width="1.6" stroke-dasharray="3 4"></line>
+      <text x="324" y="316" font-size="11.5" fill="#4b5563">pointillés : incomparables</text>
+    </svg>
+    <figcaption>
+      La carte complète des six comparaisons. Sur les six paires possibles, cinq relient des
+      projets <em>incomparables</em> (traits pointillés) : chaque fois, un habitant préfère l'un et
+      un autre habitant préfère l'autre. Une seule flèche pleine existe, de C vers A. Un projet est
+      efficace exactement quand aucune flèche ne pointe vers lui : ici B, C et D.
+    </figcaption>
+  </figure>
+
+  <div class="result">
+    <div class="result-title">Résultat — question 1.3</div>
+    <p>
+      <strong>a)</strong> Un seul projet est dominé : <strong>A est dominé par C</strong>, puisque
+      \( 6 \ge 6 \), \( 3 \ge 3 \) et \( 7 &gt; 5 \). Toutes les autres paires font au moins un
+      gagnant <em>et</em> un perdant : elles sont incomparables au sens de Pareto.
+    </p>
+    <p>
+      <strong>b)</strong> Les projets efficaces sont <strong>B, C et D</strong>. Seul A ne l'est
+      pas.
+    </p>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie</div>
+    <p>
+      <strong>a)</strong> On compare les projets deux à deux, habitant par habitant. Le projet A
+      est dominé par le projet C :
+    </p>
+    <p>\[ u_1(C) = 6 \ge 6 = u_1(A) \]</p>
+    <p>\[ u_2(C) = 3 \ge 3 = u_2(A) \]</p>
+    <p>\[ u_3(C) = 7 &gt; 5 = u_3(A) \]</p>
+    <p>
+      Personne ne perd au passage de A à C et l'habitant 3 y gagne strictement : C domine A au sens
+      de Pareto. Aucune autre domination n'existe : toutes les autres paires de projets font au
+      moins un gagnant <em>et</em> un perdant. Par exemple B contre D : l'habitant 1 préfère D
+      (5 &gt; 4) mais l'habitant 2 préfère B (5 &gt; 4) — ils sont incomparables au sens de Pareto.
+    </p>
+    <p>
+      <strong>b)</strong> Un projet est efficace s'il n'est dominé par aucun autre. Les projets
+      efficaces sont donc <strong>B, C et D</strong> ; seul A n'est pas efficace. En particulier D
+      est efficace bien qu'il ne soit le meilleur pour aucun habitant : A et C ne le dominent pas
+      car l'habitant 2 y perdrait (3 &lt; 4), et B ne le domine pas car l'habitant 1 y perdrait
+      (4 &lt; 5).
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les pièges de la question 1.3</div>
+    <p>
+      <strong>Piège n° 1 — croire qu'une majorité suffit.</strong> Dans la paire C–D, deux habitants
+      sur trois préfèrent C. Ça ne fait <em>pas</em> une domination : l'habitant 2 y perd. La
+      domination de Pareto exige l'unanimité, jamais une majorité. C'est justement ce qui la rend si
+      rare — et si peu contestable quand elle existe.
+    </p>
+    <p>
+      <strong>Piège n° 2 — additionner les colonnes.</strong> Les totaux (14, 14, 16, 14) suggèrent
+      « C est le meilleur ». C'est un autre critère, celui de la somme des utilités, qui autorise à
+      compenser la perte de l'un par le gain de l'autre. Pareto refuse cela. Note d'ailleurs que A,
+      B et D ont le même total 14 et que pourtant l'un est dominé et les deux autres non : la somme
+      ne détecte tout simplement pas la domination.
+    </p>
+    <p>
+      <strong>Piège n° 3 — croire que D ne peut pas être efficace.</strong> « D n'est le préféré de
+      personne, donc il ne sert à rien » : faux. Efficace ne veut pas dire « préféré ». Il suffit
+      qu'aucun autre projet ne fasse au moins aussi bien pour <em>tous</em> les habitants à la fois.
+    </p>
+    <p>
+      <strong>Piège n° 4 — croire que Pareto désigne un gagnant.</strong> Le critère laisse ici
+      <em>trois</em> projets efficaces et ne les classe pas entre eux. Il ne dit pas lequel choisir :
+      il dit seulement qu'il ne faut pas choisir A, puisque C fait mieux sans faire de perdant. Pour
+      trancher entre B, C et D, il faudrait un autre critère — et donc un jugement de valeur.
+    </p>
+    <p>
+      <strong>Piège n° 5 — répondre sans vérifier.</strong> Écrire « A est dominé par C » sans les
+      trois inégalités coûte une partie des 5 points de la partie a). Le mot « vérifiez-le » est
+      dans l'énoncé.
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — reconnaître ce type de question</div>
+    <p>
+      <strong>Le signal :</strong> un tableau d'utilités (lignes = individus, colonnes = options) et
+      les mots « dominé », « efficace », « Pareto ».
+    </p>
+    <p><strong>Le réflexe en cinq temps :</strong></p>
+    <ol>
+      <li>Réécris chaque colonne en profil horizontal \( (u_1;\, u_2;\, u_3) \) — moins d'erreurs de
+        lecture.</li>
+      <li>Compte les paires : \( n(n-1)/2 \) pour \( n \) options. Avec 4 options, 6 paires. Écris
+        la liste avant de commencer, pour n'en oublier aucune.</li>
+      <li>Pour chaque paire, parcours les individus. <strong>Dès que</strong> tu vois un individu qui
+        penche d'un côté et un autre qui penche de l'autre, écris « incomparables » et passe à la
+        suite.</li>
+      <li>Note les dominations trouvées, avec la vérification complète (une inégalité par individu,
+        toutes orientées dans le même sens).</li>
+      <li>Conclus : les options efficaces sont celles qui n'apparaissent jamais du côté « dominé ».
+        Justifie aussi celles-là, une par une.</li>
+    </ol>
+    <p>
+      Astuce de contrôle : si tu trouves qu'une option est dominée par deux options différentes, ou
+      qu'une option se domine elle-même, tu as fait une erreur de lecture du tableau. Reprends les
+      profils.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>1.4 — Faut-il abandonner la théorie du choix rationnel ?</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 1.4 (10 points)</div>
+    <p>
+      Un ami vous dit : « Les expériences de laboratoire montrent que les humains violent
+      régulièrement les prédictions de la théorie du choix rationnel. Il faut donc abandonner cette
+      théorie. » Donnez deux arguments, vus au cours, pour lesquels les économistes conservent
+      malgré tout la théorie du choix rationnel.
+    </p>
+  </div>
+
+  <h3>Étape zéro — traduisons la question en français simple</h3>
+
+  <dl class="lexique">
+    <dt>« Les expériences de laboratoire montrent que les humains violent régulièrement les prédictions… »</dt>
+    <dd>
+      Cette partie de la phrase est <strong>vraie</strong>, et tu viens d'en voir un exemple à la
+      question 1.2 avec les gourdes. Ne perds pas de temps à la contester : ce n'est pas ce qu'on te
+      demande.
+    </dd>
+
+    <dt>« Il faut donc abandonner cette théorie. »</dt>
+    <dd>
+      C'est ici que ton ami se trompe. Le mot « donc » masque un saut logique : de « la théorie ne
+      décrit pas parfaitement les comportements », il conclut « la théorie ne sert à rien ». Ces
+      deux choses sont très différentes, et toute ta réponse consiste à expliquer pourquoi.
+    </dd>
+
+    <dt>« Donnez <strong>deux</strong> arguments »</dt>
+    <dd>
+      Deux, pas un, pas quatre. Le barème donne 5 points par argument correct <em>et développé</em>.
+      En donner trois ne rapporte rien de plus et te fait perdre du temps ; en donner un seul te
+      plafonne à 5 sur 10.
+    </dd>
+
+    <dt>« vus au cours »</dt>
+    <dd>
+      On attend les arguments <em>du cours</em>, pas ton opinion personnelle. Le cours en donne
+      exactement trois ; tu en choisis deux. On les détaille juste après.
+    </dd>
+
+    <dt>« pour lesquels les économistes conservent malgré tout la théorie »</dt>
+    <dd>
+      Le sens de ta réponse est fixé : tu dois <strong>défendre</strong> la théorie rationnelle. Ce
+      n'est pas une question ouverte du type « qu'en pensez-vous ? ». Ne construis pas une
+      dissertation à deux colonnes.
+    </dd>
+  </dl>
+
+  <div class="box box-why">
+    <div class="box-title">Où est exactement l'erreur de raisonnement de ton ami ?</div>
+    <p>
+      Ton ami suppose implicitement qu'une théorie n'a qu'un seul métier possible :
+      <em>décrire</em> fidèlement la réalité. Sous cette hypothèse, son raisonnement se tient : si
+      la description est fausse, jetons-la.
+    </p>
+    <p>
+      Mais l'hypothèse est fausse. Une théorie peut aussi servir à dire ce qu'il
+      <em>faudrait</em> faire (elle est alors un guide), ou à fournir un point de comparaison qui
+      rend d'autres phénomènes mesurables (elle est alors une référence). Une théorie qui décrit
+      mal peut donc rester extrêmement utile. C'est exactement le cas ici.
+    </p>
+  </div>
+
+  <h3>Le cours dont tu as besoin</h3>
+
+  <h4>1) Deux métiers différents : prescriptif et descriptif</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — théorie prescriptive (ou normative) et théorie descriptive</div>
+    <p>
+      Une théorie <span class="term">prescriptive</span> (on dit aussi
+      <em>normative</em>) répond à la question : « comment <strong>devrait</strong>-on décider pour
+      servir au mieux ses propres objectifs ? » Elle dit ce qui <em>devrait</em> être.
+    </p>
+    <p>
+      Une théorie <span class="term">descriptive</span> (on dit aussi <em>positive</em>) répond à la
+      question : « comment les gens décident-ils <strong>réellement</strong> ? » Elle dit ce qui
+      <em>est</em>.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple concret — le code de la route</div>
+    <p>
+      Le code de la route est <strong>prescriptif</strong> : il dit à quelle vitesse on
+      <em>devrait</em> rouler. Les statistiques d'excès de vitesse sont
+      <strong>descriptives</strong> : elles disent à quelle vitesse on roule <em>vraiment</em>.
+    </p>
+    <p>
+      Maintenant applique le raisonnement de ton ami au code de la route : « les mesures montrent
+      que les conducteurs violent régulièrement les limitations, il faut donc abandonner le code de
+      la route ». L'absurdité saute aux yeux. Le code n'a jamais prétendu décrire ce que font les
+      gens — il dit ce qu'il faudrait faire. Et c'est précisément parce que les gens s'en écartent
+      qu'il est utile de l'avoir.
+    </p>
+    <p>
+      La théorie du choix rationnel est le code de la route de la décision.
+    </p>
+  </div>
+
+  <p>
+    Le cours résume cette distinction avec une formule de l'économiste Richard Thaler (prix Nobel
+    2017) : la théorie rationnelle décrit les <span class="term">Econs</span> (des
+    <em>homo economicus</em> parfaits, parfaitement cohérents), tandis que la théorie
+    comportementale décrit les <span class="term">Humans</span> — nous, avec nos biais.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left"></th>
+      <th class="left">Théorie rationnelle</th>
+      <th class="left">Théorie comportementale</th>
+    </tr>
+    <tr>
+      <th class="left">Nature</th>
+      <td class="left">prescriptive : comment on <em>devrait</em> choisir</td>
+      <td class="left">descriptive : comment on choisit <em>vraiment</em></td>
+    </tr>
+    <tr>
+      <th class="left">Question posée</th>
+      <td class="left">quelle décision est cohérente avec mes objectifs ?</td>
+      <td class="left">quels écarts systématiques observe-t-on ?</td>
+    </tr>
+    <tr>
+      <th class="left">Décrit les…</th>
+      <td class="left">Econs (<em>homo economicus</em>)</td>
+      <td class="left">Humans (vrais gens)</td>
+    </tr>
+    <tr>
+      <th class="left">Sert à…</th>
+      <td class="left">guider les décisions importantes</td>
+      <td class="left">prédire et corriger les erreurs</td>
+    </tr>
+  </table>
+
+  <p>
+    Conclusion à retenir : les deux théories ne se disputent pas le même poste. Elles sont
+    <strong>complémentaires</strong>, pas concurrentes. On a besoin des deux.
+  </p>
+
+  <h4>2) Ce qu'est un <em>benchmark</em> (un point de repère)</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — benchmark</div>
+    <p>
+      Un <span class="term">benchmark</span> (mot anglais qu'on peut traduire par « point de
+      repère » ou « référence ») est une valeur de référence par rapport à laquelle on mesure tout
+      le reste. Sans elle, on peut constater des choses, mais on ne peut pas les
+      <strong>mesurer</strong>.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple concret — la balance de la salle de bain</div>
+    <p>
+      Quand tu montes sur une balance, l'aiguille doit d'abord être sur zéro. Ce zéro ne décrit
+      rien du tout : personne ne pèse zéro kilo. Il est pourtant indispensable, parce que c'est
+      <em>par rapport à lui</em> que la balance mesure ton poids. Enlève le zéro, et le chiffre
+      affiché n'a plus aucun sens.
+    </p>
+    <p>
+      La théorie rationnelle joue ce rôle de zéro. Elle ne décrit personne parfaitement, mais c'est
+      elle qui donne un sens aux chiffres de l'économie comportementale.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 560 276" width="100%" style="max-width:12cm" role="img" aria-label="Deux panneaux : avec la théorie rationnelle, l'écart entre la norme et le comportement observé est mesurable ; sans elle, l'écart n'a plus de référence">
+      <defs>
+        <marker id="q1-fl-d" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="#111827"></path>
+        </marker>
+        <marker id="q1-fl-g" markerWidth="9" markerHeight="9" refX="1" refY="4.5" orient="auto">
+          <path d="M9,0 L0,4.5 L9,9 z" fill="#111827"></path>
+        </marker>
+      </defs>
+      <text x="145" y="30" font-size="12.5" text-anchor="middle" fill="#111827" font-weight="bold">Avec la théorie rationnelle</text>
+      <text x="415" y="30" font-size="12.5" text-anchor="middle" fill="#111827" font-weight="bold">Sans elle</text>
+      <rect x="20" y="42" width="250" height="200" fill="#ffffff" stroke="#111827" stroke-width="1.4" rx="5"></rect>
+      <rect x="290" y="42" width="250" height="200" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.4" stroke-dasharray="6 4" rx="5"></rect>
+      <line x1="45" y1="190" x2="250" y2="190" stroke="#111827" stroke-width="1.4"></line>
+      <text x="95" y="76" font-size="11.5" text-anchor="middle" fill="#111827">prédiction</text>
+      <text x="95" y="90" font-size="11.5" text-anchor="middle" fill="#111827">rationnelle</text>
+      <line x1="95" y1="100" x2="95" y2="200" stroke="#111827" stroke-width="2.6"></line>
+      <circle cx="222" cy="190" r="6.5" fill="#111827"></circle>
+      <text x="222" y="214" font-size="11.5" text-anchor="middle" fill="#111827">observé</text>
+      <line x1="95" y1="150" x2="222" y2="150" stroke="#111827" stroke-width="1.8" marker-end="url(#q1-fl-d)" marker-start="url(#q1-fl-g)"></line>
+      <text x="158" y="140" font-size="11.5" text-anchor="middle" fill="#111827" font-weight="bold">biais mesurable</text>
+      <line x1="315" y1="190" x2="520" y2="190" stroke="#111827" stroke-width="1.4"></line>
+      <text x="365" y="88" font-size="20" text-anchor="middle" fill="#4b5563" font-weight="bold">?</text>
+      <line x1="365" y1="100" x2="365" y2="200" stroke="#9ca3af" stroke-width="2" stroke-dasharray="5 4"></line>
+      <circle cx="492" cy="190" r="6.5" fill="#111827"></circle>
+      <text x="492" y="214" font-size="11.5" text-anchor="middle" fill="#111827">observé</text>
+      <line x1="365" y1="162" x2="492" y2="162" stroke="#9ca3af" stroke-width="1.6" stroke-dasharray="5 4"></line>
+      <text x="428" y="134" font-size="11.5" text-anchor="middle" fill="#4b5563">écart par rapport</text>
+      <text x="428" y="150" font-size="11.5" text-anchor="middle" fill="#4b5563">à quoi ?</text>
+      <text x="280" y="266" font-size="12" text-anchor="middle" fill="#111827">Un biais n'existe que par rapport à une norme : supprime la norme, le biais disparaît.</text>
+    </svg>
+    <figcaption>
+      L'argument du <em>benchmark</em> en une image. À gauche, la théorie rationnelle fournit le
+      trait plein : l'écart entre elle et le comportement observé est le biais, et il est
+      chiffrable (8 € contre 4 €, par exemple). À droite, on a jeté la théorie : il reste un point
+      d'observation, mais plus aucune référence par rapport à laquelle mesurer quoi que ce soit. La
+      théorie comportementale a donc besoin de la théorie rationnelle pour exister.
+    </figcaption>
+  </figure>
+
+  <h3>Les trois arguments du cours (tu en choisis deux)</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Argument 1 — c'est un guide normatif</div>
+    <p>
+      La théorie rationnelle est <em>prescriptive</em> : elle décrit ce qu'un décideur
+      <strong>devrait</strong> faire pour servir au mieux ses propres objectifs. Elle ne prétend
+      donc pas être une photographie des comportements humains, et lui reprocher de ne pas l'être
+      revient à se tromper de cible.
+    </p>
+    <p>
+      Mieux : c'est justement parce qu'on connaît ses biais qu'on peut s'en protéger, en revenant
+      délibérément aux principes rationnels quand l'enjeu est important. Avant de signer un crédit
+      immobilier ou de choisir une assurance, on a tout intérêt à raisonner comme un Econ. La
+      théorie reste la référence à viser, même — et surtout — si les humains s'en écartent
+      spontanément.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Argument 2 — c'est le point de comparaison indispensable</div>
+    <p>
+      Les biais comportementaux se définissent <em>précisément</em> comme des
+      <strong>déviations par rapport à</strong> la théorie rationnelle. Reprends la définition du
+      mot « biais » vue en 1.2 : « un écart systématique par rapport à ce que prédit la théorie du
+      choix rationnel ». Le mot « écart » suppose une référence.
+    </p>
+    <p>
+      Sans cette référence, on ne pourrait ni <em>identifier</em> les biais (comment savoir qu'un
+      comportement est anormal si l'on n'a pas de norme ?), ni les <em>mesurer</em> (l'effet de
+      dotation vaut 4 € dans notre expérience — 4 € d'écart par rapport à quoi, sinon à l'égalité
+      DAA = DAP ?).
+    </p>
+    <p>
+      Autrement dit, la théorie comportementale a <strong>besoin</strong> de la théorie rationnelle
+      pour exister. Abandonner la seconde reviendrait à scier la branche sur laquelle la première
+      est assise. C'est le plus fort des trois arguments, et tu viens de l'utiliser sans le savoir
+      à la question 1.2.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Argument 3 — c'est souvent une bonne approximation</div>
+    <p>
+      Enfin, l'ampleur des déviations ne doit pas être exagérée. Dans énormément de situations
+      courantes — décisions familières, répétées, à enjeux importants — les comportements observés
+      restent très proches des prédictions rationnelles. Les Humans se comportent souvent presque
+      comme des Econs.
+    </p>
+    <p>
+      Le modèle rationnel demeure donc une bonne <strong>première approximation</strong> de la
+      réalité : il est simple, il se manipule mathématiquement, et il prédit correctement la
+      plupart du temps. En sciences, on ne jette pas un modèle simple et globalement juste tant
+      qu'on n'a pas mieux à mettre à la place.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Comment rédiger : deux arguments, développés</div>
+    <p>
+      Le barème est explicite : <strong>5 points par argument correct et développé</strong>, et un
+      simple mot-clé (« benchmark ! ») ne rapporte que 2 points. Un argument « développé », concrètement,
+      c'est trois phrases :
+    </p>
+    <ol>
+      <li>le nom de l'argument (« la théorie est un guide normatif ») ;</li>
+      <li>l'explication de ce que cela veut dire (« elle est prescriptive : elle dit ce qu'on
+        devrait faire, pas ce qu'on fait ») ;</li>
+      <li>la conséquence pour la question posée (« lui reprocher de mal décrire les Humans est donc
+        hors sujet : elle ne vise pas cela »).</li>
+    </ol>
+    <p>
+      Choisis les deux arguments avec lesquels tu es le plus à l'aise. Les arguments 1 et 2 sont les
+      plus faciles à développer, parce qu'ils s'appuient chacun sur une distinction nette
+      (prescriptif/descriptif d'un côté, norme/écart de l'autre).
+    </p>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat — question 1.4</div>
+    <p>
+      Deux arguments parmi les trois du cours : <strong>(1)</strong> la théorie rationnelle est un
+      <strong>guide normatif</strong> — elle dit ce qu'on <em>devrait</em> faire, donc ne pas
+      décrire fidèlement les comportements n'est pas un défaut ; <strong>(2)</strong> elle est le
+      <strong>benchmark</strong> sans lequel le mot « biais » (= écart à une norme) n'aurait aucun
+      sens ; <strong>(3)</strong> elle reste une <strong>bonne approximation</strong> des
+      comportements dans de très nombreuses situations.
+    </p>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie</div>
+    <p>
+      <strong>Premier argument : la théorie rationnelle est un guide normatif (prescriptif).</strong>
+      Elle décrit ce qu'un décideur <em>devrait</em> faire pour servir au mieux ses propres
+      objectifs, et non ce que les gens font réellement. Lui reprocher de mal décrire les
+      comportements observés revient donc à se tromper de cible. Au contraire, connaître ses biais
+      permet justement de s'en protéger en revenant aux principes rationnels lorsque l'enjeu est
+      important : la théorie reste la référence à viser, même si les humains s'en écartent.
+    </p>
+    <p>
+      <strong>Deuxième argument : elle est le point de comparaison indispensable
+      (le benchmark).</strong> Les biais comportementaux se définissent précisément comme des
+      <em>déviations par rapport à</em> la théorie rationnelle. Sans ce point de référence, on ne
+      pourrait ni les identifier, ni les mesurer : dire que la DAA dépasse la DAP de 4 € n'a de sens
+      que parce que la théorie prédit l'égalité. La théorie comportementale a donc besoin de la
+      théorie rationnelle pour exister ; l'abandonner reviendrait à se priver de toute norme de
+      comparaison.
+    </p>
+    <p>
+      <em>(Troisième argument possible, si l'on préfère : dans les décisions familières, répétées ou
+      à enjeux importants, les comportements observés restent très proches des prédictions
+      rationnelles ; le modèle rationnel demeure une bonne première approximation de la réalité.)</em>
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les pièges de la question 1.4</div>
+    <p>
+      <strong>Piège n° 1 — se contenter de mots-clés.</strong> Écrire « guide » et « benchmark »
+      sans une ligne d'explication rapporte 2 points par argument au lieu de 5. C'est la perte de
+      points la plus fréquente de toute la question 1.
+    </p>
+    <p>
+      <strong>Piège n° 2 — donner trois arguments (ou cinq).</strong> L'énoncé en demande deux. Les
+      suivants ne rapportent rien et consomment un temps précieux que la question 3 réclamera.
+    </p>
+    <p>
+      <strong>Piège n° 3 — nier les expériences.</strong> Répondre « les expériences de laboratoire
+      ne sont pas fiables, les étudiants ne sont pas représentatifs » n'est pas un argument du
+      cours. On ne conteste pas les faits : on explique pourquoi la théorie reste utile
+      <em>malgré</em> eux.
+    </p>
+    <p>
+      <strong>Piège n° 4 — confondre les deux premiers arguments.</strong> Ils se ressemblent, mais
+      ils ne disent pas la même chose. Le premier porte sur l'usage <em>pratique</em> de la théorie
+      (elle m'aide à mieux décider). Le second porte sur son usage <em>scientifique</em> (elle rend
+      les biais mesurables). Si tu les donnes tous les deux, marque bien la différence, sinon le
+      correcteur ne comptera qu'un seul argument.
+    </p>
+    <p>
+      <strong>Piège n° 5 — présenter les deux théories comme rivales.</strong> Le cours insiste :
+      elles sont <em>complémentaires</em>. La rationnelle dit ce qui devrait être, la
+      comportementale dit ce qui est et de combien on s'en écarte.
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — reconnaître ce type de question</div>
+    <p>
+      <strong>Le signal :</strong> une citation entre guillemets, attribuée à un ami, un journaliste
+      ou un « collègue », qui tire une conclusion excessive d'un fait exact. On te demande de
+      répondre avec des arguments « vus au cours ».
+    </p>
+    <p><strong>Le réflexe en quatre temps :</strong></p>
+    <ol>
+      <li>Repère la partie <em>vraie</em> de la citation (ici : oui, les humains dévient) et
+        accorde-la explicitement. Ça montre que tu as compris et ça désamorce le débat.</li>
+      <li>Repère le <em>saut logique</em> (ici : « dévier des prédictions » ⟹ « la théorie est
+        inutile »). C'est là que se trouve l'erreur.</li>
+      <li>Compte les arguments demandés et n'en donne pas un de plus.</li>
+      <li>Développe chacun en trois phrases : nom, explication, conséquence pour la question.</li>
+    </ol>
+  </div>
+
+  <hr class="soft">
+
+  <h2>Récapitulatif du chapitre 1</h2>
+
+  <p>
+    Voici, sur une page, tout ce qu'il fallait produire. Si tu peux reconstituer ce tableau de
+    mémoire, la question 1 ne peut plus te surprendre.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th>Sous-question</th>
+      <th class="left">Réponse attendue</th>
+      <th class="left">La phrase-clé de la justification</th>
+    </tr>
+    <tr>
+      <td><strong>1.1</strong></td>
+      <td class="left">\( (3;\, 3;\, 2) \) — ou toute allocation de total ≤ 8 qui ne fait perdre
+        personne et fait gagner au moins un</td>
+      <td class="left">Elle domine car 3 &gt; 2 et personne ne perd ; elle n'est pas efficace car
+        elle ne distribue que 8 parts sur 9, donc \( (4;\, 3;\, 2) \) la domine.</td>
+    </tr>
+    <tr>
+      <td><strong>1.2</strong></td>
+      <td class="left">L'<strong>effet de dotation</strong></td>
+      <td class="left">La théorie prédit DAA = DAP (la possession est non-pertinente) ; la
+        distribution au hasard garantit des groupes comparables ; on observe 8 € contre 4 €.</td>
+    </tr>
+    <tr>
+      <td><strong>1.3 a)</strong></td>
+      <td class="left"><strong>A est dominé par C</strong></td>
+      <td class="left">\( 6 \ge 6 \), \( 3 \ge 3 \), \( 7 &gt; 5 \) : personne ne perd, l'habitant 3
+        gagne strictement.</td>
+    </tr>
+    <tr>
+      <td><strong>1.3 b)</strong></td>
+      <td class="left">Efficaces : <strong>B, C et D</strong></td>
+      <td class="left">Aucun autre projet ne les domine — D compris, bien qu'il ne soit le meilleur
+        pour personne.</td>
+    </tr>
+    <tr>
+      <td><strong>1.4</strong></td>
+      <td class="left">Deux arguments parmi trois</td>
+      <td class="left">Guide normatif (prescriptif) · benchmark sans lequel « biais » n'a pas de
+        sens · bonne approximation dans la plupart des situations.</td>
+    </tr>
+  </table>
+
+  <h3>Les huit définitions à savoir réciter</h3>
+
+  <p>
+    Le lexique complet du document se trouve en fin d'ouvrage. Voici le strict minimum vital pour
+    la question 1 : si tu sais énoncer ces huit définitions sans hésiter, tu as les points.
+  </p>
+
+  <dl class="lexique">
+    <dt>Allocation faisable</dt>
+    <dd>Répartition qu'on peut réellement mettre en œuvre : ici \( x_1+x_2+x_3 \le 9 \), avec des
+      parts positives ou nulles.</dd>
+
+    <dt>Monotonie des préférences</dt>
+    <dd>« Plus, c'est toujours mieux ». Conséquence directe : une allocation qui laisse des
+      ressources non distribuées ne peut jamais être efficace.</dd>
+
+    <dt>Domination au sens de Pareto</dt>
+    <dd>\( x \) domine \( y \) si \( U_i(x) \ge U_i(y) \) pour tout \( i \) et
+      \( U_j(x) &gt; U_j(y) \) pour au moins un \( j \). En français : personne n'y perd, au moins
+      un y gagne. Deux allocations dont aucune ne domine l'autre sont dites
+      <em>incomparables</em>.</dd>
+
+    <dt>Efficacité au sens de Pareto</dt>
+    <dd>Aucune allocation faisable ne la domine : impossible d'améliorer quelqu'un sans nuire à
+      quelqu'un. <strong>Efficace ≠ juste ≠ égalitaire.</strong></dd>
+
+    <dt>DAP et DAA</dt>
+    <dd>Disposition à payer : montant maximal pour <em>acquérir</em> un bien qu'on n'a pas.
+      Disposition à accepter : montant minimal pour <em>céder</em> un bien qu'on possède.</dd>
+
+    <dt>Variable non-pertinente</dt>
+    <dd>Information qui ne change rien aux conséquences réelles d'un choix. Une décision
+      rationnelle n'en tient jamais compte. Un <em>biais</em> est un écart systématique et
+      prévisible par rapport à cette exigence.</dd>
+
+    <dt>Effet de dotation</dt>
+    <dd>Biais qui fait qu'on exige plus pour vendre un bien qu'on n'accepterait de payer pour
+      l'acheter (\( \text{DAA} &gt; \text{DAP} \)), alors que la théorie exige l'égalité. Mécanisme :
+      l'aversion aux pertes.</dd>
+
+    <dt>Prescriptif vs descriptif</dt>
+    <dd>La théorie rationnelle dit ce qu'on <em>devrait</em> faire (Econs) ; la théorie
+      comportementale dit ce qu'on fait <em>vraiment</em> (Humans). Elles sont complémentaires, et
+      la première sert de <em>benchmark</em> à la seconde.</dd>
+  </dl>
+
+  <div class="box box-methode">
+    <div class="box-title">Les quatre réflexes à emporter en examen</div>
+    <ol>
+      <li>
+        <strong>Écris la définition avant de regarder les chiffres.</strong> Sur une question de
+        concepts, la définition exacte vaut à elle seule une bonne partie des points, et elle te
+        dit ensuite quoi vérifier.
+      </li>
+      <li>
+        <strong>Vérifie individu par individu, jamais en total ni en moyenne.</strong> La
+        domination de Pareto exige l'unanimité. Un seul perdant suffit à la détruire ; une majorité
+        ne suffit pas à la créer.
+      </li>
+      <li>
+        <strong>Pour prouver qu'une propriété est fausse, exhibe un contre-exemple.</strong> « Cette
+        allocation n'est pas efficace » se prouve en nommant explicitement une allocation qui la
+        domine.
+      </li>
+      <li>
+        <strong>Un biais se raconte toujours dans le même ordre :</strong> d'abord la prédiction
+        rationnelle et sa justification, ensuite l'observation qui s'en écarte, enfin le nom du
+        biais. Jamais l'inverse.
+      </li>
+    </ol>
+  </div>
+</section>

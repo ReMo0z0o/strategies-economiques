@@ -1,0 +1,1924 @@
+<section class="chapter">
+  <div class="chapter-tag">Chapitre 0 · Le socle — à lire en premier</div>
+  <h1>La boîte à outils : tout ce qu'il faut savoir avant de commencer</h1>
+  <p class="chapter-intro">
+    Ce chapitre ne traite aucune question de l'examen. Il installe le vocabulaire, les
+    notations et les quelques outils mathématiques dont les cinq chapitres suivants auront
+    besoin. On part vraiment de zéro : aucune connaissance du cours n'est supposée, et les
+    maths sont reprises depuis les fractions. Prends ton temps ici — chaque heure passée sur
+    ce chapitre t'en fera gagner trois sur les suivants.
+  </p>
+
+  <p>
+    Avant tout, une bonne nouvelle. Cet examen n'exige <em>aucune</em> mathématique
+    compliquée. Tout ce qu'il te faut tient en cinq outils : savoir manipuler des
+    fractions et des pourcentages, savoir extraire une racine carrée, savoir résoudre une
+    équation, savoir dériver une fonction toute simple, et savoir calculer une moyenne
+    pondérée. C'est tout. Le reste, c'est du raisonnement et du vocabulaire — et le
+    vocabulaire, ça s'apprend.
+  </p>
+  <p>
+    La difficulté réelle de ce cours n'est donc pas le calcul, c'est de comprendre
+    <em>ce qu'on cherche</em>. Ce chapitre 0 sert exactement à ça : te donner la carte avant
+    le voyage.
+  </p>
+
+  <hr class="soft">
+
+  <h2>1. Comment lire ce document, et comment lire un énoncé</h2>
+
+  <h3>1.1 Les encadrés : à quoi sert chaque couleur</h3>
+
+  <p>
+    Tout au long du document, tu vas croiser des encadrés de couleurs différentes. Ils ne
+    sont pas décoratifs : chaque couleur a un rôle précis. Voici la clé de lecture.
+  </p>
+
+  <ul>
+    <li><strong>Définition (bleu)</strong> — le sens exact d'un mot du cours. À connaître par cœur.</li>
+    <li><strong>Pourquoi (orange)</strong> — la raison d'être d'une formule. À comprendre, pas à mémoriser.</li>
+    <li><strong>Piège (rouge)</strong> — l'erreur que tout le monde fait. À relire la veille de l'examen.</li>
+    <li><strong>Méthode (turquoise)</strong> — une recette réutilisable. À appliquer mécaniquement le jour J.</li>
+    <li><strong>Copie (vert)</strong> — ce qu'il fallait écrire sur la feuille. Le modèle à imiter.</li>
+    <li><strong>Rappel (ciel)</strong> — un point déjà vu qu'on remobilise. Si tu l'as compris, saute-le.</li>
+    <li><strong>Exemple (violet)</strong> — un cas concret et chiffré. Refais-le seul avant de lire la suite.</li>
+  </ul>
+
+  <h3>1.2 Décoder les verbes de consigne</h3>
+
+  <p>
+    Un énoncé d'examen est écrit dans une langue très codée. Chaque verbe de consigne
+    correspond à un <em>type de réponse attendu</em> et, très concrètement, à un
+    <em>nombre de lignes à écrire</em>. Confondre deux verbes, c'est perdre des points même
+    quand on connaît la matière. Voici le décodeur complet pour cet examen.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left">Le verbe</th>
+      <th class="left">Ce qu'on te demande vraiment</th>
+      <th class="left">Ce que tu dois écrire</th>
+    </tr>
+    <tr>
+      <td class="left"><strong>Calculez</strong></td>
+      <td class="left">Un nombre, obtenu par un calcul</td>
+      <td class="left">La formule, puis les nombres remplacés, puis le résultat avec son unité</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Déterminez</strong></td>
+      <td class="left">Une valeur qu'il faut d'abord <em>trouver</em> (souvent par optimisation)</td>
+      <td class="left">Le raisonnement qui mène à l'équation, l'équation, sa résolution, le résultat</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Montrez que</strong></td>
+      <td class="left">On te donne déjà la conclusion : il faut la <em>prouver</em></td>
+      <td class="left">Une chaîne d'arguments qui aboutit exactement à l'énoncé donné</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Identifiez</strong></td>
+      <td class="left">Repérer un objet dans une liste (une stratégie, un projet, un équilibre)</td>
+      <td class="left">Le nom de l'objet <em>et</em> la vérification qui prouve que c'est le bon</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Justifiez</strong></td>
+      <td class="left">Donner la raison, pas seulement l'affirmation</td>
+      <td class="left">Un « parce que… » explicite, appuyé sur une définition ou une inégalité</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Interprétez</strong></td>
+      <td class="left">Traduire un nombre ou une formule en français, en langage économique</td>
+      <td class="left">Deux à quatre phrases, sans calcul, qui disent « ce nombre signifie que… »</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Détaillez votre raisonnement</strong></td>
+      <td class="left">Le chemin compte autant que la destination</td>
+      <td class="left">Toutes les étapes intermédiaires, numérotées ou séparées</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Sans refaire de calcul</strong></td>
+      <td class="left">On veut voir que tu as compris le mécanisme</td>
+      <td class="left">Un argument qualitatif : « puisque tel paramètre augmente, alors… »</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Le cas échéant</strong></td>
+      <td class="left">« Si c'est le cas » — la réponse « il n'y en a pas » est permise</td>
+      <td class="left">Soit l'objet demandé, soit la démonstration qu'il n'existe pas</td>
+    </tr>
+  </table>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — « Montrez que » n'est pas « Calculez »</div>
+    <p>
+      Quand l'énoncé dit « <em>Montrez que ce jeu n'admet aucun équilibre en stratégies
+      pures</em> », la réponse « il n'y en a pas » vaut zéro point. On te demande la
+      <em>preuve</em> : il faut passer en revue les quatre cases et montrer que dans chacune,
+      au moins un joueur veut changer d'avis. La conclusion t'est offerte ; ce sont les
+      arguments qui rapportent les points.
+    </p>
+  </div>
+
+  <h3>1.3 Lire un énoncé : la méthode en quatre passages</h3>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — comment attaquer un énoncé de zéro</div>
+    <p>Ne lis jamais un énoncé une seule fois. Lis-le quatre fois, avec un objectif différent à chaque passage.</p>
+    <ol>
+      <li>
+        <strong>Passage 1 — l'histoire.</strong> Lis sans crayon. Qui sont les personnages ?
+        Que veulent-ils ? Qu'est-ce qui est incertain ? Tu dois pouvoir raconter la situation
+        à voix haute en trois phrases.
+      </li>
+      <li>
+        <strong>Passage 2 — les données.</strong> Reprends crayon en main et
+        <em>entoure chaque nombre et chaque lettre</em>. Écris-les en colonne sur ton brouillon,
+        avec leur signification à côté. Exemple : « 10 000 € = richesse totale », « 1/4 =
+        probabilité de vol », « \( u(w)=\sqrt{w} \) = fonction d'utilité ».
+      </li>
+      <li>
+        <strong>Passage 3 — l'inconnue.</strong> Souligne <em>ce qu'on te demande</em>.
+        Écris-le noir sur blanc : « je cherche \( C^* \) », « je cherche la condition sur
+        \( \delta \) ». Tant que tu ne sais pas ce que tu cherches, ne calcule rien.
+      </li>
+      <li>
+        <strong>Passage 4 — le pont.</strong> Demande-toi quelle formule du cours relie
+        <em>les données</em> à <em>l'inconnue</em>. C'est la seule vraie question de tout
+        l'exercice. Le calcul qui suit n'est plus qu'une formalité.
+      </li>
+    </ol>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — la méthode appliquée en 30 secondes</div>
+    <p>
+      Énoncé : « <em>Une livreuse possède 10 000 € d'actifs : 3 600 € d'épargne et un vélo de
+      6 400 €. \( u(w)=\sqrt{w} \). Le vélo a une probabilité 1/4 d'être volé. Calculez la
+      valeur monétaire attendue.</em> »
+    </p>
+    <p><strong>Passage 1 :</strong> une femme risque de perdre son vélo. <strong>Passage 2 :</strong>
+    richesse si tout va bien = 10 000 ; richesse si vol = 10 000 − 6 400 = 3 600 ;
+    probabilité de vol = 1/4 ; donc probabilité de non-vol = 3/4.
+    <strong>Passage 3 :</strong> je cherche une moyenne de richesses.
+    <strong>Passage 4 :</strong> la formule qui relie « des montants + des probabilités » à
+    « une moyenne », c'est l'espérance. Il ne reste plus qu'à écrire
+    \( \tfrac{3}{4}\times 10\,000 + \tfrac{1}{4}\times 3\,600 \).</p>
+  </div>
+
+  <h3>1.4 Ce qu'un correcteur attend</h3>
+
+  <p>
+    Un correcteur ne lit pas ta copie pour se faire plaisir : il coche des cases sur un
+    barème. Chaque question vaut un certain nombre de points, et ces points sont
+    <em>découpés</em> en morceaux. Typiquement, dans cet examen, une question à 10 points est
+    découpée en trois ou quatre morceaux : la formule correcte, l'application numérique
+    correcte, l'interprétation correcte.
+  </p>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi il faut écrire la formule avant de calculer</div>
+    <p>
+      Parce que la formule vaut des points <em>à elle seule</em>. Si tu écris directement
+      « 8 400 » et que le résultat est faux, tu as zéro. Si tu écris
+      \( \mathrm{VMA} = \tfrac{3}{4}\times 10\,000 + \tfrac{1}{4}\times 3\,600 \) puis que tu
+      te trompes en additionnant, tu gardes les points de la formule. Écrire la formule ne
+      coûte que dix secondes et c'est l'assurance-vie la plus rentable de l'examen.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — les cinq façons de perdre des points bêtement</div>
+    <ol>
+      <li><strong>Donner un nombre sans unité.</strong> « 8 400 » n'est pas une réponse ; « 8 400 euros » en est une.</li>
+      <li><strong>Répondre « oui » ou « non » sans justifier.</strong> Le mot « oui » ne vaut jamais de point.</li>
+      <li><strong>Oublier d'interpréter quand on le demande.</strong> « Interprétez » représente souvent 3 points sur 10 : c'est le tiers de la question, et il ne demande aucun calcul.</li>
+      <li><strong>Sauter les étapes.</strong> Quand l'énoncé dit « détaillez », deux lignes de calcul ne peuvent pas valoir 14 points.</li>
+      <li><strong>Ajouter des affirmations fausses « au cas où ».</strong> Une erreur ajoutée à une bonne réponse peut coûter des points. Écris ce dont tu es sûr, et arrête-toi.</li>
+    </ol>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire — le squelette d'une bonne réponse</div>
+    <p>
+      Une réponse complète tient presque toujours en quatre lignes de cette forme :
+    </p>
+    <ol>
+      <li><em>Je pose le cadre.</em> « Il y a deux scénarios : vol (probabilité 1/4) et pas de vol (probabilité 3/4). »</li>
+      <li><em>J'écris la formule générale.</em> « \( \mathrm{VMA} = \pi\,w_{\text{vol}} + (1-\pi)\,w_{\text{pas de vol}} \). »</li>
+      <li><em>Je remplace et je calcule.</em> « \( = \tfrac14 \times 3\,600 + \tfrac34 \times 10\,000 = 900 + 7\,500 = 8\,400 \). »</li>
+      <li><em>Je conclus en français.</em> « La VMA des actifs vaut 8 400 euros. »</li>
+    </ol>
+  </div>
+
+  <hr class="soft">
+
+  <h2>2. Le vocabulaire de base</h2>
+
+  <p>
+    L'économie utilise des mots ordinaires dans un sens très particulier. C'est la source
+    numéro un des malentendus. Cette section fixe le sens exact de chaque mot que tu
+    croiseras dans l'examen.
+  </p>
+
+  <h3>2.1 Agent, joueur, décideur</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — un agent</div>
+    <p>
+      Un <span class="term">agent</span> (on dit aussi un <span class="term">décideur</span>)
+      est simplement <em>quelqu'un qui doit choisir</em>. Ce peut être une personne, un
+      ménage, une entreprise, un État. Dans cet examen, les agents sont : une livreuse, deux
+      chaînes de magasins, un pirate informatique, une responsable de la sécurité, une
+      propriétaire d'entreprise, une directrice commerciale, deux pizzerias.
+    </p>
+    <p>
+      Quand plusieurs agents interagissent et que le résultat de chacun dépend aussi
+      de ce que font les autres, on les appelle des <span class="term">joueurs</span> et
+      la situation s'appelle un <span class="term">jeu</span>. « Joueur » et « agent »
+      désignent la même chose ; le mot change juste selon le contexte.
+    </p>
+  </div>
+
+  <h3>2.2 « Rationnel » : le mot le plus mal compris du cours</h3>
+
+  <p>
+    Dans la langue courante, « rationnel » veut dire intelligent, froid, calculateur.
+    <strong>En économie, ça ne veut absolument pas dire ça.</strong>
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — un agent rationnel</div>
+    <p>
+      Un agent est <span class="term">rationnel</span> si ses préférences sont
+      <em>cohérentes</em>, et s'il choisit ensuite l'option qu'il préfère parmi celles qui
+      lui sont accessibles. « Cohérentes » a un sens technique précis : quatre propriétés.
+    </p>
+    <ol>
+      <li>
+        <strong>Complétude</strong> — face à deux options, l'agent sait toujours dire laquelle
+        il préfère (ou qu'il les aime autant). Jamais de « je ne sais pas ».
+      </li>
+      <li>
+        <strong>Transitivité</strong> — s'il préfère A à B et B à C, alors il préfère A à C.
+        Ses préférences ne tournent pas en rond.
+      </li>
+      <li>
+        <strong>Monotonie</strong> — plus, c'est mieux. Davantage de gâteau, d'argent ou de
+        profit est toujours préféré à moins.
+      </li>
+      <li>
+        <strong>Continuité</strong> — deux options très proches sont jugées presque
+        équivalentes. Pas de saut brutal.
+      </li>
+    </ol>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — rationnel ≠ intelligent, ≠ égoïste, ≠ obsédé par l'argent</div>
+    <p>
+      Quelqu'un qui adore les choux de Bruxelles, qui donne tout son salaire à une
+      association, ou qui préfère dormir plutôt que gagner de l'argent est
+      <strong>parfaitement rationnel</strong> — tant que ses choix se tiennent entre eux. La
+      rationalité porte sur la <em>cohérence</em> des choix, jamais sur leur <em>contenu</em>.
+    </p>
+    <p>
+      À l'inverse, quelqu'un qui préfère le café au thé, le thé au chocolat, mais le chocolat
+      au café, est irrationnel : ses préférences tournent en rond. Un commerçant malin
+      pourrait lui faire échanger indéfiniment ses boissons en lui faisant payer à chaque
+      fois, et le ruiner. C'est exactement pour ça que la théorie exige la transitivité.
+    </p>
+  </div>
+
+  <h3>2.3 Préférences : trois symboles à connaître</h3>
+
+  <p>
+    Comparer deux options \( x \) et \( y \), c'est se retrouver dans l'une des trois
+    situations suivantes. Chacune a son symbole.
+  </p>
+
+  <table class="compare">
+    <tr><th>Symbole</th><th class="left">Comment le lire à voix haute</th><th class="left">Ce que ça veut dire</th></tr>
+    <tr>
+      <td>\( x \succ y \)</td>
+      <td class="left">« x est strictement préféré à y »</td>
+      <td class="left">Entre les deux, l'agent prend x sans hésiter</td>
+    </tr>
+    <tr>
+      <td>\( x \sim y \)</td>
+      <td class="left">« x est indifférent à y »</td>
+      <td class="left">Les deux options lui procurent exactement la même satisfaction</td>
+    </tr>
+    <tr>
+      <td>\( x \succsim y \)</td>
+      <td class="left">« x est au moins aussi bien que y »</td>
+      <td class="left">Soit il préfère x, soit il est indifférent — c'est « ou »</td>
+    </tr>
+  </table>
+
+  <p>
+    Retiens l'astuce visuelle : \( \succ \) est un « plus grand que » \( &gt; \) pour la
+    satisfaction, et la pointe vise toujours l'option <em>la moins bonne</em>. Le
+    \( \sim \) (vague) évoque l'égalité. Et \( \succsim \) est le \( \ge \) des préférences.
+  </p>
+
+  <h3>2.4 L'utilité : un numéro de classement, rien d'autre</h3>
+
+  <p>
+    Travailler avec des symboles de préférence est pénible. L'astuce de l'économie est de
+    traduire les préférences en <em>nombres</em>. C'est le rôle de l'utilité.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — utilité et fonction d'utilité</div>
+    <p>
+      Une <span class="term">fonction d'utilité</span> est une machine qui prend une option en
+      entrée et renvoie un nombre en sortie. Ce nombre s'appelle l'<span class="term">utilité</span>
+      de l'option. La seule règle est celle-ci :
+    </p>
+    <p style="text-align:center">
+      <em>l'option préférée reçoit le plus grand nombre.</em>
+    </p>
+    <p>Formellement, une fonction d'utilité \( U \) représente les préférences si :</p>
+    <p>
+      \( x \succ y \iff U(x) &gt; U(y) \) &nbsp;·&nbsp;
+      \( x \sim y \iff U(x) = U(y) \) &nbsp;·&nbsp;
+      \( x \succsim y \iff U(x) \ge U(y) \)
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège capital — l'utilité n'est pas une quantité de bonheur</div>
+    <p>
+      Si une option a une utilité de 25 et une autre une utilité de 13, cela ne veut
+      <strong>pas</strong> dire que la première rend « presque deux fois plus heureux ». Ça ne
+      veut dire qu'<em>une seule</em> chose : la première est préférée à la seconde.
+    </p>
+    <p>
+      L'utilité n'a pas d'unité. Ce n'est pas des euros, pas des grammes, pas des « points de
+      bonheur ». <strong>Seul l'ORDRE compte.</strong> Si tu remplaçais toutes les utilités
+      25 et 13 par 1 000 et 2 — non, pardon, par 1 000 et 999 — le classement serait le même,
+      et le modèle ferait exactement les mêmes prédictions.
+    </p>
+    <p>
+      Conséquence directe pour l'examen : on ne compare <em>jamais</em> l'utilité de deux
+      personnes différentes. Dire « l'habitant 1 est plus heureux que l'habitant 3 parce que
+      6 &gt; 5 » n'a aucun sens. On ne compare les nombres d'utilité que <em>pour un même
+      individu</em>, entre deux options.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — faire tourner la machine</div>
+    <p>
+      Soit la fonction d'utilité \( u(w) = \sqrt{w} \), où \( w \) est un montant d'argent.
+      Quelle est l'utilité de 3 600 euros ? On remplace \( w \) par 3 600 :
+      \( u(3\,600) = \sqrt{3\,600} = 60 \). Et celle de 10 000 euros ?
+      \( u(10\,000) = \sqrt{10\,000} = 100 \).
+    </p>
+    <p>
+      Comme \( 100 &gt; 60 \), on conclut : 10 000 euros est préféré à 3 600 euros. Pas
+      besoin de se demander « 100 quoi ? » — le nombre sert uniquement à comparer.
+    </p>
+  </div>
+
+  <h3>2.5 Payoff, gain, profit : trois mots pour la même chose</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — le payoff</div>
+    <p>
+      Dans un jeu, le <span class="term">payoff</span> d'un joueur (mot anglais qu'on
+      francise parfois en « gain ») est le nombre qui mesure ce qu'il obtient à l'issue du
+      jeu. C'est <em>exactement</em> la même chose que l'utilité : simplement, dans un jeu,
+      ce que j'obtiens dépend aussi de ce que font les autres.
+    </p>
+    <p>
+      Selon l'exercice, ce nombre peut être un profit en milliers d'euros, un nombre de
+      points, ou une utilité abstraite. Peu importe : on le traite toujours pareil —
+      <em>plus c'est grand, mieux c'est</em>.
+    </p>
+  </div>
+
+  <h3>2.6 Allocation, dotation, richesse, contrainte</h3>
+
+  <dl class="lexique">
+    <dt>Allocation</dt>
+    <dd>
+      Une répartition complète de ce qu'il y a à partager entre les personnes concernées.
+      On l'écrit comme une liste entre parenthèses : \( (x_1;\, x_2;\, x_3) \) signifie
+      « la personne 1 reçoit \( x_1 \), la personne 2 reçoit \( x_2 \), la personne 3 reçoit
+      \( x_3 \) ». L'allocation \( (2;\,3;\,2) \) veut dire : 2 parts au premier, 3 au
+      deuxième, 2 au troisième.
+    </dd>
+    <dt>Dotation</dt>
+    <dd>
+      Ce que quelqu'un possède <em>au départ</em>, avant tout échange ou toute décision.
+      Si on te donne gratuitement une gourde, cette gourde fait partie de ta dotation.
+    </dd>
+    <dt>Richesse \( w \)</dt>
+    <dd>
+      Le montant total d'argent (ou de valeur) que possède un agent, généralement noté
+      \( w \) — de l'anglais <em>wealth</em>. Se lit « double-vé ». Attention : dans le
+      chapitre sur les contrats, la même lettre \( w \) désignera un
+      <em>salaire</em> (<em>wage</em>). Le contexte lève l'ambiguïté à chaque fois.
+    </dd>
+    <dt>Contrainte</dt>
+    <dd>
+      Une limite qu'on ne peut pas franchir. « Neuf parts à répartir » est une contrainte :
+      on ne peut pas en distribuer dix. « \( C^* \in [0;\, 6\,400] \) » est une contrainte :
+      la couverture d'assurance choisie doit être comprise entre 0 et 6 400 euros. En
+      pratique, une contrainte est presque toujours écrite comme une inégalité
+      (\( \le \), \( \ge \)) ou une égalité.
+    </dd>
+    <dt>Optimal</dt>
+    <dd>
+      « Le meilleur possible, compte tenu des contraintes ». Une valeur optimale se note
+      avec une petite étoile : \( C^* \), \( e^* \), \( p^* \), \( b^* \). Voir la
+      section 7 sur les notations.
+    </dd>
+  </dl>
+
+  <hr class="soft">
+
+  <h2>3. Les mathématiques dont tu as besoin — depuis le début</h2>
+
+  <h3>3.1 Fractions, décimales, pourcentages : trois façons d'écrire la même chose</h3>
+
+  <p>
+    Un quart, 0,25 et 25 pour cent, c'est <strong>strictement le même nombre</strong>. Ce
+    sont trois costumes différents pour la même personne. Savoir passer de l'un à l'autre
+    instantanément est indispensable, parce que l'énoncé écrit « probabilité \( 1/4 \) »
+    dans une question et « 0,25 euro par euro couvert » dans la question suivante — et il
+    faut voir tout de suite que c'est le même 0,25.
+  </p>
+
+  <table class="data">
+    <tr><th>Fraction</th><th>Décimale</th><th>Pourcentage</th><th>Se lit</th></tr>
+    <tr><td>\( \tfrac{1}{2} \)</td><td>\( 0{,}5 \)</td><td>\( 50\,\% \)</td><td>une chance sur deux</td></tr>
+    <tr><td>\( \tfrac{1}{4} \)</td><td>\( 0{,}25 \)</td><td>\( 25\,\% \)</td><td>une chance sur quatre</td></tr>
+    <tr><td>\( \tfrac{3}{4} \)</td><td>\( 0{,}75 \)</td><td>\( 75\,\% \)</td><td>trois chances sur quatre</td></tr>
+    <tr><td>\( \tfrac{3}{5} \)</td><td>\( 0{,}6 \)</td><td>\( 60\,\% \)</td><td>trois chances sur cinq</td></tr>
+    <tr><td>\( \tfrac{2}{5} \)</td><td>\( 0{,}4 \)</td><td>\( 40\,\% \)</td><td>deux chances sur cinq</td></tr>
+    <tr><td>\( \tfrac{8}{25} \)</td><td>\( 0{,}32 \)</td><td>\( 32\,\% \)</td><td>trente-deux pour cent</td></tr>
+  </table>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — les trois conversions</div>
+    <ul>
+      <li>
+        <strong>Fraction → décimale :</strong> on divise le haut par le bas.
+        \( \tfrac{3}{4} \) : on tape \( 3 \div 4 \), on obtient \( 0{,}75 \).
+      </li>
+      <li>
+        <strong>Décimale → pourcentage :</strong> on multiplie par 100 et on ajoute le signe
+        \( \% \). \( 0{,}75 \times 100 = 75 \), donc \( 75\,\% \).
+      </li>
+      <li>
+        <strong>Pourcentage → décimale :</strong> on divise par 100 et on enlève le signe.
+        \( 32\,\% \) devient \( 0{,}32 \). <em>C'est cette forme-là qu'on utilise dans les
+        calculs</em> : on ne calcule jamais avec le symbole \( \% \).
+      </li>
+    </ul>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi on écrit \( 0{,}25 \) et pas \( 0.25 \)</div>
+    <p>
+      En français, le séparateur décimal est la <em>virgule</em>, pas le point. Dans les
+      formules de ce document, les nombres sont donc écrits \( 0{,}25 \), \( 0{,}75 \),
+      \( 91{,}65 \). Les accolades autour de la virgule sont une astuce technique du
+      langage de composition mathématique : sans elles, la virgule serait interprétée comme
+      un séparateur de liste et suivie d'une vilaine espace. Tu n'as rien à en faire — c'est
+      juste pour que \( 0{,}25 \) s'affiche joliment. Sur ta copie, écris simplement 0,25.
+    </p>
+  </div>
+
+  <h3>3.2 La racine carrée</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — la racine carrée</div>
+    <p>
+      La <span class="term">racine carrée</span> de \( a \), notée \( \sqrt{a} \) et lue
+      « racine de a », est le nombre <em>positif</em> qui, multiplié par lui-même, redonne
+      \( a \).
+    </p>
+    <p>
+      Autrement dit : \( \sqrt{a} = b \) signifie exactement \( b \times b = a \), c'est-à-dire
+      \( b^2 = a \). Élever au carré et prendre la racine sont deux opérations
+      <em>inverses</em> l'une de l'autre : elles s'annulent.
+    </p>
+  </div>
+
+  <table class="data">
+    <tr><th>La racine</th><th>Vaut</th><th>Vérification</th></tr>
+    <tr><td>\( \sqrt{9} \)</td><td>\( 3 \)</td><td>\( 3 \times 3 = 9 \)</td></tr>
+    <tr><td>\( \sqrt{36} \)</td><td>\( 6 \)</td><td>\( 6 \times 6 = 36 \)</td></tr>
+    <tr><td>\( \sqrt{100} \)</td><td>\( 10 \)</td><td>\( 10 \times 10 = 100 \)</td></tr>
+    <tr><td>\( \sqrt{3\,600} \)</td><td>\( 60 \)</td><td>\( 60 \times 60 = 3\,600 \)</td></tr>
+    <tr><td>\( \sqrt{8\,100} \)</td><td>\( 90 \)</td><td>\( 90 \times 90 = 8\,100 \)</td></tr>
+    <tr><td>\( \sqrt{10\,000} \)</td><td>\( 100 \)</td><td>\( 100 \times 100 = 10\,000 \)</td></tr>
+    <tr><td>\( \sqrt{8\,400} \)</td><td>\( \approx 91{,}65 \)</td><td>\( 91{,}65^2 \approx 8\,400 \)</td></tr>
+  </table>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — repérer une racine « ronde » sans calculette</div>
+    <p>
+      Les énoncés de cet examen sont fabriqués pour tomber juste. Le réflexe : sépare les
+      zéros par paires en partant de la droite.
+    </p>
+    <ul>
+      <li>\( 3\,600 = 36 \times 100 \), donc \( \sqrt{3\,600} = \sqrt{36} \times \sqrt{100} = 6 \times 10 = 60 \).</li>
+      <li>\( 10\,000 = 100 \times 100 \), donc \( \sqrt{10\,000} = 100 \).</li>
+      <li>\( 8\,100 = 81 \times 100 \), donc \( \sqrt{8\,100} = 9 \times 10 = 90 \).</li>
+    </ul>
+    <p>
+      La règle utilisée est \( \sqrt{a \times b} = \sqrt{a} \times \sqrt{b} \) : la racine
+      d'un produit est le produit des racines. Attention, ça ne marche
+      <strong>pas</strong> pour une somme : \( \sqrt{9+16} = \sqrt{25} = 5 \), alors que
+      \( \sqrt{9}+\sqrt{16} = 3+4 = 7 \). Ce n'est pas pareil.
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel — l'opération inverse</div>
+    <p>
+      Si tu sais que \( \sqrt{x} = 90 \) et que tu cherches \( x \), il suffit d'élever les
+      deux côtés au carré : \( x = 90^2 = 8\,100 \). Ce raisonnement, exactement celui-là,
+      te servira pour trouver l'équivalent certain à la question 2.3.
+    </p>
+  </div>
+
+  <h3>3.3 Résoudre une équation du premier degré</h3>
+
+  <p>
+    Une <span class="term">équation</span> est une phrase mathématique qui dit « ce qu'il y a
+    à gauche du signe = vaut la même chose que ce qu'il y a à droite ». Résoudre l'équation,
+    c'est isoler l'inconnue (la lettre) toute seule d'un côté.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">La règle d'or, et il n'y en a qu'une</div>
+    <p>
+      <strong>Ce qu'on fait d'un côté, on le fait de l'autre.</strong> Une équation est une
+      balance en équilibre : si j'enlève 3 kg à gauche, je dois enlever 3 kg à droite, sinon
+      la balance penche. On peut ajouter, soustraire, multiplier ou diviser par ce qu'on
+      veut (sauf par zéro), à condition de le faire des deux côtés.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple 1 — l'équation de la couverture d'assurance</div>
+    <p>Résolvons \( 3\,600 + 0{,}75\,C = 10\,000 - 0{,}25\,C \), l'inconnue étant \( C \).</p>
+  </div>
+
+  <div class="calc">
+    <div class="step">
+      \[ 3\,600 + 0{,}75\,C = 10\,000 - 0{,}25\,C \]
+      <div class="why">Le point de départ. L'inconnue \( C \) apparaît des deux côtés : ma première mission est de la rassembler d'un seul côté.</div>
+    </div>
+    <div class="step">
+      \[ 3\,600 + 0{,}75\,C + 0{,}25\,C = 10\,000 \]
+      <div class="why">J'ajoute \( 0{,}25\,C \) des deux côtés. À droite, \( -0{,}25\,C + 0{,}25\,C = 0 \) : le terme disparaît. C'est exactement pour ça que je l'ai choisi.</div>
+    </div>
+    <div class="step">
+      \[ 3\,600 + C = 10\,000 \]
+      <div class="why">Je regroupe à gauche : \( 0{,}75\,C + 0{,}25\,C = 1\,C = C \). Il ne reste plus qu'un seul \( C \).</div>
+    </div>
+    <div class="step">
+      \[ C = 10\,000 - 3\,600 \]
+      <div class="why">Je soustrais 3 600 des deux côtés pour laisser \( C \) tout seul à gauche.</div>
+    </div>
+    <div class="step">
+      \[ C = 6\,400 \]
+      <div class="why">Je fais la soustraction. C'est fini : l'inconnue est isolée.</div>
+    </div>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — vérifier sa solution en dix secondes</div>
+    <p>
+      Remplace la valeur trouvée dans l'équation de départ et vérifie que les deux côtés
+      donnent le même nombre. Ici : à gauche
+      \( 3\,600 + 0{,}75 \times 6\,400 = 3\,600 + 4\,800 = 8\,400 \) ; à droite
+      \( 10\,000 - 0{,}25 \times 6\,400 = 10\,000 - 1\,600 = 8\,400 \). Les deux valent
+      8 400. La solution est bonne. <em>Fais toujours cette vérification à l'examen</em> :
+      elle ne coûte rien et attrape toutes les fautes de calcul.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple 2 — une équation avec une fraction</div>
+    <p>
+      Résolvons \( \tfrac{1}{4}\,x + 15 = 40 \). Le réflexe : faire disparaître la fraction
+      en multipliant tout par son dénominateur.
+    </p>
+  </div>
+
+  <div class="calc">
+    <div class="step">
+      \[ \tfrac{1}{4}\,x = 25 \]
+      <div class="why">Je soustrais 15 des deux côtés, pour isoler le terme qui contient \( x \).</div>
+    </div>
+    <div class="step">
+      \[ 4 \times \tfrac{1}{4}\,x = 4 \times 25 \quad \Longrightarrow \quad x = 100 \]
+      <div class="why">Je multiplie les deux côtés par 4 pour faire disparaître la fraction : \( 4 \times \tfrac14 = 1 \). Vérification : \( \tfrac14 \times 100 + 15 = 40 \). ✓</div>
+    </div>
+  </div>
+
+  <h4>Et les inégalités ?</h4>
+
+  <p>
+    Une <span class="term">inégalité</span> (avec \( \le \), \( \ge \), \( &lt; \) ou
+    \( &gt; \)) se manipule <em>exactement comme une équation</em>, avec une seule exception
+    à retenir absolument.
+  </p>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — multiplier par un nombre négatif retourne l'inégalité</div>
+    <p>
+      \( 2 &lt; 5 \) est vrai. Multiplions les deux côtés par \( -1 \) : on obtient
+      \( -2 \) et \( -5 \). Or \( -2 &gt; -5 \). <strong>Le sens s'est inversé.</strong>
+    </p>
+    <p>
+      Règle : si tu multiplies ou divises une inégalité par un nombre
+      <em>négatif</em>, tu dois retourner le symbole. Si le nombre est
+      <em>positif</em>, tu ne changes rien.
+    </p>
+    <p>
+      C'est pour ça que, dans la question 5, on prendra soin de préciser
+      « on multiplie par \( (1-\delta) \), qui est strictement positif, donc le sens de
+      l'inégalité est conservé ». Cette petite phrase rapporte des points.
+    </p>
+  </div>
+
+  <h3>3.4 Résoudre un système de deux équations à deux inconnues</h3>
+
+  <p>
+    Un <span class="term">système</span> est un paquet de deux équations qui doivent être
+    vraies <em>en même temps</em>, avec deux inconnues. On l'écrit avec une grande accolade :
+  </p>
+
+  \[
+  \begin{cases}
+    2x + y = 11 \\
+    x - y = 1
+  \end{cases}
+  \]
+
+  <p>
+    Lire l'accolade : « le système formé des deux équations \( 2x+y=11 \) <em>et</em>
+    \( x-y=1 \) ». La méthode la plus simple s'appelle la
+    <span class="term">substitution</span> : on isole une inconnue dans une équation, puis
+    on la remplace dans l'autre. Une fois la substitution faite, il ne reste plus qu'une
+    seule inconnue — et on sait déjà résoudre ça.
+  </p>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Isoler une inconnue dans l'équation la plus simple</div>
+    <div class="calc">
+      <div class="step">
+        \[ x - y = 1 \quad \Longrightarrow \quad x = 1 + y \]
+        <div class="why">J'ajoute \( y \) des deux côtés. Je choisis cette équation-là parce que \( x \) y a un coefficient de 1 : c'est la plus facile à isoler.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Remplacer dans l'autre équation</div>
+    <div class="calc">
+      <div class="step">
+        \[ 2\,(1 + y) + y = 11 \]
+        <div class="why">Dans la première équation, partout où il y avait \( x \), j'écris \( 1+y \). C'est légitime : les deux expressions désignent le même nombre.</div>
+      </div>
+      <div class="step">
+        \[ 2 + 2y + y = 11 \]
+        <div class="why">Je développe la parenthèse : \( 2 \times 1 = 2 \) et \( 2 \times y = 2y \).</div>
+      </div>
+      <div class="step">
+        \[ 2 + 3y = 11 \]
+        <div class="why">Je regroupe les termes en \( y \) : \( 2y + y = 3y \).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Résoudre l'équation à une inconnue</div>
+    <div class="calc">
+      <div class="step">
+        \[ 3y = 9 \]
+        <div class="why">Je soustrais 2 des deux côtés.</div>
+      </div>
+      <div class="step">
+        \[ y = 3 \]
+        <div class="why">Je divise les deux côtés par 3.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Revenir chercher l'autre inconnue</div>
+    <div class="calc">
+      <div class="step">
+        \[ x = 1 + y = 1 + 3 = 4 \]
+        <div class="why">Je réutilise l'expression trouvée à l'étape 1. Ne saute jamais cette étape : le système a deux inconnues, la réponse doit en donner deux.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat</div>
+    <p>
+      \( x = 4 \) et \( y = 3 \). Vérification dans les deux équations d'origine :
+      \( 2 \times 4 + 3 = 11 \) ✓ &nbsp;et&nbsp; \( 4 - 3 = 1 \) ✓.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — le même geste, version examen</div>
+    <p>
+      À la question 4, tu auras le système suivant, où les inconnues sont l'effort \( e \) et
+      le fixe \( a \), pour une valeur \( b = 1 \) déjà trouvée :
+    </p>
+    \[
+    \begin{cases}
+      e = 2b \\
+      a = 1 + e^2 - 4b\,e
+    \end{cases}
+    \]
+    <p>
+      Substitution : la première équation donne \( e = 2 \times 1 = 2 \). On injecte dans la
+      seconde : \( a = 1 + 2^2 - 4 \times 1 \times 2 = 1 + 4 - 8 = -3 \). C'est exactement
+      le même geste que ci-dessus, avec d'autres lettres.
+    </p>
+  </div>
+
+  <h3>3.5 La dérivée</h3>
+
+  <p>
+    C'est le seul outil « nouveau » de ce chapitre, et il fait peur pour rien. Voici
+    l'idée, en une phrase :
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — la dérivée, en français</div>
+    <p>
+      La <span class="term">dérivée</span> d'une fonction \( f \) au point \( x \) répond à
+      la question : <strong>« si j'augmente \( x \) d'un tout petit peu, de combien bouge
+      \( f(x) \) ? »</strong>
+    </p>
+    <p>
+      Géométriquement, c'est la <span class="term">pente</span> de la courbe à cet endroit :
+      la raideur de la montée. Une dérivée grande et positive = ça grimpe fort. Une dérivée
+      nulle = c'est plat. Une dérivée négative = ça descend.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 500 300" width="100%" style="max-width:12cm" role="img">
+      <defs>
+        <marker id="bao-fl1" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+          <path d="M0,0 L8,3.2 L0,6.4 z" fill="#111827"></path>
+        </marker>
+      </defs>
+      <!-- axes -->
+      <line x1="60" y1="270" x2="470" y2="270" stroke="#111827" stroke-width="1.6" marker-end="url(#bao-fl1)"></line>
+      <line x1="60" y1="270" x2="60" y2="35" stroke="#111827" stroke-width="1.6" marker-end="url(#bao-fl1)"></line>
+      <text x="462" y="290" font-size="14" text-anchor="end">x</text>
+      <text x="70" y="45" font-size="14">f(x)</text>
+      <!-- courbe -->
+      <path d="M60,250 L98,186 L136,161 L174,140 L212,124 L250,109 L288,95 L326,83 L364,71 L402,60 L440,50"
+            fill="none" stroke="#4338ca" stroke-width="2.6"></path>
+      <text x="446" y="46" font-size="13" text-anchor="end">f</text>
+      <!-- tangente en A -->
+      <line x1="100" y1="178" x2="260" y2="96" stroke="#be123c" stroke-width="2" stroke-dasharray="7 4"></line>
+      <text x="264" y="94" font-size="12.5">tangente en A</text>
+      <text x="264" y="110" font-size="12.5">sa pente = f '(x)</text>
+      <!-- points A et B -->
+      <circle cx="160" cy="147" r="4.5" fill="#111827"></circle>
+      <circle cx="300" cy="91" r="4.5" fill="#111827"></circle>
+      <text x="146" y="142" font-size="14">A</text>
+      <text x="306" y="86" font-size="14">B</text>
+      <!-- secante -->
+      <line x1="160" y1="147" x2="300" y2="91" stroke="#111827" stroke-width="1.5"></line>
+      <!-- triangle delta -->
+      <line x1="160" y1="147" x2="300" y2="147" stroke="#111827" stroke-width="1.2" stroke-dasharray="4 3"></line>
+      <line x1="300" y1="147" x2="300" y2="91" stroke="#111827" stroke-width="1.2" stroke-dasharray="4 3"></line>
+      <text x="230" y="167" font-size="13" text-anchor="middle">on avance de Δx</text>
+      <text x="310" y="124" font-size="13">f monte de Δf</text>
+      <!-- formule -->
+      <text x="120" y="228" font-size="13.5">pente moyenne entre A et B = Δf / Δx</text>
+      <text x="120" y="248" font-size="13.5">quand Δx devient minuscule → f '(x)</text>
+    </svg>
+    <figcaption>
+      La dérivée est la pente. Entre A et B, la pente moyenne vaut Δf/Δx : « de combien f
+      monte, divisé par de combien on a avancé ». Si on rapproche B de A jusqu'à les coller,
+      la droite qui les relie devient la tangente (en pointillés rouges) et sa pente est,
+      par définition, la dérivée f '(x) au point A.
+    </figcaption>
+  </figure>
+
+  <h4>Les notations : deux écritures pour la même chose</h4>
+
+  <p>
+    On note la dérivée de deux façons, parfaitement équivalentes :
+  </p>
+
+  <table class="compare">
+    <tr><th>Notation</th><th class="left">Se lit</th><th class="left">Quand on l'emploie</th></tr>
+    <tr>
+      <td>\( f'(x) \)</td>
+      <td class="left">« f prime de x »</td>
+      <td class="left">Quand il n'y a qu'une seule variable, c'est la plus courte</td>
+    </tr>
+    <tr>
+      <td>\( \dfrac{df}{dx} \)</td>
+      <td class="left">« d f sur d x »</td>
+      <td class="left">Quand on veut préciser <em>par rapport à quelle lettre</em> on dérive</td>
+    </tr>
+    <tr>
+      <td>\( \dfrac{\partial U}{\partial e} \)</td>
+      <td class="left">« d rond U sur d rond e »</td>
+      <td class="left">Même chose, quand la fonction dépend de plusieurs lettres et qu'on ne dérive que par rapport à \( e \) (les autres sont alors traitées comme des nombres fixes)</td>
+    </tr>
+  </table>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi le « d rond » ∂ apparaît dans l'examen</div>
+    <p>
+      À la question 4, l'utilité de la directrice s'écrit \( U_a(e) = a + 4b\,e - e^2 \) :
+      elle dépend de trois lettres, \( a \), \( b \) et \( e \). Mais la directrice ne
+      choisit que son effort \( e \) — \( a \) et \( b \) lui sont imposés par le contrat.
+      On dérive donc « par rapport à \( e \) seulement », en traitant \( a \) et \( b \)
+      comme de simples nombres. C'est ce que signale le symbole \( \partial \). Rien de plus.
+    </p>
+  </div>
+
+  <h4>Les seules règles dont tu as besoin</h4>
+
+  <table class="data">
+    <tr><th>Si \( f(x) = \)</th><th>alors \( f'(x) = \)</th><th>Exemple</th></tr>
+    <tr>
+      <td>une constante \( c \)</td><td>\( 0 \)</td>
+      <td>\( f(x) = 7 \Rightarrow f'(x) = 0 \)</td>
+    </tr>
+    <tr>
+      <td>\( x \)</td><td>\( 1 \)</td>
+      <td>\( f(x) = x \Rightarrow f'(x) = 1 \)</td>
+    </tr>
+    <tr>
+      <td>\( x^n \)</td><td>\( n\,x^{\,n-1} \)</td>
+      <td>\( f(x) = x^2 \Rightarrow f'(x) = 2x \)</td>
+    </tr>
+    <tr>
+      <td>\( k \cdot f(x) \)</td><td>\( k \cdot f'(x) \)</td>
+      <td>\( f(x) = 4x^2 \Rightarrow f'(x) = 8x \)</td>
+    </tr>
+    <tr>
+      <td>\( f(x) + g(x) \)</td><td>\( f'(x) + g'(x) \)</td>
+      <td>\( f(x) = x^2 + x \Rightarrow f'(x) = 2x + 1 \)</td>
+    </tr>
+    <tr>
+      <td>\( \sqrt{x} = x^{1/2} \)</td><td>\( \dfrac{1}{2\sqrt{x}} \)</td>
+      <td>\( u(w) = \sqrt{w} \Rightarrow u'(w) = \dfrac{1}{2\sqrt{w}} \)</td>
+    </tr>
+  </table>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — dériver un polynôme en trois secondes</div>
+    <p>
+      Un polynôme, c'est une somme de termes de la forme « nombre × lettre puissance ». La
+      recette, terme par terme : <strong>l'exposant descend et multiplie, puis il diminue de
+      1</strong>. Les constantes disparaissent.
+    </p>
+    <ul>
+      <li>\( 4b^2 \) : l'exposant 2 descend → \( 2 \times 4 = 8 \), et l'exposant devient 1 → \( 8b \).</li>
+      <li>\( 8b \) : c'est \( 8b^1 \), l'exposant 1 descend → \( 8 \), et l'exposant devient 0, donc \( b^0 = 1 \) → \( 8 \).</li>
+      <li>\( -1 \) : constante → \( 0 \).</li>
+    </ul>
+  </div>
+
+  <h4>Les dérivées exactes qui reviennent dans cet examen</h4>
+
+  <table class="data">
+    <tr><th>La fonction</th><th>Sa dérivée</th><th>Où elle sert</th></tr>
+    <tr>
+      <td>\( U_a(e) = a + 4b\,e - e^2 \)</td>
+      <td>\( \dfrac{\partial U_a}{\partial e} = 4b - 2e \)</td>
+      <td>Question 4.1</td>
+    </tr>
+    <tr>
+      <td>\( \Pi(b) = 8b - 4b^2 - 1 \)</td>
+      <td>\( \Pi'(b) = 8 - 8b \)</td>
+      <td>Question 4.2</td>
+    </tr>
+    <tr>
+      <td>\( S(e) = 4e - e^2 \)</td>
+      <td>\( S'(e) = 4 - 2e \)</td>
+      <td>Question 4.2</td>
+    </tr>
+    <tr>
+      <td>\( u(w) = \sqrt{w} \)</td>
+      <td>\( u'(w) = \dfrac{1}{2\sqrt{w}} \)</td>
+      <td>Questions 2.4 et 2.5</td>
+    </tr>
+  </table>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — la constante disparaît, et c'est tout l'enjeu de la question 4.1</div>
+    <p>
+      Dans \( U_a(e) = a + 4b\,e - e^2 \), le terme \( a \) tout seul est une constante du
+      point de vue de \( e \). Sa dérivée vaut donc zéro : \( a \) <em>disparaît</em>.
+    </p>
+    <p>
+      Ce n'est pas un détail technique, c'est <em>le</em> résultat économique de la question :
+      le salaire fixe \( a \) n'influence pas l'effort de la directrice, parce qu'elle le
+      touche quoi qu'elle fasse. Seule la part variable \( b \) l'incite à travailler. La
+      disparition mathématique d'une constante traduit ici une idée économique profonde.
+    </p>
+  </div>
+
+  <h3>3.6 Maximiser une fonction : la condition de premier ordre</h3>
+
+  <p>
+    Presque tout ce cours consiste à répondre à la question : « quelle valeur cet agent
+    va-t-il choisir ? » Comme un agent rationnel choisit ce qu'il préfère, la réponse est
+    toujours : <em>celle qui rend son utilité (ou son profit) la plus grande possible</em>.
+    Autrement dit, il faut <span class="term">maximiser</span> une fonction.
+  </p>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi « dérivée = 0 » donne le sommet</div>
+    <p>
+      Imagine que tu marches sur une colline, les yeux bandés, et que tu veux atteindre le
+      sommet. Tant que le sol monte devant toi (dérivée positive), tu continues d'avancer :
+      tu n'es pas au sommet. Si le sol descend (dérivée négative), tu es allé trop loin : il
+      faut reculer. Tu es au sommet exactement là où <strong>le sol est plat</strong> : la
+      pente est nulle.
+    </p>
+    <p>
+      C'est tout. Chercher un maximum = chercher là où la dérivée vaut zéro.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 500 300" width="100%" style="max-width:12cm" role="img">
+      <defs>
+        <marker id="bao-fl2" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+          <path d="M0,0 L8,3.2 L0,6.4 z" fill="#111827"></path>
+        </marker>
+      </defs>
+      <line x1="55" y1="265" x2="470" y2="265" stroke="#111827" stroke-width="1.6" marker-end="url(#bao-fl2)"></line>
+      <line x1="55" y1="265" x2="55" y2="35" stroke="#111827" stroke-width="1.6" marker-end="url(#bao-fl2)"></line>
+      <text x="462" y="286" font-size="14" text-anchor="end">x</text>
+      <text x="64" y="45" font-size="14">f(x)</text>
+      <!-- parabole -->
+      <path d="M60,250 L110,163 L160,103 L210,68 L250,60 L290,68 L340,103 L390,163 L440,250"
+            fill="none" stroke="#4338ca" stroke-width="2.6"></path>
+      <!-- tangente au sommet -->
+      <line x1="185" y1="60" x2="315" y2="60" stroke="#047857" stroke-width="2.4"></line>
+      <circle cx="250" cy="60" r="5" fill="#047857"></circle>
+      <text x="250" y="46" font-size="13" text-anchor="middle">f '(x*) = 0 : le sommet</text>
+      <!-- tangente montante -->
+      <line x1="125" y1="136" x2="195" y2="70" stroke="#be123c" stroke-width="2" stroke-dasharray="6 4"></line>
+      <text x="86" y="196" font-size="12.5">f '(x) &gt; 0</text>
+      <text x="86" y="212" font-size="12.5">ça monte :</text>
+      <text x="86" y="228" font-size="12.5">avance encore</text>
+      <!-- tangente descendante -->
+      <line x1="305" y1="70" x2="375" y2="136" stroke="#be123c" stroke-width="2" stroke-dasharray="6 4"></line>
+      <text x="330" y="196" font-size="12.5">f '(x) &lt; 0</text>
+      <text x="330" y="212" font-size="12.5">ça descend :</text>
+      <text x="330" y="228" font-size="12.5">trop loin</text>
+      <!-- pointillé vers x* -->
+      <line x1="250" y1="60" x2="250" y2="265" stroke="#111827" stroke-width="1.1" stroke-dasharray="4 4"></line>
+      <text x="250" y="284" font-size="14" text-anchor="middle">x*</text>
+    </svg>
+    <figcaption>
+      Le maximum d'une fonction en cloche. À gauche du sommet la pente est positive, à droite
+      elle est négative ; au sommet exactement, la tangente est horizontale — sa pente est
+      nulle. Résoudre f '(x) = 0 revient donc à trouver l'abscisse x* du sommet. La petite
+      étoile signale, ici comme partout dans le cours, une valeur optimale.
+    </figcaption>
+  </figure>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — la condition de premier ordre (CPO)</div>
+    <p>
+      La <span class="term">condition de premier ordre</span>, abrégée <strong>CPO</strong>
+      (en anglais <em>first-order condition</em>, FOC), est simplement l'équation
+      « dérivée = 0 » qu'on écrit pour trouver l'optimum.
+    </p>
+    <p>
+      « Premier ordre » veut dire « qui fait intervenir la dérivée première ». Le nom est
+      intimidant, l'objet ne l'est pas : c'est une équation qu'on pose, puis qu'on résout.
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — maximiser une fonction, en quatre gestes</div>
+    <ol>
+      <li><strong>Identifier la variable de choix.</strong> Qu'est-ce que l'agent contrôle vraiment ? (L'effort ? La couverture ? Le taux \( b \) ?) Tout le reste est une constante.</li>
+      <li><strong>Écrire la fonction à maximiser</strong> en fonction de cette seule variable.</li>
+      <li><strong>Poser la CPO</strong> : dériver, mettre égal à zéro, résoudre.</li>
+      <li><strong>Vérifier que c'est bien un maximum</strong> (voir juste en dessous) et <strong>interpréter</strong> le résultat en français.</li>
+    </ol>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple entièrement déroulé — le profit de la propriétaire</div>
+    <p>
+      Maximisons \( \Pi(b) = 8b - 4b^2 - 1 \). La variable de choix est \( b \).
+    </p>
+  </div>
+
+  <div class="calc">
+    <div class="step">
+      \[ \Pi(b) = 8b - 4b^2 - 1 \]
+      <div class="why">La fonction à maximiser. Elle ne dépend que de \( b \) : parfait, on peut dériver directement.</div>
+    </div>
+    <div class="step">
+      \[ \Pi'(b) = 8 - 8b \]
+      <div class="why">Je dérive terme par terme : \( 8b \to 8 \) ; \( -4b^2 \to -8b \) (l'exposant 2 descend et multiplie) ; \( -1 \to 0 \) (constante).</div>
+    </div>
+    <div class="step">
+      \[ 8 - 8b = 0 \]
+      <div class="why">C'est la CPO : j'annule la dérivée, parce que le sommet est là où la pente est nulle.</div>
+    </div>
+    <div class="step">
+      \[ 8 = 8b \quad \Longrightarrow \quad b^* = 1 \]
+      <div class="why">J'ajoute \( 8b \) des deux côtés, puis je divise par 8. L'étoile signale que c'est la valeur optimale.</div>
+    </div>
+    <div class="step">
+      \[ \Pi''(b) = -8 \; &lt; \; 0 \]
+      <div class="why">Je dérive une seconde fois : la dérivée de \( 8-8b \) vaut \( -8 \). Elle est négative, donc la courbe est bien une cloche à l'envers : \( b^*=1 \) est un maximum, pas un minimum.</div>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat</div>
+    <p>
+      \( b^* = 1 \), et la valeur maximale du profit vaut
+      \( \Pi(1) = 8 - 4 - 1 = 3 \).
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — comment vérifier que c'est un maximum et pas un minimum</div>
+    <p>Deux façons, l'une ou l'autre suffit :</p>
+    <ul>
+      <li>
+        <strong>La dérivée seconde.</strong> On dérive une deuxième fois. Si le résultat est
+        <em>négatif</em>, c'est un maximum (la courbe est une colline). S'il est
+        <em>positif</em>, c'est un minimum (la courbe est une cuvette). Notation :
+        \( f''(x) \), lu « f seconde de x ».
+      </li>
+      <li>
+        <strong>Le signe du terme carré.</strong> Pour une fonction du type
+        \( f(x) = \alpha x^2 + \beta x + \gamma \), c'est une parabole. Si \( \alpha &lt; 0 \),
+        elle est tournée vers le bas : il y a un maximum. Si \( \alpha &gt; 0 \), elle est
+        tournée vers le haut : il y a un minimum. Dans \( 8b - 4b^2 - 1 \), le coefficient de
+        \( b^2 \) est \( -4 \), donc négatif : maximum. On peut le dire en une ligne, sans
+        calcul.
+      </li>
+    </ul>
+  </div>
+
+  <hr class="soft">
+
+  <h2>4. Probabilités et espérance</h2>
+
+  <h3>4.1 Ce qu'est une probabilité</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — une probabilité</div>
+    <p>
+      Une <span class="term">probabilité</span> est un nombre compris entre 0 et 1 qui mesure
+      la chance qu'un événement se produise.
+    </p>
+    <ul>
+      <li>\( 0 \) : l'événement est impossible.</li>
+      <li>\( 1 \) : l'événement est certain.</li>
+      <li>\( 0{,}25 \) : l'événement se produit une fois sur quatre en moyenne.</li>
+    </ul>
+    <p>
+      On note souvent une probabilité par la lettre \( p \), \( q \) ou la lettre grecque
+      \( \pi \) (« pi »). Attention : ici \( \pi \) est une probabilité quelconque, ça n'a
+      rien à voir avec le 3,14 de la géométrie.
+    </p>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi la somme des probabilités fait toujours 1</div>
+    <p>
+      Parce qu'<em>il va forcément se passer quelque chose</em>. Si on liste tous les
+      scénarios possibles, et qu'ils s'excluent mutuellement (un seul se produira), alors
+      « l'un d'entre eux se produit » est un événement certain, de probabilité 1.
+    </p>
+    <p>
+      Conséquence pratique très utile : quand l'énoncé te donne une seule probabilité, tu
+      connais automatiquement l'autre. « Probabilité \( \tfrac14 \) d'être volé » signifie
+      immédiatement « probabilité \( 1 - \tfrac14 = \tfrac34 \) de ne pas l'être ». C'est ce
+      qui justifie l'écriture \( 1-p \) qui reviendra sans arrêt.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 500 250" width="100%" style="max-width:12cm" role="img">
+      <!-- noeud racine -->
+      <circle cx="70" cy="125" r="7" fill="#111827"></circle>
+      <text x="70" y="152" font-size="12.5" text-anchor="middle">aujourd'hui</text>
+      <!-- branche haute -->
+      <line x1="77" y1="121" x2="245" y2="62" stroke="#111827" stroke-width="2"></line>
+      <text x="160" y="80" font-size="13" text-anchor="middle">pas de vol</text>
+      <text x="160" y="62" font-size="13" text-anchor="middle">probabilité 3/4</text>
+      <!-- branche basse -->
+      <line x1="77" y1="129" x2="245" y2="190" stroke="#111827" stroke-width="2" stroke-dasharray="7 4"></line>
+      <text x="160" y="180" font-size="13" text-anchor="middle">vol</text>
+      <text x="160" y="198" font-size="13" text-anchor="middle">probabilité 1/4</text>
+      <!-- issues -->
+      <rect x="252" y="38" width="215" height="46" fill="none" stroke="#047857" stroke-width="2" rx="4"></rect>
+      <text x="360" y="60" font-size="13" text-anchor="middle">richesse = 10 000 €</text>
+      <text x="360" y="77" font-size="12.5" text-anchor="middle">utilité = √10 000 = 100</text>
+      <rect x="252" y="166" width="215" height="46" fill="none" stroke="#be123c" stroke-width="2" rx="4"></rect>
+      <text x="360" y="188" font-size="13" text-anchor="middle">richesse = 3 600 €</text>
+      <text x="360" y="205" font-size="12.5" text-anchor="middle">utilité = √3 600 = 60</text>
+      <!-- controle -->
+      <text x="250" y="130" font-size="12.5" text-anchor="middle">3/4 + 1/4 = 1 : tout est couvert</text>
+    </svg>
+    <figcaption>
+      Un arbre de probabilités. On part d'un point (aujourd'hui), on trace une branche par
+      scénario possible, on écrit la probabilité sur la branche et le résultat au bout. La
+      règle de contrôle : les probabilités des branches issues d'un même point doivent
+      totaliser 1. Trace systématiquement cet arbre au brouillon — il t'évite d'oublier un
+      scénario.
+    </figcaption>
+  </figure>
+
+  <h3>4.2 L'espérance : la notation E(·) et ce qu'elle veut dire</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — l'espérance</div>
+    <p>
+      L'<span class="term">espérance</span> d'une grandeur incertaine est sa
+      <strong>moyenne pondérée par les probabilités</strong> : la valeur qu'on obtiendrait en
+      moyenne si on pouvait rejouer la situation un très grand nombre de fois.
+    </p>
+    <p>Si une grandeur vaut \( x_1 \) avec probabilité \( p_1 \) et \( x_2 \) avec probabilité \( p_2 \) :</p>
+    \[ E(x) = p_1\,x_1 + p_2\,x_2 \]
+    <p>
+      La notation \( E(\cdot) \) se lit « espérance de ». Le point entre parenthèses est un
+      emplacement : on y met ce dont on prend l'espérance. Avec plus de deux scénarios, on
+      ajoute simplement des termes.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — l'espérance n'est PAS la moyenne simple</div>
+    <p>
+      Un actif rapporte 80 € avec probabilité \( 0{,}25 \) et 20 € avec probabilité
+      \( 0{,}75 \). La moyenne simple \( (80+20)/2 = 50 \) est <strong>fausse</strong>, parce
+      que les deux scénarios n'ont pas la même chance de se produire. Le bon calcul est
+      \( 0{,}25 \times 80 + 0{,}75 \times 20 = 20 + 15 = 35 \) €.
+    </p>
+    <p>
+      La moyenne simple n'est correcte que dans le cas particulier où toutes les probabilités
+      sont égales. Prends le réflexe de toujours pondérer.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple chiffré — l'espérance en trois lignes</div>
+    <p>
+      Tu joues à un jeu : tu gagnes 100 € avec probabilité \( 0{,}3 \), et 20 € avec
+      probabilité \( 0{,}7 \). Combien gagnes-tu « en moyenne » ?
+    </p>
+    \[ E(\text{gain}) = 0{,}3 \times 100 + 0{,}7 \times 20 \]
+    \[ E(\text{gain}) = 30 + 14 = 44 \ \text{euros} \]
+    <p>
+      Remarque : tu ne gagneras jamais 44 € — tu gagneras 100 € ou 20 €. L'espérance est une
+      moyenne <em>théorique</em>, pas un résultat possible. C'est normal, et ce n'est pas un
+      problème : elle sert à comparer des situations risquées entre elles.
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel — les noms que prend l'espérance dans le cours</div>
+    <ul>
+      <li>Espérance d'une <em>richesse</em> → on l'appelle la <strong>valeur monétaire attendue</strong>, abrégée <strong>VMA</strong>.</li>
+      <li>Espérance d'une <em>utilité</em> → on l'appelle l'<strong>utilité espérée</strong> (ou utilité attendue), souvent notée avec un \( U \) majuscule.</li>
+      <li>Espérance d'un <em>payoff</em> dans un jeu → on l'appelle le <strong>payoff espéré</strong>.</li>
+    </ul>
+    <p>Trois noms, un seul calcul : multiplier chaque valeur par sa probabilité, et additionner.</p>
+  </div>
+
+  <h3>4.3 Le piège qui coûte le plus de points de tout l'examen</h3>
+
+  <p>
+    Voici le point où presque tout le monde se trompe. Lis-le deux fois.
+  </p>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège capital — \( E[u(w)] \neq u(E[w]) \)</div>
+    <p>
+      Il y a deux façons d'enchaîner « prendre l'utilité » et « prendre l'espérance », et
+      elles ne donnent <strong>pas</strong> le même résultat.
+    </p>
+    <ul>
+      <li>
+        <strong>\( E[u(w)] \)</strong>, lu « espérance de u de w » : on calcule d'abord
+        l'utilité <em>dans chaque scénario</em>, puis on en fait la moyenne pondérée.
+        <em>C'est ce que fait un agent rationnel.</em> C'est l'utilité espérée.
+      </li>
+      <li>
+        <strong>\( u(E[w]) \)</strong>, lu « u de l'espérance de w » : on calcule d'abord la
+        richesse moyenne, puis on lui applique l'utilité. <em>Ce n'est pas ce qu'on
+        demande</em>, sauf mention explicite.
+      </li>
+    </ul>
+    <p>
+      Ordre des opérations : dans \( E[u(w)] \), \( u \) agit <em>en premier</em>, à
+      l'intérieur des crochets. Suis toujours les parenthèses de l'intérieur vers l'extérieur.
+    </p>
+  </div>
+
+  <p>
+    Vérifions sur les nombres de la question 2, avec \( u(w) = \sqrt{w} \), une richesse de
+    10 000 € avec probabilité \( \tfrac34 \) et de 3 600 € avec probabilité \( \tfrac14 \).
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ E[u(w)] = \tfrac{3}{4}\,\sqrt{10\,000} + \tfrac{1}{4}\,\sqrt{3\,600} \]
+      <div class="why">La bonne méthode : je prends la racine <em>dans chaque scénario d'abord</em>, ensuite je pondère.</div>
+    </div>
+    <div class="step">
+      \[ E[u(w)] = \tfrac{3}{4}\times 100 + \tfrac{1}{4}\times 60 = 75 + 15 = 90 \]
+      <div class="why">√10 000 = 100 et √3 600 = 60. Trois quarts de 100 font 75, un quart de 60 fait 15. Total : 90.</div>
+    </div>
+    <div class="step">
+      \[ E[w] = \tfrac{3}{4}\times 10\,000 + \tfrac{1}{4}\times 3\,600 = 8\,400 \]
+      <div class="why">L'autre ordre : je fais d'abord la moyenne des richesses. C'est la VMA.</div>
+    </div>
+    <div class="step">
+      \[ u(E[w]) = \sqrt{8\,400} \approx 91{,}65 \]
+      <div class="why">Et j'applique la racine à la fin. J'obtiens 91,65 — <strong>ce n'est pas 90</strong>.</div>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat</div>
+    <p>
+      \( E[u(w)] = 90 \) alors que \( u(E[w]) \approx 91{,}65 \). Les deux nombres sont
+      différents, et ce n'est pas un hasard : pour une fonction d'utilité en forme de
+      racine carrée (donc concave), on a toujours \( E[u(w)] &lt; u(E[w]) \). Cet écart est
+      la signature de l'<span class="term">aversion au risque</span>.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 500 320" width="100%" style="max-width:12.5cm" role="img">
+      <defs>
+        <marker id="bao-fl3" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+          <path d="M0,0 L8,3.2 L0,6.4 z" fill="#111827"></path>
+        </marker>
+      </defs>
+      <line x1="70" y1="280" x2="480" y2="280" stroke="#111827" stroke-width="1.6" marker-end="url(#bao-fl3)"></line>
+      <line x1="70" y1="280" x2="70" y2="35" stroke="#111827" stroke-width="1.6" marker-end="url(#bao-fl3)"></line>
+      <text x="474" y="300" font-size="13.5" text-anchor="end">richesse w</text>
+      <text x="78" y="46" font-size="13.5">utilité u(w)</text>
+      <!-- courbe concave -->
+      <path d="M70,265 L110,205 L150,169 L190,143 L230,122 L270,106 L310,92 L350,79 L390,69 L430,59 L470,50"
+            fill="none" stroke="#4338ca" stroke-width="2.8"></path>
+      <text x="440" y="42" font-size="13" text-anchor="end">u(w), concave</text>
+      <!-- corde -->
+      <line x1="130" y1="185" x2="430" y2="59" stroke="#be123c" stroke-width="2" stroke-dasharray="7 4"></line>
+      <!-- points extremes -->
+      <circle cx="130" cy="185" r="4.5" fill="#111827"></circle>
+      <circle cx="430" cy="59" r="4.5" fill="#111827"></circle>
+      <!-- verticales -->
+      <line x1="130" y1="185" x2="130" y2="280" stroke="#111827" stroke-width="1" stroke-dasharray="3 3"></line>
+      <line x1="430" y1="59" x2="430" y2="280" stroke="#111827" stroke-width="1" stroke-dasharray="3 3"></line>
+      <line x1="280" y1="102" x2="280" y2="280" stroke="#111827" stroke-width="1" stroke-dasharray="3 3"></line>
+      <line x1="231" y1="122" x2="231" y2="280" stroke="#047857" stroke-width="1.4" stroke-dasharray="3 3"></line>
+      <!-- horizontales -->
+      <line x1="70" y1="122" x2="280" y2="122" stroke="#047857" stroke-width="1.4" stroke-dasharray="3 3"></line>
+      <line x1="70" y1="102" x2="280" y2="102" stroke="#111827" stroke-width="1" stroke-dasharray="3 3"></line>
+      <!-- points cles -->
+      <circle cx="280" cy="122" r="4.5" fill="#be123c"></circle>
+      <circle cx="280" cy="102" r="4.5" fill="#4338ca"></circle>
+      <circle cx="231" cy="122" r="4.5" fill="#047857"></circle>
+      <!-- labels axes -->
+      <text x="130" y="298" font-size="13" text-anchor="middle">w₁</text>
+      <text x="231" y="315" font-size="13" text-anchor="middle">EC</text>
+      <text x="284" y="298" font-size="13" text-anchor="middle">E[w]</text>
+      <text x="430" y="298" font-size="13" text-anchor="middle">w₂</text>
+      <text x="66" y="126" font-size="12.5" text-anchor="end">E[u(w)]</text>
+      <text x="66" y="98" font-size="12.5" text-anchor="end">u(E[w])</text>
+      <!-- prime de risque -->
+      <line x1="231" y1="266" x2="280" y2="266" stroke="#047857" stroke-width="3"></line>
+      <text x="256" y="258" font-size="12" text-anchor="middle">prime</text>
+      <!-- legende -->
+      <text x="300" y="180" font-size="12.5">la corde (rouge) passe</text>
+      <text x="300" y="197" font-size="12.5">sous la courbe :</text>
+      <text x="300" y="214" font-size="12.5">E[u(w)] &lt; u(E[w])</text>
+    </svg>
+    <figcaption>
+      Le graphique-clé de la décision face au risque (figure schématique, écarts exagérés).
+      La courbe bleue est la fonction d'utilité, ici concave (elle monte de moins en moins
+      vite). La corde rouge relie les deux scénarios ; le point rouge situé au-dessus de E[w]
+      donne l'utilité espérée E[u(w)]. Le point bleu, sur la courbe, donne u(E[w]). La corde
+      passant sous la courbe, on lit directement E[u(w)] &lt; u(E[w]). Le montant certain qui
+      procurerait exactement l'utilité E[u(w)] s'appelle l'équivalent certain (EC), et
+      l'écart E[w] − EC est la prime de risque.
+    </figcaption>
+  </figure>
+
+  <hr class="soft">
+
+  <h2>5. Les sommes infinies (séries géométriques)</h2>
+
+  <p>
+    Dans la question 5, deux pizzerias interagissent chaque mois, <em>pour toujours</em>. Il
+    va donc falloir additionner une infinité de profits. Ça a l'air terrifiant ; c'est en
+    réalité l'un des calculs les plus simples du cours, à condition de connaître une seule
+    formule.
+  </p>
+
+  <h3>5.1 Le facteur d'escompte δ</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — le facteur d'escompte</div>
+    <p>
+      Le <span class="term">facteur d'escompte</span>, noté \( \delta \) (lettre grecque
+      « delta » minuscule), est un nombre compris entre 0 et 1 qui mesure
+      <strong>combien vaut aujourd'hui un euro reçu dans une période</strong>.
+    </p>
+    <ul>
+      <li>\( \delta \) proche de 1 : l'agent est <em>patient</em>, le futur compte presque autant que le présent.</li>
+      <li>\( \delta \) proche de 0 : l'agent est <em>impatient</em>, seul le présent l'intéresse.</li>
+    </ul>
+    <p>
+      Un euro reçu dans deux périodes vaut \( \delta \times \delta = \delta^2 \) aujourd'hui ;
+      dans trois périodes, \( \delta^3 \) ; et ainsi de suite. Comme \( \delta &lt; 1 \), ces
+      puissances rapetissent très vite : c'est ce qui rend la somme infinie finie.
+    </p>
+  </div>
+
+  <h3>5.2 La formule et sa démonstration en trois lignes</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — la somme géométrique</div>
+    <p>Pour \( 0 \le \delta &lt; 1 \) :</p>
+    \[ 1 + \delta + \delta^2 + \delta^3 + \cdots = \frac{1}{1-\delta} \]
+    <p>Et, plus généralement, si le même montant \( a \) revient à chaque période :</p>
+    \[ a + a\,\delta + a\,\delta^2 + \cdots = \frac{a}{1-\delta} \]
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi c'est vrai — la démonstration, en trois lignes</div>
+    <p>Appelons \( S \) la somme cherchée :</p>
+    \[ S = 1 + \delta + \delta^2 + \delta^3 + \cdots \]
+    <p>Multiplions les deux côtés par \( \delta \). Chaque terme voit son exposant augmenter de 1 :</p>
+    \[ \delta\,S = \delta + \delta^2 + \delta^3 + \cdots \]
+    <p>
+      Soustrayons la deuxième ligne de la première. Tous les termes de droite se détruisent
+      deux à deux, sauf le tout premier :
+    </p>
+    \[ S - \delta\,S = 1 \quad \Longrightarrow \quad S\,(1-\delta) = 1 \quad \Longrightarrow \quad S = \frac{1}{1-\delta} \]
+    <p>
+      Le passage de la deuxième à la troisième expression consiste à mettre \( S \) en
+      facteur, puis à diviser les deux côtés par \( (1-\delta) \), qui est différent de zéro
+      puisque \( \delta &lt; 1 \).
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple numérique — avec \( \delta = 0{,}5 \)</div>
+    <p>Additionnons à la main les premiers termes :</p>
+    \[ 1 + 0{,}5 + 0{,}25 + 0{,}125 + 0{,}0625 + \cdots \]
+    <p>
+      Les totaux successifs sont \( 1 \), puis \( 1{,}5 \), puis \( 1{,}75 \), puis
+      \( 1{,}875 \), puis \( 1{,}9375 \)… On s'approche de 2 sans jamais le dépasser. Et la
+      formule donne exactement :
+    </p>
+    \[ \frac{1}{1-0{,}5} = \frac{1}{0{,}5} = 2 \]
+    <p>
+      Une infinité de termes, un total fini de 2. Ce n'est pas de la magie : chaque terme
+      est deux fois plus petit que le précédent, donc la moitié restante du chemin est
+      parcourue à chaque étape.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 500 300" width="100%" style="max-width:12cm" role="img">
+      <line x1="60" y1="250" x2="470" y2="250" stroke="#111827" stroke-width="1.6"></line>
+      <line x1="60" y1="250" x2="60" y2="45" stroke="#111827" stroke-width="1.6"></line>
+      <!-- limite -->
+      <line x1="60" y1="70" x2="450" y2="70" stroke="#be123c" stroke-width="2" stroke-dasharray="8 4"></line>
+      <text x="452" y="66" font-size="12.5" text-anchor="end">1/(1−δ) = 2</text>
+      <!-- barres des termes -->
+      <rect x="75" y="160" width="30" height="90" fill="#c7d2fe" stroke="#4338ca" stroke-width="1.2"></rect>
+      <rect x="120" y="205" width="30" height="45" fill="#c7d2fe" stroke="#4338ca" stroke-width="1.2"></rect>
+      <rect x="165" y="227" width="30" height="23" fill="#c7d2fe" stroke="#4338ca" stroke-width="1.2"></rect>
+      <rect x="210" y="239" width="30" height="11" fill="#c7d2fe" stroke="#4338ca" stroke-width="1.2"></rect>
+      <rect x="255" y="244" width="30" height="6" fill="#c7d2fe" stroke="#4338ca" stroke-width="1.2"></rect>
+      <rect x="300" y="247" width="30" height="3" fill="#c7d2fe" stroke="#4338ca" stroke-width="1.2"></rect>
+      <rect x="345" y="248" width="30" height="2" fill="#c7d2fe" stroke="#4338ca" stroke-width="1.2"></rect>
+      <rect x="390" y="249" width="30" height="1" fill="#c7d2fe" stroke="#4338ca" stroke-width="1.2"></rect>
+      <!-- cumul -->
+      <polyline points="90,160 135,115 180,92 225,81 270,76 315,73 360,71 405,70"
+                fill="none" stroke="#111827" stroke-width="2"></polyline>
+      <circle cx="90" cy="160" r="4" fill="#111827"></circle>
+      <circle cx="135" cy="115" r="4" fill="#111827"></circle>
+      <circle cx="180" cy="92" r="4" fill="#111827"></circle>
+      <circle cx="225" cy="81" r="4" fill="#111827"></circle>
+      <circle cx="270" cy="76" r="4" fill="#111827"></circle>
+      <circle cx="315" cy="73" r="4" fill="#111827"></circle>
+      <circle cx="360" cy="71" r="4" fill="#111827"></circle>
+      <circle cx="405" cy="70" r="4" fill="#111827"></circle>
+      <!-- axe t -->
+      <text x="90" y="268" font-size="12.5" text-anchor="middle">0</text>
+      <text x="135" y="268" font-size="12.5" text-anchor="middle">1</text>
+      <text x="180" y="268" font-size="12.5" text-anchor="middle">2</text>
+      <text x="225" y="268" font-size="12.5" text-anchor="middle">3</text>
+      <text x="270" y="268" font-size="12.5" text-anchor="middle">4</text>
+      <text x="315" y="268" font-size="12.5" text-anchor="middle">5</text>
+      <text x="360" y="268" font-size="12.5" text-anchor="middle">6</text>
+      <text x="405" y="268" font-size="12.5" text-anchor="middle">7</text>
+      <text x="440" y="268" font-size="12.5" text-anchor="middle">période t</text>
+      <!-- legende -->
+      <text x="150" y="140" font-size="12">barres bleues : le terme δ<tspan dy="-4" font-size="9">t</tspan></text>
+      <text x="230" y="180" font-size="12">ligne noire : le total cumulé</text>
+    </svg>
+    <figcaption>
+      La somme géométrique avec δ = 0,5. Les barres bleues montrent chaque terme
+      (1 ; 0,5 ; 0,25 ; 0,125…) : elles rétrécissent de moitié à chaque période. La ligne
+      noire montre le total accumulé : il grimpe vite, puis se colle à la ligne rouge en
+      pointillés, la valeur limite 1/(1 − δ) = 2. Une infinité de termes, un total fini.
+    </figcaption>
+  </figure>
+
+  <h3>5.3 La variante qui commence à la période 1</h3>
+
+  <p>
+    Il existe deux versions de la formule, et les confondre est l'erreur classique de la
+    question 5. Tout dépend de l'endroit où commence la somme.
+  </p>
+
+  <table class="compare">
+    <tr><th class="left">La somme</th><th class="left">Sa valeur</th><th class="left">Quand l'utiliser</th></tr>
+    <tr>
+      <td class="left">\( 1 + \delta + \delta^2 + \cdots \)</td>
+      <td class="left">\( \dfrac{1}{1-\delta} \)</td>
+      <td class="left">Le gain commence <em>dès aujourd'hui</em> (période 0)</td>
+    </tr>
+    <tr>
+      <td class="left">\( \delta + \delta^2 + \delta^3 + \cdots \)</td>
+      <td class="left">\( \dfrac{\delta}{1-\delta} \)</td>
+      <td class="left">Le gain ne commence qu'<em>à la période suivante</em></td>
+    </tr>
+    <tr>
+      <td class="left">\( a + a\delta + a\delta^2 + \cdots \)</td>
+      <td class="left">\( \dfrac{a}{1-\delta} \)</td>
+      <td class="left">Un montant constant \( a \) touché à chaque période, dès aujourd'hui</td>
+    </tr>
+  </table>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi la deuxième formule découle de la première</div>
+    <p>
+      Il suffit de mettre \( \delta \) en facteur dans la somme qui commence à la période 1 :
+    </p>
+    \[ \delta + \delta^2 + \delta^3 + \cdots = \delta\,\bigl(1 + \delta + \delta^2 + \cdots\bigr) \]
+    \[ = \delta \times \frac{1}{1-\delta} = \frac{\delta}{1-\delta} \]
+    <p>
+      Autrement dit : « la même somme, mais décalée d'une période, vaut \( \delta \) fois la
+      somme normale ». C'est logique — tout arrive une période plus tard, donc tout est
+      escompté une fois de plus.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — le calcul exact de la question 5</div>
+    <p>
+      Une pizzeria qui respecte l'entente touche 6 chaque mois, dès aujourd'hui. Son gain
+      total escompté vaut donc :
+    </p>
+    \[ 6 + 6\delta + 6\delta^2 + \cdots = \frac{6}{1-\delta} \]
+    <p>
+      Une pizzeria qui trahit touche 12 aujourd'hui, puis 2 à chaque période suivante (une
+      fois la punition déclenchée). Son gain vaut :
+    </p>
+    \[ 12 + 2\delta + 2\delta^2 + \cdots = 12 + \frac{2\,\delta}{1-\delta} \]
+    <p>
+      Repère bien la différence de traitement : le 12 est <em>hors</em> de la somme
+      géométrique parce qu'il n'arrive qu'une seule fois ; les 2 forment une somme qui
+      démarre à la période 1, d'où le \( \delta \) au numérateur.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — vérifie ta formule avec δ = 0</div>
+    <p>
+      Un test qui prend deux secondes et attrape presque toutes les erreurs : remplace
+      \( \delta \) par 0. Si l'agent ne se soucie pas du tout du futur, il ne doit rester
+      que le gain d'aujourd'hui.
+    </p>
+    <p>
+      \( \dfrac{6}{1-0} = 6 \) ✓ (le gain d'un seul mois) et
+      \( 12 + \dfrac{2 \times 0}{1-0} = 12 \) ✓ (le gain de la trahison seule). Les deux
+      formules passent le test.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>6. Comment lire un tableau de jeu</h2>
+
+  <h3>6.1 Ce que « simultanément » veut dire</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — un jeu simultané</div>
+    <p>
+      Un jeu est dit <span class="term">simultané</span> quand chaque joueur choisit
+      <strong>sans connaître le choix de l'autre</strong>. Ce n'est pas une question de
+      chronomètre : deux joueurs qui décident à des heures différentes jouent quand même
+      « simultanément » si aucun n'a vu la décision de l'autre avant de prendre la sienne.
+    </p>
+    <p>
+      Exemple : pierre-feuille-ciseaux. Exemple du cours : deux enseignes qui déposent leur
+      dossier d'implantation le même mois, chacune dans l'ignorance du dossier de l'autre.
+    </p>
+  </div>
+
+  <h3>6.2 L'anatomie d'un tableau de jeu</h3>
+
+  <p>
+    Un jeu simultané à deux joueurs se représente par un tableau, qu'on appelle la
+    <span class="term">matrice des payoffs</span> (ou forme normale). Voici la règle de
+    lecture, une fois pour toutes.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 560 340" width="100%" style="max-width:12.5cm" role="img">
+      <!-- titre colonnes -->
+      <text x="280" y="34" font-size="14" text-anchor="middle">Joueur 2 (les COLONNES) : Rustica</text>
+      <!-- en-tetes colonnes -->
+      <text x="215" y="84" font-size="14" text-anchor="middle">E</text>
+      <text x="345" y="84" font-size="14" text-anchor="middle">B</text>
+      <!-- titre lignes -->
+      <text x="30" y="165" font-size="14" text-anchor="middle" transform="rotate(-90 30 165)">Joueur 1 (les LIGNES) : Piccolo</text>
+      <!-- en-tetes lignes -->
+      <text x="140" y="136" font-size="14" text-anchor="end">E</text>
+      <text x="140" y="206" font-size="14" text-anchor="end">B</text>
+      <!-- grille -->
+      <rect x="150" y="95" width="260" height="140" fill="none" stroke="#111827" stroke-width="1.8"></rect>
+      <line x1="280" y1="95" x2="280" y2="235" stroke="#111827" stroke-width="1.4"></line>
+      <line x1="150" y1="165" x2="410" y2="165" stroke="#111827" stroke-width="1.4"></line>
+      <!-- contenu des cases -->
+      <text x="215" y="136" font-size="15" text-anchor="middle">(6 ; 6)</text>
+      <text x="345" y="136" font-size="15" text-anchor="middle">(0 ; 12)</text>
+      <text x="345" y="206" font-size="15" text-anchor="middle">(2 ; 2)</text>
+      <!-- case annotee -->
+      <rect x="150" y="165" width="130" height="70" fill="#fef3c7" stroke="none"></rect>
+      <line x1="150" y1="165" x2="280" y2="165" stroke="#111827" stroke-width="1.4"></line>
+      <line x1="280" y1="165" x2="280" y2="235" stroke="#111827" stroke-width="1.4"></line>
+      <text x="196" y="200" font-size="16" text-anchor="middle">12</text>
+      <text x="215" y="200" font-size="16" text-anchor="middle">;</text>
+      <text x="236" y="200" font-size="16" text-anchor="middle">0</text>
+      <!-- pastilles -->
+      <circle cx="196" cy="220" r="9" fill="none" stroke="#be123c" stroke-width="1.6"></circle>
+      <text x="196" y="225" font-size="11.5" text-anchor="middle">1</text>
+      <circle cx="236" cy="220" r="9" fill="none" stroke="#4338ca" stroke-width="1.6"></circle>
+      <text x="236" y="225" font-size="11.5" text-anchor="middle">2</text>
+      <!-- legendes -->
+      <circle cx="30" cy="274" r="9" fill="none" stroke="#be123c" stroke-width="1.6"></circle>
+      <text x="30" y="279" font-size="11.5" text-anchor="middle">1</text>
+      <text x="48" y="279" font-size="12.5">le 1er nombre = ce que gagne le joueur de LIGNE (Piccolo)</text>
+      <circle cx="30" cy="302" r="9" fill="none" stroke="#4338ca" stroke-width="1.6"></circle>
+      <text x="30" y="307" font-size="11.5" text-anchor="middle">2</text>
+      <text x="48" y="307" font-size="12.5">le 2e nombre = ce que gagne le joueur de COLONNE (Rustica)</text>
+      <text x="48" y="330" font-size="12.5">la case surlignée = le profil (B ; E) : Piccolo joue B, Rustica joue E</text>
+    </svg>
+    <figcaption>
+      L'anatomie d'un tableau de jeu. Le joueur 1 choisit une ligne, le joueur 2 choisit une
+      colonne, et l'intersection donne le résultat. Dans chaque case, le premier nombre
+      appartient toujours au joueur de ligne et le second au joueur de colonne — c'est une
+      convention universelle, mais l'énoncé la rappelle toujours : lis cette phrase, elle
+      t'évite d'inverser les deux joueurs.
+    </figcaption>
+  </figure>
+
+  <h3>6.3 Un exemple minuscule, décodé case par case</h3>
+
+  <p>
+    Voici le jeu des deux pizzeries de la question 5. Chaque mois, chacune choisit de
+    respecter l'entente sur les prix (stratégie <strong>E</strong>) ou de baisser son prix
+    (stratégie <strong>B</strong>). Les nombres sont des profits mensuels, en milliers
+    d'euros.
+  </p>
+
+  <table class="game">
+    <tr><td class="void"></td><td class="void"></td><th colspan="2">Rustica (joueur 2)</th></tr>
+    <tr><td class="void"></td><td class="void"></td><th>E</th><th>B</th></tr>
+    <tr><td class="player" rowspan="2">Piccolo (joueur 1)</td><th>E</th><td class="hl">(6 ; 6)</td><td>(0 ; 12)</td></tr>
+    <tr><th>B</th><td>(12 ; 0)</td><td>(2 ; 2)</td></tr>
+  </table>
+
+  <p>Décodons les quatre cases, une par une, en français :</p>
+
+  <table class="compare">
+    <tr>
+      <th class="left">La case</th>
+      <th class="left">Ce que ça raconte</th>
+      <th class="left">Qui gagne quoi</th>
+    </tr>
+    <tr>
+      <td class="left">(E ; E) → (6 ; 6)</td>
+      <td class="left">Les deux respectent l'entente : les prix restent élevés</td>
+      <td class="left">Piccolo gagne 6, Rustica gagne 6</td>
+    </tr>
+    <tr>
+      <td class="left">(E ; B) → (0 ; 12)</td>
+      <td class="left">Piccolo respecte, Rustica casse les prix et rafle les clients</td>
+      <td class="left">Piccolo gagne 0, Rustica gagne 12</td>
+    </tr>
+    <tr>
+      <td class="left">(B ; E) → (12 ; 0)</td>
+      <td class="left">L'inverse : Piccolo trahit, Rustica se fait vider ses tables</td>
+      <td class="left">Piccolo gagne 12, Rustica gagne 0</td>
+    </tr>
+    <tr>
+      <td class="left">(B ; B) → (2 ; 2)</td>
+      <td class="left">Guerre des prix : les deux baissent, tout le monde y perd</td>
+      <td class="left">Piccolo gagne 2, Rustica gagne 2</td>
+    </tr>
+  </table>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — lire n'importe quelle case en trois secondes</div>
+    <ol>
+      <li><strong>Repère la ligne</strong> : c'est le choix du joueur 1.</li>
+      <li><strong>Repère la colonne</strong> : c'est le choix du joueur 2.</li>
+      <li><strong>Dans la case, le premier nombre est pour le joueur de la ligne</strong>, le second pour le joueur de la colonne. Toujours dans cet ordre.</li>
+    </ol>
+    <p>
+      Un couple de stratégies (une ligne, une colonne) s'appelle un
+      <span class="term">profil de stratégies</span> et se note entre parenthèses, le joueur
+      de ligne en premier : \( (\mathrm{B};\, \mathrm{E}) \) signifie « Piccolo joue B et
+      Rustica joue E ».
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — ne pas confondre le profil et les payoffs</div>
+    <p>
+      \( (\mathrm{B};\,\mathrm{E}) \) est un <em>profil de stratégies</em> : ce sont des
+      <strong>actions</strong>. \( (12;\,0) \) est le <em>couple de payoffs</em> qui en
+      résulte : ce sont des <strong>résultats</strong>. Les deux s'écrivent avec des
+      parenthèses et un point-virgule, ce qui prête à confusion. Quand tu réponds « les
+      équilibres de Nash sont (C ; G) et (G ; C) », tu donnes des <em>actions</em> — et c'est
+      bien ce qu'on demande.
+    </p>
+  </div>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — les trois mots à connaître pour un jeu</div>
+    <dl class="lexique">
+      <dt>Joueur</dt>
+      <dd>Celui qui décide. Ici : Piccolo et Rustica.</dd>
+      <dt>Stratégie</dt>
+      <dd>Une option parmi lesquelles un joueur choisit. Ici : E ou B. L'ensemble des lignes = les stratégies du joueur 1 ; l'ensemble des colonnes = celles du joueur 2.</dd>
+      <dt>Payoff</dt>
+      <dd>Le nombre que chaque joueur récolte, une fois que tout le monde a choisi. C'est le contenu des cases.</dd>
+    </dl>
+  </div>
+
+  <hr class="soft">
+
+  <h2>7. Les notations qui reviennent</h2>
+
+  <p>
+    Cette section est un dictionnaire. Reviens-y chaque fois qu'un symbole te bloque : ce
+    n'est jamais un obstacle intellectuel, seulement un mot que tu ne connais pas encore.
+  </p>
+
+  <h3>7.1 Les indices : \( x_1 \), \( x_2 \), \( u_3 \)</h3>
+
+  <p>
+    Un <span class="term">indice</span> est un petit chiffre écrit <em>en bas</em> d'une
+    lettre. Il sert à <strong>numéroter</strong>. Ce n'est pas une multiplication, ni une
+    puissance : c'est une étiquette.
+  </p>
+
+  <ul>
+    <li>
+      \( x_1 \) se lit « x un » ou « x indice 1 » : la quantité reçue par la personne
+      numéro 1. Dans l'allocation \( (x_1;\, x_2;\, x_3) \), on décrit ce que reçoit chacune
+      des trois personnes.
+    </li>
+    <li>
+      \( u_2(C) \) se lit « u deux de C » : l'utilité que l'habitant numéro 2 retire du
+      projet C.
+    </li>
+    <li>
+      \( w_1 \) et \( w_2 \) : les richesses dans le scénario 1 et dans le scénario 2.
+    </li>
+  </ul>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — indice (en bas) ≠ exposant (en haut)</div>
+    <p>
+      \( x_2 \) désigne « la deuxième quantité ». \( x^2 \) désigne « x multiplié par
+      lui-même ». Ce sont deux choses radicalement différentes. Regarde toujours si le petit
+      chiffre est en bas (étiquette) ou en haut (puissance). Dans l'examen, \( e^2 \) est bien
+      « effort au carré », le coût de l'effort, alors que \( x_1 \) est « la part du
+      collègue 1 ».
+    </p>
+  </div>
+
+  <h3>7.2 L'astérisque des valeurs optimales</h3>
+
+  <p>
+    Une petite étoile en exposant, comme dans \( e^* \), \( C^* \), \( p^* \), \( b^* \),
+    signale une <span class="term">valeur optimale</span> : la valeur choisie par l'agent
+    à l'issue de son calcul de maximisation. Ça se lit « e étoile » ou « e optimal ».
+  </p>
+
+  <p>
+    L'étoile n'est pas une opération, c'est un simple marqueur. Elle distingue la variable
+    <em>générique</em> \( C \) (« une couverture quelconque, je ne sais pas encore
+    laquelle ») de la valeur <em>trouvée</em> \( C^* \) (« la couverture que la livreuse
+    choisit effectivement »). Écrire l'étoile dans ta conclusion montre au correcteur que tu
+    sais ce que tu as calculé.
+  </p>
+
+  <p>
+    Variante : \( C^{**} \) (deux étoiles) sert à désigner l'optimum dans une
+    <em>seconde</em> situation, quand on veut la comparer à la première sans confondre les
+    deux.
+  </p>
+
+  <h3>7.3 Les lettres grecques et les symboles</h3>
+
+  <dl class="lexique">
+    <dt>\( \delta \) — delta</dt>
+    <dd>
+      Le facteur d'escompte : la patience d'un agent, entre 0 et 1. Question 5.
+      Attention à ne pas le confondre avec le \( \Delta \) majuscule qui, dans la figure sur
+      la dérivée, veut dire « variation de ».
+    </dd>
+    <dt>\( \pi \) — pi</dt>
+    <dd>
+      Une probabilité (souvent celle du sinistre). Rien à voir avec 3,14. Dans d'autres
+      contextes, \( \Pi \) majuscule désigne un profit.
+    </dd>
+    <dt>\( \bar{U} \) ou \( \bar{u} \) — « U barre »</dt>
+    <dd>
+      L'<span class="term">utilité de réserve</span> : ce que l'agent obtient s'il
+      <em>refuse</em> le contrat qu'on lui propose (son meilleur emploi ailleurs, par
+      exemple). C'est le plancher qu'il faut lui garantir pour qu'il accepte. Dans cet
+      examen, \( \bar{U} = 1 \). La barre au-dessus signifie « valeur de référence, fixée
+      d'avance ».
+    </dd>
+    <dt>\( \Sigma \) — sigma majuscule</dt>
+    <dd>
+      « Somme de ». \( \sum_{t=0}^{\infty} \delta^t \) se lit « somme, pour t allant de 0 à
+      l'infini, de delta puissance t » — c'est exactement
+      \( 1 + \delta + \delta^2 + \cdots \). Le symbole est juste une façon compacte
+      d'écrire « additionne tout ça ».
+    </dd>
+    <dt>\( E(\cdot) \)</dt>
+    <dd>« Espérance de » : la moyenne pondérée par les probabilités. Voir section 4.</dd>
+    <dt>\( \iff \)</dt>
+    <dd>
+      « Équivaut à », ou « si et seulement si ». Relie deux affirmations qui disent
+      exactement la même chose. \( \sqrt{EC} = 90 \iff EC = 8\,100 \).
+    </dd>
+    <dt>\( \Rightarrow \)</dt>
+    <dd>« Donc », « implique ». La flèche va de la cause vers la conséquence.</dd>
+    <dt>\( \in \)</dt>
+    <dd>
+      « Appartient à ». \( C^* \in [0;\, 6\,400] \) se lit « C étoile appartient à
+      l'intervalle de 0 à 6 400 », c'est-à-dire « C étoile est un nombre compris entre 0 et
+      6 400, bornes incluses ».
+    </dd>
+    <dt>\( [0;\,1[ \)</dt>
+    <dd>
+      Un intervalle avec un crochet fermé et un crochet ouvert : 0 est inclus, 1 est
+      <em>exclu</em>. L'énoncé écrit \( \delta \in [0;\,1[ \) parce que \( \delta = 1 \)
+      rendrait la formule \( 1/(1-\delta) \) impossible (division par zéro).
+    </dd>
+    <dt>\( \approx \)</dt>
+    <dd>« Environ égal à ». \( \sqrt{8\,400} \approx 91{,}65 \).</dd>
+  </dl>
+
+  <h3>7.4 \( \ge \) contre \( &gt; \) : une nuance qui rapporte des points</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — les deux inégalités</div>
+    <ul>
+      <li>
+        \( a &gt; b \) se lit « a est <strong>strictement</strong> supérieur à b ». L'égalité
+        est exclue : \( 5 &gt; 5 \) est faux.
+      </li>
+      <li>
+        \( a \ge b \) se lit « a est supérieur <strong>ou égal</strong> à b ». L'égalité est
+        permise : \( 5 \ge 5 \) est vrai.
+      </li>
+    </ul>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi la nuance est essentielle ici</div>
+    <p>
+      Elle est au cœur de deux définitions de l'examen.
+    </p>
+    <p>
+      <strong>Domination de Pareto.</strong> Une allocation en domine une autre si
+      <em>personne ne perd</em> (\( \ge \) pour tous) <em>et qu'au moins une personne gagne
+      vraiment</em> (\( &gt; \) pour au moins un). Si tu écris \( &gt; \) partout, tu
+      définis quelque chose de beaucoup plus rare, et tu rates la question.
+    </p>
+    <p>
+      <strong>Stratégie strictement dominée.</strong> Une stratégie est strictement dominée
+      si une autre fait <em>strictement</em> mieux (\( &gt; \)) dans <em>tous</em> les cas.
+      Avec des \( \ge \), on parlerait de domination faible, qui n'a pas les mêmes propriétés.
+    </p>
+    <p>
+      Réflexe : quand tu vérifies une domination, écris les inégalités une par une, et
+      surveille lesquelles sont strictes.
+    </p>
+  </div>
+
+  <h3>7.5 L'accolade des cas</h3>
+
+  <p>
+    Quand une grandeur prend des valeurs différentes selon le scénario, on l'écrit avec une
+    grande accolade. Exemple, la richesse finale de la livreuse selon qu'elle est volée ou
+    non :
+  </p>
+
+  \[
+  w = \begin{cases}
+    10\,000 - 0{,}25\,C & \text{si le velo n'est pas vole} \\
+    3\,600 + 0{,}75\,C & \text{si le velo est vole}
+  \end{cases}
+  \]
+
+  <p>
+    Ça se lit : « \( w \) vaut \( 10\,000 - 0{,}25\,C \) dans le premier cas, et
+    \( 3\,600 + 0{,}75\,C \) dans le second ». L'accolade veut dire « au choix, selon la
+    situation » — c'est un « ou », jamais un « et ». Les deux lignes ne s'additionnent pas.
+  </p>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — décoder n'importe quelle notation inconnue</div>
+    <ol>
+      <li><strong>Dis-la à voix haute.</strong> Beaucoup de blocages disparaissent dès qu'on prononce le symbole.</li>
+      <li><strong>Demande-toi ce que c'est.</strong> Un nombre ? Une fonction ? Un ensemble ? Une opération ?</li>
+      <li><strong>Cherche sa définition dans l'énoncé.</strong> Un énoncé bien écrit définit toujours ses lettres à leur première apparition. Relis le paragraphe d'introduction de la question.</li>
+      <li><strong>Remplace par un nombre concret.</strong> Si \( \delta \) t'échappe, essaie \( \delta = 0{,}5 \) et refais le calcul. L'abstraction s'éclaire toujours par un exemple numérique.</li>
+    </ol>
+  </div>
+
+  <hr class="soft">
+
+  <h2>8. Avant d'ouvrir le chapitre 1</h2>
+
+  <p>
+    Tu viens de parcourir tout l'outillage. Voici la liste de contrôle : si tu peux répondre
+    « oui » à chaque point, tu es prêt pour la suite. Sinon, reviens à la section indiquée —
+    ce n'est pas une perte de temps, c'est un investissement.
+  </p>
+
+  <table class="compare">
+    <tr><th class="left">Je sais…</th><th class="left">Section</th></tr>
+    <tr><td class="left">…dire ce que « rationnel » veut dire en économie, et ce que ça ne veut pas dire</td><td class="left">2.2</td></tr>
+    <tr><td class="left">…expliquer pourquoi seul l'ordre des utilités compte</td><td class="left">2.4</td></tr>
+    <tr><td class="left">…convertir 1/4 en 0,25 et en 25 % sans réfléchir</td><td class="left">3.1</td></tr>
+    <tr><td class="left">…calculer √3 600 = 60 et retrouver 8 100 à partir de √EC = 90</td><td class="left">3.2</td></tr>
+    <tr><td class="left">…isoler une inconnue dans une équation, et vérifier ma solution</td><td class="left">3.3</td></tr>
+    <tr><td class="left">…résoudre un système par substitution</td><td class="left">3.4</td></tr>
+    <tr><td class="left">…dériver \( a + 4be - e^2 \) par rapport à \( e \)</td><td class="left">3.5</td></tr>
+    <tr><td class="left">…poser une CPO et vérifier que c'est un maximum</td><td class="left">3.6</td></tr>
+    <tr><td class="left">…calculer une espérance en pondérant par les probabilités</td><td class="left">4.2</td></tr>
+    <tr><td class="left">…expliquer pourquoi \( E[u(w)] \neq u(E[w]) \)</td><td class="left">4.3</td></tr>
+    <tr><td class="left">…retrouver \( 1/(1-\delta) \) et savoir quand utiliser \( \delta/(1-\delta) \)</td><td class="left">5.2 et 5.3</td></tr>
+    <tr><td class="left">…lire n'importe quelle case d'un tableau de jeu sans hésiter</td><td class="left">6.2</td></tr>
+    <tr><td class="left">…décoder \( x_1 \), \( e^* \), \( \bar{U} \), \( \delta \), \( \Sigma \)</td><td class="left">7</td></tr>
+  </table>
+
+  <div class="box box-copie">
+    <div class="box-title">Le mot de la fin, avant d'attaquer</div>
+    <p>
+      Tu n'as pas besoin d'être bon en maths pour réussir cet examen. Tu as besoin de savoir
+      faire six ou sept gestes très simples, et surtout de savoir <em>lequel</em> employer à
+      quel moment. C'est exactement ce que les cinq chapitres suivants vont t'apprendre :
+      chacun reprend une question de l'examen, rappelle le cours dont elle a besoin, puis
+      déroule la solution ligne par ligne, sans jamais sauter une étape.
+    </p>
+    <p>
+      Garde ce chapitre 0 sous la main. Chaque fois qu'un symbole ou un mot te bloquera dans
+      la suite, il est ici. Et surtout : ne t'inquiète pas d'avoir tout à apprendre. Il y a
+      exactement cinq questions à comprendre, et tu as tout le temps qu'il faut.
+    </p>
+  </div>
+
+</section>

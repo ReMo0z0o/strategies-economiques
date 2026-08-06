@@ -1,0 +1,2148 @@
+<section class="chapter">
+<div class="chapter-tag">Chapitre 3 — Question 3 · 50 points</div>
+<h1>Question 3 : les jeux simultanés — dominance, PSS, équilibre de Nash et stratégies mixtes</h1>
+<p class="chapter-intro">C'est la plus grosse question de l'examen : 50 points sur 200, soit un quart de la note. Elle contient deux jeux totalement indépendants l'un de l'autre. Dans ce chapitre, on part vraiment de zéro : on va d'abord construire ensemble ce qu'est un « jeu » en économie, puis on résoudra les cinq sous-questions une par une, en justifiant chaque comparaison de nombres et chaque ligne de calcul.</p>
+
+<h2>0. La carte du chapitre : où on va et pourquoi</h2>
+
+<p>Avant de commencer, prends trente secondes pour lire cette page. Elle te dit ce que tu vas apprendre et dans quel ordre. Si tu es perdu plus tard, reviens ici : c'est le plan.</p>
+
+<p>La question 3 te présente <strong>deux histoires différentes</strong>, et te demande cinq choses.</p>
+
+<table class="data">
+<tr><th>Sous-question</th><th>Ce qu'on te demande</th><th>Points</th></tr>
+<tr><td>3.1</td><td>Trouver une stratégie « dominée » dans le premier jeu</td><td>8</td></tr>
+<tr><td>3.2</td><td>Éliminer les stratégies dominées, tour par tour, et lister les PSS</td><td>12</td></tr>
+<tr><td>3.3</td><td>Trouver les équilibres de Nash en stratégies pures</td><td>10</td></tr>
+<tr><td>3.4</td><td>Montrer qu'un autre jeu n'a aucun équilibre pur, puis calculer l'équilibre en probabilités</td><td>14</td></tr>
+<tr><td>3.5</td><td>Calculer combien chacun gagne en moyenne à cet équilibre</td><td>6</td></tr>
+</table>
+
+<p>Les trois premières sous-questions portent sur <strong>un jeu de magasins</strong> : deux chaînes de sport, Athlex et Boréal, choisissent où ouvrir leur magasin dans une ville. Les deux dernières portent sur <strong>un jeu de cybersécurité</strong> : un pirate informatique attaque un serveur, une responsable de la sécurité en surveille un. Les deux jeux n'ont rien à voir : ne mélange jamais leurs chiffres.</p>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi cette question est en réalité une seule et même méthode</div>
+<p>Ne te laisse pas impressionner par les cinq sous-questions. Elles suivent toutes le même fil, celui du cours : on part de l'hypothèse la plus faible (« les joueurs sont rationnels ») et on la renforce petit à petit. Chaque renforcement donne un outil de plus :</p>
+<ul>
+<li>« un joueur rationnel ne joue jamais une stratégie <em>toujours moins bonne</em> » → sous-question 3.1 ;</li>
+<li>« et il sait que l'autre est rationnel, et l'autre le sait aussi… » → sous-question 3.2 ;</li>
+<li>« et chacun devine correctement ce que l'autre va faire » → sous-question 3.3 ;</li>
+<li>« et si aucune situation stable n'existe, on autorise le hasard » → sous-questions 3.4 et 3.5.</li>
+</ul>
+<p>Une seule idée, quatre étages. C'est tout le chapitre.</p>
+</div>
+
+<p>Voici, dès maintenant, les cinq réponses. Tu ne comprends probablement rien à ces mots pour l'instant : c'est normal, c'est même le but. Reviens les relire quand tu auras fini le chapitre, tu verras qu'elles seront devenues évidentes.</p>
+
+<div class="result">
+<div class="result-title">Les cinq réponses (à comprendre d'ici la fin du chapitre)</div>
+<ul>
+<li><strong>3.1</strong> — La stratégie P (Périphérie) de <strong>Boréal</strong> est strictement dominée par sa stratégie G (Gare).</li>
+<li><strong>3.2</strong> — On élimine d'abord la colonne P, puis la ligne P ; il reste <strong>quatre PSS</strong> : (C ; C), (C ; G), (G ; C) et (G ; G).</li>
+<li><strong>3.3</strong> — Deux équilibres de Nash en stratégies pures : <strong>(C ; G)</strong> et <strong>(G ; C)</strong>.</li>
+<li><strong>3.4</strong> — Aucun équilibre pur dans le jeu du pirate ; l'équilibre mixte est \( p^* = 0{,}6 \) et \( q^* = 0{,}4 \).</li>
+<li><strong>3.5</strong> — Payoff espéré du pirate : <strong>46</strong>. Payoff espéré de la responsable : <strong>58</strong>.</li>
+</ul>
+</div>
+
+<hr class="soft">
+
+<h2>1. Le cours dont tu as besoin (première partie) : qu'est-ce qu'un « jeu » ?</h2>
+
+<p>Cette section est un vrai mini-cours. Elle ne résout aucune sous-question : elle construit le vocabulaire sans lequel l'énoncé est du chinois. Prends ton temps. Tout ce qui suit dans le chapitre s'appuie dessus.</p>
+
+<h3>1.1 L'idée de départ : quand ton résultat dépend aussi des autres</h3>
+
+<p>Jusqu'ici, en économie, on étudiait un individu seul face à ses choix : « quel panier de courses acheter », « quelle assurance prendre ». Le monde était figé autour de lui.</p>
+
+<p>La <span class="term">théorie des jeux</span> étudie une situation différente : celle où <strong>ton résultat ne dépend pas seulement de ce que tu fais, mais aussi de ce que font les autres</strong>. Trois exemples de la vie de tous les jours :</p>
+
+<ul>
+<li>Tu joues à <strong>pierre-feuille-ciseaux</strong>. Jouer « pierre » n'est ni bon ni mauvais en soi : c'est excellent si l'autre joue « ciseaux », catastrophique s'il joue « feuille ».</li>
+<li>Tu tires un <strong>penalty</strong>. Tirer à gauche est parfait… sauf si le gardien plonge à gauche.</li>
+<li>Tu ouvres un <strong>magasin de sport</strong> au centre-ville. Bonne idée si ton concurrent va ailleurs, mauvaise idée s'il s'installe à côté de toi et vous vous partagez les mêmes clients.</li>
+</ul>
+
+<p>Le troisième exemple, c'est exactement la question 3.1 à 3.3.</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — un jeu</div>
+<p>Un <span class="term">jeu</span>, c'est trois ingrédients, et rien d'autre :</p>
+<ol>
+<li>des <strong>joueurs</strong> : qui décide ? (ici : deux chaînes de magasins) ;</li>
+<li>des <strong>stratégies</strong> : quelles options a chaque joueur ? (ici : Centre-ville, Gare, Périphérie) ;</li>
+<li>des <strong>payoffs</strong> : combien chacun gagne pour chaque combinaison possible de choix.</li>
+</ol>
+<p>Si tu sais nommer ces trois choses, tu as « modélisé » la situation. Le reste, c'est de la résolution.</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel — le mot « payoff »</div>
+<p>Le mot <span class="term">payoff</span> (mot anglais, prononcé « pé-off ») veut dire « ce que le joueur récolte ». Selon les exercices, ce sera un profit en euros, un nombre d'années de prison en moins, un pourcentage de réussite, ou une « utilité » abstraite. Ici, l'énoncé est explicite : ce sont des <strong>profits mensuels en milliers d'euros</strong>. Donc « 60 » veut dire 60 000 € par mois.</p>
+<p>Règle universelle et non négociable : <strong>un joueur cherche toujours le payoff le plus GRAND</strong>. Plus c'est haut, mieux c'est. On appelle ça être <span class="term">rationnel</span>.</p>
+</div>
+
+<h3>1.2 Le mot le plus important de l'énoncé : « simultanément »</h3>
+
+<p>L'énoncé dit : « Les deux enseignes choisissent leur emplacement <strong>simultanément</strong>. » Ce mot est capital, et il est presque toujours mal compris.</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — jeu simultané</div>
+<p>Un jeu est <span class="term">simultané</span> quand chaque joueur choisit <strong>sans connaître le choix de l'autre</strong>.</p>
+<p>Attention : ce n'est <em>pas</em> une question de chronomètre. Ce n'est pas « les deux décident à la même seconde ». C'est une question d'<strong>information</strong>.</p>
+</div>
+
+<p>Un exemple pour bien voir la différence. Imagine que Athlex signe son bail le 3 mars et Boréal le 17 mars. Deux dates différentes, deux semaines d'écart. Est-ce un jeu simultané ? <strong>Oui</strong>, si le 17 mars Boréal ignore encore ce qu'Athlex a signé (bail confidentiel, notaire discret). <strong>Non</strong>, si le bail d'Athlex a été publié dans la presse locale et que Boréal le lit avant de décider.</p>
+
+<p>Autrement dit : <em>simultané = « je décide dans le noir »</em>. Séquentiel = « je décide en voyant ».</p>
+
+<figure>
+<svg viewBox="0 0 460 210" width="100%" style="max-width:12cm" role="img" aria-label="Comparaison entre un jeu simultané, où un mur d'information sépare les deux joueurs, et un jeu séquentiel, où le second joueur voit le choix du premier">
+  <rect x="6" y="26" width="210" height="150" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <text x="111" y="18" font-size="12.5" text-anchor="middle" font-weight="bold">Jeu SIMULTANÉ</text>
+  <rect x="24" y="52" width="72" height="42" fill="none" stroke="#111827" stroke-width="1.2"/>
+  <text x="60" y="78" font-size="12" text-anchor="middle">Athlex</text>
+  <rect x="126" y="52" width="72" height="42" fill="none" stroke="#111827" stroke-width="1.2"/>
+  <text x="162" y="78" font-size="12" text-anchor="middle">Boréal</text>
+  <line x1="111" y1="42" x2="111" y2="160" stroke="#be123c" stroke-width="3" stroke-dasharray="7 5"/>
+  <text x="111" y="120" font-size="11.5" text-anchor="middle" fill="#be123c">mur</text>
+  <text x="111" y="134" font-size="11.5" text-anchor="middle" fill="#be123c">d'information</text>
+  <text x="111" y="160" font-size="11.5" text-anchor="middle">chacun décide sans voir l'autre</text>
+  <rect x="244" y="26" width="210" height="150" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <text x="349" y="18" font-size="12.5" text-anchor="middle" font-weight="bold">Jeu SÉQUENTIEL</text>
+  <rect x="262" y="52" width="72" height="42" fill="none" stroke="#111827" stroke-width="1.2"/>
+  <text x="298" y="78" font-size="12" text-anchor="middle">Athlex</text>
+  <rect x="364" y="52" width="72" height="42" fill="none" stroke="#111827" stroke-width="1.2"/>
+  <text x="400" y="78" font-size="12" text-anchor="middle">Boréal</text>
+  <line x1="334" y1="73" x2="360" y2="73" stroke="#111827" stroke-width="2"/>
+  <polygon points="360,73 352,69 352,77" fill="#111827"/>
+  <text x="349" y="126" font-size="11.5" text-anchor="middle">Boréal VOIT le choix</text>
+  <text x="349" y="142" font-size="11.5" text-anchor="middle">d'Athlex avant de décider</text>
+  <text x="349" y="160" font-size="11.5" text-anchor="middle">(ce n'est pas notre cas)</text>
+</svg>
+<figcaption>Figure 1 — « Simultané » ne veut pas dire « à la même seconde », mais « sans information sur le choix de l'autre ». Toute la question 3 se passe dans le cadre de gauche.</figcaption>
+</figure>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi ce détail change tout</div>
+<p>Parce que si tu savais ce que l'autre fait, il n'y aurait plus de problème du tout : tu regarderais sa colonne et tu prendrais le plus grand nombre. Fin de l'exercice. Toute la difficulté — et tout l'intérêt — vient de ce que tu dois <strong>anticiper</strong> le choix de l'autre au lieu de l'observer. Et pour anticiper, on ne dispose que d'une chose : l'hypothèse que l'autre est rationnel, lui aussi.</p>
+</div>
+
+<h3>1.3 Comment lire un tableau de jeu (la « matrice »)</h3>
+
+<p>Quand un jeu a deux joueurs et que chacun a un petit nombre d'options, on résume tout dans un tableau. On l'appelle la <span class="term">matrice des payoffs</span>, ou <span class="term">forme normale</span> du jeu. Voici celle de l'énoncé.</p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="3">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th><th>P</th></tr>
+<tr><td class="player" rowspan="3">Athlex</td><th>C</th><td>(30 ; 30)</td><td>(60 ; 40)</td><td>(60 ; 35)</td></tr>
+<tr><th>G</th><td>(40 ; 60)</td><td>(20 ; 20)</td><td>(40 ; 15)</td></tr>
+<tr><th>P</th><td>(20 ; 55)</td><td>(25 ; 35)</td><td>(70 ; 10)</td></tr>
+</table>
+
+<p>Décortiquons-la, morceau par morceau, sans rien sauter.</p>
+
+<ul>
+<li><strong>Athlex est le joueur des LIGNES.</strong> Son nom est écrit verticalement à gauche. Choisir sa stratégie, pour Athlex, c'est choisir une <em>ligne</em> : la ligne C, la ligne G ou la ligne P.</li>
+<li><strong>Boréal est le joueur des COLONNES.</strong> Son nom est écrit horizontalement en haut. Choisir sa stratégie, pour Boréal, c'est choisir une <em>colonne</em>.</li>
+<li><strong>C, G, P</strong> sont les abréviations de Centre-ville, Gare, Périphérie. Les deux joueurs ont les trois mêmes options — c'est un hasard de l'énoncé, ce n'est pas obligatoire dans un jeu.</li>
+<li><strong>Chaque case contient deux nombres séparés par un point-virgule.</strong> Le <em>premier</em> est toujours le payoff du joueur des lignes (Athlex), le <em>second</em> celui du joueur des colonnes (Boréal). L'énoncé le précise noir sur blanc : « le premier nombre est le profit d'Athlex, le second celui de Boréal ».</li>
+</ul>
+
+<figure>
+<svg viewBox="0 0 440 200" width="100%" style="max-width:11cm" role="img" aria-label="Anatomie d'une case de la matrice : le premier nombre est le profit du joueur des lignes, le second celui du joueur des colonnes">
+  <rect x="140" y="70" width="160" height="60" fill="#f3f4f6" stroke="#111827" stroke-width="1.6"/>
+  <text x="220" y="110" font-size="26" text-anchor="middle" font-family="Georgia, serif">( 60 ; 40 )</text>
+  <line x1="182" y1="70" x2="120" y2="30" stroke="#111827" stroke-width="1.6"/>
+  <polygon points="182,70 172,61 176,72" fill="#111827"/>
+  <text x="116" y="24" font-size="12" text-anchor="end">Athlex (lignes) gagne 60</text>
+  <line x1="258" y1="70" x2="320" y2="30" stroke="#111827" stroke-width="1.6" stroke-dasharray="5 3"/>
+  <polygon points="258,70 264,72 268,61" fill="#111827"/>
+  <text x="324" y="24" font-size="12">Boréal (colonnes) gagne 40</text>
+  <text x="220" y="152" font-size="12" text-anchor="middle">c'est-à-dire 60 000 € et 40 000 €</text>
+  <text x="220" y="170" font-size="12" text-anchor="middle">de profit mensuel</text>
+  <text x="220" y="190" font-size="11.5" text-anchor="middle" font-style="italic">Ordre : toujours (ligne ; colonne)</text>
+</svg>
+<figcaption>Figure 2 — L'anatomie d'une case. L'ordre des deux nombres n'est jamais aléatoire : ligne d'abord, colonne ensuite. Inverse-les et toute ta copie devient fausse.</figcaption>
+</figure>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 1 — le plus fréquent de tout le chapitre</div>
+<p>Confondre les deux nombres d'une case. Quand tu travailles sur Athlex, tu ne dois lire <strong>que les premiers nombres</strong>. Quand tu travailles sur Boréal, <strong>que les seconds</strong>. Prends l'habitude, au brouillon, de surligner d'une couleur les premiers et d'une autre les seconds. Une inversion, et tu perds les 30 points des questions 3.1 à 3.3 d'un coup.</p>
+</div>
+
+<h3>1.4 Lisons les neuf cases à voix haute</h3>
+
+<p>Pour que le tableau devienne une histoire et pas une grille de chiffres, traduisons les neuf cases en phrases. Fais-le systématiquement en examen : ça prend deux minutes et ça évite les erreurs de lecture.</p>
+
+<table class="data">
+<tr><th>Athlex choisit…</th><th>Boréal choisit…</th><th>Résultat</th></tr>
+<tr><td>Centre-ville</td><td>Centre-ville</td><td>(30 ; 30) — ils se partagent les clients du centre : 30 chacun</td></tr>
+<tr><td>Centre-ville</td><td>Gare</td><td>(60 ; 40) — Athlex a le centre pour lui seul : 60 ; Boréal a la gare : 40</td></tr>
+<tr><td>Centre-ville</td><td>Périphérie</td><td>(60 ; 35) — Athlex a toujours 60 ; Boréal, plus isolée, n'a que 35</td></tr>
+<tr><td>Gare</td><td>Centre-ville</td><td>(40 ; 60) — situation inverse : Boréal rafle le centre</td></tr>
+<tr><td>Gare</td><td>Gare</td><td>(20 ; 20) — les deux à la gare : ils s'étouffent mutuellement</td></tr>
+<tr><td>Gare</td><td>Périphérie</td><td>(40 ; 15) — Athlex tient la gare ; la périphérie rapporte peu à Boréal</td></tr>
+<tr><td>Périphérie</td><td>Centre-ville</td><td>(20 ; 55) — Athlex s'est exilée, Boréal profite du centre</td></tr>
+<tr><td>Périphérie</td><td>Gare</td><td>(25 ; 35) — chacun dans son coin, résultats moyens</td></tr>
+<tr><td>Périphérie</td><td>Périphérie</td><td>(70 ; 10) — cas bizarre : les deux en périphérie, mais Athlex écrase Boréal</td></tr>
+</table>
+
+<div class="box box-exemple">
+<div class="box-title">Que raconte la dernière ligne ?</div>
+<p>La case (P ; P) donne (70 ; 10). Athlex gagnerait 70 — son <em>meilleur</em> profit de toute la matrice — pendant que Boréal ne gagnerait que 10, son pire. C'est possible : imagine qu'Athlex ait une marque plus forte, et qu'en périphérie, où il n'y a de la place que pour un seul gros magasin, elle prend tout. Retiens cette case : elle est piégeuse, on la retrouvera trois fois dans ce chapitre.</p>
+</div>
+
+<h3>1.5 Les notations du cours, décodées une par une</h3>
+
+<p>Ton professeur écrit les payoffs avec une notation compacte. Elle fait peur au début et devient très pratique ensuite. Voici comment la lire.</p>
+
+<div class="box box-def">
+<div class="box-title">Décodage — la notation \( u_i(s_1, s_2) \)</div>
+<ul>
+<li>La lettre \( u \) veut dire « utilité » ou « payoff ». C'est la fonction qui, à une situation, associe un nombre.</li>
+<li>L'<strong>indice</strong> en bas (le petit caractère) dit <strong>de qui</strong> on parle. \( u_A \) se lit « u indice A » : le payoff d'Athlex. \( u_B \), celui de Boréal.</li>
+<li>Entre parenthèses, on met la <strong>situation complète</strong> : d'abord la stratégie du joueur des lignes, puis celle du joueur des colonnes.</li>
+</ul>
+<p>Exemple à lire à voix haute :</p>
+<p>\[ u_B(\mathrm{C}, \mathrm{G}) = 40 \]</p>
+<p>se lit : « le payoff de Boréal, quand Athlex joue C et que Boréal joue G, vaut 40 ». Vérifie sur le tableau : ligne C, colonne G, case (60 ; 40), second nombre → 40. ✓</p>
+</div>
+
+<p>Autre notation que tu croiseras dans le cours : \( s_{-i} \), qui se lit « s indice moins i ». Le « moins i » signifie <em>« tout le monde sauf le joueur \( i \) »</em>. Dans un jeu à deux joueurs, \( s_{-1} \) désigne simplement la stratégie du joueur 2. C'est une commodité d'écriture pour pouvoir énoncer les définitions une seule fois, quel que soit le nombre de joueurs.</p>
+
+<div class="box box-methode">
+<div class="box-title">Réflexe de méthode n° 0 — annoter la matrice dès la lecture</div>
+<p>Dès que tu découvres une matrice en examen, avant même de lire les questions :</p>
+<ol>
+<li>Écris en marge qui est le joueur des lignes et qui est celui des colonnes.</li>
+<li>Entoure dans chaque <strong>colonne</strong> le plus grand des <em>premiers</em> nombres.</li>
+<li>Entoure dans chaque <strong>ligne</strong> le plus grand des <em>seconds</em> nombres.</li>
+</ol>
+<p>Ce petit travail de deux minutes te donne directement la réponse à la question 3.3, la moitié de la 3.4, et te sert de garde-fou pour 3.1 et 3.2. On l'appelle la <strong>méthode du soulignage</strong> et on la détaillera en section 4.</p>
+</div>
+
+<hr class="soft">
+
+<h2>2. Question 3.1 — repérer une stratégie dominée (8 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.1 (8 points)</div>
+<p>Deux chaînes de magasins d'articles de sport, <strong>Athlex</strong> (joueur 1) et <strong>Boréal</strong> (joueur 2), veulent chacune ouvrir un magasin unique dans une ville moyenne. Trois emplacements sont possibles : le Centre-ville (C), le quartier de la Gare (G) et la Périphérie (P). Les deux enseignes choisissent leur emplacement simultanément. La matrice ci-dessous donne les profits mensuels (en milliers d'euros). Dans chaque cellule, le premier nombre est le profit d'Athlex, le second celui de Boréal.</p>
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="3">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th><th>P</th></tr>
+<tr><td class="player" rowspan="3">Athlex</td><th>C</th><td>(30 ; 30)</td><td>(60 ; 40)</td><td>(60 ; 35)</td></tr>
+<tr><th>G</th><td>(40 ; 60)</td><td>(20 ; 20)</td><td>(40 ; 15)</td></tr>
+<tr><th>P</th><td>(20 ; 55)</td><td>(25 ; 35)</td><td>(70 ; 10)</td></tr>
+</table>
+<p><strong>3.1)</strong> Dans ce jeu, quelle stratégie est dominée ? Par quelle stratégie est-elle dominée ? Expliquez. <em>(8 points — barème : identification 4 pts ; vérification des trois inégalités 4 pts.)</em></p>
+</div>
+
+<h3>2.1 Traduisons la question en français simple</h3>
+
+<p>Prenons la phrase mot par mot.</p>
+
+<dl class="lexique">
+<dt>« Dans ce jeu »</dt>
+<dd>Dans la matrice complète, celle avec les trois lignes et les trois colonnes. Pas dans une version réduite : on n'a encore rien éliminé.</dd>
+<dt>« quelle stratégie est dominée ? »</dt>
+<dd>Une stratégie, c'est <em>soit</em> une ligne d'Athlex (C, G ou P), <em>soit</em> une colonne de Boréal (C, G ou P). Il y a donc six candidates en tout. On te demande d'en trouver une qui est « dominée », c'est-à-dire — on va le définir précisément — <strong>toujours moins bonne qu'une autre, quoi qu'il arrive</strong>.</dd>
+<dt>« Par quelle stratégie est-elle dominée ? »</dt>
+<dd>Ce n'est pas une question bonus : c'est la moitié des points. Dire « P est dominée » sans dire par quoi, c'est incomplet. Une stratégie n'est jamais dominée dans l'absolu ; elle est dominée <em>par une autre stratégie précise du même joueur</em>.</dd>
+<dt>« Expliquez »</dt>
+<dd>Écris les comparaisons de nombres. Le barème donne 4 points pour « les trois inégalités ». Pas de phrase vague : des inégalités chiffrées.</dd>
+</dl>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 2 — « quelle stratégie », pas « quel joueur »</div>
+<p>La question ne dit pas de quel joueur elle parle. Tu dois donc chercher chez les <strong>deux</strong>, et préciser dans ta réponse : « la stratégie P <em>de Boréal</em> ». Écrire seulement « P est dominée » est ambigu, puisque les deux joueurs ont une stratégie qui s'appelle P — et c'est justement celle d'Athlex qui n'est <em>pas</em> dominée ici. Le correcteur ne devinera pas à ta place.</p>
+</div>
+
+<h3>2.2 Le cours dont tu as besoin : rationalité, dominance, dominée</h3>
+
+<h4>a) L'hypothèse de base : les joueurs sont rationnels (H1)</h4>
+
+<div class="box box-def">
+<div class="box-title">Définition — Hypothèse 1 (H1) : la rationalité</div>
+<p>Un joueur <span class="term">rationnel</span> choisit sa stratégie de manière à <strong>maximiser son payoff</strong>. Il ne se trompe pas dans ses calculs, il ne joue pas par habitude, il ne cherche pas à nuire à l'autre : il veut le plus grand nombre possible <em>pour lui</em>.</p>
+<p>Deux conséquences immédiates, qui sont les seuls outils dont on dispose au départ :</p>
+<ul>
+<li>s'il a une stratégie <strong>dominante</strong>, il la joue ;</li>
+<li>il ne joue <strong>jamais</strong> une stratégie <strong>dominée</strong>.</li>
+</ul>
+</div>
+
+<p>Ces deux mots — dominante, dominée — se ressemblent horriblement. Ce sont pourtant deux notions différentes, et les confondre est l'erreur la plus classique de l'examen. Définissons-les l'une après l'autre.</p>
+
+<h4>b) Stratégie dominante : « la meilleure, quoi que fasse l'autre »</h4>
+
+<div class="box box-def">
+<div class="box-title">Définition — stratégie dominante</div>
+<p>Une stratégie de \( i \), notée \( s_i^* \), est <span class="term">dominante</span> si elle est au moins aussi bonne que <strong>toutes</strong> les autres stratégies de \( i \), et cela <strong>pour chaque</strong> choix possible de l'adversaire :</p>
+<p>\[ u_i(s_i^*,\, s_{-i}) \;\ge\; u_i(s_i',\, s_{-i}) \]</p>
+<p>pour toute autre stratégie \( s_i' \) de \( i \), et pour tout \( s_{-i} \) de l'adversaire.</p>
+<p>En français : <em>« quoi que fasse l'autre, cette option-là est mon meilleur choix ».</em></p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Exemple de la vie quotidienne — le parapluie</div>
+<p>Tu sors de chez toi. Tes options : prendre un parapluie ou non. « L'adversaire », c'est la météo : soleil ou pluie. Si le parapluie est ultra-léger et se glisse dans ta poche, alors le prendre est <strong>dominant</strong> : s'il pleut tu es content, s'il fait beau ça ne te coûte rien. Quoi que fasse la météo, prendre le parapluie est au moins aussi bien. En revanche, si c'est un gros parapluie encombrant, ce n'est plus dominant : sous le soleil, tu préférerais ne pas l'avoir.</p>
+</div>
+
+<h4>c) Stratégie dominée : « il existe toujours mieux »</h4>
+
+<div class="box box-def">
+<div class="box-title">Définition — stratégie dominée</div>
+<p>Une stratégie \( s_i \) est <span class="term">dominée</span> par une autre stratégie \( s_i' \) du <strong>même joueur</strong> si :</p>
+<p>\[ u_i(s_i',\, s_{-i}) \;\ge\; u_i(s_i,\, s_{-i}) \qquad \text{pour tous les } s_{-i}. \]</p>
+<p>En français : <em>« quoi que fasse l'autre, \( s_i' \) me rapporte au moins autant que \( s_i \) ».</em> Si les inégalités sont <strong>strictes</strong> (\( &gt; \) partout, jamais \( = \)), on dit que \( s_i \) est <span class="term">strictement dominée</span>.</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi un joueur rationnel ne joue jamais une stratégie strictement dominée</div>
+<p>Parce qu'il existe une autre option qui fait <strong>strictement mieux dans tous les scénarios possibles</strong>. Il n'y a donc aucun scénario, aucune croyance sur l'adversaire, aucun pari, aucun coup de chance qui puisse la sauver. Peu importe ce que tu penses que l'autre va faire : tu regrettes ton choix à coup sûr. Un joueur qui maximise son payoff ne peut pas jouer ça.</p>
+<p>Note bien le raisonnement : on n'a pas eu besoin de savoir ce que l'autre fait. C'est précisément ce qui rend cet outil si puissant dans un jeu simultané, où justement on ne le sait pas.</p>
+</div>
+
+<h4>d) La différence entre les deux (à connaître par cœur)</h4>
+
+<table class="compare">
+<tr><th class="left">&nbsp;</th><th>Dominante</th><th>Dominée</th></tr>
+<tr><td class="left">On la compare à…</td><td><strong>toutes</strong> les autres stratégies</td><td><strong>une seule</strong> autre stratégie</td></tr>
+<tr><td class="left">Elle est…</td><td>toujours la meilleure</td><td>toujours moins bonne (que cette autre-là)</td></tr>
+<tr><td class="left">Le joueur…</td><td>la joue à coup sûr</td><td>ne la joue jamais</td></tr>
+<tr><td class="left">Combien peut-il y en avoir ?</td><td>une au maximum (strictement)</td><td>plusieurs</td></tr>
+</table>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 3 — avoir une dominée n'implique pas avoir une dominante</div>
+<p>Avec 2 stratégies seulement, les deux notions se confondent : si A domine B, alors A est dominante. <strong>Mais dès qu'il y a 3 stratégies ou plus, c'est faux</strong> : je peux avoir une stratégie clairement mauvaise (dominée) sans qu'aucune des deux autres ne soit toujours la meilleure. C'est exactement le cas de Boréal dans notre jeu : sa stratégie P est dominée, mais elle n'a <em>aucune</em> stratégie dominante (contre C elle préfère G, contre G elle préfère C). Ne va donc pas écrire « G est dominante pour Boréal » : ce serait faux et le correcteur le sanctionnerait.</p>
+</div>
+
+<h4>e) Strictement dominée ou faiblement dominée ?</h4>
+
+<div class="box box-def">
+<div class="box-title">Définition — dominance stricte contre dominance faible</div>
+<ul>
+<li><strong>Strictement dominée</strong> : l'autre stratégie fait <em>mieux</em> dans <strong>tous</strong> les cas (\( &gt; \) partout). Aucune égalité nulle part.</li>
+<li><strong>Faiblement dominée</strong> : l'autre stratégie fait <em>au moins aussi bien</em> partout (\( \ge \)), et <em>strictement mieux</em> dans au moins un cas.</li>
+</ul>
+<p>La distinction compte : l'élimination itérative de la question 3.2 se fait avec la dominance <strong>stricte</strong>, parce qu'elle seule garantit qu'on ne détruit aucun équilibre au passage. Dans notre jeu, tout est strict — c'est plus confortable, mais écris quand même le mot « strictement », il rapporte des points.</p>
+</div>
+
+<h3>2.3 La résolution pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Organiser la recherche pour ne rien oublier</div>
+<p>Il y a six stratégies en tout (trois pour chacun). Comparer « une stratégie contre une autre » se fait par paires. Pour chaque joueur, il y a trois paires possibles : C contre G, C contre P, G contre P. Soit six comparaisons au total, chacune portant sur trois nombres. C'est faisable en quelques minutes si on s'organise.</p>
+<p>La règle de lecture, à ne jamais oublier :</p>
+<ul>
+<li>Pour <strong>Boréal</strong> (joueur des colonnes), on compare <strong>deux colonnes</strong>, en ne regardant que les <strong>seconds</strong> nombres, ligne par ligne.</li>
+<li>Pour <strong>Athlex</strong> (joueur des lignes), on compare <strong>deux lignes</strong>, en ne regardant que les <strong>premiers</strong> nombres, colonne par colonne.</li>
+</ul>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Isoler les payoffs de Boréal</div>
+<p>Commençons par Boréal — je te dirai à l'étape 5 comment on aurait pu deviner qu'il fallait commencer par elle. Recopions la matrice en effaçant les payoffs d'Athlex, pour ne plus voir que ce qui intéresse Boréal :</p>
+
+<table class="data">
+<tr><th>Payoffs de Boréal</th><th>Boréal joue C</th><th>Boréal joue G</th><th>Boréal joue P</th></tr>
+<tr><th>Si Athlex joue C</th><td>30</td><td>40</td><td>35</td></tr>
+<tr><th>Si Athlex joue G</th><td>60</td><td>20</td><td>15</td></tr>
+<tr><th>Si Athlex joue P</th><td>55</td><td>35</td><td>10</td></tr>
+</table>
+
+<p>Ce petit tableau est déjà la moitié du travail. Regarde la <strong>colonne G</strong> et la <strong>colonne P</strong> : 40 contre 35, 20 contre 15, 35 contre 10. À chaque fois, G est au-dessus. On tient notre candidate.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Vérifier ligne par ligne que G domine P</div>
+<p>Vérifions maintenant proprement, avec les notations du cours. Il faut trois inégalités, une par ligne d'Athlex — parce que « quoi que fasse Athlex » signifie exactement « dans les trois cas de figure ».</p>
+
+<div class="calc">
+<div class="step">
+\[ u_B(\mathrm{C},\mathrm{G}) = 40 \;&gt;\; 35 = u_B(\mathrm{C},\mathrm{P}) \]
+<div class="why">Je me place dans le scénario « Athlex a choisi le Centre-ville ». Dans ce cas, si Boréal va à la Gare elle gagne 40 ; si elle va en Périphérie, 35. La Gare est meilleure de 5 (soit 5 000 € par mois).</div>
+</div>
+<div class="step">
+\[ u_B(\mathrm{G},\mathrm{G}) = 20 \;&gt;\; 15 = u_B(\mathrm{G},\mathrm{P}) \]
+<div class="why">Deuxième scénario : « Athlex a choisi la Gare ». Là, tout va mal pour Boréal (elle est concurrencée), mais la Gare lui rapporte quand même 20 contre 15 en Périphérie. La Gare gagne encore.</div>
+</div>
+<div class="step">
+\[ u_B(\mathrm{P},\mathrm{G}) = 35 \;&gt;\; 10 = u_B(\mathrm{P},\mathrm{P}) \]
+<div class="why">Troisième et dernier scénario : « Athlex part en Périphérie ». Boréal gagne 35 à la Gare contre seulement 10 si elle suit Athlex en Périphérie. La Gare gagne pour la troisième fois — et de très loin.</div>
+</div>
+<div class="step">
+\[ \Rightarrow\; u_B(a,\mathrm{G}) \;&gt;\; u_B(a,\mathrm{P}) \quad \text{pour tout } a \in \{\mathrm{C},\mathrm{G},\mathrm{P}\} \]
+<div class="why">Je résume les trois lignes en une seule : quelle que soit la stratégie \( a \) choisie par Athlex, la Gare bat la Périphérie pour Boréal. Le symbole \( \in \) se lit « appartient à » : \( a \) est l'une des trois lettres de l'ensemble entre accolades. C'est exactement la définition de la domination stricte.</div>
+</div>
+</div>
+
+<p>Trois inégalités strictes sur trois possibles : la conclusion est acquise.</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 440 250" width="100%" style="max-width:12cm" role="img" aria-label="Comparaison terme à terme des payoffs de Boréal quand elle joue Gare et quand elle joue Périphérie : la Gare est strictement supérieure dans les trois scénarios">
+  <text x="220" y="16" font-size="12.5" text-anchor="middle" font-weight="bold">Les payoffs de Boréal, comparés terme à terme</text>
+  <text x="66" y="48" font-size="12" text-anchor="middle">Si Athlex</text>
+  <text x="66" y="64" font-size="12" text-anchor="middle">joue…</text>
+  <text x="170" y="56" font-size="12.5" text-anchor="middle" font-weight="bold">colonne G</text>
+  <text x="352" y="56" font-size="12.5" text-anchor="middle" font-weight="bold">colonne P</text>
+  <text x="66" y="98" font-size="12" text-anchor="middle">C</text>
+  <rect x="130" y="80" width="80" height="30" fill="#fef3c7" stroke="#111827" stroke-width="1.3"/>
+  <text x="170" y="101" font-size="14" text-anchor="middle">40</text>
+  <rect x="312" y="80" width="80" height="30" fill="none" stroke="#111827" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="352" y="101" font-size="14" text-anchor="middle">35</text>
+  <line x1="300" y1="95" x2="220" y2="95" stroke="#047857" stroke-width="2.2"/>
+  <polygon points="216,95 228,90 228,100" fill="#047857"/>
+  <text x="260" y="88" font-size="12" text-anchor="middle" fill="#047857">40 &gt; 35</text>
+  <text x="66" y="148" font-size="12" text-anchor="middle">G</text>
+  <rect x="130" y="130" width="80" height="30" fill="#fef3c7" stroke="#111827" stroke-width="1.3"/>
+  <text x="170" y="151" font-size="14" text-anchor="middle">20</text>
+  <rect x="312" y="130" width="80" height="30" fill="none" stroke="#111827" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="352" y="151" font-size="14" text-anchor="middle">15</text>
+  <line x1="300" y1="145" x2="220" y2="145" stroke="#047857" stroke-width="2.2"/>
+  <polygon points="216,145 228,140 228,150" fill="#047857"/>
+  <text x="260" y="138" font-size="12" text-anchor="middle" fill="#047857">20 &gt; 15</text>
+  <text x="66" y="198" font-size="12" text-anchor="middle">P</text>
+  <rect x="130" y="180" width="80" height="30" fill="#fef3c7" stroke="#111827" stroke-width="1.3"/>
+  <text x="170" y="201" font-size="14" text-anchor="middle">35</text>
+  <rect x="312" y="180" width="80" height="30" fill="none" stroke="#111827" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="352" y="201" font-size="14" text-anchor="middle">10</text>
+  <line x1="300" y1="195" x2="220" y2="195" stroke="#047857" stroke-width="2.2"/>
+  <polygon points="216,195 228,190 228,200" fill="#047857"/>
+  <text x="260" y="188" font-size="12" text-anchor="middle" fill="#047857">35 &gt; 10</text>
+  <text x="220" y="235" font-size="12.5" text-anchor="middle" font-weight="bold">3 flèches sur 3 vers la gauche → P est strictement dominée par G</text>
+</svg>
+<figcaption>Figure 3 — La dominance se lit ligne par ligne. Les cases en trait plein (G) battent les cases en pointillé (P) dans les trois scénarios : c'est la définition même de « strictement dominée ». Une seule flèche dans l'autre sens aurait suffi à tout annuler.</figcaption>
+</figure>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Visualiser sur la matrice complète</div>
+<p>Reportons ce résultat sur le tableau d'origine. Les cases surlignées sont celles de la colonne G, qui bat systématiquement la colonne P (en pointillés dans la figure ci-dessus) :</p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="3">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th><th>P</th></tr>
+<tr><td class="player" rowspan="3">Athlex</td><th>C</th><td>(30 ; 30)</td><td class="hl">(60 ; <strong>40</strong>)</td><td>(60 ; <strong>35</strong>)</td></tr>
+<tr><th>G</th><td>(40 ; 60)</td><td class="hl">(20 ; <strong>20</strong>)</td><td>(40 ; <strong>15</strong>)</td></tr>
+<tr><th>P</th><td>(20 ; 55)</td><td class="hl">(25 ; <strong>35</strong>)</td><td>(70 ; <strong>10</strong>)</td></tr>
+</table>
+<p>Les chiffres en gras sont les payoffs de Boréal, les seuls qui comptent ici. Ligne par ligne : <strong>40 &gt; 35</strong>, <strong>20 &gt; 15</strong>, <strong>35 &gt; 10</strong>. La colonne surlignée (G) écrase la colonne P sur toute sa hauteur. Remarque au passage que les payoffs d'Athlex — les premiers nombres — ne jouent <em>aucun</em> rôle dans cette comparaison. C'est normal : Boréal ne se soucie que de son propre profit.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">5.</span> Deux vérifications qui montrent que tu maîtrises la définition</div>
+
+<p><strong>Vérification A — P n'est pas dominée par C.</strong> Il faut bien nommer <em>G</em> comme dominante, et pas n'importe quelle autre stratégie. Regarde ce qui se passe si on compare P à C :</p>
+
+<div class="calc">
+<div class="step">
+\[ u_B(\mathrm{C},\mathrm{P}) = 35 \;&gt;\; 30 = u_B(\mathrm{C},\mathrm{C}) \]
+<div class="why">Dans le scénario « Athlex au Centre-ville », la Périphérie rapporte plus à Boréal que le Centre-ville (35 contre 30). Donc C ne bat pas P partout : une seule contre-exemple suffit, la domination de P par C est fausse. Si tu avais écrit « P est dominée par C », tu perdais les 4 points d'identification.</div>
+</div>
+</div>
+
+<p><strong>Vérification B — aucune stratégie d'Athlex n'est dominée.</strong> Extrayons ses payoffs, comme on l'a fait pour Boréal :</p>
+
+<table class="data">
+<tr><th>Payoffs d'Athlex</th><th>Boréal joue C</th><th>Boréal joue G</th><th>Boréal joue P</th></tr>
+<tr><th>Athlex joue C</th><td>30</td><td>60</td><td>60</td></tr>
+<tr><th>Athlex joue G</th><td>40</td><td>20</td><td>40</td></tr>
+<tr><th>Athlex joue P</th><td>20</td><td>25</td><td>70</td></tr>
+</table>
+
+<p>Passons les trois paires en revue :</p>
+
+<div class="calc">
+<div class="step">
+\[ \text{C vs G} : \quad 30 \;&lt;\; 40 \quad \text{mais} \quad 60 \;&gt;\; 20 \]
+<div class="why">La ligne C perd contre la colonne C, mais gagne contre la colonne G. Aucune des deux ne domine l'autre : les flèches partent dans les deux sens.</div>
+</div>
+<div class="step">
+\[ \text{C vs P} : \quad 30 \;&gt;\; 20,\; 60 \;&gt;\; 25 \quad \text{mais} \quad 60 \;&lt;\; 70 \]
+<div class="why">La ligne C bat P deux fois sur trois… mais pas la troisième. Or la définition exige les trois. La case (P ; P) et son fameux 70 sauve la ligne P.</div>
+</div>
+<div class="step">
+\[ \text{G vs P} : \quad 40 \;&gt;\; 20 \quad \text{mais} \quad 20 \;&lt;\; 25 \]
+<div class="why">Même conclusion : la ligne G perd contre la colonne G. Aucune domination.</div>
+</div>
+</div>
+
+<p>Donc, dans le jeu complet, <strong>aucune ligne d'Athlex n'est dominée</strong>. La raison tient en un nombre : le <strong>70</strong> de la case (P ; P). Il rend la ligne P imbattable dans ce scénario-là, et sauve donc P de l'élimination. Souviens-toi de ce 70 : il va réapparaître à la question 3.2.</p>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 3.1</div>
+<p>La stratégie <strong>P (Périphérie) de Boréal est strictement dominée par sa stratégie G (Gare)</strong>. Quelle que soit la décision d'Athlex, Boréal gagne strictement plus à la Gare qu'en Périphérie :</p>
+<p>\[ 40 &gt; 35, \qquad 20 &gt; 15, \qquad 35 &gt; 10. \]</p>
+<p>C'est la seule stratégie dominée du jeu complet.</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie</div>
+<p>La stratégie <strong>P (Périphérie) de Boréal</strong> est <strong>strictement dominée par sa stratégie G (Gare)</strong>. En effet, quelle que soit la stratégie d'Athlex, Boréal obtient strictement plus en jouant G qu'en jouant P :</p>
+<p>\[ u_B(\mathrm{C},\mathrm{G}) = 40 &gt; 35 = u_B(\mathrm{C},\mathrm{P}), \]</p>
+<p>\[ u_B(\mathrm{G},\mathrm{G}) = 20 &gt; 15 = u_B(\mathrm{G},\mathrm{P}), \]</p>
+<p>\[ u_B(\mathrm{P},\mathrm{G}) = 35 &gt; 10 = u_B(\mathrm{P},\mathrm{P}). \]</p>
+<p>Par l'hypothèse de rationalité (H1), Boréal ne jouera donc jamais P. Remarque : P n'est pas dominée par C, puisque \( u_B(\mathrm{C},\mathrm{P}) = 35 &gt; 30 = u_B(\mathrm{C},\mathrm{C}) \) — c'est bien G la stratégie dominante ici. Du côté d'Athlex, aucune stratégie n'est dominée dans le jeu complet, car sa ligne P rapporte 70 contre la colonne P, ce qu'aucune autre ligne ne fait.</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la question 3.1</div>
+<ul>
+<li><strong>Oublier de dire « de Boréal ».</strong> Les deux joueurs ont une stratégie appelée P. Précise toujours le joueur.</li>
+<li><strong>Oublier de dire « par G ».</strong> C'est 4 points sur 8.</li>
+<li><strong>Ne vérifier que deux inégalités sur trois.</strong> La définition exige <em>toutes</em> les stratégies de l'adversaire. Trois lignes → trois inégalités.</li>
+<li><strong>Écrire « G est dominante pour Boréal ».</strong> Faux ! G ne bat pas C partout : \( u_B(\mathrm{G},\mathrm{C}) = 60 &gt; 20 = u_B(\mathrm{G},\mathrm{G}) \). G domine seulement P.</li>
+<li><strong>Croire que la ligne P d'Athlex est dominée.</strong> Elle ne l'est pas dans le jeu complet — c'est tout l'objet de la question suivante.</li>
+</ul>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Réflexe de méthode n° 1 — chercher une dominée sans rien oublier</div>
+<ol>
+<li>Recopie au brouillon <strong>deux petits tableaux séparés</strong> : un avec seulement les payoffs du joueur 1, un avec seulement ceux du joueur 2. Tu ne peux plus te tromper de nombre.</li>
+<li>Dans chaque tableau, compare les stratégies <strong>deux à deux</strong> (3 paires si 3 stratégies).</li>
+<li>Une paire est « gagnée » seulement si <strong>toutes</strong> les comparaisons vont dans le même sens. Une seule inégalité contraire, et tu passes à la paire suivante.</li>
+<li>Astuce de gain de temps : une stratégie qui contient le <strong>plus grand nombre d'une colonne</strong> (pour le joueur des lignes) ne peut pas être dominée. Cherche donc d'abord chez le joueur dont aucune stratégie ne détient de record.</li>
+</ol>
+</div>
+
+<hr class="soft">
+
+<h2>3. Question 3.2 — l'élimination itérative et les PSS (12 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.2 (12 points)</div>
+<p><strong>3.2)</strong> Identifiez tous les PSS de ce jeu en appliquant l'élimination itérative des stratégies dominées. Détaillez chaque étape.</p>
+<p><em>(12 points — barème : élimination de la colonne P 4 pts ; élimination de la ligne P dans le jeu réduit, avec justification, 4 pts ; constat d'arrêt et liste des quatre PSS 4 pts.)</em></p>
+<p>On travaille toujours sur la même matrice :</p>
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="3">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th><th>P</th></tr>
+<tr><td class="player" rowspan="3">Athlex</td><th>C</th><td>(30 ; 30)</td><td>(60 ; 40)</td><td>(60 ; 35)</td></tr>
+<tr><th>G</th><td>(40 ; 60)</td><td>(20 ; 20)</td><td>(40 ; 15)</td></tr>
+<tr><th>P</th><td>(20 ; 55)</td><td>(25 ; 35)</td><td>(70 ; 10)</td></tr>
+</table>
+</div>
+
+<h3>3.1 Traduisons la question en français simple</h3>
+
+<dl class="lexique">
+<dt>« Identifiez tous les PSS »</dt>
+<dd>PSS est un sigle du cours : <strong>P</strong>rofils de <strong>S</strong>tratégies <strong>S</strong>urvivants. On te demande la liste finale des combinaisons de choix qui « survivent » au processus. Le mot <em>tous</em> est important : ta réponse est une <strong>liste</strong>, pas un seul couple.</dd>
+<dt>« profil de stratégies »</dt>
+<dd>Un <span class="term">profil</span>, c'est simplement une combinaison « un choix par joueur ». Dans notre jeu, un profil s'écrit (choix d'Athlex ; choix de Boréal), par exemple (C ; G). C'est donc exactement une <strong>case</strong> du tableau. Neuf cases = neuf profils au départ.</dd>
+<dt>« en appliquant l'élimination itérative des stratégies dominées »</dt>
+<dd>L'énoncé t'impose la méthode. « Itératif » vient du latin <em>iterare</em>, « recommencer ». On enlève une stratégie dominée, on regarde le jeu qui reste, on recommence, jusqu'à ce qu'il n'y ait plus rien à enlever.</dd>
+<dt>« Détaillez chaque étape »</dt>
+<dd>Le barème est explicite : 4 points par étape. Une réponse qui donnerait directement « les PSS sont … » sans montrer les tours d'élimination perdrait 8 points sur 12, même avec la bonne liste.</dd>
+</dl>
+
+<h3>3.2 Le cours dont tu as besoin : la connaissance commune de la rationalité</h3>
+
+<h4>a) Le problème que l'on cherche à résoudre</h4>
+
+<p>À la question 3.1, on a utilisé la seule hypothèse H1 (« chacun est rationnel »). Elle nous a permis d'éliminer une stratégie : la P de Boréal. Résultat : on est passé de 9 profils possibles à 6. C'est un progrès… mais on ne peut pas prédire grand-chose avec 6 possibilités.</p>
+
+<p>Pour aller plus loin, il faut une hypothèse supplémentaire. Laquelle ? Regarde bien : Athlex, elle aussi, sait lire la matrice. Elle peut faire exactement le raisonnement qu'on vient de faire, et en conclure que Boréal ne jouera jamais P. À condition… qu'elle croie que Boréal est rationnelle. C'est ça, l'hypothèse qui manque.</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — Hypothèse 2 (H2) : la connaissance commune de la rationalité</div>
+<p>Chaque joueur :</p>
+<ul>
+<li><strong>H2.1</strong> — sait que ses adversaires sont rationnels ;</li>
+<li><strong>H2.2</strong> — sait que ses adversaires savent que <em>lui</em> est rationnel ;</li>
+<li><strong>H2.3</strong> — sait qu'ils savent qu'il sait… et ainsi de suite, à l'infini.</li>
+</ul>
+<p>On appelle ça la <span class="term">connaissance commune</span> de la rationalité.</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi cette cascade de « je sais que tu sais » est nécessaire</div>
+<p>Elle a l'air absurde. Elle ne l'est pas : chaque <strong>tour</strong> d'élimination consomme exactement un étage de la cascade.</p>
+<ul>
+<li>Tour 1 : « je n'utilise pas mes propres stratégies dominées » → il suffit de H1.</li>
+<li>Tour 2 : « je retire tes stratégies dominées de mon raisonnement » → il faut H2.1 (je sais que tu es rationnel).</li>
+<li>Tour 3 : « je retire les stratégies qui ne sont devenues mauvaises pour toi qu'après que tu m'aies retiré les miennes » → il faut H2.2.</li>
+<li>Et ainsi de suite.</li>
+</ul>
+<p>Dans notre exercice, on n'aura besoin que de deux tours, donc de H1 et H2.1. Mais le principe général, lui, exige toute la cascade. C'est pour ça qu'on dit que les PSS sont le concept de solution « basé sur H1 + H2 ».</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 440 240" width="100%" style="max-width:11.5cm" role="img" aria-label="Échelle de la connaissance commune : chaque niveau d'hypothèse autorise un tour d'élimination supplémentaire">
+  <rect x="30" y="196" width="380" height="34" fill="#eef2ff" stroke="#111827" stroke-width="1.3"/>
+  <text x="46" y="218" font-size="12" font-weight="bold">H1</text>
+  <text x="86" y="212" font-size="11.5">je suis rationnel</text>
+  <text x="86" y="226" font-size="11.5" font-style="italic">→ autorise le tour 1 (mes propres dominées)</text>
+  <rect x="58" y="152" width="352" height="34" fill="#eef2ff" stroke="#111827" stroke-width="1.3"/>
+  <text x="74" y="174" font-size="12" font-weight="bold">H2.1</text>
+  <text x="120" y="168" font-size="11.5">je sais que TU es rationnel</text>
+  <text x="120" y="182" font-size="11.5" font-style="italic">→ autorise le tour 2 (tes dominées)</text>
+  <rect x="86" y="108" width="324" height="34" fill="#eef2ff" stroke="#111827" stroke-width="1.3"/>
+  <text x="102" y="130" font-size="12" font-weight="bold">H2.2</text>
+  <text x="150" y="124" font-size="11.5">je sais que tu sais que je le suis</text>
+  <text x="150" y="138" font-size="11.5" font-style="italic">→ autorise le tour 3</text>
+  <rect x="114" y="64" width="296" height="34" fill="#eef2ff" stroke="#111827" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text x="130" y="86" font-size="12" font-weight="bold">H2.3</text>
+  <text x="180" y="86" font-size="11.5">… et ainsi de suite, à l'infini</text>
+  <text x="220" y="46" font-size="12" text-anchor="middle">chaque marche gravie</text>
+  <text x="220" y="30" font-size="12" text-anchor="middle">= un tour d'élimination de plus</text>
+  <line x1="18" y1="196" x2="18" y2="60" stroke="#111827" stroke-width="1.6"/>
+  <polygon points="18,54 13,66 23,66" fill="#111827"/>
+</svg>
+<figcaption>Figure 4 — L'escalier de la connaissance commune. Notre exercice ne monte que deux marches (H1 puis H2.1), parce que l'élimination s'arrête après deux tours. Mais on ne peut pas monter la seconde marche sans avoir posé la première.</figcaption>
+</figure>
+
+<h4>b) La procédure d'élimination itérative</h4>
+
+<div class="box box-def">
+<div class="box-title">Définition — élimination itérative des stratégies strictement dominées</div>
+<p>C'est une <strong>boucle</strong> :</p>
+<ol>
+<li>Dans le jeu courant, cherche s'il existe une stratégie strictement dominée (chez l'un ou l'autre joueur).</li>
+<li>Si oui : raye-la. Tu obtiens un <strong>jeu réduit</strong>, avec une ligne ou une colonne de moins.</li>
+<li>Recommence à l'étape 1, <em>sur le jeu réduit</em>.</li>
+<li>Si non : stop. Les cases restantes sont les <span class="term">PSS</span>.</li>
+</ol>
+</div>
+
+<div class="box box-def">
+<div class="box-title">Définition — PSS (profils de stratégies survivants)</div>
+<p>Les <span class="term">PSS</span> sont les profils qui restent quand la boucle s'arrête. C'est la « prédiction » du modèle sous les hypothèses H1 + H2 : le résultat du jeu sera nécessairement l'un de ces profils.</p>
+<p>Deux remarques importantes :</p>
+<ul>
+<li>Les PSS forment un <strong>ensemble</strong>, souvent avec plusieurs éléments. Une réponse du type « le PSS est (C ; G) » quand il y en a quatre est fausse.</li>
+<li>Si l'élimination ne retire rien du tout, les PSS sont… <em>tous</em> les profils du jeu. Ce n'est pas une erreur : c'est simplement que l'outil ne prédit rien dans ce jeu-là.</li>
+</ul>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Exemple de la vie quotidienne — le rendez-vous</div>
+<p>Tu dois retrouver une amie. Elle a horreur d'être en retard : quoi qu'il arrive, elle préfère arriver à l'heure. Sa stratégie « arriver en retard » est donc dominée. Toi, tu n'as pas de préférence absolue : tu veux juste arriver en même temps qu'elle.</p>
+<p>Tour 1 : par H1, elle n'arrive pas en retard. Tour 2 : par H2.1, <em>tu sais</em> qu'elle n'arrivera pas en retard, donc tu élimines de ton esprit le scénario « elle est en retard » ; dans le monde qui reste, arriver à l'heure devient ton meilleur choix. Résultat : vous arrivez tous les deux à l'heure. Deux tours, exactement comme dans notre exercice.</p>
+</div>
+
+<h3>3.3 La résolution pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Tour 1 — éliminer la colonne P de Boréal</div>
+
+<p>On a déjà fait tout le travail à la question 3.1 : la stratégie P de Boréal est strictement dominée par G. Il ne reste qu'à en tirer la conséquence.</p>
+
+<div class="calc">
+<div class="step">
+\[ u_B(a,\mathrm{G}) \;&gt;\; u_B(a,\mathrm{P}) \quad \text{pour } a = \mathrm{C},\,\mathrm{G},\,\mathrm{P} \]
+<div class="why">Rappel du résultat de 3.1 : quelle que soit la ligne \( a \) choisie par Athlex, la Gare rapporte strictement plus à Boréal que la Périphérie (40 &gt; 35, 20 &gt; 15, 35 &gt; 10).</div>
+</div>
+<div class="step">
+\[ \text{Par H1 : Boréal ne joue jamais P.} \]
+<div class="why">Boréal est rationnelle. Or aucune croyance sur Athlex ne peut rendre P intéressante pour elle, puisque G fait mieux dans les trois scénarios. La colonne P n'arrivera donc jamais : je peux la rayer du jeu.</div>
+</div>
+</div>
+
+<p>Voici la colonne condamnée, sur la matrice complète :</p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="3">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th><th>P — à éliminer</th></tr>
+<tr><td class="player" rowspan="3">Athlex</td><th>C</th><td>(30 ; 30)</td><td>(60 ; 40)</td><td class="hl">(60 ; 35)</td></tr>
+<tr><th>G</th><td>(40 ; 60)</td><td>(20 ; 20)</td><td class="hl">(40 ; 15)</td></tr>
+<tr><th>P</th><td>(20 ; 55)</td><td>(25 ; 35)</td><td class="hl">(70 ; 10)</td></tr>
+</table>
+<p><em>État 1 sur 3 — matrice de départ, la colonne P de Boréal est marquée pour élimination (justification : H1).</em></p>
+
+<p>On efface, et il reste le <strong>jeu réduit</strong> suivant. Attention : les payoffs ne changent pas, on ne fait que supprimer des possibilités.</p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th></tr>
+<tr><td class="player" rowspan="3">Athlex</td><th>C</th><td>(30 ; 30)</td><td>(60 ; 40)</td></tr>
+<tr><th>G</th><td>(40 ; 60)</td><td>(20 ; 20)</td></tr>
+<tr><th>P</th><td>(20 ; 55)</td><td>(25 ; 35)</td></tr>
+</table>
+<p><em>État 2 sur 3 — jeu réduit après le tour 1. Il reste 3 lignes × 2 colonnes = 6 profils.</em></p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Tour 2 — dans ce jeu réduit, la ligne P d'Athlex tombe à son tour</div>
+
+<p>C'est ici que se joue toute la subtilité de la question. Reprenons la chasse aux stratégies dominées, mais <strong>dans le jeu réduit</strong>, celui à deux colonnes.</p>
+
+<p>Extrayons les payoffs d'Athlex (les premiers nombres), dans ce nouveau jeu :</p>
+
+<table class="data">
+<tr><th>Payoffs d'Athlex (jeu réduit)</th><th>Boréal joue C</th><th>Boréal joue G</th></tr>
+<tr><th>Athlex joue C</th><td>30</td><td>60</td></tr>
+<tr><th>Athlex joue G</th><td>40</td><td>20</td></tr>
+<tr><th>Athlex joue P</th><td>20</td><td>25</td></tr>
+</table>
+
+<p>Compare la ligne C et la ligne P :</p>
+
+<div class="calc">
+<div class="step">
+\[ u_A(\mathrm{C},\mathrm{C}) = 30 \;&gt;\; 20 = u_A(\mathrm{P},\mathrm{C}) \]
+<div class="why">Scénario « Boréal choisit le Centre-ville ». Athlex gagne 30 en allant au Centre-ville aussi (ils se partagent), contre seulement 20 en Périphérie. Le Centre-ville l'emporte.</div>
+</div>
+<div class="step">
+\[ u_A(\mathrm{C},\mathrm{G}) = 60 \;&gt;\; 25 = u_A(\mathrm{P},\mathrm{G}) \]
+<div class="why">Scénario « Boréal choisit la Gare ». Athlex a le Centre-ville pour elle seule : 60, contre 25 en Périphérie. Le Centre-ville l'emporte encore, et très largement.</div>
+</div>
+<div class="step">
+\[ \Rightarrow\; \text{P d'Athlex est strictement dominée par C, DANS LE JEU RÉDUIT.} \]
+<div class="why">Deux scénarios possibles, deux victoires du Centre-ville : c'est la définition de la domination stricte. Il n'y a plus que deux comparaisons à faire (et non trois) parce que la colonne P a disparu — et c'est exactement ce qui change tout.</div>
+</div>
+<div class="step">
+\[ \text{Par H2.1 : Athlex ne joue jamais P.} \]
+<div class="why">La justification à écrire noir sur blanc : Athlex sait que Boréal est rationnelle, donc qu'elle ne jouera pas P. Dans le monde qui reste, la ligne P d'Athlex n'a plus aucun intérêt. Je peux la rayer.</div>
+</div>
+</div>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th></tr>
+<tr><td class="player" rowspan="3">Athlex</td><th>C</th><td>(30 ; 30)</td><td>(60 ; 40)</td></tr>
+<tr><th>G</th><td>(40 ; 60)</td><td>(20 ; 20)</td></tr>
+<tr><th>P — à éliminer</th><td class="hl">(20 ; 55)</td><td class="hl">(25 ; 35)</td></tr>
+</table>
+<p><em>Jeu réduit, la ligne P d'Athlex est marquée pour élimination (justification : H2.1).</em></p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 4 — LE piège central de tout l'exercice</div>
+<p>La ligne P d'Athlex <strong>n'est pas dominée dans le jeu complet</strong>. On l'a démontré à la question 3.1 : la case (P ; P) rapporte <strong>70</strong> à Athlex, le meilleur payoff de toute la matrice. Tant que la colonne P de Boréal existe, la ligne P d'Athlex a un scénario où elle est excellente, donc elle survit.</p>
+<p>Elle ne devient dominée qu'<strong>après</strong> que la colonne P a disparu : en enlevant la colonne P, on a enlevé le seul scénario qui la sauvait. C'est <em>ça</em>, l'itération.</p>
+<p>Conséquence pratique : <strong>éliminer les deux « P » d'un coup au premier tour est une faute de logique</strong>, même si le résultat final se trouve être le même. L'ordre des tours et leur justification (H1, puis H2.1) font partie intégrante de la réponse attendue — c'est même explicitement 4 des 12 points.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Tour 3 — constater que plus rien n'est éliminable</div>
+
+<p>On efface la ligne P. Voici le jeu qui reste :</p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th></tr>
+<tr><td class="player" rowspan="2">Athlex</td><th>C</th><td>(30 ; 30)</td><td>(60 ; 40)</td></tr>
+<tr><th>G</th><td>(40 ; 60)</td><td>(20 ; 20)</td></tr>
+</table>
+<p><em>État 3 sur 3 — jeu réduit final : 2 lignes × 2 colonnes = 4 profils.</em></p>
+
+<p>La procédure exige de <strong>vérifier</strong> qu'on ne peut plus rien enlever. Ce constat vaut des points : ne l'oublie pas.</p>
+
+<div class="calc">
+<div class="step">
+\[ \text{Athlex} : \quad u_A(\mathrm{C},\mathrm{C}) = 30 \;&lt;\; 40 = u_A(\mathrm{G},\mathrm{C}) \]
+<div class="why">Contre le Centre-ville de Boréal, Athlex préfère la Gare. Donc C ne domine pas G : il existe un scénario où G fait mieux.</div>
+</div>
+<div class="step">
+\[ \text{Athlex} : \quad u_A(\mathrm{C},\mathrm{G}) = 60 \;&gt;\; 20 = u_A(\mathrm{G},\mathrm{G}) \]
+<div class="why">Mais contre la Gare de Boréal, Athlex préfère le Centre-ville. Donc G ne domine pas C non plus. Les deux flèches partent en sens contraire : aucune des deux lignes n'est dominée. ✓</div>
+</div>
+<div class="step">
+\[ \text{Boréal} : \quad u_B(\mathrm{C},\mathrm{C}) = 30 \;&lt;\; 40 = u_B(\mathrm{C},\mathrm{G}) \]
+<div class="why">Même travail pour Boréal, avec les seconds nombres. Si Athlex est au Centre-ville, Boréal préfère la Gare (40 contre 30).</div>
+</div>
+<div class="step">
+\[ \text{Boréal} : \quad u_B(\mathrm{G},\mathrm{C}) = 60 \;&gt;\; 20 = u_B(\mathrm{G},\mathrm{G}) \]
+<div class="why">Mais si Athlex est à la Gare, Boréal préfère le Centre-ville (60 contre 20). Là encore les deux sens s'annulent : aucune colonne n'est dominée. ✓</div>
+</div>
+<div class="step">
+\[ \Rightarrow\; \text{la boucle s'arrête.} \]
+<div class="why">Ni chez Athlex ni chez Boréal il ne reste de stratégie dominée. Par définition, les profils encore présents sont les PSS.</div>
+</div>
+</div>
+</div>
+
+<figure>
+<svg viewBox="0 0 450 250" width="100%" style="max-width:12cm" role="img" aria-label="Entonnoir de l'élimination itérative : de neuf profils on passe à six, puis à quatre">
+  <rect x="24" y="40" width="120" height="100" fill="none" stroke="#111827" stroke-width="1.5"/>
+  <text x="84" y="30" font-size="12" text-anchor="middle" font-weight="bold">Départ</text>
+  <text x="84" y="82" font-size="24" text-anchor="middle">9</text>
+  <text x="84" y="104" font-size="11.5" text-anchor="middle">profils</text>
+  <text x="84" y="120" font-size="11.5" text-anchor="middle">(3 × 3)</text>
+  <rect x="172" y="52" width="106" height="76" fill="none" stroke="#111827" stroke-width="1.5"/>
+  <text x="225" y="30" font-size="12" text-anchor="middle" font-weight="bold">Après tour 1</text>
+  <text x="225" y="86" font-size="24" text-anchor="middle">6</text>
+  <text x="225" y="108" font-size="11.5" text-anchor="middle">(3 × 2)</text>
+  <rect x="306" y="62" width="94" height="56" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+  <text x="353" y="30" font-size="12" text-anchor="middle" font-weight="bold">Après tour 2</text>
+  <text x="353" y="92" font-size="24" text-anchor="middle">4</text>
+  <text x="353" y="112" font-size="11.5" text-anchor="middle">(2 × 2)</text>
+  <line x1="146" y1="90" x2="168" y2="90" stroke="#111827" stroke-width="1.8"/>
+  <polygon points="172,90 162,85 162,95" fill="#111827"/>
+  <line x1="280" y1="90" x2="302" y2="90" stroke="#111827" stroke-width="1.8"/>
+  <polygon points="306,90 296,85 296,95" fill="#111827"/>
+  <text x="157" y="160" font-size="11.5" text-anchor="middle">on retire</text>
+  <text x="157" y="175" font-size="11.5" text-anchor="middle">la colonne P</text>
+  <text x="157" y="190" font-size="11.5" text-anchor="middle" font-style="italic">(H1)</text>
+  <text x="292" y="160" font-size="11.5" text-anchor="middle">on retire</text>
+  <text x="292" y="175" font-size="11.5" text-anchor="middle">la ligne P</text>
+  <text x="292" y="190" font-size="11.5" text-anchor="middle" font-style="italic">(H2.1)</text>
+  <text x="225" y="222" font-size="12" text-anchor="middle" font-weight="bold">Les 4 profils restants = les PSS</text>
+  <text x="225" y="240" font-size="11.5" text-anchor="middle">(C ; C) · (C ; G) · (G ; C) · (G ; G)</text>
+</svg>
+<figcaption>Figure 5 — L'entonnoir de l'élimination. Chaque tour retire une ligne ou une colonne entière, donc plusieurs profils d'un coup. Le rectangle en trait épais est le jeu final : la boucle s'y arrête faute de stratégie dominée.</figcaption>
+</figure>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Lister les PSS</div>
+<p>Les stratégies survivantes sont C et G pour Athlex, C et G pour Boréal. Les profils survivants sont donc toutes les combinaisons possibles entre ces deux ensembles : \( 2 \times 2 = 4 \) profils.</p>
+<p>\[ \text{PSS} = \{(\mathrm{C};\mathrm{C}),\; (\mathrm{C};\mathrm{G}),\; (\mathrm{G};\mathrm{C}),\; (\mathrm{G};\mathrm{G})\} \]</p>
+<p>Les accolades \( \{\;\} \) veulent dire « ensemble de ». La ligne se lit : « l'ensemble des PSS est composé des quatre profils suivants ». Et pour être bien clair sur la notation d'un profil : (C ; G) signifie « Athlex joue C <em>et</em> Boréal joue G » — l'ordre est toujours (ligne ; colonne).</p>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 3.2</div>
+<p><strong>Tour 1</strong> — par H1, Boréal ne joue jamais P (strictement dominée par G) : on élimine la colonne P.<br>
+<strong>Tour 2</strong> — dans le jeu réduit, P d'Athlex est strictement dominée par C (30 &gt; 20 et 60 &gt; 25) ; par H2.1, Athlex ne joue jamais P : on élimine la ligne P.<br>
+<strong>Tour 3</strong> — plus aucune stratégie n'est dominée : la procédure s'arrête.</p>
+<p>\[ \text{PSS} = \{(\mathrm{C};\mathrm{C}),\; (\mathrm{C};\mathrm{G}),\; (\mathrm{G};\mathrm{C}),\; (\mathrm{G};\mathrm{G})\} \]</p>
+<p>Soit <strong>quatre profils survivants</strong>.</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie</div>
+<p><strong>Étape 1.</strong> Par H1 (rationalité), Boréal ne joue jamais sa stratégie P, strictement dominée par G (cf. 3.1). On élimine la colonne P. Le jeu réduit est :</p>
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th></tr>
+<tr><td class="player" rowspan="3">Athlex</td><th>C</th><td>(30 ; 30)</td><td>(60 ; 40)</td></tr>
+<tr><th>G</th><td>(40 ; 60)</td><td>(20 ; 20)</td></tr>
+<tr><th>P</th><td>(20 ; 55)</td><td>(25 ; 35)</td></tr>
+</table>
+<p><strong>Étape 2.</strong> Dans ce jeu réduit, la stratégie P d'Athlex est strictement dominée par sa stratégie C : \( 30 &gt; 20 \) (contre C) et \( 60 &gt; 25 \) (contre G). Comme Athlex sait que Boréal est rationnelle et ne jouera donc pas P (hypothèse H2), elle ne joue jamais P. On élimine la ligne P :</p>
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th></tr>
+<tr><td class="player" rowspan="2">Athlex</td><th>C</th><td>(30 ; 30)</td><td>(60 ; 40)</td></tr>
+<tr><th>G</th><td>(40 ; 60)</td><td>(20 ; 20)</td></tr>
+</table>
+<p><strong>Étape 3.</strong> Plus aucune stratégie n'est dominée : pour Athlex, C est meilleure contre G mais moins bonne contre C (\( 30 &lt; 40 \)) ; pour Boréal, C est meilleure contre G mais moins bonne contre C (\( 30 &lt; 40 \)). L'élimination s'arrête.</p>
+<p>Les PSS sont donc les quatre profils restants : <strong>(C ; C), (C ; G), (G ; C) et (G ; G)</strong>.</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la question 3.2</div>
+<ul>
+<li><strong>Éliminer les deux P d'un coup.</strong> Faute de logique (voir le piège n° 4). Deux tours, deux justifications distinctes.</li>
+<li><strong>Ne pas nommer les hypothèses.</strong> Écris « par H1 » puis « par H2 » ; le corrigé les mentionne explicitement.</li>
+<li><strong>Oublier le constat d'arrêt.</strong> Beaucoup d'étudiants s'arrêtent après le tour 2 sans vérifier qu'il n'y a plus rien à éliminer : 4 points perdus.</li>
+<li><strong>Répondre « (C ; G) et (G ; C) ».</strong> Ce sont les équilibres de Nash de la question 3.3, pas les PSS ! Les PSS sont plus nombreux : quatre.</li>
+<li><strong>Compter les stratégies au lieu des profils.</strong> « Les PSS sont C et G » n'a pas de sens : un profil est un <em>couple</em>.</li>
+<li><strong>Utiliser la dominance faible.</strong> La procédure du cours porte sur la dominance <em>stricte</em>. Ici tout est strict, donc pas de souci, mais dans un autre exercice l'ordre d'élimination pourrait alors changer le résultat.</li>
+</ul>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Réflexe de méthode n° 2 — dérouler une élimination itérative proprement</div>
+<ol>
+<li><strong>Un tour = une seule stratégie éliminée.</strong> Même si tu en vois deux, traite-les l'une après l'autre : c'est ce que le barème récompense.</li>
+<li><strong>Redessine la matrice après chaque tour.</strong> C'est le meilleur moyen de ne pas continuer à raisonner sur des cases qui n'existent plus.</li>
+<li><strong>Après chaque élimination, recommence la recherche à zéro chez les DEUX joueurs</strong> — y compris chez celui qui vient d'être amputé. Une stratégie peut devenir dominée alors qu'elle ne l'était pas.</li>
+<li><strong>Justifie chaque tour par l'hypothèse correspondante</strong> : tour 1 → H1 ; tour 2 → H2.1 ; tour 3 → H2.2…</li>
+<li><strong>Termine par le constat d'arrêt</strong>, en montrant qu'aucune stratégie restante n'est dominée.</li>
+<li><strong>Compte tes profils</strong> : si \( k \) lignes et \( m \) colonnes survivent, il y a \( k \times m \) PSS. Ici \( 2 \times 2 = 4 \). Ce petit calcul t'évite d'en oublier un dans ta liste.</li>
+</ol>
+</div>
+
+<hr class="soft">
+
+<h2>4. Question 3.3 — les équilibres de Nash en stratégies pures (10 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.3 (10 points)</div>
+<p><strong>3.3)</strong> Identifiez tous les équilibres de Nash en stratégies pures. Détaillez votre méthode.</p>
+<p><em>(10 points — barème : méthode des meilleures réponses correctement appliquée 4 pts ; chaque équilibre correctement identifié 3 pts, avec −2 pts par « équilibre fantôme ».)</em></p>
+<p>Toujours la même matrice :</p>
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="3">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th><th>P</th></tr>
+<tr><td class="player" rowspan="3">Athlex</td><th>C</th><td>(30 ; 30)</td><td>(60 ; 40)</td><td>(60 ; 35)</td></tr>
+<tr><th>G</th><td>(40 ; 60)</td><td>(20 ; 20)</td><td>(40 ; 15)</td></tr>
+<tr><th>P</th><td>(20 ; 55)</td><td>(25 ; 35)</td><td>(70 ; 10)</td></tr>
+</table>
+</div>
+
+<h3>4.1 Traduisons la question en français simple</h3>
+
+<dl class="lexique">
+<dt>« équilibre de Nash »</dt>
+<dd>Une situation stable : une combinaison de choix telle que <strong>personne ne regrette le sien</strong>, une fois connu celui de l'autre. On va définir ça précisément dans une seconde.</dd>
+<dt>« en stratégies pures »</dt>
+<dd>Une <span class="term">stratégie pure</span>, c'est un choix ferme et définitif : « je vais au Centre-ville », point. Par opposition à une stratégie <em>mixte</em>, où l'on joue au hasard (on la verra en 3.4). Ici, on ne cherche que des choix fermes.</dd>
+<dt>« tous les »</dt>
+<dd>Encore une fois, la réponse est une liste. Il peut y en avoir zéro, un, deux, plus. Ici il y en a deux.</dd>
+<dt>« Détaillez votre méthode »</dt>
+<dd>4 points sur 10 pour la méthode. Il faut donc <em>écrire</em> comment tu as procédé, pas seulement donner le résultat. La méthode attendue est celle du soulignage des meilleures réponses.</dd>
+</dl>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi cette question vient après les PSS ?</div>
+<p>Parce que c'est le troisième et dernier étage de la construction. H1 donne la notion de dominée, H1 + H2 donnent les PSS, et H1 + H3 donnent l'équilibre de Nash. L'hypothèse H3 est la plus forte : elle suppose que <strong>chaque joueur devine correctement</strong> ce que l'autre va faire. Plus on suppose, plus la prédiction est précise : ici on va passer de 4 PSS à 2 équilibres de Nash.</p>
+</div>
+
+<h3>4.2 Le cours dont tu as besoin : meilleure réponse et équilibre de Nash</h3>
+
+<h4>a) La meilleure réponse</h4>
+
+<div class="box box-def">
+<div class="box-title">Définition — meilleure réponse</div>
+<p>La stratégie \( s_i^* \) est une <span class="term">meilleure réponse</span> à la stratégie \( s_{-i} \) de l'adversaire si aucune autre stratégie de \( i \) ne rapporte plus, <em>face à ce choix précis de l'adversaire</em> :</p>
+<p>\[ u_i(s_i^*,\, s_{-i}) \;\ge\; u_i(s_i',\, s_{-i}) \quad \text{pour toute } s_i'. \]</p>
+<p>En français : <em>« si je savais que tu joues ça, voici ce que je ferais ».</em></p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">La différence entre « meilleure réponse » et « dominante »</div>
+<p>C'est la même formule, avec une différence énorme : la stratégie dominante doit gagner <strong>pour tous</strong> les \( s_{-i} \) ; la meilleure réponse ne gagne que <strong>pour un</strong> \( s_{-i} \) donné.</p>
+<p>Une meilleure réponse est donc une réponse <em>conditionnelle</em>. Chaque joueur en a une (parfois plusieurs) par stratégie adverse. Dans notre jeu 3×3, Athlex a trois meilleures réponses à trouver — une par colonne — et Boréal aussi — une par ligne.</p>
+</div>
+
+<h4>b) L'équilibre de Nash</h4>
+
+<div class="box box-def">
+<div class="box-title">Définition — équilibre de Nash (EN)</div>
+<p>Un profil \( (s_1, s_2) \) est un <span class="term">équilibre de Nash</span> si <strong>chaque joueur joue une meilleure réponse à ce que fait l'autre</strong>. On dit que les stratégies sont des <em>meilleures réponses mutuelles</em>.</p>
+<p>Formulation équivalente, la plus utile en pratique : <strong>aucun joueur n'a intérêt à changer seul de stratégie</strong>, étant donné ce que fait l'autre.</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">La phrase à retenir : « personne ne regrette son choix »</div>
+<p>Imagine qu'on lève le rideau et qu'on révèle les deux décisions. Tu regardes ce que l'autre a fait, et tu te demandes : <em>« sachant ça, aurais-je dû faire autre chose ? »</em></p>
+<ul>
+<li>Si les deux joueurs répondent <strong>non</strong> → c'est un équilibre de Nash.</li>
+<li>Si <strong>ne serait-ce qu'un seul</strong> répond « oui, j'aurais dû aller ailleurs » → ce n'est pas un équilibre.</li>
+</ul>
+<p>C'est pour ça qu'on parle de situation <strong>stable</strong> : si on refaisait jouer les deux, personne ne changerait rien.</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Exemple de la vie quotidienne — le sens de circulation</div>
+<p>Tout le monde roule à droite en Belgique. Est-ce un équilibre de Nash ? Regarde : sachant que tout le monde roule à droite, aurais-tu intérêt à rouler à gauche ? Évidemment non. Et les autres non plus. Personne ne regrette : c'est un équilibre.</p>
+<p>Mais attention : « tout le monde roule à gauche » est <em>aussi</em> un équilibre de Nash (c'est le cas au Royaume-Uni) ! Un jeu peut parfaitement avoir <strong>plusieurs</strong> équilibres. C'est exactement ce qui va nous arriver ici.</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 440 240" width="100%" style="max-width:12cm" role="img" aria-label="Test de la déviation : dans une case, on demande à chaque joueur s'il regretterait son choix ; si les deux répondent non, la case est un équilibre de Nash">
+  <rect x="150" y="24" width="140" height="46" fill="#f3f4f6" stroke="#111827" stroke-width="1.6"/>
+  <text x="220" y="46" font-size="12" text-anchor="middle">on examine une case :</text>
+  <text x="220" y="62" font-size="12.5" text-anchor="middle" font-weight="bold">le profil (s₁ ; s₂)</text>
+  <line x1="180" y1="70" x2="110" y2="104" stroke="#111827" stroke-width="1.5"/>
+  <polygon points="106,106 118,102 114,112" fill="#111827"/>
+  <line x1="260" y1="70" x2="330" y2="104" stroke="#111827" stroke-width="1.5"/>
+  <polygon points="334,106 326,112 322,102" fill="#111827"/>
+  <rect x="16" y="108" width="190" height="60" fill="none" stroke="#111827" stroke-width="1.3"/>
+  <text x="111" y="128" font-size="11.5" text-anchor="middle">Joueur 1 : « en voyant s₂,</text>
+  <text x="111" y="144" font-size="11.5" text-anchor="middle">est-ce que je changerais</text>
+  <text x="111" y="160" font-size="11.5" text-anchor="middle">de ligne ? »</text>
+  <rect x="234" y="108" width="190" height="60" fill="none" stroke="#111827" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text x="329" y="128" font-size="11.5" text-anchor="middle">Joueur 2 : « en voyant s₁,</text>
+  <text x="329" y="144" font-size="11.5" text-anchor="middle">est-ce que je changerais</text>
+  <text x="329" y="160" font-size="11.5" text-anchor="middle">de colonne ? »</text>
+  <rect x="52" y="188" width="150" height="42" fill="#ecfdf5" stroke="#047857" stroke-width="1.8"/>
+  <text x="127" y="206" font-size="11.5" text-anchor="middle">les DEUX disent NON</text>
+  <text x="127" y="222" font-size="12" text-anchor="middle" font-weight="bold">→ équilibre de Nash</text>
+  <rect x="238" y="188" width="150" height="42" fill="#fff1f2" stroke="#be123c" stroke-width="1.8"/>
+  <text x="313" y="206" font-size="11.5" text-anchor="middle">au moins un dit OUI</text>
+  <text x="313" y="222" font-size="12" text-anchor="middle" font-weight="bold">→ pas un équilibre</text>
+  <line x1="111" y1="168" x2="122" y2="184" stroke="#111827" stroke-width="1.2"/>
+  <line x1="329" y1="168" x2="318" y2="184" stroke="#111827" stroke-width="1.2"/>
+</svg>
+<figcaption>Figure 6 — Le « test de la déviation ». Un équilibre de Nash est une case qui résiste aux deux questions. Une seule envie de dévier suffit à disqualifier la case : le test est très sévère, ce qui explique qu'il ne reste souvent que peu d'équilibres.</figcaption>
+</figure>
+
+<h4>c) La méthode du soulignage</h4>
+
+<div class="box box-methode">
+<div class="box-title">Méthode du soulignage — la recette infaillible</div>
+<ol>
+<li>Pour <strong>chaque colonne</strong> (chaque stratégie de Boréal), repère le plus grand des <em>premiers</em> nombres et souligne-le. C'est la meilleure réponse d'Athlex à cette colonne.</li>
+<li>Pour <strong>chaque ligne</strong> (chaque stratégie d'Athlex), repère le plus grand des <em>seconds</em> nombres et souligne-le. C'est la meilleure réponse de Boréal à cette ligne.</li>
+<li>Les cases où <strong>les deux nombres sont soulignés</strong> sont les équilibres de Nash.</li>
+</ol>
+<p>Pourquoi ça marche ? Parce que « les deux nombres soulignés » veut dire exactement « chacun joue sa meilleure réponse à l'autre », ce qui est la définition. La méthode ne fait que traduire la définition en gestes mécaniques.</p>
+</div>
+
+<p>Dans ce document imprimé, on ne peut pas souligner : on <strong>surligne</strong> à la place. Les cases <span class="term">jaunes</span> contiendront une meilleure réponse, les cases <span class="term">vertes</span> seront les équilibres de Nash.</p>
+
+<h3>4.3 La résolution pas à pas</h3>
+
+<div class="box box-piege">
+<div class="box-title">Attention : on revient au jeu COMPLET</div>
+<p>L'équilibre de Nash se définit sur le jeu d'origine, pas sur le jeu réduit de la question 3.2. On reprend donc les trois lignes et les trois colonnes. (Le résultat serait le même ici, parce qu'éliminer des stratégies <em>strictement</em> dominées ne détruit jamais d'équilibre — mais le correcteur veut voir la méthode appliquée à la matrice complète.)</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Les meilleures réponses d'Athlex (une par colonne)</div>
+<p>Je me place successivement dans chacune des trois hypothèses sur Boréal, et je ne lis que les <strong>premiers</strong> nombres.</p>
+
+<div class="calc">
+<div class="step">
+\[ \text{Si Boréal joue C} : \quad 30 \;\text{(C)},\quad 40 \;\text{(G)},\quad 20 \;\text{(P)} \;\Rightarrow\; \max = 40 \]
+<div class="why">Je lis la première colonne de haut en bas, premiers nombres uniquement : 30 pour la ligne C, 40 pour la ligne G, 20 pour la ligne P. Le plus grand est 40. Donc la meilleure réponse d'Athlex à C est <strong>G</strong>. Traduction économique : si Boréal prend le centre-ville, Athlex a intérêt à prendre la gare plutôt que de se battre avec elle.</div>
+</div>
+<div class="step">
+\[ \text{Si Boréal joue G} : \quad 60 \;\text{(C)},\quad 20 \;\text{(G)},\quad 25 \;\text{(P)} \;\Rightarrow\; \max = 60 \]
+<div class="why">Deuxième colonne : 60, 20, 25. Le maximum est 60. La meilleure réponse d'Athlex à G est <strong>C</strong>. Logique : si Boréal va à la gare, le centre-ville est libre, Athlex le prend.</div>
+</div>
+<div class="step">
+\[ \text{Si Boréal joue P} : \quad 60 \;\text{(C)},\quad 40 \;\text{(G)},\quad 70 \;\text{(P)} \;\Rightarrow\; \max = 70 \]
+<div class="why">Troisième colonne : 60, 40, 70. Le maximum est 70. La meilleure réponse d'Athlex à P est <strong>P</strong>. C'est le fameux 70 qui a sauvé la ligne P à la question 3.1 : le voici de nouveau.</div>
+</div>
+</div>
+
+<p>Résumé à écrire sur la copie :</p>
+<p>\[ \text{Athlex : contre C} \to \mathrm{G}\;(40), \quad \text{contre G} \to \mathrm{C}\;(60), \quad \text{contre P} \to \mathrm{P}\;(70). \]</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Les meilleures réponses de Boréal (une par ligne)</div>
+<p>Même travail, mais dans l'autre sens : je fixe une ligne d'Athlex et je lis les <strong>seconds</strong> nombres de gauche à droite.</p>
+
+<div class="calc">
+<div class="step">
+\[ \text{Si Athlex joue C} : \quad 30 \;\text{(C)},\quad 40 \;\text{(G)},\quad 35 \;\text{(P)} \;\Rightarrow\; \max = 40 \]
+<div class="why">Première ligne, seconds nombres : 30, 40, 35. Le maximum est 40, obtenu avec la colonne G. Meilleure réponse de Boréal à C : <strong>G</strong>.</div>
+</div>
+<div class="step">
+\[ \text{Si Athlex joue G} : \quad 60 \;\text{(C)},\quad 20 \;\text{(G)},\quad 15 \;\text{(P)} \;\Rightarrow\; \max = 60 \]
+<div class="why">Deuxième ligne : 60, 20, 15. Le maximum est 60, avec la colonne C. Meilleure réponse de Boréal à G : <strong>C</strong>. Si Athlex est à la gare, Boréal prend le centre-ville.</div>
+</div>
+<div class="step">
+\[ \text{Si Athlex joue P} : \quad 55 \;\text{(C)},\quad 35 \;\text{(G)},\quad 10 \;\text{(P)} \;\Rightarrow\; \max = 55 \]
+<div class="why">Troisième ligne : 55, 35, 10. Le maximum est 55, avec la colonne C. Meilleure réponse de Boréal à P : <strong>C</strong>. Remarque au passage : la colonne P n'est meilleure réponse à rien du tout — c'est cohérent avec le fait qu'elle soit dominée (une stratégie strictement dominée n'est jamais une meilleure réponse).</div>
+</div>
+</div>
+
+<p>Résumé à écrire sur la copie :</p>
+<p>\[ \text{Boréal : contre C} \to \mathrm{G}\;(40), \quad \text{contre G} \to \mathrm{C}\;(60), \quad \text{contre P} \to \mathrm{C}\;(55). \]</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Reporter les meilleures réponses sur la matrice</div>
+
+<p>Surlignons d'abord les meilleures réponses d'<strong>Athlex</strong> (le maximum de chaque colonne, premiers nombres) :</p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="3">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th><th>P</th></tr>
+<tr><td class="player" rowspan="3">Athlex</td><th>C</th><td>(30 ; 30)</td><td class="hl">(60 ; 40)</td><td>(60 ; 35)</td></tr>
+<tr><th>G</th><td class="hl">(40 ; 60)</td><td>(20 ; 20)</td><td>(40 ; 15)</td></tr>
+<tr><th>P</th><td>(20 ; 55)</td><td>(25 ; 35)</td><td class="hl">(70 ; 10)</td></tr>
+</table>
+<p><em>Étape a — meilleures réponses d'Athlex : une case surlignée par colonne.</em></p>
+
+<p>Puis, séparément, celles de <strong>Boréal</strong> (le maximum de chaque ligne, seconds nombres) :</p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="3">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th><th>P</th></tr>
+<tr><td class="player" rowspan="3">Athlex</td><th>C</th><td>(30 ; 30)</td><td class="hl">(60 ; 40)</td><td>(60 ; 35)</td></tr>
+<tr><th>G</th><td class="hl">(40 ; 60)</td><td>(20 ; 20)</td><td>(40 ; 15)</td></tr>
+<tr><th>P</th><td class="hl">(20 ; 55)</td><td>(25 ; 35)</td><td>(70 ; 10)</td></tr>
+</table>
+<p><em>Étape b — meilleures réponses de Boréal : une case surlignée par ligne.</em></p>
+
+<p>Superposons enfin les deux calques. Les cases <strong>vertes</strong> sont celles qui apparaissent dans les <em>deux</em> tableaux ci-dessus ; les jaunes ne sont soulignées que par un seul joueur.</p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="3">Boréal</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>C</th><th>G</th><th>P</th></tr>
+<tr><td class="player" rowspan="3">Athlex</td><th>C</th><td>(30 ; 30)</td><td class="nash">(60 ; 40)</td><td>(60 ; 35)</td></tr>
+<tr><th>G</th><td class="nash">(40 ; 60)</td><td>(20 ; 20)</td><td>(40 ; 15)</td></tr>
+<tr><th>P</th><td class="hl">(20 ; 55)</td><td>(25 ; 35)</td><td class="hl">(70 ; 10)</td></tr>
+</table>
+<p><em>Étape c — superposition. Vert = les deux joueurs sont en meilleure réponse → équilibre de Nash. Jaune = un seul des deux → l'autre veut dévier.</em></p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Vérification case par case (les neuf tests de déviation)</div>
+<p>La méthode du soulignage suffit largement en examen. Mais faisons une fois le travail à la main, sur les neuf cases : c'est le meilleur moyen de comprendre <em>pourquoi</em> elle fonctionne, et ça te donne un moyen de contrôle si tu doutes.</p>
+
+<table class="compare">
+<tr><th>Profil</th><th>Payoffs</th><th class="left">Athlex veut-elle dévier ?</th><th class="left">Boréal veut-elle dévier ?</th><th>EN ?</th></tr>
+<tr><td>(C ; C)</td><td>(30 ; 30)</td><td class="left">Oui : G donne 40 &gt; 30</td><td class="left">Oui : G donne 40 &gt; 30</td><td>non</td></tr>
+<tr><td>(C ; G)</td><td>(60 ; 40)</td><td class="left">Non : 60 est le max de la colonne G</td><td class="left">Non : 40 est le max de la ligne C</td><td><strong>OUI</strong></td></tr>
+<tr><td>(C ; P)</td><td>(60 ; 35)</td><td class="left">Oui : P donne 70 &gt; 60</td><td class="left">Oui : G donne 40 &gt; 35</td><td>non</td></tr>
+<tr><td>(G ; C)</td><td>(40 ; 60)</td><td class="left">Non : 40 est le max de la colonne C</td><td class="left">Non : 60 est le max de la ligne G</td><td><strong>OUI</strong></td></tr>
+<tr><td>(G ; G)</td><td>(20 ; 20)</td><td class="left">Oui : C donne 60 &gt; 20</td><td class="left">Oui : C donne 60 &gt; 20</td><td>non</td></tr>
+<tr><td>(G ; P)</td><td>(40 ; 15)</td><td class="left">Oui : P donne 70 &gt; 40</td><td class="left">Oui : C donne 60 &gt; 15</td><td>non</td></tr>
+<tr><td>(P ; C)</td><td>(20 ; 55)</td><td class="left">Oui : G donne 40 &gt; 20</td><td class="left">Non : 55 est le max de la ligne P</td><td>non</td></tr>
+<tr><td>(P ; G)</td><td>(25 ; 35)</td><td class="left">Oui : C donne 60 &gt; 25</td><td class="left">Oui : C donne 55 &gt; 35</td><td>non</td></tr>
+<tr><td>(P ; P)</td><td>(70 ; 10)</td><td class="left">Non : 70 est le max de la colonne P</td><td class="left">Oui : C donne 55 &gt; 10</td><td>non</td></tr>
+</table>
+
+<p>Deux « non » dans les deux colonnes du milieu : c'est un équilibre. Une seule fois « oui » : ce n'en est pas un. Le tableau confirme exactement le résultat du soulignage : <strong>(C ; G)</strong> et <strong>(G ; C)</strong>.</p>
+
+<div class="box box-exemple">
+<div class="box-title">La case (P ; P) : le « presque-équilibre » qui piège tout le monde</div>
+<p>Regarde la dernière ligne du tableau. Athlex y touche 70, son record absolu, et n'a évidemment aucune envie de bouger. Beaucoup d'étudiants s'arrêtent là et déclarent (P ; P) équilibre de Nash. <strong>Erreur.</strong> Il faut <em>aussi</em> demander à Boréal : elle n'a que 10, et en changeant seule pour le Centre-ville elle passerait à 55. Elle dévie donc, et la case s'effondre.</p>
+<p>Retiens la règle : <em>une seule flèche de déviation suffit à tuer une case</em>. L'équilibre de Nash est une condition sur les <strong>deux</strong> joueurs simultanément.</p>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 3.3</div>
+<p>Il y a exactement <strong>deux équilibres de Nash en stratégies pures</strong> :</p>
+<p>\[ (\mathrm{C};\mathrm{G}) \text{ avec les payoffs } (60;\,40) \]</p>
+<p>\[ (\mathrm{G};\mathrm{C}) \text{ avec les payoffs } (40;\,60) \]</p>
+<p>Autrement dit : l'une des deux enseignes prend le Centre-ville, l'autre prend la Gare — dans un sens ou dans l'autre.</p>
+</div>
+
+<h3>4.4 Trois vérifications et une interprétation</h3>
+
+<h4>a) Vérification de cohérence : EN ⊆ PSS</h4>
+
+<p>Le cours établit une relation d'emboîtement entre les concepts de solution. Elle te sert de <strong>contrôle gratuit</strong> en examen.</p>
+
+<figure>
+<svg viewBox="0 0 420 200" width="100%" style="max-width:11cm" role="img" aria-label="Diagramme d'emboîtement : les équilibres en stratégies dominantes sont inclus dans les équilibres de Nash, eux-mêmes inclus dans les PSS, eux-mêmes inclus dans tous les profils">
+  <rect x="10" y="16" width="400" height="150" fill="none" stroke="#111827" stroke-width="1.3" stroke-dasharray="6 4"/>
+  <text x="210" y="32" font-size="11.5" text-anchor="middle">tous les profils du jeu (9 ici)</text>
+  <rect x="46" y="42" width="328" height="112" fill="none" stroke="#111827" stroke-width="1.5"/>
+  <text x="210" y="58" font-size="11.5" text-anchor="middle">PSS — H1 + H2 (4 ici)</text>
+  <rect x="98" y="68" width="224" height="76" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+  <text x="210" y="86" font-size="11.5" text-anchor="middle">équilibres de Nash — H1 + H3 (2 ici)</text>
+  <rect x="146" y="96" width="128" height="40" fill="none" stroke="#111827" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <text x="210" y="114" font-size="11.5" text-anchor="middle">ESD — H1</text>
+  <text x="210" y="130" font-size="11.5" text-anchor="middle">(aucun ici)</text>
+  <text x="210" y="188" font-size="11.5" text-anchor="middle" font-style="italic">Plus l'hypothèse est forte, plus la prédiction est resserrée.</text>
+</svg>
+<figcaption>Figure 7 — L'emboîtement des concepts de solution. Tout équilibre de Nash est un PSS : si l'un de tes équilibres n'apparaît pas dans ta liste de PSS, c'est que l'une de tes deux réponses est fausse. Ici : (C ; G) et (G ; C) figurent bien parmi les quatre PSS. ✓</figcaption>
+</figure>
+
+<p>Vérifions : les PSS trouvés en 3.2 étaient (C ; C), (C ; G), (G ; C), (G ; G). Nos deux équilibres, (C ; G) et (G ; C), sont bien dans la liste. <strong>Cohérent.</strong> ✓</p>
+
+<p>Une conséquence pratique très utile : <strong>tu peux limiter ta recherche d'équilibres aux PSS</strong>. Ici, cela t'aurait épargné cinq des neuf tests. Attention toutefois à écrire quand même la méthode sur la matrice complète, puisque le barème l'exige.</p>
+
+<h4>b) Vérification : ces deux jeux n'ont pas d'équilibre en stratégies dominantes</h4>
+
+<p>Un <span class="term">ESD</span> (équilibre en stratégies dominantes) existe quand <em>chaque</em> joueur a une stratégie dominante. Ici, ni Athlex ni Boréal n'en a — leur meilleur choix dépend de l'autre. Donc pas d'ESD. Ce n'est pas grave : c'est le cas dans la grande majorité des jeux.</p>
+
+<h4>c) Interprétation économique : un jeu d'anti-coordination</h4>
+
+<div class="box box-why">
+<div class="box-title">Ce que le résultat raconte, en français</div>
+<p>Les deux équilibres ont la même forme : <strong>les deux enseignes évitent de s'installer au même endroit</strong>. On appelle ça un jeu d'<span class="term">anti-coordination</span> : chacun veut faire le contraire de l'autre, pour ne pas se partager les mêmes clients.</p>
+<p>Et il y a un conflit d'intérêts : chacune préférerait être celle qui décroche le Centre-ville (60) plutôt que la Gare (40). Les deux équilibres correspondent aux deux répartitions possibles de ce « gros lot ». La théorie ne dit pas lequel des deux se réalisera — c'est une limite honnête du concept : quand il y a plusieurs équilibres, l'équilibre de Nash ne prédit plus un résultat unique.</p>
+<p>Note enfin la case (G ; G) : les deux à la gare, 20 chacun. C'est le pire résultat conjoint du jeu, et pourtant c'était un PSS. Preuve que « survivre à l'élimination » ne veut pas dire « être un bon résultat » : c'est bien l'équilibre de Nash qui fait le tri.</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie</div>
+<p><strong>Méthode.</strong> Pour chaque colonne, je repère la meilleure réponse d'Athlex (le plus grand premier nombre) ; pour chaque ligne, celle de Boréal (le plus grand second nombre). Un équilibre de Nash est une cellule où les deux payoffs sont soulignés, c'est-à-dire où chacun joue une meilleure réponse à la stratégie de l'autre.</p>
+<p>Meilleures réponses d'Athlex : contre C → G (40) ; contre G → C (60) ; contre P → P (70).<br>
+Meilleures réponses de Boréal : contre C → G (40) ; contre G → C (60) ; contre P → C (55).</p>
+<p>Il y a donc exactement <strong>deux équilibres de Nash en stratégies pures</strong> :</p>
+<p>\[ \textbf{(C ; G)} \text{ avec } (60;\,40) \qquad \text{et} \qquad \textbf{(G ; C)} \text{ avec } (40;\,60). \]</p>
+<p>Interprétation : les deux enseignes évitent de s'installer au même endroit (anti-coordination) ; chacune préférerait être celle qui obtient le Centre-ville. On vérifie au passage que les deux EN font partie des PSS de la question 3.2, conformément au cours (EN ⊆ PSS).</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la question 3.3</div>
+<ul>
+<li><strong>L'équilibre fantôme (P ; P).</strong> Le corrigé retire 2 points par équilibre inventé. Athlex adore cette case, Boréal la fuit.</li>
+<li><strong>Chercher la case avec la plus grande somme.</strong> (C ; G) donne 100 au total, (G ; C) aussi, mais (P ; P) donne 80 et (C ; P) donne 95 : la somme n'a strictement rien à voir avec l'équilibre de Nash. Un équilibre peut même être le pire résultat pour tout le monde (dilemme du prisonnier).</li>
+<li><strong>Confondre lignes et colonnes.</strong> Pour Athlex on cherche le max <em>dans une colonne</em> ; pour Boréal, le max <em>dans une ligne</em>. C'est croisé, et c'est déroutant au début. Moyen mnémotechnique : « je choisis ma ligne, donc je compare les lignes entre elles — c'est-à-dire que je balaye verticalement, à l'intérieur d'une colonne ».</li>
+<li><strong>Donner la réponse sans la méthode.</strong> 4 points sur 10.</li>
+<li><strong>S'arrêter au premier équilibre trouvé.</strong> L'énoncé dit « tous ».</li>
+<li><strong>Oublier de préciser les payoffs.</strong> Écrire « (C ; G) avec (60 ; 40) » est plus complet, et te permet de vérifier que tu n'as pas inversé les joueurs.</li>
+</ul>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Réflexe de méthode n° 3 — trouver tous les EN purs en trois minutes</div>
+<ol>
+<li>Balaye chaque <strong>colonne</strong> : entoure le plus grand premier nombre.</li>
+<li>Balaye chaque <strong>ligne</strong> : entoure le plus grand second nombre.</li>
+<li>Encadre les cases doublement entourées : ce sont les EN. Compte-les.</li>
+<li><strong>Contrôle 1</strong> — chaque EN doit figurer dans ta liste de PSS.</li>
+<li><strong>Contrôle 2</strong> — pour chaque EN annoncé, refais mentalement le test de déviation dans les deux sens. Ça prend dix secondes et ça évite les −2 points.</li>
+<li><strong>Cas d'égalité</strong> : si deux nombres sont ex æquo dans une colonne, souligne les deux ! Les deux sont des meilleures réponses, et cela peut créer un équilibre supplémentaire.</li>
+</ol>
+</div>
+
+<hr class="soft">
+
+<h2>5. Question 3.4 — pas d'équilibre pur, puis les stratégies mixtes (14 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.4 (14 points)</div>
+<p>Considérez maintenant le jeu suivant, <em>indépendant du précédent</em>. Chaque nuit, un pirate informatique choisit d'attaquer l'un des deux serveurs d'une banque : le serveur A ou le serveur B. Simultanément, la responsable de la sécurité choisit lequel des deux serveurs elle surveille cette nuit-là. Si le pirate attaque le serveur surveillé, il est repéré et bloqué ; sinon, son attaque réussit. Les payoffs (qui tiennent compte de la valeur des données et du risque d'être identifié) sont donnés ci-dessous ; le premier nombre est le payoff du pirate, le second celui de la responsable.</p>
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Responsable de la sécurité</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Surveiller A</th><th>Surveiller B</th></tr>
+<tr><td class="player" rowspan="2">Pirate</td><th>Attaquer A</th><td>(10 ; 90)</td><td>(70 ; 30)</td></tr>
+<tr><th>Attaquer B</th><td>(70 ; 10)</td><td>(30 ; 100)</td></tr>
+</table>
+<p><strong>3.4)</strong> Montrez d'abord que ce jeu n'admet aucun équilibre de Nash en stratégies pures. Calculez ensuite l'équilibre de Nash en stratégies mixtes : la probabilité \( p^* \) avec laquelle le pirate attaque le serveur A et la probabilité \( q^* \) avec laquelle la responsable surveille le serveur A. Détaillez votre raisonnement.</p>
+<p><em>(14 points — barème : absence d'EN pur démontrée 4 pts ; équation d'indifférence du pirate et \( q^* \) 4 pts ; équation d'indifférence de la responsable et \( p^* \) 4 pts ; énoncé clair de l'équilibre 2 pts.)</em></p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Avant tout : nouveau jeu, nouveaux chiffres</div>
+<p>L'énoncé écrit noir sur blanc « <em>indépendant du précédent</em> ». Oublie complètement Athlex et Boréal, leurs profits, leurs PSS. Ici on repart de zéro avec deux nouveaux joueurs, deux stratégies chacun, et des payoffs qui n'ont aucun rapport. Ne recycle aucun résultat du jeu 1.</p>
+</div>
+
+<h3>5.1 Traduisons la question en français simple</h3>
+
+<p>Commençons par comprendre l'histoire. Chaque nuit :</p>
+<ul>
+<li>Le <strong>pirate</strong> choisit un serveur à attaquer : A ou B.</li>
+<li>La <strong>responsable</strong> choisit un serveur à surveiller : A ou B.</li>
+<li>Ils choisissent en même temps, chacun sans savoir ce que fait l'autre (jeu simultané, comme avant).</li>
+<li>Si les deux tombent sur le même serveur, le pirate est bloqué. Sinon, il réussit.</li>
+</ul>
+
+<p>Vérifions que les payoffs racontent bien cette histoire. Le pirate gagne 70 dans les deux cases « diagonales » — celles où il attaque un serveur non surveillé. Il gagne peu (10 ou 30) quand il est attrapé. Symétriquement, la responsable gagne beaucoup (90 ou 100) quand elle est au bon endroit, et peu (10 ou 30) quand elle s'est trompée. <strong>Les intérêts sont diamétralement opposés</strong> : le pirate veut éviter la rencontre, la responsable veut la provoquer.</p>
+
+<div class="box box-exemple">
+<div class="box-title">Ce jeu, tu le connais déjà : c'est le penalty</div>
+<p>Le tireur veut envoyer le ballon là où le gardien ne plonge pas ; le gardien veut plonger là où le ballon arrive. Même structure exactement. On appelle ça un jeu de type « <span class="term">gardien–tireur</span> », ou encore « pile ou face » (<em>matching pennies</em>) : l'un veut coïncider, l'autre veut se différencier.</p>
+<p>Et tu sais intuitivement ce qu'il faut faire dans ce genre de situation : <strong>être imprévisible</strong>. Un tireur qui tire toujours à gauche se fait arrêter. C'est précisément ce que la théorie va formaliser.</p>
+</div>
+
+<p>Décortiquons maintenant la consigne.</p>
+
+<dl class="lexique">
+<dt>« Montrez d'abord qu'il n'y a aucun équilibre en stratégies pures »</dt>
+<dd>« Montrez » = démontrez, ne te contente pas d'affirmer. On attend que tu passes en revue les quatre cases (ou que tu appliques la méthode du soulignage) et que tu constates qu'aucune ne résiste. C'est 4 points.</dd>
+<dt>« l'équilibre de Nash en stratégies mixtes »</dt>
+<dd>Une <span class="term">stratégie mixte</span>, c'est jouer <em>au hasard</em>, avec des probabilités choisies. L'équilibre mixte, c'est le couple de probabilités qui rend la situation stable.</dd>
+<dt>« la probabilité \( p^* \) avec laquelle le pirate attaque le serveur A »</dt>
+<dd>L'énoncé <strong>définit lui-même</strong> les deux inconnues. Lis-le très attentivement : \( p \) est du côté du <em>pirate</em> et concerne le serveur <em>A</em>. Si tu inverses, tous tes chiffres seront justes et ta réponse sera fausse.</dd>
+<dt>« l'étoile » dans \( p^* \)</dt>
+<dd>L'étoile (on dit « p étoile ») signale la valeur <em>à l'équilibre</em>, la valeur optimale. \( p \) tout court désigne une probabilité quelconque ; \( p^* \) désigne la bonne, celle qu'on cherche.</dd>
+</dl>
+
+<hr class="soft">
+
+<h3>5.2 Première partie : montrer qu'il n'y a aucun équilibre en stratégies pures</h3>
+
+<p>Bonne nouvelle : aucun outil nouveau n'est nécessaire. On reprend la méthode du soulignage de la question 3.3.</p>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Les meilleures réponses du pirate (une par colonne)</div>
+
+<div class="calc">
+<div class="step">
+\[ \text{Si la responsable surveille A} : \quad 10 \;\text{(att. A)} \quad \text{contre} \quad 70 \;\text{(att. B)} \]
+<div class="why">Je lis la colonne « Surveiller A », premiers nombres. Attaquer A donnerait 10 (il se fait attraper), attaquer B donnerait 70 (le serveur B est libre). Meilleure réponse : <strong>Attaquer B</strong>, puisque \( 70 &gt; 10 \).</div>
+</div>
+<div class="step">
+\[ \text{Si la responsable surveille B} : \quad 70 \;\text{(att. A)} \quad \text{contre} \quad 30 \;\text{(att. B)} \]
+<div class="why">Colonne « Surveiller B ». Attaquer A rapporte 70 (A est libre), attaquer B rapporte 30 (il se fait attraper). Meilleure réponse : <strong>Attaquer A</strong>, puisque \( 70 &gt; 30 \).</div>
+</div>
+</div>
+<p>Résumé : le pirate va <strong>toujours là où la responsable n'est pas</strong>. Sans surprise.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Les meilleures réponses de la responsable (une par ligne)</div>
+
+<div class="calc">
+<div class="step">
+\[ \text{Si le pirate attaque A} : \quad 90 \;\text{(surv. A)} \quad \text{contre} \quad 30 \;\text{(surv. B)} \]
+<div class="why">Je lis la première ligne, seconds nombres. Surveiller A rapporte 90 (elle l'attrape), surveiller B rapporte 30 (elle l'a raté). Meilleure réponse : <strong>Surveiller A</strong>, puisque \( 90 &gt; 30 \).</div>
+</div>
+<div class="step">
+\[ \text{Si le pirate attaque B} : \quad 10 \;\text{(surv. A)} \quad \text{contre} \quad 100 \;\text{(surv. B)} \]
+<div class="why">Deuxième ligne. Surveiller A rapporte 10 (raté), surveiller B rapporte 100 (attrapé). Meilleure réponse : <strong>Surveiller B</strong>, puisque \( 100 &gt; 10 \).</div>
+</div>
+</div>
+<p>Résumé : la responsable veut <strong>toujours être là où le pirate est</strong>. Sans surprise non plus. Mais mets les deux résumés côte à côte : ils sont incompatibles. C'est le cœur du problème.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Reporter sur la matrice : aucune case n'est doublement surlignée</div>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Responsable</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Surveiller A</th><th>Surveiller B</th></tr>
+<tr><td class="player" rowspan="2">Pirate</td><th>Attaquer A</th><td class="hl">(10 ; <strong>90</strong>)</td><td class="hl">(<strong>70</strong> ; 30)</td></tr>
+<tr><th>Attaquer B</th><td class="hl">(<strong>70</strong> ; 10)</td><td class="hl">(30 ; <strong>100</strong>)</td></tr>
+</table>
+<p><em>Dans chaque case, un seul des deux nombres est en gras : un seul joueur y est en meilleure réponse. Il n'existe donc aucune case « verte », aucun équilibre de Nash en stratégies pures.</em></p>
+
+<p>Détail des quatre cases, une par une, avec le test de la déviation :</p>
+
+<table class="compare">
+<tr><th>Profil</th><th>Payoffs</th><th class="left">Qui veut dévier, et pourquoi</th></tr>
+<tr><td>(Att. A ; Surv. A)</td><td>(10 ; 90)</td><td class="left">Le <strong>pirate</strong> : il n'a que 10 ; en attaquant B il aurait 70. Il fuit.</td></tr>
+<tr><td>(Att. B ; Surv. A)</td><td>(70 ; 10)</td><td class="left">La <strong>responsable</strong> : elle n'a que 10 ; en surveillant B elle aurait 100. Elle le suit.</td></tr>
+<tr><td>(Att. B ; Surv. B)</td><td>(30 ; 100)</td><td class="left">Le <strong>pirate</strong> : il n'a que 30 ; en attaquant A il aurait 70. Il fuit de nouveau.</td></tr>
+<tr><td>(Att. A ; Surv. B)</td><td>(70 ; 30)</td><td class="left">La <strong>responsable</strong> : elle n'a que 30 ; en surveillant A elle aurait 90. Elle le suit de nouveau.</td></tr>
+</table>
+
+<p>Dans chacune des quatre cases, quelqu'un veut partir. Il n'y a <strong>aucun équilibre de Nash en stratégies pures</strong>.</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 440 300" width="100%" style="max-width:12cm" role="img" aria-label="Cycle des déviations : les quatre cases s'enchaînent en boucle, chacune étant quittée par l'un des deux joueurs, sans jamais se stabiliser">
+  <rect x="26" y="30" width="150" height="56" fill="#f8fafc" stroke="#111827" stroke-width="1.4"/>
+  <text x="101" y="52" font-size="11.5" text-anchor="middle">Attaquer A ; Surv. A</text>
+  <text x="101" y="70" font-size="12" text-anchor="middle" font-weight="bold">(10 ; 90)</text>
+  <rect x="264" y="30" width="150" height="56" fill="#f8fafc" stroke="#111827" stroke-width="1.4"/>
+  <text x="339" y="52" font-size="11.5" text-anchor="middle">Attaquer B ; Surv. A</text>
+  <text x="339" y="70" font-size="12" text-anchor="middle" font-weight="bold">(70 ; 10)</text>
+  <rect x="264" y="188" width="150" height="56" fill="#f8fafc" stroke="#111827" stroke-width="1.4"/>
+  <text x="339" y="210" font-size="11.5" text-anchor="middle">Attaquer B ; Surv. B</text>
+  <text x="339" y="228" font-size="12" text-anchor="middle" font-weight="bold">(30 ; 100)</text>
+  <rect x="26" y="188" width="150" height="56" fill="#f8fafc" stroke="#111827" stroke-width="1.4"/>
+  <text x="101" y="210" font-size="11.5" text-anchor="middle">Attaquer A ; Surv. B</text>
+  <text x="101" y="228" font-size="12" text-anchor="middle" font-weight="bold">(70 ; 30)</text>
+  <line x1="176" y1="58" x2="256" y2="58" stroke="#be123c" stroke-width="2.4"/>
+  <polygon points="262,58 250,52 250,64" fill="#be123c"/>
+  <text x="216" y="30" font-size="11" text-anchor="middle" fill="#be123c">le pirate</text>
+  <text x="216" y="44" font-size="11" text-anchor="middle" fill="#be123c">fuit (70 &gt; 10)</text>
+  <line x1="339" y1="86" x2="339" y2="182" stroke="#0369a1" stroke-width="2.4" stroke-dasharray="7 4"/>
+  <polygon points="339,188 333,176 345,176" fill="#0369a1"/>
+  <text x="392" y="128" font-size="11" text-anchor="middle" fill="#0369a1">la resp.</text>
+  <text x="392" y="142" font-size="11" text-anchor="middle" fill="#0369a1">le suit</text>
+  <text x="392" y="156" font-size="11" text-anchor="middle" fill="#0369a1">(100 &gt; 10)</text>
+  <line x1="264" y1="216" x2="184" y2="216" stroke="#be123c" stroke-width="2.4"/>
+  <polygon points="178,216 190,210 190,222" fill="#be123c"/>
+  <text x="222" y="264" font-size="11" text-anchor="middle" fill="#be123c">le pirate fuit</text>
+  <text x="222" y="278" font-size="11" text-anchor="middle" fill="#be123c">(70 &gt; 30)</text>
+  <line x1="101" y1="188" x2="101" y2="92" stroke="#0369a1" stroke-width="2.4" stroke-dasharray="7 4"/>
+  <polygon points="101,86 95,98 107,98" fill="#0369a1"/>
+  <text x="48" y="128" font-size="11" text-anchor="middle" fill="#0369a1">la resp.</text>
+  <text x="48" y="142" font-size="11" text-anchor="middle" fill="#0369a1">le suit</text>
+  <text x="48" y="156" font-size="11" text-anchor="middle" fill="#0369a1">(90 &gt; 30)</text>
+  <text x="220" y="122" font-size="12" text-anchor="middle" font-weight="bold">on tourne</text>
+  <text x="220" y="138" font-size="12" text-anchor="middle" font-weight="bold">en rond</text>
+  <text x="220" y="156" font-size="11.5" text-anchor="middle" font-style="italic">jamais de repos</text>
+</svg>
+<figcaption>Figure 8 — Le carrousel des déviations. Trait plein = le pirate change de serveur pour fuir la surveillance ; trait pointillé = la responsable change pour le rattraper. On revient toujours au point de départ : aucune case ne peut être un équilibre. Ce cycle est la signature des jeux de conflit pur.</figcaption>
+</figure>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi ce cycle n'est pas un accident</div>
+<p>Regarde la structure : ce que gagne l'un, l'autre le perd (à peu près). On appelle ça un jeu à <strong>somme (presque) nulle</strong>, ou jeu de conflit pur. Dans ce genre de jeu, il ne peut pas y avoir d'équilibre pur, parce qu'être content signifie forcément que l'autre ne l'est pas — et celui qui n'est pas content dévie.</p>
+<p>Autrement dit : <strong>si ma stratégie est prévisible, tu l'exploites</strong>. Et si tu l'exploites, je change. Et si je change, tu changes. Le seul moyen de sortir de la boucle, c'est de ne plus être prévisible du tout. D'où la suite.</p>
+</div>
+
+<hr class="soft">
+
+<h3>5.3 Le cours dont tu as besoin : probabilités, espérance, stratégies mixtes</h3>
+
+<p>Cette sous-section est le passage le plus dense du chapitre. On y construit trois notions : la probabilité, le payoff espéré et le principe d'indifférence. Si tu n'as jamais fait de probabilités, lis très lentement : tout est expliqué, rien n'est supposé connu.</p>
+
+<h4>a) Rappel complet : ce qu'est une probabilité</h4>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel — la probabilité, en trois lignes</div>
+<p>Une <span class="term">probabilité</span> est un nombre entre 0 et 1 qui mesure la fréquence avec laquelle un événement se produit.</p>
+<ul>
+<li>0 signifie « ça n'arrive jamais » ; 1 signifie « ça arrive toujours ».</li>
+<li>0,5 signifie « une fois sur deux », comme pile ou face.</li>
+<li>0,4 signifie « 4 fois sur 10 », soit 40 fois sur 100.</li>
+</ul>
+<p>Et la règle qui sert tout le temps : si un événement a la probabilité \( q \), alors son <strong>contraire</strong> a la probabilité \( 1 - q \), puisque l'un des deux se produit forcément. Exemple : si la responsable surveille A avec probabilité 0,4, elle surveille B avec probabilité \( 1 - 0{,}4 = 0{,}6 \).</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 5 — bien nommer le contraire</div>
+<p>Dans un jeu à <em>deux</em> stratégies, une seule probabilité suffit pour décrire toute la stratégie mixte d'un joueur : l'autre s'en déduit par \( 1 - p \). C'est très pratique, mais ça oblige à être rigoureux : \( p \) désigne « attaquer A », donc \( 1 - p \) désigne « attaquer B ». Écris-le explicitement sur ta copie, ça évite les inversions de signe.</p>
+</div>
+
+<h4>b) La stratégie mixte</h4>
+
+<div class="box box-def">
+<div class="box-title">Définition — stratégie mixte</div>
+<p>Une <span class="term">stratégie mixte</span> consiste à choisir non pas une action, mais une <strong>distribution de probabilité</strong> sur ses actions. Le joueur choisit les probabilités ; c'est ensuite le hasard qui tire l'action effectivement jouée.</p>
+<p>Exemple : « j'attaque le serveur A avec probabilité 0,6 et le serveur B avec probabilité 0,4 ». Concrètement, ça peut vouloir dire : sur 10 nuits, j'en passe 6 sur A et 4 sur B, dans un ordre imprévisible.</p>
+<p>Par opposition, une <span class="term">stratégie pure</span> est le cas particulier où l'une des probabilités vaut 1 : « j'attaque A à coup sûr » correspond à \( p = 1 \), « j'attaque B à coup sûr » à \( p = 0 \).</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi jouer au hasard peut être rationnel</div>
+<p>Ça a l'air paradoxal : on nous a dit qu'un joueur rationnel maximise son payoff, et voilà qu'il tire à pile ou face ?</p>
+<p>Mais réfléchis à pierre-feuille-ciseaux. Si tu joues « pierre » systématiquement, ton adversaire s'en aperçoit en trois manches et joue « feuille » à chaque fois : tu perds tout. Si tu joues « pierre » 40 fois sur 100 et « ciseaux » 30 fois et « feuille » 30 fois, mais dans un ordre qu'il ne peut pas deviner, il ne peut plus t'exploiter.</p>
+<p><strong>Le hasard n'est pas de l'irrationalité : c'est une protection contre la prévisibilité.</strong> Dans un jeu où l'adversaire cherche à te rencontrer (ou à t'éviter), l'imprévisibilité a une valeur, et le calcul va nous dire exactement quelle dose d'imprévisibilité est optimale.</p>
+</div>
+
+<h4>c) Rappel complet : l'espérance (ou « payoff espéré »)</h4>
+
+<p>Quand le résultat dépend du hasard, on ne peut plus dire « je gagne 70 ». On dit « je gagne 70 <em>en moyenne</em> ». Cette moyenne porte un nom : l'espérance.</p>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel — l'espérance mathématique</div>
+<p>L'<span class="term">espérance</span> d'un gain aléatoire est la moyenne de ses valeurs possibles, <strong>pondérée par leurs probabilités</strong>. Formule générale :</p>
+<p>\[ E = (\text{proba du cas 1}) \times (\text{gain du cas 1}) + (\text{proba du cas 2}) \times (\text{gain du cas 2}) + \dots \]</p>
+<p>Le \( E \) vient de l'anglais <em>expectation</em> ; on écrit aussi \( E[\,\cdot\,] \) ou \( U \) pour « utilité espérée ». Ça se lit « espérance de ».</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Exemple concret — le pari à la pièce</div>
+<p>Je te propose : je lance une pièce, si c'est pile tu gagnes 10 €, si c'est face tu gagnes 2 €. Combien vaut ce pari ?</p>
+<p>\[ E = 0{,}5 \times 10 + 0{,}5 \times 2 = 5 + 1 = 6 \text{ €.} \]</p>
+<p>Tu ne gagneras jamais exactement 6 € (tu gagneras 10 ou 2). Mais si on rejoue mille fois, ta moyenne sera très proche de 6 €. C'est ça, l'espérance : la valeur « en moyenne sur le long terme ».</p>
+<p>Et si la pièce était truquée, avec pile 8 fois sur 10 ? Alors \( E = 0{,}8 \times 10 + 0{,}2 \times 2 = 8 + 0{,}4 = 8{,}4 \) €. Les probabilités changent le poids de chaque cas : c'est tout le mécanisme.</p>
+</div>
+
+<div class="box box-def">
+<div class="box-title">Définition — payoff espéré d'une stratégie pure face à une stratégie mixte</div>
+<p>Supposons que la responsable surveille A avec probabilité \( q \) (donc B avec probabilité \( 1 - q \)). Si le pirate attaque A (choix ferme), deux choses peuvent arriver :</p>
+<ul>
+<li>avec probabilité \( q \), elle est sur A → il est attrapé → il touche 10 ;</li>
+<li>avec probabilité \( 1 - q \), elle est sur B → il passe → il touche 70.</li>
+</ul>
+<p>Son payoff espéré est donc :</p>
+<p>\[ E[\text{Attaquer A}] = q \times 10 + (1-q) \times 70. \]</p>
+<p>C'est exactement la formule du pari à la pièce, avec \( q \) à la place de 0,5. Rien de nouveau.</p>
+</div>
+
+<h4>d) Le principe d'indifférence — l'outil de calcul</h4>
+
+<p>Voici l'idée centrale, celle qui permet de calculer l'équilibre. Elle est courte à énoncer et déroutante à admettre. Prends le temps de lire la démonstration en mots qui suit.</p>
+
+<div class="box box-def">
+<div class="box-title">Définition / théorème — le principe d'indifférence</div>
+<p>À un équilibre en stratégies mixtes, chaque joueur qui mélange réellement ses deux actions doit être <strong>exactement indifférent</strong> entre elles : les deux lui rapportent le même payoff espéré.</p>
+<p>\[ E[\text{Attaquer A}] = E[\text{Attaquer B}] \qquad \text{et} \qquad E[\text{Surveiller A}] = E[\text{Surveiller B}]. \]</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi ? La démonstration en français, sans une seule formule</div>
+<p>Mets-toi à la place du pirate. Il a décidé de mélanger : parfois A, parfois B. Supposons un instant qu'attaquer A lui rapporte <em>strictement plus</em> en moyenne qu'attaquer B — disons 50 contre 40.</p>
+<p>Alors que fait-il ? Il augmente la part de A. Et pourquoi s'arrêterait-il en chemin ? Chaque point de probabilité déplacé de B vers A améliore sa moyenne. Il ira donc jusqu'au bout : <strong>A à 100 %</strong>. Autrement dit, il ne mélange plus du tout — il joue une stratégie pure.</p>
+<p>Conclusion : <em>si un joueur mélange vraiment ses deux actions, c'est nécessairement qu'elles rapportent pareil</em>. Sinon il aurait tout misé sur la meilleure. L'indifférence n'est donc pas une hypothèse : c'est une <strong>conséquence forcée</strong> du fait de mélanger.</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Le point le plus contre-intuitif de tout le cours : le chiasme</div>
+<p>Regarde bien la formule du payoff espéré du pirate :</p>
+<p>\[ E[\text{Attaquer A}] = q \times 10 + (1-q) \times 70. \]</p>
+<p>Quelle lettre y apparaît ? <strong>\( q \)</strong> — la probabilité de la <em>responsable</em>. Et \( p \) ? Il n'y est pas ! C'est logique : le payoff du pirate dépend de ce que <em>lui</em> fait (attaquer A, c'est le choix qu'on évalue) et de ce que fait <em>l'autre</em> (avec quelle fréquence elle est sur A).</p>
+<p>Donc quand on écrit « indifférence du pirate », on obtient une équation qui ne contient que \( q \). En la résolvant, on trouve… <strong>\( q^* \), la stratégie de la responsable !</strong> Et symétriquement, l'indifférence de la responsable donne \( p^* \), la stratégie du pirate.</p>
+<p>Retiens cette phrase, elle vaut 8 points à l'examen : <strong>« la probabilité de chaque joueur est fixée par les payoffs de l'autre »</strong>. Ta stratégie mixte n'a pas pour but d'améliorer ton propre sort : elle a pour but de <em>maintenir l'adversaire indifférent</em>, donc de l'empêcher de t'exploiter.</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">L'image du penalty pour comprendre le chiasme</div>
+<p>Si le gardien plonge presque toujours à droite, le tireur tire à gauche à coup sûr : le gardien s'est rendu exploitable. S'il plonge presque toujours à gauche, le tireur tire à droite. Il existe une seule dose de « droite » qui laisse le tireur strictement indifférent — et c'est celle-là que le gardien doit jouer, parce que c'est la seule qui ne donne prise à aucune exploitation.</p>
+<p>Cette dose optimale dépend de la qualité des tirs de <em>l'attaquant</em>, pas de la souplesse du <em>gardien</em>. D'où le chiasme.</p>
+</div>
+
+<hr class="soft">
+
+<h3>5.4 Deuxième partie : calculer l'équilibre mixte</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Poser les inconnues, très proprement</div>
+<p>C'est l'étape que tout le monde bâcle et qui coûte le plus cher. Écris ces quatre lignes sur ta copie :</p>
+<div class="calc">
+<div class="step">
+\[ p = \text{probabilité que le pirate attaque A} \]
+<div class="why">C'est la définition donnée par l'énoncé lui-même. Ne l'invente pas, recopie-la.</div>
+</div>
+<div class="step">
+\[ 1 - p = \text{probabilité que le pirate attaque B} \]
+<div class="why">Le complément : il attaque forcément l'un des deux serveurs, donc les deux probabilités font 1.</div>
+</div>
+<div class="step">
+\[ q = \text{probabilité que la responsable surveille A} \]
+<div class="why">Là encore, c'est l'énoncé qui le dit. Attention : \( q \) est du côté de la responsable, \( p \) du côté du pirate.</div>
+</div>
+<div class="step">
+\[ 1 - q = \text{probabilité que la responsable surveille B} \]
+<div class="why">Même raisonnement de complément.</div>
+</div>
+</div>
+
+<p>On peut alors réécrire la matrice avec les probabilités en marge — un réflexe très utile :</p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Responsable</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Surveiller A (proba \( q \))</th><th>Surveiller B (proba \( 1-q \))</th></tr>
+<tr><td class="player" rowspan="2">Pirate</td><th>Attaquer A (proba \( p \))</th><td>(10 ; 90)</td><td>(70 ; 30)</td></tr>
+<tr><th>Attaquer B (proba \( 1-p \))</th><td>(70 ; 10)</td><td>(30 ; 100)</td></tr>
+</table>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Le payoff espéré du pirate pour chacune de ses deux actions</div>
+
+<p>On applique la formule de l'espérance. Attention : on pondère par les probabilités de <strong>la responsable</strong> (\( q \) et \( 1-q \)), parce que c'est elle qui crée l'incertitude du point de vue du pirate.</p>
+
+<div class="calc">
+<div class="step">
+\[ E[\text{Attaquer A}] = 10\,q + 70\,(1-q) \]
+<div class="why">Le pirate attaque A. Avec probabilité \( q \) la responsable est aussi sur A et il ne touche que 10 ; avec probabilité \( 1-q \) elle est sur B et il touche 70. Je lis simplement la première ligne de la matrice, premiers nombres, en pondérant chaque case par la probabilité de sa colonne.</div>
+</div>
+<div class="step">
+\[ E[\text{Attaquer A}] = 10\,q + 70 - 70\,q \]
+<div class="why">Je développe le produit \( 70\,(1-q) \) : c'est la distributivité, \( 70 \times 1 - 70 \times q \). Rien de plus qu'une multiplication.</div>
+</div>
+<div class="step">
+\[ E[\text{Attaquer A}] = 70 - 60\,q \]
+<div class="why">Je regroupe les termes en \( q \) : \( 10q - 70q = -60q \). Le résultat est une fonction affine de \( q \) : une droite. Vérification de bon sens : si \( q = 0 \) (elle n'est jamais sur A), il touche 70 ✓ ; si \( q = 1 \) (elle est toujours sur A), il touche \( 70 - 60 = 10 \) ✓. Les deux valeurs correspondent bien aux cases de la matrice.</div>
+</div>
+<div class="step">
+\[ E[\text{Attaquer B}] = 70\,q + 30\,(1-q) \]
+<div class="why">Même travail sur la seconde ligne. S'il attaque B et qu'elle surveille A (probabilité \( q \)), il passe : 70. Si elle surveille B (probabilité \( 1-q \)), il est bloqué : 30.</div>
+</div>
+<div class="step">
+\[ E[\text{Attaquer B}] = 70\,q + 30 - 30\,q = 30 + 40\,q \]
+<div class="why">Je développe puis je regroupe : \( 70q - 30q = 40q \). Contrôle : \( q = 0 \) donne 30 ✓ ; \( q = 1 \) donne 70 ✓. Encore une droite, mais croissante cette fois — plus la responsable surveille A, plus attaquer B devient intéressant. Logique.</div>
+</div>
+</div>
+</div>
+
+<figure>
+<svg viewBox="0 0 460 300" width="100%" style="max-width:12cm" role="img" aria-label="Les deux payoffs espérés du pirate, en fonction de la probabilité q que la responsable surveille A : les deux droites se croisent en q égale 0,4 pour une valeur de 46">
+  <line x1="70" y1="40" x2="70" y2="250" stroke="#111827" stroke-width="1.3"/>
+  <line x1="70" y1="250" x2="420" y2="250" stroke="#111827" stroke-width="1.3"/>
+  <text x="70" y="268" font-size="11.5" text-anchor="middle">0</text>
+  <text x="400" y="268" font-size="11.5" text-anchor="middle">1</text>
+  <text x="245" y="288" font-size="12" text-anchor="middle">q = probabilité que la responsable surveille A</text>
+  <text x="60" y="254" font-size="11.5" text-anchor="end">0</text>
+  <text x="60" y="72" font-size="11.5" text-anchor="end">70</text>
+  <line x1="66" y1="66" x2="74" y2="66" stroke="#111827" stroke-width="1.2"/>
+  <text x="24" y="145" font-size="12" text-anchor="middle" transform="rotate(-90 24 145)">payoff espéré du pirate</text>
+  <line x1="70" y1="66" x2="400" y2="224" stroke="#be123c" stroke-width="2.6"/>
+  <text x="330" y="200" font-size="11.5" fill="#be123c" font-weight="bold">Attaquer A</text>
+  <text x="330" y="214" font-size="11" fill="#be123c">70 − 60q</text>
+  <line x1="70" y1="171" x2="400" y2="66" stroke="#0369a1" stroke-width="2.6" stroke-dasharray="8 4"/>
+  <text x="304" y="88" font-size="11.5" fill="#0369a1" font-weight="bold">Attaquer B</text>
+  <text x="304" y="102" font-size="11" fill="#0369a1">30 + 40q</text>
+  <circle cx="202" cy="129" r="5.5" fill="#6d28d9"/>
+  <line x1="202" y1="129" x2="202" y2="250" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="70" y1="129" x2="202" y2="129" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="202" y="268" font-size="11.5" text-anchor="middle" fill="#6d28d9" font-weight="bold">q* = 0,4</text>
+  <text x="60" y="133" font-size="11.5" text-anchor="end" fill="#6d28d9" font-weight="bold">46</text>
+  <text x="216" y="118" font-size="11.5" fill="#6d28d9" font-weight="bold">indifférence</text>
+  <text x="120" y="34" font-size="11.5">à gauche : il préfère</text>
+  <text x="120" y="48" font-size="11.5">attaquer A</text>
+  <text x="330" y="34" font-size="11.5">à droite : il préfère</text>
+  <text x="330" y="48" font-size="11.5">attaquer B</text>
+</svg>
+<figcaption>Figure 9 — Les deux payoffs espérés du pirate sont deux droites. À gauche du croisement, attaquer A est meilleur ; à droite, c'est attaquer B. Un seul point rend les deux équivalents : \( q^* = 0{,}4 \). C'est ce point-là, et lui seul, qui peut être un équilibre — partout ailleurs, le pirate jouerait une stratégie pure.</figcaption>
+</figure>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Poser l'équation d'indifférence du pirate et la résoudre</div>
+
+<p>Le principe d'indifférence dit : à l'équilibre, ces deux droites doivent donner la même valeur. On les égalise.</p>
+
+<div class="calc">
+<div class="step">
+\[ 70 - 60\,q \;=\; 30 + 40\,q \]
+<div class="why">C'est l'équation d'indifférence du pirate. Une seule inconnue : \( q \). Note bien qu'il n'y a aucun \( p \) — c'est le chiasme dont on a parlé.</div>
+</div>
+<div class="step">
+\[ 70 - 60\,q + 60\,q \;=\; 30 + 40\,q + 60\,q \]
+<div class="why">Rappel de méthode pour résoudre une équation : je peux faire la même opération des deux côtés du signe « = » sans changer la solution. J'ajoute \( 60\,q \) partout, pour éliminer le \( q \) du membre de gauche.</div>
+</div>
+<div class="step">
+\[ 70 \;=\; 30 + 100\,q \]
+<div class="why">À gauche, \( -60q + 60q = 0 \), il ne reste que 70. À droite, \( 40q + 60q = 100q \). L'équation est déjà bien plus simple.</div>
+</div>
+<div class="step">
+\[ 70 - 30 \;=\; 100\,q \quad\Longrightarrow\quad 40 \;=\; 100\,q \]
+<div class="why">Je soustrais 30 des deux côtés pour isoler le terme en \( q \). Il ne reste plus qu'une multiplication à défaire.</div>
+</div>
+<div class="step">
+\[ q \;=\; \frac{40}{100} \;=\; 0{,}4 \]
+<div class="why">Je divise les deux côtés par 100. La fraction \( \frac{40}{100} \) se simplifie en \( \frac{4}{10} \), soit 0,4. On l'écrit avec une virgule décimale, comme en français.</div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Première inconnue trouvée</div>
+<p>\[ q^* = 0{,}4 \]</p>
+<p>La responsable surveille le serveur A avec probabilité 0,4 — soit <strong>4 nuits sur 10</strong> — et le serveur B avec probabilité \( 1 - 0{,}4 = 0{,}6 \), soit 6 nuits sur 10.</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi 0,4 et pas 0,5 ? L'interprétation</div>
+<p>On pourrait croire qu'une responsable « équilibrée » partage son temps 50-50. Non : elle surveille B <em>plus souvent</em> que A. Pourquoi ?</p>
+<p>Parce que se faire attraper sur B coûte moins cher au pirate (il touche 30) que se faire attraper sur A (il ne touche que 10). Le serveur A est donc <em>naturellement</em> plus dissuasif : la responsable n'a pas besoin d'y être souvent pour décourager le pirate. Elle concentre sa présence là où sa surveillance est moins efficace.</p>
+<p>C'est un résultat typique de la théorie des jeux, et il est complètement contre-intuitif la première fois. Tu le retrouveras dans l'exemple « police contre mafia » du cours.</p>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Le payoff espéré de la responsable pour chacune de ses deux actions</div>
+
+<p>Exactement le même travail, en miroir. On pondère maintenant par les probabilités du <strong>pirate</strong> (\( p \) et \( 1-p \)), et on lit les <strong>seconds</strong> nombres.</p>
+
+<div class="calc">
+<div class="step">
+\[ E[\text{Surveiller A}] = 90\,p + 10\,(1-p) \]
+<div class="why">Elle surveille A. Avec probabilité \( p \) le pirate attaque A : elle l'attrape et touche 90. Avec probabilité \( 1-p \) il attaque B : elle a surveillé le mauvais serveur et ne touche que 10. Je lis la <em>colonne</em> « Surveiller A », seconds nombres, pondérés par les probabilités des lignes.</div>
+</div>
+<div class="step">
+\[ E[\text{Surveiller A}] = 90\,p + 10 - 10\,p = 10 + 80\,p \]
+<div class="why">Je développe \( 10\,(1-p) = 10 - 10p \), puis je regroupe : \( 90p - 10p = 80p \). Contrôle : \( p = 0 \) donne 10 ✓, \( p = 1 \) donne 90 ✓.</div>
+</div>
+<div class="step">
+\[ E[\text{Surveiller B}] = 30\,p + 100\,(1-p) \]
+<div class="why">Seconde colonne. Si le pirate attaque A (probabilité \( p \)) elle l'a raté : 30. S'il attaque B (probabilité \( 1-p \)) elle l'attrape : 100.</div>
+</div>
+<div class="step">
+\[ E[\text{Surveiller B}] = 30\,p + 100 - 100\,p = 100 - 70\,p \]
+<div class="why">Je développe et je regroupe : \( 30p - 100p = -70p \). Contrôle : \( p = 0 \) donne 100 ✓, \( p = 1 \) donne 30 ✓.</div>
+</div>
+</div>
+</div>
+
+<figure>
+<svg viewBox="0 0 460 300" width="100%" style="max-width:12cm" role="img" aria-label="Les deux payoffs espérés de la responsable, en fonction de la probabilité p que le pirate attaque A : les deux droites se croisent en p égale 0,6 pour une valeur de 58">
+  <line x1="70" y1="30" x2="70" y2="250" stroke="#111827" stroke-width="1.3"/>
+  <line x1="70" y1="250" x2="420" y2="250" stroke="#111827" stroke-width="1.3"/>
+  <text x="70" y="268" font-size="11.5" text-anchor="middle">0</text>
+  <text x="400" y="268" font-size="11.5" text-anchor="middle">1</text>
+  <text x="245" y="288" font-size="12" text-anchor="middle">p = probabilité que le pirate attaque A</text>
+  <text x="60" y="254" font-size="11.5" text-anchor="end">0</text>
+  <text x="60" y="44" font-size="11.5" text-anchor="end">100</text>
+  <line x1="66" y1="40" x2="74" y2="40" stroke="#111827" stroke-width="1.2"/>
+  <text x="24" y="145" font-size="12" text-anchor="middle" transform="rotate(-90 24 145)">payoff espéré de la responsable</text>
+  <line x1="70" y1="229" x2="400" y2="61" stroke="#be123c" stroke-width="2.6"/>
+  <text x="290" y="96" font-size="11.5" fill="#be123c" font-weight="bold">Surveiller A</text>
+  <text x="290" y="110" font-size="11" fill="#be123c">10 + 80p</text>
+  <line x1="70" y1="40" x2="400" y2="187" stroke="#0369a1" stroke-width="2.6" stroke-dasharray="8 4"/>
+  <text x="290" y="176" font-size="11.5" fill="#0369a1" font-weight="bold">Surveiller B</text>
+  <text x="290" y="190" font-size="11" fill="#0369a1">100 − 70p</text>
+  <circle cx="268" cy="128" r="5.5" fill="#6d28d9"/>
+  <line x1="268" y1="128" x2="268" y2="250" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="70" y1="128" x2="268" y2="128" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="268" y="268" font-size="11.5" text-anchor="middle" fill="#6d28d9" font-weight="bold">p* = 0,6</text>
+  <text x="60" y="132" font-size="11.5" text-anchor="end" fill="#6d28d9" font-weight="bold">58</text>
+  <text x="152" y="120" font-size="11.5" fill="#6d28d9" font-weight="bold">indifférence</text>
+</svg>
+<figcaption>Figure 10 — La même construction, côté responsable. À gauche du croisement (le pirate attaque rarement A), elle préfère surveiller B ; à droite, elle préfère surveiller A. L'unique point d'indifférence est \( p^* = 0{,}6 \), et la valeur commune y vaut 58 — un chiffre qui resservira à la question 3.5.</figcaption>
+</figure>
+
+<div class="etape">
+<div class="etape-title"><span class="num">5.</span> Poser l'équation d'indifférence de la responsable et la résoudre</div>
+
+<div class="calc">
+<div class="step">
+\[ 10 + 80\,p \;=\; 100 - 70\,p \]
+<div class="why">L'équation d'indifférence de la responsable. Une seule inconnue : \( p \). Encore le chiasme — c'est <em>son</em> indifférence à elle qui va fixer la stratégie du <em>pirate</em>.</div>
+</div>
+<div class="step">
+\[ 10 + 80\,p + 70\,p \;=\; 100 - 70\,p + 70\,p \]
+<div class="why">J'ajoute \( 70\,p \) des deux côtés pour rassembler les \( p \) à gauche et les nombres à droite.</div>
+</div>
+<div class="step">
+\[ 10 + 150\,p \;=\; 100 \]
+<div class="why">À gauche \( 80p + 70p = 150p \) ; à droite les \( 70p \) s'annulent.</div>
+</div>
+<div class="step">
+\[ 150\,p \;=\; 90 \]
+<div class="why">Je soustrais 10 des deux côtés : \( 100 - 10 = 90 \).</div>
+</div>
+<div class="step">
+\[ p \;=\; \frac{90}{150} \;=\; \frac{9}{15} \;=\; \frac{3}{5} \;=\; 0{,}6 \]
+<div class="why">Je divise par 150. Puis je simplifie la fraction : je divise haut et bas par 10, puis par 3. \( \frac{3}{5} \) vaut 0,6 (trois cinquièmes, c'est-à-dire 6 dixièmes).</div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Seconde inconnue trouvée</div>
+<p>\[ p^* = 0{,}6 \]</p>
+<p>Le pirate attaque le serveur A avec probabilité 0,6 — soit <strong>6 nuits sur 10</strong> — et le serveur B avec probabilité 0,4.</p>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">6.</span> Vérifier que les résultats sont acceptables</div>
+<p>Deux contrôles, très rapides, qui te sauvent d'une catastrophe :</p>
+<div class="calc">
+<div class="step">
+\[ 0 \;\le\; p^* = 0{,}6 \;\le\; 1 \qquad \text{et} \qquad 0 \;\le\; q^* = 0{,}4 \;\le\; 1 \]
+<div class="why">Une probabilité est forcément entre 0 et 1. Si tu obtiens 1,4 ou −0,2, c'est une erreur de calcul (ou bien il n'existe pas d'équilibre mixte intérieur dans ce jeu). Ici, tout va bien.</div>
+</div>
+<div class="step">
+\[ E[\text{Att. A}] = 70 - 60 \times 0{,}4 = 70 - 24 = 46 \]
+<div class="why">Je remplace \( q \) par 0,4 dans la première droite pour vérifier ma solution.</div>
+</div>
+<div class="step">
+\[ E[\text{Att. B}] = 30 + 40 \times 0{,}4 = 30 + 16 = 46 \quad \checkmark \]
+<div class="why">Même valeur : le pirate est bien indifférent, ma valeur de \( q^* \) est correcte. Ce contrôle prend dix secondes et confirme les 4 points.</div>
+</div>
+<div class="step">
+\[ E[\text{Surv. A}] = 10 + 80 \times 0{,}6 = 58, \qquad E[\text{Surv. B}] = 100 - 70 \times 0{,}6 = 58 \quad \checkmark \]
+<div class="why">Idem côté responsable : \( 100 - 42 = 58 \). Les deux coïncident, donc \( p^* = 0{,}6 \) est correct. Garde ces deux nombres, 46 et 58 : c'est déjà la réponse de la question 3.5.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">7.</span> Voir l'équilibre : les deux courbes de meilleure réponse</div>
+
+<p>Il existe une façon très parlante de visualiser ce qu'on vient de calculer. On trace, dans un carré \( [0;1] \times [0;1] \), la meilleure réponse de chaque joueur à la probabilité de l'autre.</p>
+
+<p>Pour le pirate, on l'a lu sur la figure 9 :</p>
+<ul>
+<li>si \( q &lt; 0{,}4 \) (la responsable est rarement sur A), il attaque A à coup sûr : \( p = 1 \) ;</li>
+<li>si \( q &gt; 0{,}4 \), il attaque B à coup sûr : \( p = 0 \) ;</li>
+<li>si \( q = 0{,}4 \) exactement, il est indifférent : <strong>n'importe quel</strong> \( p \) lui convient. C'est le segment vertical.</li>
+</ul>
+
+<p>Pour la responsable, symétriquement (figure 10) :</p>
+<ul>
+<li>si \( p &lt; 0{,}6 \), elle surveille B : \( q = 0 \) ;</li>
+<li>si \( p &gt; 0{,}6 \), elle surveille A : \( q = 1 \) ;</li>
+<li>si \( p = 0{,}6 \), elle est indifférente : n'importe quel \( q \).</li>
+</ul>
+
+<figure>
+<svg viewBox="0 0 470 400" width="100%" style="max-width:12cm" role="img" aria-label="Diagramme des meilleures réponses en stratégies mixtes : les deux escaliers ne se croisent qu'au point p égale 0,6 et q égale 0,4">
+  <line x1="96" y1="20" x2="128" y2="20" stroke="#be123c" stroke-width="3.4"/>
+  <text x="136" y="24" font-size="12">meilleure réponse du pirate</text>
+  <line x1="96" y1="40" x2="128" y2="40" stroke="#0369a1" stroke-width="3.4" stroke-dasharray="8 4"/>
+  <text x="136" y="44" font-size="12">meilleure réponse de la responsable</text>
+  <line x1="80" y1="56" x2="80" y2="340" stroke="#111827" stroke-width="1.3"/>
+  <line x1="80" y1="340" x2="424" y2="340" stroke="#111827" stroke-width="1.3"/>
+  <text x="80" y="358" font-size="11.5" text-anchor="middle">0</text>
+  <text x="400" y="358" font-size="11.5" text-anchor="middle">1</text>
+  <text x="72" y="344" font-size="11.5" text-anchor="end">0</text>
+  <text x="72" y="72" font-size="11.5" text-anchor="end">1</text>
+  <text x="245" y="384" font-size="12" text-anchor="middle">p = probabilité que le pirate attaque A</text>
+  <text x="26" y="200" font-size="12" text-anchor="middle" transform="rotate(-90 26 200)">q = proba de surveiller A</text>
+  <polyline points="400,340 400,232 80,232 80,68" fill="none" stroke="#be123c" stroke-width="3.4"/>
+  <polyline points="80,340 272,340 272,68 400,68" fill="none" stroke="#0369a1" stroke-width="3.4" stroke-dasharray="8 4"/>
+  <line x1="272" y1="232" x2="272" y2="340" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="80" y1="232" x2="272" y2="232" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="272" y="358" font-size="11.5" text-anchor="middle" fill="#6d28d9" font-weight="bold">p* = 0,6</text>
+  <text x="72" y="236" font-size="11.5" text-anchor="end" fill="#6d28d9" font-weight="bold">q* = 0,4</text>
+  <circle cx="272" cy="232" r="6.5" fill="#6d28d9"/>
+  <text x="286" y="212" font-size="12" fill="#6d28d9" font-weight="bold">équilibre mixte</text>
+  <text x="286" y="226" font-size="12" fill="#6d28d9" font-weight="bold">(0,6 ; 0,4)</text>
+</svg>
+<figcaption>Figure 11 — La figure clé des stratégies mixtes. Chaque « escalier » est la meilleure réponse d'un joueur. Un équilibre est un point qui appartient <em>aux deux</em> courbes en même temps. Aucun coin du carré (= aucun équilibre en stratégies pures) ne convient : l'unique intersection est le point intérieur \( (0{,}6\,;\,0{,}4) \).</figcaption>
+</figure>
+
+<p>Cette figure démontre visuellement <em>les deux</em> parties de la question 3.4 d'un seul coup :</p>
+<ul>
+<li>les quatre <strong>coins</strong> du carré représentent les quatre profils en stratégies pures ; aucun n'est sur les deux courbes, donc aucun équilibre pur ;</li>
+<li>les deux courbes se croisent en <strong>un seul point</strong>, à l'intérieur : l'équilibre mixte, et il est unique.</li>
+</ul>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 3.4</div>
+<p>Ce jeu n'admet <strong>aucun équilibre de Nash en stratégies pures</strong> : dans chacune des quatre cellules, l'un des deux joueurs souhaite dévier.</p>
+<p>Il possède un <strong>unique équilibre de Nash, en stratégies mixtes</strong> :</p>
+<p>\[ (p^*;\, q^*) = (0{,}6\,;\, 0{,}4). \]</p>
+<p>Le pirate attaque le serveur A 6 nuits sur 10 ; la responsable surveille le serveur A 4 nuits sur 10.</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie</div>
+<p><strong>1) Aucun équilibre en stratégies pures.</strong> Meilleures réponses du pirate : contre « Surveiller A » → Attaquer B (\( 70 &gt; 10 \)) ; contre « Surveiller B » → Attaquer A (\( 70 &gt; 30 \)). Meilleures réponses de la responsable : contre « Attaquer A » → Surveiller A (\( 90 &gt; 30 \)) ; contre « Attaquer B » → Surveiller B (\( 100 &gt; 10 \)). Dans chacune des quatre cellules, l'un des deux joueurs souhaite dévier : il n'existe aucun équilibre de Nash en stratégies pures (structure de type « gardien–tireur »).</p>
+<p><strong>2) Équilibre mixte — théorème d'indifférence.</strong> Soit \( p \) la probabilité que le pirate attaque A et \( q \) la probabilité que la responsable surveille A. À l'équilibre mixte, chaque joueur rend l'<em>autre</em> indifférent entre ses deux stratégies pures.</p>
+<p>Indifférence du pirate (elle détermine \( q^* \)) :</p>
+<p>\[ 10\,q + 70\,(1-q) \;=\; 70\,q + 30\,(1-q) \]</p>
+<p>\[ 70 - 60\,q = 30 + 40\,q \;\iff\; 100\,q = 40 \;\iff\; q^* = 0{,}4. \]</p>
+<p>Indifférence de la responsable (elle détermine \( p^* \)) :</p>
+<p>\[ 90\,p + 10\,(1-p) \;=\; 30\,p + 100\,(1-p) \]</p>
+<p>\[ 10 + 80\,p = 100 - 70\,p \;\iff\; 150\,p = 90 \;\iff\; p^* = 0{,}6. \]</p>
+<p>L'unique équilibre de Nash est donc en stratégies mixtes : \( (p^*;\, q^*) = (0{,}6\,;\, 0{,}4) \) — le pirate attaque A 6 nuits sur 10, la responsable surveille A 4 nuits sur 10.</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la question 3.4</div>
+<ul>
+<li><strong>Le chiasme inversé.</strong> C'est l'erreur n° 1. Si ton équation « côté pirate » te donne \( p \), c'est que tu as égalisé les mauvais payoffs (tu as sans doute lu les seconds nombres au lieu des premiers). Contrôle instantané : dans l'équation d'indifférence du pirate, il ne doit apparaître <strong>que des \( q \)</strong>.</li>
+<li><strong>Confondre \( p \) et \( q \) dans la réponse finale.</strong> L'énoncé a défini \( p \) pour le pirate. Si tu annonces \( p^* = 0{,}4 \), tu as tout juste et zéro point.</li>
+<li><strong>Oublier la première partie.</strong> « Montrez d'abord qu'il n'y a aucun EN pur » vaut 4 points à lui seul. Ne saute pas directement au calcul.</li>
+<li><strong>Écrire \( 1-q \) au mauvais endroit.</strong> Quand le pirate attaque A, il est bloqué si elle est sur A (probabilité \( q \)) : le 10 va donc avec \( q \), pas avec \( 1-q \). Relis toujours ta ligne en te racontant l'histoire.</li>
+<li><strong>Ne pas vérifier que \( p^*, q^* \in [0;1] \).</strong> Un résultat hors de cet intervalle signale une erreur.</li>
+<li><strong>Croire que 0,5 est la réponse « par symétrie ».</strong> Les payoffs ne sont pas symétriques ici (10 et 30 d'un côté, 90 et 100 de l'autre), donc les probabilités ne le sont pas non plus.</li>
+</ul>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Réflexe de méthode n° 4 — calculer un équilibre mixte 2×2 en cinq lignes</div>
+<ol>
+<li><strong>Nomme les probabilités</strong> en recopiant la définition de l'énoncé, et écris aussi les compléments \( 1-p \), \( 1-q \).</li>
+<li><strong>Écris l'indifférence du joueur 1</strong> : ses deux payoffs espérés, pondérés par \( q \) et \( 1-q \). Tu obtiens une équation en \( q \) seul → elle donne \( q^* \).</li>
+<li><strong>Écris l'indifférence du joueur 2</strong> : ses deux payoffs espérés, pondérés par \( p \) et \( 1-p \). Équation en \( p \) seul → elle donne \( p^* \).</li>
+<li><strong>Résous</strong> : ce sont toujours des équations du premier degré, du type \( a + b\,x = c + d\,x \). Regroupe les \( x \) d'un côté, les nombres de l'autre, divise.</li>
+<li><strong>Vérifie</strong> : les deux payoffs espérés doivent être égaux une fois la valeur remplacée, et les probabilités doivent tomber dans \( [0;1] \).</li>
+</ol>
+<p>Astuce mnémotechnique pour ne jamais inverser : <em>« mon équation détermine TA probabilité »</em>. Ou encore : les payoffs du joueur 1 servent à trouver la stratégie du joueur 2.</p>
+</div>
+
+<hr class="soft">
+
+<h2>6. Question 3.5 — les payoffs espérés à l'équilibre (6 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.5 (6 points)</div>
+<p><strong>3.5)</strong> Calculez le payoff espéré de chaque joueur à cet équilibre.</p>
+<p><em>(6 points — barème : 3 pts par payoff espéré correct. L'astuce de l'indifférence et le calcul complet sur les quatre cellules sont tous deux acceptés.)</em></p>
+<p>Rappel du jeu et de l'équilibre trouvé en 3.4 :</p>
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Responsable</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Surveiller A (\( q^* = 0{,}4 \))</th><th>Surveiller B (\( 0{,}6 \))</th></tr>
+<tr><td class="player" rowspan="2">Pirate</td><th>Attaquer A (\( p^* = 0{,}6 \))</th><td>(10 ; 90)</td><td>(70 ; 30)</td></tr>
+<tr><th>Attaquer B (\( 0{,}4 \))</th><td>(70 ; 10)</td><td>(30 ; 100)</td></tr>
+</table>
+</div>
+
+<h3>6.1 Traduisons la question en français simple</h3>
+
+<p>« Payoff espéré à l'équilibre » veut dire : <em>si les deux joueurs jouent leurs probabilités d'équilibre nuit après nuit, combien chacun gagne-t-il en moyenne par nuit ?</em></p>
+
+<p>Ce n'est pas un chiffre qu'on lit dans une case : le résultat d'une nuit donnée sera 10, 70 ou 30 selon le tirage. On cherche la <strong>moyenne</strong> sur le long terme. C'est exactement l'espérance qu'on a définie plus haut.</p>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 6 — « à cet équilibre »</div>
+<p>Ces trois mots imposent d'utiliser \( p^* = 0{,}6 \) et \( q^* = 0{,}4 \), les valeurs trouvées en 3.4. Si tu t'es trompé en 3.4, tu te tromperas ici aussi — mais un correcteur bienveillant accorde souvent les points de la 3.5 si la <em>méthode</em> est juste. Écris donc toujours la formule avant les chiffres.</p>
+</div>
+
+<h3>6.2 Le cours dont tu as besoin : deux méthodes, et pourquoi on les fait toutes les deux</h3>
+
+<div class="box box-def">
+<div class="box-title">Méthode 1 — l'astuce de l'indifférence (rapide)</div>
+<p>À l'équilibre mixte, le pirate est <strong>indifférent</strong> entre ses deux actions : elles lui rapportent la même chose. Son payoff d'équilibre est donc simplement <em>la valeur commune</em> — et pour la calculer, il suffit d'évaluer <strong>une seule</strong> de ses actions pures contre la stratégie mixte de l'adversaire.</p>
+<p>Deux multiplications, une addition. C'est tout.</p>
+</div>
+
+<div class="box box-def">
+<div class="box-title">Méthode 2 — la somme des quatre cases (complète)</div>
+<p>On calcule la probabilité de chacune des quatre cases, puis on fait la moyenne pondérée des payoffs :</p>
+<p>\[ U = \sum_{\text{4 cases}} (\text{proba de la case}) \times (\text{payoff dans la case}). \]</p>
+<p>Le symbole \( \sum \) (« sigma », la lettre grecque S majuscule) se lit « somme de » : il veut simplement dire qu'on additionne les quatre termes.</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">D'où viennent les probabilités des quatre cases ?</div>
+<p>Les deux joueurs tirent au sort <strong>indépendamment</strong> : la pièce du pirate n'a aucune influence sur celle de la responsable. Or, pour deux événements indépendants, la probabilité qu'ils se produisent tous les deux est le <strong>produit</strong> de leurs probabilités.</p>
+<p>Exemple simple : deux pièces équilibrées. La probabilité d'obtenir « pile ET pile » est \( 0{,}5 \times 0{,}5 = 0{,}25 \), c'est-à-dire une fois sur quatre. Vérifie en listant les quatre issues possibles (PP, PF, FP, FF) : elles sont équiprobables. ✓</p>
+<p>Ici, la case « Attaquer A ET Surveiller A » a donc la probabilité \( p \times q \), la case « Attaquer A ET Surveiller B » la probabilité \( p \times (1-q) \), et ainsi de suite.</p>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Pourquoi faire les deux ?</div>
+<p>Parce qu'elles doivent donner <strong>exactement le même nombre</strong>. C'est le meilleur auto-contrôle de tout le chapitre : si tes deux méthodes divergent, c'est que ton \( p^* \) ou ton \( q^* \) est faux — et tu peux le corriger avant de rendre ta copie. À l'examen, fais la méthode 1 (rapide) pour répondre, et la méthode 2 au brouillon pour vérifier.</p>
+</div>
+
+<h3>6.3 La résolution pas à pas — méthode 1 (l'indifférence)</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Le payoff espéré du pirate</div>
+<p>Je choisis l'une de ses deux actions — disons « Attaquer A » — et je l'évalue contre la stratégie mixte de la responsable (\( q^* = 0{,}4 \) sur A, donc \( 0{,}6 \) sur B).</p>
+
+<div class="calc">
+<div class="step">
+\[ U_{\text{pirate}} = 10 \times q^* + 70 \times (1 - q^*) \]
+<div class="why">Formule de l'espérance appliquée à la ligne « Attaquer A ». Avec probabilité \( q^* \) la responsable est sur A et il touche 10 ; avec probabilité \( 1-q^* \) elle est sur B et il touche 70.</div>
+</div>
+<div class="step">
+\[ U_{\text{pirate}} = 10 \times 0{,}4 + 70 \times 0{,}6 \]
+<div class="why">Je remplace \( q^* \) par sa valeur trouvée en 3.4, et \( 1 - 0{,}4 = 0{,}6 \).</div>
+</div>
+<div class="step">
+\[ U_{\text{pirate}} = 4 + 42 = 46 \]
+<div class="why">\( 10 \times 0{,}4 = 4 \) et \( 70 \times 0{,}6 = 42 \). Petit rappel de calcul : multiplier par 0,6 revient à multiplier par 6 puis diviser par 10 — soit \( 70 \times 6 = 420 \), puis \( 420 / 10 = 42 \). La somme donne 46.</div>
+</div>
+</div>
+
+<p><strong>Contre-vérification avec l'autre action</strong> — obligatoire, elle ne coûte rien :</p>
+
+<div class="calc">
+<div class="step">
+\[ 70 \times 0{,}4 + 30 \times 0{,}6 = 28 + 18 = 46 \quad \checkmark \]
+<div class="why">C'est le payoff espéré d'« Attaquer B ». On retrouve 46 : le pirate est bien indifférent entre ses deux actions, ce qui confirme à la fois la valeur de \( q^* \) et celle du payoff.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Le payoff espéré de la responsable</div>
+<p>Même chose de l'autre côté. Je prends « Surveiller A » et je l'évalue contre la stratégie mixte du pirate (\( p^* = 0{,}6 \) sur A, donc \( 0{,}4 \) sur B).</p>
+
+<div class="calc">
+<div class="step">
+\[ U_{\text{resp.}} = 90 \times p^* + 10 \times (1 - p^*) \]
+<div class="why">Colonne « Surveiller A », seconds nombres. Avec probabilité \( p^* \) le pirate attaque A : elle l'attrape et touche 90. Avec probabilité \( 1-p^* \) il attaque B : elle a raté, 10.</div>
+</div>
+<div class="step">
+\[ U_{\text{resp.}} = 90 \times 0{,}6 + 10 \times 0{,}4 \]
+<div class="why">Je remplace \( p^* \) par 0,6 et \( 1 - p^* \) par 0,4. Attention : c'est bien \( p \) qui intervient ici, pas \( q \) — encore le chiasme.</div>
+</div>
+<div class="step">
+\[ U_{\text{resp.}} = 54 + 4 = 58 \]
+<div class="why">\( 90 \times 0{,}6 = 54 \) et \( 10 \times 0{,}4 = 4 \). Total : 58.</div>
+</div>
+<div class="step">
+\[ \text{Contre-vérification} : \; 30 \times 0{,}6 + 100 \times 0{,}4 = 18 + 40 = 58 \quad \checkmark \]
+<div class="why">C'est le payoff espéré de « Surveiller B ». Identique : la responsable est indifférente, tout est cohérent.</div>
+</div>
+</div>
+</div>
+
+<h3>6.4 La résolution pas à pas — méthode 2 (les quatre cases)</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Calculer la probabilité de chacune des quatre cases</div>
+<p>Chaque case se produit quand deux choses arrivent en même temps. On multiplie donc les deux probabilités.</p>
+
+<div class="calc">
+<div class="step">
+\[ \Pr(\text{A ; A}) = p^* \times q^* = 0{,}6 \times 0{,}4 = 0{,}24 \]
+<div class="why">Le pirate attaque A (probabilité 0,6) ET la responsable surveille A (probabilité 0,4). Le mot « ET » entre deux événements indépendants se traduit par une multiplication. Calcul : \( 6 \times 4 = 24 \), et on place la virgule deux rangs à gauche puisqu'on multiplie deux nombres à un chiffre après la virgule → 0,24.</div>
+</div>
+<div class="step">
+\[ \Pr(\text{A ; B}) = p^* \times (1 - q^*) = 0{,}6 \times 0{,}6 = 0{,}36 \]
+<div class="why">Il attaque A, elle surveille B. C'est le cas où le pirate passe : il arrive un peu plus d'une nuit sur trois.</div>
+</div>
+<div class="step">
+\[ \Pr(\text{B ; A}) = (1 - p^*) \times q^* = 0{,}4 \times 0{,}4 = 0{,}16 \]
+<div class="why">Il attaque B, elle surveille A. Second cas où il passe.</div>
+</div>
+<div class="step">
+\[ \Pr(\text{B ; B}) = (1 - p^*) \times (1 - q^*) = 0{,}4 \times 0{,}6 = 0{,}24 \]
+<div class="why">Il attaque B, elle surveille B : il est bloqué.</div>
+</div>
+<div class="step">
+\[ 0{,}24 + 0{,}36 + 0{,}16 + 0{,}24 = 1 \quad \checkmark \]
+<div class="why">Contrôle indispensable : les quatre cases couvrent tous les cas possibles, donc leurs probabilités doivent faire exactement 1. Si tu ne tombes pas sur 1, tu as fait une erreur de multiplication.</div>
+</div>
+</div>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 300" width="100%" style="max-width:12.5cm" role="img" aria-label="Arbre des quatre issues possibles avec leurs probabilités : 0,24, 0,36, 0,16 et 0,24">
+  <circle cx="34" cy="150" r="5" fill="#111827"/>
+  <text x="34" y="176" font-size="11.5" text-anchor="middle">nuit</text>
+  <line x1="40" y1="150" x2="130" y2="76" stroke="#be123c" stroke-width="2.2"/>
+  <text x="84" y="102" font-size="11.5" fill="#be123c" text-anchor="middle">A : 0,6</text>
+  <line x1="40" y1="150" x2="130" y2="224" stroke="#be123c" stroke-width="2.2" stroke-dasharray="6 4"/>
+  <text x="84" y="206" font-size="11.5" fill="#be123c" text-anchor="middle">B : 0,4</text>
+  <text x="136" y="66" font-size="11.5" font-weight="bold">pirate attaque A</text>
+  <text x="136" y="238" font-size="11.5" font-weight="bold">pirate attaque B</text>
+  <line x1="230" y1="76" x2="300" y2="40" stroke="#0369a1" stroke-width="2.2"/>
+  <text x="264" y="50" font-size="11" fill="#0369a1" text-anchor="middle">A : 0,4</text>
+  <line x1="230" y1="76" x2="300" y2="108" stroke="#0369a1" stroke-width="2.2" stroke-dasharray="6 4"/>
+  <text x="264" y="106" font-size="11" fill="#0369a1" text-anchor="middle">B : 0,6</text>
+  <line x1="230" y1="224" x2="300" y2="190" stroke="#0369a1" stroke-width="2.2"/>
+  <text x="264" y="196" font-size="11" fill="#0369a1" text-anchor="middle">A : 0,4</text>
+  <line x1="230" y1="224" x2="300" y2="258" stroke="#0369a1" stroke-width="2.2" stroke-dasharray="6 4"/>
+  <text x="264" y="256" font-size="11" fill="#0369a1" text-anchor="middle">B : 0,6</text>
+  <rect x="306" y="24" width="156" height="34" fill="#f8fafc" stroke="#111827" stroke-width="1.2"/>
+  <text x="384" y="38" font-size="11.5" text-anchor="middle">(10 ; 90) — bloqué</text>
+  <text x="384" y="52" font-size="11.5" text-anchor="middle" font-weight="bold">0,6 × 0,4 = 0,24</text>
+  <rect x="306" y="92" width="156" height="34" fill="#f8fafc" stroke="#111827" stroke-width="1.2"/>
+  <text x="384" y="106" font-size="11.5" text-anchor="middle">(70 ; 30) — il passe</text>
+  <text x="384" y="120" font-size="11.5" text-anchor="middle" font-weight="bold">0,6 × 0,6 = 0,36</text>
+  <rect x="306" y="174" width="156" height="34" fill="#f8fafc" stroke="#111827" stroke-width="1.2"/>
+  <text x="384" y="188" font-size="11.5" text-anchor="middle">(70 ; 10) — il passe</text>
+  <text x="384" y="202" font-size="11.5" text-anchor="middle" font-weight="bold">0,4 × 0,4 = 0,16</text>
+  <rect x="306" y="242" width="156" height="34" fill="#f8fafc" stroke="#111827" stroke-width="1.2"/>
+  <text x="384" y="256" font-size="11.5" text-anchor="middle">(30 ; 100) — bloqué</text>
+  <text x="384" y="270" font-size="11.5" text-anchor="middle" font-weight="bold">0,4 × 0,6 = 0,24</text>
+  <text x="150" y="150" font-size="11.5" font-style="italic">puis la responsable choisit</text>
+  <text x="150" y="166" font-size="11.5" font-style="italic">(indépendamment)</text>
+</svg>
+<figcaption>Figure 12 — L'arbre des quatre issues d'une nuit. Trait plein = choix du serveur A, trait pointillé = serveur B. On multiplie les probabilités le long de chaque branche, et la somme des quatre feuilles vaut bien 1. Remarque que le pirate passe avec probabilité \( 0{,}36 + 0{,}16 = 0{,}52 \), un peu plus d'une nuit sur deux.</figcaption>
+</figure>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Faire la moyenne pondérée, pour chaque joueur</div>
+
+<table class="data">
+<tr><th>Case</th><th>Probabilité</th><th>Payoff pirate</th><th>Contribution</th><th>Payoff resp.</th><th>Contribution</th></tr>
+<tr><td>(A ; A)</td><td>0,24</td><td>10</td><td>2,4</td><td>90</td><td>21,6</td></tr>
+<tr><td>(A ; B)</td><td>0,36</td><td>70</td><td>25,2</td><td>30</td><td>10,8</td></tr>
+<tr><td>(B ; A)</td><td>0,16</td><td>70</td><td>11,2</td><td>10</td><td>1,6</td></tr>
+<tr><td>(B ; B)</td><td>0,24</td><td>30</td><td>7,2</td><td>100</td><td>24,0</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>1,00</strong></td><td>—</td><td><strong>46,0</strong></td><td>—</td><td><strong>58,0</strong></td></tr>
+</table>
+
+<p>Détaillons les additions, pour que rien ne reste magique :</p>
+
+<div class="calc">
+<div class="step">
+\[ U_{\text{pirate}} = 0{,}24 \times 10 + 0{,}36 \times 70 + 0{,}16 \times 70 + 0{,}24 \times 30 \]
+<div class="why">Chaque case pèse selon sa probabilité. Je lis les <em>premiers</em> nombres des quatre cases.</div>
+</div>
+<div class="step">
+\[ U_{\text{pirate}} = 2{,}4 + 25{,}2 + 11{,}2 + 7{,}2 \]
+<div class="why">Quatre multiplications : \( 0{,}24 \times 10 = 2{,}4 \) ; \( 0{,}36 \times 70 = 25{,}2 \) ; \( 0{,}16 \times 70 = 11{,}2 \) ; \( 0{,}24 \times 30 = 7{,}2 \).</div>
+</div>
+<div class="step">
+\[ U_{\text{pirate}} = 46 \quad \checkmark \]
+<div class="why">\( 2{,}4 + 25{,}2 = 27{,}6 \) ; \( + 11{,}2 = 38{,}8 \) ; \( + 7{,}2 = 46{,}0 \). On retrouve exactement le résultat de la méthode 1. Les deux chemins mènent au même nombre : c'est la preuve que tout est cohérent.</div>
+</div>
+<div class="step">
+\[ U_{\text{resp.}} = 0{,}24 \times 90 + 0{,}36 \times 30 + 0{,}16 \times 10 + 0{,}24 \times 100 \]
+<div class="why">Même calcul avec les <em>seconds</em> nombres des quatre cases.</div>
+</div>
+<div class="step">
+\[ U_{\text{resp.}} = 21{,}6 + 10{,}8 + 1{,}6 + 24 = 58 \quad \checkmark \]
+<div class="why">\( 21{,}6 + 10{,}8 = 32{,}4 \) ; \( + 1{,}6 = 34{,}0 \) ; \( + 24 = 58{,}0 \). Là encore, identique à la méthode 1.</div>
+</div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 3.5</div>
+<p>\[ U_{\text{pirate}} = 46 \qquad\text{et}\qquad U_{\text{responsable}} = 58. \]</p>
+<p>Chaque nuit, le pirate récolte en moyenne 46 et la responsable 58. Les deux méthodes (indifférence et somme des quatre cases) donnent le même résultat.</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Que racontent ces deux nombres ?</div>
+<p>Regarde les extrêmes : le pirate peut toucher 10, 30 ou 70 selon la nuit ; sa moyenne, 46, est entre les deux — plus proche du haut, parce qu'il réussit 52 nuits sur 100. La responsable, elle, oscille entre 10 et 100, avec une moyenne de 58.</p>
+<p>Point important : la somme \( 46 + 58 = 104 \) n'a aucune signification particulière, et surtout elle n'est pas constante d'une case à l'autre (100, 100, 80, 130). Ce jeu n'est donc pas exactement à somme nulle ; il en a seulement la <em>structure de conflit</em>. Ne cherche jamais à interpréter la somme des payoffs de deux joueurs différents : ce sont des unités différentes.</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie</div>
+<p>À l'équilibre mixte, chaque joueur est indifférent entre ses deux stratégies pures : il suffit donc d'évaluer <em>l'une</em> d'entre elles contre la stratégie mixte adverse.</p>
+<p>Pirate (contre \( q^* = 0{,}4 \)) :</p>
+<p>\[ U_{\text{pirate}} = 10 \times 0{,}4 + 70 \times 0{,}6 = 4 + 42 = \mathbf{46}. \]</p>
+<p>Vérification avec « Attaquer B » : \( 70 \times 0{,}4 + 30 \times 0{,}6 = 28 + 18 = 46 \) ✓.</p>
+<p>Responsable (contre \( p^* = 0{,}6 \)) :</p>
+<p>\[ U_{\text{resp.}} = 90 \times 0{,}6 + 10 \times 0{,}4 = 54 + 4 = \mathbf{58}. \]</p>
+<p>Vérification avec « Surveiller B » : \( 30 \times 0{,}6 + 100 \times 0{,}4 = 18 + 40 = 58 \) ✓.</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la question 3.5</div>
+<ul>
+<li><strong>Utiliser la mauvaise probabilité.</strong> Pour le payoff du <em>pirate</em>, on pondère par \( q^* \) (la probabilité de la <em>responsable</em>). C'est toujours le chiasme : c'est l'autre qui crée ton incertitude.</li>
+<li><strong>Prendre la moyenne simple des cases.</strong> \( (10+70+70+30)/4 = 45 \) : faux, et pourtant proche de 46, donc doublement piégeux. Les quatre cases n'ont pas la même probabilité, il faut les pondérer.</li>
+<li><strong>Oublier la contre-vérification.</strong> Elle coûte quinze secondes et attrape presque toutes les erreurs.</li>
+<li><strong>Écrire les résultats sans unité ni joueur.</strong> Précise « payoff espéré du pirate : 46 » et « de la responsable : 58 » — les deux lignes réponses figurent d'ailleurs sur la feuille d'examen.</li>
+<li><strong>Croire que le joueur touche vraiment 46.</strong> Non : il touche 10, 70 ou 30 selon les nuits. 46 est une moyenne.</li>
+</ul>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Réflexe de méthode n° 5 — calculer un payoff espéré d'équilibre</div>
+<ol>
+<li>Choisis <strong>une</strong> stratégie pure du joueur dont tu cherches le payoff.</li>
+<li>Multiplie chacun de ses payoffs sur cette ligne (ou colonne) par la probabilité correspondante de l'<strong>adversaire</strong>.</li>
+<li>Additionne.</li>
+<li>Refais avec son <em>autre</em> stratégie pure : tu dois retrouver exactement le même nombre. Si ce n'est pas le cas, remonte corriger ton \( p^* \) ou ton \( q^* \).</li>
+<li>Si tu as le temps, refais par la somme des quatre cases (probabilités \( pq \), \( p(1-q) \), \( (1-p)q \), \( (1-p)(1-q) \)) : troisième confirmation.</li>
+</ol>
+</div>
+
+<hr class="soft">
+
+<h2>7. Récapitulatif : tout le chapitre sur deux pages</h2>
+
+<h3>7.1 Les cinq réponses et leur barème</h3>
+
+<table class="compare">
+<tr><th>Q</th><th class="left">Réponse</th><th class="left">Ce qui rapporte les points</th><th>Pts</th></tr>
+<tr><td>3.1</td><td class="left">P de <strong>Boréal</strong> est strictement dominée par <strong>G</strong></td><td class="left">nommer le joueur et la stratégie dominante (4) + les trois inégalités 40&gt;35, 20&gt;15, 35&gt;10 (4)</td><td>8</td></tr>
+<tr><td>3.2</td><td class="left">PSS = {(C;C), (C;G), (G;C), (G;G)}</td><td class="left">tour 1 colonne P par H1 (4) + tour 2 ligne P par H2 avec justification (4) + constat d'arrêt et liste (4)</td><td>12</td></tr>
+<tr><td>3.3</td><td class="left">EN purs : <strong>(C ; G)</strong> et <strong>(G ; C)</strong></td><td class="left">méthode des meilleures réponses énoncée et appliquée (4) + chaque équilibre (3), −2 par équilibre fantôme</td><td>10</td></tr>
+<tr><td>3.4</td><td class="left">aucun EN pur ; \( (p^*;q^*) = (0{,}6\,;\,0{,}4) \)</td><td class="left">absence d'EN pur démontrée (4) + indifférence du pirate → \( q^* \) (4) + indifférence de la responsable → \( p^* \) (4) + énoncé de l'équilibre (2)</td><td>14</td></tr>
+<tr><td>3.5</td><td class="left">pirate : <strong>46</strong> · responsable : <strong>58</strong></td><td class="left">3 points par payoff correct (les deux méthodes sont acceptées)</td><td>6</td></tr>
+</table>
+
+<h3>7.2 La copie modèle, d'un seul tenant</h3>
+
+<div class="box box-copie">
+<div class="box-title">Question 3 — la réponse complète, telle qu'elle devait être rédigée</div>
+<p><strong>3.1)</strong> La stratégie P (Périphérie) de Boréal est strictement dominée par sa stratégie G (Gare) : quelle que soit la stratégie d'Athlex, Boréal obtient strictement plus en G qu'en P, puisque \( u_B(\mathrm{C},\mathrm{G}) = 40 &gt; 35 \), \( u_B(\mathrm{G},\mathrm{G}) = 20 &gt; 15 \) et \( u_B(\mathrm{P},\mathrm{G}) = 35 &gt; 10 \). Par H1, Boréal ne joue donc jamais P. (P n'est pas dominée par C : \( 35 &gt; 30 \) dans la première ligne. Aucune stratégie d'Athlex n'est dominée dans le jeu complet, sa ligne P rapportant 70 contre la colonne P.)</p>
+<p><strong>3.2)</strong> <em>Étape 1</em> — par H1, on élimine la colonne P de Boréal (dominée, cf. 3.1). <em>Étape 2</em> — dans le jeu réduit, P d'Athlex devient strictement dominée par C (\( 30 &gt; 20 \) contre C et \( 60 &gt; 25 \) contre G) ; comme Athlex sait que Boréal est rationnelle (H2), elle ne joue jamais P : on élimine la ligne P. <em>Étape 3</em> — plus aucune stratégie n'est dominée (pour chacun, C bat l'autre contre G mais perd contre C : \( 30 &lt; 40 \)). L'élimination s'arrête. PSS = (C ; C), (C ; G), (G ; C), (G ; G).</p>
+<p><strong>3.3)</strong> Méthode du soulignage. Meilleures réponses d'Athlex : contre C → G (40), contre G → C (60), contre P → P (70). Meilleures réponses de Boréal : contre C → G (40), contre G → C (60), contre P → C (55). Les cellules doublement soulignées sont les équilibres : <strong>(C ; G)</strong> avec (60 ; 40) et <strong>(G ; C)</strong> avec (40 ; 60). Jeu d'anti-coordination ; les deux EN appartiennent bien aux PSS de 3.2.</p>
+<p><strong>3.4)</strong> Meilleures réponses du pirate : contre Surv. A → Att. B (70 &gt; 10), contre Surv. B → Att. A (70 &gt; 30). Meilleures réponses de la responsable : contre Att. A → Surv. A (90 &gt; 30), contre Att. B → Surv. B (100 &gt; 10). Dans les quatre cellules, un joueur veut dévier : aucun EN en stratégies pures. Théorème d'indifférence : \( 10q + 70(1-q) = 70q + 30(1-q) \Rightarrow 70 - 60q = 30 + 40q \Rightarrow q^* = 0{,}4 \) ; \( 90p + 10(1-p) = 30p + 100(1-p) \Rightarrow 10 + 80p = 100 - 70p \Rightarrow p^* = 0{,}6 \). Unique équilibre : \( (p^*;q^*) = (0{,}6\,;\,0{,}4) \).</p>
+<p><strong>3.5)</strong> \( U_{\text{pirate}} = 10 \times 0{,}4 + 70 \times 0{,}6 = 46 \) (vérif. : \( 70 \times 0{,}4 + 30 \times 0{,}6 = 46 \)). \( U_{\text{resp.}} = 90 \times 0{,}6 + 10 \times 0{,}4 = 58 \) (vérif. : \( 30 \times 0{,}6 + 100 \times 0{,}4 = 58 \)).</p>
+</div>
+
+<h3>7.3 Le lexique du chapitre</h3>
+
+<dl class="lexique">
+<dt>Jeu</dt>
+<dd>Trois ingrédients : des joueurs, leurs stratégies, et les payoffs de chaque combinaison.</dd>
+<dt>Jeu simultané</dt>
+<dd>Chacun choisit sans connaître le choix de l'autre. C'est une question d'information, pas de chronologie.</dd>
+<dt>Stratégie</dt>
+<dd>Une option possible pour un joueur : une ligne (joueur 1) ou une colonne (joueur 2).</dd>
+<dt>Profil de stratégies</dt>
+<dd>Une combinaison « un choix par joueur », c'est-à-dire une case du tableau. Noté (ligne ; colonne).</dd>
+<dt>Payoff</dt>
+<dd>Ce que récolte un joueur. Ici, un profit mensuel en milliers d'euros. Un joueur rationnel le maximise.</dd>
+<dt>Matrice des payoffs (forme normale)</dt>
+<dd>Le tableau du jeu. Premier nombre = joueur des lignes, second = joueur des colonnes.</dd>
+<dt>Rationalité (H1)</dt>
+<dd>Le joueur maximise son propre payoff. Conséquence : il joue une dominante s'il en a une, et jamais une dominée.</dd>
+<dt>Stratégie dominante</dt>
+<dd>Meilleure (ou aussi bonne) que <em>toutes</em> les autres, <em>quoi que fasse</em> l'adversaire.</dd>
+<dt>Stratégie dominée</dt>
+<dd>Il existe <em>une</em> autre stratégie du même joueur qui fait au moins aussi bien dans tous les cas. « Strictement » dominée si elle fait mieux partout, sans égalité.</dd>
+<dt>ESD</dt>
+<dd>Équilibre en stratégies dominantes : profil où <em>chaque</em> joueur joue une dominante. Existe rarement (pas ici).</dd>
+<dt>Connaissance commune de la rationalité (H2)</dt>
+<dd>Je sais que tu es rationnel, tu sais que je le sais, etc. Chaque niveau autorise un tour d'élimination supplémentaire.</dd>
+<dt>Élimination itérative</dt>
+<dd>On raye une stratégie strictement dominée, on regarde le jeu réduit, on recommence, jusqu'à ne plus rien pouvoir rayer.</dd>
+<dt>PSS</dt>
+<dd>Profils de stratégies survivants : les cases qui restent à la fin de l'élimination itérative. Concept basé sur H1 + H2.</dd>
+<dt>Meilleure réponse</dt>
+<dd>Le choix qui maximise mon payoff <em>face à un choix précis</em> de l'adversaire.</dd>
+<dt>Équilibre de Nash (EN)</dt>
+<dd>Profil où chacun joue une meilleure réponse à l'autre. Personne ne regrette son choix, une fois connu celui de l'autre. Concept basé sur H1 + H3.</dd>
+<dt>Méthode du soulignage</dt>
+<dd>Souligner le max de chaque colonne (premiers nombres) et le max de chaque ligne (seconds nombres) ; les cases doublement soulignées sont les EN.</dd>
+<dt>Anti-coordination</dt>
+<dd>Structure de jeu où chacun veut faire le contraire de l'autre. Donne typiquement deux équilibres asymétriques.</dd>
+<dt>Stratégie pure</dt>
+<dd>Un choix ferme et définitif (probabilité 1 sur une action).</dd>
+<dt>Stratégie mixte</dt>
+<dd>Une distribution de probabilité sur ses actions : jouer au hasard avec des fréquences choisies.</dd>
+<dt>Probabilité</dt>
+<dd>Nombre entre 0 et 1 mesurant la fréquence d'un événement. Le contraire d'un événement de probabilité \( q \) a la probabilité \( 1 - q \).</dd>
+<dt>Payoff espéré (espérance)</dt>
+<dd>Moyenne des payoffs possibles, pondérée par leurs probabilités.</dd>
+<dt>Principe (ou théorème) d'indifférence</dt>
+<dd>À un équilibre mixte, un joueur qui mélange doit être exactement indifférent entre ses actions ; sinon il jouerait la meilleure à 100 %.</dd>
+<dt>Le chiasme</dt>
+<dd>L'équation d'indifférence d'un joueur ne contient que la probabilité de l'<em>autre</em> : ta stratégie mixte sert à maintenir l'adversaire indifférent.</dd>
+</dl>
+
+<h3>7.4 Les cinq réflexes à emporter en examen</h3>
+
+<div class="box box-methode">
+<div class="box-title">La checklist de la question « jeu simultané »</div>
+<ol>
+<li><strong>Annote la matrice dès la lecture</strong> : qui est en ligne, qui est en colonne, puis souligne les meilleures réponses. Deux minutes qui servent à toutes les sous-questions.</li>
+<li><strong>Cherche les dominées avec deux tableaux séparés</strong> (un par joueur), et compare les stratégies deux à deux. Une seule inégalité contraire suffit à disqualifier.</li>
+<li><strong>Élimine un tour à la fois</strong>, redessine la matrice, justifie par H1 puis H2, et termine par le constat d'arrêt.</li>
+<li><strong>Vérifie \( \text{EN} \subseteq \text{PSS} \)</strong> : tout équilibre de Nash doit figurer dans ta liste de PSS. Contrôle gratuit.</li>
+<li><strong>En mixte, souviens-toi du chiasme</strong> : mon indifférence donne TA probabilité. Puis vérifie que les deux payoffs espérés coïncident et que les probabilités sont dans \( [0;1] \).</li>
+</ol>
+</div>
+
+<h3>7.5 Auto-test : sept questions pour vérifier que tout est acquis</h3>
+
+<p>Réponds mentalement, puis lis la réponse. Si une seule te résiste, retourne à la section indiquée.</p>
+
+<table class="compare">
+<tr><th class="left">Question</th><th class="left">Réponse</th></tr>
+<tr><td class="left">1. « Simultané » veut-il dire « à la même seconde » ?</td><td class="left">Non : cela veut dire « sans connaître le choix de l'autre ». C'est une question d'information. (§1.2)</td></tr>
+<tr><td class="left">2. Dans la case (60 ; 40), qui gagne 40 ?</td><td class="left">Le joueur des colonnes, c'est-à-dire Boréal. Toujours (ligne ; colonne). (§1.3)</td></tr>
+<tr><td class="left">3. Boréal a-t-elle une stratégie dominante ?</td><td class="left">Non. Elle a seulement une stratégie <em>dominée</em> (P). Avec trois stratégies, les deux notions ne coïncident plus. (§2.2)</td></tr>
+<tr><td class="left">4. Pourquoi ne peut-on pas éliminer la ligne P d'Athlex dès le premier tour ?</td><td class="left">Parce qu'elle rapporte 70 contre la colonne P : tant que cette colonne existe, la ligne P n'est pas dominée. (§3.3)</td></tr>
+<tr><td class="left">5. La case (P ; P) est-elle un équilibre de Nash ?</td><td class="left">Non. Athlex ne bougerait pas (70 est son record) mais Boréal, avec 10, dévierait vers C (55). Une seule déviation suffit. (§4.3)</td></tr>
+<tr><td class="left">6. L'équation d'indifférence du pirate donne-t-elle \( p^* \) ou \( q^* \) ?</td><td class="left">\( q^* \), la probabilité de la <em>responsable</em>. C'est le chiasme. (§5.3)</td></tr>
+<tr><td class="left">7. Le pirate touche-t-il vraiment 46 chaque nuit ?</td><td class="left">Non : il touche 10, 70 ou 30 selon les nuits. 46 est sa moyenne sur le long terme. (§6.3)</td></tr>
+</table>
+
+<div class="box box-rappel">
+<div class="box-title">Le mot de la fin</div>
+<p>Cette question 3 est la plus longue de l'examen, mais elle ne contient <strong>aucun calcul difficile</strong> : que des comparaisons de nombres et deux équations du premier degré. Ce qu'elle demande vraiment, c'est de la <em>rigueur de méthode</em> — nommer le bon joueur, justifier chaque tour, ne pas inverser \( p \) et \( q \).</p>
+<p>Si tu retiens une seule chose du chapitre, que ce soit celle-ci : <strong>en théorie des jeux, on ne cherche jamais « le meilleur choix » dans l'absolu. On cherche le meilleur choix étant donné ce que l'autre fait — et l'autre fait pareil de son côté.</strong> Tout le reste (dominance, PSS, Nash, mixte) n'est qu'une façon de plus en plus fine de résoudre cette circularité.</p>
+</div>
+
+</section>

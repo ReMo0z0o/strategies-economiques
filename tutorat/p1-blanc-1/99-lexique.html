@@ -1,0 +1,1280 @@
+<section class="chapter">
+  <div class="chapter-tag">Annexe — à consulter en boucle</div>
+  <h1>Lexique &amp; formulaire — tous les termes et toutes les formules</h1>
+  <p class="chapter-intro">
+    Ce chapitre est ton dictionnaire personnel. Dès qu'un mot ou un symbole te bloque, tu viens
+    ici et tu repars avec une réponse complète, sans avoir besoin de relire quoi que ce soit
+    d'autre. Trois parties : le lexique alphabétique, le formulaire classé par thème, et les
+    réflexes de méthode — les recettes à appliquer telles quelles le jour de l'examen.
+  </p>
+
+  <div class="box box-rappel">
+    <div class="box-title">Comment se servir de ce chapitre</div>
+    <p>Tu ne le lis pas d'un bout à l'autre. Tu l'ouvres quand tu es coincé.</p>
+    <ul>
+      <li><strong>Un mot t'échappe ?</strong> → partie 1. Chaque entrée donne une définition
+          simple, une reformulation encore plus simple, et un exemple tiré de cet examen.</li>
+      <li><strong>Tu ne sais plus quelle formule sortir ?</strong> → partie 2. Chaque symbole y
+          est décodé, avec l'indice de l'énoncé qui te dit « c'est celle-là ».</li>
+      <li><strong>Tu ne sais pas par où commencer ?</strong> → partie 3, des marches à suivre
+          numérotées.</li>
+    </ul>
+  </div>
+
+  <h2>Le plan de vol : quelle méthode pour quelle question ?</h2>
+
+  <p>
+    Voici la carte. À gauche, les mots que tu vas repérer dans l'énoncé ; à droite, l'outil qu'il
+    faut sortir. Si tu ne retiens qu'une image de ce chapitre, retiens celle-ci.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 440 452" width="100%" style="max-width:11.5cm" role="img" aria-label="Tableau d'aiguillage entre les indices de l'énoncé et la méthode à appliquer">
+      <text x="104" y="14" text-anchor="middle" font-size="13" font-weight="bold">Ce que dit l'énoncé</text>
+      <text x="344" y="14" text-anchor="middle" font-size="13" font-weight="bold">L'outil à sortir</text>
+      <line x1="6" y1="22" x2="434" y2="22" stroke="#111827" stroke-width="1.2"/>
+
+      <rect x="6" y="32" width="196" height="58" fill="#f3f4f6" stroke="#111827" stroke-width="1.2"/>
+      <text x="104" y="54" text-anchor="middle" font-size="12.5">« domine », « efficace</text>
+      <text x="104" y="70" text-anchor="middle" font-size="12.5">au sens de Pareto »,</text>
+      <text x="104" y="86" text-anchor="middle" font-size="12.5">tableau d'utilites</text>
+      <line x1="206" y1="61" x2="232" y2="61" stroke="#111827" stroke-width="1.4"/>
+      <polygon points="238,61 228,56 228,66" fill="#111827"/>
+      <rect x="240" y="32" width="194" height="58" fill="none" stroke="#111827" stroke-width="1.2"/>
+      <text x="337" y="54" text-anchor="middle" font-size="12.5">Comparer colonne par</text>
+      <text x="337" y="70" text-anchor="middle" font-size="12.5">colonne, ligne par ligne</text>
+      <text x="337" y="86" text-anchor="middle" font-size="12.5">(reflexe 1)</text>
+
+      <rect x="6" y="100" width="196" height="58" fill="#f3f4f6" stroke="#111827" stroke-width="1.2"/>
+      <text x="104" y="122" text-anchor="middle" font-size="12.5">probabilite, u(w),</text>
+      <text x="104" y="138" text-anchor="middle" font-size="12.5">assurance, vol,</text>
+      <text x="104" y="154" text-anchor="middle" font-size="12.5">« prime de risque »</text>
+      <line x1="206" y1="129" x2="232" y2="129" stroke="#111827" stroke-width="1.4"/>
+      <polygon points="238,129 228,124 228,134" fill="#111827"/>
+      <rect x="240" y="100" width="194" height="58" fill="none" stroke="#111827" stroke-width="1.2"/>
+      <text x="337" y="122" text-anchor="middle" font-size="12.5">La chaine</text>
+      <text x="337" y="138" text-anchor="middle" font-size="12.5">VMA - U - EC - PRM</text>
+      <text x="337" y="154" text-anchor="middle" font-size="12.5">(reflexe 2)</text>
+
+      <rect x="6" y="168" width="196" height="58" fill="#f3f4f6" stroke="#111827" stroke-width="1.2"/>
+      <text x="104" y="190" text-anchor="middle" font-size="12.5">matrice de payoffs,</text>
+      <text x="104" y="206" text-anchor="middle" font-size="12.5">« simultanement »,</text>
+      <text x="104" y="222" text-anchor="middle" font-size="12.5">« dominee », « PSS »</text>
+      <line x1="206" y1="197" x2="232" y2="197" stroke="#111827" stroke-width="1.4"/>
+      <polygon points="238,197 228,192 228,202" fill="#111827"/>
+      <rect x="240" y="168" width="194" height="58" fill="none" stroke="#111827" stroke-width="1.2"/>
+      <text x="337" y="190" text-anchor="middle" font-size="12.5">Dominance, puis</text>
+      <text x="337" y="206" text-anchor="middle" font-size="12.5">meilleures reponses</text>
+      <text x="337" y="222" text-anchor="middle" font-size="12.5">(reflexes 3 et 4)</text>
+
+      <rect x="6" y="236" width="196" height="58" fill="#f3f4f6" stroke="#111827" stroke-width="1.2"/>
+      <text x="104" y="258" text-anchor="middle" font-size="12.5">« aucun equilibre pur »,</text>
+      <text x="104" y="274" text-anchor="middle" font-size="12.5">on demande p* et q*,</text>
+      <text x="104" y="290" text-anchor="middle" font-size="12.5">poursuite / surveillance</text>
+      <line x1="206" y1="265" x2="232" y2="265" stroke="#111827" stroke-width="1.4"/>
+      <polygon points="238,265 228,260 228,270" fill="#111827"/>
+      <rect x="240" y="236" width="194" height="58" fill="none" stroke="#111827" stroke-width="1.2"/>
+      <text x="337" y="258" text-anchor="middle" font-size="12.5">Condition</text>
+      <text x="337" y="274" text-anchor="middle" font-size="12.5">d'indifference</text>
+      <text x="337" y="290" text-anchor="middle" font-size="12.5">(reflexe 5)</text>
+
+      <rect x="6" y="304" width="196" height="58" fill="#f3f4f6" stroke="#111827" stroke-width="1.2"/>
+      <text x="104" y="326" text-anchor="middle" font-size="12.5">contrat w = a + bz,</text>
+      <text x="104" y="342" text-anchor="middle" font-size="12.5">effort e non observe,</text>
+      <text x="104" y="358" text-anchor="middle" font-size="12.5">utilite de reserve</text>
+      <line x1="206" y1="333" x2="232" y2="333" stroke="#111827" stroke-width="1.4"/>
+      <polygon points="238,333 228,328 228,338" fill="#111827"/>
+      <rect x="240" y="304" width="194" height="58" fill="none" stroke="#111827" stroke-width="1.2"/>
+      <text x="337" y="326" text-anchor="middle" font-size="12.5">CPO de l'agent, puis</text>
+      <text x="337" y="342" text-anchor="middle" font-size="12.5">contrainte saturee</text>
+      <text x="337" y="358" text-anchor="middle" font-size="12.5">(reflexe 6)</text>
+
+      <rect x="6" y="372" width="196" height="58" fill="#f3f4f6" stroke="#111827" stroke-width="1.2"/>
+      <text x="104" y="394" text-anchor="middle" font-size="12.5">« repete », « chaque</text>
+      <text x="104" y="410" text-anchor="middle" font-size="12.5">mois », delta, grim,</text>
+      <text x="104" y="426" text-anchor="middle" font-size="12.5">entente sur les prix</text>
+      <line x1="206" y1="401" x2="232" y2="401" stroke="#111827" stroke-width="1.4"/>
+      <polygon points="238,401 228,396 228,406" fill="#111827"/>
+      <rect x="240" y="372" width="194" height="58" fill="none" stroke="#111827" stroke-width="1.2"/>
+      <text x="337" y="394" text-anchor="middle" font-size="12.5">Cooperer au moins</text>
+      <text x="337" y="410" text-anchor="middle" font-size="12.5">aussi bien que devier</text>
+      <text x="337" y="426" text-anchor="middle" font-size="12.5">(reflexe 7)</text>
+
+      <line x1="6" y1="440" x2="434" y2="440" stroke="#111827" stroke-width="1.2"/>
+      <text x="220" y="450" text-anchor="middle" font-size="11.5">Les numeros de reflexe renvoient a la partie 3 de ce chapitre.</text>
+    </svg>
+    <figcaption>Repère l'indice à gauche, applique la méthode à droite.</figcaption>
+  </figure>
+
+  <hr class="soft">
+
+  <h2>1. Lexique alphabétique</h2>
+
+  <p>
+    Chaque entrée suit le même moule : une <strong>définition</strong> en français ordinaire, puis
+    <em>« Autrement dit »</em> — la même chose en encore plus simple — puis un <em>exemple</em>
+    tiré de cet examen, la formule associée quand il y en a une, et un renvoi.
+  </p>
+
+  <h3>A</h3>
+
+  <dl class="lexique">
+    <dt>Agent</dt>
+    <dd>Dans un contrat, la personne qui travaille pour quelqu'un d'autre et dont on ne peut pas
+        vérifier à quel point elle se donne du mal.</dd>
+    <dd><em>Autrement dit :</em> l'employé, celui qui fait le boulot pendant que le patron ne voit
+        que le résultat. Hors des contrats, « agent » veut juste dire « un individu qui décide ».</dd>
+    <dd><em>Exemple :</em> Q4, la directrice commerciale. → voir <span class="term">Principal</span>,
+        <span class="term">Aléa moral</span>.</dd>
+
+    <dt>Aléa moral</dt>
+    <dd>Situation où quelqu'un, une fois payé ou protégé, a moins d'intérêt à bien se comporter,
+        parce que personne ne peut observer ce qu'il fait.</dd>
+    <dd><em>Autrement dit :</em> « on ne me voit pas, donc je me fatigue moins ». Le mot ne parle
+        pas de morale : c'est un problème d'incitations, pas de caractère.</dd>
+    <dd><em>Exemple :</em> Q4, la propriétaire voit \( z \) mais ni l'effort \( e \), ni le hasard
+        \( x \). → voir <span class="term">Contrainte d'incitation</span>.</dd>
+
+    <dt>Allocation</dt>
+    <dd>Une répartition précise de ressources entre des personnes, écrite comme une liste de
+        nombres, un par personne, toujours dans le même ordre.</dd>
+    <dd><em>Autrement dit :</em> « qui reçoit quoi ».</dd>
+    <dd><em>Exemple :</em> Q1.1, \( (2;\,3;\,2) \) = 2 parts au collègue 1, 3 au collègue 2, 2 au
+        collègue 3.</dd>
+
+    <dt>Asymétrie d'information</dt>
+    <dd>→ voir <span class="term">Information asymétrique</span> : même concept, deux expressions
+        interchangeables.</dd>
+
+    <dt>Aversion au risque</dt>
+    <dd>Le fait de préférer une somme sûre à une loterie qui rapporterait cette même somme
+        <em>en moyenne</em>.</dd>
+    <dd><em>Autrement dit :</em> à moyenne égale, tu prends le certain — le hasard te dérange.</dd>
+    <dd><em>Comment la reconnaître :</em> \( u \) concave (\( \sqrt{w} \), \( \ln w \)) ;
+        \( u(\mathrm{VMA}) &gt; U \) ; \( EC &lt; \mathrm{VMA} \) ; \( \mathrm{PRM} &gt; 0 \).</dd>
+    <dd><em>Exemple :</em> Q2, la livreuse a 8 400 € en moyenne mais se contenterait de 8 100 €
+        sûrs. → voir <span class="term">Prime de risque</span>.</dd>
+
+    <dt>Aversion aux pertes</dt>
+    <dd>Le fait de souffrir davantage d'une perte qu'on ne se réjouit d'un gain de même taille.</dd>
+    <dd><em>Autrement dit :</em> perdre 10 € fait plus mal que gagner 10 € ne fait plaisir.</dd>
+    <dd><em>Exemple :</em> Q1.2, vendre sa gourde est vécu comme une perte (on exige 8 €),
+        l'acheter comme un gain (on propose 4 €). → voir
+        <span class="term">Effet de dotation</span>.</dd>
+  </dl>
+
+  <h3>B — C</h3>
+
+  <dl class="lexique">
+    <dt>Backward induction (induction à rebours)</dt>
+    <dd>Résoudre un jeu en commençant par la <em>dernière</em> période et en remontant période par
+        période jusqu'au début.</dd>
+    <dd><em>Autrement dit :</em> on lit l'histoire à l'envers, en partant de la fin.</dd>
+    <dd><em>Exemple :</em> Q5.1, au dernier mois aucune punition n'est possible → les deux baissent
+        les prix ; donc à l'avant-dernier mois coopérer n'achète plus rien ; etc.</dd>
+
+    <dt>Bernoulli (fonction d'utilité de)</dt>
+    <dd>→ voir <span class="term">Fonction d'utilité de Bernoulli</span>.</dd>
+
+    <dt>Condition de premier ordre (CPO)</dt>
+    <dd>L'équation obtenue en écrivant « dérivée = 0 ». Elle sert à trouver la valeur qui maximise
+        une fonction. <em>Formule :</em> \( f'(x) = 0 \).</dd>
+    <dd><em>Autrement dit :</em> au sommet d'une colline, le sol est plat.</dd>
+    <dd><em>Exemple :</em> Q4.1, maximiser \( a + 4be - e^2 \) donne \( 4b - 2e = 0 \), soit
+        \( e^* = 2b \).</dd>
+
+    <dt>Contrainte d'incitation</dt>
+    <dd>L'obligation, pour celui qui rédige le contrat, d'accepter que l'autre choisira son effort
+        tout seul, selon son propre intérêt.</dd>
+    <dd><em>Autrement dit :</em> « je ne peux pas <em>ordonner</em> un effort, seulement le rendre
+        intéressant ».</dd>
+    <dd><em>Exemple :</em> Q4.2, la propriétaire doit subir \( e = 2b \).</dd>
+
+    <dt>Contrainte de participation</dt>
+    <dd>L'obligation de laisser à l'agent au moins ce qu'il obtiendrait en refusant.
+        <em>Formule :</em> \( U_{\text{agent}} \ge \bar{U} \).</dd>
+    <dd><em>Autrement dit :</em> « paie-moi au moins ce que je vaux ailleurs, sinon je pars ».</dd>
+    <dd><em>Exemple :</em> Q4.2, \( a + 4be - e^2 \ge 1 \) ; à l'optimum on met un signe égal, on
+        dit qu'on la « sature ».</dd>
+
+    <dt>Contrat linéaire</dt>
+    <dd>Une rémunération faite d'une partie fixe et d'un pourcentage du résultat.
+        <em>Formule :</em> \( w(z) = a + b\,z \), avec \( a \) le fixe, \( b \) la part variable,
+        \( z \) le résultat observé.</dd>
+    <dd><em>Autrement dit :</em> « tant, plus tant par euro vendu ».</dd>
+    <dd><em>Exemple :</em> Q4, le contrat optimal est \( w(z) = -3 + z \).</dd>
+
+    <dt>Coût de l'effort</dt>
+    <dd>Ce que l'effort coûte en fatigue et en temps à celui qui le fournit, exprimé dans la même
+        unité que sa paie. <em>Formule ici :</em> \( c(e) = e^2 \).</dd>
+    <dd><em>Autrement dit :</em> le carré traduit une idée simple : les premiers efforts sont
+        faciles, les derniers épuisants.</dd>
+    <dd><em>Exemple :</em> \( e = 2 \) coûte \( c(2) = 4 \).</dd>
+
+    <dt>Couverture \( C \)</dt>
+    <dd>Le nombre d'euros que l'assurance s'engage à te verser si le sinistre arrive.</dd>
+    <dd><em>Autrement dit :</em> « combien on me rembourse en cas de pépin ».</dd>
+    <dd><em>Exemple :</em> Q2.4, \( C^* = 6\,400 \) € = la valeur du vélo : couverture complète.</dd>
+
+    <dt>Créancier résiduel (residual claimant)</dt>
+    <dd>Celui qui garde tout ce qui reste une fois les autres payés — et qui supporte donc
+        entièrement les conséquences de ses décisions.</dd>
+    <dd><em>Autrement dit :</em> le dernier servi, mais qui ramasse tout le reste.</dd>
+    <dd><em>Exemple :</em> Q4, avec \( b^* = 1 \) la directrice garde chaque euro de chiffre
+        d'affaires supplémentaire : elle agit comme si l'entreprise était à elle.</dd>
+  </dl>
+
+  <h3>D — E</h3>
+
+  <dl class="lexique">
+    <dt>Dérivée</dt>
+    <dd>La pente d'une fonction en un point : de combien le résultat monte si on augmente la
+        variable d'un tout petit peu. Notée \( f'(x) \) (« f prime de x ») ou
+        \( \frac{\partial f}{\partial x} \) (« d rond f sur d rond x »).</dd>
+    <dd><em>Les seules règles utiles ici :</em> constante → 0 ; \( k\,x \) → \( k \) ;
+        \( x^2 \) → \( 2x \) ; on dérive une somme terme par terme.</dd>
+    <dd><em>Exemple :</em> \( a + 4be - e^2 \) dérivé par rapport à \( e \) donne \( 4b - 2e \) —
+        le \( a \) disparaît, c'est une constante.</dd>
+
+    <dt>Dilemme du prisonnier</dt>
+    <dd>Un jeu où chacun a intérêt à trahir quoi que fasse l'autre, alors que les deux vivraient
+        mieux en coopérant.</dd>
+    <dd><em>Autrement dit :</em> l'intérêt individuel et l'intérêt commun s'opposent, et l'intérêt
+        individuel gagne.</dd>
+    <dd><em>Exemple :</em> Q5, baisser le prix rapporte 12 contre 6, et 2 contre 0 : l'équilibre
+        est (B ; B) = (2 ; 2), alors que (E ; E) donnerait (6 ; 6).</dd>
+
+    <dt>Disposition à accepter (DAA)</dt>
+    <dd>Le prix minimum auquel tu accepterais de <em>vendre</em> un objet que tu possèdes déjà.</dd>
+    <dd><em>Autrement dit :</em> « en dessous de ce prix, je garde ». <em>Exemple :</em> Q1.2,
+        DAA moyenne = 8 €.</dd>
+
+    <dt>Disposition à payer (DAP)</dt>
+    <dd>Le prix maximum que tu accepterais de payer pour <em>obtenir</em> un objet que tu n'as pas.</dd>
+    <dd><em>Autrement dit :</em> « au-dessus de ce prix, je renonce ». <em>Exemple :</em> Q1.2,
+        DAP moyenne = 4 €.</dd>
+    <dd><em>Ce que prédit la rationalité :</em> \( \mathrm{DAP} = \mathrm{DAA} \), car un objet a
+        une seule valeur pour toi, qu'il soit déjà dans ta poche ou non.</dd>
+
+    <dt>Dominance stricte / dominance faible (entre stratégies)</dt>
+    <dd>A domine <em>strictement</em> B si A rapporte strictement plus dans <em>tous</em> les cas,
+        c'est-à-dire face à chaque stratégie possible de l'adversaire. <em>Faiblement</em> : au
+        moins autant partout, et strictement plus au moins une fois.</dd>
+    <dd><em>Autrement dit :</em> A est toujours au moins aussi bien, parfois mieux. Un joueur
+        rationnel ne joue jamais une stratégie strictement dominée.</dd>
+    <dd><em>Exemple :</em> Q3.1, pour Boréal G bat P partout : \( 40 &gt; 35 \), \( 20 &gt; 15 \),
+        \( 35 &gt; 10 \).</dd>
+    <dd><em>Piège :</em> on compare toujours les payoffs d'un <em>même</em> joueur, ligne contre
+        ligne ou colonne contre colonne.</dd>
+
+    <dt>Dominer au sens de Pareto (entre allocations)</dt>
+    <dd>\( x \) domine \( y \) si <em>personne n'y perd</em> et si <em>au moins un y gagne</em> :
+        \( u_i(x) \ge u_i(y) \) pour tout \( i \), et \( u_j(x) &gt; u_j(y) \) pour au moins un
+        \( j \).</dd>
+    <dd><em>Autrement dit :</em> on passe de \( y \) à \( x \) sans un seul mécontent, et avec au
+        moins un heureux.</dd>
+    <dd><em>Exemple :</em> Q1.3, C domine A : \( 6 \ge 6 \), \( 3 \ge 3 \), \( 7 &gt; 5 \). Ne pas
+        confondre avec la dominance entre <em>stratégies</em>.</dd>
+
+    <dt>Effet de dotation</dt>
+    <dd>Le biais qui fait qu'on attribue plus de valeur à un objet dès l'instant où on le possède.
+        <em>Signature chiffrée :</em> \( \mathrm{DAA} &gt; \mathrm{DAP} \).</dd>
+    <dd><em>Autrement dit :</em> « ce qui est à moi vaut plus cher », alors que rien n'a changé
+        dans l'objet.</dd>
+    <dd><em>Exemple :</em> Q1.2, gourdes distribuées <em>au hasard</em> (donc mêmes goûts en
+        moyenne), et pourtant 8 € contre 4 €.</dd>
+
+    <dt>Efficacité de Pareto</dt>
+    <dd>Une allocation est efficace si <em>aucune autre allocation possible ne la domine</em> :
+        impossible d'améliorer quelqu'un sans dégrader un autre.</dd>
+    <dd><em>Autrement dit :</em> plus rien à gagner « gratuitement » ; tout gain pour l'un se paie
+        par une perte pour un autre.</dd>
+    <dd><em>Exemple :</em> Q1.3, B, C et D sont efficaces ; seul A ne l'est pas.</dd>
+    <dd><em>Deux pièges :</em> efficace ≠ juste (tout donner à une seule personne est efficace) ;
+        efficace ≠ préféré de quelqu'un (D est efficace sans être le préféré de personne).</dd>
+
+    <dt>Élimination itérative des stratégies dominées</dt>
+    <dd>Une procédure en boucle : on raye les stratégies strictement dominées, on regarde le jeu
+        réduit, on raye encore, jusqu'à ce qu'il n'y ait plus rien à rayer.</dd>
+    <dd><em>Autrement dit :</em> « personne ne joue une stratégie idiote, et tout le monde le
+        sait, et tout le monde sait que tout le monde le sait… ».</dd>
+    <dd><em>Exemple :</em> Q3.2, on raye la colonne P, puis dans le jeu réduit la ligne P devient
+        dominée par C — ce qui n'était pas vrai avant. C'est tout l'intérêt de recommencer.</dd>
+
+    <dt>ENPS (équilibre de Nash parfait en sous-jeux)</dt>
+    <dd>Un équilibre d'un jeu qui se déroule dans le temps, et dont les menaces restent crédibles
+        à chaque étape.</dd>
+    <dd><em>Autrement dit :</em> un équilibre qui tient encore la route au milieu de la partie.</dd>
+    <dd><em>Exemple :</em> Q5.1, à horizon fini l'unique ENPS est « baisser les prix à toutes les
+        périodes ».</dd>
+
+    <dt>Équilibre de Nash (EN)</dt>
+    <dd>Une combinaison de stratégies, une par joueur, telle qu'aucun joueur n'aurait intérêt à
+        changer la sienne tout seul.</dd>
+    <dd><em>Autrement dit :</em> « personne n'a de regret ». Chacun joue une meilleure réponse à
+        l'autre, donc personne ne bouge.</dd>
+    <dd><em>Exemple :</em> Q3.3, (C ; G) avec (60 ; 40) et (G ; C) avec (40 ; 60).</dd>
+    <dd><em>Ce que ce n'est pas :</em> le meilleur résultat pour les joueurs. Dans le dilemme du
+        prisonnier, l'équilibre est le pire résultat commun.</dd>
+
+    <dt>Équivalent certain (EC)</dt>
+    <dd>Le montant <em>sûr</em> qui te rendrait exactement aussi satisfait que la situation
+        risquée. <em>Formule :</em> \( u(EC) = U \), donc \( EC = u^{-1}(U) \) ; avec
+        \( u = \sqrt{\ } \), \( EC = U^2 \).</dd>
+    <dd><em>Autrement dit :</em> « quel chèque garanti accepterais-tu, pour renoncer à ta
+        loterie ? ». Le cours le note parfois \( C(a_r) \) : c'est la même chose.</dd>
+    <dd><em>Exemple :</em> Q2.3, \( \sqrt{EC} = 90 \) donc \( EC = 8\,100 \) €.</dd>
+
+    <dt>Espérance</dt>
+    <dd>La moyenne des résultats possibles, chacun pesé par sa probabilité.
+        <em>Formule :</em> \( E(X) = p_1 x_1 + p_2 x_2 + \cdots \)</dd>
+    <dd><em>Autrement dit :</em> ce qu'on obtiendrait en moyenne en répétant la situation un très
+        grand nombre de fois.</dd>
+    <dd><em>Exemple :</em> \( \tfrac{3}{4}\times 10\,000 + \tfrac{1}{4}\times 3\,600 = 8\,400 \).</dd>
+  </dl>
+
+  <h3>F — H</h3>
+
+  <dl class="lexique">
+    <dt>Facteur d'escompte \( \delta \)</dt>
+    <dd>Un nombre entre 0 et 1 qui dit combien vaut <em>aujourd'hui</em> un euro reçu à la période
+        suivante. \( \delta \) se lit « delta ».</dd>
+    <dd><em>Autrement dit :</em> une mesure de patience. Proche de 1 : le futur compte presque
+        autant que le présent. Proche de 0 : seul aujourd'hui compte.</dd>
+    <dd><em>Comment ça s'utilise :</em> un gain reçu dans \( t \) périodes compte pour
+        \( \delta^t \) fois sa valeur.</dd>
+    <dd><em>Exemple :</em> Q5.2, l'entente ne tient que si \( \delta \ge 3/5 = 0{,}6 \).</dd>
+
+    <dt>Fonction d'utilité de Bernoulli</dt>
+    <dd>La fonction \( u \) (en minuscule) qui transforme un montant d'argent <em>certain</em> en
+        niveau de satisfaction.</dd>
+    <dd><em>Autrement dit :</em> la machine qui convertit des euros en « bonheur ». Sa forme dit
+        tout : concave = aversion au risque, droite = neutralité, convexe = goût du risque.</dd>
+    <dd><em>Exemple :</em> Q2, \( u(w) = \sqrt{w} \), donc \( u(3\,600) = 60 \) et
+        \( u(10\,000) = 100 \).</dd>
+    <dd><em>Ne pas confondre :</em> \( u \) minuscule s'applique à <em>un seul montant sûr</em> ;
+        \( U \) majuscule évalue une <em>situation risquée entière</em>.</dd>
+
+    <dt>Franchise</dt>
+    <dd>Une somme fixe payée d'avance par l'agent au principal pour avoir le droit de garder
+        ensuite tout le résultat.</dd>
+    <dd><em>Autrement dit :</em> le « droit d'entrée », comme le loyer d'une licence de taxi ou
+        d'une enseigne franchisée. Une somme fixe ne dépend pas de l'effort : elle ne déforme
+        aucune incitation, elle sert seulement à partager le gâteau.</dd>
+    <dd><em>Exemple :</em> Q4, \( a^* = -3 \) : la directrice verse 3 avant d'encaisser tout le
+        chiffre d'affaires.</dd>
+
+    <dt>Grim (stratégie)</dt>
+    <dd>Une règle de conduite en jeu répété : « je coopère tant que tu as toujours coopéré ; dès
+        que tu trahis une fois, je punis à toutes les périodes suivantes, pour toujours ».</dd>
+    <dd><em>Autrement dit :</em> la stratégie « rancune éternelle ». Aucun pardon.</dd>
+    <dd><em>Son rôle :</em> c'est la punition la plus dure possible, donc celle qui donne les
+        meilleures chances de soutenir la coopération. Si l'entente ne tient pas avec grim, elle
+        ne tiendra avec rien. <em>Exemple :</em> Q5.2.</dd>
+
+    <dt>Horizon fini / horizon infini</dt>
+    <dd>Le nombre de fois où le jeu sera répété. <em>Fini</em> : ce nombre est connu à l'avance
+        des deux joueurs. <em>Infini</em> : il n'y a jamais de dernière période annoncée.</dd>
+    <dd><em>Autrement dit :</em> « sait-on quand ça s'arrête ? ».</dd>
+    <dd><em>Pourquoi c'est décisif :</em> horizon fini connu → on raisonne à rebours et la
+        coopération s'effondre entièrement (Q5.1). Horizon infini → il y a toujours un lendemain
+        pour punir, la coopération redevient possible (Q5.2).</dd>
+  </dl>
+
+  <h3>I — L</h3>
+
+  <dl class="lexique">
+    <dt>Information asymétrique</dt>
+    <dd>Une situation où l'une des parties sait quelque chose que l'autre ignore, et où cette
+        différence change le comportement de chacune.</dd>
+    <dd><em>Autrement dit :</em> l'un des deux joue avec des cartes cachées.</dd>
+    <dd><em>Exemple :</em> Q4, la propriétaire ne voit que \( z = 4e + x \), qui mélange effort et
+        hasard : impossible de savoir si un mauvais chiffre vient de la paresse ou de la
+        malchance.</dd>
+
+    <dt>Jeu répété</dt>
+    <dd>Le même jeu, joué plusieurs fois par les mêmes joueurs, chacun se souvenant du passé.</dd>
+    <dd><em>Autrement dit :</em> on se reverra — et ça change tout, parce qu'on peut récompenser
+        ou punir plus tard. <em>Exemple :</em> Q5, les pizzerias se retrouvent chaque mois.</dd>
+
+    <dt>Jeu simultané</dt>
+    <dd>Un jeu où les joueurs choisissent en même temps — ou, ce qui revient au même, sans avoir
+        vu le choix de l'autre.</dd>
+    <dd><em>Autrement dit :</em> chacun décide dans son coin, puis on révèle.
+        <em>Exemple :</em> Q3, les deux enseignes choisissent leur emplacement simultanément.</dd>
+
+    <dt>Loterie</dt>
+    <dd>Une situation risquée, décrite entièrement par la liste de ses résultats possibles et de
+        leurs probabilités.</dd>
+    <dd><em>Autrement dit :</em> « voilà ce qui peut m'arriver, et avec quelles chances ».</dd>
+    <dd><em>Exemple :</em> la richesse de la livreuse = « 10 000 € avec probabilité 3/4, 3 600 €
+        avec probabilité 1/4 ».</dd>
+  </dl>
+
+  <h3>M — P</h3>
+
+  <dl class="lexique">
+    <dt>Matrice de jeu (forme normale)</dt>
+    <dd>Le tableau qui résume un jeu simultané : lignes = stratégies du joueur 1, colonnes =
+        stratégies du joueur 2, chaque case = les gains des deux.</dd>
+    <dd><em>Convention absolue :</em> dans chaque case, le <strong>premier</strong> nombre est le
+        gain du joueur en <strong>ligne</strong>, le second celui du joueur en colonne.</dd>
+    <dd><em>Exemple :</em> Q3, la case (C ; G) contient (60 ; 40) : Athlex gagne 60, Boréal 40.</dd>
+
+    <dt>Meilleure réponse</dt>
+    <dd>La stratégie qui rapporte le plus à un joueur, <em>étant donné</em> une stratégie précise
+        de l'adversaire.</dd>
+    <dd><em>Autrement dit :</em> « si je savais qu'il joue ça, que ferais-je de mieux ? ». Un
+        équilibre de Nash est exactement une case où les deux jouent une meilleure réponse.</dd>
+    <dd><em>Exemple :</em> Q3.3, face à la colonne C, Athlex compare 30, 40 et 20 : sa meilleure
+        réponse est G.</dd>
+
+    <dt>Neutralité au risque</dt>
+    <dd>Être totalement indifférent entre une somme sûre et une loterie de même moyenne.
+        <em>Signes :</em> \( u \) est une droite, \( EC = \mathrm{VMA} \), \( \mathrm{PRM} = 0 \).</dd>
+    <dd><em>Autrement dit :</em> seule la moyenne compte, le hasard ne dérange pas.</dd>
+    <dd><em>Exemple :</em> Q4, les deux parties sont neutres au risque — c'est ce qui autorise à
+        remplacer \( x \) par sa moyenne 0 et à ne raisonner qu'en espérances.</dd>
+
+    <dt>Nudge</dt>
+    <dd>Un « coup de pouce » : une modification de la présentation ou de l'option par défaut, qui
+        oriente les choix sans rien interdire ni obliger.</dd>
+    <dd><em>Autrement dit :</em> on ne change pas les options, on change la façon dont elles se
+        présentent.</dd>
+    <dd><em>Exemple :</em> inscrire par défaut les salariés à un plan d'épargne, en les laissant
+        libres de se désinscrire. C'est l'usage pratique de l'économie comportementale.</dd>
+
+    <dt>Payoff</dt>
+    <dd>Le gain d'un joueur à la fin d'un jeu : profit, utilité, points — peu importe l'unité,
+        plus c'est grand, mieux c'est.</dd>
+    <dd><em>Autrement dit :</em> le score final. <em>Exemple :</em> Q3 et Q5, des profits mensuels
+        en milliers d'euros.</dd>
+
+    <dt>Prime de risque (PRM)</dt>
+    <dd>Ce que le risque te coûte, en euros de richesse sûre.
+        <em>Formule :</em> \( \mathrm{PRM} = \mathrm{VMA} - EC \).</dd>
+    <dd><em>Autrement dit :</em> « combien j'accepte de sacrifier, en plus du coût moyen du
+        sinistre, juste pour ne plus avoir de risque ».</dd>
+    <dd><em>Exemple :</em> Q2.3, \( 8\,400 - 8\,100 = 300 \) €. Signe : \( &gt; 0 \) aversion,
+        \( = 0 \) neutralité, \( &lt; 0 \) goût du risque.</dd>
+    <dd><em>Piège :</em> c'est une soustraction, jamais une addition, et toujours dans cet ordre.</dd>
+
+    <dt>Principal</dt>
+    <dd>Dans un contrat, celui qui propose les termes et qui ne peut pas observer l'effort de
+        l'autre.</dd>
+    <dd><em>Autrement dit :</em> le patron, celui qui écrit le contrat. <em>Exemple :</em> Q4, la
+        propriétaire. → voir <span class="term">Agent</span>.</dd>
+
+    <dt>Probabilité</dt>
+    <dd>Un nombre entre 0 et 1 qui mesure la chance qu'un événement arrive : 0 = impossible,
+        1 = certain, 0,5 = une fois sur deux.</dd>
+    <dd><em>Règle à ne jamais oublier :</em> les probabilités de tous les scénarios font 1. Si le
+        vol vaut 1/4, le non-vol vaut \( 1 - \tfrac{1}{4} = \tfrac{3}{4} \).</dd>
+    <dd><em>Exemple :</em> Q2, \( \pi = 1/4 \) (« pi égale un quart ») est la probabilité de vol.</dd>
+
+    <dt>PSS (profils de stratégies survivants)</dt>
+    <dd>L'ensemble des combinaisons de stratégies qui restent une fois terminée l'élimination
+        itérative des stratégies strictement dominées.</dd>
+    <dd><em>Autrement dit :</em> tout ce qui n'a pas été rayé à la fin du ménage.</dd>
+    <dd><em>Exemple :</em> Q3.2, quatre PSS : (C ; C), (C ; G), (G ; C), (G ; G).</dd>
+    <dd><em>Relation importante :</em> tout équilibre de Nash est un PSS, mais l'inverse est faux
+        — ici quatre PSS pour seulement deux équilibres.</dd>
+  </dl>
+
+  <figure>
+    <svg viewBox="0 0 440 200" width="100%" style="max-width:10.5cm" role="img" aria-label="Emboitement : les equilibres de Nash sont inclus dans les profils de strategies survivants">
+      <rect x="6" y="6" width="428" height="188" fill="none" stroke="#111827" stroke-width="1.4"/>
+      <text x="220" y="24" text-anchor="middle" font-size="12.5">Tous les profils de strategies du jeu</text>
+      <rect x="44" y="34" width="352" height="152" fill="#f3f4f6" stroke="#111827" stroke-width="1.4"/>
+      <text x="220" y="52" text-anchor="middle" font-size="12.5" font-weight="bold">PSS — survivants de l'elimination</text>
+      <text x="220" y="68" text-anchor="middle" font-size="11.5">(C;C) (C;G) (G;C) (G;G)</text>
+      <rect x="96" y="78" width="248" height="100" fill="#ffffff" stroke="#111827" stroke-width="1.4"/>
+      <text x="220" y="96" text-anchor="middle" font-size="12.5" font-weight="bold">EN — equilibres de Nash</text>
+      <text x="220" y="112" text-anchor="middle" font-size="11.5">(C;G) et (G;C)</text>
+      <rect x="140" y="122" width="160" height="48" fill="#f3f4f6" stroke="#111827" stroke-width="1.4"/>
+      <text x="220" y="141" text-anchor="middle" font-size="12.5" font-weight="bold">ESD</text>
+      <text x="220" y="157" text-anchor="middle" font-size="11.5">(vide dans ce jeu)</text>
+    </svg>
+    <figcaption>
+      Les concepts de solution s'emboîtent : ESD ⊆ EN ⊆ PSS. Plus on est au centre, plus la
+      prédiction est précise — mais plus il arrive qu'il n'y ait rien.
+    </figcaption>
+  </figure>
+
+  <h3>R — S</h3>
+
+  <dl class="lexique">
+    <dt>Rationalité</dt>
+    <dd>Un décideur est rationnel si ses préférences sont cohérentes (il sait comparer deux
+        options sans se contredire) et s'il choisit ce qu'il préfère parmi ce qui lui est
+        accessible.</dd>
+    <dd><em>Autrement dit :</em> il sait ce qu'il veut, et il le fait. Cela n'implique ni égoïsme,
+        ni calcul, ni goûts raisonnables.</dd>
+    <dd><em>Exemple :</em> Q1.2, la rationalité impose \( \mathrm{DAP} = \mathrm{DAA} \).</dd>
+
+    <dt>Richesses d'état (\( x \) et \( y \))</dt>
+    <dd>La richesse finale dans chacun des scénarios, une fois tout payé et tout encaissé.
+        <em>Convention du cours :</em> \( x \) = mauvais état (sinistre), \( y \) = bon état.</dd>
+    <dd><em>Autrement dit :</em> « combien il me reste si ça tourne mal » et « si ça tourne bien ».</dd>
+    <dd><em>Exemple :</em> Q2.4, \( y = 10\,000 - 0{,}25\,C \) et \( x = 3\,600 + 0{,}75\,C \) : la
+        prime se paie dans les <em>deux</em> états, l'indemnité ne se touche que dans le mauvais.</dd>
+
+    <dt>Série géométrique</dt>
+    <dd>Une somme dont chaque terme s'obtient en multipliant le précédent par un même nombre.
+        <em>Formule :</em> si \( 0 \le \delta &lt; 1 \), alors
+        \( a + a\delta + a\delta^2 + \cdots = \dfrac{a}{1-\delta} \).</dd>
+    <dd><em>Pourquoi le total est fini :</em> les termes rétrécissent assez vite pour que la somme
+        ne parte pas à l'infini.</dd>
+    <dd><em>Exemple :</em> Q5.2, toucher 6 chaque mois pour toujours vaut
+        \( \dfrac{6}{1-\delta} \) aujourd'hui.</dd>
+
+    <dt>Stratégie</dt>
+    <dd>Un plan de jeu complet : ce que le joueur fera dans chaque situation qu'il peut
+        rencontrer.</dd>
+    <dd><em>Autrement dit :</em> pas seulement « ce que je joue », mais ma règle de conduite
+        entière. <em>Exemple :</em> « jouer C » ; ou, en jeu répété, grim.</dd>
+
+    <dt>Stratégie dominante</dt>
+    <dd>Une stratégie qui rapporte plus que toutes les autres, quoi que fasse l'adversaire.</dd>
+    <dd><em>Autrement dit :</em> « quoi qu'il arrive, c'est mon meilleur choix » — pas besoin de
+        deviner l'autre. Si les deux joueurs en ont une, leur combinaison est automatiquement
+        l'unique équilibre de Nash.</dd>
+    <dd><em>Exemple :</em> Q5.1, B est dominante : 12 &gt; 6 face à E, et 2 &gt; 0 face à B.</dd>
+
+    <dt>Stratégie dominée</dt>
+    <dd>Une stratégie qu'une autre bat systématiquement, quel que soit le choix de l'adversaire.</dd>
+    <dd><em>Autrement dit :</em> une option qu'il n'y a jamais de raison de jouer. Il faut toujours
+        préciser <em>par qui</em> : « P est dominée <em>par</em> G ». <em>Exemple :</em> Q3.1.</dd>
+
+    <dt>Stratégie mixte</dt>
+    <dd>Jouer au hasard entre plusieurs stratégies pures, selon des probabilités fixées à
+        l'avance.</dd>
+    <dd><em>Autrement dit :</em> se rendre imprévisible volontairement, avec un dé dont on a choisi
+        les faces. Certains jeux n'ont aucun équilibre pur ; ils en ont toujours un en mixtes.</dd>
+    <dd><em>Exemple :</em> Q3.4, le pirate attaque A avec \( p^* = 0{,}6 \), soit 6 nuits sur 10.</dd>
+
+    <dt>Stratégie pure</dt>
+    <dd>Choisir une action précise, sans aucun hasard.</dd>
+    <dd><em>Autrement dit :</em> « je joue C, point ». <em>Exemple :</em> Q3.3, (C ; G).</dd>
+
+    <dt>Surplus</dt>
+    <dd>La valeur totale créée par une relation économique, avant qu'on décide comment la partager.
+        <em>Formule ici :</em> \( S(e) = 4e - e^2 \).</dd>
+    <dd><em>Autrement dit :</em> la taille du gâteau, indépendamment des parts.</dd>
+    <dd><em>Exemple :</em> Q4, \( e = 2 \) donne \( S = 8 - 4 = 4 \) : 1 pour la directrice, 3 pour
+        la propriétaire.</dd>
+  </dl>
+
+  <h3>T — V</h3>
+
+  <dl class="lexique">
+    <dt>Tarif actuariellement juste</dt>
+    <dd>Un tarif d'assurance exactement égal à la probabilité du sinistre, donc qui ne rapporte
+        rien en moyenne à l'assureur. <em>Formule :</em> \( p = \pi \).</dd>
+    <dd><em>Autrement dit :</em> l'assureur te facture précisément ce que ta couverture lui coûte
+        en moyenne, sans marge.</dd>
+    <dd><em>Exemple :</em> Q2.4, \( \pi = 0{,}25 \) et le tarif vaut 0,25 € : juste. À 0,32 €, il
+        ne l'est plus.</dd>
+    <dd><em>Théorème à retenir :</em> tarif juste → couverture <strong>complète</strong> ; plus
+        cher que juste → couverture <strong>partielle</strong>.</dd>
+
+    <dt>Théorie du choix rationnel</dt>
+    <dd>Le modèle standard de l'économie : chacun a des préférences cohérentes et choisit, parmi
+        les options accessibles, celle qu'il préfère.</dd>
+    <dd><em>Autrement dit :</em> « les gens font au mieux, compte tenu de ce qu'ils veulent et de
+        ce qu'ils peuvent ».</dd>
+    <dd><em>Exemple :</em> Q1.4, on la garde parce qu'elle sert de <em>norme</em>, de
+        <em>point de comparaison</em> (sans elle un biais ne se définit même pas) et de
+        <em>bonne approximation</em> dans les décisions familières et à gros enjeux.</dd>
+
+    <dt>Utilité</dt>
+    <dd>Un nombre qui traduit le niveau de satisfaction : plus il est grand, plus la personne est
+        contente.</dd>
+    <dd><em>Autrement dit :</em> une note de satisfaction, sans unité. Seuls les <em>classements</em>
+        comptent, pas les écarts — et on ne compare jamais les utilités de deux personnes.</dd>
+    <dd><em>Exemple :</em> Q1.3, les utilités des trois habitants pour les quatre projets.</dd>
+
+    <dt>Utilité de réserve \( \bar{U} \)</dt>
+    <dd>Ce que l'agent obtient s'il refuse le contrat : sa meilleure option ailleurs.
+        \( \bar{U} \) se lit « U barre ».</dd>
+    <dd><em>Autrement dit :</em> son plancher, le minimum à lui offrir pour qu'il signe.</dd>
+    <dd><em>Exemple :</em> Q4, \( \bar{U} = 1 \), et à l'optimum la directrice obtient exactement 1.</dd>
+
+    <dt>Utilité espérée</dt>
+    <dd>La moyenne des utilités de chaque scénario, pondérée par les probabilités.
+        <em>Formule :</em> \( U = \pi\,u(x) + (1-\pi)\,u(y) \).</dd>
+    <dd><em>Autrement dit :</em> on convertit d'abord chaque richesse en satisfaction,
+        <em>ensuite</em> on fait la moyenne.</dd>
+    <dd><em>Exemple :</em> Q2.2,
+        \( \tfrac{3}{4}\sqrt{10\,000} + \tfrac{1}{4}\sqrt{3\,600} = 75 + 15 = 90 \).</dd>
+    <dd><em>Le piège numéro un :</em> jamais la moyenne d'abord et l'utilité ensuite. Ici
+        \( \sqrt{8\,400} \approx 91{,}65 \ne 90 \) — et c'est cet écart qui révèle l'aversion au
+        risque.</dd>
+
+    <dt>Utilité marginale décroissante</dt>
+    <dd>Chaque euro supplémentaire apporte un peu moins de satisfaction que le précédent.
+        <em>Formule :</em> \( u' \) décroissante, c'est-à-dire \( u \) concave.</dd>
+    <dd><em>Autrement dit :</em> le premier verre d'eau quand on a soif vaut bien plus que le
+        cinquième.</dd>
+    <dd><em>Exemple :</em> avec \( \sqrt{w} \), passer de 3 600 à 4 900 fait gagner 10 points
+        (60 → 70) ; passer de 8 100 à 9 400 en fait gagner moins de 7. C'est la raison
+        mathématique de l'aversion au risque.</dd>
+
+    <dt>Valeur monétaire attendue (VMA)</dt>
+    <dd>La moyenne des <em>montants d'argent</em> possibles, pondérée par leurs probabilités.
+        <em>Formule :</em> \( \mathrm{VMA} = \pi\,x + (1-\pi)\,y \).</dd>
+    <dd><em>Autrement dit :</em> « combien j'ai en moyenne », en euros, sans se soucier de la peur
+        du risque.</dd>
+    <dd><em>Exemple :</em> Q2.1, 8 400 €. Différence avec l'utilité espérée : la VMA est en euros
+        et ignore l'attitude face au risque.</dd>
+
+    <dt>Variable aléatoire</dt>
+    <dd>Une quantité dont la valeur dépend du hasard, connue seulement une fois le hasard réalisé.</dd>
+    <dd><em>Autrement dit :</em> un nombre encore inconnu, dont on connaît le comportement moyen.</dd>
+    <dd><em>Exemple :</em> Q4, \( x \) dans \( z = 4e + x \) : conjoncture, clients de passage,
+        chance. On sait seulement \( E(x) = 0 \), ce qui permet de l'effacer des espérances.</dd>
+  </dl>
+
+  <hr class="soft">
+
+  <h2>2. Formulaire par thème</h2>
+
+  <p>
+    Pour chaque formule : l'écriture mathématique, le décodage de <em>chaque</em> symbole,
+    l'indice qui te dit quand la sortir, et une valeur numérique tirée de cet examen.
+  </p>
+
+  <h3>2.1 Décision face au risque (question 2)</h3>
+
+  <div class="box box-rappel">
+    <div class="box-title">Le décor de la question 2</div>
+    <p>
+      Richesse totale 10 000 € (3 600 € d'épargne + vélo de 6 400 €), probabilité de vol
+      \( \pi = \tfrac{1}{4} \), fonction de Bernoulli \( u(w) = \sqrt{w} \).
+    </p>
+  </div>
+
+  <h4>F1 — Valeur monétaire attendue</h4>
+
+  \[ \mathrm{VMA} = \pi\,x + (1-\pi)\,y \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( \pi \)</td><td class="left">« pi » — probabilité du mauvais scénario ; ici 1/4</td></tr>
+    <tr><td class="left">\( 1-\pi \)</td><td class="left">probabilité du bon scénario ; ici 3/4</td></tr>
+    <tr><td class="left">\( x \)</td><td class="left">richesse en euros si le sinistre arrive ; ici 3 600 €</td></tr>
+    <tr><td class="left">\( y \)</td><td class="left">richesse en euros si tout va bien ; ici 10 000 €</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> l'énoncé dit « valeur monétaire attendue », « espérance de
+    richesse » ou « combien en moyenne ». Toujours en premier : la VMA sert ensuite à la prime de
+    risque. <strong>Sur cet examen (2.1) :</strong>
+    \( \tfrac{1}{4}\times 3\,600 + \tfrac{3}{4}\times 10\,000 = 900 + 7\,500 = 8\,400 \) €.
+  </p>
+
+  <h4>F2 — Utilité espérée</h4>
+
+  \[ U = \pi\,u(x) + (1-\pi)\,u(y) \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( U \)</td><td class="left">« grand U » — utilité espérée, en points d'utilité, pas en euros</td></tr>
+    <tr><td class="left">\( u(\cdot) \)</td><td class="left">« petit u de… » — fonction de Bernoulli ; ici \( \sqrt{w} \)</td></tr>
+    <tr><td class="left">\( u(x) \)</td><td class="left">satisfaction si sinistre ; ici \( \sqrt{3\,600} = 60 \)</td></tr>
+    <tr><td class="left">\( u(y) \)</td><td class="left">satisfaction si tout va bien ; ici \( \sqrt{10\,000} = 100 \)</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> on te donne une fonction \( u \) et des probabilités, et on
+    demande de comparer des situations risquées. <strong>Sur cet examen (2.2) :</strong>
+    \( \tfrac{1}{4}\times 60 + \tfrac{3}{4}\times 100 = 15 + 75 = 90 \).
+  </p>
+
+  <div class="box box-piege">
+    <div class="box-title">Le piège à 8 points</div>
+    <p>
+      L'ordre est <strong>utilité d'abord, moyenne ensuite</strong>. Écrire
+      \( u(\mathrm{VMA}) = \sqrt{8\,400} \approx 91{,}65 \) et appeler ça l'utilité espérée est
+      faux : la bonne réponse est 90. L'écart n'est pas un arrondi, c'est la trace de l'aversion
+      au risque.
+    </p>
+  </div>
+
+  <h4>F3 — Équivalent certain</h4>
+
+  \[ u(EC) = U \iff EC = u^{-1}(U) \qquad\text{ici}\qquad \sqrt{EC} = U \iff EC = U^2 \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( EC \)</td><td class="left">montant sûr, en euros, aussi satisfaisant que la situation risquée</td></tr>
+    <tr><td class="left">\( u^{-1} \)</td><td class="left">« u moins un » — la fonction inverse : elle défait ce que \( u \) a fait (inverse de \( \sqrt{\ } \) : le carré ; inverse de \( \ln \) : l'exponentielle)</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> l'énoncé dit « équivalent certain », « montant sûr
+    équivalent », « à partir de quelle somme garantie serait-il indifférent ».
+    <strong>Sur cet examen (2.3) :</strong> \( \sqrt{EC} = 90 \) donc \( EC = 8\,100 \) €.
+  </p>
+
+  <h4>F4 — Prime de risque</h4>
+
+  \[ \mathrm{PRM} = \mathrm{VMA} - EC \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( \mathrm{PRM} \)</td><td class="left">prime de risque, en euros : le prix psychologique du risque</td></tr>
+    <tr><td class="left">\( \mathrm{VMA} \)</td><td class="left">la moyenne en euros (F1) — toujours en premier dans la soustraction</td></tr>
+    <tr><td class="left">\( EC \)</td><td class="left">l'équivalent certain (F3)</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> on demande « la prime de risque », « ce qu'il paierait pour
+    supprimer le risque », ou de caractériser l'attitude face au risque.
+    <strong>Sur cet examen (2.3) :</strong> \( 8\,400 - 8\,100 = 300 \) €.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 440 158" width="100%" style="max-width:11.5cm" role="img" aria-label="La chaine de calcul : VMA, utilite esperee, equivalent certain, prime de risque">
+      <rect x="4" y="28" width="96" height="50" fill="#f3f4f6" stroke="#111827" stroke-width="1.3"/>
+      <text x="52" y="50" text-anchor="middle" font-size="13" font-weight="bold">1. VMA</text>
+      <text x="52" y="68" text-anchor="middle" font-size="11.5">8 400 EUR</text>
+      <line x1="102" y1="53" x2="126" y2="53" stroke="#111827" stroke-width="1.4"/>
+      <polygon points="132,53 122,48 122,58" fill="#111827"/>
+      <rect x="134" y="28" width="96" height="50" fill="#f3f4f6" stroke="#111827" stroke-width="1.3"/>
+      <text x="182" y="50" text-anchor="middle" font-size="13" font-weight="bold">2. U</text>
+      <text x="182" y="68" text-anchor="middle" font-size="11.5">90 points</text>
+      <line x1="232" y1="53" x2="256" y2="53" stroke="#111827" stroke-width="1.4"/>
+      <polygon points="262,53 252,48 252,58" fill="#111827"/>
+      <rect x="264" y="28" width="96" height="50" fill="#f3f4f6" stroke="#111827" stroke-width="1.3"/>
+      <text x="312" y="50" text-anchor="middle" font-size="13" font-weight="bold">3. EC</text>
+      <text x="312" y="68" text-anchor="middle" font-size="11.5">8 100 EUR</text>
+      <text x="368" y="46" font-size="11.5">Toujours</text>
+      <text x="368" y="62" font-size="11.5">dans cet</text>
+      <text x="368" y="78" font-size="11.5">ordre.</text>
+      <path d="M 52 82 L 52 110 L 312 110 L 312 82" fill="none" stroke="#111827" stroke-width="1.3" stroke-dasharray="4 3"/>
+      <rect x="126" y="118" width="188" height="30" fill="#ffffff" stroke="#111827" stroke-width="1.3"/>
+      <text x="220" y="138" text-anchor="middle" font-size="12.5" font-weight="bold">4. PRM = 8 400 - 8 100 = 300</text>
+    </svg>
+    <figcaption>La chaîne de la question 2 : euros → points d'utilité → euros → euros.</figcaption>
+  </figure>
+
+  <h4>F5 — Tarif actuariellement juste</h4>
+
+  \[ p = \pi \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( p \)</td><td class="left">prix demandé par l'assureur pour 1 euro de couverture ; ici 0,25 puis 0,32</td></tr>
+    <tr><td class="left">\( \pi \)</td><td class="left">probabilité du sinistre ; ici 0,25</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> on te donne un tarif « par euro couvert » et on demande
+    s'il est juste. Le raisonnement : couvrir 1 € coûte à l'assureur 1 € avec probabilité \( \pi \)
+    et 0 € sinon, soit \( \pi \) en moyenne. <strong>Sur cet examen :</strong> 0,25 = 0,25 → juste
+    (2.4) ; \( 0{,}32 &gt; 0{,}25 \) → plus cher que juste (2.5).
+  </p>
+
+  <h4>F6 — Richesses d'état avec assurance</h4>
+
+  \[ y = W - p\,C \quad\text{(bon etat)}, \qquad x = W - L - p\,C + C \quad\text{(sinistre)} \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( W \)</td><td class="left">« grand W » — richesse de départ ; ici 10 000 €</td></tr>
+    <tr><td class="left">\( L \)</td><td class="left">« L » comme <em>loss</em> — la perte en cas de sinistre ; ici 6 400 €</td></tr>
+    <tr><td class="left">\( C \)</td><td class="left">la couverture achetée, en euros : c'est l'inconnue à choisir</td></tr>
+    <tr><td class="left">\( p\,C \)</td><td class="left">la prime totale — elle se paie <strong>dans les deux états</strong></td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> tout énoncé d'assurance qui demande la richesse finale ou
+    la couverture optimale. Écris ces deux lignes avant tout calcul : la moitié des points s'y
+    joue. <strong>Sur cet examen (2.4) :</strong> \( y = 10\,000 - 0{,}25\,C \) et
+    \( x = 3\,600 - 0{,}25\,C + C = 3\,600 + 0{,}75\,C \).
+  </p>
+
+  <h4>F7 — CPO de la couverture optimale</h4>
+
+  \[ \pi\,(1-p)\,u'(x) = (1-\pi)\,p\,u'(y) \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( u'(x) \)</td><td class="left">« u prime de x » — ce que rapporte 1 euro de plus quand on est pauvre</td></tr>
+    <tr><td class="left">\( u'(y) \)</td><td class="left">idem dans le bon état</td></tr>
+    <tr><td class="left">\( 1-p \)</td><td class="left">gain net d'un euro couvert en cas de sinistre : on touche 1, on a payé \( p \)</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> on demande la couverture optimale, ou de justifier
+    « complète / partielle / nulle ». <strong>Sur cet examen :</strong> au tarif juste
+    \( p = \pi \), tout se simplifie en \( u'(x) = u'(y) \) ; comme \( u' \) est strictement
+    décroissante, cela impose \( x = y \), donc \( C^* = L = 6\,400 \) € et une richesse certaine
+    de 8 400 € dans les deux cas (2.4). À \( p = 0{,}32 &gt; \pi \), la condition impose
+    \( u'(x) &gt; u'(y) \) donc \( x &lt; y \) : il reste du risque, la couverture est
+    <em>partielle</em> (2.5).
+  </p>
+
+  <h3>2.2 Jeux simultanés (question 3)</h3>
+
+  <h4>F8 — Dominance stricte</h4>
+
+  \[ u_i(s_i,\, s_{-i}) \;&gt;\; u_i(s_i',\, s_{-i}) \quad \text{pour tout } s_{-i} \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( u_i \)</td><td class="left">« u indice i » — le payoff du joueur \( i \), celui dont on parle</td></tr>
+    <tr><td class="left">\( s_i \) / \( s_i' \)</td><td class="left">« s i » et « s i prime » — deux stratégies du <em>même</em> joueur</td></tr>
+    <tr><td class="left">\( s_{-i} \)</td><td class="left">« s moins i » — ce que font tous les autres ; le moins veut dire « sauf i »</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> question « quelle stratégie est dominée ? ». En pratique on
+    ne manipule pas ces symboles : on compare deux lignes (ou deux colonnes) case par case.
+    <strong>Sur cet examen (3.1) :</strong> pour Boréal, G contre P donne \( 40 &gt; 35 \),
+    \( 20 &gt; 15 \), \( 35 &gt; 10 \) : trois inégalités strictes, donc G domine strictement P.
+  </p>
+
+  <h4>F9 — Équilibre de Nash en stratégies pures</h4>
+
+  \[ u_1(s_1^*, s_2^*) \ge u_1(s_1, s_2^*) \ \ \forall s_1, \qquad u_2(s_1^*, s_2^*) \ge u_2(s_1^*, s_2) \ \ \forall s_2 \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( s_1^* \)</td><td class="left">« s un étoile » — la stratégie d'équilibre ; l'étoile signale toujours « valeur optimale »</td></tr>
+    <tr><td class="left">\( \ge \)</td><td class="left">« supérieur ou égal à »</td></tr>
+    <tr><td class="left">\( \forall \)</td><td class="left">« pour tout » — la propriété vaut pour chaque stratégie possible</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> « identifiez les équilibres de Nash en stratégies pures ».
+    Traduction pratique : une case où <em>chacun</em> joue une meilleure réponse à l'autre.
+    <strong>Sur cet examen (3.3) :</strong> (C ; G) avec (60 ; 40) et (G ; C) avec (40 ; 60).
+  </p>
+
+  <h4>F10 — Condition d'indifférence des stratégies mixtes</h4>
+
+  \[ u_1(\text{haut},\, q) = u_1(\text{bas},\, q) \;\Rightarrow\; q^* \]
+  \[ u_2(p,\, \text{gauche}) = u_2(p,\, \text{droite}) \;\Rightarrow\; p^* \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( p \)</td><td class="left">probabilité que le joueur en <em>ligne</em> joue sa première stratégie</td></tr>
+    <tr><td class="left">\( q \)</td><td class="left">probabilité que le joueur en <em>colonne</em> joue la sienne</td></tr>
+    <tr><td class="left">\( 1-p \), \( 1-q \)</td><td class="left">probabilités des secondes stratégies : le reste, puisque le total fait 1</td></tr>
+    <tr><td class="left">\( p^* \), \( q^* \)</td><td class="left">« p étoile », « q étoile » — les probabilités d'équilibre</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> l'énoncé demande \( p^* \) et \( q^* \), ou tu viens de
+    montrer qu'aucun équilibre pur n'existe. <strong>Sur cet examen (3.4) :</strong> indifférence
+    du pirate, \( 10q + 70(1-q) = 70q + 30(1-q) \Rightarrow 100q = 40 \Rightarrow q^* = 0{,}4 \) ;
+    indifférence de la responsable,
+    \( 90p + 10(1-p) = 30p + 100(1-p) \Rightarrow 150p = 90 \Rightarrow p^* = 0{,}6 \).
+  </p>
+
+  <div class="box box-piege">
+    <div class="box-title">Le croisement qui fait perdre 4 points</div>
+    <p>
+      L'équation d'indifférence <em>du pirate</em> ne contient que \( q \) : elle donne donc la
+      stratégie de <strong>la responsable</strong>. Et réciproquement. Si ton équation
+      d'indifférence du joueur 1 contient \( p \), tu t'es trompé de ligne.
+    </p>
+  </div>
+
+  <h4>F11 — Payoff espéré à l'équilibre mixte</h4>
+
+  \[ U_1 = q^*\,u_1(\text{haut},\text{gauche}) + (1-q^*)\,u_1(\text{haut},\text{droite}) \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( U_1 \)</td><td class="left">payoff espéré du joueur 1, dans l'unité de la matrice</td></tr>
+    <tr><td class="left">\( q^* \)</td><td class="left">la probabilité d'équilibre de l'<em>adversaire</em> — c'est la sienne qui entre dans mon calcul</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> après avoir trouvé \( p^* \) et \( q^* \). Astuce : à
+    l'équilibre le joueur est indifférent entre ses deux stratégies pures, il suffit donc d'en
+    évaluer <em>une</em>, l'autre servant de vérification.
+    <strong>Sur cet examen (3.5) :</strong> pirate
+    \( 10\times 0{,}4 + 70\times 0{,}6 = 46 \) (vérif. : \( 70\times 0{,}4 + 30\times 0{,}6 = 46 \)) ;
+    responsable \( 90\times 0{,}6 + 10\times 0{,}4 = 58 \).
+  </p>
+
+  <h3>2.3 Contrats — le modèle principal-agent (question 4)</h3>
+
+  <div class="box box-rappel">
+    <div class="box-title">Le décor de la question 4</div>
+    <p>
+      \( z = 4e + x \) avec \( E(x) = 0 \), contrat \( w(z) = a + bz \), coût d'effort
+      \( c(e) = e^2 \), les deux parties neutres au risque, utilité de réserve \( \bar{U} = 1 \).
+    </p>
+  </div>
+
+  <h4>F12 — Utilité attendue de l'agent</h4>
+
+  \[ U_a(e) = E\big(w(z)\big) - c(e) = a + 4b\,e - e^2 \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( U_a \)</td><td class="left">« U indice a » — utilité de l'agent (la directrice)</td></tr>
+    <tr><td class="left">\( a \)</td><td class="left">partie fixe du salaire, positive ou négative</td></tr>
+    <tr><td class="left">\( b \)</td><td class="left">part variable : la fraction du chiffre d'affaires qui revient à l'agent</td></tr>
+    <tr><td class="left">\( e \)</td><td class="left">l'effort choisi par l'agent : c'est <em>sa</em> variable de décision</td></tr>
+    <tr><td class="left">\( E(x)=0 \)</td><td class="left">« espérance de x égale zéro » — le hasard n'aide ni ne nuit en moyenne, donc il disparaît</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> première ligne de tout exercice principal-agent : ce que
+    l'agent gagne en moyenne, moins ce que son effort lui coûte. <strong>Détail :</strong>
+    \( E(a + b(4e+x)) - e^2 = a + 4be + b\,E(x) - e^2 = a + 4be - e^2 \).
+  </p>
+
+  <h4>F13 — CPO de l'agent : l'effort choisi</h4>
+
+  \[ \frac{\partial U_a}{\partial e} = 4b - 2e = 0 \iff e^*(b) = 2b \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( \frac{\partial U_a}{\partial e} \)</td><td class="left">« d rond U a sur d rond e » — dérivée de l'utilité de l'agent par rapport à son effort</td></tr>
+    <tr><td class="left">\( e^*(b) \)</td><td class="left">« e étoile de b » — l'effort optimal, qui dépend de \( b \) et de \( b \) seulement</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> « quel effort l'agent choisit-il ? ». Toujours en premier,
+    car le principal devra en tenir compte. <strong>Sur cet examen (4.1) :</strong>
+    \( e^*(b) = 2b \). Le fixe \( a \) n'apparaît pas : c'est une constante, sa dérivée est nulle.
+    Il change le niveau de rémunération, pas l'incitation à la marge.
+  </p>
+
+  <h4>F14 — Contrainte de participation saturée</h4>
+
+  \[ a + 4b\,e - e^2 = \bar{U} \iff a = \bar{U} + e^2 - 4b\,e \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( \bar{U} \)</td><td class="left">« U barre » — l'utilité de réserve ; ici 1</td></tr>
+    <tr><td class="left">« saturer »</td><td class="left">remplacer le \( \ge \) par un \( = \) : le principal ne laisse jamais un centime de trop</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> étape 1 de tout contrat optimal, pour exprimer \( a \) en
+    fonction du reste et l'éliminer de l'objectif du principal.
+    <strong>Sur cet examen (4.2) :</strong> \( a = 1 + e^2 - 4b\,e \).
+  </p>
+
+  <h4>F15 — Objectif du principal, après substitution</h4>
+
+  \[ E(z - w) = 4e - a - 4b\,e = 4e - e^2 - \bar{U} \]
+
+  <p>
+    <strong>Ce qui se passe :</strong> on remplace \( a \) par F14 ; tous les termes en \( b \) se
+    compensent. Il reste le <em>surplus</em> \( S(e) = 4e - e^2 \) moins ce qu'on doit laisser à
+    l'agent. <strong>Ce que ça veut dire :</strong> la propriétaire encaisse tout le gâteau, donc
+    elle a intérêt à le faire grossir au maximum.
+    <strong>Sur cet examen (4.2) :</strong> \( E(z-w) = 4e - e^2 - 1 \).
+  </p>
+
+  <h4>F16 — Le contrat optimal</h4>
+
+  \[ E(z-w) = 8b - 4b^2 - 1, \qquad \frac{\partial}{\partial b} = 8 - 8b = 0 \]
+  \[ b^* = 1, \qquad e^* = 2b^* = 2, \qquad a^* = 1 + 4 - 8 = -3 \]
+
+  <p>
+    <strong>Quand l'utiliser :</strong> étape finale — on injecte la contrainte d'incitation
+    \( e = 2b \) dans l'objectif, on dérive par rapport à \( b \), puis on remonte à \( a \).
+    <strong>Sur cet examen (4.2–4.3) :</strong> contrat \( w(z) = -3 + z \) ; \( E(z) = 8 \),
+    \( E(w) = 5 \), donc la propriétaire obtient \( 8 - 5 = 3 \) et la directrice
+    \( 5 - 4 = 1 = \bar{U} \).
+  </p>
+
+  <h3>2.4 Jeux répétés (question 5)</h3>
+
+  <div class="box box-rappel">
+    <div class="box-title">Trois payoffs à nommer avant de calculer</div>
+    <p>
+      Tout tient à trois nombres lus dans la matrice : \( c \) = coopération mutuelle (ici 6),
+      \( d \) = déviation unilatérale (ici 12), \( n \) = équilibre de punition (ici 2). Attention,
+      \( \pi \) n'apparaît nulle part ici : aucune probabilité dans ce thème.
+    </p>
+  </div>
+
+  <h4>F17 — Somme géométrique</h4>
+
+  \[ a + a\delta + a\delta^2 + \cdots = \sum_{t=0}^{\infty} a\,\delta^t = \frac{a}{1-\delta} \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( \delta \)</td><td class="left">« delta » — le facteur d'escompte, entre 0 et 1</td></tr>
+    <tr><td class="left">\( \sum_{t=0}^{\infty} \)</td><td class="left">« somme, pour t allant de 0 à l'infini » — le grand S grec veut dire « additionne tout »</td></tr>
+    <tr><td class="left">\( \delta^t \)</td><td class="left">« delta puissance t » — le poids d'un gain reçu dans \( t \) périodes</td></tr>
+    <tr><td class="left">\( a \)</td><td class="left">le montant reçu à chaque période (ici un profit mensuel)</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> l'énoncé parle de gains reçus « à chaque période, pour
+    toujours » et donne un \( \delta \). <strong>Sur cet examen (5.2) :</strong>
+    \( 6 + 6\delta + 6\delta^2 + \cdots = \dfrac{6}{1-\delta} \).
+  </p>
+
+  <h4>F18 — Payoff de la coopération &nbsp;·&nbsp; F19 — Payoff de la meilleure déviation</h4>
+
+  \[ \Pi^{\text{coop}} = \frac{c}{1-\delta}, \qquad \Pi^{\text{dev}} = d + \frac{\delta\,n}{1-\delta} \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( \Pi \)</td><td class="left">« pi majuscule » — un profit escompté, cumulé sur toutes les périodes</td></tr>
+    <tr><td class="left">\( c \)</td><td class="left">le gain quand tout le monde coopère, encaissé à chaque période ; ici 6</td></tr>
+    <tr><td class="left">\( d \)</td><td class="left">le gros gain de la trahison, encaissé <em>une seule fois</em>, aujourd'hui ; ici 12</td></tr>
+    <tr><td class="left">\( n \)</td><td class="left">le gain pendant la punition, à partir de demain et pour toujours ; ici 2</td></tr>
+    <tr><td class="left">\( \delta\,n/(1-\delta) \)</td><td class="left">valeur d'aujourd'hui de toute la punition ; le \( \delta \) devant rappelle qu'elle ne commence que demain</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> les deux premières lignes de toute question « à quelle
+    condition l'entente tient-elle ? ». La meilleure déviation est toujours de trahir dès
+    aujourd'hui : plus on attend, moins le bonus vaut.
+    <strong>Sur cet examen (5.2) :</strong> \( \dfrac{6}{1-\delta} \) contre
+    \( 12 + \dfrac{2\delta}{1-\delta} \).
+  </p>
+
+  <h4>F20 — Condition de soutien de l'entente</h4>
+
+  \[ \frac{c}{1-\delta} \;\ge\; d + \frac{\delta\,n}{1-\delta} \]
+
+  <p>On multiplie les deux côtés par \( (1-\delta) \), strictement positif, donc le sens de l'inégalité est conservé :</p>
+
+  \[ c \;\ge\; d\,(1-\delta) + \delta\,n \iff \delta \;\ge\; \frac{d - c}{d - n} \]
+
+  <table class="compare">
+    <tr><th class="left">Élément</th><th class="left">Comment le lire</th></tr>
+    <tr><td class="left">\( d - c \)</td><td class="left">le bonus immédiat de la trahison ; ici \( 12 - 6 = 6 \)</td></tr>
+    <tr><td class="left">\( d - n \)</td><td class="left">l'écart total entre le meilleur et le pire ; ici \( 12 - 2 = 10 \)</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> pour conclure toute question « à quelle condition sur
+    \( \delta \) ? ». Plus la tentation \( d - c \) est grande, plus il faut être patient.
+    <strong>Sur cet examen (5.2) :</strong> \( 6 \ge 12 - 10\delta \), donc \( 10\delta \ge 6 \)
+    et \( \delta \ge \tfrac{3}{5} = 0{,}6 \).
+  </p>
+
+  <div class="result">
+    <div class="result-title">Tous les repères chiffrés de cet examen, en une ligne</div>
+    <p>
+      VMA 8 400 € · \( U = 90 \) · \( EC = 8\,100 \) € · \( \mathrm{PRM} = 300 \) € ·
+      \( C^* = 6\,400 \) € · EN purs (C ; G) et (G ; C) · \( p^* = 0{,}6 \) · \( q^* = 0{,}4 \) ·
+      payoffs 46 et 58 · \( e^* = 2 \) · \( b^* = 1 \) · \( a^* = -3 \) · \( \delta \ge 3/5 \).
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>3. Les réflexes de méthode</h2>
+
+  <p>
+    Huit recettes, à appliquer telles quelles, dans l'ordre. Quand tu es bloqué, trouve la recette
+    dans le tableau d'aiguillage du début et déroule les étapes.
+  </p>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 1 — Traiter une question de Pareto</div>
+    <ol>
+      <li>Repère les <strong>individus</strong> (lignes) et les <strong>options</strong>
+          (colonnes). Ne les inverse pas.</li>
+      <li>Pour comparer deux options X et Y, descends les deux colonnes <em>ligne par ligne</em> et
+          note le signe de chaque comparaison.</li>
+      <li>Tous les signes \( \ge \) et au moins un \( &gt; \) : <strong>X domine Y</strong>. Écris
+          les inégalités — c'est ce qui rapporte les points.</li>
+      <li>Un gagnant <em>et</em> un perdant : les deux options sont <strong>incomparables</strong>.
+          Dis-le explicitement.</li>
+      <li>Refais-le pour toutes les paires. Une option est <strong>efficace</strong> si aucune
+          autre ne la domine.</li>
+      <li>Conclus : « les options efficaces sont … ; seule … est dominée, par … ».</li>
+      <li><em>Si on demande de construire</em> une allocation qui domine sans être efficace :
+          donne un peu plus à une personne, laisse les autres identiques, et surtout ne distribue
+          <em>pas tout</em> — c'est le reste non distribué qui la rend inefficace, et il faut
+          l'écrire.</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 2 — Traiter une question d'utilité espérée / assurance</div>
+    <ol>
+      <li>Liste les <strong>scénarios</strong> et leurs probabilités ; vérifie qu'elles font 1.</li>
+      <li>Écris la <strong>richesse finale</strong> de chaque scénario, en euros. Étape la plus
+          souvent bâclée.</li>
+      <li><strong>VMA</strong> : \( \pi x + (1-\pi) y \) (F1).</li>
+      <li><strong>Utilité espérée</strong> : \( u \) appliquée à chaque richesse <em>d'abord</em>,
+          moyenne <em>ensuite</em> (F2).</li>
+      <li><strong>Équivalent certain</strong> : retourne \( u \) ; si \( u = \sqrt{\ } \), élève au
+          carré (F3).</li>
+      <li><strong>Prime de risque</strong> : VMA − EC (F4). Vérifie qu'elle est positive, sinon tu
+          as inversé quelque chose.</li>
+      <li><em>S'il y a une assurance :</em> compare le tarif \( p \) à \( \pi \). Si \( p = \pi \),
+          couverture complète \( C^* = L \) ; si \( p &gt; \pi \), couverture partielle.</li>
+      <li>Termine par une phrase avec les unités : « elle est indifférente entre sa situation
+          risquée et 8 100 € certains ; le risque lui coûte l'équivalent de 300 € ».</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 3 — Repérer une stratégie dominée</div>
+    <ol>
+      <li>Choisis un joueur et ne regarde que <strong>ses</strong> payoffs : le premier nombre s'il
+          est en ligne, le second s'il est en colonne.</li>
+      <li>Prends deux de ses stratégies, compare-les case par case face à chaque stratégie de
+          l'adversaire.</li>
+      <li>Si l'une gagne <em>toutes</em> les comparaisons strictement, elle domine strictement
+          l'autre. Écris toutes les inégalités.</li>
+      <li>Si une seule comparaison s'inverse : pas de dominance. Dis-le et donne le
+          contre-exemple.</li>
+      <li>Recommence pour l'autre joueur.</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 4 — Trouver les équilibres de Nash en stratégies pures</div>
+    <ol>
+      <li>Colonne par colonne, souligne le <strong>plus grand premier nombre</strong> : la
+          meilleure réponse du joueur en ligne.</li>
+      <li>Ligne par ligne, souligne le <strong>plus grand second nombre</strong> : la meilleure
+          réponse du joueur en colonne.</li>
+      <li>Les cases où les <strong>deux</strong> nombres sont soulignés sont les équilibres.</li>
+      <li>Écris la liste : « (stratégie 1 ; stratégie 2) avec les payoffs (… ; …) ».</li>
+      <li>Aucune case doublement soulignée → <strong>aucun</strong> équilibre pur. Dis-le, et passe
+          au réflexe 5.</li>
+      <li>Contrôle : tout équilibre de Nash doit faire partie des PSS. Sinon, il y a une erreur.</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 5 — Calculer un équilibre en stratégies mixtes (jeu 2×2)</div>
+    <ol>
+      <li>Montre d'abord qu'il n'y a <strong>aucun équilibre pur</strong> (réflexe 4) : c'est
+          souvent demandé et ça rapporte des points.</li>
+      <li>Nomme les probabilités : \( p \) pour la première stratégie du joueur en ligne, \( q \)
+          pour celle du joueur en colonne ; les autres valent \( 1-p \) et \( 1-q \).</li>
+      <li>Écris le payoff espéré de la <strong>première</strong> stratégie du joueur en ligne, en
+          fonction de \( q \) seulement.</li>
+      <li>Écris celui de sa <strong>seconde</strong> stratégie, toujours en fonction de \( q \).</li>
+      <li>Pose l'<strong>égalité</strong> entre les deux et résous : tu obtiens \( q^* \).</li>
+      <li>Inverse les rôles pour obtenir \( p^* \).</li>
+      <li>Vérifie que \( p^* \) et \( q^* \) sont bien entre 0 et 1. Sinon, erreur de signe.</li>
+      <li>Payoffs espérés : évalue <em>une seule</em> stratégie pure de chaque joueur contre la
+          mixte adverse, puis vérifie avec l'autre — tu dois retomber sur le même nombre.</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 6 — Résoudre un problème principal-agent</div>
+    <ol>
+      <li>Écris l'<strong>utilité de l'agent</strong> : ce qu'il touche en moyenne, moins le coût
+          de son effort. Remplace les variables aléatoires par leur espérance (souvent 0).</li>
+      <li>Dérive par rapport à l'<strong>effort</strong>, pose à zéro : tu obtiens \( e^*(b) \),
+          la contrainte d'incitation. Le fixe \( a \) disparaît.</li>
+      <li>Écris la <strong>contrainte de participation</strong> avec un signe égal, et isole
+          \( a \).</li>
+      <li>Écris l'<strong>objectif du principal</strong> : résultat espéré moins salaire espéré.</li>
+      <li>Remplace \( a \) : les termes en \( b \) doivent se simplifier et il ne doit rester que
+          le <strong>surplus</strong> moins l'utilité de réserve. Si ce n'est pas le cas, reprends
+          l'étape 3.</li>
+      <li>Remplace \( e \) par \( e^*(b) \), dérive par rapport à \( b \), pose à zéro : tu
+          obtiens \( b^* \).</li>
+      <li>Remonte : \( e^* \), puis \( a^* \) via la contrainte de participation. Vérifie que
+          l'agent obtient exactement \( \bar{U} \).</li>
+      <li>Interprète : \( b \) est l'<em>incitation</em>, \( a \) est le <em>partage</em>. Avec
+          \( b^* = 1 \) l'agent devient créancier résiduel, et \( a^* &lt; 0 \) est la franchise
+          qu'il paie.</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 7 — Établir une condition de soutien d'entente</div>
+    <ol>
+      <li>Repère les trois nombres : \( c \) (coopération), \( d \) (déviation), \( n \)
+          (punition).</li>
+      <li><strong>Payoff de coopération</strong> : \( c \) à chaque période pour toujours, soit
+          \( \dfrac{c}{1-\delta} \).</li>
+      <li><strong>Payoff de déviation</strong> : \( d \) aujourd'hui, puis \( n \) pour toujours
+          dès demain, soit \( d + \dfrac{\delta\,n}{1-\delta} \).</li>
+      <li>Pose l'inégalité « coopérer \( \ge \) dévier ».</li>
+      <li>Multiplie par \( (1-\delta) \) — c'est positif, le sens est conservé ; écris-le
+          explicitement sur ta copie.</li>
+      <li>Isole \( \delta \), donne la valeur en fraction <em>et</em> en décimal.</li>
+      <li>Interprète : \( \delta \) mesure la patience ; en dessous du seuil, le gain immédiat de
+          la trahison pèse plus lourd que toutes les pertes futures.</li>
+      <li><em>Si l'horizon est fini et connu</em>, ne calcule rien : invoque la backward induction
+          et le théorème de l'horizon fini — la coopération est impossible à
+          <em>toutes</em> les périodes.</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 8 — Relire sa copie en 5 minutes</div>
+    <ol>
+      <li><strong>Les unités.</strong> Euros, milliers d'euros, points d'utilité, probabilité sans
+          unité : chaque résultat a-t-il la sienne ?</li>
+      <li><strong>Les cases réponses.</strong> « VMA : … », « C* : … », « p* : … » — toutes
+          remplies ? Elles sont notées séparément.</li>
+      <li><strong>Les ordres de grandeur.</strong> Une probabilité est entre 0 et 1 ; l'équivalent
+          certain est plus petit que la VMA ; la prime de risque est positive.</li>
+      <li><strong>Les questions à deux morceaux.</strong> « … <em>et justifiez</em> », « … <em>et
+          interprétez</em> » : le second morceau vaut souvent la moitié des points.</li>
+      <li><strong>Les conclusions.</strong> Chaque question se termine-t-elle par une phrase en
+          français qui répond ?</li>
+      <li><strong>Le vocabulaire exact.</strong> « effet de dotation », « actuariellement juste »,
+          « strictement dominée », « équilibre de Nash », « créancier résiduel »,
+          « backward induction » : les as-tu écrits ?</li>
+    </ol>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Les erreurs de rédaction qui coûtent des points</div>
+    <p>
+      Le barème ne récompense pas seulement le bon nombre. Voici ce qui fait perdre des points à
+      des copies qui ont pourtant « trouvé ».
+    </p>
+    <ul>
+      <li><strong>Donner un résultat sans le justifier.</strong> « A est dominé par C » vaut la
+          moitié des points ; ajouter \( 6 \ge 6 \), \( 3 \ge 3 \), \( 7 &gt; 5 \) vaut l'autre
+          moitié. La vérification <em>est</em> la réponse.</li>
+      <li><strong>Ne pas conclure.</strong> Des lignes de calcul qui s'arrêtent sur un nombre ne
+          sont pas une réponse. Termine par « la couverture optimale est donc
+          \( C^* = 6\,400 \) €, soit une assurance complète ».</li>
+      <li><strong>Oublier les unités.</strong> « 8 400 » n'est pas « 8 400 euros », et à la
+          question 3 les payoffs sont des <em>milliers</em> d'euros.</li>
+      <li><strong>Ne pas répondre à la question posée.</strong> Si on demande « complète, partielle
+          ou nulle ? », le premier mot de ta réponse doit être l'un des trois. Si on demande le nom
+          d'un biais, il doit apparaître en toutes lettres.</li>
+      <li><strong>Traiter une seule moitié d'une question double.</strong> « la stratégie dominante
+          <em>et</em> l'équilibre de Nash » : deux réponses, deux phrases.</li>
+      <li><strong>Confondre les deux joueurs.</strong> Écris « payoff d'Athlex = 60, payoff de
+          Boréal = 40 » plutôt que « (60 ; 40) » tout seul.</li>
+      <li><strong>Sauter la mise en équation.</strong> Écrire les richesses d'état ou l'utilité de
+          l'agent vaut plusieurs points <em>même si la suite est fausse</em>. Ne commence jamais
+          par le calcul final.</li>
+      <li><strong>Employer un mot du jargon sans l'expliquer.</strong> « C'est l'effet de
+          dotation » vaut 3 points ; « c'est l'effet de dotation : la simple possession augmente
+          l'évaluation, alors que la théorie rationnelle prédit DAP = DAA » vaut les 10.</li>
+      <li><strong>Laisser une case vide.</strong> Même incertain, écris ta meilleure estimation :
+          une case vide vaut zéro à coup sûr.</li>
+      <li><strong>Rendre illisible.</strong> Numérote tes étapes, encadre tes résultats, saute une
+          ligne entre les sous-questions. Un correcteur qui trouve vite donne les points.</li>
+    </ul>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Un dernier mot</div>
+    <p>
+      Tout ce chapitre tient en une idée : à l'examen tu n'auras jamais à <em>inventer</em>, mais à
+      <em>reconnaître</em>. Un tableau d'utilités appelle Pareto ; une probabilité et une racine
+      carrée appellent la chaîne VMA–U–EC–PRM ; une matrice appelle les meilleures réponses ; un
+      contrat appelle la CPO puis la contrainte saturée ; un \( \delta \) appelle la comparaison
+      coopérer / dévier. Cinq déclencheurs, cinq recettes. Le reste, c'est du calcul soigneux et
+      des phrases de conclusion.
+    </p>
+  </div>
+
+</section>

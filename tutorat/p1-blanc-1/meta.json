@@ -1,0 +1,82 @@
+{
+  "eyebrow": "Cours particulier — reprise intégrale",
+  "title": "Examen blanc n° 1, expliqué de A à Z",
+  "subtitle": "Chaque question reprise depuis zéro, sans rien supposer de connu",
+  "code": "ECGEB366",
+  "project": "Projet : stratégies et décisions économiques",
+  "part": "Partie 1 — Théorie de la décision et Théorie des jeux",
+  "footnote": "Document d'accompagnement (non officiel) de l'examen blanc n° 1. Les réponses correspondent au corrigé de l'examen blanc ; les explications, elles, reprennent tout le raisonnement depuis le début.",
+  "chapters": [
+    {
+      "file": "00-boite-a-outils.html",
+      "title": "Chapitre 0 — La boîte à outils : tout ce qu'il faut savoir avant de commencer",
+      "sections": [
+        "Le vocabulaire de base : utilité, payoff, agent rationnel",
+        "Les maths utilisées : fractions, racines, équations, dérivées",
+        "Probabilités et espérance",
+        "Les sommes infinies (séries géométriques)",
+        "Comment lire un tableau de jeu"
+      ]
+    },
+    {
+      "file": "01-question-1.html",
+      "title": "Chapitre 1 — Question 1 : préférences, efficacité de Pareto et biais comportementaux (40 pts)",
+      "sections": [
+        "1.1 Construire une allocation qui domine sans être efficace",
+        "1.2 L'expérience des gourdes : l'effet de dotation",
+        "1.3 Le tableau des projets : dominés et efficaces",
+        "1.4 Pourquoi garder la théorie du choix rationnel"
+      ]
+    },
+    {
+      "file": "02-question-2.html",
+      "title": "Chapitre 2 — Question 2 : décision face au risque et assurance (40 pts)",
+      "sections": [
+        "2.1 La valeur monétaire attendue",
+        "2.2 L'utilité espérée",
+        "2.3 Équivalent certain et prime de risque",
+        "2.4 Le tarif actuariellement juste et la couverture optimale",
+        "2.5 Ce qui change quand le tarif augmente"
+      ]
+    },
+    {
+      "file": "03-question-3.html",
+      "title": "Chapitre 3 — Question 3 : jeux simultanés, dominance et stratégies mixtes (50 pts)",
+      "sections": [
+        "3.1 Repérer une stratégie dominée",
+        "3.2 L'élimination itérative et les PSS",
+        "3.3 Trouver les équilibres de Nash en stratégies pures",
+        "3.4 Quand aucun équilibre pur n'existe : les stratégies mixtes",
+        "3.5 Les payoffs espérés à l'équilibre"
+      ]
+    },
+    {
+      "file": "04-question-4.html",
+      "title": "Chapitre 4 — Question 4 : le contrat principal-agent (40 pts)",
+      "sections": [
+        "4.1 L'effort choisi par la directrice",
+        "4.2 Le contrat optimal de la propriétaire",
+        "4.3 Les utilités à l'optimum",
+        "4.4 Interpréter : « vendre l'entreprise » à l'agent"
+      ]
+    },
+    {
+      "file": "05-question-5.html",
+      "title": "Chapitre 5 — Question 5 : jeux répétés et entente sur les prix (30 pts)",
+      "sections": [
+        "5.1 Le dilemme du prisonnier et l'horizon fini",
+        "5.2 L'horizon infini et la stratégie grim",
+        "5.3 Interpréter la condition sur le facteur d'escompte"
+      ]
+    },
+    {
+      "file": "99-lexique.html",
+      "title": "Lexique & formulaire — tous les termes et toutes les formules",
+      "sections": [
+        "Lexique alphabétique",
+        "Formulaire par thème",
+        "Les six réflexes de méthode"
+      ]
+    }
+  ]
+}

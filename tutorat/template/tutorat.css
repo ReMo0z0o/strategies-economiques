@@ -1,0 +1,411 @@
+/*
+ * Mise en page « cours particulier » pour impression A4.
+ *
+ * Contrairement à exams/template/exam.css (qui reproduit un vrai examen),
+ * ce gabarit est fait pour APPRENDRE : titres lisibles, encadrés typés
+ * (définition, pourquoi, méthode, piège, copie modèle…), blocs de calcul
+ * où chaque ligne est commentée, figures SVG légendées.
+ *
+ * Utilisé par tutorat/build.mjs (Chromium print-to-PDF, A4).
+ */
+
+:root {
+  --ink: #111827;
+  --muted: #4b5563;
+  --light: #9ca3af;
+  --rule: #d1d5db;
+
+  --indigo: #4338ca;
+  --indigo-bg: #eef2ff;
+  --amber: #b45309;
+  --amber-bg: #fffbeb;
+  --rose: #be123c;
+  --rose-bg: #fff1f2;
+  --teal: #0f766e;
+  --teal-bg: #f0fdfa;
+  --emerald: #047857;
+  --emerald-bg: #ecfdf5;
+  --sky: #0369a1;
+  --sky-bg: #f0f9ff;
+  --violet: #6d28d9;
+  --violet-bg: #f5f3ff;
+  --slate-bg: #f8fafc;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 11pt;
+  line-height: 1.55;
+}
+
+p { margin: 0.32cm 0; text-align: justify; }
+strong { font-weight: bold; }
+em { font-style: italic; }
+
+/* Les formules ne doivent jamais déborder de la page */
+.katex-display { margin: 0.35cm 0; overflow-x: hidden; }
+.katex { font-size: 1.02em; }
+.katex-display > .katex { font-size: 1.05em; }
+
+/* ------------------------------------------------------------------ */
+/* Page de garde                                                       */
+/* ------------------------------------------------------------------ */
+
+.cover {
+  page-break-after: always;
+  text-align: center;
+  padding-top: 2.2cm;
+}
+.cover .eyebrow {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--indigo);
+  font-weight: bold;
+}
+.cover h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26pt;
+  line-height: 1.2;
+  margin: 0.7cm 0 0.3cm;
+}
+.cover .sub {
+  font-size: 13pt;
+  color: var(--muted);
+  font-style: italic;
+}
+.cover .course {
+  margin-top: 1.1cm;
+  font-size: 12pt;
+}
+.cover .course .code { font-weight: bold; }
+
+.cover .promise {
+  margin: 1.6cm auto 0;
+  max-width: 14.5cm;
+  text-align: left;
+  border: 1.5px solid var(--indigo);
+  background: var(--indigo-bg);
+  border-radius: 4px;
+  padding: 0.5cm 0.6cm;
+  font-size: 10.5pt;
+}
+.cover .promise h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 0 0.25cm;
+  font-size: 11.5pt;
+  color: var(--indigo);
+}
+.cover .promise ul { margin: 0.2cm 0 0; padding-left: 0.6cm; }
+.cover .promise li { margin-bottom: 0.14cm; }
+
+.cover .footnote {
+  margin: 1.4cm auto 0;
+  max-width: 14.5cm;
+  font-size: 9.5pt;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ------------------------------------------------------------------ */
+/* Sommaire                                                            */
+/* ------------------------------------------------------------------ */
+
+.toc { page-break-after: always; }
+.toc h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17pt;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 0.15cm;
+  margin: 0 0 0.5cm;
+}
+.toc ol { padding-left: 0.8cm; }
+.toc > ol > li {
+  margin-bottom: 0.3cm;
+  font-size: 11.5pt;
+  font-weight: bold;
+}
+.toc ol ol {
+  margin-top: 0.12cm;
+  padding-left: 0.7cm;
+  font-weight: normal;
+  font-size: 10.5pt;
+  color: var(--muted);
+}
+.toc ol ol li { margin-bottom: 0.06cm; }
+
+/* ------------------------------------------------------------------ */
+/* Chapitres & titres                                                  */
+/* ------------------------------------------------------------------ */
+
+.chapter { page-break-before: always; }
+
+.chapter > h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19pt;
+  line-height: 1.25;
+  margin: 0 0 0.15cm;
+  padding-bottom: 0.2cm;
+  border-bottom: 2.5px solid var(--indigo);
+}
+.chapter > .chapter-tag {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9.5pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--indigo);
+  font-weight: bold;
+  margin-bottom: 0.1cm;
+}
+.chapter > .chapter-intro {
+  font-size: 10.5pt;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0.3cm 0 0.6cm;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14pt;
+  margin: 0.85cm 0 0.25cm;
+  padding-bottom: 0.1cm;
+  border-bottom: 1px solid var(--rule);
+  page-break-after: avoid;
+}
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  margin: 0.6cm 0 0.2cm;
+  page-break-after: avoid;
+}
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11pt;
+  margin: 0.45cm 0 0.15cm;
+  color: var(--muted);
+  page-break-after: avoid;
+}
+
+ul, ol { margin: 0.3cm 0; padding-left: 0.75cm; }
+li { margin-bottom: 0.12cm; }
+
+/* ------------------------------------------------------------------ */
+/* Énoncé rappelé                                                      */
+/* ------------------------------------------------------------------ */
+
+.enonce {
+  border: 1.4px solid var(--ink);
+  border-left: 5px solid var(--ink);
+  background: var(--slate-bg);
+  border-radius: 3px;
+  padding: 0.4cm 0.5cm;
+  margin: 0.45cm 0 0.6cm;
+  page-break-inside: avoid;
+}
+.enonce .enonce-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9.5pt;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--muted);
+  margin-bottom: 0.2cm;
+}
+.enonce p:first-of-type { margin-top: 0; }
+.enonce p:last-child { margin-bottom: 0; }
+
+/* ------------------------------------------------------------------ */
+/* Encadrés typés                                                      */
+/* ------------------------------------------------------------------ */
+
+.box {
+  border: 1.2px solid var(--light);
+  border-left-width: 4.5px;
+  border-radius: 3px;
+  padding: 0.32cm 0.45cm;
+  margin: 0.42cm 0;
+  page-break-inside: avoid;
+  font-size: 10.5pt;
+}
+.box > .box-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  margin-bottom: 0.15cm;
+  letter-spacing: 0.02em;
+}
+.box p:first-of-type { margin-top: 0; }
+.box p:last-child { margin-bottom: 0; }
+.box ul, .box ol { margin: 0.2cm 0; }
+
+.box-def     { border-color: var(--indigo);  background: var(--indigo-bg); }
+.box-def     > .box-title { color: var(--indigo); }
+.box-why     { border-color: var(--amber);   background: var(--amber-bg); }
+.box-why     > .box-title { color: var(--amber); }
+.box-piege   { border-color: var(--rose);    background: var(--rose-bg); }
+.box-piege   > .box-title { color: var(--rose); }
+.box-methode { border-color: var(--teal);    background: var(--teal-bg); }
+.box-methode > .box-title { color: var(--teal); }
+.box-copie   { border-color: var(--emerald); background: var(--emerald-bg); }
+.box-copie   > .box-title { color: var(--emerald); }
+.box-rappel  { border-color: var(--sky);     background: var(--sky-bg); }
+.box-rappel  > .box-title { color: var(--sky); }
+.box-exemple { border-color: var(--violet);  background: var(--violet-bg); }
+.box-exemple > .box-title { color: var(--violet); }
+
+/* ------------------------------------------------------------------ */
+/* Étapes de résolution                                                */
+/* ------------------------------------------------------------------ */
+
+.etape {
+  margin: 0.55cm 0;
+  padding-left: 0.55cm;
+  border-left: 2.5px solid var(--rule);
+}
+.etape > .etape-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11.5pt;
+  font-weight: bold;
+  margin: 0 0 0.15cm -0.55cm;
+  padding-left: 0.55cm;
+  border-left: 2.5px solid var(--indigo);
+  page-break-after: avoid;
+}
+.etape > .etape-title .num {
+  display: inline-block;
+  min-width: 0.65cm;
+  color: var(--indigo);
+}
+
+/* Bloc de calcul : chaque ligne = une opération + son explication */
+.calc {
+  margin: 0.35cm 0;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: #fcfcfd;
+  padding: 0.25cm 0.4cm;
+  page-break-inside: avoid;
+}
+.calc .step {
+  padding: 0.16cm 0;
+  border-bottom: 1px dotted var(--rule);
+}
+.calc .step:last-child { border-bottom: none; }
+.calc .step .why {
+  font-size: 9.5pt;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0.08cm;
+}
+.calc .step .why::before { content: "↳ "; font-style: normal; }
+
+/* Résultat mis en avant */
+.result {
+  border: 1.5px solid var(--emerald);
+  background: var(--emerald-bg);
+  border-radius: 3px;
+  padding: 0.3cm 0.45cm;
+  margin: 0.45cm 0;
+  page-break-inside: avoid;
+}
+.result .result-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  color: var(--emerald);
+  margin-bottom: 0.12cm;
+}
+
+/* ------------------------------------------------------------------ */
+/* Tableaux                                                            */
+/* ------------------------------------------------------------------ */
+
+table.data, table.game, table.compare {
+  border-collapse: collapse;
+  margin: 0.4cm auto;
+  font-size: 10.5pt;
+  page-break-inside: avoid;
+}
+table.data th, table.data td,
+table.game th, table.game td,
+table.compare th, table.compare td {
+  border: 1px solid var(--ink);
+  padding: 0.12cm 0.35cm;
+  text-align: center;
+}
+table.data th, table.game th, table.compare th {
+  background: #f3f4f6;
+  font-weight: bold;
+}
+table.game td.void { border: none; background: none; }
+table.game td.player {
+  background: #f3f4f6;
+  font-weight: bold;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+table.compare td.left, table.compare th.left { text-align: left; }
+
+/* Cellule surlignée (meilleure réponse, équilibre…) */
+table.game td.hl { background: #fef3c7; font-weight: bold; }
+table.game td.nash { background: #d1fae5; font-weight: bold; }
+
+caption, figcaption {
+  font-size: 9.5pt;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.15cm;
+}
+
+/* ------------------------------------------------------------------ */
+/* Figures                                                             */
+/* ------------------------------------------------------------------ */
+
+figure {
+  margin: 0.5cm auto;
+  text-align: center;
+  page-break-inside: avoid;
+}
+figure svg {
+  max-width: 100%;
+  height: auto;
+}
+figure svg text {
+  font-family: Arial, Helvetica, sans-serif;
+  fill: var(--ink);
+}
+
+/* ------------------------------------------------------------------ */
+/* Lexique                                                             */
+/* ------------------------------------------------------------------ */
+
+dl.lexique { margin: 0.4cm 0; }
+dl.lexique dt {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  margin-top: 0.3cm;
+}
+dl.lexique dd {
+  margin: 0.06cm 0 0 0.6cm;
+  font-size: 10.5pt;
+}
+
+/* Vocabulaire mis en avant dans le texte */
+.term {
+  font-weight: bold;
+  color: var(--indigo);
+}
+
+hr.soft {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 0.6cm 0;
+}

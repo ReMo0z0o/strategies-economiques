@@ -1,0 +1,1491 @@
+<section class="chapter">
+<div class="chapter-tag">Chapitre 4 — Question 4 (40 points)</div>
+<h1>La propriétaire et la directrice : le contrat principal-agent</h1>
+<p class="chapter-intro">
+  Quatre sous-questions, 40 points, et une seule idée derrière tout : <em>comment payer
+  quelqu'un dont on ne voit pas le travail ?</em> On part de zéro. On va d'abord comprendre qui
+  sont les deux personnages, ce qu'est un contrat, pourquoi le hasard s'en mêle, ce que veut
+  dire « neutre au risque », et ce qu'est une contrainte de participation. Ensuite seulement,
+  on calcule — et tu verras que les calculs sont courts. Ici, la difficulté n'est jamais le
+  calcul : c'est de savoir <strong>qui maximise quoi, et dans quel ordre</strong>.
+</p>
+
+<h2>1. D'abord : de quoi parle cette question ?</h2>
+
+<p>
+  Avant tout calcul, lisons ensemble le chapeau de la question — le paragraphe commun aux
+  quatre sous-questions. C'est lui qui plante le décor, et il contient déjà toutes les données
+  dont on aura besoin.
+</p>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 4, chapeau commun (40 points au total)</div>
+  <p>
+    La propriétaire d'une entreprise doit engager une directrice commerciale. Le chiffre
+    d'affaires de la firme est donné par
+  </p>
+  <p style="text-align:center">\( z = 4e + x, \)</p>
+  <p>
+    où \( e \) est l'effort de la directrice et \( x \) est une variable aléatoire dont la
+    valeur attendue vaut zéro : \( E(x) = 0 \). La propriétaire observe le chiffre d'affaires
+    \( z \), mais ni l'effort \( e \) ni la réalisation de \( x \). Elle propose à la directrice
+    un contrat d'embauche de la forme
+  </p>
+  <p style="text-align:center">\( w(z) = a + bz, \)</p>
+  <p>
+    où \( a \) et \( b \) sont des nombres réels. Le coût de l'effort pour la directrice est
+    \( c(e) = e^2 \). La propriétaire et la directrice sont toutes deux neutres au risque. Si
+    la directrice refuse le contrat, elle obtient son utilité de réserve \( \bar{U} = 1 \).
+  </p>
+</div>
+
+<h3>Traduisons ce chapeau en français simple, mot par mot</h3>
+
+<p>
+  Je reprends chaque morceau de phrase et je te dis ce qu'il signifie vraiment. Ne saute surtout
+  pas ce passage : dans cette question, tout le travail consiste à traduire correctement
+  l'énoncé. Une fois traduit, il se résout presque tout seul.
+</p>
+
+<dl class="lexique">
+  <dt>« La propriétaire d'une entreprise doit engager une directrice commerciale »</dt>
+  <dd>
+    Il y a <strong>deux personnes</strong> dans cette histoire, et elles n'ont pas le même rôle.
+    La propriétaire possède l'entreprise : c'est elle qui <em>écrit</em> le contrat et qui le
+    propose, à prendre ou à laisser. La directrice, elle, ne peut que <em>répondre</em> :
+    accepter ou refuser, puis travailler plus ou moins. On dit que la propriétaire est le
+    <span class="term">principal</span> et la directrice l'<span class="term">agent</span>.
+    Retiens tout de suite ce couple de mots : c'est le nom du modèle entier.
+  </dd>
+  <dt>« Le chiffre d'affaires de la firme est donné par \( z = 4e + x \) »</dt>
+  <dd>
+    Le <strong>chiffre d'affaires</strong>, c'est l'argent qui rentre grâce aux ventes. La
+    lettre \( z \) (« zède ») est juste un nom court pour ce montant. La formule dit que ce
+    montant a deux sources : \( 4e \), la partie qui vient du <em>travail</em> de la directrice,
+    et \( x \), la partie qui vient du <em>hasard</em>. Le « 4 » signifie que chaque unité
+    d'effort rapporte 4 unités de chiffre d'affaires. C'est ce qu'on appelle la
+    <span class="term">productivité de l'effort</span>.
+  </dd>
+  <dt>« où \( e \) est l'effort de la directrice »</dt>
+  <dd>
+    \( e \) (« e » comme effort) est un nombre qui mesure combien elle se donne du mal : passer
+    des coups de fil, préparer ses rendez-vous, prospecter le week-end. Plus \( e \) est grand,
+    plus elle travaille dur. On ne se demande pas ici quelle est l'unité : ce qui compte, c'est
+    que \( e \) soit un nombre qu'<strong>elle</strong> choisit librement.
+  </dd>
+  <dt>« et \( x \) est une variable aléatoire dont la valeur attendue vaut zéro : \( E(x) = 0 \) »</dt>
+  <dd>
+    <span class="term">Variable aléatoire</span> = un nombre décidé par le hasard, qu'on ne
+    connaît pas à l'avance. Ici c'est tout ce qui fait bouger les ventes sans que la directrice
+    y soit pour quelque chose : la météo, un concurrent qui ferme, une crise, un gros client qui
+    appelle par chance. \( E(x) = 0 \) se lit « l'espérance de x vaut zéro » et signifie :
+    <strong>en moyenne, la chance et la malchance se compensent</strong>. Certains mois \( x \)
+    est positif, d'autres négatif, mais au milieu ça fait zéro. Ce petit « = 0 » va nous rendre
+    un immense service dans deux pages : il fera disparaître le hasard de tous nos calculs.
+  </dd>
+  <dt>« La propriétaire observe le chiffre d'affaires \( z \), mais ni l'effort \( e \) ni la
+      réalisation de \( x \) »</dt>
+  <dd>
+    <strong>C'est la phrase la plus importante de tout l'énoncé.</strong> Elle dit que la
+    propriétaire voit le <em>résultat</em> (combien d'argent est rentré) mais pas <em>d'où il
+    vient</em>. Un mauvais mois : est-ce parce que la directrice a flâné, ou parce que le hasard
+    a été cruel ? Impossible de trancher. On appelle ça l'<span class="term">information
+    asymétrique</span> : une des deux parties en sait plus que l'autre. Sans cette phrase, la
+    propriétaire écrirait simplement « tu feras un effort de 2, sinon tu n'es pas payée » et il
+    n'y aurait pas d'exercice.
+  </dd>
+  <dt>« un contrat d'embauche de la forme \( w(z) = a + bz \) »</dt>
+  <dd>
+    \( w \) (« double-vé », de l'anglais <em>wage</em>, salaire) est ce que touche la directrice.
+    La formule dit que son salaire a deux morceaux : un <strong>fixe</strong> \( a \), qu'elle
+    reçoit quoi qu'il arrive, et une <strong>part variable</strong> \( bz \), c'est-à-dire une
+    fraction \( b \) du chiffre d'affaires. Tu connais déjà ça : c'est un salaire avec
+    commission. Si \( b = 0{,}1 \), elle touche 10 \% du chiffre d'affaires en plus de son fixe.
+    On dit que le contrat est <span class="term">linéaire</span> parce que, tracé sur un
+    graphique, \( w \) en fonction de \( z \) est une droite.
+  </dd>
+  <dt>« où \( a \) et \( b \) sont des nombres réels »</dt>
+  <dd>
+    « Nombres réels » veut dire : n'importe quel nombre, y compris <strong>négatif</strong> et
+    y compris à virgule. Cette précision n'est pas là par hasard — elle autorise un fixe
+    négatif, et c'est exactement ce qu'on va trouver. Garde-la dans un coin de ta tête.
+  </dd>
+  <dt>« Le coût de l'effort pour la directrice est \( c(e) = e^2 \) »</dt>
+  <dd>
+    Travailler, ça coûte : fatigue, temps, soirées sacrifiées. On mesure ce désagrément en
+    « unités de bonheur perdu », et on l'appelle le <span class="term">coût de l'effort</span>.
+    Ici il vaut \( e^2 \), c'est-à-dire \( e \) multiplié par lui-même. Pourquoi un carré et pas
+    simplement \( e \) ? Parce que la pénibilité <strong>s'accélère</strong> : passer de 0 à 1
+    heure supplémentaire, ça va ; passer de 5 à 6 heures, c'est bien plus dur. Vérifie sur les
+    nombres : \( c(1) = 1 \), \( c(2) = 4 \), \( c(3) = 9 \) — l'écart grandit à chaque pas
+    (1, puis 3, puis 5).
+  </dd>
+  <dt>« La propriétaire et la directrice sont toutes deux neutres au risque »</dt>
+  <dd>
+    <span class="term">Neutre au risque</span> veut dire : je juge une situation incertaine
+    uniquement sur sa <strong>moyenne</strong>, le risque en lui-même ne me dérange pas. Gagner
+    100 € à coup sûr ou gagner 0 € ou 200 € à pile ou face, c'est pareil pour moi. C'est une
+    hypothèse <em>simplificatrice</em> énorme : elle permet de remplacer partout les quantités
+    incertaines par leur espérance. (Dans la question 2 de cet examen, la livreuse était au
+    contraire <em>averse</em> au risque — d'où la racine carrée. Ici, pas de racine : tout est
+    linéaire, tout se moyenne.)
+  </dd>
+  <dt>« Si la directrice refuse le contrat, elle obtient son utilité de réserve \( \bar{U} = 1 \) »</dt>
+  <dd>
+    \( \bar{U} \) se lit « U barre ». C'est ce que la directrice obtient <strong>ailleurs</strong>
+    si elle dit non : un autre poste, le chômage, monter sa boîte. C'est sa
+    <span class="term">meilleure offre extérieure</span>. Conséquence immédiate et capitale :
+    tout contrat qui lui rapporterait moins que 1 sera <strong>refusé</strong>. La propriétaire
+    est donc obligée de lui garantir au moins 1.
+  </dd>
+</dl>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi cette histoire, au fond ?</div>
+  <p>
+    Parce qu'elle est partout. Chaque fois que quelqu'un travaille <em>pour</em> quelqu'un
+    d'autre sans être surveillé en permanence, on est dans ce modèle : un patron et son
+    commercial en déplacement, un propriétaire de taxi et son chauffeur, des actionnaires et
+    leur PDG, un patient et son médecin, un propriétaire terrien et son fermier. À chaque fois,
+    la même question : <strong>comment écrire la rémunération pour que l'autre ait envie, tout
+    seul, de bien faire ?</strong> Le mot savant pour « avoir envie tout seul » est
+    <span class="term">incitation</span>.
+  </p>
+</div>
+
+<h2>2. Le cours dont tu as besoin (tout, depuis le début)</h2>
+
+<h3>2.1 Principal et agent : qui fait quoi</h3>
+
+<div class="box box-def">
+  <div class="box-title">Définition — principal et agent</div>
+  <p>
+    Le <span class="term">principal</span> est celui qui <strong>propose</strong> le contrat et
+    qui profite du résultat. L'<span class="term">agent</span> est celui qui
+    <strong>agit</strong> : il accepte ou refuse, puis choisit son niveau d'effort.
+  </p>
+  <p>
+    Autrement dit : le principal a le pouvoir d'écrire les règles, l'agent a le pouvoir de
+    décider comment il joue ensuite. Aucun des deux ne contrôle tout.
+  </p>
+</div>
+
+<div class="box box-exemple">
+  <div class="box-title">Exemple — les mêmes rôles dans la vraie vie</div>
+  <ul>
+    <li><strong>Propriétaire / directrice commerciale</strong> (notre exercice) : le salaire
+        avec commission est le contrat.</li>
+    <li><strong>Client / plombier</strong> : tu ne sais pas si la réparation a pris 1 h ou 3 h
+        de vrai travail. Le devis forfaitaire est le contrat.</li>
+    <li><strong>Actionnaires / PDG</strong> : ils ne voient que le cours de l'action, pas les
+        heures passées. Les stock-options sont le contrat.</li>
+    <li><strong>Université / étudiant</strong> : le prof ne voit pas tes heures de révision,
+        seulement ta note. L'examen est le contrat.</li>
+  </ul>
+</div>
+
+<h3>2.2 Le problème : l'effort est caché (aléa moral)</h3>
+
+<p>
+  Si la propriétaire pouvait <em>voir</em> l'effort, tout serait simple : elle écrirait « fais
+  un effort de 2, je te paie 5 ; sinon je ne te paie rien ». Point final. Le problème naît
+  uniquement du fait qu'elle ne voit pas \( e \).
+</p>
+
+<div class="box box-def">
+  <div class="box-title">Définition — aléa moral (moral hazard)</div>
+  <p>
+    Il y a <span class="term">aléa moral</span> quand une personne peut modifier son
+    comportement <strong>après</strong> la signature du contrat, sans que l'autre puisse
+    l'observer ni le prouver.
+  </p>
+  <p>
+    Autrement dit : « une fois embauchée, qu'est-ce qui l'empêche de lever le pied ? » La
+    réponse ne peut pas être la surveillance (impossible ici). Elle ne peut venir que du
+    contrat lui-même : il faut que <strong>bien travailler soit dans son propre intérêt</strong>.
+  </p>
+</div>
+
+<p>
+  Et pourquoi ne peut-on pas déduire l'effort du chiffre d'affaires ? À cause de \( x \).
+  Regarde : si le chiffre d'affaires vaut \( z = 8 \), est-ce que cela vient d'un effort
+  \( e = 2 \) avec un hasard neutre (\( 4 \times 2 + 0 = 8 \)), ou d'un effort \( e = 1 \) avec
+  un coup de chance (\( 4 \times 1 + 4 = 8 \)), ou d'un effort \( e = 3 \) plombé par la
+  malchance (\( 4 \times 3 - 4 = 8 \)) ? Les trois donnent exactement le même \( z \). La
+  propriétaire ne peut pas trancher : le chiffre d'affaires est un <span class="term">signal
+  bruité</span> de l'effort.
+</p>
+
+<figure>
+  <svg viewBox="0 0 500 300" width="100%" style="max-width:13cm" role="img"
+       aria-label="Schéma du problème principal-agent : la propriétaire propose un contrat, la directrice choisit un effort caché, le hasard s'ajoute, seul le chiffre d'affaires est observé.">
+    <!-- Principal -->
+    <rect x="15" y="25" width="130" height="58" rx="6" fill="#eef2ff" stroke="#4338ca" stroke-width="2"/>
+    <text x="80" y="49" font-size="13" font-weight="bold" text-anchor="middle">Propriétaire</text>
+    <text x="80" y="68" font-size="12" text-anchor="middle">(le principal)</text>
+    <!-- Agent -->
+    <rect x="355" y="25" width="130" height="58" rx="6" fill="#eef2ff" stroke="#4338ca" stroke-width="2"/>
+    <text x="420" y="49" font-size="13" font-weight="bold" text-anchor="middle">Directrice</text>
+    <text x="420" y="68" font-size="12" text-anchor="middle">(l'agent)</text>
+    <!-- contrat -->
+    <line x1="145" y1="54" x2="350" y2="54" stroke="#111827" stroke-width="2" marker-end="url(#ar4a)"/>
+    <text x="247" y="45" font-size="12" text-anchor="middle">propose le contrat  w = a + bz</text>
+    <defs>
+      <marker id="ar4a" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L9,3 z" fill="#111827"/>
+      </marker>
+    </defs>
+    <!-- effort caché -->
+    <rect x="355" y="110" width="130" height="52" rx="6" fill="#fff1f2" stroke="#be123c" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="420" y="132" font-size="13" font-weight="bold" text-anchor="middle">effort e</text>
+    <text x="420" y="150" font-size="11.5" text-anchor="middle">CACHÉ</text>
+    <line x1="420" y1="83" x2="420" y2="108" stroke="#be123c" stroke-width="2" marker-end="url(#ar4b)"/>
+    <defs>
+      <marker id="ar4b" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L9,3 z" fill="#be123c"/>
+      </marker>
+    </defs>
+    <!-- hasard -->
+    <rect x="180" y="110" width="130" height="52" rx="6" fill="#fff1f2" stroke="#be123c" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="245" y="132" font-size="13" font-weight="bold" text-anchor="middle">hasard x</text>
+    <text x="245" y="150" font-size="11.5" text-anchor="middle">CACHÉ,  moyenne 0</text>
+    <!-- résultat -->
+    <rect x="180" y="205" width="305" height="52" rx="6" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+    <text x="332" y="227" font-size="13" font-weight="bold" text-anchor="middle">chiffre d'affaires  z = 4e + x</text>
+    <text x="332" y="246" font-size="11.5" text-anchor="middle">SEULE CHOSE QUE TOUT LE MONDE VOIT</text>
+    <line x1="245" y1="162" x2="270" y2="203" stroke="#047857" stroke-width="2"/>
+    <line x1="420" y1="162" x2="400" y2="203" stroke="#047857" stroke-width="2"/>
+    <!-- salaire -->
+    <line x1="180" y1="231" x2="90" y2="231" stroke="#111827" stroke-width="2"/>
+    <line x1="90" y1="231" x2="90" y2="90" stroke="#111827" stroke-width="2" marker-end="url(#ar4a)"/>
+    <text x="96" y="170" font-size="11.5">le salaire</text>
+    <text x="96" y="185" font-size="11.5">se calcule</text>
+    <text x="96" y="200" font-size="11.5">sur z</text>
+  </svg>
+  <figcaption>
+    Le cœur du problème : deux choses invisibles (l'effort et le hasard) se mélangent pour
+    produire une seule chose visible (le chiffre d'affaires). Comme le salaire ne peut être
+    calculé que sur du visible, il ne peut dépendre que de \( z \) — jamais de \( e \)
+    directement.
+  </figcaption>
+</figure>
+
+<h3>2.3 Le contrat linéaire : à quoi servent \( a \) et \( b \) ?</h3>
+
+<p>
+  Le contrat proposé est \( w(z) = a + bz \). Ces deux lettres ont deux rôles complètement
+  différents, et comprendre cette différence, c'est comprendre toute la question 4.
+</p>
+
+<table class="compare">
+  <tr><th>Paramètre</th><th class="left">Ce que c'est</th><th class="left">Ce qu'il pilote</th></tr>
+  <tr>
+    <td>\( a \)</td>
+    <td class="left">le <strong>fixe</strong> : versé quoi qu'il arrive, même si le chiffre
+        d'affaires est nul</td>
+    <td class="left">le <strong>partage</strong> du gâteau : combien chacun emporte au total</td>
+  </tr>
+  <tr>
+    <td>\( b \)</td>
+    <td class="left">la <strong>part variable</strong> : la fraction du chiffre d'affaires
+        qui lui revient</td>
+    <td class="left">l'<strong>incitation</strong> : à quel point elle a envie de se donner
+        du mal</td>
+  </tr>
+</table>
+
+<div class="box box-rappel">
+  <div class="box-title">Rappel — trois contrats que tu connais déjà</div>
+  <ul>
+    <li>\( b = 0 \) : salaire <strong>fixe</strong> pur (\( w = a \)). Elle est payée pareil
+        quoi qu'elle fasse.</li>
+    <li>\( a = 0 \) : salaire <strong>purement à la commission</strong> (\( w = bz \)). Pas de
+        vente, pas de paie.</li>
+    <li>\( a \neq 0 \) et \( b \neq 0 \) : le contrat <strong>linéaire</strong> général, fixe
+        + commission. C'est notre cas, et c'est le plus riche : il permet de régler séparément
+        l'incitation (par \( b \)) et le partage (par \( a \)).</li>
+  </ul>
+</div>
+
+<h3>2.4 « Neutre au risque » : la simplification qui change tout</h3>
+
+<p>
+  Les deux personnages sont neutres au risque. Concrètement, cela veut dire qu'on peut
+  <strong>remplacer partout les quantités incertaines par leur moyenne</strong>. Voyons ce que
+  ça donne sur le chiffre d'affaires :
+</p>
+
+<div class="calc">
+  <div class="step">
+    \[ E(z) = E(4e + x) \]
+    <div class="why">je pars de la définition de \( z \) donnée par l'énoncé et je prends
+    l'espérance des deux côtés (l'espérance, c'est la moyenne pondérée par les probabilités
+    — voir le chapitre 0).</div>
+  </div>
+  <div class="step">
+    \[ E(z) = 4e + E(x) \]
+    <div class="why">l'effort \( e \) n'est pas aléatoire : c'est un choix de la directrice,
+    un nombre fixé. Il sort donc de l'espérance tel quel. Seul \( x \) est aléatoire.</div>
+  </div>
+  <div class="step">
+    \[ E(z) = 4e + 0 = 4e \]
+    <div class="why">et là intervient le cadeau de l'énoncé : \( E(x) = 0 \). Le hasard
+    <strong>disparaît complètement</strong> du calcul.</div>
+  </div>
+</div>
+
+<div class="result">
+  <div class="result-title">À retenir absolument</div>
+  <p>
+    \( E(z) = 4e \). En moyenne, le chiffre d'affaires vaut simplement quatre fois l'effort.
+    Toutes les fois où tu verras \( z \) dans un calcul d'espérance, tu écriras \( 4e \).
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Piège — ne perds pas le \( x \) trop tôt (ni trop tard)</div>
+  <p>
+    Beaucoup d'étudiants écrivent \( z = 4e \) dès le départ, comme si \( x \) n'existait pas.
+    C'est faux : \( x \) existe bel et bien, il rend le résultat incertain, et c'est <em>lui</em>
+    qui empêche la propriétaire de deviner l'effort. Ce qui est vrai, c'est que \( x \) disparaît
+    <strong>uniquement quand on prend l'espérance</strong>. Écris donc toujours la ligne
+    « \( E(z) = 4e + E(x) = 4e \) » : c'est elle qui rapporte les points, parce qu'elle montre
+    que tu sais <em>pourquoi</em> le hasard s'en va.
+  </p>
+</div>
+
+<h3>2.5 L'utilité de chacun : deux formules à poser une fois pour toutes</h3>
+
+<p>
+  « Utilité » est le mot du cours pour dire « satisfaction, mesurée par un nombre ». Écrivons
+  celle de chacun.
+</p>
+
+<h4>L'utilité de la directrice (l'agent)</h4>
+
+<p>
+  Elle encaisse son salaire et subit la fatigue. Sa satisfaction est donc <em>ce qu'elle
+  gagne</em> moins <em>ce que ça lui coûte</em> :
+</p>
+
+<div class="calc">
+  <div class="step">
+    \[ U_a = E\big(w(z)\big) - c(e) \]
+    <div class="why">le salaire est incertain (il dépend de \( z \), donc du hasard), d'où
+    l'espérance ; le coût de l'effort, lui, est certain (elle sait exactement combien elle se
+    fatigue). L'indice « a » signifie « agent ».</div>
+  </div>
+  <div class="step">
+    \[ U_a = E(a + bz) - e^2 = a + b\,E(z) - e^2 \]
+    <div class="why">je remplace \( w \) par sa formule ; \( a \) et \( b \) sont des nombres
+    fixés par le contrat, ils sortent de l'espérance.</div>
+  </div>
+  <div class="step">
+    \[ U_a(e) = a + 4b\,e - e^2 \]
+    <div class="why">j'utilise le résultat encadré plus haut, \( E(z) = 4e \). Voilà la
+    formule de travail. Je l'écris \( U_a(e) \) pour rappeler que, une fois le contrat signé,
+    la seule chose qui varie encore est l'effort.</div>
+  </div>
+</div>
+
+<h4>L'utilité de la propriétaire (le principal)</h4>
+
+<div class="calc">
+  <div class="step">
+    \[ U_p = E(z - w) \]
+    <div class="why">elle encaisse le chiffre d'affaires et paie le salaire : il lui reste la
+    différence. C'est son profit attendu.</div>
+  </div>
+  <div class="step">
+    \[ U_p = E(z) - E(w) = 4e - (a + 4b\,e) \]
+    <div class="why">je sépare les deux espérances, puis j'utilise deux fois \( E(z) = 4e \)
+    — une fois dans le chiffre d'affaires, une fois dans le salaire.</div>
+  </div>
+</div>
+
+<div class="box box-methode">
+  <div class="box-title">Méthode — les deux formules à poser d'entrée de jeu</div>
+  <p>
+    Dans n'importe quel exercice principal-agent, commence toujours par écrire ces deux lignes,
+    avant même de lire les sous-questions :
+  </p>
+  <p>\[ U_a = E(\text{salaire}) - \text{coût de l'effort}, \qquad U_p = E(\text{résultat}) - E(\text{salaire}). \]</p>
+  <p>
+    Elles valent déjà des points, et surtout elles t'évitent l'erreur la plus fréquente :
+    oublier de retrancher le coût de l'effort chez l'agent.
+  </p>
+</div>
+
+<h3>2.6 La contrainte de participation : pourquoi elle sera « saturée »</h3>
+
+<div class="box box-def">
+  <div class="box-title">Définition — contrainte de participation (CP)</div>
+  <p>
+    La <span class="term">contrainte de participation</span> dit que l'agent doit obtenir au
+    moins autant en signant qu'en refusant :
+  </p>
+  <p>\[ U_a \ \ge\ \bar{U}. \]</p>
+  <p>
+    Autrement dit : « sinon, je m'en vais ». Ici \( \bar{U} = 1 \), donc la condition s'écrit
+    \( a + 4be - e^2 \ge 1 \).
+  </p>
+</div>
+
+<p>
+  Maintenant, un raisonnement très simple mais qu'il faut absolument comprendre, parce qu'il
+  revient dans <em>tous</em> les exercices de ce type. On dit que la contrainte est
+  <span class="term">saturée</span> quand elle est vérifiée <strong>avec égalité</strong>
+  (\( U_a = \bar{U} \) exactement, pas plus). Pourquoi est-ce forcément le cas à l'optimum ?
+</p>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi la contrainte de participation est saturée à l'optimum</div>
+  <p>
+    Imagine que la propriétaire ait choisi un contrat qui laisse à la directrice une utilité de
+    1,5 — soit 0,5 de plus que nécessaire. La propriétaire peut alors <strong>baisser le fixe
+    \( a \) de 0,5</strong>. Que se passe-t-il ?
+  </p>
+  <ul>
+    <li>L'utilité de la directrice tombe à 1 : elle accepte toujours (elle est juste
+        indifférente, et on suppose qu'elle signe).</li>
+    <li>Son <strong>effort ne change pas d'un poil</strong> : on va le démontrer en 4.1, le fixe
+        n'entre pas dans sa décision d'effort.</li>
+    <li>La propriétaire, elle, gagne 0,5 de plus.</li>
+  </ul>
+  <p>
+    Donc tout contrat qui laisse plus que \( \bar{U} \) à l'agent peut être amélioré. À
+    l'optimum, il ne reste qu'une possibilité : \( U_a = \bar{U} \) exactement. En clair :
+    <strong>le principal ne donne jamais un centime de plus que le strict nécessaire.</strong>
+  </p>
+</div>
+
+<h3>2.7 L'ordre du jeu : qui décide quoi, et dans quel ordre</h3>
+
+<p>
+  Dernier ingrédient avant de calculer, et c'est celui qui structure toute la résolution. Les
+  décisions ne sont pas simultanées : elles s'enchaînent dans le temps.
+</p>
+
+<figure>
+  <svg viewBox="0 0 520 190" width="100%" style="max-width:13.5cm" role="img"
+       aria-label="Frise en quatre temps : la propriétaire propose le contrat, la directrice accepte ou refuse, elle choisit son effort, le hasard se réalise et le salaire est versé.">
+    <line x1="20" y1="120" x2="505" y2="120" stroke="#111827" stroke-width="2"/>
+    <polygon points="505,120 495,115 495,125" fill="#111827"/>
+    <text x="480" y="145" font-size="12">temps</text>
+
+    <circle cx="70" cy="120" r="7" fill="#4338ca"/>
+    <text x="70" y="105" font-size="12.5" font-weight="bold" text-anchor="middle">1</text>
+    <text x="70" y="160" font-size="11.5" text-anchor="middle">la propriétaire</text>
+    <text x="70" y="175" font-size="11.5" text-anchor="middle">propose (a, b)</text>
+
+    <circle cx="200" cy="120" r="7" fill="#4338ca"/>
+    <text x="200" y="105" font-size="12.5" font-weight="bold" text-anchor="middle">2</text>
+    <text x="200" y="160" font-size="11.5" text-anchor="middle">la directrice</text>
+    <text x="200" y="175" font-size="11.5" text-anchor="middle">accepte ou refuse</text>
+
+    <circle cx="330" cy="120" r="7" fill="#be123c"/>
+    <text x="330" y="105" font-size="12.5" font-weight="bold" text-anchor="middle">3</text>
+    <text x="330" y="160" font-size="11.5" text-anchor="middle">elle choisit</text>
+    <text x="330" y="175" font-size="11.5" text-anchor="middle">son effort e (caché)</text>
+
+    <circle cx="450" cy="120" r="7" fill="#047857"/>
+    <text x="450" y="105" font-size="12.5" font-weight="bold" text-anchor="middle">4</text>
+    <text x="450" y="160" font-size="11.5" text-anchor="middle">x se réalise,</text>
+    <text x="450" y="175" font-size="11.5" text-anchor="middle">z observé, w versé</text>
+
+    <path d="M 330 60 Q 200 20 75 55" fill="none" stroke="#4338ca" stroke-width="2"
+          stroke-dasharray="7 4" marker-end="url(#ar4c)"/>
+    <defs>
+      <marker id="ar4c" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L9,3 z" fill="#4338ca"/>
+      </marker>
+    </defs>
+    <text x="255" y="40" font-size="12" text-anchor="middle" font-weight="bold">on résout à l'envers :</text>
+    <text x="255" y="18" font-size="11.5" text-anchor="middle">d'abord l'étape 3, ensuite l'étape 1</text>
+  </svg>
+  <figcaption>
+    L'ordre des décisions (flèche du bas) et l'ordre de la résolution (flèche courbe du haut)
+    sont <strong>opposés</strong>. C'est le principe de l'induction à rebours : pour savoir quel
+    contrat proposer, il faut d'abord savoir comment l'agent y réagira.
+  </figcaption>
+</figure>
+
+<div class="box box-methode">
+  <div class="box-title">Méthode — la recette d'un exercice principal-agent, en 5 temps</div>
+  <ol>
+    <li><strong>Écrire l'utilité de l'agent</strong> \( U_a = E(w) - c(e) \), avec l'espérance
+        déjà simplifiée.</li>
+    <li><strong>Maximiser en \( e \)</strong> (dérivée par rapport à \( e \), égalée à zéro)
+        pour obtenir la réaction \( e^*(b) \). C'est la <em>contrainte d'incitation</em>.</li>
+    <li><strong>Écrire l'objectif du principal</strong> \( U_p = E(z) - E(w) \).</li>
+    <li><strong>Saturer la contrainte de participation</strong> \( U_a = \bar{U} \) et en tirer
+        \( a \), puis <strong>substituer</strong> \( a \) et \( e^*(b) \) dans l'objectif.</li>
+    <li><strong>Maximiser en \( b \)</strong> (dérivée par rapport à \( b \), égalée à zéro),
+        puis redescendre pour obtenir \( a^* \), \( e^* \) et les utilités.</li>
+  </ol>
+  <p>
+    Cette recette marche pour l'exercice d'aujourd'hui, pour celui du TP, et pour tous ceux que
+    tu croiseras. Apprends-la par cœur : elle vaut à elle seule la moitié des points.
+  </p>
+</div>
+
+<h2>3. Question 4.1 — l'effort choisi par la directrice (10 points)</h2>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 4.1 (10 points)</div>
+  <p>
+    <strong>4.1)</strong> Pour un contrat \( (a,\, b) \) donné, déterminez l'effort optimal
+    \( e^*(b) \) choisi par la directrice. Pourquoi le fixe \( a \) n'influence-t-il pas cet
+    effort ?
+  </p>
+</div>
+
+<h3>3.1 Traduisons la question</h3>
+
+<dl class="lexique">
+  <dt>« Pour un contrat \( (a, b) \) donné »</dt>
+  <dd>
+    « Donné » veut dire : <strong>on fait comme si \( a \) et \( b \) étaient déjà fixés</strong>,
+    on ne les cherche pas ici. On se place après la signature. Les seules choses qui bougent
+    encore, c'est l'effort. Traduction pratique : dans cette question, \( a \) et \( b \) se
+    comportent comme des nombres ordinaires (2, 7, 0,3…) et la seule vraie inconnue est \( e \).
+  </dd>
+  <dt>« déterminez l'effort optimal \( e^*(b) \) »</dt>
+  <dd>
+    « Optimal » = celui qui rend la directrice <strong>la plus heureuse possible</strong> — pas
+    celui qui plaît à la propriétaire ! Attention à ce point : chacun optimise pour soi.
+    L'étoile dans \( e^* \) est la marque des valeurs optimales (voir chapitre 0). Et l'écriture
+    \( e^*(b) \) t'annonce déjà la forme de la réponse attendue : une <strong>formule qui dépend
+    de \( b \)</strong>, pas un nombre.
+  </dd>
+  <dt>« Pourquoi le fixe \( a \) n'influence-t-il pas cet effort ? »</dt>
+  <dd>
+    L'énoncé te <em>donne</em> la conclusion (le fixe n'influence pas l'effort) et te demande
+    seulement de l'expliquer. Ça vaut des points faciles : ne saute jamais ce genre de
+    sous-question sous prétexte qu'il n'y a pas de calcul.
+  </dd>
+</dl>
+
+<h3>3.2 La résolution, pas à pas</h3>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">1.</span> Écrire ce que la directrice cherche à maximiser</div>
+  <p>
+    On a déjà fait ce travail en section 2.5, mais je le refais entièrement — c'est exactement
+    ce qu'il faut écrire sur la copie.
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ U_a = E\big(w(z)\big) - c(e) \]
+      <div class="why">principe général : sa satisfaction, c'est ce qu'elle touche moins ce que
+      l'effort lui coûte. Elle est neutre au risque, donc le salaire incertain est jugé sur sa
+      moyenne.</div>
+    </div>
+    <div class="step">
+      \[ U_a = E\big(a + b\,(4e + x)\big) - e^2 \]
+      <div class="why">je remplace \( w(z) \) par \( a + bz \), puis \( z \) par \( 4e + x \).
+      Et je remplace \( c(e) \) par \( e^2 \). Tout est écrit avec les données de l'énoncé.</div>
+    </div>
+    <div class="step">
+      \[ U_a = a + 4b\,e + b\,E(x) - e^2 \]
+      <div class="why">je développe. \( a \), \( b \) et \( e \) ne sont pas aléatoires : ils
+      sortent de l'espérance. Seul \( x \) reste dedans.</div>
+    </div>
+    <div class="step">
+      \[ U_a(e) = a + 4b\,e - e^2 \]
+      <div class="why">\( E(x) = 0 \) : le terme \( b\,E(x) \) vaut zéro et disparaît. Voilà la
+      fonction à maximiser. Trois morceaux : une constante \( a \), un gain qui monte avec
+      l'effort \( 4be \), et une fatigue qui monte encore plus vite \( -e^2 \).</div>
+    </div>
+  </div>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi cette fonction a forcément un sommet</div>
+  <p>
+    Regarde la forme : \( 4be \) monte proportionnellement à l'effort, mais \( -e^2 \) descend
+    de plus en plus vite. Au début, un peu d'effort rapporte plus qu'il ne fatigue : ça vaut le
+    coup. Puis la fatigue prend le dessus. Quelque part entre les deux, il y a un
+    <strong>point idéal</strong>. C'est une parabole tournée vers le bas, et le sommet est
+    exactement ce qu'on cherche.
+  </p>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">2.</span> Trouver le sommet : la condition de premier ordre</div>
+  <p>
+    Pour trouver le sommet d'une fonction, on dérive et on annule (chapitre 0 : au sommet, la
+    tangente est horizontale, donc la pente vaut 0). On dérive <strong>par rapport à \( e \)</strong>,
+    puisque c'est la variable que la directrice choisit.
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ \frac{\partial U_a}{\partial e} = \frac{\partial}{\partial e}\big(a + 4b\,e - e^2\big) \]
+      <div class="why">le symbole \( \partial \) se lit « d rond » ; c'est la dérivée quand il
+      y a plusieurs lettres en jeu et qu'on précise laquelle bouge. Ici : \( e \) bouge,
+      \( a \) et \( b \) sont figés.</div>
+    </div>
+    <div class="step">
+      \[ \frac{\partial U_a}{\partial e} = 0 + 4b - 2e \]
+      <div class="why">terme par terme : la dérivée de la constante \( a \) vaut 0 ; la dérivée
+      de \( 4be \) par rapport à \( e \) vaut \( 4b \) (c'est un nombre fois \( e \), il reste
+      le nombre) ; la dérivée de \( -e^2 \) vaut \( -2e \) (règle \( (e^n)' = n\,e^{n-1} \)).</div>
+    </div>
+    <div class="step">
+      \[ 4b - 2e = 0 \]
+      <div class="why">je pose la condition de premier ordre : au sommet, la pente est nulle.</div>
+    </div>
+    <div class="step">
+      \[ 4b = 2e \]
+      <div class="why">j'ajoute \( 2e \) des deux côtés pour ramener le terme en \( e \) à
+      droite (ce qu'on fait d'un côté, on le fait de l'autre).</div>
+    </div>
+    <div class="step">
+      \[ e = \frac{4b}{2} = 2b \]
+      <div class="why">je divise les deux côtés par 2. Et voilà la réponse.</div>
+    </div>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">3.</span> Vérifier que c'est bien un maximum</div>
+  <p>
+    On a trouvé un point où la pente est nulle — mais un sommet de colline et un fond de vallée
+    ont tous les deux une pente nulle ! On vérifie donc avec la dérivée seconde (on dérive une
+    deuxième fois) :
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ \frac{\partial^2 U_a}{\partial e^2} = \frac{\partial}{\partial e}\big(4b - 2e\big) = -2 \]
+      <div class="why">je dérive à nouveau : la dérivée de \( 4b \) (une constante quand \( e \)
+      bouge) vaut 0, celle de \( -2e \) vaut \( -2 \).</div>
+    </div>
+    <div class="step">
+      \[ -2 < 0 \quad \Longrightarrow \quad \text{c'est bien un maximum} \]
+      <div class="why">dérivée seconde négative = la courbe est tournée vers le bas = colline,
+      pas vallée. Une ligne, deux secondes, et le correcteur voit que tu maîtrises.</div>
+    </div>
+  </div>
+</div>
+
+<div class="result">
+  <div class="result-title">Résultat de la question 4.1</div>
+  <p>\[ e^*(b) = 2b \]</p>
+  <p>
+    L'effort de la directrice vaut deux fois le taux de commission. Si \( b = 0{,}5 \), elle
+    fournit un effort de 1. Si \( b = 1 \), elle fournit un effort de 2. Plus on l'intéresse au
+    résultat, plus elle travaille : c'est exactement ce qu'on attendait intuitivement, et c'est
+    rassurant de le voir sortir du calcul.
+  </p>
+</div>
+
+<figure>
+  <svg viewBox="0 0 480 330" width="100%" style="max-width:13cm" role="img"
+       aria-label="Deux paraboles de l'utilité de la directrice en fonction de son effort, pour b égal 0,5 et b égal 1 ; les sommets sont en e égal 1 et e égal 2.">
+    <!-- axes -->
+    <line x1="60" y1="40" x2="60" y2="290" stroke="#111827" stroke-width="1.6"/>
+    <line x1="60" y1="260.5" x2="440" y2="260.5" stroke="#111827" stroke-width="1.6"/>
+    <text x="446" y="265" font-size="12.5">e</text>
+    <text x="30" y="45" font-size="12.5">gain net</text>
+    <!-- graduations x -->
+    <line x1="175.6" y1="256" x2="175.6" y2="265" stroke="#111827" stroke-width="1.4"/>
+    <text x="175.6" y="281" font-size="12" text-anchor="middle">1</text>
+    <line x1="291.2" y1="256" x2="291.2" y2="265" stroke="#111827" stroke-width="1.4"/>
+    <text x="291.2" y="281" font-size="12" text-anchor="middle">2</text>
+    <line x1="406.8" y1="256" x2="406.8" y2="265" stroke="#111827" stroke-width="1.4"/>
+    <text x="406.8" y="281" font-size="12" text-anchor="middle">3</text>
+    <!-- courbe b = 1 -->
+    <polyline fill="none" stroke="#4338ca" stroke-width="2.6"
+      points="60,260.5 117.8,174.8 175.6,113.5 233.4,76.8 291.2,64.5 349,76.8 406.8,113.5"/>
+    <text x="412" y="106" font-size="12.5" font-weight="bold" fill="#4338ca">b = 1</text>
+    <!-- courbe b = 0,5 -->
+    <polyline fill="none" stroke="#b45309" stroke-width="2.6" stroke-dasharray="8 4"
+      points="60,260.5 117.8,223.8 175.6,211.5 233.4,223.8 291.2,260.5"/>
+    <text x="296" y="248" font-size="12.5" font-weight="bold" fill="#b45309">b = 0,5</text>
+    <!-- sommets -->
+    <circle cx="291.2" cy="64.5" r="5" fill="#4338ca"/>
+    <line x1="291.2" y1="64.5" x2="291.2" y2="260.5" stroke="#4338ca" stroke-width="1.3" stroke-dasharray="4 4"/>
+    <text x="299" y="58" font-size="12" fill="#4338ca">sommet : e* = 2</text>
+    <circle cx="175.6" cy="211.5" r="5" fill="#b45309"/>
+    <line x1="175.6" y1="211.5" x2="175.6" y2="260.5" stroke="#b45309" stroke-width="1.3" stroke-dasharray="4 4"/>
+    <text x="80" y="205" font-size="12" fill="#b45309">sommet : e* = 1</text>
+    <!-- note -->
+    <text x="60" y="315" font-size="11.5">Le fixe a ne fait que monter ou descendre toute la courbe :</text>
+    <text x="60" y="330" font-size="11.5">le sommet reste à la même abscisse.</text>
+  </svg>
+  <figcaption>
+    L'utilité de la directrice \( a + 4be - e^2 \) en fonction de son effort, pour deux contrats.
+    Quand la commission \( b \) double, le sommet se déplace vers la droite : elle travaille
+    davantage. Le fixe \( a \), lui, déplace la courbe verticalement — sans jamais bouger
+    l'abscisse du sommet.
+  </figcaption>
+</figure>
+
+<h3>3.3 Pourquoi le fixe \( a \) n'influence-t-il pas l'effort ?</h3>
+
+<p>
+  Trois façons de le dire — la première suffit sur une copie, mais comprends bien les trois.
+</p>
+
+<div class="box box-methode">
+  <div class="box-title">Trois formulations de la même idée</div>
+  <ol>
+    <li>
+      <strong>Par le calcul.</strong> Dans \( U_a = a + 4be - e^2 \), le terme \( a \) ne
+      contient pas \( e \) : c'est une constante du point de vue de la directrice quand elle
+      choisit son effort. En dérivant, il disparaît (\( \partial a / \partial e = 0 \)). Il ne
+      peut donc pas apparaître dans la condition \( 4b - 2e = 0 \).
+    </li>
+    <li>
+      <strong>Par le graphique.</strong> Ajouter \( a \) revient à <em>translater toute la
+      courbe vers le haut</em> sans la déformer. Or le sommet d'une courbe translatée
+      verticalement reste à la même abscisse. L'effort optimal est donc inchangé.
+    </li>
+    <li>
+      <strong>Par l'intuition.</strong> Le fixe est versé <em>quoi qu'elle fasse</em>. Il ne
+      récompense pas l'effort supplémentaire. Or on ne se donne du mal que pour ce qui
+      <em>change</em> quand on se donne du mal. Le fixe change son niveau de vie, pas son
+      intérêt à travailler une heure de plus.
+    </li>
+  </ol>
+</div>
+
+<div class="box box-def">
+  <div class="box-title">Définition — « à la marge »</div>
+  <p>
+    Les économistes disent que le fixe n'a pas d'effet <span class="term">à la marge</span>.
+    « À la marge » signifie : <strong>pour une petite unité en plus</strong>. La question « si
+    je travaille une heure de plus, qu'est-ce que ça me rapporte en plus ? » est une question
+    marginale. Réponse ici : \( 4b \) — le fixe n'y figure pas. C'est le vocabulaire à employer
+    sur la copie ; il rapporte des points.
+  </p>
+</div>
+
+<div class="box box-copie">
+  <div class="box-title">Ce qu'il fallait écrire sur la copie — 4.1</div>
+  <p>
+    « La directrice est neutre au risque : elle maximise \( U_a = E(w) - c(e) \). Comme
+    \( E(x) = 0 \), on a \( E(z) = 4e \), donc \( U_a(e) = a + 4be - e^2 \).
+    Condition de premier ordre : \( \partial U_a/\partial e = 4b - 2e = 0 \), d'où
+    <strong>\( e^*(b) = 2b \)</strong> (et \( \partial^2 U_a/\partial e^2 = -2 < 0 \) : c'est
+    bien un maximum).
+    Le fixe \( a \) n'apparaît pas dans la condition de premier ordre car il ne dépend pas de
+    \( e \) : il disparaît en dérivant. Il modifie le <em>niveau</em> de rémunération, pas
+    l'incitation <em>à la marge</em>. Seule la part variable \( b \) pousse à l'effort. »
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Les pièges de la 4.1</div>
+  <ul>
+    <li><strong>Oublier de retrancher le coût de l'effort.</strong> Si tu maximises seulement
+        \( a + 4be \), tu trouves qu'il faut travailler infiniment. C'est l'erreur n° 1.</li>
+    <li><strong>Dériver par rapport à \( b \).</strong> Non : dans cette question, c'est
+        <em>elle</em> qui décide, et elle ne décide que de \( e \). Le \( b \) lui est imposé.</li>
+    <li><strong>Écrire \( z = 4e \) sans justifier.</strong> Écris la ligne avec \( E(x) = 0 \) :
+        c'est elle qui prouve que tu as compris le rôle du hasard.</li>
+    <li><strong>Répondre « \( e^* = 2 \) ».</strong> À ce stade, \( b \) n'est pas encore
+        connu ! La réponse est une <em>fonction</em> de \( b \). Le nombre 2 viendra à la
+        question 4.2, une fois qu'on saura que \( b^* = 1 \).</li>
+  </ul>
+</div>
+
+<h2>4. Question 4.2 — le contrat optimal de la propriétaire (14 points)</h2>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 4.2 (14 points)</div>
+  <p>
+    <strong>4.2)</strong> Déterminez les valeurs \( a^* \) et \( b^* \) qui maximisent la
+    fonction-objectif de la propriétaire. Détaillez votre raisonnement (contrainte de
+    participation, substitution dans l'objectif, condition de premier ordre).
+  </p>
+</div>
+
+<h3>4.1 Traduisons la question</h3>
+
+<p>
+  Bonne nouvelle : l'énoncé te donne le <strong>plan de la réponse</strong> entre parenthèses.
+  « Contrainte de participation, substitution dans l'objectif, condition de premier ordre » :
+  ce sont les trois étapes attendues, dans cet ordre. Si tu les suis, tu ne peux pas te perdre.
+  On change simplement de personnage : c'est maintenant la <em>propriétaire</em> qui choisit,
+  et ce qu'elle choisit, c'est le couple \( (a, b) \).
+</p>
+
+<div class="box box-rappel">
+  <div class="box-title">Rappel — les deux contraintes qui pèsent sur la propriétaire</div>
+  <ul>
+    <li>
+      <strong>La contrainte d'incitation</strong> : elle ne peut pas <em>exiger</em> un effort.
+      Elle sait seulement que, quel que soit le \( b \) qu'elle choisit, la directrice répondra
+      par \( e = 2b \). C'est le résultat de la question 4.1, et il devient ici une contrainte.
+    </li>
+    <li>
+      <strong>La contrainte de participation</strong> : elle doit laisser à la directrice au
+      moins \( \bar{U} = 1 \), sinon celle-ci refuse et il n'y a pas d'entreprise du tout.
+    </li>
+  </ul>
+</div>
+
+<h3>4.2 La résolution, pas à pas</h3>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">1.</span> Écrire l'objectif de la propriétaire</div>
+  <div class="calc">
+    <div class="step">
+      \[ U_p = E(z - w) = E(z) - E(w) \]
+      <div class="why">elle encaisse le chiffre d'affaires, elle paie le salaire : il lui reste
+      la différence. Elle est neutre au risque, donc elle juge sur la moyenne.</div>
+    </div>
+    <div class="step">
+      \[ E(w) = E(a + bz) = a + b\,E(z) = a + 4b\,e \]
+      <div class="why">je calcule d'abord le salaire moyen, en réutilisant \( E(z) = 4e \).</div>
+    </div>
+    <div class="step">
+      \[ U_p = 4e - \big(a + 4b\,e\big) \]
+      <div class="why">je remplace les deux morceaux. Voilà l'objectif à maximiser, pour
+      l'instant écrit avec trois lettres : \( e \), \( a \) et \( b \).</div>
+    </div>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">2.</span> Saturer la contrainte de participation et en tirer \( a \)</div>
+  <p>
+    On a vu en section 2.6 pourquoi la propriétaire ne laissera jamais plus que le strict
+    nécessaire. On écrit donc l'égalité, et on isole \( a \) :
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ U_a = \bar{U} \quad \Longleftrightarrow \quad a + 4b\,e - e^2 = 1 \]
+      <div class="why">je reprends l'utilité de la directrice calculée en 4.1 et je la fixe
+      exactement à son utilité de réserve, qui vaut 1.</div>
+    </div>
+    <div class="step">
+      \[ a = 1 + e^2 - 4b\,e \]
+      <div class="why">j'isole \( a \) : je fais passer \( 4be \) et \( -e^2 \) de l'autre côté
+      en changeant leur signe. Le fixe n'est donc pas libre — il est entièrement déterminé par
+      les autres choix.</div>
+    </div>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">3.</span> Substituer : le moment magique</div>
+  <p>
+    On remplace \( a \) par son expression dans l'objectif. Regarde bien ce qui se passe, c'est
+    le cœur de l'exercice.
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ U_p = 4e - a - 4b\,e \]
+      <div class="why">je repars de l'objectif de l'étape 1, sous forme développée.</div>
+    </div>
+    <div class="step">
+      \[ U_p = 4e - \big(1 + e^2 - 4b\,e\big) - 4b\,e \]
+      <div class="why">je remplace \( a \) par \( 1 + e^2 - 4be \). Attention au signe moins
+      devant la parenthèse !</div>
+    </div>
+    <div class="step">
+      \[ U_p = 4e - 1 - e^2 + 4b\,e - 4b\,e \]
+      <div class="why">je distribue le signe moins sur chacun des trois termes de la parenthèse.</div>
+    </div>
+    <div class="step">
+      \[ U_p = 4e - e^2 - 1 \]
+      <div class="why">les deux termes \( +4be \) et \( -4be \) s'annulent. <strong>Tous les
+      \( b \) ont disparu de l'objectif !</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi c'est la ligne la plus importante de la question</div>
+  <p>
+    L'objectif de la propriétaire est devenu \( 4e - e^2 - 1 \). Or \( 4e - e^2 \) est
+    exactement le <span class="term">surplus total</span> de la relation : ce que l'effort
+    rapporte (\( 4e \)) moins ce qu'il coûte (\( e^2 \)) — c'est-à-dire la richesse créée par
+    les deux personnes réunies. Et \( -1 \) est la part qu'elle doit abandonner à la directrice.
+  </p>
+  <p>
+    Traduction : <strong>grâce à la contrainte de participation saturée, la propriétaire
+    récupère tout le surplus créé, moins l'utilité de réserve.</strong> Son intérêt n'est donc
+    plus de « payer le moins possible » : c'est de <em>faire créer le plus de richesse
+    possible</em>. Ce renversement de perspective est ce qui rend la suite évidente.
+  </p>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">4.</span> Injecter la réaction de la directrice, puis maximiser en \( b \)</div>
+  <p>
+    L'objectif dépend de \( e \). Mais la propriétaire ne choisit pas \( e \) : elle choisit
+    \( b \), et la directrice répond \( e = 2b \). On remplace donc \( e \) par \( 2b \).
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ U_p = 4\,(2b) - (2b)^2 - 1 \]
+      <div class="why">je substitue \( e = 2b \) partout, en n'oubliant pas les parenthèses
+      autour de \( 2b \) dans le carré.</div>
+    </div>
+    <div class="step">
+      \[ U_p = 8b - 4b^2 - 1 \]
+      <div class="why">je développe : \( 4 \times 2b = 8b \), et \( (2b)^2 = 2b \times 2b
+      = 4b^2 \). L'objectif ne dépend plus que de \( b \) : on peut enfin optimiser.</div>
+    </div>
+    <div class="step">
+      \[ \frac{\partial U_p}{\partial b} = 8 - 8b \]
+      <div class="why">je dérive par rapport à \( b \) : la dérivée de \( 8b \) vaut 8, celle
+      de \( -4b^2 \) vaut \( -8b \) (règle \( (b^n)' = n\,b^{n-1} \), donc \( -4 \times 2b \)),
+      celle de \( -1 \) vaut 0.</div>
+    </div>
+    <div class="step">
+      \[ 8 - 8b = 0 \quad \Longleftrightarrow \quad 8 = 8b \quad \Longleftrightarrow \quad b^* = 1 \]
+      <div class="why">condition de premier ordre : j'annule la dérivée, je fais passer
+      \( 8b \) à droite, je divise par 8.</div>
+    </div>
+    <div class="step">
+      \[ \frac{\partial^2 U_p}{\partial b^2} = -8 < 0 \]
+      <div class="why">dérivée seconde négative : c'est bien un maximum, pas un minimum.</div>
+    </div>
+  </div>
+</div>
+
+<figure>
+  <svg viewBox="0 0 480 330" width="100%" style="max-width:13cm" role="img"
+       aria-label="Courbe du profit attendu de la propriétaire en fonction de b, avec un sommet en b égal 1 où le profit vaut 3.">
+    <line x1="60" y1="40" x2="60" y2="290" stroke="#111827" stroke-width="1.6"/>
+    <line x1="60" y1="211.5" x2="440" y2="211.5" stroke="#111827" stroke-width="1.6"/>
+    <text x="446" y="216" font-size="12.5">b</text>
+    <text x="14" y="45" font-size="12.5">profit de la</text>
+    <text x="14" y="60" font-size="12.5">propriétaire</text>
+    <!-- graduations -->
+    <line x1="152.5" y1="207" x2="152.5" y2="216" stroke="#111827" stroke-width="1.4"/>
+    <text x="152.5" y="232" font-size="12" text-anchor="middle">0,5</text>
+    <line x1="245" y1="207" x2="245" y2="216" stroke="#111827" stroke-width="1.4"/>
+    <text x="245" y="232" font-size="12" text-anchor="middle">1</text>
+    <line x1="337.5" y1="207" x2="337.5" y2="216" stroke="#111827" stroke-width="1.4"/>
+    <text x="337.5" y="232" font-size="12" text-anchor="middle">1,5</text>
+    <line x1="430" y1="207" x2="430" y2="216" stroke="#111827" stroke-width="1.4"/>
+    <text x="430" y="232" font-size="12" text-anchor="middle">2</text>
+    <line x1="55" y1="64.5" x2="64" y2="64.5" stroke="#111827" stroke-width="1.4"/>
+    <text x="50" y="69" font-size="12" text-anchor="end">3</text>
+    <!-- courbe -->
+    <polyline fill="none" stroke="#4338ca" stroke-width="2.6"
+      points="60,260.5 106.25,174.8 152.5,113.5 198.75,76.8 245,64.5 291.25,76.8 337.5,113.5 383.75,174.8 430,260.5"/>
+    <!-- sommet -->
+    <circle cx="245" cy="64.5" r="5.5" fill="#047857"/>
+    <line x1="245" y1="64.5" x2="245" y2="211.5" stroke="#047857" stroke-width="1.4" stroke-dasharray="4 4"/>
+    <line x1="60" y1="64.5" x2="245" y2="64.5" stroke="#047857" stroke-width="1.4" stroke-dasharray="4 4"/>
+    <text x="253" y="58" font-size="12.5" font-weight="bold" fill="#047857">b* = 1, profit = 3</text>
+    <!-- zone négative -->
+    <text x="66" y="278" font-size="11.5">en b = 0 (salaire fixe pur) : profit = −1</text>
+    <text x="66" y="300" font-size="11.5">en b = 2 : elle sur-paie, profit = −1 aussi</text>
+    <text x="66" y="322" font-size="11.5">Trop peu d'incitation ou trop de générosité : les deux coûtent.</text>
+  </svg>
+  <figcaption>
+    Le profit attendu de la propriétaire, \( 8b - 4b^2 - 1 \), en fonction du taux de
+    commission qu'elle accorde. Il monte, atteint son maximum de 3 en \( b = 1 \), puis
+    redescend. Remarque le cas \( b = 0 \) (salaire fixe pur) : le profit y est
+    <em>négatif</em> — sans incitation, la directrice ne fournit aucun effort, mais il faut
+    quand même lui verser son utilité de réserve.
+  </figcaption>
+</figure>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">5.</span> Redescendre : trouver \( e^* \) puis \( a^* \)</div>
+  <div class="calc">
+    <div class="step">
+      \[ e^* = 2b^* = 2 \times 1 = 2 \]
+      <div class="why">j'utilise la réaction de la directrice trouvée en 4.1, avec le
+      \( b^* \) que je viens de calculer.</div>
+    </div>
+    <div class="step">
+      \[ a^* = 1 + (e^*)^2 - 4b^*e^* \]
+      <div class="why">je reprends l'expression de \( a \) obtenue à l'étape 2 (contrainte de
+      participation saturée).</div>
+    </div>
+    <div class="step">
+      \[ a^* = 1 + 2^2 - 4 \times 1 \times 2 \]
+      <div class="why">je remplace par les valeurs : \( e^* = 2 \) et \( b^* = 1 \).</div>
+    </div>
+    <div class="step">
+      \[ a^* = 1 + 4 - 8 = -3 \]
+      <div class="why">je calcule : \( 2^2 = 4 \) et \( 4 \times 1 \times 2 = 8 \), donc
+      \( 1 + 4 - 8 = -3 \). Oui, le fixe est <strong>négatif</strong> — et ce n'est pas une
+      erreur.</div>
+    </div>
+  </div>
+</div>
+
+<div class="result">
+  <div class="result-title">Résultat de la question 4.2</div>
+  <p>\[ b^* = 1, \qquad a^* = -3, \qquad \text{d'où le contrat } \ w(z) = -3 + z. \]</p>
+  <p>
+    La directrice touche l'intégralité du chiffre d'affaires, moins un forfait de 3 versé à la
+    propriétaire. L'effort induit est \( e^* = 2 \).
+  </p>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">Un fixe négatif, ça veut dire quoi concrètement ?</div>
+  <p>
+    Que l'argent va dans l'autre sens pour cette partie-là du contrat : c'est
+    <strong>la directrice qui verse 3 à la propriétaire</strong>, une fois pour toutes, en
+    échange du droit de garder tout le chiffre d'affaires. Exactement comme un chauffeur de
+    taxi qui loue sa licence à la journée, ou un franchisé qui paie un droit d'entrée puis
+    encaisse toutes les recettes de son restaurant. Elle n'y perd pas : avec \( e^* = 2 \), le
+    chiffre d'affaires moyen est de 8, donc son salaire moyen est \( -3 + 8 = 5 \), largement
+    de quoi couvrir sa fatigue de 4 et atteindre son utilité de réserve de 1.
+  </p>
+</div>
+
+<div class="box box-copie">
+  <div class="box-title">Ce qu'il fallait écrire sur la copie — 4.2</div>
+  <p>
+    « La propriétaire maximise \( E(z - w) = 4e - (a + 4be) \), sous la contrainte de
+    participation \( a + 4be - e^2 \ge \bar{U} = 1 \) et la contrainte d'incitation
+    \( e = e^*(b) = 2b \).<br>
+    <em>Étape 1</em> — La CP est saturée à l'optimum (tout surplus laissé à l'agente au-delà de
+    \( \bar{U} \) peut être repris via \( a \) sans modifier son effort), donc
+    \( a = 1 + e^2 - 4be \).<br>
+    <em>Étape 2</em> — En substituant : \( E(z-w) = 4e - (1 + e^2 - 4be) - 4be = 4e - e^2 - 1 \).
+    Les termes en \( b \) se compensent : la propriétaire empoche le surplus total
+    \( S(e) = 4e - e^2 \) diminué de \( \bar{U} \).<br>
+    <em>Étape 3</em> — Avec \( e = 2b \) : \( 8b - 4b^2 - 1 \), et
+    \( \partial/\partial b = 8 - 8b = 0 \) donne <strong>\( b^* = 1 \)</strong>.<br>
+    <em>Étape 4</em> — Alors \( e^* = 2 \) et \( a^* = 1 + 4 - 8 = \mathbf{-3} \).
+    Le contrat optimal est \( w(z) = -3 + z \). On vérifie que \( e^* = 2 \) maximise bien
+    \( S(e) = 4e - e^2 \) (CPO : \( 4 - 2e = 0 \)) : l'effort induit est efficace. »
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Les pièges de la 4.2</div>
+  <ul>
+    <li><strong>Oublier de saturer la CP</strong> et traiter \( a \) comme une variable libre.
+        Tu trouverais alors qu'il faut faire tendre \( a \) vers \( -\infty \), ce qui n'a aucun
+        sens : c'est la CP qui borne le fixe.</li>
+    <li><strong>Se tromper de signe en distribuant la parenthèse</strong> à l'étape de
+        substitution. Écris la ligne intermédiaire complète, ne va pas trop vite.</li>
+    <li><strong>Substituer \( e = 2b \) trop tôt</strong>, avant d'avoir saturé la CP. Ça marche
+        aussi, mais on perd la belle lecture « surplus total » et on s'embrouille davantage.</li>
+    <li><strong>Rejeter \( a^* = -3 \) parce qu'« un salaire ne peut pas être négatif ».</strong>
+        L'énoncé précise « nombres réels » ; et c'est le <em>fixe</em> qui est négatif, pas le
+        salaire total (qui vaut 5 en moyenne).</li>
+    <li><strong>Oublier la vérification du maximum</strong> (dérivée seconde). Une ligne, des
+        points gratuits.</li>
+  </ul>
+</div>
+
+<h2>5. Question 4.3 — les utilités à l'optimum (8 points)</h2>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 4.3 (8 points)</div>
+  <p>
+    <strong>4.3)</strong> Calculez l'utilité attendue de la propriétaire et l'utilité attendue
+    de la directrice sous le contrat optimal \( (a^*,\, b^*) \).
+  </p>
+</div>
+
+<h3>5.1 Traduisons la question</h3>
+
+<p>
+  Ici, pas de nouvelle théorie : on applique les formules déjà écrites avec les nombres trouvés
+  en 4.2. C'est la sous-question la plus facile de la Question 4 — à condition d'être
+  <strong>méthodique</strong>. Le seul risque est l'erreur de calcul. On procède donc en
+  posant d'abord toutes les valeurs connues.
+</p>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">1.</span> Rassembler toutes les valeurs</div>
+  <table class="compare">
+    <tr><th>Quantité</th><th class="left">Valeur</th><th class="left">D'où elle vient</th></tr>
+    <tr><td>\( b^* \)</td><td class="left">1</td><td class="left">question 4.2</td></tr>
+    <tr><td>\( a^* \)</td><td class="left">\( -3 \)</td><td class="left">question 4.2</td></tr>
+    <tr><td>\( e^* \)</td><td class="left">2</td><td class="left">\( e^* = 2b^* \), question 4.1</td></tr>
+    <tr><td>\( E(z) \)</td><td class="left">\( 4 \times 2 = 8 \)</td><td class="left">\( E(z) = 4e \)</td></tr>
+    <tr><td>\( c(e^*) \)</td><td class="left">\( 2^2 = 4 \)</td><td class="left">\( c(e) = e^2 \)</td></tr>
+    <tr><td>\( \bar{U} \)</td><td class="left">1</td><td class="left">énoncé</td></tr>
+  </table>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">2.</span> Le salaire attendu de la directrice</div>
+  <div class="calc">
+    <div class="step">
+      \[ E(w) = a^* + b^*\,E(z) \]
+      <div class="why">je pars du contrat \( w = a + bz \) et je prends l'espérance ; \( a \)
+      et \( b \) sont des nombres, ils sortent.</div>
+    </div>
+    <div class="step">
+      \[ E(w) = -3 + 1 \times 8 = 5 \]
+      <div class="why">je remplace : \( a^* = -3 \), \( b^* = 1 \), \( E(z) = 8 \). En moyenne,
+      elle touche 5.</div>
+    </div>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">3.</span> L'utilité de la propriétaire</div>
+  <div class="calc">
+    <div class="step">
+      \[ U_p = E(z) - E(w) \]
+      <div class="why">ce qui rentre moins ce qu'elle verse.</div>
+    </div>
+    <div class="step">
+      \[ U_p = 8 - 5 = 3 \]
+      <div class="why">application directe.</div>
+    </div>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">4.</span> L'utilité de la directrice</div>
+  <div class="calc">
+    <div class="step">
+      \[ U_a = E(w) - c(e^*) \]
+      <div class="why">son salaire moyen moins la fatigue. N'oublie jamais le second terme.</div>
+    </div>
+    <div class="step">
+      \[ U_a = 5 - 4 = 1 \]
+      <div class="why">et on retombe <strong>exactement</strong> sur \( \bar{U} = 1 \) : c'est
+      la contrainte de participation saturée. Si tu ne trouves pas exactement l'utilité de
+      réserve, tu as fait une erreur quelque part — c'est un excellent autocontrôle.</div>
+    </div>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">5.</span> La vérification par le surplus total</div>
+  <p>
+    Un second contrôle, indépendant du premier. Le <span class="term">surplus total</span> est
+    la richesse créée par la relation : ce que l'effort rapporte moins ce qu'il coûte.
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ S(e^*) = 4e^* - (e^*)^2 = 4 \times 2 - 4 = 8 - 4 = 4 \]
+      <div class="why">c'est le « gâteau » que les deux se partagent.</div>
+    </div>
+    <div class="step">
+      \[ U_p + U_a = 3 + 1 = 4 = S(e^*) \]
+      <div class="why">les deux parts additionnées redonnent bien le gâteau entier : rien ne
+      s'est perdu en route. Si ces deux nombres ne collaient pas, il y aurait une erreur.</div>
+    </div>
+  </div>
+</div>
+
+<div class="result">
+  <div class="result-title">Résultat de la question 4.3</div>
+  <p>\[ U_p = 3, \qquad U_a = 1 = \bar{U}. \]</p>
+  <p>
+    La directrice obtient exactement son utilité de réserve — pas un centime de plus. La
+    propriétaire s'approprie tout le reste du surplus : \( S(e^*) - \bar{U} = 4 - 1 = 3 \).
+  </p>
+</div>
+
+<figure>
+  <svg viewBox="0 0 500 275" width="100%" style="max-width:13cm" role="img"
+       aria-label="Décomposition en barres : le chiffre d'affaires attendu de 8 se divise en coût de l'effort 4 et surplus total 4, lequel se partage en 1 pour la directrice et 3 pour la propriétaire.">
+    <!-- barre 1 -->
+    <rect x="90" y="30" width="320" height="36" fill="#eef2ff" stroke="#4338ca" stroke-width="2"/>
+    <text x="250" y="54" font-size="13" text-anchor="middle" font-weight="bold">chiffre d'affaires attendu  E(z) = 8</text>
+    <!-- fleches -->
+    <line x1="170" y1="66" x2="170" y2="100" stroke="#111827" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <line x1="330" y1="66" x2="330" y2="100" stroke="#111827" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <!-- barre 2 -->
+    <rect x="90" y="102" width="160" height="36" fill="#fff1f2" stroke="#be123c" stroke-width="2"/>
+    <text x="170" y="126" font-size="12.5" text-anchor="middle">coût de l'effort = 4</text>
+    <rect x="250" y="102" width="160" height="36" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+    <text x="330" y="126" font-size="12.5" text-anchor="middle" font-weight="bold">surplus total = 4</text>
+    <!-- fleche vers partage -->
+    <line x1="270" y1="138" x2="270" y2="172" stroke="#047857" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <line x1="390" y1="138" x2="390" y2="172" stroke="#047857" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <!-- barre 3 -->
+    <rect x="250" y="174" width="40" height="36" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+    <text x="270" y="198" font-size="12.5" text-anchor="middle">1</text>
+    <rect x="290" y="174" width="120" height="36" fill="#eef2ff" stroke="#4338ca" stroke-width="2"/>
+    <text x="350" y="198" font-size="12.5" text-anchor="middle" font-weight="bold">3</text>
+    <!-- legendes -->
+    <text x="270" y="232" font-size="12" text-anchor="middle">directrice</text>
+    <text x="270" y="248" font-size="12" text-anchor="middle">(= U barre)</text>
+    <text x="350" y="232" font-size="12" text-anchor="middle">propriétaire</text>
+    <text x="350" y="248" font-size="12" text-anchor="middle">(tout le reste)</text>
+    <text x="90" y="232" font-size="12">ce que la fatigue</text>
+    <text x="90" y="248" font-size="12">« consomme »</text>
+    <text x="90" y="268" font-size="11.5">Le fixe a* = −3 est le curseur qui fixe la frontière entre les deux parts du bas.</text>
+  </svg>
+  <figcaption>
+    Comment se répartit ce que produit la relation. Le chiffre d'affaires de 8 sert d'abord à
+    « payer » la fatigue de la directrice (4), ce qui laisse un surplus de 4. De ce surplus, la
+    directrice ne garde que son utilité de réserve (1) ; la propriétaire empoche le reste (3).
+    C'est le fixe \( a^* \) qui déplace la frontière — pas la commission \( b^* \).
+  </figcaption>
+</figure>
+
+<div class="box box-copie">
+  <div class="box-title">Ce qu'il fallait écrire sur la copie — 4.3</div>
+  <p>
+    « Avec \( b^* = 1 \), \( a^* = -3 \) et \( e^* = 2b^* = 2 \) : \( E(z) = 4 \times 2 = 8 \)
+    et \( E(w) = -3 + 8 = 5 \).<br>
+    Propriétaire : \( U_p = E(z - w) = 8 - 5 = \mathbf{3} \).<br>
+    Directrice : \( U_a = E(w) - c(e^*) = 5 - 4 = \mathbf{1} = \bar{U} \).<br>
+    La directrice obtient exactement son utilité de réserve (contrainte de participation
+    saturée) et la propriétaire s'approprie tout le surplus net :
+    \( S(e^*) - \bar{U} = 4 - 1 = 3 \). »
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Les pièges de la 4.3</div>
+  <ul>
+    <li><strong>Oublier de retrancher le coût de l'effort</strong> chez la directrice et
+        annoncer \( U_a = 5 \). C'est l'erreur la plus fréquente de toute la question.</li>
+    <li><strong>Confondre salaire et utilité.</strong> Le salaire moyen vaut 5 ; l'utilité vaut
+        1. Ce ne sont pas les mêmes objets.</li>
+    <li><strong>Ne pas remarquer que \( U_a \) doit valoir \( \bar{U} \).</strong> C'est ton
+        filet de sécurité : si tu ne tombes pas sur 1, reprends tes calculs.</li>
+    <li><strong>Donner les résultats sans le détail.</strong> Le barème demande explicitement
+        « avec le détail du calcul » : écris les deux lignes intermédiaires \( E(z) = 8 \) et
+        \( E(w) = 5 \).</li>
+  </ul>
+</div>
+
+<h2>6. Question 4.4 — interpréter : « vendre l'entreprise » (8 points)</h2>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 4.4 (8 points)</div>
+  <p>
+    <strong>4.4)</strong> Interprétez le contrat optimal : pourquoi dit-on que la propriétaire
+    « vend l'entreprise » à la directrice ? Quel rôle joue chacun des deux paramètres
+    \( a^* \) et \( b^* \) ?
+  </p>
+</div>
+
+<h3>6.1 Traduisons la question</h3>
+
+<p>
+  Aucune formule à produire ici : c'est une question de <strong>rédaction</strong>. Le barème
+  est explicite et se coupe en deux moitiés de 4 points : le rôle <em>incitatif</em> de
+  \( b^* \), puis le rôle <em>distributif</em> de \( a^* \). Structure donc ta réponse en deux
+  paragraphes — un par paramètre — et emploie les mots du cours.
+</p>
+
+<h3>6.2 Le rôle de \( b^* = 1 \) : l'incitation parfaite</h3>
+
+<div class="box box-def">
+  <div class="box-title">Définition — créancier résiduel (residual claimant)</div>
+  <p>
+    Est <span class="term">créancier résiduel</span> celui qui touche <strong>ce qui
+    reste</strong> une fois tout le monde payé : il encaisse chaque euro supplémentaire produit,
+    et il supporte chaque euro perdu.
+  </p>
+  <p>
+    Autrement dit : c'est celui qui « a la peau du jeu ». Le propriétaire d'un commerce est
+    créancier résiduel de son commerce ; un salarié au fixe ne l'est pas du tout.
+  </p>
+</div>
+
+<p>
+  Avec \( b^* = 1 \), la directrice reçoit <strong>100 \% du chiffre d'affaires à la
+  marge</strong> : un euro de vente en plus, c'est un euro pour elle. Elle est donc devenue
+  créancière résiduelle de l'entreprise. Et voici la conséquence remarquable :
+</p>
+
+<div class="calc">
+  <div class="step">
+    \[ \text{ce qu'elle maximise : } \ 4e - e^2 + a \]
+    <div class="why">avec \( b = 1 \), son utilité \( a + 4be - e^2 \) devient \( a + 4e - e^2 \).</div>
+  </div>
+  <div class="step">
+    \[ \text{le surplus total de la relation : } \ S(e) = 4e - e^2 \]
+    <div class="why">ce que l'effort rapporte à l'entreprise moins ce qu'il coûte à celle qui
+    le fournit.</div>
+  </div>
+  <div class="step">
+    \[ \text{les deux ont le même sommet : } \ 4 - 2e = 0 \iff e = 2 \]
+    <div class="why">à la constante \( a \) près, ce sont la même fonction. Donc en poursuivant
+    <em>son</em> intérêt, elle réalise <em>l'intérêt commun</em>. L'asymétrie d'information ne
+    coûte plus rien.</div>
+  </div>
+</div>
+
+<div class="box box-def">
+  <div class="box-title">Définition — premier meilleur (first best)</div>
+  <p>
+    On appelle <span class="term">premier meilleur</span> la situation qu'on obtiendrait si
+    l'effort était parfaitement observable — c'est-à-dire le meilleur résultat possible, sans
+    aucune perte due à l'information cachée.
+  </p>
+  <p>
+    Ici, on l'atteint : \( e^* = 2 \) est exactement l'effort qui maximise le surplus total. Le
+    contrat linéaire « efface » entièrement le problème d'aléa moral. Attention, ce n'est vrai
+    que parce que l'agente est <strong>neutre au risque</strong> ; si elle était averse au
+    risque, lui faire porter tout le risque coûterait cher et on retomberait sur un \( b \)
+    strictement inférieur à 1 (c'est le cas traité au chapitre B2 du cours).
+  </p>
+</div>
+
+<h3>6.3 Le rôle de \( a^* = -3 \) : le partage</h3>
+
+<p>
+  Si le contrat s'arrêtait à \( b = 1 \), la directrice empocherait tout et la propriétaire
+  rien. Le fixe est là pour rétablir le partage. Comme il est <strong>négatif</strong>, c'est
+  un transfert de la directrice vers la propriétaire : un <span class="term">droit
+  d'entrée</span>, un prix d'achat, une franchise.
+</p>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi ce transfert ne casse pas les incitations</div>
+  <p>
+    Parce qu'il est <strong>forfaitaire</strong> : il vaut \( -3 \) que la directrice travaille
+    beaucoup ou pas du tout. Il ne change donc rien à la question « est-ce que ça vaut le coup
+    de faire un effort de plus ? ». C'est toute l'élégance du contrat linéaire : les deux
+    paramètres agissent sur deux dimensions <em>séparées</em>. On règle d'abord l'incitation
+    avec \( b \), puis on règle le partage avec \( a \), sans abîmer le premier réglage.
+  </p>
+</div>
+
+<table class="compare">
+  <tr><th>Paramètre</th><th class="left">Valeur</th><th class="left">Rôle</th><th class="left">Ce qui se passerait sans lui</th></tr>
+  <tr>
+    <td>\( b^* \)</td><td class="left">1</td>
+    <td class="left"><strong>incitation</strong> : elle devient créancière résiduelle et
+        choisit l'effort efficace</td>
+    <td class="left">avec \( b \) plus faible, elle travaillerait moins (\( e = 2b \)) et le
+        surplus créé serait plus petit</td>
+  </tr>
+  <tr>
+    <td>\( a^* \)</td><td class="left">\( -3 \)</td>
+    <td class="left"><strong>partage</strong> : il ramène la directrice à son utilité de
+        réserve et transfère le reste à la propriétaire</td>
+    <td class="left">avec \( a = 0 \), la directrice garderait 4 et la propriétaire 0 : le
+        contrat serait inutile pour elle</td>
+  </tr>
+</table>
+
+<div class="box box-exemple">
+  <div class="box-title">Exemple — trois « ventes de l'entreprise » que tu connais</div>
+  <ul>
+    <li><strong>Le taxi.</strong> Le chauffeur loue le véhicule et la licence pour un forfait
+        journalier (c'est le \( a \) négatif), puis garde 100 \% des courses (c'est le
+        \( b = 1 \)). Résultat : il conduit autant qu'il le juge utile, sans aucune
+        surveillance.</li>
+    <li><strong>La franchise.</strong> Le franchisé paie un droit d'entrée à l'enseigne, puis
+        encaisse les recettes de son restaurant.</li>
+    <li><strong>Le fermage.</strong> L'agriculteur verse un loyer fixe au propriétaire du
+        terrain et garde toute la récolte. C'est le plus vieil exemple du modèle — et la raison
+        pour laquelle il produit plus qu'un métayage où l'on partage la récolte.</li>
+  </ul>
+</div>
+
+<div class="box box-copie">
+  <div class="box-title">Ce qu'il fallait écrire sur la copie — 4.4</div>
+  <p>
+    « Avec \( b^* = 1 \), la directrice conserve <strong>100 \% du chiffre d'affaires à la
+    marge</strong> : elle devient <em>créancière résiduelle</em> du résultat de l'entreprise.
+    Elle internalise donc parfaitement le rendement de son effort et choisit d'elle-même
+    l'effort efficace \( e^* = 2 \), celui qui maximise le surplus total \( S(e) = 4e - e^2 \) :
+    l'asymétrie d'information ne coûte plus rien (on atteint le premier meilleur).<br>
+    Le fixe négatif \( a^* = -3 \) s'interprète comme un <em>droit d'entrée</em> (une
+    franchise) : le prix que la directrice paie d'avance pour acheter le droit de garder tout
+    le résultat. Ce transfert forfaitaire ne déforme pas les incitations, puisqu'il ne dépend
+    pas de l'effort ; il sert uniquement à répartir le surplus, en ramenant la directrice à son
+    utilité de réserve. Tout se passe donc comme si la propriétaire <em>vendait
+    l'entreprise</em> à la directrice au prix de 3 (exemples : licence de taxi, contrat de
+    franchise, fermage).<br>
+    En résumé : \( b \) règle les <strong>incitations</strong>, \( a \) règle le
+    <strong>partage</strong>. »
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Les pièges de la 4.4</div>
+  <ul>
+    <li><strong>Ne parler que de \( b \).</strong> Le barème donne 4 points pour \( a \) :
+        consacre-lui un vrai paragraphe.</li>
+    <li><strong>Dire que \( b = 1 \) est « généreux ».</strong> Ce n'est pas de la générosité :
+        la propriétaire reprend tout par le fixe. C'est un choix d'<em>efficacité</em>, pas de
+        gentillesse.</li>
+    <li><strong>Oublier de mentionner que le résultat tient à la neutralité au risque.</strong>
+        C'est la nuance qui distingue une très bonne copie d'une copie correcte.</li>
+    <li><strong>Écrire des généralités sans les mots du cours.</strong> Emploie explicitement :
+        créancière résiduelle, effort efficace, transfert forfaitaire, contrainte de
+        participation, premier meilleur.</li>
+  </ul>
+</div>
+
+<h2>7. Récapitulatif : toute la Question 4 sur deux pages</h2>
+
+<h3>7.1 Les quatre réponses</h3>
+
+<table class="compare">
+  <tr><th>Q</th><th class="left">Réponse</th><th class="left">La phrase qui rapporte les points</th></tr>
+  <tr>
+    <td>4.1<br>(10 pts)</td>
+    <td class="left">\( e^*(b) = 2b \)</td>
+    <td class="left">« CPO : \( 4b - 2e = 0 \). Le fixe \( a \) disparaît en dérivant : il ne
+        joue pas à la marge. »</td>
+  </tr>
+  <tr>
+    <td>4.2<br>(14 pts)</td>
+    <td class="left">\( b^* = 1 \), \( a^* = -3 \)</td>
+    <td class="left">« CP saturée → \( a = 1 + e^2 - 4be \) → l'objectif devient le surplus
+        \( 4e - e^2 - 1 \) → avec \( e = 2b \) : \( 8b - 4b^2 - 1 \), donc \( b^* = 1 \). »</td>
+  </tr>
+  <tr>
+    <td>4.3<br>(8 pts)</td>
+    <td class="left">\( U_p = 3 \), \( U_a = 1 \)</td>
+    <td class="left">« \( E(z) = 8 \), \( E(w) = 5 \), \( c(e^*) = 4 \). La directrice est
+        exactement à son utilité de réserve. »</td>
+  </tr>
+  <tr>
+    <td>4.4<br>(8 pts)</td>
+    <td class="left">créancière résiduelle + droit d'entrée</td>
+    <td class="left">« \( b \) règle l'incitation (effort efficace), \( a \) règle le partage
+        (transfert forfaitaire). »</td>
+  </tr>
+</table>
+
+<h3>7.2 Les cinq formules à savoir écrire de tête</h3>
+
+<div class="box box-methode">
+  <div class="box-title">Le minimum vital</div>
+  <ol>
+    <li>\( E(z) = 4e \) — parce que \( E(x) = 0 \).</li>
+    <li>\( U_a = E(w) - c(e) = a + 4be - e^2 \) — l'utilité de l'agente.</li>
+    <li>\( U_p = E(z) - E(w) = 4e - a - 4be \) — l'objectif du principal.</li>
+    <li>CP saturée : \( U_a = \bar{U} \), soit \( a = 1 + e^2 - 4be \).</li>
+    <li>Surplus total : \( S(e) = 4e - e^2 \), maximal en \( e = 2 \).</li>
+  </ol>
+</div>
+
+<h3>7.3 Comment reconnaître ce type de question à l'examen</h3>
+
+<div class="box box-methode">
+  <div class="box-title">Les mots-signaux</div>
+  <p>
+    Dès que tu lis <em>« contrat »</em>, <em>« effort »</em>, <em>« l'employeur n'observe
+    pas »</em>, <em>« utilité de réserve »</em>, <em>« \( w = a + bz \) »</em> ou
+    <em>« variable aléatoire d'espérance nulle »</em>, tu es dans un principal-agent. Applique
+    alors la recette en 5 temps de la section 2.7 sans réfléchir : elle marche toujours.
+  </p>
+</div>
+
+<div class="box box-copie">
+  <div class="box-title">Checklist avant de tourner la page</div>
+  <ol>
+    <li>Ai-je écrit la ligne \( E(z) = 4e + E(x) = 4e \) en <em>justifiant</em> par
+        \( E(x) = 0 \) ?</li>
+    <li>Ai-je bien retranché le coût de l'effort dans l'utilité de la directrice ?</li>
+    <li>Ai-je dérivé par rapport à \( e \) en 4.1, et par rapport à \( b \) en 4.2 ?</li>
+    <li>Ai-je écrit explicitement que la contrainte de participation est saturée, et pourquoi ?</li>
+    <li>Ai-je vérifié que \( U_a \) retombe bien sur \( \bar{U} = 1 \) ?</li>
+    <li>Ai-je vérifié que \( U_p + U_a \) redonne le surplus total de 4 ?</li>
+    <li>En 4.4, ai-je consacré un paragraphe à \( b \) <em>et</em> un paragraphe à \( a \) ?</li>
+  </ol>
+</div>
+
+<p>
+  Voilà, la Question 4 est entièrement décortiquée. Retiens surtout la structure : <em>l'agent
+  réagit au contrat, le principal anticipe cette réaction</em>. Tout le reste — les dérivées,
+  les substitutions — n'est que de la mécanique que tu sais déjà faire depuis le chapitre 0.
+</p>
+</section>

@@ -1,0 +1,2712 @@
+<section class="chapter">
+<div class="chapter-tag">Chapitre 5 — Question 5 (30 points)</div>
+<h1>Les deux pizzerias : jeux répétés et entente sur les prix</h1>
+<p class="chapter-intro">
+  Trois sous-questions, 30 points, et une seule idée derrière tout : <em>la coopération entre
+  deux rivaux peut tenir toute seule — mais seulement si l'avenir compte assez.</em> On part de
+  zéro : on va d'abord apprendre à lire un tableau de jeu, puis ce qu'est une stratégie
+  dominante, un équilibre de Nash, un dilemme du prisonnier, un jeu répété, l'induction à
+  rebours, le facteur d'escompte et la somme géométrique. Ensuite seulement, on résout.
+</p>
+
+<h2>1. D'abord : de quoi parle cette question ?</h2>
+
+<p>
+  Avant de faire le moindre calcul, lisons ensemble le chapeau de la question — le paragraphe
+  commun aux trois sous-questions. C'est lui qui plante le décor.
+</p>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 5, chapeau commun (30 points au total)</div>
+  <p>
+    Les deux seules pizzerias d'une petite ville, <strong>Piccolo</strong> (joueur 1) et
+    <strong>Rustica</strong> (joueur 2), se sont entendues sur un prix élevé. Chaque mois,
+    chacune choisit simultanément de respecter l'entente (E) ou de baisser son prix (B). Les
+    profits mensuels (en milliers d'euros) sont donnés par la matrice suivante :
+  </p>
+  <table class="game">
+    <tr><td class="void"></td><td class="void"></td><th colspan="2">Rustica</th></tr>
+    <tr><td class="void"></td><td class="void"></td><th>E</th><th>B</th></tr>
+    <tr><td class="player" rowspan="2">Piccolo</td><th>E</th><td>(6 ; 6)</td><td>(0 ; 12)</td></tr>
+    <tr><th>B</th><td>(12 ; 0)</td><td>(2 ; 2)</td></tr>
+  </table>
+</div>
+
+<h3>Traduisons ce chapeau en français simple, mot par mot</h3>
+
+<p>
+  Je reprends chaque morceau de phrase et je te dis ce qu'il signifie vraiment. Ne saute pas ce
+  passage : la moitié des points d'un examen se perdent parce qu'on a mal lu l'énoncé.
+</p>
+
+<dl class="lexique">
+  <dt>« Les deux seules pizzerias d'une petite ville »</dt>
+  <dd>
+    Il n'y a que <strong>deux</strong> vendeurs sur ce marché. En économie on appelle ça un
+    <span class="term">duopole</span> (« duo » = deux). C'est important : avec deux acteurs
+    seulement, chacun voit très bien ce que fait l'autre, et ce que fait l'autre change
+    directement ce que je gagne. C'est exactement la situation où la théorie des jeux sert.
+  </dd>
+  <dt>« se sont entendues sur un prix élevé »</dt>
+  <dd>
+    Elles ont passé un accord informel : « on vend cher tous les deux, on ne se fait pas la
+    guerre, on gagne bien ». Cet accord s'appelle une <span class="term">entente</span> (ou un
+    <span class="term">cartel</span>). Attention : c'est <strong>illégal</strong>, donc il n'y a
+    aucun contrat, aucun juge, aucune sanction possible. Si l'accord tient, il tient uniquement
+    parce que chacune y trouve son intérêt. Retiens cette phrase : elle est le cœur de toute la
+    question 5.
+  </dd>
+  <dt>« Chaque mois »</dt>
+  <dd>
+    Le même choix revient encore et encore, mois après mois. Ce petit mot t'annonce qu'on est
+    dans un <span class="term">jeu répété</span>. Sans lui, la question 5 n'existerait pas.
+  </dd>
+  <dt>« chacune choisit simultanément »</dt>
+  <dd>
+    « Simultanément » veut dire <strong>en même temps</strong> : quand Piccolo fixe son prix
+    du mois, elle ne sait pas encore ce que Rustica a décidé pour ce mois-là. Chacune décide
+    dans son coin. (En revanche, à la fin du mois, tout le monde voit les prix affichés :
+    on connaît donc le <em>passé</em>, jamais le <em>présent</em> de l'autre.)
+  </dd>
+  <dt>« respecter l'entente (E) ou baisser son prix (B) »</dt>
+  <dd>
+    Chaque pizzeria n'a que <strong>deux</strong> options par mois. On leur donne des noms
+    courts, E et B, pour ne pas réécrire la phrase entière à chaque fois. E = je reste cher,
+    je suis loyale. B = je casse mon prix pour voler la clientèle de l'autre, je trahis.
+  </dd>
+  <dt>« Les profits mensuels (en milliers d'euros) »</dt>
+  <dd>
+    Les nombres dans le tableau sont des <strong>profits d'un seul mois</strong>, exprimés en
+    milliers d'euros. Donc « 6 » veut dire 6 000 €, et « 12 » veut dire 12 000 €. On travaillera
+    toujours avec les nombres nus (6, 12, 2, 0) : c'est plus simple, et l'unité ne change rien
+    aux comparaisons.
+  </dd>
+  <dt>« la matrice suivante »</dt>
+  <dd>
+    « Matrice » est juste le mot savant pour « tableau à double entrée ». On va apprendre à le
+    lire dans deux minutes.
+  </dd>
+</dl>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi cette histoire de pizzerias, au fond ?</div>
+  <p>
+    Parce qu'elle met en scène une tension que tu connais déjà dans la vie de tous les jours :
+    <em>ce qui est bon pour moi tout seul n'est pas ce qui est bon pour nous deux.</em> Deux
+    colocataires qui ne font jamais la vaisselle, deux pays qui n'arrivent pas à réduire leurs
+    émissions, deux automobilistes qui klaxonnent : même structure. Le cours utilise des
+    pizzerias, mais l'outil que tu apprends ici sert partout.
+  </p>
+</div>
+
+<h3>Le plan de ce chapitre</h3>
+
+<p>
+  La question 5 se découpe en trois sous-questions. Voici ce qu'elles demandent, en une ligne
+  chacune, et où on en parlera.
+</p>
+
+<table class="compare">
+  <tr>
+    <th class="left">Sous-question</th>
+    <th>Points</th>
+    <th class="left">Ce qu'on doit produire</th>
+  </tr>
+  <tr>
+    <td class="left"><strong>5.1</strong></td>
+    <td>10</td>
+    <td class="left">
+      Montrer que le jeu d'un mois est un dilemme du prisonnier, puis expliquer sans calcul
+      pourquoi l'entente ne tient à aucun mois si le jeu dure un nombre fini et connu de mois.
+    </td>
+  </tr>
+  <tr>
+    <td class="left"><strong>5.2</strong></td>
+    <td>14</td>
+    <td class="left">
+      Calculer deux payoffs escomptés (coopérer toujours / trahir une fois puis être puni), et
+      en déduire la condition sur <span class="term">δ</span> pour que la coopération tienne.
+    </td>
+  </tr>
+  <tr>
+    <td class="left"><strong>5.3</strong></td>
+    <td>6</td>
+    <td class="left">
+      Expliquer avec des mots ce que mesure δ et pourquoi l'impatience détruit l'entente.
+    </td>
+  </tr>
+</table>
+
+<p>
+  On va procéder ainsi : mini-cours n° 1 (lire un jeu) → mini-cours n° 2 (dominance, Nash,
+  dilemme du prisonnier) → résolution de la première moitié de 5.1 → mini-cours n° 3
+  (répétition, horizon fini, induction à rebours) → résolution de la seconde moitié de 5.1 →
+  mini-cours n° 4 (horizon infini, δ, somme géométrique, grim) → résolution de 5.2 → résolution
+  de 5.3 → récapitulatif.
+</p>
+
+<hr class="soft">
+
+<h2>2. Le cours dont tu as besoin — épisode 1 : lire un jeu</h2>
+
+<p>
+  On commence vraiment de zéro. Si tu sais déjà tout ça, tu peux survoler ; mais je te conseille
+  de lire, parce que je fixe ici le vocabulaire qu'on utilisera partout ensuite.
+</p>
+
+<div class="box box-def">
+  <div class="box-title">Définition — un « jeu », en théorie des jeux</div>
+  <p>
+    Un <span class="term">jeu</span> est simplement une situation où plusieurs personnes (ou
+    entreprises, ou pays…) prennent des décisions, et où <strong>le résultat de chacun dépend
+    aussi des décisions des autres</strong>. Pour décrire complètement un jeu, il faut trois
+    ingrédients :
+  </p>
+  <ul>
+    <li>
+      les <span class="term">joueurs</span> : qui décide ? Ici, Piccolo et Rustica. On les
+      numérote : Piccolo est le joueur 1, Rustica le joueur 2.
+    </li>
+    <li>
+      les <span class="term">stratégies</span> : que peut faire chaque joueur ? Ici, E ou B.
+    </li>
+    <li>
+      les <span class="term">payoffs</span> : combien chacun gagne, pour chaque combinaison
+      possible de décisions. Ici, ce sont les profits du tableau.
+    </li>
+  </ul>
+</div>
+
+<div class="box box-rappel">
+  <div class="box-title">Rappel de vocabulaire — le mot « payoff »</div>
+  <p>
+    <strong>Payoff</strong> (mot anglais, prononcé « pé-ï-off ») veut dire « ce que le joueur
+    récolte à la fin ». En français on dit aussi <em>gain</em> ou <em>paiement</em>. Selon les
+    exercices, un payoff peut être un profit en euros, un nombre d'années de prison, un score
+    de satisfaction… Ici c'est un profit mensuel en milliers d'euros. Le professeur écrit
+    souvent le payoff avec la lettre grecque \( \pi \) (« pi », comme le π des cercles) quand il
+    s'agit d'un profit, et \( u \) (comme « utilité ») quand il s'agit d'une satisfaction.
+  </p>
+</div>
+
+<h3>Comment lit-on la matrice ?</h3>
+
+<p>
+  Le tableau à double entrée a une règle de lecture très stricte, toujours la même. Voici les
+  quatre points à retenir. Regarde la figure juste après : elle dit tout en une image.
+</p>
+
+<ol>
+  <li>
+    Le joueur dont le nom est écrit <strong>à gauche</strong> (ici Piccolo) choisit la
+    <strong>ligne</strong>. On l'appelle le <span class="term">joueur en ligne</span>.
+  </li>
+  <li>
+    Le joueur dont le nom est écrit <strong>en haut</strong> (ici Rustica) choisit la
+    <strong>colonne</strong>. On l'appelle le <span class="term">joueur en colonne</span>.
+  </li>
+  <li>
+    Les deux choix se croisent dans <strong>une seule case</strong>. Cette case contient deux
+    nombres séparés par un point-virgule.
+  </li>
+  <li>
+    Le <strong>premier</strong> nombre est le gain du joueur en ligne (Piccolo). Le
+    <strong>second</strong> nombre est le gain du joueur en colonne (Rustica). Toujours dans cet
+    ordre, sans exception.
+  </li>
+</ol>
+
+<figure>
+  <svg viewBox="0 0 600 300" width="100%" style="max-width:12cm" role="img"
+       aria-label="Schéma expliquant comment lire une case de la matrice : le premier nombre est le gain du joueur en ligne, le second celui du joueur en colonne">
+    <defs>
+      <marker id="q5f1-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#111827"></path>
+      </marker>
+    </defs>
+    <text x="190" y="26" text-anchor="middle" font-size="13" font-style="italic" style="fill:#4b5563">Rustica choisit la colonne</text>
+    <text x="190" y="52" text-anchor="middle" font-size="15" font-weight="bold">Rustica</text>
+    <text x="150" y="80" text-anchor="middle" font-size="14" font-weight="bold">E</text>
+    <text x="230" y="80" text-anchor="middle" font-size="14" font-weight="bold">B</text>
+    <text x="55" y="140" text-anchor="middle" font-size="15" font-weight="bold" transform="rotate(-90 55 140)">Piccolo</text>
+    <text x="95" y="118" text-anchor="middle" font-size="14" font-weight="bold">E</text>
+    <text x="95" y="163" text-anchor="middle" font-size="14" font-weight="bold">B</text>
+    <rect x="110" y="90" width="80" height="45" fill="none" stroke="#111827" stroke-width="1.2"></rect>
+    <rect x="190" y="90" width="80" height="45" fill="#fef3c7" stroke="#111827" stroke-width="2.4"></rect>
+    <rect x="110" y="135" width="80" height="45" fill="none" stroke="#111827" stroke-width="1.2"></rect>
+    <rect x="190" y="135" width="80" height="45" fill="none" stroke="#111827" stroke-width="1.2"></rect>
+    <text x="150" y="118" text-anchor="middle" font-size="13">(6 ; 6)</text>
+    <text x="230" y="118" text-anchor="middle" font-size="13" font-weight="bold">(0 ; 12)</text>
+    <text x="150" y="163" text-anchor="middle" font-size="13">(12 ; 0)</text>
+    <text x="230" y="163" text-anchor="middle" font-size="13">(2 ; 2)</text>
+    <text x="55" y="205" text-anchor="middle" font-size="12" font-style="italic" style="fill:#4b5563">Piccolo choisit</text>
+    <text x="55" y="220" text-anchor="middle" font-size="12" font-style="italic" style="fill:#4b5563">la ligne</text>
+    <path d="M 272 112 L 336 118" stroke="#111827" stroke-width="1.4" stroke-dasharray="5 4" fill="none" marker-end="url(#q5f1-arr)"></path>
+    <rect x="340" y="80" width="220" height="80" rx="6" fill="#eef2ff" stroke="#4338ca" stroke-width="2"></rect>
+    <text x="450" y="134" text-anchor="middle" font-size="30" font-weight="bold">( 0 ; 12 )</text>
+    <text x="330" y="42" font-size="13" font-weight="bold">1er nombre :</text>
+    <text x="330" y="59" font-size="13">gain de Piccolo (les lignes)</text>
+    <path d="M 398 66 L 408 104" stroke="#111827" stroke-width="1.4" fill="none" marker-end="url(#q5f1-arr)"></path>
+    <text x="592" y="204" text-anchor="end" font-size="13" font-weight="bold">2e nombre :</text>
+    <text x="592" y="221" text-anchor="end" font-size="13">gain de Rustica (les colonnes)</text>
+    <path d="M 500 192 L 494 152" stroke="#111827" stroke-width="1.4" fill="none" marker-end="url(#q5f1-arr)"></path>
+    <text x="300" y="268" text-anchor="middle" font-size="13" font-style="italic" style="fill:#4b5563">Une case = un couple de gains, toujours dans l'ordre (ligne ; colonne).</text>
+  </svg>
+  <figcaption>
+    Comment lire une case. La case surlignée est celle où Piccolo joue E et Rustica joue B :
+    Piccolo gagne 0, Rustica gagne 12. L'ordre des deux nombres n'est jamais inversé.
+  </figcaption>
+</figure>
+
+<div class="box box-exemple">
+  <div class="box-title">Exemple — lisons les quatre cases à voix haute</div>
+  <ul>
+    <li>
+      <strong>(E ; E) → (6 ; 6)</strong> : les deux respectent l'entente. Les prix restent
+      hauts, la clientèle se partage, chacune gagne 6 (soit 6 000 €). C'est le scénario
+      « on est sages tous les deux ».
+    </li>
+    <li>
+      <strong>(E ; B) → (0 ; 12)</strong> : Piccolo reste chère, Rustica casse ses prix. Tous
+      les clients filent chez Rustica. Piccolo gagne <strong>0</strong>, Rustica empoche
+      <strong>12</strong>. C'est le scénario « je me fais trahir ».
+    </li>
+    <li>
+      <strong>(B ; E) → (12 ; 0)</strong> : l'inverse exact. Piccolo casse ses prix pendant que
+      Rustica reste chère : Piccolo rafle 12, Rustica se retrouve à 0.
+    </li>
+    <li>
+      <strong>(B ; B) → (2 ; 2)</strong> : les deux cassent leurs prix en même temps. Elles se
+      repartagent les clients, mais à prix bassé : chacune ne gagne plus que 2. C'est la
+      <span class="term">guerre des prix</span>.
+    </li>
+  </ul>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Piège — l'ordre des nombres</div>
+  <p>
+    L'erreur n° 1 des débutants : lire la case (0 ; 12) comme « Piccolo gagne 12 ». Non ! Le
+    premier nombre appartient <em>toujours</em> au joueur qui choisit la ligne. Un truc pour ne
+    jamais te tromper : <strong>« ligne d'abord, comme quand on lit »</strong> — on lit de
+    gauche à droite, et le joueur de gauche est servi en premier.
+  </p>
+</div>
+
+<div class="box box-rappel">
+  <div class="box-title">Rappel — notation \( u_1(\cdot,\cdot) \) et comment la lire</div>
+  <p>
+    Pour parler d'un payoff précis, on écrit \( u_1(\mathrm{B},\mathrm{E}) = 12 \). Ça se lit à
+    voix haute : « u indice un, de B virgule E, égale douze », et ça signifie « le gain du
+    <strong>joueur 1</strong> quand le joueur 1 joue B et le joueur 2 joue E ». La règle : le
+    petit indice dit <em>de qui</em> on parle, et les deux lettres entre parenthèses disent
+    <em>ce que chacun a joué</em>, dans l'ordre (joueur 1, joueur 2). Ainsi :
+  </p>
+  <p>
+    \( u_1(\mathrm{E},\mathrm{E}) = 6 \), \( u_1(\mathrm{E},\mathrm{B}) = 0 \),
+    \( u_1(\mathrm{B},\mathrm{E}) = 12 \), \( u_1(\mathrm{B},\mathrm{B}) = 2 \) ;
+  </p>
+  <p>
+    \( u_2(\mathrm{E},\mathrm{E}) = 6 \), \( u_2(\mathrm{E},\mathrm{B}) = 12 \),
+    \( u_2(\mathrm{B},\mathrm{E}) = 0 \), \( u_2(\mathrm{B},\mathrm{B}) = 2 \).
+  </p>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi ces nombres-là sont économiquement crédibles</div>
+  <p>
+    Ils ne sortent pas d'un chapeau. Réfléchis en termes de pizzas vendues : si les deux
+    restent chères, elles se partagent la ville à bon prix (6 chacune, total 12). Si une seule
+    casse son prix, elle prend presque toute la ville : elle vend beaucoup plus, et même avec
+    une marge réduite elle gagne 12 — tandis que l'autre, désertée, tombe à 0. Si les deux
+    cassent, elles se repartagent la ville mais à marge écrasée : 2 chacune, total 4. Le total
+    du secteur passe de 12 (entente) à 4 (guerre) : la guerre des prix détruit de la valeur
+    pour les vendeurs… et enrichit les clients.
+  </p>
+</div>
+
+<hr class="soft">
+
+<h2>3. Le cours dont tu as besoin — épisode 2 : dominance, Nash, dilemme</h2>
+
+<p>
+  Trois notions, dans cet ordre : d'abord la <em>stratégie strictement dominante</em>, ensuite
+  l'<em>équilibre de Nash</em>, enfin le <em>dilemme du prisonnier</em>. Chacune se comprend en
+  quelques lignes si on prend le temps.
+</p>
+
+<h3>3.1 La stratégie strictement dominante</h3>
+
+<div class="box box-def">
+  <div class="box-title">Définition — stratégie strictement dominante</div>
+  <p>
+    Une stratégie d'un joueur est <span class="term">strictement dominante</span> si elle lui
+    rapporte <strong>strictement plus</strong> que toutes ses autres stratégies,
+    <strong>quoi que fasse l'adversaire</strong>.
+  </p>
+  <p>
+    Le mot important est « quoi que fasse ». On ne dit pas « en moyenne », ni « le plus
+    souvent » : on dit « dans <em>tous</em> les cas possibles, sans exception ». Le mot
+    « strictement » veut dire : plus, et pas seulement autant (pas d'égalité tolérée).
+  </p>
+</div>
+
+<div class="box box-exemple">
+  <div class="box-title">Exemple de la vie quotidienne</div>
+  <p>
+    Tu pars en balade. Tu peux prendre ton parapluie ou le laisser. Imagine que ton parapluie
+    soit minuscule, ultra-léger, et qu'il tienne dans ta poche sans te gêner du tout. Alors :
+    s'il pleut, l'avoir est mieux ; s'il ne pleut pas, l'avoir est… au moins aussi bien, et même
+    un peu mieux si ça t'évite de stresser. « Prendre le parapluie » domine « le laisser » :
+    quel que soit le temps qu'il fera — c'est-à-dire quoi que « joue » la météo — ce choix est
+    meilleur. Tu n'as même pas besoin de deviner la météo pour décider. C'est ça, la puissance
+    d'une stratégie dominante : <strong>elle rend la prévision inutile</strong>.
+  </p>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi un joueur rationnel joue toujours sa stratégie dominante</div>
+  <p>
+    Parce que ne pas la jouer serait se faire du mal <em>à coup sûr</em>. Regarde le
+    raisonnement : je compare mes deux options dans chaque scénario possible ; dans chaque
+    scénario, l'option A bat l'option B. Donc, quel que soit le scénario qui se produira, j'aurai
+    regretté d'avoir joué B. Aucune information supplémentaire sur l'adversaire ne peut changer
+    cette conclusion, puisqu'on a déjà balayé tous les cas.
+  </p>
+  <p>
+    Note bien la conséquence méthodologique : quand un joueur a une stratégie strictement
+    dominante, <strong>on n'a même pas besoin de savoir ce que l'autre pense</strong>. C'est ce
+    qui rend le dilemme du prisonnier si simple à résoudre — et si désespérant.
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Piège — « dominante » ne veut pas dire « bonne »</div>
+  <p>
+    Une stratégie dominante est la meilleure <em>pour moi, prise individuellement, à choix de
+    l'autre donné</em>. Elle n'est pas forcément celle qui mène au meilleur résultat collectif.
+    On va voir dans deux pages que, dans notre jeu, les deux pizzeries jouent leur stratégie
+    dominante… et se retrouvent avec 2 chacune alors qu'elles auraient pu avoir 6. « Dominante »
+    est un jugement <strong>individuel</strong>, pas un jugement de bien-être.
+  </p>
+</div>
+
+<h3>3.2 L'équilibre de Nash</h3>
+
+<div class="box box-def">
+  <div class="box-title">Définition — équilibre de Nash, en français simple</div>
+  <p>
+    Un couple de choix (un pour chaque joueur) est un <span class="term">équilibre de
+    Nash</span> si <strong>personne ne regrette son choix, une fois qu'il voit ce que l'autre a
+    fait</strong>. Autrement dit : si je pouvais revenir en arrière et changer mon choix
+    <em>tout seul</em>, l'autre gardant le sien, je n'y gagnerais rien.
+  </p>
+  <p>
+    Formulation équivalente, celle que le professeur utilise : chaque stratégie est une
+    <span class="term">meilleure réponse</span> à celle de l'autre. « Meilleure réponse » = le
+    choix qui me rapporte le plus, <em>étant donné</em> ce que fait l'adversaire.
+  </p>
+</div>
+
+<div class="box box-exemple">
+  <div class="box-title">Exemple — le rendez-vous</div>
+  <p>
+    Deux amis doivent se retrouver, sans pouvoir se téléphoner. S'ils vont tous les deux à la
+    gare, ils se retrouvent : c'est un équilibre de Nash, parce qu'aucun des deux n'a intérêt à
+    partir seul ailleurs (il se retrouverait tout seul). Notons bien : ce n'est pas un accord
+    signé, c'est juste une situation <strong>stable</strong> — personne n'a envie d'en bouger
+    unilatéralement. Voilà l'intuition du mot « équilibre » : une bille au fond d'un bol, qui
+    reste là parce qu'aucune poussée individuelle n'a de raison de la déplacer.
+  </p>
+</div>
+
+<div class="box box-methode">
+  <div class="box-title">Méthode — trouver les équilibres de Nash d'un jeu 2×2</div>
+  <p>
+    La recette mécanique, en deux passages :
+  </p>
+  <ol>
+    <li>
+      <strong>Passage « joueur en ligne » :</strong> colonne par colonne, on regarde uniquement
+      les <em>premiers</em> nombres, et on souligne le plus grand de la colonne. On vient de
+      marquer les meilleures réponses du joueur 1.
+    </li>
+    <li>
+      <strong>Passage « joueur en colonne » :</strong> ligne par ligne, on regarde uniquement
+      les <em>seconds</em> nombres, et on souligne le plus grand de la ligne. On vient de marquer
+      les meilleures réponses du joueur 2.
+    </li>
+    <li>
+      <strong>Conclusion :</strong> toute case où les <em>deux</em> nombres sont soulignés est un
+      équilibre de Nash. Aucune case doublement soulignée = pas d'équilibre de Nash en
+      stratégies pures.
+    </li>
+  </ol>
+  <p>
+    Cette recette resservira dans toutes les questions de théorie des jeux : apprends-la comme
+    un geste, pas comme une phrase.
+  </p>
+</div>
+
+<h3>3.3 Le dilemme du prisonnier</h3>
+
+<div class="box box-def">
+  <div class="box-title">Définition — dilemme du prisonnier</div>
+  <p>
+    Un <span class="term">dilemme du prisonnier</span> est un jeu où deux conditions sont
+    réunies en même temps :
+  </p>
+  <ol>
+    <li>
+      chaque joueur a une <strong>stratégie strictement dominante</strong> — donc l'issue du jeu
+      est parfaitement prévisible : chacun la joue ;
+    </li>
+    <li>
+      l'issue obtenue est <strong>moins bonne pour tout le monde</strong> qu'une autre issue
+      possible (celle où les deux coopèrent).
+    </li>
+  </ol>
+  <p>
+    C'est la coexistence des deux points qui fait le mot « dilemme » : chacun agit
+    rationnellement, et pourtant les deux finissent moins bien qu'ils ne l'auraient pu. La
+    rationalité individuelle détruit le gain collectif.
+  </p>
+</div>
+
+<div class="box box-rappel">
+  <div class="box-title">L'histoire d'origine — pourquoi « prisonnier » ?</div>
+  <p>
+    L'histoire date de 1950. Deux chercheurs de la RAND Corporation, Merrill Flood et Melvin
+    Dresher, inventent un petit jeu à deux joueurs aux propriétés troublantes. Un mathématicien
+    de Princeton, Albert W. Tucker, lui donne peu après une mise en scène pour l'expliquer à un
+    public non spécialiste — et c'est cette mise en scène qui est restée :
+  </p>
+  <p>
+    Deux complices sont arrêtés et enfermés dans <strong>deux cellules séparées</strong>. Ils ne
+    peuvent pas communiquer. Le procureur propose à chacun le même marché :
+  </p>
+  <ul>
+    <li>si tu dénonces ton complice et qu'il se tait, tu sors libre et il prend 10 ans ;</li>
+    <li>si vous vous dénoncez tous les deux, vous prenez 5 ans chacun ;</li>
+    <li>si vous vous taisez tous les deux, faute de preuves vous ne prenez qu'un an chacun.</li>
+  </ul>
+  <p>
+    Mets-toi dans une cellule et raisonne. Si l'autre se tait, dénoncer me fait sortir libre
+    (mieux qu'un an). Si l'autre me dénonce, dénoncer me donne 5 ans au lieu de 10 (mieux
+    aussi). Donc <strong>dénoncer est ma stratégie strictement dominante</strong>, quoi qu'il
+    fasse. L'autre raisonne pareil. Résultat : les deux se dénoncent et prennent 5 ans — alors
+    qu'en se taisant tous les deux ils n'auraient pris qu'un an. Voilà le dilemme.
+  </p>
+  <p>
+    Notre jeu de pizzerias a exactement la même ossature : « se taire » ↔ E (respecter
+    l'entente), « dénoncer » ↔ B (baisser son prix). Seuls les nombres changent.
+  </p>
+</div>
+
+<hr class="soft">
+
+<h2>4. Question 5.1, première moitié — le jeu d'un seul mois</h2>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 5.1 (10 points)</div>
+  <p>
+    Montrez que ce jeu en une période est un dilemme du prisonnier : identifiez la stratégie
+    dominante de chaque pizzeria et l'équilibre de Nash du jeu. Expliquez ensuite, sans calcul,
+    pourquoi l'entente ne peut être soutenue à <em>aucune</em> période si le jeu est répété un
+    nombre fini et connu de mois.
+  </p>
+  <table class="game">
+    <tr><td class="void"></td><td class="void"></td><th colspan="2">Rustica</th></tr>
+    <tr><td class="void"></td><td class="void"></td><th>E</th><th>B</th></tr>
+    <tr><td class="player" rowspan="2">Piccolo</td><th>E</th><td>(6 ; 6)</td><td>(0 ; 12)</td></tr>
+    <tr><th>B</th><td>(12 ; 0)</td><td>(2 ; 2)</td></tr>
+  </table>
+  <p>
+    <em>Barème officiel :</em> stratégie dominante + équilibre de Nash unique (B ; B) et
+    structure de dilemme du prisonnier : <strong>5 points</strong> ; raisonnement d'induction à
+    rebours / théorème de l'horizon fini : <strong>5 points</strong>.
+  </p>
+</div>
+
+<h3>Traduisons la question en français simple</h3>
+
+<dl class="lexique">
+  <dt>« Montrez que… »</dt>
+  <dd>
+    Ce n'est pas « dites si ». On te donne la réponse (c'est un dilemme du prisonnier) et on te
+    demande la <strong>démonstration</strong>. Donc : des inégalités chiffrées, pas des
+    impressions. Si tu écris juste « c'est un dilemme du prisonnier », tu prends 0 sur 5.
+  </dd>
+  <dt>« ce jeu en une période »</dt>
+  <dd>
+    « Une période » = un seul mois, joué une seule fois, sans lendemain. On oublie
+    temporairement la répétition et on regarde le tableau tout nu. On appelle ça le
+    <span class="term">jeu d'étape</span> (ou jeu de période) : la brique élémentaire qu'on va
+    ensuite répéter.
+  </dd>
+  <dt>« identifiez la stratégie dominante de chaque pizzeria »</dt>
+  <dd>
+    Deux démonstrations à faire (une par joueur), chacune en deux comparaisons — une par
+    scénario de l'adversaire. Quatre inégalités au total. Bonne nouvelle : le jeu est
+    symétrique, donc la deuxième démonstration se déduit de la première.
+  </dd>
+  <dt>« et l'équilibre de Nash du jeu »</dt>
+  <dd>
+    Notez le singulier : <em>l'</em> équilibre. On te souffle qu'il est unique. Il faudra le
+    nommer, donner ses payoffs, et idéalement justifier son unicité.
+  </dd>
+  <dt>« Expliquez ensuite, sans calcul… »</dt>
+  <dd>
+    Deuxième moitié de la question. « Sans calcul » est une consigne, pas une permission d'être
+    vague : on attend un <strong>raisonnement rigoureux en mots</strong> (l'induction à rebours),
+    pas une intuition. C'est cinq points — donc il faut plusieurs phrases construites.
+  </dd>
+  <dt>« un nombre fini et connu de mois »</dt>
+  <dd>
+    Deux adjectifs, deux hypothèses distinctes. <strong>Fini</strong> : le jeu s'arrête un jour.
+    <strong>Connu</strong> : les deux pizzerias savent d'avance quel sera le dernier mois. On
+    verra que c'est le mot « connu » qui fait tout le travail.
+  </dd>
+</dl>
+
+<h3>La résolution pas à pas</h3>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">1.</span> Se mettre dans la peau de Piccolo</div>
+  <p>
+    Je suis Piccolo. Je dois choisir E ou B ce mois-ci, sans savoir ce que fait Rustica. La
+    méthode consiste à <strong>envisager les deux scénarios possibles</strong> et à comparer mes
+    deux options dans chacun. Comme je suis le joueur en ligne, je ne regarde que les
+    <em>premiers</em> nombres.
+  </p>
+  <p><strong>Scénario A — Rustica joue E</strong> (elle reste chère). Je me place dans la colonne E :</p>
+  <div class="calc">
+    <div class="step">
+      \[ u_1(\mathrm{E},\mathrm{E}) = 6 \qquad\text{et}\qquad u_1(\mathrm{B},\mathrm{E}) = 12 \]
+      <div class="why">
+        Je lis les deux cases de la colonne E, et je ne garde que le premier nombre de chacune :
+        6 dans la case du haut, 12 dans celle du bas.
+      </div>
+    </div>
+    <div class="step">
+      \[ 12 &gt; 6 \ \Longrightarrow\ \text{B est meilleur que E pour moi} \]
+      <div class="why">
+        Je compare mes deux gains possibles dans ce scénario. 12 est plus grand que 6, donc si
+        Rustica reste chère, j'ai intérêt à casser mes prix : je vole ses clients.
+      </div>
+    </div>
+  </div>
+  <p><strong>Scénario B — Rustica joue B</strong> (elle casse déjà ses prix). Je me place dans la colonne B :</p>
+  <div class="calc">
+    <div class="step">
+      \[ u_1(\mathrm{E},\mathrm{B}) = 0 \qquad\text{et}\qquad u_1(\mathrm{B},\mathrm{B}) = 2 \]
+      <div class="why">
+        Même lecture, cette fois dans la colonne B : 0 en haut, 2 en bas. Toujours les premiers
+        nombres, puisque c'est mon gain à moi, Piccolo.
+      </div>
+    </div>
+    <div class="step">
+      \[ 2 &gt; 0 \ \Longrightarrow\ \text{B est encore meilleur que E pour moi} \]
+      <div class="why">
+        2 est plus grand que 0. Si Rustica est déjà en guerre des prix, rester chère me
+        laisserait sans aucun client : mieux vaut baisser aussi et sauver les meubles.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">2.</span> Conclure : B est strictement dominante pour Piccolo</div>
+  <p>
+    J'ai examiné <strong>tous</strong> les scénarios possibles — il n'y en a que deux, puisque
+    Rustica n'a que deux stratégies — et dans <strong>chacun</strong>, B m'a rapporté strictement
+    plus que E. C'est exactement la définition.
+  </p>
+  <div class="result">
+    <div class="result-title">Résultat intermédiaire</div>
+    <p>
+      Pour Piccolo, <strong>B domine strictement E</strong> : \( 12 &gt; 6 \) et
+      \( 2 &gt; 0 \). Piccolo joue donc B, quelle que soit son opinion sur Rustica.
+    </p>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">3.</span> Faire la même chose pour Rustica — ou invoquer la symétrie</div>
+  <p>
+    Rustica est le joueur en colonne : elle regarde les <em>seconds</em> nombres, ligne par
+    ligne. Refaisons-le explicitement, c'est vite fait et ça vaut des points.
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ \text{si Piccolo joue E : } u_2(\mathrm{E},\mathrm{B}) = 12 &gt; 6 = u_2(\mathrm{E},\mathrm{E}) \]
+      <div class="why">
+        Je me place dans la ligne E (Piccolo reste chère) et je compare les seconds nombres :
+        12 si Rustica casse ses prix, 6 si elle reste sage. Casser gagne.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{si Piccolo joue B : } u_2(\mathrm{B},\mathrm{B}) = 2 &gt; 0 = u_2(\mathrm{B},\mathrm{E}) \]
+      <div class="why">
+        Je me place dans la ligne B et je compare à nouveau les seconds nombres : 2 contre 0.
+        Casser gagne encore.
+      </div>
+    </div>
+  </div>
+  <p>
+    On aurait aussi pu se contenter d'écrire : « le jeu est <span class="term">symétrique</span>
+    — si on échange les rôles des deux joueurs, on retrouve exactement le même tableau — donc
+    par symétrie, B est aussi strictement dominante pour Rustica. » C'est parfaitement accepté à
+    l'examen, à condition de dire pourquoi le jeu est symétrique.
+  </p>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">4.</span> En déduire l'équilibre de Nash</div>
+  <p>
+    Chacune joue B. Le résultat du mois est donc la case <strong>(B ; B)</strong>, avec les
+    payoffs <strong>(2 ; 2)</strong>. Mais attention, il ne suffit pas de le décréter : vérifions
+    que c'est bien un équilibre de Nash <em>au sens de la définition</em>, c'est-à-dire que
+    personne ne regrette.
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ \text{Piccolo dévie seule : } 2 \ \to\ u_1(\mathrm{E},\mathrm{B}) = 0 \]
+      <div class="why">
+        Je pars de (B ; B) où Piccolo touche 2, et je fais changer Piccolo toute seule (Rustica
+        garde B). Piccolo passerait à la case (E ; B), donc à 0. Elle perd 2 : elle ne dévie pas.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{Rustica dévie seule : } 2 \ \to\ u_2(\mathrm{B},\mathrm{E}) = 0 \]
+      <div class="why">
+        Symétriquement, si Rustica seule repassait à E, elle tomberait à 0. Elle ne dévie pas
+        non plus. Aucun des deux ne regrette : (B ; B) est bien un équilibre de Nash.
+      </div>
+    </div>
+  </div>
+  <p>
+    Et il est <strong>unique</strong> : dans une case autre que (B ; B), au moins un joueur joue
+    E alors que B lui rapporte strictement plus — il regrette donc, et la case ne peut pas être
+    un équilibre. La figure ci-dessous résume tout en une image.
+  </p>
+</div>
+
+<figure>
+  <svg viewBox="0 0 560 340" width="100%" style="max-width:12cm" role="img"
+       aria-label="Matrice annotée : les meilleures réponses sont soulignées et la case (B, B) est l'unique équilibre de Nash">
+    <defs>
+      <pattern id="q5f2-hach" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="8" stroke="#047857" stroke-width="1.3"></line>
+      </pattern>
+      <marker id="q5f2-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#047857"></path>
+      </marker>
+    </defs>
+    <text x="280" y="66" text-anchor="middle" font-size="16" font-weight="bold">Rustica</text>
+    <text x="220" y="106" text-anchor="middle" font-size="15" font-weight="bold">E</text>
+    <text x="340" y="106" text-anchor="middle" font-size="15" font-weight="bold">B</text>
+    <text x="72" y="190" text-anchor="middle" font-size="16" font-weight="bold" transform="rotate(-90 72 190)">Piccolo</text>
+    <text x="134" y="161" text-anchor="middle" font-size="15" font-weight="bold">E</text>
+    <text x="134" y="231" text-anchor="middle" font-size="15" font-weight="bold">B</text>
+    <rect x="160" y="120" width="120" height="70" fill="#ffffff" stroke="#111827" stroke-width="1.3"></rect>
+    <rect x="280" y="120" width="120" height="70" fill="#ffffff" stroke="#111827" stroke-width="1.3"></rect>
+    <rect x="160" y="190" width="120" height="70" fill="#ffffff" stroke="#111827" stroke-width="1.3"></rect>
+    <rect x="280" y="190" width="120" height="70" fill="url(#q5f2-hach)" stroke="#047857" stroke-width="3"></rect>
+    <text x="212" y="162" text-anchor="end" font-size="17">6</text>
+    <text x="220" y="162" text-anchor="middle" font-size="17">;</text>
+    <text x="228" y="162" font-size="17">6</text>
+    <text x="332" y="162" text-anchor="end" font-size="17">0</text>
+    <text x="340" y="162" text-anchor="middle" font-size="17">;</text>
+    <text x="348" y="162" font-size="17" font-weight="bold">12</text>
+    <line x1="344" y1="168" x2="372" y2="168" stroke="#111827" stroke-width="2.4"></line>
+    <text x="212" y="232" text-anchor="end" font-size="17" font-weight="bold">12</text>
+    <text x="220" y="232" text-anchor="middle" font-size="17">;</text>
+    <text x="228" y="232" font-size="17">0</text>
+    <line x1="188" y1="238" x2="214" y2="238" stroke="#111827" stroke-width="2.4"></line>
+    <text x="332" y="232" text-anchor="end" font-size="17" font-weight="bold">2</text>
+    <text x="340" y="232" text-anchor="middle" font-size="17">;</text>
+    <text x="348" y="232" font-size="17" font-weight="bold">2</text>
+    <line x1="320" y1="238" x2="334" y2="238" stroke="#111827" stroke-width="2.4"></line>
+    <line x1="346" y1="238" x2="360" y2="238" stroke="#111827" stroke-width="2.4"></line>
+    <path d="M 470 226 L 406 226" stroke="#047857" stroke-width="1.6" fill="none" marker-end="url(#q5f2-arr)"></path>
+    <text x="474" y="222" font-size="13" font-weight="bold" style="fill:#047857">Équilibre</text>
+    <text x="474" y="238" font-size="13" font-weight="bold" style="fill:#047857">de Nash</text>
+    <text x="280" y="292" text-anchor="middle" font-size="13" font-style="italic" style="fill:#4b5563">Un trait sous un nombre = c'est la meilleure réponse de ce joueur-là.</text>
+    <text x="280" y="312" text-anchor="middle" font-size="13" font-style="italic" style="fill:#4b5563">La case aux DEUX nombres soulignés est l'équilibre de Nash.</text>
+    <text x="280" y="332" text-anchor="middle" font-size="13" font-style="italic" style="fill:#4b5563">Ici (B ; B) donne (2 ; 2)… alors que (E ; E) donnerait (6 ; 6).</text>
+  </svg>
+  <figcaption>
+    La matrice annotée. Colonne par colonne on souligne le plus grand premier nombre (meilleures
+    réponses de Piccolo) ; ligne par ligne, le plus grand second nombre (meilleures réponses de
+    Rustica). Une seule case cumule les deux : (B ; B), hachurée.
+  </figcaption>
+</figure>
+
+<p>
+  Le même résultat, sous forme de tableau, avec les conventions de couleur du cours : en jaune
+  les meilleures réponses, en vert l'équilibre.
+</p>
+
+<table class="game">
+  <tr><td class="void"></td><td class="void"></td><th colspan="2">Rustica</th></tr>
+  <tr><td class="void"></td><td class="void"></td><th>E</th><th>B</th></tr>
+  <tr><td class="player" rowspan="2">Piccolo</td><th>E</th><td>(6 ; 6)</td><td class="hl">(0 ; <u>12</u>)</td></tr>
+  <tr><th>B</th><td class="hl">(<u>12</u> ; 0)</td><td class="nash">(<u>2</u> ; <u>2</u>)</td></tr>
+</table>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">5.</span> Vérifier la structure de « dilemme »</div>
+  <p>
+    Dernière brique de la première moitié : montrer que l'issue de l'équilibre est mauvaise
+    <em>pour les deux</em>. Il suffit de comparer deux cases.
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ (\mathrm{B};\mathrm{B}) \to (2\,;2) \qquad\text{contre}\qquad (\mathrm{E};\mathrm{E}) \to (6\,;6) \]
+      <div class="why">
+        Je place côte à côte le résultat de l'équilibre et le résultat de la coopération, pour
+        les comparer joueur par joueur.
+      </div>
+    </div>
+    <div class="step">
+      \[ 6 &gt; 2 \ \text{ pour Piccolo} \qquad\text{et}\qquad 6 &gt; 2 \ \text{ pour Rustica} \]
+      <div class="why">
+        Les <strong>deux</strong> joueurs préfèrent (E ; E) à (B ; B). On dit que (B ; B) est
+        <span class="term">Pareto-dominé</span> par (E ; E) : il existe une autre issue qui
+        améliore le sort de tout le monde à la fois.
+      </div>
+    </div>
+  </div>
+  <p>
+    Voilà le paradoxe complet : chacune, en agissant rationnellement pour elle-même, aboutit à
+    une situation que les deux jugent pire. La rationalité individuelle a détruit 8 000 € de
+    profit par mois (12 au lieu de 4 pour le secteur).
+  </p>
+</div>
+
+<div class="result">
+  <div class="result-title">Résultat — première moitié de 5.1</div>
+  <p>
+    <strong>B est la stratégie strictement dominante</strong> de Piccolo (\( 12 &gt; 6 \) et
+    \( 2 &gt; 0 \)) et, par symétrie, de Rustica. L'unique <strong>équilibre de Nash</strong> du
+    jeu en une période est <strong>(B ; B)</strong>, avec les payoffs <strong>(2 ; 2)</strong>.
+    Comme (E ; E) donnerait (6 ; 6) aux deux, l'équilibre est Pareto-dominé : le jeu est bien un
+    <strong>dilemme du prisonnier</strong>.
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Piège — ne montrer qu'une seule des deux choses</div>
+  <p>
+    Beaucoup de copies écrivent la dominance, s'arrêtent là, et perdent la moitié des points.
+    « Dilemme du prisonnier » exige <strong>deux</strong> ingrédients : (i) la dominance stricte
+    de chacun, avec les inégalités chiffrées ; (ii) le fait que l'équilibre est moins bon pour
+    tous que (E ; E). L'un sans l'autre ne suffit pas — c'est leur coexistence qui fait le
+    « dilemme ».
+  </p>
+</div>
+
+<hr class="soft">
+
+<h2>5. Le cours dont tu as besoin — épisode 3 : répéter le jeu</h2>
+
+<p>
+  On arrive à la partie vraiment nouvelle. Jusqu'ici, le jeu se jouait une fois. Maintenant, il
+  se rejoue tous les mois. Que change la répétition ?
+</p>
+
+<h3>5.1 Qu'est-ce qu'un jeu répété ?</h3>
+
+<div class="box box-def">
+  <div class="box-title">Définition — jeu répété</div>
+  <p>
+    Un <span class="term">jeu répété</span> est un jeu où un même jeu simultané — appelé
+    <span class="term">jeu d'étape</span> ou <em>jeu de période</em> — est joué pendant plusieurs
+    <span class="term">périodes</span> successives. À la fin de chaque période, deux choses
+    arrivent :
+  </p>
+  <ul>
+    <li>les payoffs de la période sont encaissés (ici, le profit du mois tombe en caisse) ;</li>
+    <li>
+      les choix des deux joueurs deviennent <strong>publics</strong> : chacun voit ce que l'autre
+      a joué. C'est le point crucial.
+    </li>
+  </ul>
+  <p>
+    On numérote les périodes à partir de zéro : \( t = 0, 1, 2, 3, \dots \) (« t » comme
+    <em>temps</em>). La période 0 est « aujourd'hui », la période 1 « le mois prochain », etc.
+  </p>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi le fait de voir le passé change tout</div>
+  <p>
+    Parce que ça rend la <span class="term">punition</span> possible. Dans un jeu joué une seule
+    fois, je ne peux rien te faire : le jeu est fini avant que j'aie pu réagir. Dans un jeu
+    répété, je peux dire — et surtout <em>faire</em> — : « si tu me trahis ce mois-ci, je te
+    ferai la guerre les mois suivants ». Du coup, ta décision d'aujourd'hui n'a plus seulement
+    un effet aujourd'hui : elle a des <strong>conséquences dans le futur</strong>. Trahir devient
+    un arbitrage entre un gain immédiat et des pertes futures. Tout le reste de la question 5
+    consiste à mesurer cet arbitrage.
+  </p>
+</div>
+
+<h3>5.2 Ce qu'est une « stratégie » dans un jeu répété</h3>
+
+<div class="box box-def">
+  <div class="box-title">Définition — stratégie dans un jeu répété</div>
+  <p>
+    Dans le jeu d'un seul mois, une stratégie était juste une action : « E » ou « B ». Dans le
+    jeu répété, une <span class="term">stratégie</span> est un <strong>plan complet de
+    conduite</strong> : une règle qui dit, <em>pour chaque mois et pour chaque passé
+    possible</em>, ce que je vais jouer.
+  </p>
+  <p>
+    Autrement dit, ce n'est plus un <em>choix</em>, c'est une <em>règle</em>. Comparaison
+    parlante : « je prends du café » est une action ; « je prends du café tous les matins sauf
+    le dimanche, et jamais après 17 h » est une stratégie. La seconde décrit ton comportement
+    dans toutes les situations d'avance.
+  </p>
+</div>
+
+<div class="box box-exemple">
+  <div class="box-title">Exemple — trois stratégies possibles pour Piccolo</div>
+  <ul>
+    <li>
+      <strong>« Toujours B »</strong> : je casse mes prix tous les mois, quoi qu'ait fait
+      Rustica. C'est une stratégie « sourde » : elle ignore complètement le passé.
+    </li>
+    <li>
+      <strong>« Toujours E »</strong> : je reste loyale tous les mois, même si Rustica me trahit
+      dix fois de suite. Sourde aussi — et manifestement naïve.
+    </li>
+    <li>
+      <strong>« Grim »</strong> : je joue E tant que Rustica a toujours joué E ; dès qu'elle
+      joue B une seule fois, je joue B pour toujours. Celle-là <em>écoute</em> le passé : c'est
+      une stratégie <span class="term">contingente à l'histoire du jeu</span>. C'est celle que
+      l'énoncé de 5.2 va nous imposer.
+    </li>
+  </ul>
+</div>
+
+<h3>5.3 Horizon fini connu contre horizon infini</h3>
+
+<dl class="lexique">
+  <dt>Horizon fini et connu</dt>
+  <dd>
+    Le jeu dure un nombre \( T \) de périodes, et ce nombre \( T \) est <strong>su à
+    l'avance</strong> par les deux joueurs. Exemple concret : les deux pizzerias savent que la
+    ville sera rasée pour un projet immobilier dans exactement 12 mois. Il y a donc un
+    <em>dernier mois identifiable</em>.
+  </dd>
+  <dt>Horizon infini</dt>
+  <dd>
+    Le jeu ne s'arrête jamais : \( t = 0, 1, 2, \dots \) sans fin. Il n'existe aucun « dernier
+    mois ». C'est une idéalisation mathématique — mais on verra en 5.3 qu'elle représente en
+    réalité une situation très courante : celle où on ne sait <em>jamais</em> si c'est la
+    dernière fois.
+  </dd>
+</dl>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi cette distinction est LE cœur du chapitre</div>
+  <p>
+    Retiens dès maintenant la phrase-résumé du cours : <strong>ce qui tue la coopération, ce
+    n'est pas la durée du jeu, c'est le fait de pouvoir compter les périodes qui
+    restent.</strong> Un jeu de 1 000 mois avec une fin connue s'effondre autant qu'un jeu de
+    2 mois. Un jeu sans fin identifiable, lui, peut tenir. On va le démontrer maintenant.
+  </p>
+</div>
+
+<h3>5.4 L'induction à rebours, expliquée pas à pas</h3>
+
+<div class="box box-def">
+  <div class="box-title">Définition — induction à rebours (backward induction)</div>
+  <p>
+    L'<span class="term">induction à rebours</span> — en anglais <em>backward induction</em>,
+    littéralement « raisonnement en marche arrière » — est une méthode pour résoudre un jeu qui
+    se déroule dans le temps. Le principe :
+  </p>
+  <p>
+    <strong>On commence par la toute dernière décision, on détermine ce qui s'y passera, puis on
+    remonte d'un cran, en tenant pour acquis ce qu'on vient d'établir. Et on continue jusqu'au
+    début.</strong>
+  </p>
+  <p>
+    Pourquoi partir de la fin ? Parce que la dernière décision est la seule qu'on puisse
+    trancher <em>sans rien supposer</em> : après elle, il n'y a plus rien. Une fois la fin
+    connue, l'avant-dernière décision devient à son tour la « dernière qui compte », et ainsi de
+    suite.
+  </p>
+</div>
+
+<div class="box box-exemple">
+  <div class="box-title">Exemple hors théorie des jeux — pour bien saisir l'idée</div>
+  <p>
+    Tu veux arriver à un examen à 9 h 00. L'examen est à 40 minutes de chez toi, il faut
+    10 minutes pour se préparer et 5 minutes de marge. Comment calcules-tu ton réveil ? Tu ne
+    pars pas du matin vers l'examen : tu pars de <strong>9 h 00 et tu remontes</strong> —
+    9 h 00 moins 5 min de marge = 8 h 55 ; moins 40 min de trajet = 8 h 15 ; moins 10 min de
+    préparation = 8 h 05. Réveil à 8 h 05. Tu viens de faire une induction à rebours. C'est
+    exactement la même mécanique qu'on va appliquer aux mois de nos pizzerias.
+  </p>
+</div>
+
+<h4>Déroulons-la sur un exemple à 3 mois</h4>
+
+<p>
+  Imaginons que les pizzerias savent que le jeu durera <strong>exactement 3 mois</strong> :
+  mois 1, mois 2, mois 3. Puis plus rien. Suivons le raisonnement dans l'ordre où on doit le
+  faire — c'est-à-dire à l'envers du temps.
+</p>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">a.</span> Le mois 3 (le dernier)</div>
+  <p>
+    Nous sommes au mois 3. Après ce mois, il n'y a plus rien du tout : plus de mois 4, plus de
+    revanche, plus de punition possible. Donc, ce mois-ci, personne ne peut me menacer de quoi
+    que ce soit, et je ne peux menacer personne. Le mois 3 est un jeu joué <em>une seule
+    fois</em> — exactement le jeu qu'on a résolu en section 4.
+  </p>
+  <p>
+    Résultat : chacune joue sa stratégie strictement dominante, <strong>B</strong>. Et ceci est
+    vrai <em>quoi qu'il se soit passé aux mois 1 et 2</em> : même si les deux ont été
+    parfaitement loyales pendant deux mois, au mois 3 elles trahissent. Le passé n'a aucune
+    prise sur la dernière période.
+  </p>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">b.</span> Le mois 2 (l'avant-dernier)</div>
+  <p>
+    Remontons d'un cran. Nous sommes au mois 2, et les deux pizzerias viennent de comprendre
+    (elles sont rationnelles, et elles savent que l'autre l'est) que le mois 3 sera
+    <strong>(B ; B) quoi qu'il arrive</strong>. Posons-nous alors les deux questions qui
+    décident de tout :
+  </p>
+  <ul>
+    <li>
+      « Si je coopère aujourd'hui, est-ce que ça m'achète quelque chose demain ? » —
+      <strong>Non</strong> : demain sera (B ; B) de toute façon.
+    </li>
+    <li>
+      « Si je trahis aujourd'hui, est-ce que ça me coûte quelque chose demain ? » —
+      <strong>Non</strong> : demain serait (B ; B) de toute façon, punition ou pas.
+    </li>
+  </ul>
+  <p>
+    Le futur est donc <strong>figé</strong> : il ne dépend plus de ce que je fais aujourd'hui.
+    Le mois 2 est ainsi coupé de sa suite — il redevient un jeu isolé. Et dans un jeu isolé,
+    chacune joue sa dominante : <strong>B</strong>.
+  </p>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">c.</span> Le mois 1 (le premier)</div>
+  <p>
+    Même raisonnement, un cran plus haut. Les deux savent maintenant que les mois 2 et 3 seront
+    (B ; B) quoi qu'il arrive. Coopérer au mois 1 n'achète donc rien, trahir ne coûte rien : le
+    mois 1 est à son tour un jeu isolé. Chacune joue <strong>B</strong>.
+  </p>
+</div>
+
+<figure>
+  <svg viewBox="0 0 600 320" width="100%" style="max-width:12cm" role="img"
+       aria-label="Schéma de l'induction à rebours sur trois mois : on résout d'abord le dernier mois, puis on remonte vers le premier">
+    <defs>
+      <marker id="q5f3-arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#4b5563"></path>
+      </marker>
+      <marker id="q5f3-arrL" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#be123c"></path>
+      </marker>
+    </defs>
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-style="italic" style="fill:#4b5563">le temps avance</text>
+    <path d="M 60 38 L 540 38" stroke="#4b5563" stroke-width="1.4" fill="none" marker-end="url(#q5f3-arrR)"></path>
+    <rect x="60" y="52" width="140" height="60" rx="4" fill="#ffffff" stroke="#111827" stroke-width="1.5"></rect>
+    <rect x="230" y="52" width="140" height="60" rx="4" fill="#ffffff" stroke="#111827" stroke-width="1.5"></rect>
+    <rect x="400" y="52" width="140" height="60" rx="4" fill="#fff1f2" stroke="#be123c" stroke-width="2.4"></rect>
+    <text x="130" y="80" text-anchor="middle" font-size="15" font-weight="bold">Mois 1</text>
+    <text x="130" y="100" text-anchor="middle" font-size="12" style="fill:#4b5563">(premier)</text>
+    <text x="300" y="80" text-anchor="middle" font-size="15" font-weight="bold">Mois 2</text>
+    <text x="300" y="100" text-anchor="middle" font-size="12" style="fill:#4b5563">(avant-dernier)</text>
+    <text x="470" y="80" text-anchor="middle" font-size="15" font-weight="bold">Mois 3</text>
+    <text x="470" y="100" text-anchor="middle" font-size="12" style="fill:#be123c">(DERNIER)</text>
+    <path d="M 540 136 L 60 136" stroke="#be123c" stroke-width="2" stroke-dasharray="8 5" fill="none" marker-end="url(#q5f3-arrL)"></path>
+    <text x="300" y="130" text-anchor="middle" font-size="13" font-weight="bold" style="fill:#be123c">le raisonnement remonte</text>
+    <text x="470" y="170" text-anchor="middle" font-size="12.5" font-weight="bold">3) Aucun avenir :</text>
+    <text x="470" y="187" text-anchor="middle" font-size="12.5">rien ne peut punir</text>
+    <text x="470" y="204" text-anchor="middle" font-size="12.5">une trahison</text>
+    <text x="470" y="226" text-anchor="middle" font-size="15" font-weight="bold" style="fill:#be123c">→ B</text>
+    <text x="300" y="170" text-anchor="middle" font-size="12.5" font-weight="bold">2) Le mois 3 sera</text>
+    <text x="300" y="187" text-anchor="middle" font-size="12.5">(B ; B) quoi qu'il</text>
+    <text x="300" y="204" text-anchor="middle" font-size="12.5">arrive : futur figé</text>
+    <text x="300" y="226" text-anchor="middle" font-size="15" font-weight="bold" style="fill:#be123c">→ B</text>
+    <text x="130" y="170" text-anchor="middle" font-size="12.5" font-weight="bold">1) Idem : rien à</text>
+    <text x="130" y="187" text-anchor="middle" font-size="12.5">gagner en coopérant,</text>
+    <text x="130" y="204" text-anchor="middle" font-size="12.5">rien à craindre</text>
+    <text x="130" y="226" text-anchor="middle" font-size="15" font-weight="bold" style="fill:#be123c">→ B</text>
+    <rect x="60" y="252" width="480" height="46" rx="4" fill="#f8fafc" stroke="#111827" stroke-width="1.5"></rect>
+    <text x="300" y="272" text-anchor="middle" font-size="13.5" font-weight="bold">Conclusion : B au mois 3, donc B au mois 2, donc B au mois 1.</text>
+    <text x="300" y="290" text-anchor="middle" font-size="13" font-style="italic" style="fill:#4b5563">L'entente ne tient à aucun mois — même pas au premier.</text>
+  </svg>
+  <figcaption>
+    L'induction à rebours. Les chiffres 1), 2), 3) indiquent l'ordre du <em>raisonnement</em>,
+    qui va de la fin vers le début — à l'inverse du sens du temps. C'est ce renversement qui
+    déroute au premier abord : on résout le dernier mois d'abord, parce que c'est le seul qu'on
+    puisse trancher sans rien supposer.
+  </figcaption>
+</figure>
+
+<div class="box box-def">
+  <div class="box-title">Théorème de l'horizon fini (à connaître mot pour mot)</div>
+  <p>
+    Dans un jeu répété un <strong>nombre fini et connu</strong> de fois, si le jeu d'étape
+    possède un <strong>unique équilibre de Nash</strong>, alors le jeu répété possède un unique
+    équilibre parfait : <strong>cet équilibre de Nash est joué à chaque période</strong>.
+  </p>
+  <p>
+    Ici, le jeu d'étape a un unique équilibre de Nash, (B ; B). Le théorème s'applique donc
+    directement : l'unique issue du jeu répété un nombre fini et connu de mois est « B à tous
+    les mois ».
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Piège — « avec beaucoup de mois, elles coopéreront bien au début »</div>
+  <p>
+    C'est l'intuition spontanée de presque tout le monde… et elle est fausse. Le nombre de mois
+    n'intervient <em>nulle part</em> dans le raisonnement : ce qui compte, c'est l'existence
+    d'un <strong>dernier mois identifiable</strong>. Il suffit d'un seul point de départ à la
+    contagion pour que toute la chaîne s'effondre, qu'elle ait 3 maillons ou 3 millions. Une
+    image : une rangée de dominos, aussi longue soit-elle, tombe entièrement dès qu'on pousse le
+    dernier — et ici, la fin du jeu pousse toujours le dernier.
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Piège — l'hypothèse « unique équilibre de Nash » du théorème</div>
+  <p>
+    Le théorème a <strong>deux</strong> hypothèses : nombre fini et connu de répétitions,
+    <em>et</em> unicité de l'équilibre de Nash du jeu d'étape. Si le jeu d'étape avait deux
+    équilibres (comme la « bataille des sexes »), le théorème ne s'appliquerait plus et de la
+    coopération pourrait apparaître même à horizon fini. Ici l'hypothèse est vérifiée — mais
+    prends l'habitude de le <em>dire</em> : c'est un point que les correcteurs valorisent.
+  </p>
+</div>
+
+<hr class="soft">
+
+<h2>6. Question 5.1, seconde moitié — l'horizon fini tue l'entente</h2>
+
+<p>
+  On a maintenant tous les outils. Rédigeons la réponse à la seconde partie de 5.1 en suivant
+  exactement les étapes de l'induction à rebours, mais cette fois avec un nombre de mois
+  quelconque, noté \( T \) (« T » comme <em>terminal</em>, ou <em>total</em>).
+</p>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">1.</span> Poser le cadre et nommer les périodes</div>
+  <p>
+    Le jeu dure \( T \) mois, numérotés \( 1, 2, \dots, T \), et \( T \) est connu des deux
+    pizzerias dès le départ. Le payoff total d'une pizzeria est la somme de ses profits
+    mensuels (éventuellement escomptés — cela ne changera rien ici).
+  </p>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">2.</span> Résoudre le dernier mois \( T \)</div>
+  <p>
+    Au mois \( T \), le jeu s'arrête juste après. Aucune récompense ni punition future n'est
+    donc possible : le mois \( T \) est un jeu joué une seule fois. Chacune y joue sa stratégie
+    strictement dominante <strong>B</strong>, et ce <strong>quel que soit le passé</strong> —
+    même après \( T-1 \) mois de loyauté parfaite.
+  </p>
+  <div class="box box-why">
+    <div class="box-title">Pourquoi la menace grim est « vide » au dernier mois</div>
+    <p>
+      Imagine que Rustica ait annoncé : « si tu me trahis, je te punis le mois suivant ». Au mois
+      \( T \), cette phrase ne veut plus rien dire : il n'y a pas de mois suivant. Une menace qui
+      ne peut jamais être exécutée n'influence aucune décision rationnelle. On dit qu'elle n'est
+      pas <span class="term">crédible</span>. C'est le premier domino.
+    </p>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">3.</span> Remonter au mois \( T-1 \)</div>
+  <p>
+    Les deux pizzerias savent désormais que le mois \( T \) sera (B ; B) <em>quoi qu'elles
+    fassent aujourd'hui</em>. Donc :
+  </p>
+  <ul>
+    <li>coopérer au mois \( T-1 \) n'achète <strong>aucune</strong> récompense future ;</li>
+    <li>trahir au mois \( T-1 \) ne coûte <strong>aucune</strong> punition future.</li>
+  </ul>
+  <p>
+    Le lien entre aujourd'hui et demain est coupé : le mois \( T-1 \) redevient un jeu isolé.
+    Chacune y joue donc <strong>B</strong>.
+  </p>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">4.</span> Et ainsi de suite jusqu'au mois 1</div>
+  <p>
+    Le même argument s'applique au mois \( T-2 \) : les mois \( T-1 \) et \( T \) sont déjà
+    figés en (B ; B), donc le mois \( T-2 \) est isolé, donc B. Puis \( T-3 \), puis \( T-4 \)…
+    La contagion remonte de proche en proche, mois par mois, jusqu'au tout premier. À chaque
+    étape, le même argument : « le futur est déjà déterminé, donc mon choix d'aujourd'hui n'a
+    plus aucune conséquence future, donc je joue ma dominante ».
+  </p>
+</div>
+
+<div class="result">
+  <div class="result-title">Résultat — seconde moitié de 5.1</div>
+  <p>
+    Par induction à rebours, l'unique issue du jeu répété un nombre fini et connu de mois est
+    <strong>« B à toutes les périodes »</strong>. L'entente ne peut être soutenue à
+    <strong>aucun</strong> mois, pas même au premier. C'est le
+    <strong>théorème de l'horizon fini</strong> : dès que les joueurs peuvent compter les
+    périodes restantes, aucune menace, aussi sévère soit-elle, ne peut soutenir la coopération.
+  </p>
+</div>
+
+<div class="box box-copie">
+  <div class="box-title">Ce qu'il fallait écrire sur la copie — question 5.1</div>
+  <p>
+    <strong>a) Stratégie dominante et équilibre de Nash.</strong> Pour Piccolo : si Rustica joue
+    E, B rapporte 12 contre 6 pour E ; si Rustica joue B, B rapporte 2 contre 0 pour E. Dans les
+    deux cas, B rapporte strictement plus : <strong>B domine strictement E</strong>. Le jeu étant
+    symétrique, il en va de même pour Rustica. Chacune jouant sa stratégie dominante, l'unique
+    équilibre de Nash du jeu en une période est <strong>(B ; B)</strong>, de payoffs
+    <strong>(2 ; 2)</strong>.
+  </p>
+  <p>
+    <strong>b) Structure de dilemme du prisonnier.</strong> Or (E ; E) donnerait
+    <strong>(6 ; 6)</strong>, soit strictement plus aux <em>deux</em> joueurs : l'équilibre
+    (B ; B) est Pareto-dominé par (E ; E). Chacune a individuellement intérêt à trahir, alors que
+    les deux préfèrent l'issue coopérative : c'est exactement la structure d'un
+    <strong>dilemme du prisonnier</strong>.
+  </p>
+  <p>
+    <strong>c) Horizon fini et connu.</strong> Raisonnons par induction à rebours. À la dernière
+    période \( T \), aucune punition future n'est possible : chaque pizzeria joue sa stratégie
+    dominante B, quel que soit le passé. À la période \( T-1 \), les deux savent que la période
+    \( T \) sera (B ; B) quoi qu'il arrive : coopérer n'achète aucune récompense future et trahir
+    ne coûte aucune punition future, donc chacune joue B. Le raisonnement remonte de proche en
+    proche jusqu'à la première période. L'unique équilibre parfait du jeu répété un nombre fini
+    et connu de périodes est donc « <strong>B à toutes les périodes</strong> ». C'est le
+    théorème de l'horizon fini : aucune menace ne peut soutenir l'entente dès lors que l'on peut
+    compter les périodes restantes.
+  </p>
+</div>
+
+<div class="box box-methode">
+  <div class="box-title">Réflexe de méthode — « montrez que c'est un dilemme du prisonnier »</div>
+  <ol>
+    <li>Pour le joueur 1, comparer ses payoffs colonne par colonne : deux inégalités chiffrées.</li>
+    <li>Idem pour le joueur 2 ligne par ligne, ou invoquer explicitement la symétrie.</li>
+    <li>Conclure : chacun a une stratégie strictement dominante → équilibre de Nash unique.</li>
+    <li>
+      Comparer le payoff d'équilibre au payoff de coopération et montrer que le second est
+      strictement meilleur <em>pour les deux</em> (Pareto-domination).
+    </li>
+    <li>Écrire la phrase de synthèse : « rationalité individuelle → désastre collectif ».</li>
+  </ol>
+  <p>
+    Cette recette marche sur n'importe quels nombres. Le seul point de vigilance : bien vérifier
+    la dominance <em>stricte</em> (aucune égalité), sinon on parle de dominance faible et la
+    conclusion se nuance.
+  </p>
+</div>
+
+<hr class="soft">
+
+<h2>7. Le cours dont tu as besoin — épisode 4 : l'infini, δ et grim</h2>
+
+<p>
+  Nous voici à la partie la plus technique — et rassure-toi, elle tient en quatre idées. On les
+  prend une par une, très lentement.
+</p>
+
+<h3>7.1 Pourquoi passer à l'horizon infini ?</h3>
+
+<p>
+  On vient de voir que la coopération meurt à cause de l'existence d'un dernier mois connu.
+  L'idée du cours est donc radicale : <strong>supprimons la fin</strong>. Si le jeu ne s'arrête
+  jamais, il n'y a plus de dernier mois, donc plus de premier domino à faire tomber, donc plus
+  d'effondrement. Le raisonnement de l'induction à rebours devient tout simplement
+  <em>impossible à démarrer</em> : par où commencerait-on, puisqu'il n'y a pas de fin ?
+</p>
+
+<div class="box box-piege">
+  <div class="box-title">Piège majeur — appliquer l'induction à rebours à l'horizon infini</div>
+  <p>
+    C'est l'erreur la plus fréquente sur ce chapitre. L'induction à rebours <strong>a besoin
+    d'une dernière période</strong> pour démarrer : c'est son point d'ancrage. Sans dernière
+    période, la méthode n'existe pas. Écrire « par backward induction, à horizon infini,
+    chacun trahit » n'est pas une réponse un peu maladroite : c'est un contresens qui coûte cher.
+    À horizon infini, on utilise une <em>autre</em> méthode — celle qu'on va apprendre : comparer
+    deux payoffs escomptés.
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Piège — « horizon infini donc les joueurs coopèrent »</div>
+  <p>
+    Faux également. L'horizon infini rend la coopération <strong>possible</strong>, jamais
+    <strong>certaine</strong>. Le profil « les deux trahissent toujours » reste un équilibre
+    parfaitement valable à horizon infini : si l'autre joue B tous les mois, ma meilleure réponse
+    est de jouer B aussi. Un jeu répété à l'infini a plusieurs équilibres. La question de
+    l'examen est donc bien : « <em>sous quelle condition</em> l'entente <em>peut</em> tenir ? »
+  </p>
+</div>
+
+<h3>7.2 Le facteur d'escompte δ</h3>
+
+<div class="box box-def">
+  <div class="box-title">Définition — facteur d'escompte δ</div>
+  <p>
+    Le <span class="term">facteur d'escompte</span> est un nombre \( \delta \) compris entre 0
+    et 1, qui traduit <strong>combien un euro reçu le mois prochain vaut à mes yeux
+    aujourd'hui</strong>.
+  </p>
+  <p>
+    Concrètement : <strong>1 € reçu dans un mois « vaut » \( \delta \) € aujourd'hui.</strong>
+    Si \( \delta = 0{,}9 \), un euro du mois prochain vaut 90 centimes maintenant. Si
+    \( \delta = 0{,}5 \), il ne vaut que 50 centimes maintenant.
+  </p>
+</div>
+
+<div class="box box-rappel">
+  <div class="box-title">Comment lire cette notation à voix haute</div>
+  <p>
+    \( \delta \) est la lettre grecque « <strong>delta</strong> » (minuscule). On dit « delta ».
+    \( \delta^2 \) se lit « delta au carré », \( \delta^3 \) « delta au cube », et
+    \( \delta^t \) « delta puissance t ». L'énoncé écrit \( \delta \in [0;\,1[ \), ce qui se lit
+    « delta appartient à l'intervalle de 0 inclus à 1 exclu » : δ peut valoir 0, peut valoir
+    0,999, mais jamais 1. (Le crochet qui tourne le dos, \( [ \) à droite, signifie « borne
+    exclue ».)
+  </p>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi diable escompter le futur ?</div>
+  <p>
+    Pour trois raisons qui se cumulent, et qu'on développera en 5.3 :
+  </p>
+  <ul>
+    <li>
+      <strong>l'impatience pure</strong> : on préfère spontanément le plaisir tout de suite ;
+    </li>
+    <li>
+      <strong>le taux d'intérêt</strong> : un euro reçu aujourd'hui peut être placé et rapporter
+      des intérêts, donc il vaut mécaniquement plus qu'un euro reçu plus tard ;
+    </li>
+    <li>
+      <strong>l'incertitude</strong> : le mois prochain, l'entreprise existera peut-être plus,
+      la relation sera peut-être finie. Un gain futur n'est jamais totalement sûr.
+    </li>
+  </ul>
+</div>
+
+<h4>La règle de calcul, à graver</h4>
+
+<p>
+  Un euro reçu dans un mois vaut \( \delta \) aujourd'hui. Un euro reçu dans deux mois vaut
+  \( \delta \) dans un mois, donc \( \delta \times \delta = \delta^2 \) aujourd'hui. En général :
+</p>
+
+<div class="calc">
+  <div class="step">
+    \[ \text{une somme } \pi \text{ reçue en période } t \ \text{vaut aujourd'hui } \delta^t \pi \]
+    <div class="why">
+      On applique le facteur δ une fois par période de décalage. Trois mois de décalage = trois
+      multiplications par δ = \( \delta^3 \). C'est la seule règle à retenir.
+    </div>
+  </div>
+  <div class="step">
+    \[ \Pi \;=\; \pi_0 + \delta\,\pi_1 + \delta^2\,\pi_2 + \delta^3\,\pi_3 + \cdots \;=\; \sum_{t=0}^{\infty} \delta^t \pi_t \]
+    <div class="why">
+      C'est le <strong>payoff escompté</strong> total : on additionne tous les profits futurs,
+      chacun ramené à sa valeur d'aujourd'hui. Le grand \( \Pi \) (« pi » majuscule) désigne le
+      total sur toute la vie du jeu ; les petits \( \pi_t \) sont les profits de chaque mois.
+      Le symbole \( \sum \) (« sigma ») veut dire « somme de », et « t = 0 jusqu'à l'infini »
+      indique sur quoi on somme.
+    </div>
+  </div>
+</div>
+
+<figure>
+  <svg viewBox="0 0 580 300" width="100%" style="max-width:12cm" role="img"
+       aria-label="Diagramme en barres montrant la décroissance du poids delta puissance t pour delta égal 0,9 et delta égal 0,6">
+    <defs>
+      <pattern id="q5f4-hach" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="6" stroke="#111827" stroke-width="1.2"></line>
+      </pattern>
+    </defs>
+    <line x1="60" y1="230" x2="545" y2="230" stroke="#111827" stroke-width="1.4"></line>
+    <line x1="60" y1="60" x2="60" y2="230" stroke="#111827" stroke-width="1.4"></line>
+    <text x="30" y="150" text-anchor="middle" font-size="13" transform="rotate(-90 30 150)">poids du profit</text>
+    <line x1="56" y1="70" x2="60" y2="70" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="74" text-anchor="end" font-size="12">1</text>
+    <line x1="56" y1="150" x2="60" y2="150" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="154" text-anchor="end" font-size="12">0,5</text>
+    <text x="52" y="234" text-anchor="end" font-size="12">0</text>
+    <rect x="72" y="70" width="26" height="160" fill="#4b5563"></rect>
+    <rect x="102" y="70" width="26" height="160" fill="url(#q5f4-hach)" stroke="#111827" stroke-width="1"></rect>
+    <rect x="150" y="86" width="26" height="144" fill="#4b5563"></rect>
+    <rect x="180" y="134" width="26" height="96" fill="url(#q5f4-hach)" stroke="#111827" stroke-width="1"></rect>
+    <rect x="228" y="100" width="26" height="130" fill="#4b5563"></rect>
+    <rect x="258" y="172" width="26" height="58" fill="url(#q5f4-hach)" stroke="#111827" stroke-width="1"></rect>
+    <rect x="306" y="113" width="26" height="117" fill="#4b5563"></rect>
+    <rect x="336" y="195" width="26" height="35" fill="url(#q5f4-hach)" stroke="#111827" stroke-width="1"></rect>
+    <rect x="384" y="125" width="26" height="105" fill="#4b5563"></rect>
+    <rect x="414" y="209" width="26" height="21" fill="url(#q5f4-hach)" stroke="#111827" stroke-width="1"></rect>
+    <rect x="462" y="136" width="26" height="94" fill="#4b5563"></rect>
+    <rect x="492" y="217" width="26" height="13" fill="url(#q5f4-hach)" stroke="#111827" stroke-width="1"></rect>
+    <text x="100" y="248" text-anchor="middle" font-size="12.5">t = 0</text>
+    <text x="178" y="248" text-anchor="middle" font-size="12.5">t = 1</text>
+    <text x="256" y="248" text-anchor="middle" font-size="12.5">t = 2</text>
+    <text x="334" y="248" text-anchor="middle" font-size="12.5">t = 3</text>
+    <text x="412" y="248" text-anchor="middle" font-size="12.5">t = 4</text>
+    <text x="490" y="248" text-anchor="middle" font-size="12.5">t = 5</text>
+    <rect x="150" y="24" width="18" height="14" fill="#4b5563"></rect>
+    <text x="176" y="36" font-size="13">δ = 0,9 (patient)</text>
+    <rect x="330" y="24" width="18" height="14" fill="url(#q5f4-hach)" stroke="#111827" stroke-width="1"></rect>
+    <text x="356" y="36" font-size="13">δ = 0,6 (impatient)</text>
+    <text x="300" y="278" text-anchor="middle" font-size="12.5" font-style="italic" style="fill:#4b5563">Plus δ est petit, plus le futur s'écrase vite : à t = 3, il ne pèse déjà presque plus rien.</text>
+  </svg>
+  <figcaption>
+    Le poids \( \delta^t \) accordé au profit de la période \( t \). Un joueur patient
+    (δ = 0,9, barres pleines) accorde encore 59 % de valeur au profit du 5<sup>e</sup> mois ; un
+    joueur impatient (δ = 0,6, barres hachurées) ne lui en accorde plus que 8 %.
+  </figcaption>
+</figure>
+
+<div class="box box-exemple">
+  <div class="box-title">Exemple chiffré — vérifions qu'on a compris</div>
+  <p>
+    Une pizzeria gagne 10 le mois prochain. Combien cela « vaut-il » aujourd'hui ?
+  </p>
+  <ul>
+    <li>Si \( \delta = 0{,}9 \) : \( 0{,}9 \times 10 = 9 \). Presque autant que 10 tout de suite.</li>
+    <li>Si \( \delta = 0{,}5 \) : \( 0{,}5 \times 10 = 5 \). La moitié seulement.</li>
+    <li>Si \( \delta = 0{,}1 \) : \( 0{,}1 \times 10 = 1 \). Le futur ne compte quasiment plus.</li>
+  </ul>
+  <p>
+    Et un profit de 10 reçu dans <em>trois</em> mois, avec \( \delta = 0{,}9 \) ?
+    \( 0{,}9^3 \times 10 = 0{,}729 \times 10 = 7{,}29 \). On multiplie par δ une fois par mois de
+    décalage.
+  </p>
+</div>
+
+<h3>7.3 La somme géométrique — redémontrée en trois lignes</h3>
+
+<p>
+  On va devoir additionner une <em>infinité</em> de profits. Ça semble impossible : une somme
+  infinie de nombres positifs, ça ne devrait-il pas faire l'infini ? Non — parce que chaque terme
+  rétrécit, et rétrécit assez vite. La somme converge vers un nombre fini. Voici la formule, puis
+  sa démonstration complète.
+</p>
+
+<div class="box box-def">
+  <div class="box-title">Formule — somme géométrique infinie</div>
+  <p>
+    Pour tout nombre \( a \) et tout \( \delta \) tel que \( 0 \le \delta &lt; 1 \) :
+  </p>
+  <p>
+    \[ a + a\delta + a\delta^2 + a\delta^3 + \cdots \;=\; \sum_{t=0}^{\infty} a\,\delta^t \;=\; \frac{a}{1-\delta} \]
+  </p>
+  <p>
+    En mots : <strong>recevoir le même montant \( a \) à chaque période, pour toujours, vaut
+    aujourd'hui \( a/(1-\delta) \).</strong> C'est l'outil central de tout le chapitre.
+  </p>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">D'où sort cette formule ? La preuve en trois lignes (astuce « décaler puis soustraire »)</div>
+  <p>
+    Ne l'apprends pas bêtement : elle se redémontre en dix secondes, et savoir la redémontrer
+    rassure le jour de l'examen.
+  </p>
+</div>
+
+<div class="calc">
+  <div class="step">
+    \[ S \;=\; a + a\delta + a\delta^2 + a\delta^3 + \cdots \]
+    <div class="why">
+      Je donne un nom à la somme que je cherche : je l'appelle \( S \). C'est une astuce
+      classique — on ne peut pas manipuler ce qui n'a pas de nom.
+    </div>
+  </div>
+  <div class="step">
+    \[ \delta S \;=\; a\delta + a\delta^2 + a\delta^3 + \cdots \]
+    <div class="why">
+      Je multiplie toute la ligne précédente par δ. Chaque terme gagne un δ de plus. Observe le
+      résultat : c'est <em>exactement</em> \( S \), mais privé de son tout premier terme \( a \).
+      C'est ça, l'astuce du décalage.
+    </div>
+  </div>
+  <div class="step">
+    \[ S - \delta S \;=\; a \]
+    <div class="why">
+      Je soustrais la deuxième ligne de la première. Tout se simplifie deux à deux — le
+      \( a\delta \) de \( S \) annule le \( a\delta \) de \( \delta S \), le \( a\delta^2 \)
+      annule le \( a\delta^2 \), etc. Il ne survit que le premier terme, \( a \).
+    </div>
+  </div>
+  <div class="step">
+    \[ S\,(1-\delta) \;=\; a \]
+    <div class="why">
+      Je mets \( S \) en facteur à gauche : \( S - \delta S = S(1 - \delta) \). C'est de la
+      factorisation élémentaire, comme \( 5x - 2x = x(5-2) \).
+    </div>
+  </div>
+  <div class="step">
+    \[ S \;=\; \frac{a}{1-\delta} \]
+    <div class="why">
+      Je divise les deux côtés par \( (1-\delta) \). J'ai le droit : puisque
+      \( \delta &lt; 1 \), le nombre \( 1-\delta \) est strictement positif, donc non nul. Fin de
+      la démonstration.
+    </div>
+  </div>
+</div>
+
+<div class="box box-exemple">
+  <div class="box-title">Exemple — testons la formule sur des nombres</div>
+  <p>
+    Recevoir 2 par mois pour toujours, avec \( \delta = 0{,}9 \) :
+    \( 2/(1-0{,}9) = 2/0{,}1 = 20 \). Vérification approximative à la main :
+    \( 2 + 1{,}8 + 1{,}62 + 1{,}458 + 1{,}31 + \dots \) — après 10 termes on est déjà à 13, après
+    30 termes à 19,2, et ça monte doucement vers 20 sans jamais le dépasser. La formule dit
+    juste où s'arrête cette montée.
+  </p>
+  <p>
+    Autre lecture, très parlante : avec \( \delta = 0{,}9 \), toucher 2 pour l'éternité équivaut
+    à toucher 2 pendant 10 mois sans escompte. Le facteur \( 1/(1-\delta) \) mesure en quelque
+    sorte le « nombre de mois utiles » que représente l'éternité pour un joueur de patience δ.
+  </p>
+</div>
+
+<h3>7.4 La stratégie grim</h3>
+
+<div class="box box-def">
+  <div class="box-title">Définition — la stratégie « grim » (grim trigger)</div>
+  <p>
+    « Grim » est un mot anglais qui veut dire <em>sinistre, implacable</em> ; « trigger » veut
+    dire <em>gâchette</em>. La <span class="term">stratégie grim</span>, ou « gâchette
+    implacable », s'énonce en une phrase :
+  </p>
+  <p>
+    <strong>« Je joue E tant que mon adversaire a toujours joué E dans le passé. Dès qu'il joue
+    B ne serait-ce qu'une seule fois, je joue B pour toujours. »</strong>
+  </p>
+  <p>
+    Détaillons ses deux morceaux :
+  </p>
+  <ul>
+    <li>
+      <strong>la phase de coopération</strong> : tant que tout va bien, je respecte l'entente ;
+    </li>
+    <li>
+      <strong>la phase de punition</strong> : une seule trahison déclenche une guerre des prix
+      <em>définitive</em>. Aucun pardon, jamais. D'où le mot « implacable ».
+    </li>
+  </ul>
+</div>
+
+<div class="box box-exemple">
+  <div class="box-title">Exemple — grim en action, mois par mois</div>
+  <p>
+    Supposons que Rustica joue grim. Voici comment elle réagit à différents comportements de
+    Piccolo :
+  </p>
+  <ul>
+    <li>
+      Piccolo joue E, E, E, E… → Rustica joue E, E, E, E… La gâchette n'est jamais pressée.
+    </li>
+    <li>
+      Piccolo joue E, E, <strong>B</strong>, E, E… → Rustica joue E, E, E, <strong>B</strong>,
+      <strong>B</strong>, <strong>B</strong>… Le B du mois 2 déclenche la punition à partir du
+      mois 3 ; le fait que Piccolo redevienne gentille ensuite ne change rien.
+    </li>
+  </ul>
+  <p>
+    Note bien le décalage : Rustica ne peut punir qu'<em>à partir du mois suivant</em>, puisque
+    les décisions d'un même mois sont simultanées. C'est ce décalage qui fera apparaître un
+    facteur δ dans nos calculs.
+  </p>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">La menace grim est-elle crédible ?</div>
+  <p>
+    Question légitime : punir pour toujours, n'est-ce pas se punir soi-même ? Après tout, en
+    phase de punition Rustica ne touche plus que 2 au lieu de 6.
+  </p>
+  <p>
+    La réponse est oui, elle est crédible — <strong>parce que la punition consiste à jouer
+    (B ; B), qui est justement l'équilibre de Nash du jeu d'étape</strong>. Autrement dit : une
+    fois que Piccolo joue B pour toujours, la meilleure réponse de Rustica <em>est</em> de jouer
+    B (2 vaut mieux que 0). Rustica n'a donc jamais à se forcer : exécuter la menace est dans son
+    propre intérêt. C'est ce qui distingue une menace crédible d'une fanfaronnade.
+  </p>
+  <p>
+    À l'inverse, souviens-toi de la section 6 : à horizon <em>fini</em>, la menace grim devient
+    non crédible au dernier mois — non pas parce qu'elle coûterait cher, mais parce qu'il n'y a
+    plus de mois où l'exécuter. Et c'est ce trou qui fait tout s'écrouler.
+  </p>
+</div>
+
+<div class="box box-def">
+  <div class="box-title">Définition — équilibre de Nash entre stratégies (jeu répété)</div>
+  <p>
+    Attention à ce glissement de vocabulaire. On ne cherche plus un équilibre entre deux
+    <em>actions</em> (E ou B), mais entre deux <em>règles de conduite</em>. Dire que
+    « (grim ; grim) est un équilibre de Nash » signifie :
+  </p>
+  <p>
+    <strong>si Rustica s'engage à jouer grim, alors la meilleure règle de conduite que Piccolo
+    puisse adopter pour toute la durée du jeu est grim elle aussi</strong> — aucune autre règle
+    ne lui rapporterait davantage sur l'ensemble des mois. Et réciproquement, par symétrie.
+  </p>
+</div>
+
+<hr class="soft">
+
+<h2>8. Question 5.2 — la résolution pas à pas</h2>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 5.2 (14 points)</div>
+  <p>
+    Supposez maintenant que le jeu soit répété à horizon infini et que chaque pizzeria évalue ses
+    profits futurs avec le même facteur d'escompte \( \delta \in [0;\, 1[ \). Les deux pizzerias
+    jouent la stratégie <em>grim</em> : « je joue E tant que mon adversaire a toujours joué E
+    dans le passé ; sinon, je joue B pour toujours ». Calculez le payoff escompté d'une pizzeria
+    lorsque les deux respectent l'entente, puis le payoff escompté de la meilleure déviation
+    possible, et déduisez-en la condition sur \( \delta \) pour que (grim ; grim) soit un
+    équilibre de Nash. Détaillez vos calculs (somme géométrique).
+  </p>
+  <table class="game">
+    <tr><td class="void"></td><td class="void"></td><th colspan="2">Rustica</th></tr>
+    <tr><td class="void"></td><td class="void"></td><th>E</th><th>B</th></tr>
+    <tr><td class="player" rowspan="2">Piccolo</td><th>E</th><td>(6 ; 6)</td><td>(0 ; 12)</td></tr>
+    <tr><th>B</th><td>(12 ; 0)</td><td>(2 ; 2)</td></tr>
+  </table>
+  <p>
+    <em>Barème officiel :</em> payoff de coopération \( 6/(1-\delta) \) : <strong>4 points</strong> ;
+    payoff de déviation \( 12 + 2\delta/(1-\delta) \) (gain immédiat + punition perpétuelle) :
+    <strong>5 points</strong> ; résolution correcte de l'inégalité et condition
+    \( \delta \ge 3/5 \) : <strong>5 points</strong>.
+  </p>
+</div>
+
+<h3>Traduisons la question en français simple</h3>
+
+<dl class="lexique">
+  <dt>« répété à horizon infini »</dt>
+  <dd>
+    Le jeu ne s'arrête jamais. Donc : plus de dernière période, plus d'induction à rebours, on
+    change complètement de méthode.
+  </dd>
+  <dt>« le même facteur d'escompte δ »</dt>
+  <dd>
+    Les deux pizzerias ont la même patience. C'est une simplification qui permet de traiter un
+    seul calcul au lieu de deux (le jeu reste symétrique).
+  </dd>
+  <dt>« Calculez le payoff escompté d'une pizzeria lorsque les deux respectent l'entente »</dt>
+  <dd>
+    Premier calcul demandé. Scénario : personne ne trahit jamais. Combien vaut, aujourd'hui,
+    toute la suite infinie de profits ? Réponse attendue : une somme géométrique.
+  </dd>
+  <dt>« puis le payoff escompté de la meilleure déviation possible »</dt>
+  <dd>
+    Deuxième calcul. Le mot <strong>meilleure</strong> est capital : on ne prend pas n'importe
+    quelle trahison, on prend celle qui rapporte le plus au traître. Il faudra donc réfléchir un
+    instant à ce que le déviant fait de mieux, pas seulement au mois de la trahison mais aussi
+    <em>après</em>.
+  </dd>
+  <dt>« déduisez-en la condition sur δ »</dt>
+  <dd>
+    Troisième étape : écrire l'inéquation « coopérer rapporte au moins autant que dévier » et la
+    résoudre pour isoler δ. Le résultat doit se présenter sous la forme « δ ≥ un nombre ».
+  </dd>
+  <dt>« pour que (grim ; grim) soit un équilibre de Nash »</dt>
+  <dd>
+    On vérifie qu'aucune des deux pizzerias ne gagne à abandonner grim toute seule, l'autre
+    continuant à jouer grim. C'est la définition même de l'équilibre de Nash, appliquée à des
+    règles de conduite.
+  </dd>
+  <dt>« Détaillez vos calculs (somme géométrique). »</dt>
+  <dd>
+    Consigne explicite du barème : on veut voir les flux période par période <em>avant</em> la
+    formule. Sauter directement à \( 6/(1-\delta) \) fait perdre des points même si le résultat
+    est juste.
+  </dd>
+</dl>
+
+<h3>La résolution</h3>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">1.</span> Le payoff si les deux respectent l'entente</div>
+  <p>
+    Plaçons-nous du côté de Piccolo (par symétrie, le calcul de Rustica est identique). Les deux
+    jouent grim. Que se passe-t-il ? Piccolo joue E au mois 0 ; Rustica aussi ; donc personne n'a
+    trahi ; donc au mois 1 les deux rejouent E ; et ainsi de suite <strong>indéfiniment</strong>.
+    La gâchette n'est jamais pressée : c'est (E ; E) tous les mois, pour toujours.
+  </p>
+  <p>Le flux de profits de Piccolo est donc : 6 au mois 0, 6 au mois 1, 6 au mois 2, etc.</p>
+  <div class="calc">
+    <div class="step">
+      \[ \Pi^{\text{coop}} \;=\; 6 + 6\,\delta + 6\,\delta^2 + 6\,\delta^3 + \cdots \]
+      <div class="why">
+        J'écris les flux période par période, comme le barème l'exige. Le 6 du mois 0 est
+        aujourd'hui : il n'est pas escompté. Le 6 du mois 1 est décalé d'un mois : il est
+        multiplié par δ. Celui du mois 2, décalé de deux mois : \( \delta^2 \). Etc.
+      </div>
+    </div>
+    <div class="step">
+      \[ \Pi^{\text{coop}} \;=\; 6\,\bigl(1 + \delta + \delta^2 + \delta^3 + \cdots\bigr) \]
+      <div class="why">
+        Je mets 6 en facteur, parce que le même montant revient à chaque période. Ce qui reste
+        entre parenthèses est exactement la somme géométrique de raison δ démontrée plus haut,
+        avec \( a = 1 \).
+      </div>
+    </div>
+    <div class="step">
+      \[ \Pi^{\text{coop}} \;=\; \frac{6}{1-\delta} \]
+      <div class="why">
+        J'applique \( \sum_{t\ge 0} a\,\delta^t = a/(1-\delta) \) avec \( a = 6 \). C'est le
+        premier des deux nombres que l'énoncé demande — 4 points au barème.
+      </div>
+    </div>
+  </div>
+  <div class="result">
+    <div class="result-title">Résultat 1 sur 3</div>
+    <p>
+      \[ \Pi^{\text{coop}} \;=\; \frac{6}{1-\delta} \]
+      <em>Lecture :</em> plus δ est proche de 1 (plus la pizzeria est patiente), plus le
+      dénominateur \( 1-\delta \) est petit, donc plus cette valeur est grande. Une entreprise
+      patiente accorde énormément de valeur à une rente éternelle de 6.
+    </p>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">2.</span> Le payoff de la meilleure déviation</div>
+  <p>
+    Maintenant, la question qui vaut 5 points : Rustica joue grim, et Piccolo se demande si elle
+    a intérêt à trahir. Construisons son <em>meilleur</em> scénario de trahison, pas à pas.
+  </p>
+  <h4>a) Quand trahir ?</h4>
+  <p>
+    Si Piccolo décide de trahir, autant le faire <strong>tout de suite</strong>, au mois 0.
+    Pourquoi ? Parce que le jeu infini « se ressemble » à toutes les périodes : le mois 5 vu du
+    mois 5 est exactement le même problème que le mois 0 vu du mois 0. Trahir plus tard reviendrait
+    à empocher le même bénéfice, mais escompté d'un facteur \( \delta^t \) — donc à en obtenir
+    moins en valeur d'aujourd'hui. On peut donc, sans perte de généralité, placer la trahison en
+    \( t = 0 \).
+  </p>
+  <h4>b) Que gagne Piccolo le mois de la trahison ?</h4>
+  <p>
+    Ce mois-là, Rustica n'a encore rien vu (les choix sont simultanés) : elle joue E, fidèle à sa
+    grim. Piccolo joue B. On est dans la case (B ; E), donc Piccolo empoche
+    <strong>12</strong>. C'est le festin — le maximum possible dans tout le tableau.
+  </p>
+  <h4>c) Que se passe-t-il ensuite ?</h4>
+  <p>
+    À la fin du mois 0, Rustica constate la trahison. Sa grim bascule en punition :
+    <strong>elle joue B à tous les mois suivants, définitivement</strong>. Piccolo se retrouve
+    face à un mur de B. Que peut-elle faire de mieux ?
+  </p>
+  <ul>
+    <li>
+      jouer E contre B lui rapporterait <strong>0</strong> par mois (case (E ; B)) ;
+    </li>
+    <li>
+      jouer B contre B lui rapporte <strong>2</strong> par mois (case (B ; B)).
+    </li>
+  </ul>
+  <p>
+    Comme \( 2 &gt; 0 \), sa meilleure réponse est de jouer B elle aussi, pour toujours. Elle
+    touche donc 2 à chaque mois à partir du mois 1.
+  </p>
+  <div class="box box-piege">
+    <div class="box-title">Piège — écrire 0 au lieu de 2 pendant la punition</div>
+    <p>
+      Erreur très répandue : « elle est punie, donc elle ne gagne plus rien, donc 0 ». Non ! Le
+      déviant ne se laisse pas massacrer : il <em>répond au mieux</em> à la punition. Face à un
+      adversaire qui joue B pour toujours, jouer B rapporte 2 par mois. Le payoff de punition est
+      donc <strong>2</strong>, jamais 0. Mettre 0 change complètement le seuil final.
+    </p>
+  </div>
+</div>
+
+<figure>
+  <svg viewBox="0 0 600 300" width="100%" style="max-width:12cm" role="img"
+       aria-label="Frise temporelle comparant le flux de profits de la coopération, 6 à chaque mois, et celui de la déviation, 12 puis 2 pour toujours">
+    <text x="104" y="26" text-anchor="end" font-size="13" font-weight="bold">Poids :</text>
+    <text x="152" y="26" text-anchor="middle" font-size="14" font-weight="bold">1</text>
+    <text x="232" y="26" text-anchor="middle" font-size="14" font-weight="bold">δ</text>
+    <text x="312" y="26" text-anchor="middle" font-size="14" font-weight="bold">δ²</text>
+    <text x="392" y="26" text-anchor="middle" font-size="14" font-weight="bold">δ³</text>
+    <text x="472" y="26" text-anchor="middle" font-size="14" font-weight="bold">δ⁴</text>
+    <text x="552" y="26" text-anchor="middle" font-size="14" font-weight="bold">…</text>
+    <text x="152" y="50" text-anchor="middle" font-size="12.5" style="fill:#4b5563">Mois 0</text>
+    <text x="232" y="50" text-anchor="middle" font-size="12.5" style="fill:#4b5563">Mois 1</text>
+    <text x="312" y="50" text-anchor="middle" font-size="12.5" style="fill:#4b5563">Mois 2</text>
+    <text x="392" y="50" text-anchor="middle" font-size="12.5" style="fill:#4b5563">Mois 3</text>
+    <text x="472" y="50" text-anchor="middle" font-size="12.5" style="fill:#4b5563">Mois 4</text>
+    <text x="552" y="50" text-anchor="middle" font-size="12.5" style="fill:#4b5563">…</text>
+    <text x="104" y="82" text-anchor="end" font-size="13" font-weight="bold">Coopérer</text>
+    <text x="104" y="98" text-anchor="end" font-size="12" style="fill:#4b5563">(E ; E)</text>
+    <rect x="114" y="62" width="76" height="46" fill="#ecfdf5" stroke="#047857" stroke-width="1.6"></rect>
+    <rect x="194" y="62" width="76" height="46" fill="#ecfdf5" stroke="#047857" stroke-width="1.6"></rect>
+    <rect x="274" y="62" width="76" height="46" fill="#ecfdf5" stroke="#047857" stroke-width="1.6"></rect>
+    <rect x="354" y="62" width="76" height="46" fill="#ecfdf5" stroke="#047857" stroke-width="1.6"></rect>
+    <rect x="434" y="62" width="76" height="46" fill="#ecfdf5" stroke="#047857" stroke-width="1.6"></rect>
+    <text x="152" y="92" text-anchor="middle" font-size="18" font-weight="bold">6</text>
+    <text x="232" y="92" text-anchor="middle" font-size="18" font-weight="bold">6</text>
+    <text x="312" y="92" text-anchor="middle" font-size="18" font-weight="bold">6</text>
+    <text x="392" y="92" text-anchor="middle" font-size="18" font-weight="bold">6</text>
+    <text x="472" y="92" text-anchor="middle" font-size="18" font-weight="bold">6</text>
+    <text x="552" y="92" text-anchor="middle" font-size="18" font-weight="bold">…</text>
+    <text x="104" y="146" text-anchor="end" font-size="13" font-weight="bold">Dévier</text>
+    <text x="104" y="162" text-anchor="end" font-size="12" style="fill:#4b5563">au mois 0</text>
+    <rect x="114" y="126" width="76" height="46" fill="#fef3c7" stroke="#b45309" stroke-width="3"></rect>
+    <rect x="194" y="126" width="76" height="46" fill="#fff1f2" stroke="#be123c" stroke-width="1.6" stroke-dasharray="5 3"></rect>
+    <rect x="274" y="126" width="76" height="46" fill="#fff1f2" stroke="#be123c" stroke-width="1.6" stroke-dasharray="5 3"></rect>
+    <rect x="354" y="126" width="76" height="46" fill="#fff1f2" stroke="#be123c" stroke-width="1.6" stroke-dasharray="5 3"></rect>
+    <rect x="434" y="126" width="76" height="46" fill="#fff1f2" stroke="#be123c" stroke-width="1.6" stroke-dasharray="5 3"></rect>
+    <text x="152" y="156" text-anchor="middle" font-size="18" font-weight="bold">12</text>
+    <text x="232" y="156" text-anchor="middle" font-size="18" font-weight="bold">2</text>
+    <text x="312" y="156" text-anchor="middle" font-size="18" font-weight="bold">2</text>
+    <text x="392" y="156" text-anchor="middle" font-size="18" font-weight="bold">2</text>
+    <text x="472" y="156" text-anchor="middle" font-size="18" font-weight="bold">2</text>
+    <text x="552" y="156" text-anchor="middle" font-size="18" font-weight="bold">…</text>
+    <path d="M 194 182 L 194 190 L 570 190 L 570 182" fill="none" stroke="#be123c" stroke-width="1.4"></path>
+    <text x="382" y="206" text-anchor="middle" font-size="12.5" font-weight="bold" style="fill:#be123c">punition : (B ; B) à jamais</text>
+    <text x="152" y="206" text-anchor="middle" font-size="12.5" font-weight="bold" style="fill:#b45309">trahison</text>
+    <line x1="30" y1="222" x2="570" y2="222" stroke="#d1d5db" stroke-width="1"></line>
+    <text x="300" y="246" text-anchor="middle" font-size="14">Total coopérer = 6 + 6δ + 6δ² + 6δ³ + … = 6 / (1 − δ)</text>
+    <text x="300" y="270" text-anchor="middle" font-size="14">Total dévier = 12 + 2δ + 2δ² + 2δ³ + … = 12 + 2δ / (1 − δ)</text>
+    <text x="300" y="292" text-anchor="middle" font-size="12.5" font-style="italic" style="fill:#4b5563">Trahir, c'est échanger +6 tout de suite contre −4 chaque mois, pour toujours.</text>
+  </svg>
+  <figcaption>
+    Les deux flux de profits, mois par mois, avec au-dessus le poids appliqué à chaque mois.
+    Le mois 0 n'est pas escompté (poids 1) ; le mois 1 pèse δ, le mois 2 pèse δ², etc. La
+    déviation offre un unique festin de 12, puis une éternité à 2 au lieu de 6.
+  </figcaption>
+</figure>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">3.</span> Écrire le payoff de la déviation</div>
+  <div class="calc">
+    <div class="step">
+      \[ \Pi^{\text{dév}} \;=\; 12 + 2\,\delta + 2\,\delta^2 + 2\,\delta^3 + \cdots \]
+      <div class="why">
+        J'écris les flux période par période. Le 12 est encaissé <strong>aujourd'hui</strong> :
+        pas de δ devant lui. Les 2 arrivent aux mois 1, 2, 3… donc affectés de
+        \( \delta, \delta^2, \delta^3 \). C'est exactement la ligne « Dévier » de la frise.
+      </div>
+    </div>
+    <div class="step">
+      \[ \Pi^{\text{dév}} \;=\; 12 + \delta\,\bigl(2 + 2\,\delta + 2\,\delta^2 + \cdots\bigr) \]
+      <div class="why">
+        Je mets δ en facteur dans tous les termes de punition. Pourquoi ? Pour faire apparaître,
+        entre parenthèses, une somme géométrique <em>qui commence à la puissance 0</em> — la
+        seule forme à laquelle ma formule s'applique.
+      </div>
+    </div>
+    <div class="step">
+      \[ \Pi^{\text{dév}} \;=\; 12 + \delta\,\frac{2}{1-\delta} \;=\; 12 + \frac{2\,\delta}{1-\delta} \]
+      <div class="why">
+        J'applique la formule à la parenthèse avec \( a = 2 \), ce qui donne
+        \( 2/(1-\delta) \) ; puis je remonte le δ au numérateur. Deuxième nombre demandé par
+        l'énoncé — 5 points au barème.
+      </div>
+    </div>
+  </div>
+  <div class="result">
+    <div class="result-title">Résultat 2 sur 3</div>
+    <p>
+      \[ \Pi^{\text{dév}} \;=\; 12 + \frac{2\,\delta}{1-\delta} \]
+      <em>Lecture :</em> le 12 est le gain de la trahison, encaissé une seule fois et tout de
+      suite. Le terme \( 2\delta/(1-\delta) \) est la valeur d'aujourd'hui d'une rente éternelle
+      de 2 qui ne commence que <strong>demain</strong> — d'où le δ au numérateur.
+    </p>
+  </div>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Piège — confondre \( \dfrac{2\delta}{1-\delta} \) et \( \dfrac{2}{1-\delta} \)</div>
+  <p>
+    \( \dfrac{2}{1-\delta} \) est la valeur d'une rente de 2 qui commence
+    <strong>aujourd'hui</strong> (mois 0, 1, 2, …). \( \dfrac{2\delta}{1-\delta} \) est celle
+    d'une rente de 2 qui commence <strong>demain</strong> (mois 1, 2, 3, …). Ici, le mois 0 est
+    occupé par le festin de 12 : la punition ne commence qu'au mois 1. Il faut donc le δ. Astuce
+    de vérification : à \( \delta = 0 \) (joueur totalement myope), la punition future doit valoir
+    0 — or \( 2\times 0/(1-0) = 0 \) ✓, tandis que \( 2/(1-0) = 2 \) ✗. Le premier passe le test,
+    le second non.
+  </p>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">4.</span> Poser la condition d'équilibre</div>
+  <p>
+    (grim ; grim) est un équilibre de Nash si <strong>aucune pizzeria ne gagne à dévier
+    seule</strong>. Autrement dit, si rester fidèle rapporte au moins autant que trahir :
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ \Pi^{\text{coop}} \;\ge\; \Pi^{\text{dév}} \]
+      <div class="why">
+        C'est la traduction directe de la définition de l'équilibre de Nash : ma stratégie
+        (grim) doit être une meilleure réponse à celle de l'autre (grim), donc rapporter au
+        moins autant que n'importe quelle autre — en particulier que la meilleure déviation.
+      </div>
+    </div>
+    <div class="step">
+      \[ \frac{6}{1-\delta} \;\ge\; 12 + \frac{2\,\delta}{1-\delta} \]
+      <div class="why">
+        Je remplace chaque payoff par l'expression que je viens de calculer. Voilà l'inéquation
+        à résoudre : il n'y a plus qu'une seule inconnue, δ.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">5.</span> Résoudre l'inéquation, sans sauter une seule étape</div>
+  <div class="calc">
+    <div class="step">
+      \[ \frac{6}{1-\delta} \;\ge\; 12 + \frac{2\,\delta}{1-\delta} \]
+      <div class="why">
+        Point de départ. Deux fractions ont le même dénominateur \( (1-\delta) \) : c'est
+        l'invitation à s'en débarrasser.
+      </div>
+    </div>
+    <div class="step">
+      \[ 6 \;\ge\; 12\,(1-\delta) + 2\,\delta \]
+      <div class="why">
+        Je multiplie <strong>les deux membres</strong> par \( (1-\delta) \) pour faire
+        disparaître les dénominateurs. Attention, c'est LE point délicat : multiplier une
+        inégalité par un nombre <em>négatif</em> en renverse le sens. Ici, comme
+        \( \delta &lt; 1 \), on a \( 1-\delta &gt; 0 \) : le facteur est strictement positif, donc
+        <strong>le sens de l'inégalité est conservé</strong>. À gauche,
+        \( \frac{6}{1-\delta}\times(1-\delta) = 6 \) ; à droite, \( 12 \) devient
+        \( 12(1-\delta) \) et la fraction devient \( 2\delta \).
+      </div>
+    </div>
+    <div class="step">
+      \[ 6 \;\ge\; 12 - 12\,\delta + 2\,\delta \]
+      <div class="why">
+        Je développe le produit \( 12(1-\delta) \) : je distribue le 12 sur chacun des deux
+        termes de la parenthèse. \( 12 \times 1 = 12 \) et \( 12 \times (-\delta) = -12\delta \).
+      </div>
+    </div>
+    <div class="step">
+      \[ 6 \;\ge\; 12 - 10\,\delta \]
+      <div class="why">
+        Je regroupe les deux termes qui contiennent δ : \( -12\delta + 2\delta = -10\delta \).
+        (On ajoute les coefficients : \( -12 + 2 = -10 \).) Le membre de droite est maintenant
+        aussi simple que possible.
+      </div>
+    </div>
+    <div class="step">
+      \[ 6 + 10\,\delta \;\ge\; 12 \]
+      <div class="why">
+        J'ajoute \( 10\delta \) des <strong>deux</strong> côtés, pour faire passer le terme en δ
+        du côté gauche et le rendre positif. Ajouter la même quantité aux deux membres ne change
+        jamais le sens d'une inégalité.
+      </div>
+    </div>
+    <div class="step">
+      \[ 10\,\delta \;\ge\; 6 \]
+      <div class="why">
+        Je retranche 6 des deux côtés pour isoler le terme en δ : à gauche il reste
+        \( 10\delta \), à droite \( 12 - 6 = 6 \).
+      </div>
+    </div>
+    <div class="step">
+      \[ \delta \;\ge\; \frac{6}{10} \;=\; \frac{3}{5} \;=\; 0{,}6 \]
+      <div class="why">
+        Je divise les deux membres par 10, qui est positif : le sens est conservé. Puis je
+        simplifie la fraction \( 6/10 \) en divisant haut et bas par 2, ce qui donne \( 3/5 \),
+        c'est-à-dire 0,6 en écriture décimale.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="result">
+  <div class="result-title">Résultat 3 sur 3 — la condition demandée</div>
+  <p>
+    \[ \boxed{\ \delta \;\ge\; \tfrac{3}{5} \;=\; 0{,}6\ } \]
+  </p>
+  <p>
+    (grim ; grim) est un équilibre de Nash du jeu répété à horizon infini <strong>si et seulement
+    si \( \delta \ge 3/5 \)</strong>. Autrement dit : l'entente sur les prix peut tenir toute
+    seule, sans contrat ni police, à condition que les deux pizzerias soient suffisamment
+    patientes. En dessous de 0,6, chacune préfère empocher le gain immédiat de la trahison, et
+    l'entente s'effondre.
+  </p>
+</div>
+
+<hr class="soft">
+
+<h2>9. Vérification numérique — voir les nombres tomber juste</h2>
+
+<p>
+  Un résultat algébrique, c'est bien. Le voir fonctionner sur des nombres concrets, c'est
+  beaucoup mieux : ça transforme une formule en intuition. Testons trois valeurs de δ. À chaque
+  fois, je calcule les deux payoffs et je compare.
+</p>
+
+<h3>Test n° 1 — δ = 0,6, exactement le seuil</h3>
+
+<div class="calc">
+  <div class="step">
+    \[ \Pi^{\text{coop}} = \frac{6}{1-0{,}6} = \frac{6}{0{,}4} = 15 \]
+    <div class="why">
+      Je remplace δ par 0,6 dans la première formule. \( 1 - 0{,}6 = 0{,}4 \), puis
+      \( 6 \div 0{,}4 = 15 \). (Diviser par 0,4 revient à multiplier par 2,5 : \( 6\times 2{,}5 = 15 \).)
+    </div>
+  </div>
+  <div class="step">
+    \[ \Pi^{\text{dév}} = 12 + \frac{2\times 0{,}6}{0{,}4} = 12 + \frac{1{,}2}{0{,}4} = 12 + 3 = 15 \]
+    <div class="why">
+      Même substitution dans la seconde formule. \( 2\times0{,}6 = 1{,}2 \), puis
+      \( 1{,}2 \div 0{,}4 = 3 \), et \( 12 + 3 = 15 \).
+    </div>
+  </div>
+  <div class="step">
+    \[ 15 = 15 \ \Longrightarrow\ \text{indifférence exacte} \]
+    <div class="why">
+      Les deux payoffs sont <strong>égaux</strong>. C'est exactement ce que doit produire un
+      seuil : à δ = 0,6, la pizzeria est parfaitement indifférente entre rester loyale et trahir.
+      Le fait que les deux nombres tombent pile confirme que notre algèbre est juste.
+    </div>
+  </div>
+</div>
+
+<h3>Test n° 2 — δ = 0,8, des pizzerias patientes</h3>
+
+<div class="calc">
+  <div class="step">
+    \[ \Pi^{\text{coop}} = \frac{6}{1-0{,}8} = \frac{6}{0{,}2} = 30 \]
+    <div class="why">
+      \( 1 - 0{,}8 = 0{,}2 \) et \( 6 \div 0{,}2 = 30 \). Comme la pizzeria est très patiente,
+      la rente éternelle de 6 vaut énormément à ses yeux : l'équivalent de 30, soit cinq mois de
+      profit d'entente.
+    </div>
+  </div>
+  <div class="step">
+    \[ \Pi^{\text{dév}} = 12 + \frac{2\times 0{,}8}{0{,}2} = 12 + \frac{1{,}6}{0{,}2} = 12 + 8 = 20 \]
+    <div class="why">
+      \( 1{,}6 \div 0{,}2 = 8 \), puis \( 12 + 8 = 20 \). Le festin de 12 est toujours là, mais
+      la longue punition à 2 pèse maintenant lourd… en négatif.
+    </div>
+  </div>
+  <div class="step">
+    \[ 30 \;&gt;\; 20 \ \Longrightarrow\ \text{l'entente tient} \]
+    <div class="why">
+      Coopérer rapporte 10 de plus que trahir. Une pizzeria patiente ne trahira jamais : le
+      festin ne compense pas la rente perdue. Conforme à la condition, puisque
+      \( 0{,}8 \ge 0{,}6 \) ✓
+    </div>
+  </div>
+</div>
+
+<h3>Test n° 3 — δ = 0,4, des pizzerias impatientes</h3>
+
+<div class="calc">
+  <div class="step">
+    \[ \Pi^{\text{coop}} = \frac{6}{1-0{,}4} = \frac{6}{0{,}6} = 10 \]
+    <div class="why">
+      \( 1 - 0{,}4 = 0{,}6 \) et \( 6 \div 0{,}6 = 10 \). L'éternité de 6 ne « vaut » plus que
+      10 pour une entreprise pressée : au-delà de deux ou trois mois, elle ne compte presque plus.
+    </div>
+  </div>
+  <div class="step">
+    \[ \Pi^{\text{dév}} = 12 + \frac{2\times 0{,}4}{0{,}6} = 12 + \frac{0{,}8}{0{,}6} \approx 12 + 1{,}33 = 13{,}33 \]
+    <div class="why">
+      \( 0{,}8 \div 0{,}6 = 4/3 \approx 1{,}33 \). Le total est d'environ 13,33. Le symbole
+      \( \approx \) se lit « environ égal à » : on arrondit parce que 4/3 a une infinité de
+      décimales.
+    </div>
+  </div>
+  <div class="step">
+    \[ 10 \;&lt;\; 13{,}33 \ \Longrightarrow\ \text{l'entente s'effondre} \]
+    <div class="why">
+      Trahir rapporte davantage. La pizzeria impatiente casse ses prix dès le premier mois, et
+      (grim ; grim) n'est pas un équilibre. Conforme, puisque \( 0{,}4 &lt; 0{,}6 \) ✓
+    </div>
+  </div>
+</div>
+
+<table class="compare">
+  <tr>
+    <th class="left">Valeur de δ</th>
+    <th>\( \Pi^{\text{coop}} \)</th>
+    <th>\( \Pi^{\text{dév}} \)</th>
+    <th class="left">Verdict</th>
+  </tr>
+  <tr>
+    <td class="left">0,4 (impatientes)</td><td>10</td><td>13,33</td>
+    <td class="left">Trahir gagne → entente impossible</td>
+  </tr>
+  <tr>
+    <td class="left">0,6 (seuil)</td><td>15</td><td>15</td>
+    <td class="left">Indifférence exacte → tout juste soutenable</td>
+  </tr>
+  <tr>
+    <td class="left">0,8 (patientes)</td><td>30</td><td>20</td>
+    <td class="left">Coopérer gagne → entente soutenable</td>
+  </tr>
+</table>
+
+<figure>
+  <svg viewBox="0 0 600 400" width="100%" style="max-width:12cm" role="img"
+       aria-label="Graphique des deux payoffs escomptés en fonction de delta : les courbes se croisent en delta égal 0,6, au-delà duquel l'entente tient">
+    <defs>
+      <pattern id="q5f6-hach" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="8" stroke="#047857" stroke-width="1.2"></line>
+      </pattern>
+    </defs>
+    <polygon points="420,186 450,165 480,138 510,100 540,42 540,138 510,157 480,170 450,179"
+             fill="url(#q5f6-hach)" stroke="none"></polygon>
+    <line x1="60" y1="330" x2="560" y2="330" stroke="#111827" stroke-width="1.4"></line>
+    <line x1="60" y1="34" x2="60" y2="330" stroke="#111827" stroke-width="1.4"></line>
+    <text x="26" y="180" text-anchor="middle" font-size="13" transform="rotate(-90 26 180)">payoff escompté</text>
+    <text x="574" y="336" text-anchor="end" font-size="16" font-weight="bold">δ</text>
+    <line x1="56" y1="330" x2="60" y2="330" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="334" text-anchor="end" font-size="12">0</text>
+    <line x1="56" y1="272" x2="60" y2="272" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="276" text-anchor="end" font-size="12">6</text>
+    <line x1="56" y1="215" x2="60" y2="215" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="219" text-anchor="end" font-size="12">12</text>
+    <line x1="56" y1="186" x2="60" y2="186" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="190" text-anchor="end" font-size="12" font-weight="bold">15</text>
+    <line x1="56" y1="157" x2="60" y2="157" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="161" text-anchor="end" font-size="12">18</text>
+    <line x1="56" y1="100" x2="60" y2="100" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="104" text-anchor="end" font-size="12">24</text>
+    <line x1="56" y1="42" x2="60" y2="42" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="46" text-anchor="end" font-size="12">30</text>
+    <line x1="180" y1="330" x2="180" y2="334" stroke="#111827" stroke-width="1.2"></line>
+    <text x="180" y="350" text-anchor="middle" font-size="12">0,2</text>
+    <line x1="300" y1="330" x2="300" y2="334" stroke="#111827" stroke-width="1.2"></line>
+    <text x="300" y="350" text-anchor="middle" font-size="12">0,4</text>
+    <line x1="420" y1="330" x2="420" y2="334" stroke="#111827" stroke-width="1.2"></line>
+    <text x="420" y="350" text-anchor="middle" font-size="12" font-weight="bold">0,6</text>
+    <line x1="540" y1="330" x2="540" y2="334" stroke="#111827" stroke-width="1.2"></line>
+    <text x="540" y="350" text-anchor="middle" font-size="12">0,8</text>
+    <polyline points="60,272 120,266 180,258 240,248 300,234 360,215 420,186 450,165 480,138 510,100 528,68 540,42"
+              fill="none" stroke="#047857" stroke-width="2.6"></polyline>
+    <polyline points="60,215 120,213 180,210 240,207 300,202 360,196 420,186 450,179 480,170 510,157 540,138"
+              fill="none" stroke="#be123c" stroke-width="2.6" stroke-dasharray="8 4"></polyline>
+    <line x1="420" y1="330" x2="420" y2="186" stroke="#111827" stroke-width="1.2" stroke-dasharray="4 4"></line>
+    <line x1="60" y1="186" x2="420" y2="186" stroke="#111827" stroke-width="1.2" stroke-dasharray="4 4"></line>
+    <circle cx="420" cy="186" r="4.5" fill="#111827"></circle>
+    <rect x="76" y="44" width="252" height="54" rx="4" fill="#ffffff" stroke="#d1d5db" stroke-width="1"></rect>
+    <line x1="86" y1="62" x2="120" y2="62" stroke="#047857" stroke-width="2.6"></line>
+    <text x="128" y="67" font-size="13.5">Π coopérer = 6 / (1 − δ)</text>
+    <line x1="86" y1="86" x2="120" y2="86" stroke="#be123c" stroke-width="2.6" stroke-dasharray="8 4"></line>
+    <text x="128" y="91" font-size="13.5">Π dévier = 12 + 2δ / (1 − δ)</text>
+    <path d="M 62 366 L 62 372 L 418 372 L 418 366" fill="none" stroke="#be123c" stroke-width="1.2"></path>
+    <text x="240" y="390" text-anchor="middle" font-size="12.5" style="fill:#be123c">l'entente s'effondre (δ &lt; 0,6)</text>
+    <path d="M 422 366 L 422 372 L 540 372 L 540 366" fill="none" stroke="#047857" stroke-width="1.2"></path>
+    <text x="481" y="390" text-anchor="middle" font-size="12.5" style="fill:#047857">l'entente tient</text>
+  </svg>
+  <figcaption>
+    Les deux payoffs escomptés en fonction de δ. À gauche du seuil, la courbe en tirets
+    (dévier) est au-dessus : trahir rapporte plus. Elles se croisent exactement en
+    <strong>δ = 0,6</strong>, où les deux valent 15. À droite, la zone hachurée mesure l'avantage
+    de la coopération : il grandit très vite avec la patience.
+  </figcaption>
+</figure>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi la courbe de coopération explose et pas l'autre</div>
+  <p>
+    Les deux courbes montent quand δ augmente — c'est normal, tout le futur vaut plus cher. Mais
+    la verte monte <em>beaucoup</em> plus vite. Pourquoi ? Parce que la coopération rapporte 6
+    chaque mois éternellement, contre 2 seulement pour la déviation après le premier mois. Plus
+    on valorise l'éternité, plus l'écart entre « 6 pour toujours » et « 2 pour toujours » se
+    creuse. Le 12 de la trahison, lui, est fixe : c'est un gain unique, qui ne bénéficie
+    d'aucune patience. Voilà toute l'économie de la question en une image.
+  </p>
+</div>
+
+<div class="box box-copie">
+  <div class="box-title">Ce qu'il fallait écrire sur la copie — question 5.2</div>
+  <p>
+    <strong>a) Payoff de la coopération.</strong> Si les deux pizzerias jouent grim, aucune ne
+    trahit jamais : la punition n'est jamais déclenchée et chacune touche 6 à chaque période.
+    D'où, en escomptant :
+  </p>
+  <p>
+    \[ \Pi^{\text{coop}} = 6 + 6\delta + 6\delta^2 + \cdots = 6\,(1+\delta+\delta^2+\cdots) = \frac{6}{1-\delta} \]
+  </p>
+  <p>
+    en utilisant la somme géométrique \( \sum_{t=0}^{\infty}\delta^t a = a/(1-\delta) \), valable
+    car \( 0 \le \delta &lt; 1 \).
+  </p>
+  <p>
+    <strong>b) Payoff de la meilleure déviation.</strong> Supposons que Piccolo dévie (le jeu est
+    symétrique). Sa meilleure déviation consiste à jouer B dès la période 0 : Rustica jouant
+    encore E, Piccolo empoche 12. Dès la période 1, la grim de Rustica bascule en punition et
+    joue B pour toujours ; face à cela, la meilleure réponse de Piccolo est de jouer B également,
+    soit 2 par période. D'où :
+  </p>
+  <p>
+    \[ \Pi^{\text{dév}} = 12 + 2\delta + 2\delta^2 + \cdots = 12 + \delta\,\frac{2}{1-\delta} = 12 + \frac{2\delta}{1-\delta} \]
+  </p>
+  <p>
+    <strong>c) Condition d'équilibre.</strong> (grim ; grim) est un équilibre de Nash si dévier
+    ne rapporte pas plus que coopérer :
+  </p>
+  <p>
+    \[ \frac{6}{1-\delta} \;\ge\; 12 + \frac{2\delta}{1-\delta} \]
+  </p>
+  <p>
+    On multiplie les deux membres par \( (1-\delta) &gt; 0 \), ce qui conserve le sens de
+    l'inégalité :
+  </p>
+  <p>
+    \[ 6 \;\ge\; 12(1-\delta) + 2\delta = 12 - 10\delta \iff 10\delta \ge 6 \iff \boxed{\ \delta \ge \tfrac{3}{5} = 0{,}6\ } \]
+  </p>
+  <p>
+    Pour \( \delta \ge 3/5 \), l'entente est soutenue par la menace grim ; en dessous, chaque
+    pizzeria préfère empocher le gain immédiat de la trahison.
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Les quatre pièges de la question 5.2</div>
+  <ol>
+    <li>
+      <strong>Escompter le 12.</strong> Le gain de la trahison est encaissé <em>aujourd'hui</em>,
+      donc sans δ devant. Écrire \( 12\delta \) est une faute classique.
+    </li>
+    <li>
+      <strong>Oublier le δ devant la punition.</strong> Écrire \( 12 + \frac{2}{1-\delta} \) au
+      lieu de \( 12 + \frac{2\delta}{1-\delta} \) : la punition ne commence qu'au mois 1, elle
+      doit être escomptée d'un cran.
+    </li>
+    <li>
+      <strong>Mettre 0 comme payoff de punition.</strong> Le déviant répond au mieux à la
+      punition : il joue B et touche 2, pas 0.
+    </li>
+    <li>
+      <strong>Multiplier par \( (1-\delta) \) sans justifier le signe.</strong> Une ligne suffit :
+      « \( \delta &lt; 1 \) donc \( 1-\delta &gt; 0 \), le sens de l'inégalité est conservé ». Sans
+      elle, on perd un point, car multiplier par un négatif renverserait tout.
+    </li>
+  </ol>
+</div>
+
+<div class="box box-methode">
+  <div class="box-title">Réflexe de méthode — toute condition de soutien d'une entente</div>
+  <p>
+    Cette recette fonctionne pour n'importe quel jeu répété avec punition. Apprends-la en cinq
+    gestes :
+  </p>
+  <ol>
+    <li>
+      <strong>Repérer trois nombres</strong> dans la matrice : le gain de coopération \( c \)
+      (ici 6), le gain de tentation \( t \) (ici 12, ce qu'on touche en trahissant seul), et le
+      gain de punition \( p \) (ici 2, l'équilibre de Nash du jeu d'étape). Toujours avec
+      \( t &gt; c &gt; p \).
+    </li>
+    <li>
+      <strong>Écrire le flux de coopération</strong> : \( c \) à chaque période, donc
+      \( \Pi^{\text{coop}} = c/(1-\delta) \).
+    </li>
+    <li>
+      <strong>Écrire le flux de déviation</strong> : \( t \) une fois aujourd'hui, puis \( p \)
+      pour toujours à partir de demain, donc
+      \( \Pi^{\text{dév}} = t + \delta\,p/(1-\delta) \).
+    </li>
+    <li>
+      <strong>Poser</strong> \( \Pi^{\text{coop}} \ge \Pi^{\text{dév}} \), multiplier par
+      \( (1-\delta) &gt; 0 \), développer, regrouper les δ.
+    </li>
+    <li>
+      <strong>Conclure</strong> — et le résultat général, qu'on peut retenir comme vérification :
+    </li>
+  </ol>
+  <p>
+    \[ \delta \;\ge\; \frac{t-c}{t-p} \;=\; \frac{\text{tentation immédiate}}{\text{tentation} + \text{coût de la punition}} \]
+  </p>
+  <p>
+    Vérifions sur notre exercice : \( \dfrac{12-6}{12-2} = \dfrac{6}{10} = \dfrac{3}{5} \) ✓. On
+    retrouve bien 0,6. Utilise cette formule comme <em>contrôle</em>, jamais comme substitut : le
+    barème exige les calculs détaillés.
+  </p>
+</div>
+
+<div class="box box-rappel">
+  <div class="box-title">Attention — le seuil du cours (δ ≥ 1/2) n'est pas celui d'ici</div>
+  <p>
+    Dans le chapitre du cours, l'exemple des fritkots donne \( \delta \ge 1/2 \), avec les
+    payoffs \( c = 4 \), \( t = 6 \), \( p = 2 \) : \( (6-4)/(6-2) = 2/4 = 1/2 \) ✓. Ici, les
+    nombres sont différents (6, 12, 2), donc le seuil est différent : 3/5. <strong>Ne recopie
+    jamais 1/2 par réflexe</strong> — c'est une erreur qui se voit immédiatement. Ce qui se
+    retient, c'est la <em>méthode</em>, pas le nombre.
+  </p>
+  <p>
+    Remarque intéressante : le seuil d'ici (0,6) est <em>plus exigeant</em> que celui du cours
+    (0,5). Pourquoi ? Parce que la tentation y est proportionnellement plus grosse : trahir
+    double le profit (12 contre 6) alors que chez les fritkots il ne le multipliait que par 1,5
+    (6 contre 4). Plus la trahison est juteuse, plus il faut être patient pour y résister.
+  </p>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">Pour aller un peu plus loin — équilibre de Nash ou équilibre parfait ?</div>
+  <p>
+    L'énoncé demande « équilibre de Nash », et c'est bien ce qu'on a vérifié : aucune pizzeria ne
+    gagne à changer sa règle de conduite. Mais on peut dire plus. Comme la punition consiste à
+    jouer (B ; B), qui est l'équilibre de Nash du jeu d'étape, la menace est
+    <strong>crédible</strong> : celui qui punit n'a aucune raison de renoncer en cours de route.
+    Le profil (grim ; grim) est donc, pour \( \delta \ge 3/5 \), un
+    <span class="term">équilibre de Nash parfait en sous-jeux</span> (ENPS) — la notion
+    d'équilibre exigeante du cours. Mentionner cette phrase en une ligne sur la copie est un
+    bonus apprécié, jamais une obligation.
+  </p>
+</div>
+
+<hr class="soft">
+
+<h2>10. Question 5.3 — interpréter la condition</h2>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 5.3 (6 points)</div>
+  <p>
+    Interprétez économiquement la condition obtenue : que mesure \( \delta \), et pourquoi la
+    coopération devient-elle impossible lorsque les firmes sont trop impatientes ?
+  </p>
+  <p>
+    <em>Barème officiel :</em> interprétation de δ comme patience / poids du futur :
+    <strong>3 points</strong> ; explication de l'arbitrage gain immédiat contre pertes futures et
+    conséquence de l'impatience : <strong>3 points</strong>.
+  </p>
+</div>
+
+<h3>Traduisons la question en français simple</h3>
+
+<dl class="lexique">
+  <dt>« Interprétez économiquement »</dt>
+  <dd>
+    Pas de calcul ici — ou alors un seul, décoratif. On attend des <strong>phrases</strong> qui
+    expliquent le <em>sens</em> du résultat. C'est une question de compréhension, pas de
+    technique. Beaucoup d'étudiants la bâclent parce qu'elle « ne se calcule pas » : c'est
+    dommage, elle vaut 6 points, soit un cinquième de la question 5.
+  </dd>
+  <dt>« que mesure δ »</dt>
+  <dd>
+    Première moitié, 3 points. On veut un mot-clé (<strong>la patience</strong>) et son
+    déballage : que signifie concrètement être patient, et d'où vient ce nombre.
+  </dd>
+  <dt>« pourquoi la coopération devient-elle impossible lorsque les firmes sont trop impatientes »</dt>
+  <dd>
+    Seconde moitié, 3 points. On veut la <strong>mécanique de l'arbitrage</strong> : ce qu'on
+    gagne tout de suite en trahissant, ce qu'on perd ensuite, et pourquoi le second poids se
+    dégonfle quand δ baisse.
+  </dd>
+</dl>
+
+<h3>La résolution pas à pas</h3>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">1.</span> Ce que mesure δ : la patience</div>
+  <p>
+    δ mesure la <span class="term">patience</span> d'une firme, c'est-à-dire
+    <strong>le poids qu'elle accorde à ses profits futurs par rapport à ses profits
+    immédiats</strong>. La traduction concrète est celle qu'on a vue : <em>1 € gagné le mois
+    prochain vaut δ € aujourd'hui</em>.
+  </p>
+  <ul>
+    <li>
+      <strong>δ proche de 1</strong> : la firme est <em>patiente</em>. Demain compte presque
+      autant qu'aujourd'hui. Elle raisonne sur le long terme.
+    </li>
+    <li>
+      <strong>δ proche de 0</strong> : la firme est <em>impatiente</em>, presque myope. Seul le
+      profit du mois en cours compte réellement ; l'avenir est un brouillard sans valeur.
+    </li>
+  </ul>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">2.</span> D'où vient concrètement ce nombre ?</div>
+  <p>
+    δ n'est pas un caprice psychologique. Il agrège trois choses bien réelles, qu'il est très
+    payant de citer à l'examen :
+  </p>
+  <table class="compare">
+    <tr>
+      <th class="left">Ingrédient</th>
+      <th class="left">Ce que c'est</th>
+      <th class="left">Effet sur δ</th>
+    </tr>
+    <tr>
+      <td class="left"><strong>Préférence pour le présent</strong></td>
+      <td class="left">
+        L'impatience pure : on préfère jouir maintenant. Pour une entreprise : des actionnaires
+        qui veulent des résultats trimestriels, un dirigeant dont le bonus se calcule sur l'année.
+      </td>
+      <td class="left">plus on est pressé, plus δ baisse</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Taux d'intérêt</strong></td>
+      <td class="left">
+        Un euro encaissé aujourd'hui peut être placé au taux \( r \) : il vaut \( 1+r \) dans un
+        mois. Réciproquement, un euro futur vaut \( 1/(1+r) \) aujourd'hui, d'où
+        \( \delta = 1/(1+r) \).
+      </td>
+      <td class="left">plus \( r \) est élevé, plus δ baisse</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Probabilité de continuation</strong></td>
+      <td class="left">
+        La relation continuera-t-elle ? Si le marché a une probabilité \( q \) de subsister au
+        mois suivant, le profit futur n'est encaissé qu'avec cette probabilité.
+      </td>
+      <td class="left">plus la fin est probable, plus δ baisse</td>
+    </tr>
+  </table>
+  <p>
+    Les trois se combinent : \( \delta = q/(1+r) \) dans la lecture la plus courante. Un chiffre
+    pour fixer les idées : \( \delta = 0{,}6 \) correspond, si on l'attribue entièrement au taux
+    d'intérêt, à \( r = 1/0{,}6 - 1 \approx 0{,}67 \), soit <strong>67 % par mois</strong> —
+    astronomique. Autrement dit, un δ inférieur à 0,6 décrit des entreprises vraiment aux abois,
+    ou une relation qu'on ne croit pas durable.
+  </p>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">3.</span> L'arbitrage : ce que trahir gagne et ce que trahir coûte</div>
+  <p>
+    Toute la question tient dans une balance à deux plateaux. Posons-les proprement.
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ \text{gain immédiat de la trahison} \;=\; 12 - 6 \;=\; 6 \]
+      <div class="why">
+        Le mois de la trahison, je touche 12 au lieu des 6 que m'aurait rapportés l'entente. Le
+        <strong>bonus</strong> est donc de 6, encaissé une seule fois, tout de suite, sans aucun
+        escompte.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{perte par mois futur} \;=\; 6 - 2 \;=\; 4 \]
+      <div class="why">
+        À partir du mois suivant, je ne touche plus 2 (guerre des prix) au lieu de 6 (entente).
+        Je perds donc 4 <strong>chaque mois</strong>, et cela <strong>pour toujours</strong>.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{valeur d'aujourd'hui de ces pertes} \;=\; \frac{4\,\delta}{1-\delta} \]
+      <div class="why">
+        C'est une rente de 4 par mois qui commence demain : somme géométrique de terme 4,
+        multipliée par δ parce qu'elle démarre avec un mois de retard. Voilà le plateau
+        « futur » de la balance.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{l'entente tient} \iff 6 \;\le\; \frac{4\,\delta}{1-\delta} \]
+      <div class="why">
+        La coopération résiste si le plateau du futur pèse au moins autant que le plateau du
+        présent. Cette écriture est <em>équivalente</em> à celle de la question 5.2, mais elle
+        parle beaucoup mieux : à gauche la gourmandise, à droite la peur.
+      </div>
+    </div>
+    <div class="step">
+      \[ 6\,(1-\delta) \le 4\,\delta \iff 6 - 6\delta \le 4\delta \iff 10\,\delta \ge 6 \iff \delta \ge \tfrac{3}{5} \]
+      <div class="why">
+        Je multiplie par \( (1-\delta) &gt; 0 \), je développe, je regroupe les δ à droite
+        (\( 6\delta + 4\delta = 10\delta \)) : je retrouve exactement le même seuil. Les deux
+        écritures sont bien deux visages du même calcul.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">4.</span> Pourquoi l'impatience détruit l'entente</div>
+  <p>
+    Regarde bien les deux plateaux. Le plateau de gauche — le bonus de 6 — est
+    <strong>fixe</strong> : il ne dépend pas de δ, puisqu'il est encaissé immédiatement. Le
+    plateau de droite, \( 4\delta/(1-\delta) \), est en revanche entièrement suspendu à δ :
+  </p>
+  <ul>
+    <li>si \( \delta = 0{,}8 \) : \( 4\times0{,}8/0{,}2 = 16 \) — la peur écrase la gourmandise ;</li>
+    <li>si \( \delta = 0{,}6 \) : \( 4\times0{,}6/0{,}4 = 6 \) — équilibre exact des plateaux ;</li>
+    <li>si \( \delta = 0{,}4 \) : \( 4\times0{,}4/0{,}6 \approx 2{,}7 \) — la gourmandise l'emporte largement ;</li>
+    <li>si \( \delta = 0{,}1 \) : \( 4\times0{,}1/0{,}9 \approx 0{,}44 \) — le futur ne pèse plus rien.</li>
+  </ul>
+  <p>
+    Voilà la mécanique, en une phrase à retenir : <strong>quand δ baisse, la punition future se
+    dégonfle, la menace cesse d'être dissuasive, et la tentation immédiate l'emporte.</strong>
+    Une firme trop impatiente ne « croit » pas assez au futur pour que la peur de la guerre des
+    prix la retienne aujourd'hui. Elle casse ses prix, l'autre riposte, et l'entente s'effondre.
+  </p>
+</div>
+
+<div class="box box-exemple">
+  <div class="box-title">Trois situations concrètes — le même mécanisme dans la vraie vie</div>
+  <ul>
+    <li>
+      <strong>Une entreprise au bord de la faillite</strong> a besoin de liquidités tout de
+      suite et n'est même pas sûre d'exister le mois prochain : son δ effectif est très bas.
+      Elle cassera les prix. C'est pour ça que les cartels se fissurent en période de crise.
+    </li>
+    <li>
+      <strong>Un marché qui ferme dans trois mois</strong> (une station balnéaire à la fin de la
+      saison, un chantier qui s'achève) : non seulement la relation est courte, mais sa fin est
+      <em>connue</em> — on retombe sur le théorème de l'horizon fini de la question 5.1.
+    </li>
+    <li>
+      <strong>Deux entreprises solidement installées</strong>, qui savent qu'elles se recroiseront
+      pendant vingt ans, sur un marché stable, avec des prix observables au jour le jour : δ
+      élevé, punition rapide et sûre. Ce sont les conditions idéales de l'entente — et
+      précisément les marchés que les autorités de la concurrence surveillent le plus.
+    </li>
+  </ul>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">La leçon générale du chapitre</div>
+  <p>
+    La coopération entre joueurs rationnels et purement égoïstes est possible — sans contrat,
+    sans morale, sans police — <strong>à condition que l'avenir compte suffisamment</strong>.
+    Trois ingrédients sont nécessaires : l'interaction doit être <em>répétée</em>, sa fin ne doit
+    pas être <em>prévisible</em>, et les joueurs doivent être assez <em>patients</em> pour que la
+    menace de perdre l'avenir pèse plus lourd que le gain d'un jour.
+  </p>
+  <p>
+    C'est aussi, en creux, une recette de politique publique : pour <em>casser</em> une entente
+    illégale, il suffit de rendre la trahison plus attirante — par exemple avec des programmes de
+    clémence qui offrent l'immunité à la première entreprise qui dénonce le cartel. On augmente
+    artificiellement le \( t \) de la tentation, on fait grimper le seuil, et l'entente devient
+    insoutenable.
+  </p>
+</div>
+
+<div class="box box-copie">
+  <div class="box-title">Ce qu'il fallait écrire sur la copie — question 5.3</div>
+  <p>
+    \( \delta \) mesure la <strong>patience</strong> des firmes : le poids qu'elles accordent à
+    leurs profits futurs par rapport à leurs profits immédiats — un euro gagné dans un mois vaut
+    \( \delta \) euro aujourd'hui. Ce facteur combine la préférence pure pour le présent, le taux
+    d'intérêt (un euro d'aujourd'hui peut être placé) et la probabilité que la relation se
+    poursuive au mois suivant. Un δ proche de 1 décrit une firme patiente, installée, sûre de
+    durer ; un δ proche de 0 une firme myope ou en difficulté.
+  </p>
+  <p>
+    La coopération repose sur un <strong>arbitrage intertemporel</strong> : trahir rapporte un
+    bonus immédiat de \( 12 - 6 = 6 \), mais coûte la différence entre entente et guerre des
+    prix, \( 6 - 2 = 4 \), à <em>toutes</em> les périodes futures. La condition d'équilibre se
+    réécrit d'ailleurs sous cette forme :
+  </p>
+  <p>
+    \[ \underbrace{6}_{\text{bonus immédiat}} \;\le\; \underbrace{\frac{4\,\delta}{1-\delta}}_{\text{pertes futures actualisées}} \iff 10\,\delta \ge 6 \iff \delta \ge \tfrac{3}{5} \]
+  </p>
+  <p>
+    Si les firmes sont impatientes (\( \delta &lt; 3/5 \)), les pertes futures pèsent trop peu
+    face au gain immédiat : la menace de punition ne dissuade plus, et l'entente s'effondre. Plus
+    généralement, la coopération entre joueurs rationnels n'est possible que si l'avenir compte
+    suffisamment — c'est-à-dire si l'interaction est fréquente, durable et sans fin connue.
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Les pièges de la question 5.3</div>
+  <ul>
+    <li>
+      <strong>Répondre en trois mots.</strong> « δ mesure la patience » vaut 1 point sur 6. Il
+      faut développer : ce que ça veut dire concrètement, d'où ça vient, et surtout la mécanique
+      de l'arbitrage.
+    </li>
+    <li>
+      <strong>Confondre δ et un taux d'intérêt.</strong> δ n'est pas \( r \) : c'est
+      \( 1/(1+r) \) (éventuellement multiplié par une probabilité de survie). Quand \( r \)
+      monte, δ <em>descend</em>. Inverser les deux est une faute de fond.
+    </li>
+    <li>
+      <strong>Oublier de dire pourquoi le futur se dégonfle.</strong> Le point crucial est que le
+      bonus immédiat ne dépend pas de δ, alors que la punition, elle, en dépend entièrement. Sans
+      cette dissymétrie, l'explication reste floue.
+    </li>
+    <li>
+      <strong>Parler de morale.</strong> Aucun jugement ici : les pizzerias ne sont ni gentilles
+      ni méchantes, elles calculent. C'est justement ce qui rend le résultat intéressant.
+    </li>
+  </ul>
+</div>
+
+<div class="box box-methode">
+  <div class="box-title">Réflexe de méthode — répondre à une question « interprétez »</div>
+  <ol>
+    <li>
+      <strong>Nommer</strong> la grandeur en un mot-clé du cours (ici : la patience, le poids du
+      futur).
+    </li>
+    <li>
+      <strong>Traduire</strong> ce mot en une phrase concrète et chiffrable (« 1 € dans un mois
+      vaut δ € aujourd'hui »).
+    </li>
+    <li>
+      <strong>Décomposer les deux forces</strong> qui s'opposent, avec leurs valeurs numériques
+      tirées de la matrice (ici : +6 tout de suite contre −4 par mois).
+    </li>
+    <li>
+      <strong>Expliquer le basculement</strong> : quel terme dépend du paramètre, quel terme n'en
+      dépend pas, et ce qui se passe quand le paramètre franchit le seuil.
+    </li>
+    <li>
+      <strong>Élargir</strong> en une phrase à la leçon générale, et si possible à un exemple
+      réel. C'est ce qui fait la différence entre 4/6 et 6/6.
+    </li>
+  </ol>
+</div>
+
+<hr class="soft">
+
+<h2>11. Récapitulatif du chapitre 5</h2>
+
+<h3>Les trois réponses, en un coup d'œil</h3>
+
+<table class="compare">
+  <tr>
+    <th class="left">Question</th>
+    <th class="left">Réponse à retenir</th>
+  </tr>
+  <tr>
+    <td class="left"><strong>5.1</strong></td>
+    <td class="left">
+      B est strictement dominante pour les deux (\( 12 &gt; 6 \) et \( 2 &gt; 0 \)). Unique
+      équilibre de Nash : <strong>(B ; B)</strong>, payoffs (2 ; 2), alors que (E ; E) donnerait
+      (6 ; 6) → dilemme du prisonnier. À horizon fini et connu, l'induction à rebours impose
+      <strong>B à chaque mois</strong> : l'entente ne tient nulle part.
+    </td>
+  </tr>
+  <tr>
+    <td class="left"><strong>5.2</strong></td>
+    <td class="left">
+      \( \Pi^{\text{coop}} = \dfrac{6}{1-\delta} \) ;
+      \( \Pi^{\text{dév}} = 12 + \dfrac{2\delta}{1-\delta} \) ; condition d'équilibre :
+      <strong>\( \delta \ge 3/5 = 0{,}6 \)</strong>.
+    </td>
+  </tr>
+  <tr>
+    <td class="left"><strong>5.3</strong></td>
+    <td class="left">
+      δ = la patience (poids du futur, mêlant préférence pour le présent, taux d'intérêt et
+      probabilité de continuation). Trahir gagne +6 tout de suite mais perd 4 par mois à jamais :
+      si δ est trop petit, ces pertes futures ne pèsent plus rien et l'entente s'effondre.
+    </td>
+  </tr>
+</table>
+
+<h3>La phrase à retenir</h3>
+
+<div class="result">
+  <div class="result-title">L'idée centrale de toute la question 5</div>
+  <p>
+    <strong>Horizon fini et connu → jamais de coopération</strong> (le dernier mois fait tomber
+    tous les dominos). <strong>Horizon infini → coopération possible</strong> si
+    \( \Pi^{\text{coop}} \ge \Pi^{\text{dév}} \), c'est-à-dire si les joueurs sont assez patients.
+    La coopération ne se décrète pas : elle s'achète avec de l'avenir.
+  </p>
+</div>
+
+<h3>Le lexique du chapitre</h3>
+
+<dl class="lexique">
+  <dt>Jeu d'étape (ou jeu de période)</dt>
+  <dd>Le jeu simultané qu'on répète — ici, le tableau des profits d'un mois.</dd>
+  <dt>Stratégie strictement dominante</dt>
+  <dd>
+    Une stratégie qui rapporte strictement plus que toutes les autres, quoi que fasse
+    l'adversaire. Ici : B, pour les deux pizzerias.
+  </dd>
+  <dt>Équilibre de Nash</dt>
+  <dd>
+    Un profil de choix où personne ne gagne à changer seul. Ici : (B ; B) dans le jeu d'un mois.
+  </dd>
+  <dt>Pareto-dominé</dt>
+  <dd>
+    Se dit d'une issue pour laquelle il en existe une autre strictement meilleure pour tous.
+    (B ; B) est Pareto-dominé par (E ; E).
+  </dd>
+  <dt>Dilemme du prisonnier</dt>
+  <dd>
+    Jeu où chacun a une stratégie dominante mais où l'issue résultante est moins bonne pour tous
+    que la coopération.
+  </dd>
+  <dt>Jeu répété</dt>
+  <dd>
+    Le même jeu d'étape rejoué période après période, chacun observant tout le passé.
+  </dd>
+  <dt>Stratégie (dans un jeu répété)</dt>
+  <dd>
+    Une règle de conduite complète, contingente à l'histoire du jeu — pas une simple action.
+  </dd>
+  <dt>Induction à rebours (backward induction)</dt>
+  <dd>
+    Méthode consistant à résoudre la dernière période, puis à remonter période par période.
+    Exige une dernière période : inapplicable à l'horizon infini.
+  </dd>
+  <dt>Théorème de l'horizon fini</dt>
+  <dd>
+    Si le jeu d'étape a un unique équilibre de Nash et que le jeu est répété un nombre fini et
+    connu de fois, alors cet équilibre est joué à chaque période.
+  </dd>
+  <dt>Facteur d'escompte δ</dt>
+  <dd>
+    Nombre de \( [0;1[ \) tel que 1 € reçu dans une période vaut δ € aujourd'hui. Mesure la
+    patience.
+  </dd>
+  <dt>Payoff escompté</dt>
+  <dd>
+    \( \Pi = \pi_0 + \delta\pi_1 + \delta^2\pi_2 + \cdots \) : la valeur d'aujourd'hui de tout
+    le flux futur de profits.
+  </dd>
+  <dt>Somme géométrique</dt>
+  <dd>
+    \( a + a\delta + a\delta^2 + \cdots = \dfrac{a}{1-\delta} \) pour \( 0 \le \delta &lt; 1 \).
+  </dd>
+  <dt>Stratégie grim (grim trigger)</dt>
+  <dd>
+    « Je coopère tant que tu coopères ; à la première trahison, je punis pour toujours. »
+  </dd>
+  <dt>Crédibilité d'une menace</dt>
+  <dd>
+    Une menace est crédible si celui qui l'a formulée a effectivement intérêt à l'exécuter le
+    moment venu. Ici oui, car punir consiste à jouer l'équilibre de Nash du jeu d'étape.
+  </dd>
+</dl>
+
+<h3>Checklist avant de rendre la copie</h3>
+
+<div class="box box-methode">
+  <div class="box-title">Les huit choses à vérifier sur la question 5</div>
+  <ol>
+    <li>Ai-je écrit les <strong>quatre inégalités chiffrées</strong> de la dominance (deux par joueur, ou une paire + symétrie) ?</li>
+    <li>Ai-je nommé l'équilibre <strong>(B ; B)</strong> ET donné ses payoffs <strong>(2 ; 2)</strong> ?</li>
+    <li>Ai-je comparé (2 ; 2) à (6 ; 6) pour justifier le mot « dilemme » ?</li>
+    <li>Ai-je déroulé l'induction à rebours <strong>de la fin vers le début</strong>, en disant que la dernière période est jouée « quel que soit le passé » ?</li>
+    <li>Ai-je écrit les flux <strong>période par période</strong> avant d'appliquer la somme géométrique ?</li>
+    <li>Le <strong>12 est-il non escompté</strong> et le \( 2\delta/(1-\delta) \) porte-t-il bien son δ ?</li>
+    <li>Ai-je justifié que \( (1-\delta) &gt; 0 \) au moment de multiplier l'inégalité ?</li>
+    <li>Ai-je <strong>encadré</strong> le résultat \( \delta \ge 3/5 \) et écrit au moins cinq lignes d'interprétation pour 5.3 ?</li>
+  </ol>
+</div>
+
+</section>
