@@ -1,0 +1,1537 @@
+<section class="chapter">
+<div class="chapter-tag">Chapitre 14 — Examen n° 3, Question 3 · 50 points</div>
+<h1>Question 3 : Léa, Maxime et le jeu bayésien — quand tu ne sais pas à qui tu as affaire</h1>
+<p class="chapter-intro">Cinquante points, un quart de l'examen : c'est la plus grosse question du blanc n° 3. Et c'est aussi la seule qui repose entièrement sur une notion que le volume 1 n'a <em>jamais</em> abordée : l'<strong>information incomplète</strong>. On va donc reconstruire tout le décor à partir de rien — le type, la croyance, la Nature, la règle d'action, l'équilibre de Nash bayésien — puis résoudre les quatre sous-questions une par une. Bonne nouvelle : les calculs eux-mêmes sont d'une simplicité désarmante (quatre comparaisons de nombres, deux moyennes, une équation du premier degré). Toute la difficulté est dans le vocabulaire et dans la <em>forme</em> de la réponse.</p>
+
+<h2>0. La carte du chapitre : où on va et pourquoi</h2>
+
+<p>Prends deux minutes pour lire cette page avant tout le reste. Elle te donne le plan, et si tu te perds plus loin dans le chapitre, c'est ici qu'il faudra revenir.</p>
+
+<h3>0.1 L'histoire de l'énoncé, en trois phrases</h3>
+
+<p>Léa et Maxime doivent rendre ensemble un dossier pour un concours d'entrepreneuriat. Léa choisit le <strong>format du dossier</strong> : Ambitieux (A) ou Standard (S). Maxime choisit, <strong>au même moment et sans se concerter</strong>, son <strong>niveau d'implication</strong> : Travailler (T) ou Se reposer (R).</p>
+
+<p>Et voici le grain de sable, celui qui fait toute la question : <strong>Léa ne sait pas à quel Maxime elle a affaire</strong>. Il existe deux Maxime possibles — un Maxime <em>sérieux</em>, qui aime travailler, et un Maxime <em>paresseux</em>, qui préfère se reposer. Maxime, lui, sait très bien lequel des deux il est. Léa ne dispose que d'une probabilité : « il est sérieux avec probabilité \( p \) ».</p>
+
+<h3>0.2 Ce qu'on te demande, sous-question par sous-question</h3>
+
+<table class="data">
+<tr><th>Sous-question</th><th>Ce qu'on te demande, en français simple</th><th>Points</th></tr>
+<tr><td>3.1</td><td>Expliquer ce qu'est une « stratégie » pour Maxime, et les compter toutes</td><td>10</td></tr>
+<tr><td>3.2</td><td>Trouver ce que fait chaque version de Maxime (le sérieux, le paresseux)</td><td>12</td></tr>
+<tr><td>3.3</td><td>Trouver l'équilibre complet du jeu quand \( p = 0{,}8 \)</td><td>18</td></tr>
+<tr><td>3.4</td><td>Trouver la valeur de \( p \) qui fait changer l'équilibre, et décrire le nouvel équilibre</td><td>10</td></tr>
+</table>
+
+<p>Regarde bien l'ordre : ce n'est pas un hasard, c'est une <strong>chaîne</strong>. La 3.1 te donne le bon <em>langage</em>. La 3.2 résout la moitié « Maxime » du problème. La 3.3 branche la moitié « Léa » sur le résultat de la 3.2. La 3.4 refait la 3.3 avec un \( p \) inconnu au lieu de 0,8. Chaque étage s'appuie sur le précédent : si tu sautes la 3.2, tu ne peux pas faire la 3.3.</p>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi cette question est en réalité une seule idée déclinée quatre fois</div>
+<p>L'idée unique du chapitre tient en une phrase :</p>
+<p style="text-align:center"><strong>celui qui connaît son type compare des nombres <em>certains</em> ; celui qui ne le connaît pas calcule une <em>moyenne</em>.</strong></p>
+<p>C'est tout. La 3.1 installe le vocabulaire nécessaire pour dire ça proprement. La 3.2, c'est la première moitié de la phrase (Maxime compare des nombres certains). La 3.3, c'est la seconde moitié (Léa fait une moyenne). Et la 3.4 demande à partir de quelle croyance la moyenne de Léa bascule. Si tu retiens cette phrase, tu as la question.</p>
+</div>
+
+<h3>0.3 Les quatre réponses, dès maintenant</h3>
+
+<p>Voici les réponses. Tu ne comprends sans doute rien à certains mots pour l'instant — c'est parfaitement normal, et c'est même voulu. Reviens les relire à la fin du chapitre : elles te sembleront évidentes.</p>
+
+<div class="result">
+<div class="result-title">Les quatre réponses (à comprendre d'ici la fin du chapitre)</div>
+<ul>
+<li><strong>3.1</strong> — Une stratégie de Maxime est une <strong>règle qui associe une action à chacun de ses deux types</strong>. Il en a \( 2^2 = 4 \) : (T,T), (T,R), (R,T), (R,R).</li>
+<li><strong>3.2</strong> — Pour le type <strong>sérieux</strong>, Travailler est strictement dominante. Pour le type <strong>paresseux</strong>, Se reposer est strictement dominante. Sa meilleure réponse est donc la règle <strong>(T si sérieux · R si paresseux)</strong>.</li>
+<li><strong>3.3</strong> — Avec \( p = 0{,}8 \) : \( E[A] = 4{,}8 \) et \( E[S] = 2{,}8 \), donc Léa joue <strong>Ambitieux</strong>. L'équilibre de Nash bayésien est <strong>( A ; (T si sérieux · R si paresseux) )</strong>.</li>
+<li><strong>3.4</strong> — Le seuil est <strong>\( p^* = 0{,}4 \)</strong>. En dessous, Léa préfère Standard : l'équilibre devient <strong>( S ; (T si sérieux · R si paresseux) )</strong>. La règle de Maxime, elle, ne change jamais.</li>
+</ul>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Ce que tu dois avoir en tête du volume 1 (chapitre 3)</div>
+<p>Tout le chapitre 3 du volume 1 sert de socle ici. Version ultra-compacte :</p>
+<ul>
+<li><strong>Joueur</strong> : celui qui décide. <strong>Stratégie</strong> : une option possible pour lui. <strong>Payoff</strong> : ce qu'il récolte ; il cherche toujours le <em>plus grand</em>.</li>
+<li><strong>Matrice</strong> (forme normale) : le tableau du jeu. Dans chaque case, <strong>le premier nombre est le payoff du joueur des lignes</strong>, le second celui du joueur des colonnes. Ici : (gain de Léa ; gain de Maxime).</li>
+<li><strong>Jeu simultané</strong> : chacun choisit sans voir le choix de l'autre. Ce n'est pas une question de chronomètre, c'est une question d'information.</li>
+<li><strong>Meilleure réponse</strong> : le choix qui maximise mon payoff <em>face à un choix précis</em> de l'adversaire.</li>
+<li><strong>Stratégie strictement dominante</strong> : elle bat toutes les autres <em>quoi que fasse</em> l'adversaire. Un joueur rationnel la joue toujours.</li>
+<li><strong>Équilibre de Nash</strong> : un profil où chacun joue une meilleure réponse à l'autre. Personne ne regrette son choix une fois celui de l'autre connu.</li>
+<li><strong>Payoff espéré</strong> : la moyenne des payoffs possibles, pondérée par leurs probabilités.</li>
+</ul>
+<p>Si l'un de ces sept points est flou, relis le chapitre 3 du volume 1 avant de continuer : ce chapitre-ci construit directement dessus.</p>
+</div>
+
+<hr class="soft">
+
+<h2>1. Le cours dont tu as besoin : le monde de l'information incomplète</h2>
+
+<p>Cette section ne résout aucune sous-question. Elle construit le décor. C'est la partie la plus importante du chapitre : une fois le vocabulaire installé, les quatre sous-questions se répondent presque toutes seules. Prends ton temps, ne saute rien.</p>
+
+<h3>1.1 L'hypothèse discrète du volume 1 qui vient de sauter</h3>
+
+<p>Au volume 1, dans tous les jeux qu'on a résolus, il y avait une hypothèse tellement évidente qu'on ne la remarquait même pas : <strong>tout le monde connaissait tous les nombres du tableau</strong>. Athlex connaissait les profits de Boréal. Le pirate connaissait les gains de la responsable sécurité. On dit que les payoffs étaient de <span class="term">notoriété commune</span> : je connais tes gains, tu sais que je les connais, je sais que tu sais que je les connais, et ainsi de suite à l'infini.</p>
+
+<p>Pourquoi c'était si important ? Parce que toute la théorie des jeux repose sur une seule question : <em>« que va faire l'autre ? »</em>. Et pour y répondre, que faisais-tu ? Tu regardais <strong>ses</strong> gains, et tu te disais : « il est rationnel, donc il prendra le plus grand ». Si tu ne connais plus ses gains… tu ne peux plus prédire son comportement. Tout le mécanisme du volume 1 se grippe.</p>
+
+<p>Or, dans la vraie vie, on ignore presque toujours les gains des autres :</p>
+
+<ul>
+<li>Tu négocies une voiture d'occasion : tu ne sais pas jusqu'où le vendeur est prêt à descendre, parce que tu ne sais pas ce que la voiture lui coûte.</li>
+<li>Tu joues au poker : tu ne vois pas les cartes de l'adversaire, donc tu ne sais pas ce que « suivre » lui rapporterait.</li>
+<li>Tu fais un travail de groupe : tu ne sais pas si ton binôme est du genre à bosser la nuit ou à disparaître trois semaines.</li>
+</ul>
+
+<p>Le troisième exemple, c'est <em>exactement</em> la question 3.</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — information incomplète (et jeu bayésien)</div>
+<p>Un jeu est à <span class="term">information incomplète</span> quand <strong>au moins un joueur est incertain de la fonction de gain d'un autre joueur</strong>. Les payoffs ne sont plus de notoriété commune.</p>
+<p>Ces jeux portent un nom : ce sont les <span class="term">jeux bayésiens</span> (du nom de Thomas Bayes, le mathématicien des probabilités conditionnelles). C'est le mot qu'emploie l'énoncé : « dans ce jeu bayésien ». Traduction : « dans ce jeu où quelqu'un ignore les gains de quelqu'un d'autre ».</p>
+</div>
+
+<h3>1.2 Incomplète ≠ imparfaite : la confusion à ne pas faire</h3>
+
+<p>Deux mots se ressemblent beaucoup et désignent deux choses différentes. Le correcteur y est très attentif, et beaucoup d'étudiants perdent des points ici.</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — les deux ignorances possibles</div>
+<ul>
+<li><span class="term">Information imparfaite</span> : je ne connais pas <strong>ton action</strong>. C'est le cas de <em>tous</em> les jeux simultanés du volume 1 — je ne vois pas ce que tu joues au moment où je joue. Mais je connais parfaitement tes gains.</li>
+<li><span class="term">Information incomplète</span> : je ne connais pas <strong>tes gains</strong>, donc pas tes préférences, donc pas ce qui te motive. C'est la nouveauté de ce chapitre.</li>
+</ul>
+<p>Moyen mnémotechnique : <em>imparfaite = je ne vois pas ce que tu FAIS</em> ; <em>incomplète = je ne sais pas ce que tu VEUX</em>.</p>
+</div>
+
+<p>Dans la question 3, on a en réalité <strong>les deux à la fois</strong> : le jeu est simultané (Léa ne voit pas l'action de Maxime : information imparfaite) <em>et</em> Léa ignore le tableau de gains de Maxime (information incomplète). C'est la seconde ignorance qui est nouvelle et qui donne son nom à la question.</p>
+
+<figure>
+<svg viewBox="0 0 470 250" width="100%" style="max-width:12.5cm" role="img" aria-label="Comparaison entre information imparfaite, où l'on ignore l'action de l'autre, et information incomplète, où l'on ignore ses gains">
+  <rect x="6" y="26" width="215" height="196" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <text x="113" y="18" font-size="12.5" text-anchor="middle" font-weight="bold">Information IMPARFAITE</text>
+  <text x="113" y="46" font-size="11.5" text-anchor="middle" font-style="italic">« je ne vois pas ce que tu FAIS »</text>
+  <rect x="24" y="60" width="80" height="40" fill="none" stroke="#111827" stroke-width="1.2"/>
+  <text x="64" y="85" font-size="12" text-anchor="middle">Léa</text>
+  <rect x="124" y="60" width="80" height="40" fill="none" stroke="#111827" stroke-width="1.2"/>
+  <text x="164" y="85" font-size="12" text-anchor="middle">Maxime</text>
+  <line x1="113" y1="54" x2="113" y2="112" stroke="#be123c" stroke-width="3" stroke-dasharray="7 5"/>
+  <text x="113" y="132" font-size="11.5" text-anchor="middle">Son tableau de gains :</text>
+  <text x="113" y="148" font-size="11.5" text-anchor="middle" font-weight="bold">connu ✓</text>
+  <text x="113" y="170" font-size="11.5" text-anchor="middle">Son action du jour :</text>
+  <text x="113" y="186" font-size="11.5" text-anchor="middle" font-weight="bold">inconnue ✗</text>
+  <text x="113" y="210" font-size="11" text-anchor="middle" font-style="italic">tous les jeux du volume 1</text>
+  <rect x="249" y="26" width="215" height="196" fill="none" stroke="#111827" stroke-width="2.2"/>
+  <text x="356" y="18" font-size="12.5" text-anchor="middle" font-weight="bold">Information INCOMPLÈTE</text>
+  <text x="356" y="46" font-size="11.5" text-anchor="middle" font-style="italic">« je ne sais pas ce que tu VEUX »</text>
+  <rect x="267" y="60" width="80" height="40" fill="none" stroke="#111827" stroke-width="1.2"/>
+  <text x="307" y="85" font-size="12" text-anchor="middle">Léa</text>
+  <rect x="367" y="60" width="80" height="40" fill="none" stroke="#111827" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <text x="407" y="79" font-size="12" text-anchor="middle">Maxime</text>
+  <text x="407" y="94" font-size="10.5" text-anchor="middle">sérieux ? paresseux ?</text>
+  <line x1="356" y1="54" x2="356" y2="112" stroke="#be123c" stroke-width="3" stroke-dasharray="7 5"/>
+  <text x="356" y="132" font-size="11.5" text-anchor="middle">Son tableau de gains :</text>
+  <text x="356" y="148" font-size="11.5" text-anchor="middle" font-weight="bold">INCONNU ✗</text>
+  <text x="356" y="170" font-size="11.5" text-anchor="middle">Son action du jour :</text>
+  <text x="356" y="186" font-size="11.5" text-anchor="middle" font-weight="bold">inconnue ✗</text>
+  <text x="356" y="210" font-size="11" text-anchor="middle" font-style="italic">la nouveauté de la question 3</text>
+</svg>
+<figcaption>Figure 1 — Les deux ignorances. À gauche, celle du volume 1 : le mur d'information cache l'<em>action</em>. À droite, celle de la question 3 : le mur cache <em>en plus</em> le tableau de gains de l'adversaire. C'est le cadre de droite, plus épais, qui nous occupe ici.</figcaption>
+</figure>
+
+<h3>1.3 Le type : « il existe plusieurs versions possibles de toi »</h3>
+
+<p>Comment modéliser proprement « je ne connais pas tes gains » ? L'astuce des économistes est très élégante. Plutôt que de dire « les gains de Maxime sont mystérieux », on dit :</p>
+
+<p style="text-align:center"><strong>« Maxime existe en plusieurs versions possibles, chacune avec son propre tableau de gains. Une seule est la vraie. »</strong></p>
+
+<p>Chaque version s'appelle un <span class="term">type</span>.</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — le type</div>
+<p>Le <span class="term">type</span> d'un joueur, c'est <strong>sa fonction de gain</strong>. Dire « Maxime peut être de type sérieux ou de type paresseux », c'est dire exactement : « il existe deux tableaux de gains possibles pour Maxime, et un seul est le vrai ».</p>
+<p>Règle absolue, et c'est le cœur de tout le chapitre : <strong>chaque joueur connaît son propre type</strong>. C'est l'<em>adversaire</em> qui ne le connaît pas. Maxime sait parfaitement s'il est du genre à bosser ou à traîner. C'est Léa qui l'ignore.</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">L'analogie à retenir — le recruteur et le candidat</div>
+<p>Tu recrutes quelqu'un après un entretien d'une heure. Deux profils sont possibles derrière le même CV et le même sourire :</p>
+<ul>
+<li>un candidat <strong>motivé</strong> : travailler l'épanouit, il tirera une satisfaction réelle d'un projet exigeant ;</li>
+<li>un candidat <strong>opportuniste</strong> : il veut le salaire, pas le projet ; l'effort lui coûte, il en fera le minimum.</li>
+</ul>
+<p>Note bien trois choses, elles sont toutes les trois essentielles :</p>
+<ol>
+<li><strong>Le candidat, lui, sait très bien lequel il est.</strong> Personne ne s'ignore soi-même sur ce point.</li>
+<li><strong>Toi, tu ne le sais pas.</strong> Tu as au mieux une statistique : « dans ce secteur, à peu près 8 candidats sur 10 sont réellement motivés ».</li>
+<li><strong>Les deux profils ne réagiront pas de la même façon à ce que tu proposes.</strong> Confier un projet ambitieux au motivé, c'est un cadeau ; au opportuniste, c'est un fardeau.</li>
+</ol>
+<p>Remplace « recruteur » par Léa, « candidat » par Maxime, « motivé » par sérieux, « opportuniste » par paresseux, « projet ambitieux » par dossier Ambitieux : tu as l'énoncé mot pour mot. Garde cette image en tête tout au long du chapitre, elle rend chaque étape intuitive.</p>
+</div>
+
+<h3>1.4 La croyance : ignorer n'est pas ne rien savoir</h3>
+
+<p>Léa ignore le type de Maxime. Mais elle n'est pas complètement dans le noir : elle a une <em>idée</em>, exprimée en probabilités. C'est ce que dit l'énoncé : « elle croit que Maxime est sérieux avec probabilité \( p \) et paresseux avec probabilité \( 1-p \) ».</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — la croyance</div>
+<p>La <span class="term">croyance</span> d'un joueur, c'est <strong>une distribution de probabilité sur les types possibles de son adversaire</strong>. Ici : « sérieux avec probabilité \( p \), paresseux avec probabilité \( 1-p \) ».</p>
+<p>Deux remarques :</p>
+<ul>
+<li>Les deux probabilités s'additionnent bien à 1 : \( p + (1-p) = 1 \). C'est obligatoire — Maxime est forcément <em>l'un des deux</em>.</li>
+<li>Dans ce cours, la croyance est <strong>donnée par l'énoncé</strong> (on dit « exogène »). Tu n'as jamais à la deviner ni à la calculer : on te la sert sur un plateau.</li>
+</ul>
+</div>
+
+<p>Comment lire \( p \) à voix haute ? « la probabilité que Maxime soit sérieux ». Et \( 1-p \) : « la probabilité qu'il soit paresseux », c'est-à-dire « tout le reste », puisque les deux types épuisent les possibilités. En 3.3, on te donne \( p = 0{,}8 \) : Léa pense qu'il y a 80 chances sur 100 que Maxime soit sérieux, donc 20 chances sur 100 qu'il soit paresseux.</p>
+
+<div class="box box-piege">
+<div class="box-title">Piège de vocabulaire — \( p \) n'est PAS une probabilité de jeu</div>
+<p>Dans le volume 1 (chapitre 3, stratégies mixtes), la lettre \( p \) désignait la probabilité avec laquelle un joueur <em>choisissait de jouer</em> une action : « le pirate attaque le serveur A avec probabilité 0,6 ». C'était un <strong>choix stratégique</strong> du joueur.</p>
+<p>Ici, \( p \) est complètement différent : c'est la probabilité que Maxime <strong>soit</strong> d'un certain type. Personne ne la choisit. Ce n'est pas une décision, c'est une donnée de la situation. Maxime ne « tire pas au sort » son sérieux : il est ce qu'il est, et c'est Léa qui met des probabilités là-dessus faute de mieux.</p>
+<p>Cette confusion est d'autant plus tentante que la question 4 du <em>même examen blanc</em> (chapitre 15) utilise la lettre \( p \) dans l'autre sens. Sois vigilant : même lettre, deux objets sans rapport.</p>
+</div>
+
+<h3>1.5 La Nature : le personnage fictif qui tire le type au sort</h3>
+
+<p>Pour représenter tout ça proprement, on introduit un dernier personnage, et il est nouveau : la <span class="term">Nature</span>.</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — la Nature</div>
+<p>La <span class="term">Nature</span> est un <strong>joueur fictif</strong> qui intervient <em>avant</em> tous les autres et qui <strong>tire au sort le type de chaque joueur</strong>, selon les probabilités des croyances.</p>
+<p>Elle ne gagne rien, elle ne veut rien, elle n'a aucune stratégie : elle lance les dés, un point c'est tout. Son seul rôle est de transformer une phrase vague (« Maxime est peut-être sérieux ») en un objet mathématique manipulable (« un tirage aléatoire donne "sérieux" avec probabilité \( p \) »).</p>
+</div>
+
+<p>Le déroulement complet du jeu, dans l'ordre chronologique, est donc celui-ci :</p>
+
+<ol>
+<li><strong>La Nature joue en premier</strong> : elle tire le type de Maxime. Sérieux avec probabilité \( p \), paresseux avec probabilité \( 1-p \).</li>
+<li><strong>Maxime observe le résultat du tirage</strong> : il apprend qui il est. (Dans la réalité, bien sûr, il l'a toujours su ; c'est une façon de modéliser.)</li>
+<li><strong>Léa n'observe rien</strong> : elle sait seulement que le tirage a eu lieu, et avec quelles probabilités.</li>
+<li><strong>Les deux jouent simultanément</strong> : Léa choisit A ou S, Maxime choisit T ou R.</li>
+<li>On lit les gains dans la matrice correspondant au type effectivement tiré.</li>
+</ol>
+
+<figure>
+<svg viewBox="0 0 470 300" width="100%" style="max-width:12.5cm" role="img" aria-label="Arbre du jeu : la Nature tire le type de Maxime, avec une branche de probabilité p vers le Maxime sérieux et une branche 1 moins p vers le Maxime paresseux, chaque branche menant à une matrice de gains ; Léa ne distingue pas les deux branches">
+  <circle cx="235" cy="34" r="13" fill="#ecfdf5" stroke="#047857" stroke-width="1.8"/>
+  <text x="235" y="39" font-size="12" text-anchor="middle" fill="#047857" font-weight="bold">N</text>
+  <text x="235" y="16" font-size="12" text-anchor="middle" fill="#047857" font-weight="bold">La Nature tire le type</text>
+  <line x1="224" y1="44" x2="112" y2="86" stroke="#047857" stroke-width="1.8"/>
+  <line x1="246" y1="44" x2="358" y2="86" stroke="#047857" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <text x="146" y="58" font-size="13" text-anchor="middle" fill="#047857" font-weight="bold" font-style="italic">p</text>
+  <text x="330" y="58" font-size="13" text-anchor="middle" fill="#047857" font-weight="bold">1 − <tspan font-style="italic">p</tspan></text>
+  <rect x="22" y="88" width="180" height="150" fill="none" stroke="#111827" stroke-width="1.5"/>
+  <text x="112" y="106" font-size="12.5" text-anchor="middle" font-weight="bold">Maxime SÉRIEUX</text>
+  <text x="112" y="124" font-size="11" text-anchor="middle" font-style="italic">(il le sait ; Léa non)</text>
+  <line x1="34" y1="134" x2="190" y2="134" stroke="#9ca3af" stroke-width="1"/>
+  <text x="62" y="150" font-size="11" text-anchor="middle">gains</text>
+  <text x="62" y="164" font-size="11" text-anchor="middle">de Maxime</text>
+  <text x="140" y="150" font-size="11" text-anchor="middle">T</text>
+  <text x="176" y="150" font-size="11" text-anchor="middle">R</text>
+  <text x="62" y="188" font-size="11" text-anchor="middle">si Léa joue A</text>
+  <text x="140" y="188" font-size="12" text-anchor="middle" font-weight="bold">4</text>
+  <text x="176" y="188" font-size="12" text-anchor="middle">1</text>
+  <text x="62" y="210" font-size="11" text-anchor="middle">si Léa joue S</text>
+  <text x="140" y="210" font-size="12" text-anchor="middle" font-weight="bold">3</text>
+  <text x="176" y="210" font-size="12" text-anchor="middle">0</text>
+  <text x="112" y="230" font-size="11" text-anchor="middle" font-style="italic">il préfère T dans les deux cas</text>
+  <rect x="268" y="88" width="180" height="150" fill="none" stroke="#111827" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="358" y="106" font-size="12.5" text-anchor="middle" font-weight="bold">Maxime PARESSEUX</text>
+  <text x="358" y="124" font-size="11" text-anchor="middle" font-style="italic">(il le sait ; Léa non)</text>
+  <line x1="280" y1="134" x2="436" y2="134" stroke="#9ca3af" stroke-width="1"/>
+  <text x="308" y="150" font-size="11" text-anchor="middle">gains</text>
+  <text x="308" y="164" font-size="11" text-anchor="middle">de Maxime</text>
+  <text x="386" y="150" font-size="11" text-anchor="middle">T</text>
+  <text x="422" y="150" font-size="11" text-anchor="middle">R</text>
+  <text x="308" y="188" font-size="11" text-anchor="middle">si Léa joue A</text>
+  <text x="386" y="188" font-size="12" text-anchor="middle">1</text>
+  <text x="422" y="188" font-size="12" text-anchor="middle" font-weight="bold">3</text>
+  <text x="308" y="210" font-size="11" text-anchor="middle">si Léa joue S</text>
+  <text x="386" y="210" font-size="12" text-anchor="middle">0</text>
+  <text x="422" y="210" font-size="12" text-anchor="middle" font-weight="bold">2</text>
+  <text x="358" y="230" font-size="11" text-anchor="middle" font-style="italic">il préfère R dans les deux cas</text>
+  <rect x="12" y="252" width="446" height="40" fill="none" stroke="#be123c" stroke-width="1.8" stroke-dasharray="8 5" rx="18"/>
+  <text x="235" y="269" font-size="12" text-anchor="middle" fill="#be123c" font-weight="bold">Léa ne sait pas dans quelle boîte elle se trouve</text>
+  <text x="235" y="285" font-size="11" text-anchor="middle" fill="#be123c">elle joue A ou S sans distinguer les deux branches</text>
+</svg>
+<figcaption>Figure 2 — Le jeu commence par un coup de la Nature (en vert). Elle envoie le jeu dans la boîte de gauche avec probabilité \( p \), dans celle de droite avec probabilité \( 1-p \). Maxime sait dans quelle boîte il est ; Léa non — c'est ce que représente le grand cadre pointillé rouge qui englobe les deux. Les nombres affichés sont les gains de <em>Maxime</em> seulement.</figcaption>
+</figure>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi inventer un personnage fictif ?</div>
+<p>Parce que ça permet de <strong>ramener un problème nouveau à un problème connu</strong>. Sans la Nature, « information incomplète » est un concept flou et impossible à mettre en équation. Avec la Nature, l'incertitude sur les préférences devient une simple <em>loterie</em> — et une loterie, tu sais déjà la traiter : avec des espérances (volume 1, chapitres 0 et 2).</p>
+<p>C'est le tour de force de Harsanyi, l'économiste qui a inventé cette astuce (prix Nobel 1994, avec Nash) : <em>transformer une incertitude sur les règles du jeu en une incertitude sur un tirage au sort</em>. Une fois cette traduction faite, tous les outils du volume 1 redeviennent utilisables.</p>
+</div>
+
+<h3>1.6 L'asymétrie fondamentale (la phrase à retenir)</h3>
+
+<div class="box box-def">
+<div class="box-title">À retenir — l'asymétrie d'information</div>
+<p>Dans un jeu bayésien, l'information est <strong>asymétrique</strong> :</p>
+<p style="text-align:center"><strong>chacun connaît son propre type, mais pas nécessairement celui des autres.</strong></p>
+<p>Conséquence directe, et c'est la clé de toute la question 3 :</p>
+<ul>
+<li>le joueur <strong>informé</strong> (Maxime) sait dans quel tableau il joue : il compare des <strong>gains certains</strong> ;</li>
+<li>le joueur <strong>non informé</strong> (Léa) ne sait pas dans quel tableau elle joue : elle calcule des <strong>espérances</strong>, pondérées par ses croyances.</li>
+</ul>
+</div>
+
+<p>Relis ces deux tirets. Vraiment. Ils contiennent à eux seuls la réponse à 3.2 (premier tiret) et la réponse à 3.3 (second tiret). Tout le reste, c'est de l'arithmétique de primaire.</p>
+
+<h3>1.7 Lisons enfin les deux matrices de l'énoncé</h3>
+
+<p>Voici les deux tableaux tels qu'ils apparaissent dans l'énoncé. Le premier nombre est toujours le gain de <strong>Léa</strong>, le second celui de <strong>Maxime</strong>.</p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Maxime</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Travailler (T)</th><th>Se reposer (R)</th></tr>
+<tr><td class="player" rowspan="2">Léa</td><th>Ambitieux (A)</th><td>(6 ; 4)</td><td>(0 ; 1)</td></tr>
+<tr><th>Standard (S)</th><td>(3 ; 3)</td><td>(2 ; 0)</td></tr>
+</table>
+<p style="text-align:center"><em>Matrice n° 1 — si Maxime est <strong>sérieux</strong> (probabilité \( p \)).</em></p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Maxime</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Travailler (T)</th><th>Se reposer (R)</th></tr>
+<tr><td class="player" rowspan="2">Léa</td><th>Ambitieux (A)</th><td>(6 ; 1)</td><td>(0 ; 3)</td></tr>
+<tr><th>Standard (S)</th><td>(3 ; 0)</td><td>(2 ; 2)</td></tr>
+</table>
+<p style="text-align:center"><em>Matrice n° 2 — si Maxime est <strong>paresseux</strong> (probabilité \( 1-p \)).</em></p>
+
+<p>Traduisons les huit cases en phrases. C'est un exercice qui prend trois minutes en examen et qui évite les erreurs de lecture les plus coûteuses.</p>
+
+<table class="compare">
+<tr><th class="left">Situation</th><th class="left">Ce qui se passe, en français</th></tr>
+<tr><td class="left">A contre T</td><td class="left">Léa vise haut, Maxime bosse : le dossier ambitieux aboutit. Léa gagne <strong>6</strong>, son maximum. Le Maxime sérieux, fier du résultat, gagne 4 ; le paresseux, épuisé, ne gagne que 1.</td></tr>
+<tr><td class="left">A contre R</td><td class="left">Léa vise haut, Maxime lâche : le dossier ambitieux est bâclé, il ne vaut rien. Léa gagne <strong>0</strong>, le pire. Le sérieux culpabilise (1), le paresseux savoure son repos (3).</td></tr>
+<tr><td class="left">S contre T</td><td class="left">Léa vise modeste, Maxime bosse : un dossier standard bien fait. Léa gagne <strong>3</strong>. Le sérieux est content (3), le paresseux a travaillé pour rien à ses yeux (0).</td></tr>
+<tr><td class="left">S contre R</td><td class="left">Léa vise modeste, Maxime lâche : un dossier standard fait à la va-vite, mais qui tient debout. Léa gagne <strong>2</strong>. Le sérieux est frustré (0), le paresseux est ravi (2).</td></tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">L'observation la plus utile de tout le chapitre : les gains de Léa sont identiques</div>
+<p>Compare les <em>premiers</em> nombres des deux matrices : 6, 0, 3, 2 dans la première ; 6, 0, 3, 2 dans la seconde. <strong>Exactement les mêmes.</strong> L'énoncé le signale d'ailleurs explicitement en note.</p>
+<p>Qu'est-ce que ça veut dire ? Que <strong>Léa se fiche complètement de savoir si Maxime est sérieux ou paresseux <em>en soi</em></strong>. Ce qui compte pour elle, ce n'est pas son caractère, c'est <strong>ce qu'il fait</strong> : s'il travaille, elle obtient 6 (avec A) ou 3 (avec S) ; s'il se repose, elle obtient 0 (avec A) ou 2 (avec S).</p>
+<p>Mais alors, pourquoi le type de Maxime intéresse-t-il Léa ? <strong>Parce que le type détermine l'action.</strong> Un sérieux travaillera, un paresseux se reposera (on le démontrera en 3.2). Le type l'intéresse donc <em>indirectement</em> : c'est un indice sur le comportement à venir.</p>
+<p>Reprends l'analogie du recruteur : le patron ne « gagne » rien à ce que son employé soit motivé <em>dans l'absolu</em>. Il gagne à ce que le travail soit fait. Mais comme un employé motivé travaille davantage, savoir qu'il est motivé est une excellente nouvelle.</p>
+</div>
+
+<hr class="soft">
+
+<h2>2. Sous-question 3.1 — « Qu'est-ce qu'une stratégie de Maxime ? » (10 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.1 (10 points)</div>
+<p>Qu'est-ce qu'une stratégie de Maxime dans ce jeu bayésien ? Énumérez toutes les stratégies dont il dispose.</p>
+</div>
+
+<h3>2.1 Traduisons la question en français simple</h3>
+
+<p>Cette question a l'air d'une simple question de cours. Elle l'est, en partie. Mais elle vaut 10 points, et surtout elle installe le vocabulaire des trois sous-questions suivantes. Décortiquons-la mot par mot.</p>
+
+<dl class="lexique">
+<dt>« Qu'est-ce qu'une stratégie… »</dt>
+<dd>On te demande une <strong>définition</strong>, rédigée en toutes lettres. Pas un exemple, pas un dessin : une phrase qui dit ce qu'est l'objet « stratégie » dans ce contexte précis. Le correcteur cherche une formulation, pas une intuition.</dd>
+
+<dt>« …de Maxime… »</dt>
+<dd>De <em>Maxime</em>, et pas de Léa. Ce n'est pas anodin : Maxime est le joueur qui a <strong>plusieurs types</strong>, et c'est précisément pour lui que la définition change par rapport au volume 1. Si on t'avait demandé « qu'est-ce qu'une stratégie de Léa ? », la réponse serait la vieille réponse du volume 1 : « une action, A ou S ». On te pose la question sur celui pour qui c'est nouveau.</dd>
+
+<dt>« …dans ce jeu bayésien ? »</dt>
+<dd>Ces trois mots sont un <strong>indice offert par l'énoncé</strong>. Ils te disent : « attention, ici la définition n'est pas celle que tu as apprise en cours de jeux simples ». Si tu réponds « une stratégie de Maxime, c'est Travailler ou Se reposer », tu n'as pas entendu l'indice, et tu perds les 10 points.</dd>
+
+<dt>« Énumérez toutes les stratégies dont il dispose. »</dt>
+<dd><span class="term">Énumérer</span> = les <strong>lister une par une, sans en oublier</strong>. Ce n'est pas « combien y en a-t-il ? » (ça, c'est un nombre), c'est « écris-les toutes ». Le mot « toutes » signale que le correcteur comptera : s'il en manque une, il enlèvera des points. Donne donc le nombre <em>et</em> la liste complète.</dd>
+</dl>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi le professeur commence par cette question</div>
+<p>Parce que sans le bon vocabulaire, la 3.3 est impossible à rédiger. En 3.3, on te demandera d'écrire un équilibre. Un équilibre, c'est un <em>couple de stratégies</em>. Si tu ne sais pas ce qu'est une stratégie de Maxime, tu écriras quelque chose comme « (A ; T) » — et ce sera faux, parce que « T » n'est pas une stratégie de Maxime, c'est juste une action.</p>
+<p>Autrement dit : la 3.1 est la question qui te donne les <strong>bonnes cases à remplir</strong>. Les trois suivantes ne font que les remplir.</p>
+</div>
+
+<h3>2.2 Le cours dont tu as besoin : la stratégie comme « règle d'action »</h3>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel du volume 1 (chapitre 3) — ce qu'était une stratégie</div>
+<p>Dans tous les jeux simultanés du volume 1, une stratégie d'un joueur était tout simplement <strong>une des actions disponibles</strong>. Le prisonnier avait deux stratégies : Avouer, Nier. Athlex en avait deux : Prix élevé, Prix bas. On listait les stratégies en listant les lignes (ou les colonnes) du tableau. Fin de l'histoire.</p>
+<p>Cette définition va rester vraie… pour Léa. Elle va cesser d'être suffisante pour Maxime.</p>
+</div>
+
+<h4>2.2.1 Pourquoi « une action » ne suffit plus</h4>
+
+<p>Voici le raisonnement, lentement. Maxime existe en deux versions : le sérieux et le paresseux. Ces deux versions n'ont pas les mêmes goûts — regarde les deux matrices, les seconds nombres n'y sont pas les mêmes. Il serait donc absurde d'exiger qu'elles fassent la même chose.</p>
+
+<p>Maintenant, pose-toi la question du théoricien : <em>« que doit contenir un plan de jeu complet pour Maxime ? »</em>. Un plan complet, c'est un plan qui répond à toutes les situations possibles où Maxime pourrait se retrouver. Or Maxime peut se retrouver dans <strong>deux</strong> situations : être sérieux, ou être paresseux. Un plan qui ne dirait que « je travaille » laisserait une des deux situations sans instruction — ce serait un plan incomplet.</p>
+
+<p>Un plan complet doit donc dire deux choses :</p>
+
+<ul>
+<li>ce que fait Maxime <strong>s'il se découvre sérieux</strong> ;</li>
+<li>ce que fait Maxime <strong>s'il se découvre paresseux</strong>.</li>
+</ul>
+
+<p>C'est exactement ça, une stratégie dans un jeu bayésien : une <strong>consigne à double entrée</strong>, une ligne par type.</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — stratégie dans un jeu bayésien</div>
+<p>Dans un jeu bayésien, une <span class="term">stratégie</span> d'un joueur n'est plus une action : c'est une <strong>règle d'action</strong> (on dit aussi un <em>plan contingent</em>), c'est-à-dire une fonction qui <strong>associe une action à chacun de ses types possibles</strong>.</p>
+<p>On l'écrit sous la forme : <em>(action si type 1 · action si type 2 · …)</em>.</p>
+<p>Comment la lire à voix haute ? « (T si sérieux · R si paresseux) » se lit : « <em>Travailler si je suis sérieux, se reposer si je suis paresseux</em> ». C'est une phrase avec un « si », pas un mot isolé — retiens cette forme, c'est elle que le correcteur attend.</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Exemple concret — la consigne laissée au baby-sitter</div>
+<p>Tu pars pour la soirée et tu laisses un mot à la personne qui garde ton enfant. Deux versions du mot :</p>
+<ul>
+<li><strong>Mot n° 1 :</strong> « Fais-lui une omelette. » C'est une <em>action</em>. Et si l'enfant a déjà mangé chez le voisin ? Le mot ne dit rien. Plan incomplet.</li>
+<li><strong>Mot n° 2 :</strong> « S'il a faim, fais-lui une omelette ; s'il a déjà mangé, mets-le au lit. » C'est une <strong>règle</strong>. Elle couvre les deux situations possibles. Plan complet.</li>
+</ul>
+<p>Une stratégie dans un jeu bayésien, c'est le mot n° 2. Et remarque bien : la personne qui exécute la consigne, elle, <em>verra</em> si l'enfant a faim. La règle n'est pas là parce qu'elle hésite ; elle est là parce que <strong>toi, qui écris le mot, tu ne sais pas encore</strong> dans quel cas on sera. C'est exactement la position de Léa face aux deux Maxime.</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">« Mais Maxime connaît son type ! Pourquoi lui faire écrire une règle ? »</div>
+<p>Excellente objection, et beaucoup d'étudiants butent dessus. La réponse tient en deux temps.</p>
+<p><strong>D'abord</strong>, la règle n'est pas là pour aider Maxime : elle est là pour permettre à <em>Léa</em> — et à nous, qui analysons le jeu — de parler du comportement de Maxime <strong>avant</strong> de savoir qui il est. Léa doit se demander « que va faire Maxime ? ». Elle ne peut pas répondre « T » ni « R », puisqu'elle ignore son type. Elle ne peut répondre que par une règle : « T s'il est sérieux, R s'il est paresseux ». La règle est l'objet dont Léa a besoin pour raisonner.</p>
+<p><strong>Ensuite</strong>, techniquement, on raisonne <em>comme si</em> Maxime devait choisir son plan avant que la Nature ne lui révèle son type. Ça ne change strictement rien à son comportement (chaque ligne du plan est décidée indépendamment, comme on le verra en 3.2), mais ça donne un objet mathématique propre, comparable à une stratégie ordinaire.</p>
+<p>Formule à retenir : <strong>la règle d'action n'est pas de l'hésitation, c'est de la description.</strong></p>
+</div>
+
+<h4>2.2.2 La formule de comptage : \( n^k \)</h4>
+
+<p>Combien y a-t-il de règles possibles ? Comptons à la main, c'est instructif.</p>
+
+<p>Construire une règle, c'est remplir un formulaire à deux lignes :</p>
+
+<table class="data">
+<tr><th>Ligne du formulaire</th><th>Choix possibles</th><th>Combien ?</th></tr>
+<tr><td>« Si je suis sérieux, je joue… »</td><td>T ou R</td><td>2</td></tr>
+<tr><td>« Si je suis paresseux, je joue… »</td><td>T ou R</td><td>2</td></tr>
+</table>
+
+<p>Les deux lignes se remplissent <strong>indépendamment</strong> : quoi que j'aie écrit sur la première, j'ai toujours deux possibilités pour la seconde. Donc le nombre total de formulaires différents est \( 2 \times 2 = 4 \).</p>
+
+<div class="calc">
+<div class="step">\[ \#\,\text{stratégies} = \underbrace{2}_{\text{choix si sérieux}} \times \underbrace{2}_{\text{choix si paresseux}} = 2^2 = 4 \]
+<div class="why">On multiplie parce que les deux choix sont libres l'un de l'autre : c'est le principe multiplicatif du dénombrement (chapitre 0 du volume 1). Deux choix pour la première ligne, et pour <em>chacun</em> d'eux, deux choix pour la seconde.</div></div>
+</div>
+
+<div class="box box-def">
+<div class="box-title">Formule à connaître par cœur</div>
+<p>Un joueur qui a \( k \) types possibles et \( n \) actions possibles dispose de</p>
+<p style="text-align:center">\[ n^{\,k} \quad \text{stratégies (règles d'action).} \]</p>
+<p>Comment la lire : « \( n \) puissance \( k \) », c'est-à-dire \( n \) multiplié par lui-même \( k \) fois. L'<strong>exposant, c'est le nombre de types</strong> (le nombre de lignes du formulaire), et la <strong>base, c'est le nombre d'actions</strong> (le nombre de cases à cocher par ligne).</p>
+<p>Ici : \( n = 2 \) actions (T, R) et \( k = 2 \) types (sérieux, paresseux), donc \( 2^2 = 4 \).</p>
+<p>Quelques autres cas, pour t'entraîner à ne pas te tromper de sens :</p>
+<ul>
+<li>3 types, 2 actions : \( 2^3 = 8 \) stratégies ;</li>
+<li>2 types, 3 actions : \( 3^2 = 9 \) stratégies ;</li>
+<li>3 types, 3 actions : \( 3^3 = 27 \) stratégies.</li>
+</ul>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège classique — \( n^k \) et non \( n \times k \)</div>
+<p>Beaucoup d'étudiants écrivent « 2 types × 2 actions = 4 » et tombent par chance sur le bon résultat, parce que \( 2 \times 2 \) et \( 2^2 \) valent tous les deux 4. Puis, le jour où l'examen propose 3 types et 3 actions, ils écrivent 9 au lieu de 27, et perdent tout.</p>
+<p>Prends l'habitude d'écrire <strong>\( n^k \)</strong> et de <em>justifier par le formulaire</em> : « une case à remplir par type, \( n \) façons de remplir chacune ». Cette justification vaut souvent la moitié des points.</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège symétrique — n'oublie pas Léa</div>
+<p>Combien Léa a-t-elle de stratégies ? Elle n'a qu'<strong>un seul type</strong> (personne ne doute de ses préférences : ses gains sont écrits noir sur blanc et connus de tous). Donc \( k = 1 \), et le compte donne \( 2^1 = 2 \) : ses stratégies sont simplement ses deux actions, A et S.</p>
+<p>C'est cohérent : la définition « stratégie = règle d'action » <em>contient</em> l'ancienne définition du volume 1. Quand il n'y a qu'un type, la règle se réduit à une seule ligne, donc à une action. Rien n'a été cassé, on a juste généralisé.</p>
+</div>
+
+<h3>2.3 La résolution pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Compter les types de Maxime</div>
+<p>L'énoncé le dit explicitement : « Maxime peut être de deux types : sérieux ou paresseux ». Donc \( k = 2 \).</p>
+<p>Astuce de lecture : le nombre de types se lit toujours dans le <strong>nombre de matrices</strong> fournies. Deux matrices dessinées, deux types. Si l'énoncé t'en donnait trois, il y aurait trois types.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Compter les actions de Maxime</div>
+<p>Toujours dans l'énoncé : « Maxime choisit son niveau d'implication : Travailler (T) ou Se reposer (R) ». Donc \( n = 2 \).</p>
+<p>Astuce de lecture : le nombre d'actions de Maxime se lit dans le <strong>nombre de colonnes</strong> des matrices (Maxime est le joueur des colonnes). Deux colonnes, deux actions. Attention à ne pas compter les lignes : les lignes, ce sont les actions de Léa.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Appliquer la formule</div>
+<div class="calc">
+<div class="step">\[ \#\,\text{stratégies de Maxime} = n^{\,k} = 2^{\,2} = 4 \]
+<div class="why">Je remplace \( n \) par 2 (ses deux actions T et R) et \( k \) par 2 (ses deux types). \( 2^2 \) se lit « deux au carré » et vaut \( 2 \times 2 = 4 \).</div></div>
+</div>
+<p>Attention : ce « 4 » n'est pas la réponse complète. L'énoncé demande de les <strong>énumérer</strong>. On passe donc à l'étape 4.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Les énumérer sans en oublier</div>
+<p>Comment être sûr de n'en rater aucune ? Utilise une <strong>méthode systématique</strong> plutôt que ton inspiration. Celle-ci marche toujours : je fixe d'abord ce que fait le type sérieux, puis je décline les possibilités du paresseux.</p>
+<ul>
+<li>Si le sérieux joue <strong>T</strong> : le paresseux peut jouer T, ou R → deux règles : (T,T) et (T,R).</li>
+<li>Si le sérieux joue <strong>R</strong> : le paresseux peut jouer T, ou R → deux règles : (R,T) et (R,R).</li>
+</ul>
+<p>Total : \( 2 + 2 = 4 \). Le compte est bon, il colle avec l'étape 3. Cette double vérification (formule d'un côté, énumération de l'autre) est exactement ce que le correcteur veut voir.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">5.</span> Annoncer la convention de lecture</div>
+<p>Écrire « (T,R) » ne veut rien dire tant qu'on n'a pas précisé ce que désigne chaque position. Une notation sans convention, c'est un code sans clé. Annonce-la donc explicitement sur ta copie :</p>
+<p style="text-align:center"><strong>Convention : dans le couple (x , y), la première composante \( x \) est l'action jouée si Maxime est <em>sérieux</em>, la seconde \( y \) l'action jouée s'il est <em>paresseux</em>.</strong></p>
+<p>Cette phrase coûte dix secondes et sécurise plusieurs points : elle prouve que tu as compris que l'objet est une règle, et elle évite toute ambiguïté sur les trois sous-questions suivantes, où tu réutiliseras la notation.</p>
+</div>
+
+<h3>2.4 Les quatre stratégies, en toutes lettres</h3>
+
+<table class="data">
+<tr><th>N°</th><th>Notation courte</th><th>Si Maxime est sérieux…</th><th>Si Maxime est paresseux…</th><th>Ce que ça veut dire</th></tr>
+<tr><td>1</td><td>(T , T)</td><td>Travailler</td><td>Travailler</td><td>« Je travaille, quel que soit mon caractère. »</td></tr>
+<tr><td>2</td><td>(T , R)</td><td>Travailler</td><td>Se reposer</td><td>« Je travaille si je suis sérieux, je me repose si je suis paresseux. »</td></tr>
+<tr><td>3</td><td>(R , T)</td><td>Se reposer</td><td>Travailler</td><td>« Je me repose si je suis sérieux, je travaille si je suis paresseux. » (bizarre, mais c'est une règle possible)</td></tr>
+<tr><td>4</td><td>(R , R)</td><td>Se reposer</td><td>Se reposer</td><td>« Je me repose, quel que soit mon caractère. »</td></tr>
+</table>
+
+<figure>
+<svg viewBox="0 0 470 252" width="100%" style="max-width:12.5cm" role="img" aria-label="Les quatre stratégies de Maxime, présentées comme quatre formulaires à deux lignes : pour chaque type, sérieux ou paresseux, une action T ou R est prescrite">
+  <rect x="8" y="14" width="219" height="102" fill="none" stroke="#9ca3af" stroke-width="1.1" rx="6"/>
+  <text x="117" y="34" font-size="12" text-anchor="middle" font-weight="bold">Stratégie 1 — notée (T , T)</text>
+  <text x="24" y="62" font-size="11.5">si sérieux :</text>
+  <line x1="112" y1="58" x2="140" y2="58" stroke="#111827" stroke-width="1.2"/>
+  <polygon points="140,54 140,62 149,58" fill="#111827"/>
+  <rect x="154" y="45" width="32" height="24" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <text x="170" y="62" font-size="13" text-anchor="middle" font-weight="bold">T</text>
+  <text x="24" y="98" font-size="11.5">si paresseux :</text>
+  <line x1="112" y1="94" x2="140" y2="94" stroke="#111827" stroke-width="1.2"/>
+  <polygon points="140,90 140,98 149,94" fill="#111827"/>
+  <rect x="154" y="81" width="32" height="24" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <text x="170" y="98" font-size="13" text-anchor="middle" font-weight="bold">T</text>
+
+  <rect x="243" y="14" width="219" height="102" fill="none" stroke="#111827" stroke-width="2.2" rx="6"/>
+  <text x="352" y="34" font-size="12" text-anchor="middle" font-weight="bold">Stratégie 2 — notée (T , R)</text>
+  <text x="259" y="62" font-size="11.5">si sérieux :</text>
+  <line x1="347" y1="58" x2="375" y2="58" stroke="#111827" stroke-width="1.2"/>
+  <polygon points="375,54 375,62 384,58" fill="#111827"/>
+  <rect x="389" y="45" width="32" height="24" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <text x="405" y="62" font-size="13" text-anchor="middle" font-weight="bold">T</text>
+  <text x="259" y="98" font-size="11.5">si paresseux :</text>
+  <line x1="347" y1="94" x2="375" y2="94" stroke="#111827" stroke-width="1.2"/>
+  <polygon points="375,90 375,98 384,94" fill="#111827"/>
+  <rect x="389" y="81" width="32" height="24" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <text x="405" y="98" font-size="13" text-anchor="middle" font-weight="bold">R</text>
+
+  <rect x="8" y="132" width="219" height="102" fill="none" stroke="#9ca3af" stroke-width="1.1" rx="6"/>
+  <text x="117" y="152" font-size="12" text-anchor="middle" font-weight="bold">Stratégie 3 — notée (R , T)</text>
+  <text x="24" y="180" font-size="11.5">si sérieux :</text>
+  <line x1="112" y1="176" x2="140" y2="176" stroke="#111827" stroke-width="1.2"/>
+  <polygon points="140,172 140,180 149,176" fill="#111827"/>
+  <rect x="154" y="163" width="32" height="24" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <text x="170" y="180" font-size="13" text-anchor="middle" font-weight="bold">R</text>
+  <text x="24" y="216" font-size="11.5">si paresseux :</text>
+  <line x1="112" y1="212" x2="140" y2="212" stroke="#111827" stroke-width="1.2"/>
+  <polygon points="140,208 140,216 149,212" fill="#111827"/>
+  <rect x="154" y="199" width="32" height="24" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <text x="170" y="216" font-size="13" text-anchor="middle" font-weight="bold">T</text>
+
+  <rect x="243" y="132" width="219" height="102" fill="none" stroke="#9ca3af" stroke-width="1.1" rx="6"/>
+  <text x="352" y="152" font-size="12" text-anchor="middle" font-weight="bold">Stratégie 4 — notée (R , R)</text>
+  <text x="259" y="180" font-size="11.5">si sérieux :</text>
+  <line x1="347" y1="176" x2="375" y2="176" stroke="#111827" stroke-width="1.2"/>
+  <polygon points="375,172 375,180 384,176" fill="#111827"/>
+  <rect x="389" y="163" width="32" height="24" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <text x="405" y="180" font-size="13" text-anchor="middle" font-weight="bold">R</text>
+  <text x="259" y="216" font-size="11.5">si paresseux :</text>
+  <line x1="347" y1="212" x2="375" y2="212" stroke="#111827" stroke-width="1.2"/>
+  <polygon points="375,208 375,216 384,212" fill="#111827"/>
+  <rect x="389" y="199" width="32" height="24" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <text x="405" y="216" font-size="13" text-anchor="middle" font-weight="bold">R</text>
+</svg>
+<figcaption>Figure 3 — Les quatre stratégies de Maxime. Chacune est un « formulaire » à deux lignes : une action prescrite par type. On les obtient en cochant librement chaque ligne, d'où \( 2 \times 2 = 2^2 = 4 \) formulaires distincts. Le cadre épais signale la stratégie 2 — c'est celle qui gagnera en 3.2, mais à ce stade les quatre sont sur un pied d'égalité.</figcaption>
+</figure>
+
+<div class="result">
+<div class="result-title">Résultat — réponse à la question 3.1</div>
+<p>Dans un jeu bayésien, une stratégie de Maxime n'est pas une action mais une <strong>règle d'action</strong> : elle prescrit une action pour <em>chacun de ses deux types</em>.</p>
+<p>Maxime ayant \( k = 2 \) types et \( n = 2 \) actions, il dispose de \( n^k = 2^2 = \mathbf{4} \) stratégies :</p>
+<p style="text-align:center"><strong>(T,T) &nbsp;·&nbsp; (T,R) &nbsp;·&nbsp; (R,T) &nbsp;·&nbsp; (R,R)</strong></p>
+<p>avec la convention : première composante = action si sérieux, seconde = action si paresseux.</p>
+<p>(Léa, qui n'a qu'un seul type, garde de simples actions comme stratégies : A ou S — donc 2.)</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — question 3.1</div>
+<p>Dans un jeu bayésien, une stratégie du joueur informé n'est pas une simple action : c'est une <strong>règle d'action</strong>, qui spécifie une action pour <em>chaque type possible</em> du joueur. Maxime doit donc dire ce qu'il ferait s'il était sérieux <em>et</em> ce qu'il ferait s'il était paresseux.</p>
+<p>Maxime a \( k = 2 \) types (sérieux, paresseux) et \( n = 2 \) actions (T, R). Il dispose donc de \( n^k = 2^2 = 4 \) stratégies. En notant (x ; y) la règle « x si sérieux ; y si paresseux » :</p>
+<ul>
+<li>(T ; T) : travailler quel que soit son type ;</li>
+<li>(T ; R) : travailler s'il est sérieux, se reposer s'il est paresseux ;</li>
+<li>(R ; T) : se reposer s'il est sérieux, travailler s'il est paresseux ;</li>
+<li>(R ; R) : se reposer quel que soit son type.</li>
+</ul>
+<p>Léa, elle, n'a qu'un seul type : ses stratégies restent les deux actions A et S.</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 3.1</div>
+<ul>
+<li><strong>Répondre « 2 stratégies : T et R ».</strong> C'est le réflexe du volume 1. Ici, c'est faux : T et R sont des <em>actions</em>, pas des stratégies. Zéro sur la question.</li>
+<li><strong>Donner le nombre sans la liste</strong> (ou la liste sans le nombre). L'énoncé demande les deux : « énumérez <em>toutes</em> les stratégies ». Le barème sépare d'ailleurs les deux : la définition d'un côté, l'énumération de l'autre.</li>
+<li><strong>Oublier la convention de lecture.</strong> Écrire (T,R) sans dire ce que sont la première et la seconde composante rend la réponse ambiguë — et rendra fausse ta 3.3 si tu inverses en cours de route.</li>
+<li><strong>Confondre \( n^k \) et \( n \times k \).</strong> Invisible ici (les deux donnent 4), mortel ailleurs.</li>
+<li><strong>Oublier les règles « bizarres ».</strong> (R,T) — se reposer quand on est sérieux — a l'air absurde, et elle l'est stratégiquement. Mais on te demande les stratégies <em>disponibles</em>, pas les stratégies <em>raisonnables</em>. On les élimine en 3.2, pas en 3.1.</li>
+</ul>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">La recette réutilisable — compter et lister les stratégies d'un joueur à types</div>
+<ol>
+<li><strong>Compte les types</strong> du joueur : c'est le nombre de matrices que l'énoncé te donne. Appelle-le \( k \).</li>
+<li><strong>Compte les actions</strong> du joueur : c'est le nombre de lignes (s'il est joueur des lignes) ou de colonnes (s'il est joueur des colonnes) d'<em>une</em> matrice. Appelle-le \( n \).</li>
+<li><strong>Annonce le total</strong> : \( n^k \), en justifiant par « une action à choisir par type, \( n \) choix pour chacune ».</li>
+<li><strong>Énumère systématiquement</strong> : fixe l'action du premier type, décline toutes celles du second, puis recommence avec l'autre action du premier type. Tu ne peux rien oublier.</li>
+<li><strong>Écris la convention</strong> : « dans (x ; y), x = action si type 1, y = action si type 2 ».</li>
+<li><strong>Mentionne l'autre joueur</strong> s'il n'a qu'un type : ses stratégies restent ses actions. C'est un point facile et il montre que tu as compris la logique.</li>
+</ol>
+</div>
+
+<hr class="soft">
+
+<h2>3. Sous-question 3.2 — la meilleure réponse de chaque type (12 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.2 (12 points)</div>
+<p>Déterminez la meilleure réponse de chaque type de Maxime. Détaillez votre raisonnement.</p>
+</div>
+
+<h3>3.1 Traduisons la question en français simple</h3>
+
+<dl class="lexique">
+<dt>« Déterminez… »</dt>
+<dd>Trouve, et surtout <strong>justifie</strong>. Un résultat annoncé sans justification vaut très peu de points ici — le barème donne 4 points sur 6 par type à la <em>comparaison</em> des gains, et seulement 2 à la conclusion.</dd>
+
+<dt>« …la meilleure réponse… »</dt>
+<dd>La <span class="term">meilleure réponse</span> d'un joueur, c'est l'action qui lui rapporte le plus <strong>face à un choix donné de l'adversaire</strong>. C'est une notion <em>conditionnelle</em> : « si tu fais ça, moi je fais ça ». On l'a vue au chapitre 3 du volume 1.</dd>
+
+<dt>« …de chaque type de Maxime. »</dt>
+<dd>Voilà le mot décisif : <strong>chaque type</strong>. On te demande <em>deux</em> réponses, pas une. Une pour le Maxime sérieux, une pour le Maxime paresseux. Tu vas donc traiter deux problèmes complètement séparés, l'un après l'autre, avant de les recoller en une seule règle à la fin.</dd>
+
+<dt>« Détaillez votre raisonnement. »</dt>
+<dd>Traduction du barème : écris les <strong>comparaisons de nombres</strong>, une par une. « 4 &gt; 1 », « 3 &gt; 0 »… Ce sont ces inégalités qui rapportent les points. Écrire seulement « le sérieux travaille » te fera perdre les deux tiers de la question.</dd>
+</dl>
+
+<h3>3.2 Le cours dont tu as besoin</h3>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel du volume 1 (chapitre 3) — meilleure réponse et dominance stricte</div>
+<ul>
+<li><strong>Meilleure réponse</strong> : je fixe l'action de l'adversaire, je regarde <em>mes</em> gains dans cette situation seulement, et je prends le plus grand.</li>
+<li><strong>Stratégie strictement dominante</strong> : une action qui est la meilleure réponse <em>quelle que soit</em> l'action de l'adversaire. Si mon action X me rapporte strictement plus que Y dans <em>tous</em> les cas de figure, alors X domine strictement Y, et un joueur rationnel joue X sans réfléchir davantage.</li>
+<li><strong>Où lire mes gains ?</strong> Dans une case « (a ; b) », le joueur des lignes lit \( a \), le joueur des colonnes lit \( b \). Ici Maxime est le joueur des <em>colonnes</em> : il lit toujours le <strong>second</strong> nombre.</li>
+</ul>
+</div>
+
+<h4>3.2.1 Le point capital : chaque type raisonne dans son propre monde</h4>
+
+<p>C'est le cœur de la sous-question, et c'est aussi l'endroit où l'on peut tout rater. Alors posons-le très lentement.</p>
+
+<p>Maxime <strong>connaît son type</strong>. Ce n'est pas une hypothèse accessoire : c'est la définition même du cadre bayésien. Conséquence : au moment où il choisit T ou R, Maxime sait <em>avec certitude</em> dans laquelle des deux matrices il se trouve. Il n'y a, pour lui, aucune incertitude sur ses propres gains.</p>
+
+<p>Que fait alors le Maxime sérieux ? Il ouvre la matrice n° 1, la sienne, et il oublie complètement l'autre. La matrice du paresseux ne le concerne pas plus que le menu d'un restaurant où il n'ira jamais. Symétriquement, le Maxime paresseux ne regarde que la matrice n° 2.</p>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi ce n'est pas un détail : la conséquence pratique</div>
+<p>Puisque chaque type ne consulte qu'une seule matrice, il compare des <strong>nombres certains</strong>. Pas de probabilité, pas de moyenne, pas de \( p \) nulle part dans son calcul.</p>
+<p>Conséquence directe, et tu peux l'écrire telle quelle sur ta copie : <strong>la réponse à la 3.2 ne dépend pas de \( p \)</strong>. Ce sera d'ailleurs la clé de la 3.4, où l'on fera varier \( p \) sans que la règle de Maxime ne bouge d'un pouce.</p>
+<p>Reprends l'analogie du recrutement : le candidat motivé n'a aucune raison de se demander « quelle est la probabilité que je sois motivé ? ». Il l'est. La question n'a pas de sens pour lui. C'est le recruteur qui se la pose.</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Le piège n° 1 de tout le chapitre — « Maxime moyenne aussi »</div>
+<p>L'erreur consiste à écrire quelque chose comme :</p>
+<p style="text-align:center">\[ E[\,\text{T}\,] = p \times 4 + (1-p) \times 1 \qquad \text{(FAUX)} \]</p>
+<p>Pourquoi c'est faux ? Parce que ce calcul mélange les gains du type sérieux (4) et ceux du type paresseux (1) <strong>comme s'il existait un seul Maxime incertain de lui-même</strong>. Il n'existe pas. Il existe deux Maxime, et chacun sait parfaitement qui il est.</p>
+<p>La bonne question n'est jamais « que fait Maxime ? » mais toujours <strong>« que fait le Maxime sérieux ? »</strong> puis <strong>« que fait le Maxime paresseux ? »</strong>. Deux questions, deux réponses, aucune moyenne.</p>
+<p>Test rapide pour t'auto-corriger en examen : <em>si un \( p \) apparaît dans un calcul de Maxime, tu t'es trompé.</em> Le \( p \) appartient à Léa et à elle seule.</p>
+</div>
+
+<h4>3.2.2 Où lire les nombres : fixer une ligne, comparer deux nombres</h4>
+
+<p>Petite gymnastique de lecture avant de calculer. Maxime est le joueur des <strong>colonnes</strong> : T est la colonne de gauche, R celle de droite. Léa est la joueuse des <strong>lignes</strong> : A est la ligne du haut, S celle du bas.</p>
+
+<p>Pour trouver la meilleure réponse de Maxime à une action donnée de Léa, tu dois donc :</p>
+
+<ol>
+<li><strong>Te placer dans la ligne</strong> correspondant à l'action de Léa (ligne A, ou ligne S) ;</li>
+<li><strong>Lire les deux cases de cette ligne</strong> : celle de la colonne T et celle de la colonne R ;</li>
+<li><strong>Ne retenir que le second nombre</strong> de chaque case — c'est le gain de Maxime ;</li>
+<li><strong>Comparer ces deux nombres</strong> et entourer le plus grand.</li>
+</ol>
+
+<p>Exemple sur la matrice du sérieux, ligne A : les deux cases sont (6 ; 4) et (0 ; 1). Les seconds nombres sont 4 et 1. Comme \( 4 &gt; 1 \), le sérieux préfère T quand Léa joue A. Voilà, tu viens de faire la première des quatre comparaisons.</p>
+
+<div class="box box-piege">
+<div class="box-title">Piège de lecture — ne lis pas le mauvais nombre</div>
+<p>Dans la case (6 ; 4), le <strong>6 n'est pas à Maxime</strong> : c'est le gain de Léa. Si tu compares 6 et 0 en croyant travailler pour Maxime, tu es en train de raisonner à la place de Léa.</p>
+<p>Astuce concrète en examen : avant toute chose, <strong>recopie les deux matrices en n'écrivant que les gains de Maxime</strong> (un seul nombre par case). Tu élimines physiquement la possibilité de te tromper de colonne de chiffres, et ça prend trente secondes. On le fait juste en dessous.</p>
+</div>
+
+<h3>3.3 La résolution pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Isoler la matrice du type sérieux</div>
+<p>Voici la matrice n° 1, avec en gras les gains de Maxime — les seuls qui l'intéressent ici :</p>
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Maxime (sérieux)</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Travailler (T)</th><th>Se reposer (R)</th></tr>
+<tr><td class="player" rowspan="2">Léa</td><th>Ambitieux (A)</th><td>(6 ; <strong>4</strong>)</td><td>(0 ; <strong>1</strong>)</td></tr>
+<tr><th>Standard (S)</th><td>(3 ; <strong>3</strong>)</td><td>(2 ; <strong>0</strong>)</td></tr>
+</table>
+<p>Et la même chose en ne gardant que ce qui compte pour lui :</p>
+<table class="data">
+<tr><th>Gain du Maxime <em>sérieux</em></th><th>s'il joue T</th><th>s'il joue R</th></tr>
+<tr><td>quand Léa joue A</td><td>4</td><td>1</td></tr>
+<tr><td>quand Léa joue S</td><td>3</td><td>0</td></tr>
+</table>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Comparaison n° 1 — le sérieux, face à A</div>
+<div class="calc">
+<div class="step">\[ \text{gain de T} = 4 \qquad \text{contre} \qquad \text{gain de R} = 1 \]
+<div class="why">Je me place dans la ligne « Ambitieux » de la matrice du sérieux et je lis les seconds nombres : 4 dans la colonne T, 1 dans la colonne R.</div></div>
+<div class="step">\[ 4 > 1 \;\Longrightarrow\; \text{il préfère } \mathbf{T} \]
+<div class="why">4 est strictement plus grand que 1, donc travailler lui rapporte strictement plus que se reposer dans cette situation. Le symbole \( \Longrightarrow \) se lit « donc » ou « implique ».</div></div>
+</div>
+<p>En français : si Léa se lance dans un dossier ambitieux, le Maxime sérieux préfère mettre la main à la pâte — un beau dossier abouti lui procure une vraie satisfaction (4), alors que laisser tomber sa binôme le met mal à l'aise (1).</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Comparaison n° 2 — le sérieux, face à S</div>
+<div class="calc">
+<div class="step">\[ \text{gain de T} = 3 \qquad \text{contre} \qquad \text{gain de R} = 0 \]
+<div class="why">Même chose, mais dans la ligne « Standard » : les cases sont (3 ; 3) et (2 ; 0), donc les gains de Maxime sont 3 et 0.</div></div>
+<div class="step">\[ 3 > 0 \;\Longrightarrow\; \text{il préfère encore } \mathbf{T} \]
+<div class="why">Là encore l'inégalité est stricte, donc travailler l'emporte nettement.</div></div>
+</div>
+<p>En français : même sur un dossier modeste, le sérieux préfère bien faire les choses (3) plutôt que de bâcler (0).</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Conclusion pour le type sérieux</div>
+<p>T l'emporte dans <strong>les deux</strong> situations possibles. Or « être meilleure quelle que soit l'action de l'adversaire », c'est très exactement la définition de la dominance stricte.</p>
+<div class="result">
+<div class="result-title">Type sérieux</div>
+<p><strong>Travailler est strictement dominante.</strong> Le Maxime sérieux joue T, quoi que fasse Léa. Sa meilleure réponse est T dans les deux cas.</p>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">5.</span> Isoler la matrice du type paresseux</div>
+<p>On recommence, de zéro, avec l'autre matrice. Il n'y a aucun lien logique avec ce qu'on vient de faire : c'est un second problème indépendant.</p>
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Maxime (paresseux)</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Travailler (T)</th><th>Se reposer (R)</th></tr>
+<tr><td class="player" rowspan="2">Léa</td><th>Ambitieux (A)</th><td>(6 ; <strong>1</strong>)</td><td>(0 ; <strong>3</strong>)</td></tr>
+<tr><th>Standard (S)</th><td>(3 ; <strong>0</strong>)</td><td>(2 ; <strong>2</strong>)</td></tr>
+</table>
+<table class="data">
+<tr><th>Gain du Maxime <em>paresseux</em></th><th>s'il joue T</th><th>s'il joue R</th></tr>
+<tr><td>quand Léa joue A</td><td>1</td><td>3</td></tr>
+<tr><td>quand Léa joue S</td><td>0</td><td>2</td></tr>
+</table>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">6.</span> Comparaison n° 3 — le paresseux, face à A</div>
+<div class="calc">
+<div class="step">\[ \text{gain de T} = 1 \qquad \text{contre} \qquad \text{gain de R} = 3 \]
+<div class="why">Ligne « Ambitieux » de la matrice du paresseux : les cases sont (6 ; 1) et (0 ; 3), donc ses gains sont 1 et 3.</div></div>
+<div class="step">\[ 3 > 1 \;\Longrightarrow\; \text{il préfère } \mathbf{R} \]
+<div class="why">Cette fois c'est le repos qui l'emporte. Attention à l'ordre : j'écris l'inégalité dans le sens qui met en avant le gagnant.</div></div>
+</div>
+<p>En français : un dossier ambitieux, pour un paresseux, c'est beaucoup de travail pénible (1). Il préfère largement se reposer et laisser sa binôme se débrouiller (3).</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">7.</span> Comparaison n° 4 — le paresseux, face à S</div>
+<div class="calc">
+<div class="step">\[ \text{gain de T} = 0 \qquad \text{contre} \qquad \text{gain de R} = 2 \]
+<div class="why">Ligne « Standard » : les cases sont (3 ; 0) et (2 ; 2), donc ses gains sont 0 et 2.</div></div>
+<div class="step">\[ 2 > 0 \;\Longrightarrow\; \text{il préfère encore } \mathbf{R} \]
+<div class="why">Inégalité stricte à nouveau : R l'emporte.</div></div>
+</div>
+<p>En français : même sur un petit dossier, le paresseux ne voit pas l'intérêt de se fatiguer.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">8.</span> Conclusion pour le type paresseux, puis recollage</div>
+<div class="result">
+<div class="result-title">Type paresseux</div>
+<p><strong>Se reposer est strictement dominante.</strong> Le Maxime paresseux joue R, quoi que fasse Léa.</p>
+</div>
+<p>Il ne reste qu'à <strong>recoller les deux morceaux en une seule règle d'action</strong>, celle dont la 3.1 nous a donné la forme :</p>
+<p style="text-align:center"><strong>(T si sérieux · R si paresseux)</strong> — c'est la stratégie n° 2 de la liste de la 3.1.</p>
+</div>
+
+<h3>3.4 Les deux matrices avec les meilleures réponses surlignées</h3>
+
+<p>Voici le résultat sous sa forme la plus parlante. Les cases <strong>surlignées</strong> sont celles que Maxime préfère, ligne par ligne, dans chacun de ses deux mondes.</p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Maxime</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Travailler (T)</th><th>Se reposer (R)</th></tr>
+<tr><td class="player" rowspan="2">Léa</td><th>Ambitieux (A)</th><td class="hl">(6 ; 4)</td><td>(0 ; 1)</td></tr>
+<tr><th>Standard (S)</th><td class="hl">(3 ; 3)</td><td>(2 ; 0)</td></tr>
+</table>
+<p style="text-align:center"><em>Type <strong>sérieux</strong> : toute la colonne T est surlignée — T est strictement dominante.</em></p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Maxime</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Travailler (T)</th><th>Se reposer (R)</th></tr>
+<tr><td class="player" rowspan="2">Léa</td><th>Ambitieux (A)</th><td>(6 ; 1)</td><td class="hl">(0 ; 3)</td></tr>
+<tr><th>Standard (S)</th><td>(3 ; 0)</td><td class="hl">(2 ; 2)</td></tr>
+</table>
+<p style="text-align:center"><em>Type <strong>paresseux</strong> : toute la colonne R est surlignée — R est strictement dominante.</em></p>
+
+<div class="box box-why">
+<div class="box-title">Comment reconnaître une dominance d'un coup d'œil sur un surlignage</div>
+<p>Règle visuelle simple : quand les cases surlignées d'un joueur forment une <strong>colonne entière</strong> (pour le joueur des colonnes) ou une <strong>ligne entière</strong> (pour le joueur des lignes), c'est qu'il y a dominance. Cela veut dire « il choisit toujours la même chose, quoi que fasse l'autre ».</p>
+<p>Si au contraire le surlignage zigzague — une case dans une colonne, une case dans l'autre — il n'y a pas de dominance : le joueur doit s'adapter à ce que fait l'adversaire. Ici on a de la chance : les deux surlignages sont bien alignés, donc les deux types ont une action dominante, et la 3.2 se règle sans hypothèse sur le comportement de Léa.</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 244" width="100%" style="max-width:12.5cm" role="img" aria-label="Les quatre comparaisons de gains de Maxime : le type sérieux préfère Travailler dans les deux cas (4 contre 1, puis 3 contre 0), le type paresseux préfère Se reposer dans les deux cas (3 contre 1, puis 2 contre 0)">
+  <rect x="6" y="10" width="222" height="218" fill="none" stroke="#111827" stroke-width="1.5" rx="5"/>
+  <text x="117" y="30" font-size="12.5" text-anchor="middle" font-weight="bold">Type SÉRIEUX</text>
+  <text x="117" y="47" font-size="11" text-anchor="middle" font-style="italic">il ne regarde que la matrice n° 1</text>
+  <line x1="18" y1="58" x2="216" y2="58" stroke="#9ca3af" stroke-width="1"/>
+  <text x="20" y="79" font-size="11.5">Si Léa joue A :</text>
+  <text x="34" y="99" font-size="11.5">T donne <tspan font-weight="bold" font-size="13">4</tspan>  ·  R donne 1</text>
+  <text x="34" y="118" font-size="11.5" font-weight="bold">4 &gt; 1  ⇒  il joue T</text>
+  <line x1="18" y1="130" x2="216" y2="130" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="20" y="151" font-size="11.5">Si Léa joue S :</text>
+  <text x="34" y="171" font-size="11.5">T donne <tspan font-weight="bold" font-size="13">3</tspan>  ·  R donne 0</text>
+  <text x="34" y="190" font-size="11.5" font-weight="bold">3 &gt; 0  ⇒  il joue T</text>
+  <line x1="18" y1="200" x2="216" y2="200" stroke="#9ca3af" stroke-width="1"/>
+  <text x="117" y="219" font-size="11.5" text-anchor="middle" font-weight="bold">T strictement dominante</text>
+
+  <rect x="242" y="10" width="222" height="218" fill="none" stroke="#111827" stroke-width="1.5" stroke-dasharray="5 3" rx="5"/>
+  <text x="353" y="30" font-size="12.5" text-anchor="middle" font-weight="bold">Type PARESSEUX</text>
+  <text x="353" y="47" font-size="11" text-anchor="middle" font-style="italic">il ne regarde que la matrice n° 2</text>
+  <line x1="254" y1="58" x2="452" y2="58" stroke="#9ca3af" stroke-width="1"/>
+  <text x="256" y="79" font-size="11.5">Si Léa joue A :</text>
+  <text x="270" y="99" font-size="11.5">T donne 1  ·  R donne <tspan font-weight="bold" font-size="13">3</tspan></text>
+  <text x="270" y="118" font-size="11.5" font-weight="bold">3 &gt; 1  ⇒  il joue R</text>
+  <line x1="254" y1="130" x2="452" y2="130" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="256" y="151" font-size="11.5">Si Léa joue S :</text>
+  <text x="270" y="171" font-size="11.5">T donne 0  ·  R donne <tspan font-weight="bold" font-size="13">2</tspan></text>
+  <text x="270" y="190" font-size="11.5" font-weight="bold">2 &gt; 0  ⇒  il joue R</text>
+  <line x1="254" y1="200" x2="452" y2="200" stroke="#9ca3af" stroke-width="1"/>
+  <text x="353" y="219" font-size="11.5" text-anchor="middle" font-weight="bold">R strictement dominante</text>
+</svg>
+<figcaption>Figure 4 — Les quatre comparaisons de la question 3.2, séparées par type. Deux mondes étanches : le sérieux (cadre plein) ne consulte jamais les nombres du paresseux (cadre pointillé), et réciproquement. Aucun \( p \) n'apparaît nulle part — c'est la signature d'un raisonnement correct côté Maxime.</figcaption>
+</figure>
+
+<div class="result">
+<div class="result-title">Résultat — réponse à la question 3.2</div>
+<ul>
+<li><strong>Type sérieux</strong> : face à A, \( 4 &gt; 1 \) → T ; face à S, \( 3 &gt; 0 \) → T. <strong>Travailler est strictement dominante.</strong></li>
+<li><strong>Type paresseux</strong> : face à A, \( 3 &gt; 1 \) → R ; face à S, \( 2 &gt; 0 \) → R. <strong>Se reposer est strictement dominante.</strong></li>
+</ul>
+<p>La meilleure réponse de Maxime, quelle que soit l'action de Léa, est donc la règle d'action</p>
+<p style="text-align:center"><strong>(T si sérieux · R si paresseux)</strong>.</p>
+<p>Autrement dit : parmi les quatre stratégies listées en 3.1, la n° 2 est la seule qui survive. Les trois autres sont éliminées, car chacune prescrit au moins à un type une action strictement dominée.</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — question 3.2</div>
+<p>Chaque type de Maxime connaît sa propre matrice : il compare donc des gains <em>certains</em>, sans utiliser la croyance \( p \).</p>
+<p><strong>Type sérieux</strong> (matrice n° 1) :</p>
+<ul>
+<li>si Léa joue A : T rapporte 4, R rapporte 1 ; \( 4 &gt; 1 \), donc il joue T ;</li>
+<li>si Léa joue S : T rapporte 3, R rapporte 0 ; \( 3 &gt; 0 \), donc il joue T.</li>
+</ul>
+<p>T est donc <strong>strictement dominante pour le type sérieux</strong>.</p>
+<p><strong>Type paresseux</strong> (matrice n° 2) :</p>
+<ul>
+<li>si Léa joue A : T rapporte 1, R rapporte 3 ; \( 3 &gt; 1 \), donc il joue R ;</li>
+<li>si Léa joue S : T rapporte 0, R rapporte 2 ; \( 2 &gt; 0 \), donc il joue R.</li>
+</ul>
+<p>R est donc <strong>strictement dominante pour le type paresseux</strong>.</p>
+<p>Conclusion : quelle que soit l'action de Léa, la meilleure réponse de Maxime est la règle d'action <strong>(T si sérieux · R si paresseux)</strong>. Cette règle ne dépend pas de \( p \).</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 3.2</div>
+<ul>
+<li><strong>Faire une moyenne pour Maxime.</strong> Le piège n° 1, déjà signalé. Maxime connaît son type ; s'il apparaît un \( p \) dans son calcul, c'est faux.</li>
+<li><strong>Lire le mauvais nombre de la case.</strong> Maxime est joueur des colonnes : son gain est toujours le <em>second</em> nombre. Le premier appartient à Léa.</li>
+<li><strong>Ne donner qu'une seule réponse.</strong> « Maxime travaille » ne répond pas à la question : on demande la meilleure réponse de <em>chaque</em> type. Il faut deux conclusions, puis la règle qui les recolle.</li>
+<li><strong>Sauter les comparaisons.</strong> Le barème donne 4 points sur 6 par type aux comparaisons chiffrées. Annoncer le résultat sans écrire « \( 4 &gt; 1 \) » et « \( 3 &gt; 0 \) » coûte cher.</li>
+<li><strong>Oublier le mot « strictement ».</strong> Ici toutes les inégalités sont strictes (jamais d'égalité entre deux gains), donc la dominance est <em>stricte</em>. C'est ce qui garantit que le type ne peut pas hésiter, et c'est le mot que le correcteur cherche.</li>
+<li><strong>Conclure « donc Maxime joue T ».</strong> Non : <em>un</em> Maxime joue T, l'autre joue R. La conclusion est une règle, pas une action. Ce piège devient fatal en 3.3.</li>
+</ul>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">La recette réutilisable — meilleure réponse d'un joueur informé, type par type</div>
+<ol>
+<li><strong>Traite un type à la fois</strong>, et ferme mentalement l'autre matrice. Écris un titre « Type 1 » puis « Type 2 » sur ta copie : ça structure et ça rapporte.</li>
+<li><strong>Recopie ses gains seuls</strong> dans un petit tableau à deux lignes / deux colonnes. Tu ne peux plus te tromper de nombre.</li>
+<li><strong>Balaie toutes les actions de l'adversaire</strong>, une par une. S'il en a deux, tu fais deux comparaisons par type — donc quatre en tout ici.</li>
+<li><strong>Écris chaque comparaison sous forme d'inégalité chiffrée</strong> et conclus par une flèche vers l'action gagnante.</li>
+<li><strong>Regarde le motif</strong> : si la même action gagne à chaque fois, dis « strictement dominante ». Sinon, la meilleure réponse dépendra de l'action de l'adversaire, et il faudra traiter les cas séparément en 3.3.</li>
+<li><strong>Recolle</strong> en une règle unique : « (action du type 1 · action du type 2) ».</li>
+</ol>
+</div>
+
+<hr class="soft">
+
+<h2>4. Sous-question 3.3 — l'équilibre de Nash bayésien pour \( p = 0{,}8 \) (18 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.3 (18 points)</div>
+<p>Pour \( p = 0{,}8 \), calculez l'équilibre de Nash bayésien de ce jeu. Détaillez votre raisonnement et notez la réponse en bas du cadre.</p>
+<p>Deux lignes sont prévues pour la réponse :</p>
+<ul>
+<li>Stratégie de Léa à l'équilibre : …………</li>
+<li>Stratégie de Maxime à l'équilibre : …………</li>
+</ul>
+</div>
+
+<p>C'est la question centrale : 18 points, plus du tiers de l'exercice. Elle demande de <em>rassembler</em> tout ce qu'on a construit.</p>
+
+<h3>4.1 Traduisons la question en français simple</h3>
+
+<dl class="lexique">
+<dt>« Pour \( p = 0{,}8 \)… »</dt>
+<dd>On remplace la lettre \( p \) par le nombre 0,8. Léa croit qu'il y a 8 chances sur 10 que Maxime soit sérieux, donc 2 chances sur 10 qu'il soit paresseux (car \( 1 - 0{,}8 = 0{,}2 \)). Ce nombre ne servira qu'à <strong>Léa</strong> : Maxime n'en a aucun usage.</dd>
+
+<dt>« …calculez l'équilibre de Nash bayésien… »</dt>
+<dd>Le mot <span class="term">calculez</span> annonce qu'il y aura de l'arithmétique — ici, deux espérances. Le mot <span class="term">équilibre</span> annonce que la réponse est un <strong>couple</strong> : une stratégie pour chacun des deux joueurs, pas une seule.</dd>
+
+<dt>« …de ce jeu. »</dt>
+<dd>Sous-entendu : l'équilibre du jeu <em>complet</em>, celui qui inclut les deux types de Maxime. Pas l'équilibre de la matrice n° 1, pas celui de la matrice n° 2 : l'équilibre du jeu bayésien pris comme un tout.</dd>
+
+<dt>« Détaillez votre raisonnement. »</dt>
+<dd>Comme en 3.2 : ce sont les étapes qui rapportent. Le barème alloue 4 points au fait de <em>partir</em> de la règle trouvée en 3.2, 8 points aux deux calculs d'espérance, et 6 points à la vérification des meilleures réponses mutuelles et à l'écriture correcte de l'équilibre.</dd>
+
+<dt>« …notez la réponse en bas du cadre. »</dt>
+<dd>Le professeur a prévu <strong>deux lignes distinctes</strong> : une pour Léa, une pour Maxime. C'est un rappel muet que les deux réponses n'ont pas la même forme : sur la ligne de Léa on écrit une <em>action</em> ; sur celle de Maxime, une <em>règle</em>.</dd>
+</dl>
+
+<h3>4.2 Le cours dont tu as besoin</h3>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel du volume 1 (chapitres 0 et 2) — l'espérance</div>
+<p>L'<span class="term">espérance</span> d'un gain incertain, c'est la <strong>moyenne des résultats possibles, pondérée par leurs probabilités</strong>. Si un choix rapporte \( g_1 \) avec probabilité \( q \) et \( g_2 \) avec probabilité \( 1-q \), son espérance vaut</p>
+<p style="text-align:center">\[ E = q \times g_1 + (1-q) \times g_2 . \]</p>
+<p>Comment la lire : « E de… » ou « l'espérance de… ». Le principe : chaque résultat pèse à hauteur de sa probabilité. Un résultat très improbable compte peu, un résultat quasi certain compte presque pour lui seul.</p>
+<p>Vérification de bon sens : la somme des poids doit toujours faire 1, sinon tu t'es trompé quelque part.</p>
+</div>
+
+<h4>4.2.1 Le raisonnement de Léa, dans l'ordre où elle le fait</h4>
+
+<p>Mets-toi à la place de Léa. Elle doit choisir A ou S, maintenant, sans savoir à qui elle a affaire. Comment fait-elle ? En trois temps.</p>
+
+<p><strong>Temps 1 — elle prédit le comportement de Maxime, type par type.</strong> Léa est une joueuse rationnelle qui suppose que Maxime l'est aussi. Elle refait donc, dans sa tête, exactement le raisonnement de la 3.2 : « le sérieux a une action dominante, c'est T ; le paresseux aussi, c'est R ». Elle en déduit la règle de Maxime : <strong>(T si sérieux · R si paresseux)</strong>. Remarque qu'elle peut faire cette prédiction sans connaître le type : la règle, elle, est parfaitement connaissable.</p>
+
+<p><strong>Temps 2 — elle traduit cette règle en une loterie sur les gains.</strong> C'est l'étape subtile. Léa se dit : « avec probabilité 0,8 j'affronte un sérieux, et ce sérieux jouera T ; avec probabilité 0,2 j'affronte un paresseux, et ce paresseux jouera R ». Du point de vue de ses <em>propres</em> gains, tout se passe donc comme si elle jouait contre un adversaire qui joue T avec probabilité 0,8 et R avec probabilité 0,2.</p>
+
+<p><strong>Temps 3 — elle calcule ses deux espérances et prend la plus grande.</strong> Une pour A, une pour S. C'est de l'arithmétique.</p>
+
+<div class="box box-why">
+<div class="box-title">L'erreur de pondération à ne surtout pas commettre</div>
+<p>Voici la faute la plus fréquente sur cette question. Elle consiste à pondérer les <em>matrices</em> case par case, en oubliant que chaque type joue une action différente. Ça donne par exemple :</p>
+<p style="text-align:center">\[ E[\text{A}] = 0{,}8 \times 6 + 0{,}2 \times 6 = 6 \qquad \text{(FAUX)} \]</p>
+<p>Pourquoi c'est faux ? Parce que ce calcul suppose que Maxime joue <strong>T dans les deux cas</strong> : le 6 de gauche est le gain de Léa face à un sérieux qui travaille, le 6 de droite celui face à un paresseux qui travaillerait. Or le paresseux ne travaille pas — on l'a démontré en 3.2. Ce calcul pondère deux mondes dont l'un n'existe pas.</p>
+<p>La pondération correcte se fait sur les <strong>issues effectivement atteintes</strong> :</p>
+<ul>
+<li>avec probabilité 0,8, Maxime est sérieux <em>et joue T</em> → Léa, si elle a joué A, obtient 6 ;</li>
+<li>avec probabilité 0,2, Maxime est paresseux <em>et joue R</em> → Léa, si elle a joué A, obtient 0.</li>
+</ul>
+<p>Retiens la formule : <strong>on pondère les types, mais on lit le gain dans la case que ce type va réellement produire.</strong> C'est la raison pour laquelle il est impossible de faire la 3.3 sans avoir fait la 3.2 : sans la règle de Maxime, on ne sait pas quelle case lire.</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège d'ordre — traiter la 3.3 avant la 3.2</div>
+<p>Quelques étudiants attaquent directement la 3.3 parce que c'est celle qui « vaut le plus de points ». C'est une très mauvaise idée : la 3.3 <em>consomme</em> le résultat de la 3.2. Sans la règle (T si sérieux · R si paresseux), tu ne sais pas quels nombres mettre dans ton espérance, et tu tomberas presque à coup sûr dans la faute de pondération ci-dessus.</p>
+<p>Ordre obligatoire : 3.2 d'abord (le joueur informé), 3.3 ensuite (le joueur non informé). Toujours. C'est aussi l'ordre de la recette générale du cours.</p>
+</div>
+
+<h4>4.2.2 L'équilibre de Nash bayésien, enfin défini</h4>
+
+<div class="box box-def">
+<div class="box-title">Définition — équilibre de Nash bayésien (ENB)</div>
+<p>Un profil de stratégies \( (S_1, S_2) \) est un <span class="term">équilibre de Nash bayésien</span> si ces stratégies sont des <strong>meilleures réponses mutuelles</strong>, c'est-à-dire :</p>
+<ul>
+<li>pour le joueur <strong>informé</strong> : l'action que sa règle prescrit à <em>chacun de ses types</em> maximise le gain de ce type, étant donné la stratégie de l'adversaire ;</li>
+<li>pour le joueur <strong>non informé</strong> : sa stratégie maximise son <strong>espérance</strong> de gain, étant donné ses croyances et la règle de l'adversaire.</li>
+</ul>
+<p>Comment le lire : c'est <em>exactement</em> l'équilibre de Nash du volume 1 (« personne ne veut dévier tout seul »), avec deux adaptations : les stratégies sont devenues des règles, et « le meilleur gain » est devenu « la meilleure espérance de gain ».</p>
+</div>
+
+<p>Deux précisions de vocabulaire qui valent des points :</p>
+
+<ul>
+<li><strong>« Mutuelles »</strong> veut dire dans les deux sens : la stratégie de Léa doit être une meilleure réponse à celle de Maxime, <em>et</em> celle de Maxime une meilleure réponse à celle de Léa. Une vérification à sens unique ne suffit pas — même si, ici, la seconde est immédiate.</li>
+<li><strong>« Type par type »</strong> pour le joueur informé : il ne suffit pas que la règle soit bonne « en moyenne ». Chaque ligne du formulaire doit être optimale pour le type concerné. Une règle qui serait excellente pour le sérieux et mauvaise pour le paresseux ne serait pas un équilibre.</li>
+</ul>
+
+<div class="box box-methode">
+<div class="box-title">La recette ENB — à connaître par cœur</div>
+<ol>
+<li><strong>Liste les stratégies</strong> de chaque joueur (attention : \( n^k \) règles pour celui qui a des types). C'était la 3.1.</li>
+<li><strong>Cherche les meilleures réponses du joueur informé, type par type.</strong> Si chaque type a une action <em>dominante</em>, sa règle est déterminée d'emblée et tu peux la fixer une fois pour toutes — c'est le cas ici. Sinon, il faut tester chaque stratégie du non-informé une par une.</li>
+<li><strong>Calcule la meilleure réponse du joueur non informé</strong> face à cette règle, via ses <strong>espérances</strong> de gain (c'est là que la croyance sert).</li>
+<li><strong>Vérifie la réciproque</strong> : face à l'action retenue du non-informé, chaque type du joueur informé confirme-t-il son action ? Si oui : c'est un ENB. Si non : le candidat est rejeté.</li>
+<li><strong>Écris le profil</strong> proprement : (action du non-informé ; règle complète de l'informé).</li>
+</ol>
+</div>
+
+<h3>4.3 La résolution pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Fixer la règle de Maxime (héritée de la 3.2)</div>
+<p>On sait déjà tout de Maxime : chacun de ses types a une action strictement dominante. Sa règle est donc <strong>(T si sérieux · R si paresseux)</strong>, et c'est vrai <em>quoi que joue Léa</em> — c'est la définition même de la dominance.</p>
+<p>C'est une chance énorme. Dans le cas général, il faudrait tester les deux actions de Léa l'une après l'autre pour voir laquelle est cohérente. Ici, la moitié « Maxime » du problème est déjà réglée avant même de commencer.</p>
+<p>Écris cette phrase sur ta copie : elle vaut 4 des 18 points.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Traduire la règle en une loterie pour Léa</div>
+<p>Question à se poser : « du point de vue de Léa, que se passe-t-il concrètement, et avec quelles probabilités ? » Réponse en un tableau :</p>
+<table class="data">
+<tr><th>Le type tiré par la Nature</th><th>Probabilité</th><th>Ce que Maxime joue alors</th><th>Gain de Léa si elle a joué A</th><th>Gain de Léa si elle a joué S</th></tr>
+<tr><td>sérieux</td><td>\( p = 0{,}8 \)</td><td>T (dominante)</td><td>6</td><td>3</td></tr>
+<tr><td>paresseux</td><td>\( 1-p = 0{,}2 \)</td><td>R (dominante)</td><td>0</td><td>2</td></tr>
+</table>
+<p>Vérifions d'où viennent les quatre gains de Léa, un par un — c'est le moment de ne pas se tromper de case :</p>
+<ul>
+<li><strong>6</strong> : matrice du sérieux, ligne A, colonne T → case (6 ; 4), premier nombre.</li>
+<li><strong>0</strong> : matrice du paresseux, ligne A, colonne R → case (0 ; 3), premier nombre.</li>
+<li><strong>3</strong> : matrice du sérieux, ligne S, colonne T → case (3 ; 3), premier nombre.</li>
+<li><strong>2</strong> : matrice du paresseux, ligne S, colonne R → case (2 ; 2), premier nombre.</li>
+</ul>
+<p>Remarque au passage : comme les gains de Léa sont les mêmes dans les deux matrices, tu pourrais lire ces quatre nombres dans n'importe laquelle des deux. Ce qui change d'une branche à l'autre, ce n'est pas le tableau de Léa, c'est <strong>la colonne où l'on atterrit</strong>.</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 300" width="100%" style="max-width:12.5cm" role="img" aria-label="La loterie de Léa : si elle joue Ambitieux, elle gagne 6 avec probabilité 0,8 face au sérieux qui travaille et 0 avec probabilité 0,2 face au paresseux qui se repose, soit 4,8 en moyenne ; si elle joue Standard, elle gagne 3 puis 2, soit 2,8 en moyenne">
+  <rect x="6" y="8" width="458" height="136" fill="none" stroke="#111827" stroke-width="1.6" rx="5"/>
+  <text x="20" y="28" font-size="12.5" font-weight="bold">Si Léa joue AMBITIEUX (A)</text>
+  <circle cx="40" cy="82" r="5" fill="#047857"/>
+  <line x1="45" y1="79" x2="146" y2="56" stroke="#047857" stroke-width="1.6"/>
+  <line x1="45" y1="86" x2="146" y2="112" stroke="#047857" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="96" y="52" font-size="11" text-anchor="middle" fill="#047857">sérieux · 0,8</text>
+  <text x="96" y="126" font-size="11" text-anchor="middle" fill="#047857">paresseux · 0,2</text>
+  <text x="152" y="52" font-size="11.5">il joue T</text>
+  <text x="152" y="68" font-size="11.5">Léa gagne <tspan font-weight="bold" font-size="13">6</tspan></text>
+  <text x="152" y="106" font-size="11.5">il joue R</text>
+  <text x="152" y="122" font-size="11.5">Léa gagne <tspan font-weight="bold" font-size="13">0</tspan></text>
+  <line x1="240" y1="82" x2="264" y2="82" stroke="#111827" stroke-width="1.2"/>
+  <polygon points="264,78 264,86 273,82" fill="#111827"/>
+  <rect x="278" y="54" width="176" height="56" fill="none" stroke="#111827" stroke-width="1.4" rx="4"/>
+  <text x="366" y="78" font-size="11.5" text-anchor="middle">0,8 × 6 + 0,2 × 0</text>
+  <text x="366" y="98" font-size="13.5" text-anchor="middle" font-weight="bold">= 4,8</text>
+
+  <rect x="6" y="156" width="458" height="136" fill="none" stroke="#111827" stroke-width="1.6" rx="5"/>
+  <text x="20" y="176" font-size="12.5" font-weight="bold">Si Léa joue STANDARD (S)</text>
+  <circle cx="40" cy="230" r="5" fill="#047857"/>
+  <line x1="45" y1="227" x2="146" y2="204" stroke="#047857" stroke-width="1.6"/>
+  <line x1="45" y1="234" x2="146" y2="260" stroke="#047857" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="96" y="200" font-size="11" text-anchor="middle" fill="#047857">sérieux · 0,8</text>
+  <text x="96" y="274" font-size="11" text-anchor="middle" fill="#047857">paresseux · 0,2</text>
+  <text x="152" y="200" font-size="11.5">il joue T</text>
+  <text x="152" y="216" font-size="11.5">Léa gagne <tspan font-weight="bold" font-size="13">3</tspan></text>
+  <text x="152" y="254" font-size="11.5">il joue R</text>
+  <text x="152" y="270" font-size="11.5">Léa gagne <tspan font-weight="bold" font-size="13">2</tspan></text>
+  <line x1="240" y1="230" x2="264" y2="230" stroke="#111827" stroke-width="1.2"/>
+  <polygon points="264,226 264,234 273,230" fill="#111827"/>
+  <rect x="278" y="202" width="176" height="56" fill="none" stroke="#111827" stroke-width="1.4" rx="4"/>
+  <text x="366" y="226" font-size="11.5" text-anchor="middle">0,8 × 3 + 0,2 × 2</text>
+  <text x="366" y="246" font-size="13.5" text-anchor="middle" font-weight="bold">= 2,8</text>
+</svg>
+<figcaption>Figure 5 — La loterie que Léa affronte réellement, une fois la règle de Maxime connue. Sur chaque branche, le type tiré par la Nature détermine <em>à la fois</em> la probabilité et l'action jouée en face — c'est pour cela qu'on lit 6 en haut (sérieux qui travaille) et 0 en bas (paresseux qui se repose), et non deux fois le même nombre.</figcaption>
+</figure>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Calculer l'espérance de Léa si elle joue Ambitieux</div>
+<div class="calc">
+<div class="step">\[ E[\text{A}] = p \times (\text{gain face au sérieux}) + (1-p) \times (\text{gain face au paresseux}) \]
+<div class="why">J'écris d'abord la formule de l'espérance avec des mots, pour ne pas me tromper de nombre ensuite. Deux issues possibles, deux poids : \( p \) et \( 1-p \).</div></div>
+<div class="step">\[ E[\text{A}] = 0{,}8 \times 6 + 0{,}2 \times 0 \]
+<div class="why">Je remplace : \( p = 0{,}8 \) et \( 1-p = 0{,}2 \). Le 6 est le gain de Léa quand elle joue A face à un sérieux qui joue T ; le 0 est son gain quand elle joue A face à un paresseux qui joue R.</div></div>
+<div class="step">\[ E[\text{A}] = 4{,}8 + 0 = \mathbf{4{,}8} \]
+<div class="why">\( 0{,}8 \times 6 = 4{,}8 \) et \( 0{,}2 \times 0 = 0 \). On additionne : 4,8.</div></div>
+</div>
+<p>Lecture en français : « en moyenne, si Léa se lance dans un dossier ambitieux, elle peut espérer 4,8 ». Ce n'est pas un gain qu'elle obtiendra réellement — elle obtiendra soit 6, soit 0 — mais c'est le bon critère de décision quand on ne sait pas laquelle des deux situations se produira.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Calculer l'espérance de Léa si elle joue Standard</div>
+<div class="calc">
+<div class="step">\[ E[\text{S}] = 0{,}8 \times 3 + 0{,}2 \times 2 \]
+<div class="why">Même structure, mais je lis maintenant la ligne S : face au sérieux qui joue T, Léa obtient 3 ; face au paresseux qui joue R, elle obtient 2.</div></div>
+<div class="step">\[ E[\text{S}] = 2{,}4 + 0{,}4 \]
+<div class="why">\( 0{,}8 \times 3 = 2{,}4 \) et \( 0{,}2 \times 2 = 0{,}4 \). Je détaille les deux produits séparément : c'est plus sûr et le correcteur suit.</div></div>
+<div class="step">\[ E[\text{S}] = \mathbf{2{,}8} \]
+<div class="why">\( 2{,}4 + 0{,}4 = 2{,}8 \).</div></div>
+</div>
+<p>Lecture en français : le dossier standard rapporte moins quand ça se passe bien (3 au lieu de 6), mais il ne s'effondre pas quand Maxime lâche (2 au lieu de 0). C'est l'option prudente.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">5.</span> Comparer et conclure pour Léa</div>
+<div class="calc">
+<div class="step">\[ E[\text{A}] = 4{,}8 \qquad > \qquad E[\text{S}] = 2{,}8 \]
+<div class="why">4,8 est strictement plus grand que 2,8. L'écart est net : 2 points d'espérance.</div></div>
+</div>
+<p>Donc la meilleure réponse de Léa à la règle de Maxime est <strong>Ambitieux</strong>.</p>
+<table class="compare">
+<tr><th class="left">Action de Léa</th><th class="left">Détail du calcul</th><th class="left">Espérance</th></tr>
+<tr><td class="left">Ambitieux (A)</td><td class="left">\( 0{,}8 \times 6 + 0{,}2 \times 0 \)</td><td class="left"><strong>4,8</strong></td></tr>
+<tr><td class="left">Standard (S)</td><td class="left">\( 0{,}8 \times 3 + 0{,}2 \times 2 \)</td><td class="left">2,8</td></tr>
+</table>
+<p>Intuition : avec 8 chances sur 10 de tomber sur un binôme sérieux, le pari du dossier ambitieux est très largement rentable. Léa accepte le risque du 0 parce qu'il est peu probable.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">6.</span> Vérifier la réciproque — Maxime ne veut pas dévier</div>
+<p>Un équilibre exige des meilleures réponses <strong>mutuelles</strong>. On a vérifié que A est une meilleure réponse à la règle de Maxime. Il faut vérifier l'autre sens : face à Léa qui joue A, chaque type de Maxime confirme-t-il son action ?</p>
+<ul>
+<li><strong>Sérieux face à A</strong> : T donne 4, R donne 1. \( 4 &gt; 1 \) : il confirme T. ✓</li>
+<li><strong>Paresseux face à A</strong> : T donne 1, R donne 3. \( 3 &gt; 1 \) : il confirme R. ✓</li>
+</ul>
+<p>Aucun type ne souhaite dévier. La vérification est immédiate parce que les deux actions étaient <em>dominantes</em> : une action dominante est en particulier une meilleure réponse à A. Mais écris-la quand même — le barème la réclame explicitement.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">7.</span> Écrire l'équilibre dans la bonne forme</div>
+<p>Le profil est composé de deux objets de <em>natures différentes</em> :</p>
+<ul>
+<li>pour Léa, une <strong>action</strong> : A ;</li>
+<li>pour Maxime, une <strong>règle</strong> : (T si sérieux · R si paresseux).</li>
+</ul>
+<p>D'où l'écriture :</p>
+<p style="text-align:center"><strong>ENB = ( A ; (T si sérieux · R si paresseux) )</strong></p>
+<p>Note les parenthèses imbriquées : la parenthèse intérieure est la règle de Maxime, la parenthèse extérieure est le profil. Ce n'est pas de la coquetterie typographique, c'est ce qui distingue une réponse juste d'une réponse fausse.</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 336" width="100%" style="max-width:12cm" role="img" aria-label="Schéma de l'équilibre de Nash bayésien : Léa joue Ambitieux, Maxime suit la règle Travailler si sérieux et Se reposer si paresseux, chacune de ces stratégies étant une meilleure réponse à l'autre">
+  <rect x="90" y="20" width="290" height="76" fill="none" stroke="#111827" stroke-width="1.6" rx="5"/>
+  <text x="235" y="42" font-size="12.5" text-anchor="middle" font-weight="bold">LÉA — joueuse NON informée</text>
+  <text x="235" y="63" font-size="12" text-anchor="middle">stratégie d'équilibre : <tspan font-weight="bold">A (Ambitieux)</tspan></text>
+  <text x="235" y="82" font-size="11" text-anchor="middle" font-style="italic">retenue en comparant 4,8 et 2,8</text>
+
+  <line x1="175" y1="98" x2="175" y2="168" stroke="#111827" stroke-width="1.4"/>
+  <polygon points="171,168 179,168 175,177" fill="#111827"/>
+  <text x="163" y="120" font-size="11" text-anchor="end">A est la meilleure réponse</text>
+  <text x="163" y="136" font-size="11" text-anchor="end">— en espérance —</text>
+  <text x="163" y="152" font-size="11" text-anchor="end">à la règle de Maxime</text>
+
+  <line x1="295" y1="176" x2="295" y2="106" stroke="#111827" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <polygon points="291,106 299,106 295,97" fill="#111827"/>
+  <text x="307" y="120" font-size="11">chaque type de Maxime</text>
+  <text x="307" y="136" font-size="11">confirme son action</text>
+  <text x="307" y="152" font-size="11">face à A</text>
+
+  <rect x="90" y="180" width="290" height="92" fill="none" stroke="#111827" stroke-width="1.6" rx="5"/>
+  <text x="235" y="202" font-size="12.5" text-anchor="middle" font-weight="bold">MAXIME — joueur INFORMÉ</text>
+  <text x="235" y="222" font-size="12" text-anchor="middle">règle d'équilibre :</text>
+  <text x="235" y="241" font-size="12.5" text-anchor="middle" font-weight="bold">T si sérieux · R si paresseux</text>
+  <text x="235" y="261" font-size="11" text-anchor="middle" font-style="italic">chaque type a une action dominante</text>
+
+  <rect x="24" y="288" width="422" height="40" fill="none" stroke="#be123c" stroke-width="2" rx="6"/>
+  <text x="235" y="314" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#be123c">ENB = ( A ; (T si sérieux · R si paresseux) )</text>
+</svg>
+<figcaption>Figure 6 — L'équilibre, en une image. Les deux flèches sont les deux vérifications à faire : celle du haut vers le bas (Léa répond au mieux, <em>en espérance</em>, à la règle de Maxime) et celle du bas vers le haut (chaque type de Maxime répond au mieux, <em>en gains certains</em>, à l'action de Léa). Quand les deux flèches sont validées, le profil encadré en bas est un équilibre de Nash bayésien.</figcaption>
+</figure>
+
+<div class="result">
+<div class="result-title">Résultat — réponse à la question 3.3</div>
+<p>Avec \( p = 0{,}8 \) :</p>
+<p style="text-align:center">\[ E[\text{A}] = 0{,}8 \times 6 + 0{,}2 \times 0 = 4{,}8 \qquad ; \qquad E[\text{S}] = 0{,}8 \times 3 + 0{,}2 \times 2 = 2{,}8 \]</p>
+<p>Comme \( 4{,}8 &gt; 2{,}8 \), Léa joue <strong>Ambitieux</strong>. L'équilibre de Nash bayésien est :</p>
+<p style="text-align:center"><strong>( A ; (T si sérieux · R si paresseux) )</strong></p>
+<p>Réponses à recopier sur les deux lignes du cadre :</p>
+<ul>
+<li><strong>Stratégie de Léa à l'équilibre</strong> : Ambitieux (A).</li>
+<li><strong>Stratégie de Maxime à l'équilibre</strong> : la règle « Travailler s'il est sérieux, Se reposer s'il est paresseux ».</li>
+</ul>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — question 3.3</div>
+<p>D'après la question 3.2, chaque type de Maxime a une action strictement dominante ; à l'équilibre il joue donc nécessairement la règle <strong>(T si sérieux · R si paresseux)</strong>, et ceci quelle que soit l'action de Léa.</p>
+<p>Léa ne connaît pas le type de Maxime : elle compare ses <strong>espérances de gain</strong>, avec la croyance \( p = 0{,}8 \). Face au type sérieux (probabilité 0,8) Maxime joue T ; face au type paresseux (probabilité 0,2) il joue R. Donc :</p>
+<p>\[ E[\text{A}] = 0{,}8 \times 6 + 0{,}2 \times 0 = 4{,}8 \]</p>
+<p>\[ E[\text{S}] = 0{,}8 \times 3 + 0{,}2 \times 2 = 2{,}4 + 0{,}4 = 2{,}8 \]</p>
+<p>Comme \( 4{,}8 &gt; 2{,}8 \), la meilleure réponse de Léa est <strong>Ambitieux</strong>.</p>
+<p>Réciproquement, face à A : le type sérieux préfère T (\( 4 &gt; 1 \)) et le type paresseux préfère R (\( 3 &gt; 1 \)). Les deux stratégies sont donc des meilleures réponses mutuelles.</p>
+<p><strong>Équilibre de Nash bayésien : ( Ambitieux ; (T si sérieux · R si paresseux) ).</strong></p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 3.3</div>
+<ul>
+<li><strong>Écrire l'équilibre comme une paire d'actions : « (A ; T) ».</strong> C'est l'erreur la plus coûteuse de toute la question. « T » n'est pas une stratégie de Maxime : c'est ce que fait <em>un</em> de ses deux types. Écrire (A ; T) revient à dire que le paresseux travaille aussi — ce qui contredit ta propre 3.2. Le barème sanctionne explicitement ce point.</li>
+<li><strong>Pondérer les cases au lieu des issues.</strong> Écrire \( 0{,}8 \times 6 + 0{,}2 \times 6 \) parce que « la case A/T vaut 6 dans les deux matrices ». Le paresseux ne joue pas T : la seconde branche mène à la case A/R, donc à 0.</li>
+<li><strong>Utiliser \( p \) dans le raisonnement de Maxime.</strong> Vu en 3.2, mais l'erreur ressurgit souvent ici, au moment de « tout rassembler ».</li>
+<li><strong>Oublier la vérification réciproque.</strong> Elle prend deux lignes et vaut une partie des 6 points de la dernière tranche du barème.</li>
+<li><strong>Croire qu'il faut chercher un équilibre dans chaque matrice séparément.</strong> Il n'y a qu'<em>un</em> jeu, donc un équilibre, dans lequel les deux types de Maxime apparaissent ensemble. Résoudre les deux matrices comme deux jeux indépendants donnerait deux « équilibres » qui ne veulent rien dire.</li>
+<li><strong>Confondre espérance et gain réel.</strong> Léa ne gagnera jamais 4,8 : elle gagnera 6 ou 0. 4,8 est un critère de choix, pas une prédiction de résultat.</li>
+</ul>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">La recette réutilisable — trouver l'ENB quand le joueur informé a des actions dominantes</div>
+<ol>
+<li><strong>Vérifie d'abord la dominance type par type</strong> (question 3.2). Si chaque type a une action strictement dominante, la règle du joueur informé est <em>fixée d'avance</em> : tu n'auras qu'un seul candidat à tester, et non un par stratégie du non-informé.</li>
+<li><strong>Construis le tableau « type → probabilité → action jouée → gain du non-informé »</strong>, une ligne par type et une colonne par action du non-informé. C'est ce tableau qui empêche l'erreur de pondération.</li>
+<li><strong>Calcule une espérance par action</strong> du joueur non informé, en détaillant chaque produit.</li>
+<li><strong>Compare les espérances</strong> et retiens la plus grande. Si elles sont égales, le joueur est indifférent et les deux actions donnent un équilibre (cas du seuil : voir la 3.4).</li>
+<li><strong>Vérifie la réciproque</strong> face à l'action retenue.</li>
+<li><strong>Écris le profil</strong> : (action du non-informé ; règle complète de l'informé), avec les parenthèses imbriquées.</li>
+</ol>
+</div>
+
+<hr class="soft">
+
+<h2>5. Sous-question 3.4 — la valeur seuil de \( p \) (10 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.4 (10 points)</div>
+<p>Calculez la valeur seuil de \( p \) en dessous de laquelle l'équilibre de Nash bayésien change, et décrivez l'équilibre obtenu lorsque \( p \) est inférieur à ce seuil.</p>
+<p>Ligne de réponse prévue : « Valeur seuil de \( p \) : ………… ».</p>
+</div>
+
+<h3>5.1 Traduisons la question en français simple</h3>
+
+<dl class="lexique">
+<dt>« la valeur seuil de \( p \) »</dt>
+<dd>Une <span class="term">valeur seuil</span> (on la note souvent \( p^* \), qui se lit « p étoile »), c'est la valeur <strong>de bascule</strong> : le point exact où la décision optimale change de camp. En dessous, on fait une chose ; au-dessus, on en fait une autre.</dd>
+
+<dt>« en dessous de laquelle l'équilibre change »</dt>
+<dd>Deux informations dans cette formule. D'abord, l'équilibre <em>dépend</em> de \( p \) : ce n'est pas le même selon la croyance de Léa. Ensuite, le changement se produit <strong>en dessous</strong> du seuil — donc au-dessus, on garde l'équilibre trouvé en 3.3 (celui de \( p = 0{,}8 \)), et c'est en descendant sous le seuil qu'on bascule.</dd>
+
+<dt>« décrivez l'équilibre obtenu »</dt>
+<dd>Il ne suffit pas de sortir un nombre. Il faut <strong>réécrire le profil complet</strong> pour \( p &lt; p^* \) : la stratégie de Léa <em>et</em> la règle de Maxime. Le barème alloue 3 points sur 10 à cette description.</dd>
+</dl>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi la question a un sens : l'intuition avant le calcul</div>
+<p>Avant de calculer quoi que ce soit, demande-toi ce qui devrait se passer aux extrêmes. C'est un réflexe qui te sauvera plusieurs fois en examen.</p>
+<ul>
+<li><strong>Si \( p \) est très proche de 1</strong> (Maxime est presque sûrement sérieux) : il travaillera presque à coup sûr, donc le dossier ambitieux aboutira. Léa doit oser : <strong>A</strong>. C'est le cas de la 3.3.</li>
+<li><strong>Si \( p \) est très proche de 0</strong> (Maxime est presque sûrement paresseux) : il se reposera, et un dossier ambitieux se soldera par un 0. Léa doit se rabattre sur le dossier standard, qui lui garantit au moins 2 : <strong>S</strong>.</li>
+</ul>
+<p>Donc la réponse bascule forcément quelque part entre les deux. La question 3.4 demande <em>où exactement</em>. Toute la mécanique consiste à trouver le point d'indifférence, celui où Léa hésite entre A et S.</p>
+</div>
+
+<h3>5.2 Le cours dont tu as besoin</h3>
+
+<h4>5.2.1 Refaire la 3.3, mais avec la lettre \( p \) au lieu du nombre 0,8</h4>
+
+<p>Il n'y a strictement rien de nouveau à apprendre pour cette question. La méthode est <em>identique</em> à celle de la 3.3, à une différence près : on garde \( p \) sous forme littérale au lieu de le remplacer par 0,8. C'est ce qu'on appelle un calcul « en paramètre » : le résultat sera une formule et non un nombre, et on pourra ensuite l'examiner pour toutes les valeurs possibles.</p>
+
+<div class="box box-why">
+<div class="box-title">Point capital — la règle de Maxime ne change PAS avec \( p \)</div>
+<p>C'est la première chose à écrire sur ta copie, et c'est un point de barème. Pourquoi la règle de Maxime est-elle insensible à \( p \) ?</p>
+<p>Parce que, comme on l'a établi en 3.2, <strong>chaque type compare des gains certains</strong>. Le Maxime sérieux compare 4 et 1, puis 3 et 0 : la croyance de Léa n'apparaît nulle part dans ces comparaisons. Que Léa le croie sérieux à 90 chances sur 100 ou à 5 chances sur 100 ne modifie pas d'un iota ses propres gains — donc pas non plus son choix.</p>
+<p>Conséquence : <strong>seule la ligne de Léa peut bouger</strong> quand \( p \) varie. On n'a donc qu'une chose à recalculer : ses deux espérances.</p>
+<p>Analogie : que ton recruteur te croie motivé ou non ne change pas le fait que tu l'es. Sa croyance modifie <em>son</em> comportement à lui, pas le tien.</p>
+</div>
+
+<h4>5.2.2 Le principe d'indifférence : la frontière est là où les deux valent pareil</h4>
+
+<p>Comment trouve-t-on un seuil ? Toujours de la même façon : <strong>on cherche le point où les deux options se valent exactement</strong>, c'est-à-dire où l'écart entre elles s'annule. C'est le point de bascule : juste avant, l'une l'emporte ; juste après, l'autre.</p>
+
+<p>Mathématiquement, on pose l'<strong>égalité</strong> \( E[A] = E[S] \) et on résout en \( p \). L'unique solution est le seuil.</p>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel du volume 1 (chapitre 0) — résoudre une équation du premier degré</div>
+<p>Résoudre une équation, c'est isoler l'inconnue en effectuant la <em>même</em> opération des deux côtés du signe égal. Deux gestes suffisent ici :</p>
+<ul>
+<li><strong>Faire passer un terme de l'autre côté</strong> : soustraire la même quantité à gauche et à droite. \( 6p = 2 + p \) devient \( 6p - p = 2 \), c'est-à-dire \( 5p = 2 \).</li>
+<li><strong>Diviser par le coefficient</strong> : \( 5p = 2 \) devient \( p = \dfrac{2}{5} \).</li>
+</ul>
+<p>Et \( \dfrac{2}{5} = 0{,}4 \), puisque \( 2 \div 5 = 0{,}4 \).</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège — \( p^* \) n'est pas une probabilité de jouer quelque chose</div>
+<p>Une fois qu'on a trouvé \( p^* = 0{,}4 \), la tentation est grande d'écrire une phrase du genre « Léa joue A avec probabilité 0,4 ». C'est un contresens complet.</p>
+<p>\( p^* \) est une <strong>valeur de croyance</strong>, pas une fréquence de jeu. Elle répond à la question « à partir de quel degré de confiance en Maxime Léa ose-t-elle le dossier ambitieux ? ». La réponse est : « à partir du moment où elle lui accorde plus de 4 chances sur 10 d'être sérieux ».</p>
+<p>Et à l'équilibre, Léa joue <strong>une action pure</strong> : soit A, soit S, avec certitude. Il n'y a aucune stratégie mixte dans cette question. (La question 4 du même examen, elle, porte sur les mixtes — d'où le risque de mélanger les deux.)</p>
+</div>
+
+<h3>5.3 La résolution pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Fixer la règle de Maxime, une fois pour toutes</div>
+<p>Comme expliqué ci-dessus : \( (\text{T si sérieux} \cdot \text{R si paresseux}) \), indépendamment de \( p \). Les deux actions sont strictement dominantes pour leur type respectif, et la dominance ne dépend pas des croyances de l'adversaire.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> L'espérance de Léa si elle joue A, en fonction de \( p \)</div>
+<div class="calc">
+<div class="step">\[ E[\text{A}] = p \times 6 + (1-p) \times 0 \]
+<div class="why">Même tableau qu'en 3.3, mais avec \( p \) littéral : avec probabilité \( p \), Maxime est sérieux et joue T, donc Léa obtient 6 ; avec probabilité \( 1-p \), il est paresseux et joue R, donc elle obtient 0.</div></div>
+<div class="step">\[ E[\text{A}] = 6p + 0 = \mathbf{6p} \]
+<div class="why">Le second terme est nul, car tout ce qui est multiplié par 0 vaut 0 — peu importe la valeur de \( 1-p \). Il disparaît donc.</div></div>
+</div>
+<p>Interprétation : l'espérance du dossier ambitieux est <strong>proportionnelle</strong> à la confiance de Léa. Zéro confiance, zéro espérance ; confiance totale (\( p = 1 \)), espérance 6. C'est logique : le dossier ambitieux ne rapporte que si Maxime travaille, et il ne travaille que s'il est sérieux.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> L'espérance de Léa si elle joue S, en fonction de \( p \)</div>
+<div class="calc">
+<div class="step">\[ E[\text{S}] = p \times 3 + (1-p) \times 2 \]
+<div class="why">Ligne S : face au sérieux qui joue T, Léa obtient 3 ; face au paresseux qui joue R, elle obtient 2.</div></div>
+<div class="step">\[ E[\text{S}] = 3p + 2 - 2p \]
+<div class="why">Je développe le second produit : \( (1-p) \times 2 = 2 \times 1 - 2 \times p = 2 - 2p \). C'est la distributivité (chapitre 0 du volume 1) ; attention au signe moins qui se propage.</div></div>
+<div class="step">\[ E[\text{S}] = 2 + (3p - 2p) = \mathbf{2 + p} \]
+<div class="why">Je regroupe les termes en \( p \) : \( 3p - 2p = 1p = p \). Il reste la constante 2 plus \( p \).</div></div>
+</div>
+<p>Interprétation : le dossier standard rapporte au minimum 2 (même si Maxime se repose), et il gagne 1 de plus si Maxime travaille. D'où \( 2 + p \) : un plancher de 2, plus un bonus proportionnel à la confiance. C'est l'option <strong>plancher</strong>, celle qui ne s'effondre jamais.</p>
+<p>Vérification rapide avec la 3.3 : pour \( p = 0{,}8 \), \( 6p = 4{,}8 \) ✓ et \( 2 + p = 2{,}8 \) ✓. Les formules retombent bien sur les nombres déjà trouvés — excellent réflexe de contrôle.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Poser l'égalité et résoudre</div>
+<div class="calc">
+<div class="step">\[ E[\text{A}] = E[\text{S}] \quad \Longleftrightarrow \quad 6p = 2 + p \]
+<div class="why">Je cherche le point d'indifférence : la valeur de \( p \) pour laquelle Léa hésite, parce que les deux options lui rapportent exactement la même chose en moyenne. Le symbole \( \Longleftrightarrow \) se lit « équivaut à ».</div></div>
+<div class="step">\[ 6p - p = 2 \]
+<div class="why">Je retranche \( p \) des deux côtés pour rassembler les termes en \( p \) à gauche et les nombres à droite. À droite, \( 2 + p - p = 2 \).</div></div>
+<div class="step">\[ 5p = 2 \]
+<div class="why">\( 6p - p = 5p \) : je compte simplement six \( p \) moins un \( p \), il en reste cinq.</div></div>
+<div class="step">\[ p = \frac{2}{5} = 0{,}4 \]
+<div class="why">Je divise les deux côtés par 5. Et \( 2 \div 5 = 0{,}4 \). Réflexe de contrôle : je remplace pour vérifier. \( 6 \times 0{,}4 = 2{,}4 \) et \( 2 + 0{,}4 = 2{,}4 \) : les deux membres coïncident, la solution est bonne.</div></div>
+</div>
+<div class="result">
+<div class="result-title">Le seuil</div>
+<p style="text-align:center">\[ p^* = \frac{2}{5} = 0{,}4 \]</p>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">5.</span> Déterminer de quel côté on joue quoi</div>
+<p>Une équation te donne le point de bascule, pas le sens de la bascule. Il faut donc trancher : au-dessus de 0,4, est-ce A ou S ? Deux méthodes, prends celle que tu préfères — ou fais les deux, c'est plus sûr.</p>
+<p><strong>Méthode 1 — l'inégalité.</strong> Reprends le calcul avec « &gt; » au lieu de « = » :</p>
+<div class="calc">
+<div class="step">\[ E[\text{A}] > E[\text{S}] \;\Longleftrightarrow\; 6p > 2 + p \;\Longleftrightarrow\; 5p > 2 \;\Longleftrightarrow\; p > \frac{2}{5} \]
+<div class="why">Les mêmes gestes que dans l'étape 4. Comme je n'ai divisé que par 5, un nombre <em>positif</em>, le sens de l'inégalité est conservé (on ne le retourne que si on divise par un nombre négatif).</div></div>
+</div>
+<p>Donc Léa préfère A si et seulement si \( p &gt; 0{,}4 \), et S si \( p &lt; 0{,}4 \).</p>
+<p><strong>Méthode 2 — le test à une valeur.</strong> Prends une valeur facile d'un côté du seuil, par exemple \( p = 0 \) : alors \( E[A] = 0 \) et \( E[S] = 2 \). Comme \( 2 &gt; 0 \), Léa joue S. Donc en dessous du seuil, c'est S. Et comme il n'y a qu'un seul point de croisement, c'est A partout au-dessus. Cohérent avec la 3.3, où \( p = 0{,}8 &gt; 0{,}4 \) donnait bien A.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">6.</span> Décrire le nouvel équilibre</div>
+<p>Sous le seuil, seule la stratégie de Léa change. Maxime, lui, ne bouge pas : sa règle reste dominante type par type, donc identique.</p>
+<p style="text-align:center"><strong>Pour \( p &lt; 0{,}4 \) : ENB = ( S ; (T si sérieux · R si paresseux) )</strong></p>
+<p>Et au point exact \( p = 0{,}4 \), Léa est <strong>indifférente</strong> : \( E[A] = E[S] = 2{,}4 \). Les deux profils sont alors des équilibres. Mentionner ce cas limite est un bon réflexe et montre au correcteur que tu maîtrises la logique du seuil.</p>
+</div>
+
+<h3>5.4 Le graphique du seuil</h3>
+
+<p>Cette question se visualise magnifiquement. Trace les deux espérances en fonction de \( p \) : ce sont deux droites, et le seuil est simplement leur point de croisement.</p>
+
+<figure>
+<svg viewBox="0 0 470 326" width="100%" style="max-width:13cm" role="img" aria-label="Graphique des deux espérances de Léa en fonction de p : la droite E de A égale 6p part de zéro et monte jusqu'à 6, la droite E de S égale 2 plus p part de 2 et monte jusqu'à 3 ; elles se croisent en p égal 0,4 pour une valeur de 2,4 ; à gauche du croisement Léa joue Standard, à droite elle joue Ambitieux">
+  <line x1="64" y1="224" x2="424" y2="224" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="64" y1="186" x2="424" y2="186" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="64" y1="148" x2="424" y2="148" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="64" y1="110" x2="424" y2="110" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="64" y1="72" x2="424" y2="72" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="64" y1="34" x2="424" y2="34" stroke="#e5e7eb" stroke-width="1"/>
+
+  <line x1="64" y1="262" x2="444" y2="262" stroke="#111827" stroke-width="1.4"/>
+  <polygon points="444,258 444,266 452,262" fill="#111827"/>
+  <line x1="64" y1="262" x2="64" y2="28" stroke="#111827" stroke-width="1.4"/>
+  <polygon points="60,28 68,28 64,20" fill="#111827"/>
+  <text x="72" y="20" font-size="11" font-style="italic">gain espéré de Léa</text>
+
+  <text x="57" y="266" font-size="11" text-anchor="end">0</text>
+  <text x="57" y="228" font-size="11" text-anchor="end">1</text>
+  <text x="57" y="190" font-size="11" text-anchor="end">2</text>
+  <text x="57" y="152" font-size="11" text-anchor="end">3</text>
+  <text x="57" y="114" font-size="11" text-anchor="end">4</text>
+  <text x="57" y="76" font-size="11" text-anchor="end">5</text>
+  <text x="57" y="38" font-size="11" text-anchor="end">6</text>
+
+  <line x1="136" y1="262" x2="136" y2="266" stroke="#111827" stroke-width="1"/>
+  <line x1="208" y1="262" x2="208" y2="266" stroke="#111827" stroke-width="1"/>
+  <line x1="280" y1="262" x2="280" y2="266" stroke="#111827" stroke-width="1"/>
+  <line x1="352" y1="262" x2="352" y2="266" stroke="#111827" stroke-width="1"/>
+  <line x1="424" y1="262" x2="424" y2="266" stroke="#111827" stroke-width="1"/>
+  <text x="64" y="278" font-size="11" text-anchor="middle">0</text>
+  <text x="136" y="278" font-size="11" text-anchor="middle">0,2</text>
+  <text x="208" y="278" font-size="11" text-anchor="middle">0,4</text>
+  <text x="280" y="278" font-size="11" text-anchor="middle">0,6</text>
+  <text x="352" y="278" font-size="11" text-anchor="middle">0,8</text>
+  <text x="424" y="278" font-size="11" text-anchor="middle">1</text>
+
+  <line x1="64" y1="262" x2="424" y2="34" stroke="#111827" stroke-width="2.2"/>
+  <text x="424" y="18" font-size="11.5" text-anchor="end" font-weight="bold">E[A] = 6p</text>
+  <line x1="64" y1="186" x2="424" y2="148" stroke="#111827" stroke-width="2.2" stroke-dasharray="8 4"/>
+  <text x="420" y="138" font-size="11.5" text-anchor="end" font-weight="bold">E[S] = 2 + p</text>
+
+  <line x1="352" y1="262" x2="352" y2="80" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="352" cy="80" r="3.4" fill="#111827"/>
+  <circle cx="352" cy="156" r="3.4" fill="#111827"/>
+  <text x="346" y="76" font-size="11" text-anchor="end">4,8</text>
+  <text x="346" y="152" font-size="11" text-anchor="end">2,8</text>
+
+  <line x1="208" y1="262" x2="208" y2="171" stroke="#be123c" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <circle cx="208" cy="171" r="5" fill="#be123c"/>
+  <text x="202" y="163" font-size="11.5" text-anchor="end" font-weight="bold" fill="#be123c">p* = 0,4</text>
+
+  <rect x="64" y="288" width="144" height="22" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/>
+  <text x="136" y="303" font-size="11.5" text-anchor="middle" font-weight="bold">Léa joue S</text>
+  <rect x="208" y="288" width="216" height="22" fill="none" stroke="#9ca3af" stroke-width="1"/>
+  <text x="316" y="303" font-size="11.5" text-anchor="middle" font-weight="bold">Léa joue A</text>
+  <text x="244" y="322" font-size="11" text-anchor="middle" font-style="italic">croyance p = probabilité que Maxime soit sérieux</text>
+</svg>
+<figcaption>Figure 7 — Les deux espérances de Léa, en fonction de sa croyance \( p \). La droite pleine \( E[A] = 6p \) part de 0 et grimpe fort ; la droite pointillée \( E[S] = 2 + p \) part de 2 et grimpe doucement. Elles se croisent en \( p^* = 0{,}4 \) (point rouge, valeur commune 2,4). À gauche du croisement, la pointillée est au-dessus : Léa joue Standard. À droite, la pleine passe devant : Léa joue Ambitieux. Les deux points noirs marquent le cas \( p = 0{,}8 \) de la question 3.3 : 4,8 contre 2,8.</figcaption>
+</figure>
+
+<div class="box box-why">
+<div class="box-title">Lire le graphique comme un économiste</div>
+<p>Trois choses se lisent d'un coup d'œil, et elles racontent toute l'économie du problème :</p>
+<ul>
+<li><strong>La droite de A part de 0.</strong> Le dossier ambitieux ne vaut rien si Maxime ne travaille pas : sans confiance, aucune valeur. C'est l'option <em>tout ou rien</em>.</li>
+<li><strong>La droite de S part de 2.</strong> Le dossier standard tient debout même abandonné : c'est un plancher garanti. C'est l'option <em>prudente</em>.</li>
+<li><strong>La droite de A est beaucoup plus pentue</strong> (pente 6 contre pente 1). Chaque point de confiance gagné profite six fois plus au dossier ambitieux qu'au standard. C'est pour ça qu'elle finit par rattraper puis dépasser l'autre : la question n'est pas <em>si</em> elle la dépasse, mais <em>quand</em>.</li>
+</ul>
+<p>Le seuil, c'est le prix à payer, en confiance, pour que l'audace devienne rentable : il faut au moins 4 chances sur 10 que Maxime soit sérieux.</p>
+</div>
+
+<table class="data">
+<tr><th>Croyance \( p \)</th><th>\( E[A] = 6p \)</th><th>\( E[S] = 2+p \)</th><th>Léa joue…</th></tr>
+<tr><td>0</td><td>0</td><td>2</td><td>S</td></tr>
+<tr><td>0,2</td><td>1,2</td><td>2,2</td><td>S</td></tr>
+<tr><td><strong>0,4</strong></td><td><strong>2,4</strong></td><td><strong>2,4</strong></td><td><strong>indifférente</strong></td></tr>
+<tr><td>0,6</td><td>3,6</td><td>2,6</td><td>A</td></tr>
+<tr><td>0,8</td><td>4,8</td><td>2,8</td><td>A (question 3.3)</td></tr>
+<tr><td>1</td><td>6</td><td>3</td><td>A</td></tr>
+</table>
+
+<div class="result">
+<div class="result-title">Résultat — réponse à la question 3.4</div>
+<p>Pour une croyance \( p \) quelconque : \( E[A] = 6p \) et \( E[S] = 3p + 2(1-p) = 2 + p \).</p>
+<p>L'indifférence \( 6p = 2 + p \) donne \( 5p = 2 \), donc</p>
+<p style="text-align:center">\[ \boxed{\; p^* = \frac{2}{5} = 0{,}4 \;} \]</p>
+<ul>
+<li>Si \( p &gt; 0{,}4 \) : ENB = ( A ; (T si sérieux · R si paresseux) ) — c'est le cas de la 3.3.</li>
+<li>Si \( p &lt; 0{,}4 \) : ENB = <strong>( S ; (T si sérieux · R si paresseux) )</strong>.</li>
+<li>Si \( p = 0{,}4 \) : Léa est indifférente (\( E[A] = E[S] = 2{,}4 \)) ; les deux profils sont des équilibres.</li>
+</ul>
+<p><strong>La règle de Maxime est la même dans tous les cas</strong> : elle ne dépend jamais de \( p \).</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — question 3.4</div>
+<p>La règle de Maxime ne dépend pas de \( p \) : chaque type compare des gains certains, et ses actions sont strictement dominantes. Elle reste donc (T si sérieux · R si paresseux). Seules les espérances de Léa varient. Pour une croyance \( p \) quelconque :</p>
+<p>\[ E[\text{A}] = 6p \qquad ; \qquad E[\text{S}] = 3p + 2(1-p) = 2 + p \]</p>
+<p>Léa préfère A si et seulement si :</p>
+<p>\[ 6p > 2 + p \;\Longleftrightarrow\; 5p > 2 \;\Longleftrightarrow\; p > \tfrac{2}{5} \]</p>
+<p>La valeur seuil est donc <strong>\( p^* = \frac{2}{5} = 0{,}4 \)</strong>.</p>
+<p>Pour \( p &lt; 0{,}4 \), Léa préfère le dossier standard (moins risqué, puisque Maxime est probablement paresseux) et l'équilibre devient :</p>
+<p style="text-align:center"><strong>( Standard ; (T si sérieux · R si paresseux) )</strong></p>
+<p>Au point \( p = 0{,}4 \), Léa est indifférente : les deux profils sont alors des équilibres.</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 3.4</div>
+<ul>
+<li><strong>Faire aussi changer la stratégie de Maxime.</strong> Erreur très répandue : « si \( p \) baisse, Maxime se repose plus souvent ». Non — le paresseux se reposait déjà, le sérieux travaillait déjà. Ce qui change avec \( p \), c'est la <em>fréquence</em> des types, pas le comportement de chaque type.</li>
+<li><strong>Se tromper dans le développement de \( 2(1-p) \).</strong> Écrire \( 2 - p \) au lieu de \( 2 - 2p \) donne \( E[S] = 2 + 2p \) et un faux seuil de 0,5. Développe lentement.</li>
+<li><strong>Inverser le sens.</strong> Conclure « Léa joue A si \( p &lt; 0{,}4 \) ». Toujours vérifier avec une valeur test : \( p = 0 \) donne \( E[A] = 0 \) contre \( E[S] = 2 \), donc S. Le sens est fixé.</li>
+<li><strong>Donner le seuil sans décrire l'équilibre.</strong> L'énoncé demande explicitement les deux ; 3 des 10 points sont sur la description.</li>
+<li><strong>Prendre \( p^* \) pour une probabilité de jeu.</strong> C'est un niveau de croyance, pas une stratégie mixte.</li>
+<li><strong>Oublier le cas d'égalité.</strong> Il n'est pas dans le barème principal, mais il montre la maîtrise et ne coûte qu'une ligne.</li>
+</ul>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">La recette réutilisable — trouver un seuil de croyance</div>
+<ol>
+<li><strong>Vérifie d'abord ce qui ne bouge pas</strong> : si le joueur informé a des actions dominantes, sa règle est indépendante du paramètre. Dis-le, c'est un point gratuit.</li>
+<li><strong>Réécris les espérances du joueur non informé avec la lettre</strong>, sans remplacer par un nombre. Développe et simplifie jusqu'à obtenir deux expressions courtes.</li>
+<li><strong>Contrôle tes formules</strong> en y réinjectant la valeur numérique déjà traitée (ici 0,8) : tu dois retomber sur les résultats précédents.</li>
+<li><strong>Pose l'égalité</strong> des deux espérances et résous : c'est le seuil.</li>
+<li><strong>Détermine le sens</strong> par l'inégalité ou par un test à une valeur extrême (souvent 0 ou 1, les plus faciles à calculer).</li>
+<li><strong>Décris les deux régimes</strong> : le profil complet au-dessus du seuil, le profil complet en dessous, et si tu veux le cas d'indifférence au seuil exact.</li>
+</ol>
+</div>
+
+<hr class="soft">
+
+<h2>6. Récapitulatif du chapitre</h2>
+
+<h3>6.1 Les quatre réponses en un tableau</h3>
+
+<table class="compare">
+<tr><th class="left">Question</th><th class="left">Réponse</th><th class="left">Le geste décisif</th><th>Pts</th></tr>
+<tr><td class="left">3.1</td><td class="left">Une stratégie = une <strong>règle d'action</strong>, une action par type. \( 2^2 = 4 \) stratégies : (T,T), (T,R), (R,T), (R,R).</td><td class="left">Dire « règle », pas « action », et énumérer les quatre.</td><td>10</td></tr>
+<tr><td class="left">3.2</td><td class="left">Sérieux : T strictement dominante (\( 4&gt;1 \) ; \( 3&gt;0 \)). Paresseux : R strictement dominante (\( 3&gt;1 \) ; \( 2&gt;0 \)). Règle : <strong>(T si sérieux · R si paresseux)</strong>.</td><td class="left">Traiter les deux types séparément, sur des gains certains, sans aucun \( p \).</td><td>12</td></tr>
+<tr><td class="left">3.3</td><td class="left">\( E[A] = 4{,}8 \) contre \( E[S] = 2{,}8 \) : Léa joue A. <strong>ENB = ( A ; (T si sérieux · R si paresseux) )</strong>.</td><td class="left">Pondérer les <em>issues réellement atteintes</em>, pas les cases ; écrire l'équilibre comme action + règle.</td><td>18</td></tr>
+<tr><td class="left">3.4</td><td class="left">\( 6p = 2+p \Rightarrow \) <strong>\( p^* = 0{,}4 \)</strong>. Sous le seuil : <strong>( S ; (T si sérieux · R si paresseux) )</strong>.</td><td class="left">Rappeler que la règle de Maxime ne dépend pas de \( p \), puis résoudre l'indifférence.</td><td>10</td></tr>
+</table>
+
+<h3>6.2 La chaîne logique, en cinq lignes</h3>
+
+<ol>
+<li>Maxime a deux types, donc ses stratégies sont des <strong>règles</strong> (une action par type) : il y en a \( 2^2 = 4 \).</li>
+<li>Chaque type <strong>connaît sa matrice</strong> : il compare des gains certains. Le sérieux trouve T dominante, le paresseux trouve R dominante.</li>
+<li>Léa <strong>ne connaît pas</strong> le type : elle pondère par ses croyances les issues que la règle de Maxime produit réellement.</li>
+<li>Avec \( p = 0{,}8 \), \( 4{,}8 &gt; 2{,}8 \) : elle ose le dossier ambitieux. Les deux stratégies sont des meilleures réponses mutuelles : c'est l'ENB.</li>
+<li>En faisant varier \( p \), seule la ligne de Léa bouge ; elle bascule sur Standard sous \( p^* = 0{,}4 \).</li>
+</ol>
+
+<div class="box box-methode">
+<div class="box-title">Ta checklist avant de rendre la copie</div>
+<ul>
+<li>Ai-je écrit le mot <strong>« règle d'action »</strong> (ou « une action par type ») en 3.1 ? Et la convention de lecture du couple ?</li>
+<li>Ai-je bien énuméré les <strong>quatre</strong> stratégies, pas seulement leur nombre ?</li>
+<li>En 3.2, ai-je écrit les <strong>quatre inégalités chiffrées</strong> (4 &gt; 1 · 3 &gt; 0 · 3 &gt; 1 · 2 &gt; 0) et employé le mot <strong>« strictement dominante »</strong> ?</li>
+<li>Ai-je vérifié qu'<strong>aucun \( p \) n'apparaît</strong> dans les calculs de Maxime ?</li>
+<li>En 3.3, mes deux espérances utilisent-elles bien les gains 6 et 0 pour A (et non 6 et 6), 3 et 2 pour S ?</li>
+<li>Ai-je fait la <strong>vérification réciproque</strong> (chaque type confirme son action face à A) ?</li>
+<li>Mon équilibre est-il écrit comme <strong>une action + une règle</strong>, avec les parenthèses imbriquées — et non comme une paire d'actions ?</li>
+<li>En 3.4, ai-je dit que la règle de Maxime <strong>ne change pas</strong>, développé \( 2(1-p) = 2-2p \) correctement, et <strong>décrit le nouvel équilibre</strong> et pas seulement donné le nombre 0,4 ?</li>
+<li>Ai-je vérifié le sens de la bascule avec une valeur test ?</li>
+</ul>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les six erreurs qui coûtent le plus cher, en un coup d'œil</div>
+<table class="compare">
+<tr><th class="left">Erreur</th><th class="left">Correction</th></tr>
+<tr><td class="left">« Maxime a 2 stratégies : T et R. »</td><td class="left">Il en a 4 : ce sont des règles, pas des actions.</td></tr>
+<tr><td class="left">\( E[\text{T}] = p \times 4 + (1-p) \times 1 \)</td><td class="left">Maxime ne moyenne jamais : il connaît son type.</td></tr>
+<tr><td class="left">\( E[\text{A}] = 0{,}8 \times 6 + 0{,}2 \times 6 \)</td><td class="left">Le paresseux joue R, donc la seconde branche vaut 0, pas 6.</td></tr>
+<tr><td class="left">« ENB = (A ; T) »</td><td class="left">ENB = ( A ; (T si sérieux · R si paresseux) ).</td></tr>
+<tr><td class="left">« Si \( p \) baisse, Maxime travaille moins. »</td><td class="left">Chaque type garde son action ; c'est la probabilité des types qui change.</td></tr>
+<tr><td class="left">« Léa joue A avec probabilité 0,4. »</td><td class="left">0,4 est un seuil de <em>croyance</em> ; Léa joue une action pure.</td></tr>
+</table>
+</div>
+
+<div class="box box-def">
+<div class="box-title">Les six mots du chapitre, à savoir redéfinir en une phrase</div>
+<ul>
+<li><strong>Information incomplète</strong> : je ne connais pas les gains de l'autre (≠ imparfaite : je ne connais pas son action).</li>
+<li><strong>Type</strong> : une fonction de gain possible d'un joueur. Chacun connaît le sien.</li>
+<li><strong>Croyance</strong> : la distribution de probabilité qu'un joueur place sur les types de l'autre.</li>
+<li><strong>Nature</strong> : le joueur fictif qui tire les types au sort avant que le jeu ne commence.</li>
+<li><strong>Stratégie (jeu bayésien)</strong> : une règle d'action, une action prescrite par type ; il y en a \( n^k \).</li>
+<li><strong>Équilibre de Nash bayésien</strong> : un profil de stratégies qui sont des meilleures réponses mutuelles — en gains certains pour l'informé, en espérance pour le non-informé.</li>
+</ul>
+</div>
+
+<p>Voilà : cinquante points, quatre sous-questions, et au fond une seule idée. Reviens maintenant lire la section 0.3, celle des « quatre réponses » que tu ne comprenais pas au début du chapitre. Si elles te paraissent évidentes, c'est gagné — et tu peux enchaîner sur la question 4.</p>
+
+</section>

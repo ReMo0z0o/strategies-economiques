@@ -1,0 +1,1888 @@
+<section class="chapter">
+<div class="chapter-tag">Chapitre 10 — Examen n° 2, Question 4 (30 points)</div>
+<h1>Les deux stations-service : la collusion tient-elle quand la triche se voit trop tard ?</h1>
+<p class="chapter-intro">
+  Trois sous-questions, 30 points. Bonne nouvelle : tu as déjà vu ce film. C'est exactement la
+  mécanique des deux pizzerias du <strong>chapitre 5 du volume 1</strong> — matrice, stratégie
+  dominante, équilibre de Nash, dilemme du prisonnier, jeu répété, facteur d'escompte, stratégie
+  grim. On ne va donc pas tout réexpliquer depuis zéro : on va <em>rappeler</em> vite, avec des
+  encadrés bleus, puis passer le vrai temps sur ce qui est <strong>neuf</strong> ici. Et ce qui
+  est neuf tient en trois mots : <em>la détection retardée</em>. Que se passe-t-il quand celui
+  qui triche n'est démasqué qu'au bout de deux semaines ? Réponse à la question 4.3 — et c'est
+  une des plus belles idées de tout le cours.
+</p>
+
+<h2>1. D'abord : de quoi parle cette question ?</h2>
+
+<p>
+  Avant tout calcul, lisons le chapeau — le paragraphe commun aux trois sous-questions. C'est lui
+  qui plante le décor, et il contient déjà la moitié des points.
+</p>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 4, chapeau commun (30 points au total)</div>
+  <p>
+    Deux stations-service, <strong>Rivoli</strong> (station 1) et <strong>Grandsart</strong>
+    (station 2), sont installées face à face à l'entrée d'un village. Chaque lundi matin, chacune
+    affiche simultanément soit un <strong>prix élevé (H)</strong>, soit un
+    <strong>prix cassé (B)</strong>, pour la semaine. Les profits hebdomadaires (en centaines
+    d'euros) sont donnés par la matrice suivante :
+  </p>
+  <table class="game">
+    <tr><td class="void"></td><td class="void"></td><th colspan="2">Station 2 (Grandsart)</th></tr>
+    <tr><td class="void"></td><td class="void"></td><th>H</th><th>B</th></tr>
+    <tr><td class="player" rowspan="2">Station 1 (Rivoli)</td><th>H</th><td>(8 ; 8)</td><td>(0 ; 14)</td></tr>
+    <tr><th>B</th><td>(14 ; 0)</td><td>(4 ; 4)</td></tr>
+  </table>
+</div>
+
+<h3>Traduisons ce chapeau en français simple, mot par mot</h3>
+
+<p>
+  Je reprends chaque morceau de phrase et je te dis ce qu'il veut dire vraiment. Ne saute pas ce
+  passage : dans ce genre de question, presque tous les points perdus le sont sur une lecture
+  trop rapide de l'énoncé.
+</p>
+
+<dl class="lexique">
+  <dt>« Deux stations-service … installées face à face »</dt>
+  <dd>
+    Il n'y a que <strong>deux</strong> vendeurs, et ils se voient. En économie, deux vendeurs
+    seuls sur un marché, cela s'appelle un <span class="term">duopole</span> (« duo » = deux).
+    C'est la situation type de la théorie des jeux : ce que fait l'autre change directement ce
+    que je gagne, donc je ne peux pas décider tout seul dans mon coin.
+  </dd>
+  <dt>« à l'entrée d'un village »</dt>
+  <dd>
+    Détail d'ambiance, mais pas inutile : les deux stations vendent <em>exactement</em> le même
+    produit au même endroit. L'automobiliste choisit donc uniquement au prix. C'est ce qui rend
+    la guerre des prix si violente ici : celui qui casse son prix rafle toute la clientèle.
+  </dd>
+  <dt>« Chaque lundi matin »</dt>
+  <dd>
+    Le même choix revient <strong>semaine après semaine</strong>. Ce petit mot t'annonce qu'on est
+    dans un <span class="term">jeu répété</span> : le même petit jeu, rejoué encore et encore.
+    Sans lui, les questions 4.2 et 4.3 n'existeraient pas.
+  </dd>
+  <dt>« chacune affiche simultanément »</dt>
+  <dd>
+    « Simultanément » veut dire <strong>en même temps</strong>. Le lundi matin, quand Rivoli
+    choisit son prix, elle ne sait pas encore ce que Grandsart a décidé pour cette semaine-là.
+    En revanche — et c'est capital — à la fin de la semaine, chacune voit le prix qu'a affiché
+    l'autre. On connaît donc toujours le <em>passé</em>, jamais le <em>présent</em> de l'autre.
+  </dd>
+  <dt>« prix élevé (H) ou prix cassé (B) »</dt>
+  <dd>
+    Chaque station n'a que <strong>deux</strong> options par semaine. On leur donne des noms
+    courts pour ne pas réécrire la phrase entière à chaque ligne. <strong>H</strong> (comme
+    « haut ») = je reste chère, je joue le jeu de l'entente. <strong>B</strong> (comme « bas ») =
+    je casse mon prix pour voler la clientèle d'en face, je trahis.
+  </dd>
+  <dt>« Les profits hebdomadaires (en centaines d'euros) »</dt>
+  <dd>
+    Les nombres du tableau sont des profits d'<strong>une seule semaine</strong>, en centaines
+    d'euros. Donc « 8 » veut dire 800 €, « 14 » veut dire 1 400 €. On travaillera toujours avec
+    les nombres nus (8, 14, 4, 0) : c'est plus simple, et l'unité ne change rien aux comparaisons.
+  </dd>
+  <dt>« la matrice suivante »</dt>
+  <dd>
+    « Matrice » est le mot savant pour « tableau à double entrée ». La station 1 choisit la
+    <strong>ligne</strong>, la station 2 choisit la <strong>colonne</strong>, et la case au
+    croisement donne les deux profits, dans l'ordre <em>(profit du joueur 1 ; profit du joueur 2)</em>.
+  </dd>
+</dl>
+
+<div class="box box-rappel">
+  <div class="box-title">Rappel du volume 1 — comment on lit une case</div>
+  <p>
+    Le premier nombre est <strong>toujours</strong> pour le joueur qui choisit la ligne (ici la
+    station 1, Rivoli), le second pour celui qui choisit la colonne (station 2, Grandsart).
+    Exemple : la case ligne B, colonne H contient <strong>(14 ; 0)</strong>. Traduction :
+    « Rivoli casse son prix pendant que Grandsart reste chère ; Rivoli gagne 14, Grandsart 0. »
+  </p>
+  <p>
+    Lisons les quatre cases à voix haute, une fois, lentement :
+  </p>
+  <ul>
+    <li><strong>(H ; H) → (8 ; 8)</strong> : les deux restent chères. Chacune gagne 8. C'est l'entente.</li>
+    <li><strong>(B ; H) → (14 ; 0)</strong> : Rivoli casse seule. Elle rafle tout : 14. Grandsart, trop chère, ne vend rien : 0.</li>
+    <li><strong>(H ; B) → (0 ; 14)</strong> : la même chose à l'envers.</li>
+    <li><strong>(B ; B) → (4 ; 4)</strong> : les deux cassent. Elles se partagent les clients, mais à bas prix : 4 chacune.</li>
+  </ul>
+  <p>
+    Ces quatre nombres racontent une histoire économiquement crédible : casser son prix tout seul
+    est très rentable (14), mais si les deux le font, tout le monde y perd (4 au lieu de 8).
+    Retiens cet ordre : <strong>14 &gt; 8 &gt; 4 &gt; 0</strong>. C'est lui qui fera toute la
+    question. (Détail complet : volume 1, chapitre 5, section 2.)
+  </p>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi une histoire de stations-service ?</div>
+  <p>
+    Parce que c'est le cas d'école des autorités de la concurrence. Deux pompes face à face, des
+    prix affichés en gros chiffres au bord de la route, les mêmes acteurs qui se retrouvent tous
+    les lundis pendant vingt ans : toutes les conditions d'une <span class="term">entente
+    tacite</span> sont réunies. Personne ne signe rien, personne ne se parle — et pourtant les
+    prix restent élevés. Ce chapitre explique <em>comment c'est possible</em>, et surtout
+    <em>à quelle condition</em> ça tient.
+  </p>
+</div>
+
+<h3>Le plan de ce chapitre</h3>
+
+<p>
+  La question 4 se découpe en trois sous-questions. Voici ce qu'elles demandent, en une ligne
+  chacune.
+</p>
+
+<table class="compare">
+  <tr>
+    <th class="left">Sous-question</th>
+    <th>Points</th>
+    <th class="left">Ce qu'on doit produire</th>
+  </tr>
+  <tr>
+    <td class="left"><strong>4.1</strong></td>
+    <td>8</td>
+    <td class="left">
+      Montrer que dans le jeu joué <em>une seule fois</em>, (B, B) est l'unique équilibre de Nash.
+      Du déjà-vu : c'est un dilemme du prisonnier.
+    </td>
+  </tr>
+  <tr>
+    <td class="left"><strong>4.2</strong></td>
+    <td>14</td>
+    <td class="left">
+      Jeu répété à l'infini, stratégies grim : calculer deux payoffs escomptés et démontrer que la
+      collusion tient si et seulement si <span class="term">δ ≥ 3/5</span>. Du déjà-vu aussi —
+      mêmes gestes, autres nombres.
+    </td>
+  </tr>
+  <tr>
+    <td class="left"><strong>4.3</strong></td>
+    <td>8</td>
+    <td class="left">
+      <strong>La nouveauté.</strong> La triche n'est repérée qu'au bout de deux semaines.
+      Reconstruire le flux de déviation, obtenir le nouveau seuil, comparer, interpréter.
+    </td>
+  </tr>
+</table>
+
+<div class="box box-rappel">
+  <div class="box-title">Tu as déjà vu ce film : le chapitre 5 du volume 1</div>
+  <p>
+    Au volume 1, la question 5 mettait en scène <strong>deux pizzerias</strong>, Piccolo et
+    Rustica, qui choisissaient chaque mois entre respecter l'entente (E) et baisser leur prix (B).
+    C'est <em>rigoureusement</em> le même problème. Seuls changent : les noms, la période
+    (semaine au lieu de mois), la lettre de la coopération (H au lieu de E) et les quatre nombres
+    de la matrice.
+  </p>
+  <table class="compare">
+    <tr>
+      <th class="left">Rôle dans l'histoire</th>
+      <th class="left">Volume 1 — pizzerias</th>
+      <th class="left">Ici — stations-service</th>
+    </tr>
+    <tr>
+      <td class="left">Coopérer (rester cher)</td>
+      <td class="left">E — respecter l'entente</td>
+      <td class="left">H — prix élevé</td>
+    </tr>
+    <tr>
+      <td class="left">Trahir (casser le prix)</td>
+      <td class="left">B — baisser son prix</td>
+      <td class="left">B — prix cassé</td>
+    </tr>
+    <tr>
+      <td class="left">Gain si les deux coopèrent</td>
+      <td class="left">6</td>
+      <td class="left"><strong>8</strong></td>
+    </tr>
+    <tr>
+      <td class="left">Gain si je trahis seul (tentation)</td>
+      <td class="left">12</td>
+      <td class="left"><strong>14</strong></td>
+    </tr>
+    <tr>
+      <td class="left">Gain si les deux trahissent (punition)</td>
+      <td class="left">2</td>
+      <td class="left"><strong>4</strong></td>
+    </tr>
+    <tr>
+      <td class="left">Gain si je coopère seul (le pigeon)</td>
+      <td class="left">0</td>
+      <td class="left"><strong>0</strong></td>
+    </tr>
+  </table>
+  <p>
+    Note la seule vraie source de confusion possible : au volume 1, la lettre de la coopération
+    était <strong>E</strong> ; ici c'est <strong>H</strong>. En revanche <strong>B</strong> veut
+    toujours dire « je trahis ». Garde ça en tête et tu ne te tromperas jamais de case.
+  </p>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">Ce qui est vraiment nouveau dans ce chapitre</div>
+  <p>
+    Deux choses, et deux seulement :
+  </p>
+  <ol>
+    <li>
+      <strong>Les nombres changent, la méthode ne change pas.</strong> C'est en soi une leçon
+      d'examen : ce qu'on te demande de maîtriser, ce n'est jamais un résultat (« 3/5 »,
+      « 1/2 »), c'est une <em>suite de gestes</em>. Tu vas refaire les mêmes gestes sur 8, 14 et
+      4, et tu verras que ça tombe tout seul.
+    </li>
+    <li>
+      <strong>La détection retardée (question 4.3).</strong> Ça, tu ne l'as jamais vu. Jusqu'ici,
+      la punition tombait dès la période suivant la trahison. Ici, la rivale met
+      <em>deux semaines</em> à s'apercevoir de quelque chose. Toute la question est : combien
+      cette lenteur coûte-t-elle à la collusion ? On va y consacrer le gros du chapitre.
+    </li>
+  </ol>
+</div>
+
+<hr class="soft">
+
+<h2>2. Rappels express du volume 1 — les sept briques dont on se sert ici</h2>
+
+<p>
+  Sept notions, sept encadrés bleus. Si l'une d'elles te paraît floue, ouvre le chapitre 5 du
+  volume 1 à la section indiquée : elle y est construite depuis zéro, avec exemples et figures.
+  Ici, on va droit à l'essentiel — juste de quoi enchaîner sans blocage.
+</p>
+
+<div class="box box-rappel">
+  <div class="box-title">Brique 1 — stratégie strictement dominante <em>(vol. 1, ch. 5, § 3.1)</em></div>
+  <p>
+    Une stratégie est <span class="term">strictement dominante</span> pour un joueur si elle lui
+    rapporte <strong>strictement plus que toute autre, quoi que fasse l'adversaire</strong>.
+  </p>
+  <p>
+    Comment on le vérifie, concrètement : on <em>fige</em> le choix de l'autre, on compare mes
+    deux lignes (ou colonnes), et on recommence pour l'autre choix de l'autre. S'il y a deux
+    inégalités strictes qui vont dans le même sens, c'est gagné. Un joueur rationnel joue
+    toujours sa stratégie dominante : il n'a même pas besoin de deviner ce que fait l'autre.
+  </p>
+</div>
+
+<div class="box box-rappel">
+  <div class="box-title">Brique 2 — équilibre de Nash <em>(vol. 1, ch. 5, § 3.2)</em></div>
+  <p>
+    Un <span class="term">équilibre de Nash</span> est une case du tableau dont
+    <strong>personne ne veut partir tout seul</strong>. Autrement dit : chacun, en supposant que
+    l'autre ne bouge pas, ne gagnerait rien à changer sa propre action.
+  </p>
+  <p>
+    Test à faire mentalement, case par case : « si je change de ligne tout seul, est-ce que je
+    gagne plus ? » Si la réponse est non pour les deux joueurs, la case est un équilibre.
+  </p>
+</div>
+
+<div class="box box-rappel">
+  <div class="box-title">Brique 3 — le dilemme du prisonnier <em>(vol. 1, ch. 5, § 3.3)</em></div>
+  <p>
+    Un <span class="term">dilemme du prisonnier</span> est un jeu où chacun a une stratégie
+    dominante, mais où le résultat obtenu quand les deux la jouent est
+    <strong>moins bon pour tout le monde</strong> qu'un autre résultat possible. La rationalité
+    individuelle conduit collectivement au pire. Ici : (B, B) donne (4 ; 4) alors que (H, H)
+    donnerait (8 ; 8).
+  </p>
+</div>
+
+<div class="box box-rappel">
+  <div class="box-title">Brique 4 — jeu répété, et « stratégie » = règle de conduite <em>(vol. 1, ch. 5, § 5)</em></div>
+  <p>
+    Dans un <span class="term">jeu répété</span>, le même petit jeu (appelé <span class="term">jeu
+    d'étape</span>) est rejoué période après période, et chacun <strong>observe tout le
+    passé</strong>. Conséquence : une « stratégie » n'est plus une action, c'est une
+    <strong>règle de conduite complète</strong> qui dit quoi faire à chaque période
+    <em>en fonction de ce qui s'est passé avant</em>. « Je joue H, sauf si… » est une stratégie ;
+    « H » tout court n'en est pas une.
+  </p>
+</div>
+
+<div class="box box-rappel">
+  <div class="box-title">Brique 5 — le facteur d'escompte δ <em>(vol. 1, ch. 5, § 7.2)</em></div>
+  <p>
+    Le <span class="term">facteur d'escompte</span> \( \delta \) est un nombre entre 0 et 1 qui
+    dit <strong>combien un euro de la semaine prochaine vaut à mes yeux aujourd'hui</strong>.
+    Si \( \delta = 0{,}9 \), un euro de la semaine prochaine vaut 90 centimes maintenant.
+  </p>
+  <p>
+    Règle de calcul unique, à graver : <strong>un profit reçu dans \( t \) semaines vaut
+    \( \delta^t \) fois ce profit aujourd'hui.</strong> Une semaine de décalage = une
+    multiplication par \( \delta \) ; deux semaines = \( \delta^2 \) ; trois = \( \delta^3 \).
+    Le <span class="term">payoff escompté</span> total s'écrit alors
+  </p>
+  <p>
+    \[ \Pi \;=\; \pi_0 + \delta\,\pi_1 + \delta^2\,\pi_2 + \delta^3\,\pi_3 + \cdots \]
+  </p>
+  <p>
+    où \( \pi_t \) est le profit de la semaine \( t \), et où l'on numérote les semaines à partir
+    de <strong>zéro</strong> : la semaine \( t = 0 \) est « cette semaine », elle n'est donc pas
+    escomptée (son poids vaut 1). Le grand \( \Pi \) (« pi » majuscule) est le total sur toute la
+    vie du jeu. Enfin, \( \delta \) proche de 1 = joueur <em>patient</em>, \( \delta \) proche de
+    0 = joueur <em>impatient</em>.
+  </p>
+</div>
+
+<div class="box box-rappel">
+  <div class="box-title">Brique 6 — la somme géométrique <em>(vol. 1, ch. 5, § 7.3)</em></div>
+  <p>
+    L'outil qui permet d'additionner une infinité de profits sans que le total explose. Pour
+    \( 0 \le \delta &lt; 1 \) :
+  </p>
+  <p>
+    \[ a + a\delta + a\delta^2 + a\delta^3 + \cdots \;=\; \sum_{t=0}^{\infty} a\,\delta^t \;=\; \frac{a}{1-\delta} \]
+  </p>
+  <p>
+    En mots : <strong>toucher le même montant \( a \) à chaque période, pour toujours, vaut
+    \( a/(1-\delta) \) aujourd'hui.</strong> La démonstration tient en trois lignes (on pose
+    \( S \) la somme, on écrit \( \delta S \) qui est \( S \) privée de son premier terme, on
+    soustrait : \( S - \delta S = a \), donc \( S = a/(1-\delta) \)). Elle est détaillée au
+    volume 1 ; sache la refaire, ça rassure le jour J.
+  </p>
+  <p>
+    <strong>Attention à la forme.</strong> La formule ne s'applique que si la somme
+    <em>commence à la puissance 0</em>, c'est-à-dire par un terme sans \( \delta \). Si ta somme
+    commence plus tard, tu mets d'abord en facteur ce qu'il faut. C'est exactement ce qu'on fera
+    en 4.2 (facteur \( \delta \)) puis en 4.3 (facteur \( \delta^2 \)).
+  </p>
+</div>
+
+<div class="box box-rappel">
+  <div class="box-title">Brique 7 — la stratégie grim <em>(vol. 1, ch. 5, § 7.4)</em></div>
+  <p>
+    « Grim » = <em>implacable</em> en anglais ; « trigger » = <em>gâchette</em>. La
+    <span class="term">stratégie grim</span> tient en une phrase :
+  </p>
+  <p>
+    <strong>« Je joue H tant que personne n'a jamais joué B. Dès que je vois un B, je joue B pour
+    toujours. »</strong>
+  </p>
+  <p>
+    Deux morceaux : une <em>phase de coopération</em> et une <em>phase de punition</em>
+    définitive, sans pardon. Sa menace est <strong>crédible</strong>, parce que punir consiste à
+    jouer (B, B), qui est justement l'équilibre de Nash du jeu d'étape : celui qui punit n'a
+    jamais à se forcer, il fait ce qui est déjà son intérêt.
+  </p>
+  <p>
+    Et surtout : la punition ne peut commencer qu'<strong>après</strong> l'observation, jamais
+    pendant la semaine de la trahison — puisque les choix d'une même semaine sont simultanés.
+    C'est ce décalage qui fera apparaître un \( \delta \) dans les calculs de 4.2… et un
+    \( \delta^2 \) dans ceux de 4.3.
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Piège d'entrée — recopier un seuil appris par cœur</div>
+  <p>
+    Dans le cours (chapitre B3, le dilemme du fritkot), le seuil trouvé est
+    \( \delta \ge 1/2 \). Au volume 1 (les pizzerias), c'était \( \delta \ge 3/5 \). Ici, ce sera
+    \( \delta \ge 3/5 \) en 4.2 puis \( \delta \ge \sqrt{3/5} \) en 4.3.
+  </p>
+  <p>
+    <strong>Un seuil se calcule, il ne se récite pas.</strong> Il dépend entièrement des quatre
+    nombres de la matrice et du scénario de punition. Écrire « on sait que \( \delta \ge 1/2 \) »
+    sans calcul, c'est zéro point — et ça se voit immédiatement.
+  </p>
+</div>
+
+<hr class="soft">
+
+<h2>3. Question 4.1 — l'unique équilibre du jeu joué une seule fois (8 points)</h2>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 4.1 (8 points)</div>
+  <p>
+    Montrez que, si ce jeu n'est joué qu'une seule fois, (B, B) est l'<em>unique</em> équilibre de
+    Nash. Détaillez votre raisonnement.
+  </p>
+  <table class="game">
+    <tr><td class="void"></td><td class="void"></td><th colspan="2">Station 2 (Grandsart)</th></tr>
+    <tr><td class="void"></td><td class="void"></td><th>H</th><th>B</th></tr>
+    <tr><td class="player" rowspan="2">Station 1 (Rivoli)</td><th>H</th><td>(8 ; 8)</td><td>(0 ; 14)</td></tr>
+    <tr><th>B</th><td>(14 ; 0)</td><td>(4 ; 4)</td></tr>
+  </table>
+  <p>
+    <em>Barème officiel :</em> dominance stricte de B pour chaque station
+    <strong>(4 points)</strong> ; (B, B) est bien un équilibre de Nash
+    <strong>(2 points)</strong> ; argument d'unicité <strong>(2 points)</strong>.
+  </p>
+</div>
+
+<h3>Traduisons la question en français simple</h3>
+
+<dl class="lexique">
+  <dt>« si ce jeu n'est joué qu'une seule fois »</dt>
+  <dd>
+    On oublie provisoirement les lundis qui se répètent. Un seul lundi, une seule décision, puis
+    fin de l'histoire. Pourquoi l'énoncé commence par là ? Parce que c'est la
+    <strong>brique de base</strong> : les questions 4.2 et 4.3 répètent ce jeu-là. Sans lui, rien
+    à répéter.
+  </dd>
+  <dt>« (B, B) »</dt>
+  <dd>
+    Notation d'un <span class="term">profil de stratégies</span> : le premier élément est ce que
+    joue la station 1, le second ce que joue la station 2. Donc (B, B) = « les deux cassent leur
+    prix ». Attention à ne pas confondre avec les payoffs, qu'on écrit (4 ; 4) avec un
+    point-virgule.
+  </dd>
+  <dt>« est l'unique équilibre de Nash »</dt>
+  <dd>
+    Il y a <strong>deux</strong> choses à démontrer, pas une. (i) que (B, B) <em>est</em> un
+    équilibre ; (ii) qu'aucune des trois autres cases n'en est un. Le barème le confirme :
+    2 points pour la première, 2 points pour la seconde. Beaucoup d'étudiants n'écrivent que la
+    première et perdent 2 points bêtement.
+  </dd>
+  <dt>« Détaillez votre raisonnement. »</dt>
+  <dd>
+    Traduction : on veut voir les <strong>inégalités chiffrées</strong>, pas une affirmation.
+    Écrire « B domine H » sans écrire \( 14 &gt; 8 \) et \( 4 &gt; 0 \) coûte des points.
+  </dd>
+</dl>
+
+<h3>Le cours dont tu as besoin ici</h3>
+
+<div class="box box-def">
+  <div class="box-title">Définition — stratégie strictement dominante (version « mode d'emploi »)</div>
+  <p>
+    Pour la station 1, la stratégie B est <strong>strictement dominante</strong> si :
+  </p>
+  <ul>
+    <li>quand la station 2 joue H, jouer B rapporte strictement plus que jouer H ;</li>
+    <li><strong>et</strong> quand la station 2 joue B, jouer B rapporte strictement plus que jouer H.</li>
+  </ul>
+  <p>
+    Deux comparaisons, deux inégalités strictes, dans le même sens. Le mot
+    <strong>strictement</strong> signifie « avec un vrai écart » : \( 14 &gt; 8 \) est strict,
+    \( 8 \ge 8 \) ne l'est pas.
+  </p>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi la dominance suffit à répondre à toute la question</div>
+  <p>
+    C'est le raccourci le plus utile du chapitre. Si B est strictement dominante pour les deux
+    joueurs, alors :
+  </p>
+  <ul>
+    <li>
+      <strong>(B, B) est un équilibre de Nash</strong> — chacun joue déjà ce qu'il a de mieux
+      à faire quoi que fasse l'autre, donc personne ne regrette ;
+    </li>
+    <li>
+      <strong>c'est le seul</strong> — dans n'importe quelle autre case, au moins un joueur joue
+      H alors que B lui rapporterait strictement plus ; il regrette, donc la case tombe.
+    </li>
+  </ul>
+  <p>
+    Une seule notion, et les 8 points sont couverts. Mais il faut <em>l'écrire</em>, pas
+    seulement y penser.
+  </p>
+</div>
+
+<h3>La résolution pas à pas</h3>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">1.</span> Se mettre dans la peau de Rivoli (station 1)</div>
+  <p>
+    Rivoli ne sait pas ce que fera Grandsart cette semaine. Alors elle envisage les deux cas, l'un
+    après l'autre. C'est la seule façon rigoureuse de procéder : on <strong>fige</strong> le choix
+    de l'autre, et on compare ses propres lignes.
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ \text{Si Grandsart joue H : } \ \underbrace{14}_{\text{Rivoli joue B}} \;&gt;\; \underbrace{8}_{\text{Rivoli joue H}} \]
+      <div class="why">
+        Je me place dans la <strong>colonne H</strong> et je compare les deux cases de cette
+        colonne, du point de vue de Rivoli — donc en ne regardant que le
+        <em>premier</em> nombre. En haut (ligne H) : 8. En bas (ligne B) : 14. Comme
+        \( 14 &gt; 8 \), Rivoli préfère B.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{Si Grandsart joue B : } \ \underbrace{4}_{\text{Rivoli joue B}} \;&gt;\; \underbrace{0}_{\text{Rivoli joue H}} \]
+      <div class="why">
+        Même geste dans la <strong>colonne B</strong>. En haut : 0 (Rivoli reste chère face à une
+        rivale bradée : plus aucun client). En bas : 4. Comme \( 4 &gt; 0 \), Rivoli préfère
+        encore B.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">2.</span> Conclure : B est strictement dominante pour Rivoli</div>
+  <p>
+    Les deux comparaisons donnent le même verdict, et avec un écart strict à chaque fois. Rivoli
+    préfère donc B <em>quoi qu'il arrive</em>, sans avoir besoin de deviner quoi que ce soit.
+  </p>
+  <div class="result">
+    <div class="result-title">Résultat intermédiaire 1</div>
+    <p>
+      Pour la station 1, <strong>B est une stratégie strictement dominante</strong>, car
+      \( 14 &gt; 8 \) (face à H) et \( 4 &gt; 0 \) (face à B).
+    </p>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">3.</span> Faire la même chose pour Grandsart — ou invoquer la symétrie</div>
+  <p>
+    Deux façons de procéder. La plus sûre : refaire les deux comparaisons, en ne regardant cette
+    fois que le <em>second</em> nombre de chaque case, et en figeant la <strong>ligne</strong>.
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ \text{Si Rivoli joue H : } \ 14 \;&gt;\; 8 \]
+      <div class="why">
+        Je me place dans la <strong>ligne H</strong>. Case (H ; H) : le second nombre est 8. Case
+        (H ; B) : le second nombre est 14. Grandsart préfère donc B.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{Si Rivoli joue B : } \ 4 \;&gt;\; 0 \]
+      <div class="why">
+        Dans la <strong>ligne B</strong>. Case (B ; H) : second nombre 0. Case (B ; B) : second
+        nombre 4. Grandsart préfère encore B.
+      </div>
+    </div>
+  </div>
+  <p>
+    L'autre façon, plus rapide et parfaitement acceptable à l'examen : dire que
+    <strong>le jeu est symétrique</strong>. Cela veut dire précisément ceci : si on échange les
+    rôles des deux joueurs, la matrice est inchangée. Vérifie-le : Rivoli qui joue B contre H
+    touche 14, Grandsart qui joue B contre H touche 14 aussi ; etc. Donc tout ce qui est vrai pour
+    l'une est vrai pour l'autre. <em>Écris cette phrase</em> — ne te contente pas d'écrire
+    « par symétrie » sans dire de quelle symétrie tu parles.
+  </p>
+  <div class="result">
+    <div class="result-title">Résultat intermédiaire 2</div>
+    <p>
+      Pour la station 2 également, <strong>B est strictement dominante</strong> : \( 14 &gt; 8 \)
+      et \( 4 &gt; 0 \). (4 points du barème sont acquis ici.)
+    </p>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">4.</span> En déduire que (B, B) est un équilibre de Nash</div>
+  <p>
+    Chacune joue B. L'issue de la semaine est donc la case <strong>(B, B)</strong>, avec les
+    payoffs <strong>(4 ; 4)</strong>. Mais il ne suffit pas de le décréter : vérifions-le
+    <em>au sens de la définition</em>, c'est-à-dire en testant les déviations unilatérales
+    (= un seul joueur change, l'autre ne bouge pas).
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ \text{Rivoli dévie seule : } \ 4 \ \longrightarrow \ u_1(\mathrm{H},\mathrm{B}) = 0 \]
+      <div class="why">
+        Je pars de (B, B), où Rivoli touche 4. Je fais changer Rivoli <strong>toute seule</strong>
+        (Grandsart garde B). On arrive dans la case (H ; B), où Rivoli touche 0. Elle perd 4 :
+        elle ne dévie pas. La notation \( u_1(\mathrm{H},\mathrm{B}) \) se lit « le gain du
+        joueur 1 quand le joueur 1 joue H et le joueur 2 joue B ».
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{Grandsart dévie seule : } \ 4 \ \longrightarrow \ u_2(\mathrm{B},\mathrm{H}) = 0 \]
+      <div class="why">
+        Symétriquement : si Grandsart seule repassait à H, elle tomberait à 0. Elle ne dévie pas
+        non plus. Aucune des deux ne regrette : <strong>(B, B) est bien un équilibre de
+        Nash.</strong> (2 points.)
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">5.</span> Démontrer l'unicité — les 2 points qu'on oublie</div>
+  <p>
+    Il reste à éliminer les trois autres cases. Deux rédactions possibles, toutes deux acceptées.
+  </p>
+  <h4>Rédaction A — l'argument général (le plus élégant)</h4>
+  <p>
+    Dans tout profil autre que (B, B), au moins une station joue H. Or B lui rapporte
+    <strong>strictement</strong> plus, quelle que soit l'action de l'autre — c'est exactement ce
+    que dit la dominance stricte démontrée aux étapes 1 à 3. Cette station regrette donc son
+    choix, et le profil n'est pas un équilibre de Nash. Aucun autre profil ne survit : (B, B) est
+    <strong>l'unique</strong> équilibre.
+  </p>
+  <h4>Rédaction B — l'inspection case par case (le plus scolaire)</h4>
+  <div class="calc">
+    <div class="step">
+      \[ (\mathrm{H},\mathrm{H}) : \ u_1 = 8 \ \longrightarrow \ u_1(\mathrm{B},\mathrm{H}) = 14 \;&gt;\; 8 \]
+      <div class="why">
+        Rivoli gagnerait à passer seule à B (14 au lieu de 8). Elle regrette : cette case n'est
+        pas un équilibre. (Grandsart aussi regretterait, d'ailleurs — une seule suffit.)
+      </div>
+    </div>
+    <div class="step">
+      \[ (\mathrm{H},\mathrm{B}) : \ u_1 = 0 \ \longrightarrow \ u_1(\mathrm{B},\mathrm{B}) = 4 \;&gt;\; 0 \]
+      <div class="why">
+        Rivoli, qui se fait massacrer avec 0, passerait volontiers à B pour toucher 4. Elle
+        regrette : ce n'est pas un équilibre.
+      </div>
+    </div>
+    <div class="step">
+      \[ (\mathrm{B},\mathrm{H}) : \ u_2 = 0 \ \longrightarrow \ u_2(\mathrm{B},\mathrm{B}) = 4 \;&gt;\; 0 \]
+      <div class="why">
+        Cette fois c'est Grandsart qui est à 0 et qui gagnerait à casser son prix elle aussi.
+        Elle regrette : ce n'est pas un équilibre. Il ne reste que (B, B). ✓
+      </div>
+    </div>
+  </div>
+</div>
+
+<figure>
+  <svg viewBox="0 0 560 350" width="100%" style="max-width:12cm" role="img"
+       aria-label="Matrice annotée : chaque meilleure réponse est soulignée, et la case (B, B) qui cumule les deux soulignements est l'unique équilibre de Nash">
+    <defs>
+      <pattern id="e2q4f1-hach" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="8" stroke="#047857" stroke-width="1.3"></line>
+      </pattern>
+      <marker id="e2q4f1-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#047857"></path>
+      </marker>
+    </defs>
+    <text x="280" y="62" text-anchor="middle" font-size="15" font-weight="bold">Grandsart (station 2)</text>
+    <text x="220" y="106" text-anchor="middle" font-size="15" font-weight="bold">H</text>
+    <text x="340" y="106" text-anchor="middle" font-size="15" font-weight="bold">B</text>
+    <text x="70" y="190" text-anchor="middle" font-size="15" font-weight="bold" transform="rotate(-90 70 190)">Rivoli (st. 1)</text>
+    <text x="134" y="161" text-anchor="middle" font-size="15" font-weight="bold">H</text>
+    <text x="134" y="231" text-anchor="middle" font-size="15" font-weight="bold">B</text>
+    <rect x="160" y="120" width="120" height="70" fill="#ffffff" stroke="#111827" stroke-width="1.3"></rect>
+    <rect x="280" y="120" width="120" height="70" fill="#ffffff" stroke="#111827" stroke-width="1.3"></rect>
+    <rect x="160" y="190" width="120" height="70" fill="#ffffff" stroke="#111827" stroke-width="1.3"></rect>
+    <rect x="280" y="190" width="120" height="70" fill="url(#e2q4f1-hach)" stroke="#047857" stroke-width="3"></rect>
+    <text x="212" y="162" text-anchor="end" font-size="17">8</text>
+    <text x="220" y="162" text-anchor="middle" font-size="17">;</text>
+    <text x="228" y="162" font-size="17">8</text>
+    <text x="332" y="162" text-anchor="end" font-size="17">0</text>
+    <text x="340" y="162" text-anchor="middle" font-size="17">;</text>
+    <text x="348" y="162" font-size="17" font-weight="bold">14</text>
+    <line x1="345" y1="168" x2="371" y2="168" stroke="#111827" stroke-width="2.4"></line>
+    <text x="212" y="232" text-anchor="end" font-size="17" font-weight="bold">14</text>
+    <text x="220" y="232" text-anchor="middle" font-size="17">;</text>
+    <text x="228" y="232" font-size="17">0</text>
+    <line x1="187" y1="238" x2="213" y2="238" stroke="#111827" stroke-width="2.4"></line>
+    <text x="332" y="232" text-anchor="end" font-size="17" font-weight="bold">4</text>
+    <text x="340" y="232" text-anchor="middle" font-size="17">;</text>
+    <text x="348" y="232" font-size="17" font-weight="bold">4</text>
+    <line x1="322" y1="238" x2="334" y2="238" stroke="#111827" stroke-width="2.4"></line>
+    <line x1="346" y1="238" x2="358" y2="238" stroke="#111827" stroke-width="2.4"></line>
+    <path d="M 472 226 L 406 226" stroke="#047857" stroke-width="1.6" fill="none" marker-end="url(#e2q4f1-arr)"></path>
+    <text x="476" y="221" font-size="13" font-weight="bold" style="fill:#047857">Équilibre</text>
+    <text x="476" y="237" font-size="13" font-weight="bold" style="fill:#047857">de Nash</text>
+    <text x="280" y="292" text-anchor="middle" font-size="12.5" font-style="italic" style="fill:#4b5563">Un trait sous un nombre = c'est la meilleure réponse de ce joueur-là.</text>
+    <text x="280" y="312" text-anchor="middle" font-size="12.5" font-style="italic" style="fill:#4b5563">La seule case aux DEUX nombres soulignés est l'équilibre de Nash.</text>
+    <text x="280" y="332" text-anchor="middle" font-size="12.5" font-style="italic" style="fill:#4b5563">Ici (B, B) donne (4 ; 4)… alors que (H, H) donnerait (8 ; 8).</text>
+  </svg>
+  <figcaption>
+    La matrice annotée. Colonne par colonne, on souligne le plus grand <em>premier</em> nombre
+    (meilleures réponses de Rivoli) ; ligne par ligne, le plus grand <em>second</em> nombre
+    (meilleures réponses de Grandsart). Une seule case cumule les deux : (B, B), hachurée.
+  </figcaption>
+</figure>
+
+<p>
+  Le même résultat sous forme de tableau, avec les conventions de couleur du cours : en jaune les
+  meilleures réponses, en vert l'équilibre.
+</p>
+
+<table class="game">
+  <tr><td class="void"></td><td class="void"></td><th colspan="2">Station 2 (Grandsart)</th></tr>
+  <tr><td class="void"></td><td class="void"></td><th>H</th><th>B</th></tr>
+  <tr><td class="player" rowspan="2">Station 1 (Rivoli)</td><th>H</th><td>(8 ; 8)</td><td class="hl">(0 ; <u>14</u>)</td></tr>
+  <tr><th>B</th><td class="hl">(<u>14</u> ; 0)</td><td class="nash">(<u>4</u> ; <u>4</u>)</td></tr>
+</table>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">6.</span> Le mot qui rapporte le point bonus : « dilemme du prisonnier »</div>
+  <p>
+    L'énoncé ne l'exige pas explicitement, mais le corrigé officiel le mentionne, et cela ne coûte
+    qu'une ligne. Compare les deux issues :
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ (\mathrm{B},\mathrm{B}) \to (4\ ;\ 4) \qquad \text{contre} \qquad (\mathrm{H},\mathrm{H}) \to (8\ ;\ 8) \]
+      <div class="why">
+        L'équilibre auquel conduit la rationalité donne 4 à chacune. Or il existe une autre case,
+        (H, H), qui donne 8 à chacune — <strong>strictement mieux pour les deux à la fois</strong>.
+        On dit que (B, B) est <span class="term">Pareto-dominé</span> par (H, H).
+      </div>
+    </div>
+  </div>
+  <p>
+    C'est la signature du <span class="term">dilemme du prisonnier</span> : chacun a une stratégie
+    dominante, et le résultat de ces choix individuellement rationnels est collectivement mauvais.
+    Chaque station, en cherchant son intérêt, détruit 4 de profit… pour elle-même.
+  </p>
+</div>
+
+<div class="result">
+  <div class="result-title">Réponse à la question 4.1</div>
+  <p>
+    B est <strong>strictement dominante</strong> pour les deux stations (\( 14 &gt; 8 \) face à H,
+    \( 4 &gt; 0 \) face à B). L'unique équilibre de Nash du jeu joué une seule fois est donc
+    <strong>(B, B)</strong>, de payoffs <strong>(4 ; 4)</strong> — alors que (H, H) aurait donné
+    (8 ; 8). Le jeu a la structure d'un <strong>dilemme du prisonnier</strong>.
+  </p>
+</div>
+
+<div class="box box-copie">
+  <div class="box-title">Ce qu'il fallait écrire sur la copie — question 4.1</div>
+  <p>
+    <strong>a) B est strictement dominante pour la station 1.</strong> Si la station 2 joue H,
+    la station 1 obtient 14 en jouant B contre 8 en jouant H, et \( 14 &gt; 8 \). Si la station 2
+    joue B, elle obtient 4 en jouant B contre 0 en jouant H, et \( 4 &gt; 0 \). Donc B rapporte
+    strictement plus que H quelle que soit l'action de la rivale : B est strictement dominante.
+  </p>
+  <p>
+    <strong>b) Idem pour la station 2</strong>, le jeu étant symétrique (échanger les deux joueurs
+    laisse la matrice inchangée) : \( 14 &gt; 8 \) et \( 4 &gt; 0 \).
+  </p>
+  <p>
+    <strong>c) (B, B) est un équilibre de Nash.</strong> Partant de (B, B), une déviation
+    unilatérale de la station 1 la ferait passer de 4 à \( u_1(\mathrm{H},\mathrm{B}) = 0 \) ;
+    de même pour la station 2, de 4 à 0. Aucune n'a intérêt à dévier seule : c'est un équilibre de
+    Nash, de payoffs (4 ; 4).
+  </p>
+  <p>
+    <strong>d) Il est unique.</strong> Dans tout autre profil, au moins une station joue H ; or B
+    lui rapporte strictement plus quelle que soit l'action de l'autre (dominance stricte). Cette
+    station a donc intérêt à dévier, et le profil n'est pas un équilibre. (B, B) est donc l'unique
+    équilibre de Nash.
+  </p>
+  <p>
+    <strong>e) Remarque.</strong> (B, B) donne (4 ; 4) alors que (H, H) donnerait (8 ; 8) : le jeu
+    est un dilemme du prisonnier, l'équilibre est Pareto-dominé par la collusion.
+  </p>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Les trois pièges de la question 4.1</div>
+  <ol>
+    <li>
+      <strong>Ne démontrer que « (B, B) est un équilibre » et s'arrêter là.</strong> Le mot
+      <em>unique</em> vaut 2 points à lui seul. Une phrase suffit, mais elle doit être écrite.
+    </li>
+    <li>
+      <strong>Comparer les mauvais nombres.</strong> Pour la station 1, on ne regarde que les
+      <em>premiers</em> nombres ; pour la station 2, que les <em>seconds</em>. Mélanger les deux
+      est l'erreur n° 1 des copies. Astuce : surligne physiquement, sur ton brouillon, les
+      premiers nombres en une couleur et les seconds en une autre.
+    </li>
+    <li>
+      <strong>Affirmer sans chiffrer.</strong> « B domine H, c'est évident » ne rapporte rien.
+      Les quatre inégalités \( 14 &gt; 8 \), \( 4 &gt; 0 \), \( 14 &gt; 8 \), \( 4 &gt; 0 \)
+      <em>sont</em> la démonstration.
+    </li>
+  </ol>
+</div>
+
+<div class="box box-methode">
+  <div class="box-title">Méthode réutilisable — trouver tous les équilibres de Nash d'un jeu 2 × 2</div>
+  <p>
+    Cette recette marche sur n'importe quelle matrice, dominée ou pas. Trois gestes :
+  </p>
+  <ol>
+    <li>
+      <strong>Colonne par colonne</strong>, souligne le plus grand <em>premier</em> nombre : ce
+      sont les meilleures réponses du joueur 1.
+    </li>
+    <li>
+      <strong>Ligne par ligne</strong>, souligne le plus grand <em>second</em> nombre : ce sont
+      les meilleures réponses du joueur 2.
+    </li>
+    <li>
+      Les équilibres de Nash sont exactement les cases où les <strong>deux</strong> nombres sont
+      soulignés. Zéro case soulignée deux fois = pas d'équilibre en stratégies pures (tu
+      rencontreras ce cas au chapitre 15) ; deux cases = deux équilibres ; une case = équilibre
+      unique, comme ici.
+    </li>
+  </ol>
+  <p>
+    Bonus : si, pour un joueur, la même ligne est soulignée dans <em>toutes</em> les colonnes,
+    c'est que cette ligne est une stratégie dominante. Le soulignement te donne donc la dominance
+    en cadeau.
+  </p>
+</div>
+
+<hr class="soft">
+
+<h2>4. Question 4.2 — la collusion à horizon infini (14 points)</h2>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 4.2 (14 points)</div>
+  <p>
+    Le jeu est maintenant répété à l'infini et chaque station observe le prix de sa rivale à la
+    fin de chaque semaine. Les deux stations ont le même facteur d'escompte
+    \( \delta \in (0,1) \) et cherchent à soutenir la collusion (H, H) à l'aide de stratégies
+    <em>grim</em> : jouer H tant que personne n'a jamais joué B, et jouer B pour toujours dès
+    qu'un prix B a été observé. Montrez que (grim, grim) est un équilibre si et seulement si
+    \( \delta \ge \tfrac{3}{5} \). Détaillez le calcul.
+  </p>
+  <p>
+    <em>Barème officiel :</em> \( \Pi^{C} = 8/(1-\delta) \) <strong>(3 points)</strong> ;
+    \( \Pi^{D} = 14 + 4\delta/(1-\delta) \) avec justification de la « meilleure » déviation
+    <strong>(5 points)</strong> ; résolution de l'inégalité jusqu'à \( \delta \ge 3/5 \)
+    <strong>(6 points)</strong>.
+  </p>
+</div>
+
+<h3>Traduisons la question en français simple, morceau par morceau</h3>
+
+<p>
+  Cette phrase d'énoncé est longue et bourrée de vocabulaire. Découpons-la. Chaque morceau porte
+  une information dont on se servira dans le calcul : rien n'est décoratif.
+</p>
+
+<dl class="lexique">
+  <dt>« Le jeu est maintenant répété à l'infini »</dt>
+  <dd>
+    Les deux stations rejouent le même petit jeu (la matrice) toutes les semaines, sans date de
+    fin connue. On numérote les semaines \( t = 0, 1, 2, 3, \dots \) — la semaine 0 étant
+    « celle-ci ». <strong>« À l'infini » ne veut pas dire « les gérants sont immortels »</strong> :
+    ça veut dire qu'à chaque lundi, il y a toujours un lundi suivant. Personne ne peut jamais se
+    dire « c'est la dernière fois, donc je peux trahir sans risque ». Cette absence de dernière
+    semaine est exactement ce qui rend la coopération possible (voir le rappel ci-dessous).
+  </dd>
+  <dt>« chaque station observe le prix de sa rivale à la fin de chaque semaine »</dt>
+  <dd>
+    C'est l'hypothèse de <span class="term">détection immédiate</span>. Une trahison commise la
+    semaine \( t \) est vue à la fin de la semaine \( t \), donc la riposte peut démarrer dès la
+    semaine \( t+1 \). Retiens bien cette phrase : c'est <em>précisément elle</em> que la question
+    4.3 va modifier, et c'est le seul changement entre 4.2 et 4.3.
+  </dd>
+  <dt>« le même facteur d'escompte \( \delta \in (0,1) \) »</dt>
+  <dd>
+    \( \delta \) se lit « delta ». « \( \delta \in (0,1) \) » se lit « delta appartient à
+    l'intervalle ouvert de 0 à 1 », c'est-à-dire \( 0 &lt; \delta &lt; 1 \) : delta est strictement
+    entre 0 et 1, bornes exclues. Deux conséquences pratiques qu'on utilisera :
+    \( 1 - \delta &gt; 0 \) (on pourra multiplier une inégalité par \( 1-\delta \) sans en changer
+    le sens) et la somme géométrique converge. « Le <em>même</em> » signifie que les deux stations
+    sont aussi patientes l'une que l'autre : un seul calcul suffira pour les deux.
+  </dd>
+  <dt>« cherchent à soutenir la collusion (H, H) »</dt>
+  <dd>
+    <span class="term">Collusion</span> = entente entre concurrents pour maintenir les prix
+    élevés au lieu de se faire la guerre. « Soutenir » est le mot technique : il ne s'agit pas de
+    signer un accord (ce serait illégal et, de toute façon, non modélisé ici), mais de rendre
+    l'entente <strong>auto-exécutoire</strong> — c'est-à-dire de faire en sorte que chacune,
+    en calculant froidement son intérêt, choisisse H toute seule.
+  </dd>
+  <dt>« à l'aide de stratégies grim »</dt>
+  <dd>
+    L'énoncé te <em>donne</em> la stratégie ; tu n'as pas à l'inventer. Il te donne même sa
+    définition complète juste après le mot : « jouer H tant que personne n'a jamais joué B, et
+    jouer B pour toujours dès qu'un prix B a été observé ». Recopie-la sur ta copie : elle
+    structure tout le raisonnement.
+  </dd>
+  <dt>« Montrez que (grim, grim) est un équilibre »</dt>
+  <dd>
+    Ici, « équilibre » veut dire équilibre de Nash <strong>du jeu répété</strong> : aucune des
+    deux stations ne gagne à remplacer sa <em>règle de conduite</em> par une autre, sachant que
+    la rivale garde la sienne. Attention : on ne compare plus des nombres (4 contre 0, comme en
+    4.1), on compare des <strong>flux entiers de profits</strong> étalés sur l'infini. C'est
+    toute la difficulté de la question, et on y consacre le mini-cours ci-dessous.
+  </dd>
+  <dt>« si et seulement si \( \delta \ge \tfrac{3}{5} \) »</dt>
+  <dd>
+    « Si et seulement si » (parfois noté \( \iff \), qui se lit « équivaut à ») annonce une
+    <strong>double implication</strong> : quand \( \delta \ge 3/5 \), c'est un équilibre ; et
+    quand \( \delta &lt; 3/5 \), ça n'en est pas un. Bonne nouvelle : ici les deux sens sortent
+    d'un seul calcul, parce qu'on va manipuler des <em>équivalences</em> (chaque ligne est
+    réversible), jamais des implications à sens unique. Il suffira de l'écrire.
+  </dd>
+  <dt>« Détaillez le calcul. »</dt>
+  <dd>
+    Traduction du barème : 3 points pour le flux de coopération, 5 pour le flux de déviation
+    (dont une partie pour <em>justifier</em> que c'est bien la meilleure déviation), 6 pour la
+    résolution de l'inégalité. Un « \( \delta \ge 3/5 \) » posé sans calcul vaudrait 0 sur 14.
+  </dd>
+</dl>
+
+<div class="box box-rappel">
+  <div class="box-title">Pourquoi l'infini, et pas « répété 52 fois » ? <em>(vol. 1, ch. 5, § 5.3 et 5.4)</em></div>
+  <p>
+    Si le jeu était répété un nombre de fois <strong>fini et connu à l'avance</strong> — disons
+    52 semaines — la coopération serait impossible, et pas seulement fragile :
+    <em>mathématiquement impossible</em>. Le raisonnement, appelé
+    <span class="term">induction à rebours</span>, part de la fin. Semaine 52 : c'est la dernière,
+    il n'y a plus d'avenir à protéger, donc chacune joue sa dominante B. Semaine 51 : comme
+    l'issue de la 52 est déjà fixée quoi qu'il arrive, la 51 devient à son tour « la dernière qui
+    compte », donc B. Et ainsi de suite jusqu'à la semaine 1 : les dominos tombent tous. Tout est
+    détaillé au volume 1.
+  </p>
+  <p>
+    <strong>L'horizon infini casse ce raisonnement</strong> parce qu'il n'y a pas de dernière
+    semaine par où commencer. Il reste toujours un futur à mettre en jeu — et c'est ce futur qui
+    sert de caution.
+  </p>
+</div>
+
+<h3>Le cours dont tu as besoin : pourquoi on compare deux flux, et pas deux nombres</h3>
+
+<p>
+  C'est le point conceptuel de toute la question. Prends deux minutes dessus : une fois compris,
+  4.2 et 4.3 se déroulent tout seuls.
+</p>
+
+<div class="box box-why">
+  <div class="box-title">En 4.1 on comparait 4 et 0. Ici on compare deux vies entières.</div>
+  <p>
+    À la question 4.1, tester une déviation était facile : « Rivoli passe de 4 à 0, donc elle ne
+    dévie pas. » Deux nombres, une comparaison, fini. Pourquoi ne peut-on plus faire ça ?
+  </p>
+  <p>
+    Parce que dans le jeu répété, <strong>une déviation ne change pas seulement le profit d'une
+    semaine : elle change tout l'avenir</strong>. Si Rivoli casse son prix cette semaine, elle
+    gagne 14 au lieu de 8 — génial, +6. Mais du coup, Grandsart appuie sur la gâchette, et à
+    partir de la semaine prochaine Rivoli touchera 4 par semaine au lieu de 8, <em>pour
+    toujours</em> — catastrophique, −4 chaque semaine jusqu'à la fin des temps.
+  </p>
+  <p>
+    Comparer « +6 aujourd'hui » et « −4 par semaine à l'infini » n'a aucun sens tant qu'on ne les
+    a pas ramenés à la même unité. Cette unité, c'est l'<strong>euro d'aujourd'hui</strong>. Et
+    l'outil qui convertit un euro futur en euro d'aujourd'hui, c'est \( \delta \). D'où la
+    méthode : on additionne <em>tout</em> le flux de chaque scénario, converti en euros
+    d'aujourd'hui, ce qui donne un seul nombre par scénario — et là, on peut comparer.
+  </p>
+</div>
+
+<div class="box box-def">
+  <div class="box-title">Définition — payoff escompté d'un scénario, et notations \( \Pi^{C} \), \( \Pi^{D} \)</div>
+  <p>
+    Un <span class="term">scénario</span> est une histoire complète : ce que chacune joue chaque
+    semaine, de la semaine 0 à l'infini. Son <span class="term">payoff escompté</span> est la
+    somme de tous les profits qu'il rapporte, chacun multiplié par son poids \( \delta^t \) :
+  </p>
+  <p>
+    \[ \Pi \;=\; \pi_0 \;+\; \delta\,\pi_1 \;+\; \delta^2\,\pi_2 \;+\; \delta^3\,\pi_3 \;+\; \cdots \]
+  </p>
+  <p>
+    On notera \( \Pi^{C} \) (« pi majuscule exposant C ») le payoff escompté du scénario
+    <strong>C</strong>omme-prévu, où personne ne dévie jamais, et \( \Pi^{D} \) celui du scénario
+    <strong>D</strong>éviation, où la station étudiée trahit puis subit la punition. Ce sont deux
+    <em>nombres</em> (une fois \( \delta \) fixé), donc comparables.
+  </p>
+</div>
+
+<div class="box box-methode">
+  <div class="box-title">Méthode — les cinq gestes de toute condition de collusion</div>
+  <p>
+    Voici la recette. Elle ne changera plus jamais : ni en 4.3, ni à l'examen, ni ailleurs. Seuls
+    changent les nombres qu'on y verse.
+  </p>
+  <ol>
+    <li>
+      <strong>Placer la déviation en \( t = 0 \)</strong>, sans perte de généralité (justification
+      juste en dessous).
+    </li>
+    <li>
+      <strong>Écrire le flux « coopérer »</strong> semaine par semaine, puis le sommer avec la
+      formule géométrique.
+    </li>
+    <li>
+      <strong>Écrire le flux « dévier »</strong> semaine par semaine — c'est ici que se joue tout,
+      parce qu'il faut savoir <em>quand</em> la punition démarre — puis le sommer.
+    </li>
+    <li>
+      <strong>Poser \( \Pi^{C} \ge \Pi^{D} \)</strong> et résoudre en \( \delta \).
+    </li>
+    <li>
+      <strong>Conclure</strong> par une phrase, et vérifier numériquement si le temps le permet.
+    </li>
+  </ol>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi a-t-on le droit de supposer que la déviation a lieu en \( t = 0 \) ?</div>
+  <p>
+    C'est une petite phrase à écrire sur la copie, et elle rapporte. L'argument : le jeu répété à
+    l'infini est <strong>stationnaire</strong>, mot savant pour dire qu'il « se ressemble à toutes
+    les dates ». Vu depuis la semaine 7, ce qui reste à jouer (une infinité de semaines
+    identiques, personne n'ayant encore trahi) est <em>exactement</em> le même problème que vu
+    depuis la semaine 0.
+  </p>
+  <p>
+    Donc dévier en semaine 7 rapporte le même gain net que dévier en semaine 0, à ceci près qu'il
+    est multiplié par \( \delta^7 \) — donc c'est <em>moins</em> intéressant en valeur
+    d'aujourd'hui. Conclusion : si dévier en \( t = 0 \) n'est pas rentable, dévier plus tard ne
+    l'est pas non plus. Il suffit donc de tester la déviation la plus tentante de toutes : celle
+    de tout de suite.
+  </p>
+</div>
+
+<h3>La résolution pas à pas</h3>
+
+<p>
+  On se place du côté de <strong>Rivoli</strong> (station 1). Grandsart joue grim et ne changera
+  pas. La question est : Rivoli a-t-elle intérêt, elle aussi, à jouer grim ? Par symétrie du jeu,
+  le calcul de Grandsart sera identique — on le dira en une ligne à la fin.
+</p>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">1.</span> Le scénario « comme prévu » : que se passe-t-il si personne ne dévie ?</div>
+  <p>
+    Déroulons l'histoire, semaine après semaine, en appliquant bêtement la règle grim des deux
+    côtés.
+  </p>
+  <ul>
+    <li>
+      <strong>Semaine 0.</strong> Personne n'a jamais joué B (le passé est vide). Donc la règle
+      grim dit « joue H » aux deux. Résultat : (H, H), Rivoli touche <strong>8</strong>.
+    </li>
+    <li>
+      <strong>Semaine 1.</strong> Le passé contient une seule semaine, où les deux ont joué H.
+      Toujours aucun B. Donc encore (H, H) : Rivoli touche <strong>8</strong>.
+    </li>
+    <li>
+      <strong>Semaine 2, 3, 4, …</strong> Même chose, indéfiniment. La gâchette n'est
+      <em>jamais</em> pressée, parce qu'il n'y a jamais rien à punir.
+    </li>
+  </ul>
+  <p>
+    Le flux de profits de Rivoli est donc : 8, 8, 8, 8, … pour toujours. Reste à en calculer la
+    valeur d'aujourd'hui.
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ \Pi^{C} \;=\; 8 \;+\; 8\,\delta \;+\; 8\,\delta^2 \;+\; 8\,\delta^3 \;+\; \cdots \]
+      <div class="why">
+        J'écris le flux terme par terme, comme le barème l'exige. Le 8 de la semaine 0 est encaissé
+        <strong>aujourd'hui</strong> : il n'est pas escompté, son poids vaut 1. Le 8 de la semaine 1
+        arrive dans une semaine : je le multiplie par \( \delta \). Celui de la semaine 2 arrive
+        dans deux semaines : \( \delta^2 \). Et ainsi de suite.
+      </div>
+    </div>
+    <div class="step">
+      \[ \Pi^{C} \;=\; 8\,\bigl(1 + \delta + \delta^2 + \delta^3 + \cdots\bigr) \]
+      <div class="why">
+        Je mets 8 en facteur, tout simplement parce que le même montant 8 revient à chaque terme.
+        Ce qui reste entre parenthèses est <em>exactement</em> la somme géométrique de raison
+        \( \delta \) rappelée à la brique 6, avec \( a = 1 \). Et elle commence bien par un terme
+        sans \( \delta \) (le « 1 ») : la formule s'applique.
+      </div>
+    </div>
+    <div class="step">
+      \[ \Pi^{C} \;=\; 8 \times \frac{1}{1-\delta} \;=\; \frac{8}{1-\delta} \]
+      <div class="why">
+        J'applique \( 1 + \delta + \delta^2 + \cdots = \dfrac{1}{1-\delta} \), valable car
+        \( 0 &lt; \delta &lt; 1 \). Puis je remonte le 8 au numérateur. Voilà le premier des deux
+        nombres demandés — <strong>3 points au barème</strong>.
+      </div>
+    </div>
+  </div>
+  <div class="result">
+    <div class="result-title">Résultat 1 sur 3 — le payoff de la collusion</div>
+    <p>
+      \[ \Pi^{C} \;=\; \frac{8}{1-\delta} \]
+    </p>
+    <p>
+      <em>Comment le lire :</em> c'est la valeur d'aujourd'hui d'une rente éternelle de 8 par
+      semaine. Plus \( \delta \) est proche de 1 (station patiente), plus \( 1-\delta \) est
+      petit, donc plus la fraction est grande. À \( \delta = 0{,}9 \) par exemple, cette rente
+      « vaut » \( 8/0{,}1 = 80 \), soit dix semaines de profit d'entente.
+    </p>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">2.</span> Le scénario « déviation » : construisons-le semaine par semaine</div>
+  <p>
+    C'est le morceau qui vaut 5 points, et celui où l'on perd le plus de points. On ne devine pas
+    la formule : on <strong>raconte l'histoire</strong>, et la formule apparaît toute seule.
+    Trois questions à se poser, dans l'ordre.
+  </p>
+
+  <h4>a) Quand Rivoli trahit-elle ?</h4>
+  <p>
+    En semaine 0, sans perte de généralité — c'est l'argument de stationnarité expliqué plus haut.
+    Écris cette phrase sur la copie : « le jeu étant stationnaire, on peut sans perte de généralité
+    placer la première déviation en \( t = 0 \) ».
+  </p>
+
+  <h4>b) Que gagne-t-elle la semaine de la trahison ?</h4>
+  <p>
+    Semaine 0 : Rivoli joue B. Et Grandsart ? Elle joue <strong>H</strong>. Pourquoi ? Parce que sa
+    règle grim regarde le <em>passé</em>, et que le passé est vide : elle n'a rien vu, elle ne peut
+    rien punir. Les choix de la semaine sont simultanés, souviens-toi. On est donc dans la case
+    <strong>(B ; H)</strong>, et Rivoli empoche <strong>14</strong>. C'est le maximum de tout le
+    tableau : le festin.
+  </p>
+
+  <h4>c) Et après ?</h4>
+  <p>
+    À la fin de la semaine 0, Grandsart voit le prix cassé (« chaque station observe le prix de sa
+    rivale à la fin de chaque semaine »). Sa grim bascule en punition : elle jouera
+    <strong>B à partir de la semaine 1, définitivement</strong>. Rivoli se retrouve face à un mur
+    de B éternel. Que peut-elle faire de mieux ? Deux options, chaque semaine :
+  </p>
+  <ul>
+    <li>jouer H contre B : on est dans la case (H ; B), elle touche <strong>0</strong> ;</li>
+    <li>jouer B contre B : on est dans la case (B ; B), elle touche <strong>4</strong>.</li>
+  </ul>
+  <p>
+    Comme \( 4 &gt; 0 \), sa meilleure réponse est de casser son prix elle aussi, pour toujours.
+    Elle touche donc <strong>4 par semaine à partir de la semaine 1</strong>. Et voilà pourquoi on
+    parle de la « <em>meilleure</em> déviation » : on ne suppose pas que la tricheuse se laisse
+    massacrer, on suppose qu'elle joue au mieux de ses intérêts jusqu'au bout.
+  </p>
+  <div class="box box-piege">
+    <div class="box-title">Piège — écrire 0 au lieu de 4 pendant la punition</div>
+    <p>
+      Erreur très fréquente : « elle est punie, donc elle ne gagne plus rien, donc 0 ». Non. Être
+      punie signifie que la rivale casse son prix pour toujours ; la meilleure réponse à cela est
+      de casser le sien aussi, ce qui rapporte 4 par semaine, pas 0. Mettre 0 gonflerait
+      artificiellement le coût de la punition et donnerait un seuil faux (on trouverait
+      \( \delta \ge 6/14 = 3/7 \approx 0{,}43 \) au lieu de 0,6).
+    </p>
+  </div>
+</div>
+
+<figure>
+  <svg viewBox="0 0 600 320" width="100%" style="max-width:12cm" role="img"
+       aria-label="Frise temporelle comparant deux flux de profits pour Rivoli : coopérer donne 8 chaque semaine, dévier donne 14 la première semaine puis 4 pour toujours">
+    <text x="104" y="26" text-anchor="end" font-size="13" font-weight="bold">Poids :</text>
+    <text x="152" y="26" text-anchor="middle" font-size="14" font-weight="bold">1</text>
+    <text x="232" y="26" text-anchor="middle" font-size="14" font-weight="bold">δ</text>
+    <text x="312" y="26" text-anchor="middle" font-size="14" font-weight="bold">δ²</text>
+    <text x="392" y="26" text-anchor="middle" font-size="14" font-weight="bold">δ³</text>
+    <text x="472" y="26" text-anchor="middle" font-size="14" font-weight="bold">δ⁴</text>
+    <text x="552" y="26" text-anchor="middle" font-size="14" font-weight="bold">…</text>
+    <text x="152" y="50" text-anchor="middle" font-size="12.5" style="fill:#4b5563">Sem. 0</text>
+    <text x="232" y="50" text-anchor="middle" font-size="12.5" style="fill:#4b5563">Sem. 1</text>
+    <text x="312" y="50" text-anchor="middle" font-size="12.5" style="fill:#4b5563">Sem. 2</text>
+    <text x="392" y="50" text-anchor="middle" font-size="12.5" style="fill:#4b5563">Sem. 3</text>
+    <text x="472" y="50" text-anchor="middle" font-size="12.5" style="fill:#4b5563">Sem. 4</text>
+    <text x="552" y="50" text-anchor="middle" font-size="12.5" style="fill:#4b5563">…</text>
+    <text x="104" y="80" text-anchor="end" font-size="13" font-weight="bold">Coopérer</text>
+    <text x="104" y="96" text-anchor="end" font-size="12" style="fill:#4b5563">(H ; H)</text>
+    <rect x="114" y="62" width="76" height="44" fill="#ecfdf5" stroke="#047857" stroke-width="1.6"></rect>
+    <rect x="194" y="62" width="76" height="44" fill="#ecfdf5" stroke="#047857" stroke-width="1.6"></rect>
+    <rect x="274" y="62" width="76" height="44" fill="#ecfdf5" stroke="#047857" stroke-width="1.6"></rect>
+    <rect x="354" y="62" width="76" height="44" fill="#ecfdf5" stroke="#047857" stroke-width="1.6"></rect>
+    <rect x="434" y="62" width="76" height="44" fill="#ecfdf5" stroke="#047857" stroke-width="1.6"></rect>
+    <text x="152" y="91" text-anchor="middle" font-size="18" font-weight="bold">8</text>
+    <text x="232" y="91" text-anchor="middle" font-size="18" font-weight="bold">8</text>
+    <text x="312" y="91" text-anchor="middle" font-size="18" font-weight="bold">8</text>
+    <text x="392" y="91" text-anchor="middle" font-size="18" font-weight="bold">8</text>
+    <text x="472" y="91" text-anchor="middle" font-size="18" font-weight="bold">8</text>
+    <text x="552" y="91" text-anchor="middle" font-size="18" font-weight="bold">…</text>
+    <text x="104" y="146" text-anchor="end" font-size="13" font-weight="bold">Dévier</text>
+    <text x="104" y="162" text-anchor="end" font-size="12" style="fill:#4b5563">en sem. 0</text>
+    <rect x="114" y="128" width="76" height="44" fill="#fef3c7" stroke="#b45309" stroke-width="3"></rect>
+    <rect x="194" y="128" width="76" height="44" fill="#fff1f2" stroke="#be123c" stroke-width="1.6" stroke-dasharray="5 3"></rect>
+    <rect x="274" y="128" width="76" height="44" fill="#fff1f2" stroke="#be123c" stroke-width="1.6" stroke-dasharray="5 3"></rect>
+    <rect x="354" y="128" width="76" height="44" fill="#fff1f2" stroke="#be123c" stroke-width="1.6" stroke-dasharray="5 3"></rect>
+    <rect x="434" y="128" width="76" height="44" fill="#fff1f2" stroke="#be123c" stroke-width="1.6" stroke-dasharray="5 3"></rect>
+    <text x="152" y="157" text-anchor="middle" font-size="18" font-weight="bold">14</text>
+    <text x="232" y="157" text-anchor="middle" font-size="18" font-weight="bold">4</text>
+    <text x="312" y="157" text-anchor="middle" font-size="18" font-weight="bold">4</text>
+    <text x="392" y="157" text-anchor="middle" font-size="18" font-weight="bold">4</text>
+    <text x="472" y="157" text-anchor="middle" font-size="18" font-weight="bold">4</text>
+    <text x="552" y="157" text-anchor="middle" font-size="18" font-weight="bold">…</text>
+    <text x="152" y="192" text-anchor="middle" font-size="12.5" font-weight="bold" style="fill:#b45309">festin (B ; H)</text>
+    <path d="M 194 182 L 194 190 L 570 190 L 570 182" fill="none" stroke="#be123c" stroke-width="1.4"></path>
+    <text x="382" y="206" text-anchor="middle" font-size="12.5" font-weight="bold" style="fill:#be123c">punition : (B ; B) à jamais, dès la semaine 1</text>
+    <line x1="30" y1="222" x2="570" y2="222" stroke="#d1d5db" stroke-width="1"></line>
+    <text x="300" y="246" text-anchor="middle" font-size="14">Π coopérer = 8 + 8δ + 8δ² + 8δ³ + … = 8 / (1 − δ)</text>
+    <text x="300" y="270" text-anchor="middle" font-size="14">Π dévier = 14 + 4δ + 4δ² + 4δ³ + … = 14 + 4δ / (1 − δ)</text>
+    <text x="300" y="296" text-anchor="middle" font-size="12.5" font-style="italic" style="fill:#4b5563">Trahir = gagner +6 une seule fois, puis perdre −4 chaque semaine, pour toujours.</text>
+    <text x="300" y="314" text-anchor="middle" font-size="12.5" font-style="italic" style="fill:#4b5563">Toute la question est de savoir lequel des deux pèse le plus, une fois escompté.</text>
+  </svg>
+  <figcaption>
+    Les deux flux de profits de Rivoli, semaine par semaine, avec au-dessus le poids d'escompte
+    appliqué à chaque semaine. La semaine 0 n'est pas escomptée (poids 1) ; la semaine 1 pèse
+    \( \delta \), la semaine 2 pèse \( \delta^2 \), etc. La déviation offre un unique festin de
+    14, puis une éternité à 4 au lieu de 8.
+  </figcaption>
+</figure>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">3.</span> Écrire et sommer le flux de déviation</div>
+  <p>
+    La frise ci-dessus est déjà la réponse : il ne reste qu'à la recopier en symboles.
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ \Pi^{D} \;=\; 14 \;+\; 4\,\delta \;+\; 4\,\delta^2 \;+\; 4\,\delta^3 \;+\; \cdots \]
+      <div class="why">
+        Terme par terme, exactement la ligne « Dévier » de la frise. Le 14 est encaissé
+        <strong>aujourd'hui</strong> (semaine 0) : aucun \( \delta \) devant lui. Les 4 arrivent
+        aux semaines 1, 2, 3, … donc affectés de \( \delta \), \( \delta^2 \), \( \delta^3 \).
+      </div>
+    </div>
+    <div class="step">
+      \[ \Pi^{D} \;=\; 14 \;+\; \delta\,\bigl(4 + 4\,\delta + 4\,\delta^2 + \cdots\bigr) \]
+      <div class="why">
+        Je mets \( \delta \) en facteur dans <em>tous</em> les termes de punition :
+        \( 4\delta = \delta \times 4 \), \( 4\delta^2 = \delta \times 4\delta \), etc. Pourquoi ce
+        geste ? Pour que la parenthèse commence par un terme <strong>sans</strong> \( \delta \) —
+        la seule forme à laquelle la formule de la somme géométrique s'applique. Le 14, lui, ne
+        bouge pas : il n'appartient pas à la punition.
+      </div>
+    </div>
+    <div class="step">
+      \[ \Pi^{D} \;=\; 14 \;+\; \delta \times \frac{4}{1-\delta} \;=\; 14 + \frac{4\,\delta}{1-\delta} \]
+      <div class="why">
+        J'applique la formule à la parenthèse avec \( a = 4 \), ce qui donne \( 4/(1-\delta) \) ;
+        puis je fais rentrer le \( \delta \) au numérateur. Second nombre demandé —
+        <strong>5 points au barème</strong>.
+      </div>
+    </div>
+  </div>
+  <div class="result">
+    <div class="result-title">Résultat 2 sur 3 — le payoff de la meilleure déviation</div>
+    <p>
+      \[ \Pi^{D} \;=\; 14 + \frac{4\,\delta}{1-\delta} \]
+    </p>
+    <p>
+      <em>Comment le lire, morceau par morceau :</em> le <strong>14</strong> est la tentation,
+      encaissée une seule fois et tout de suite. Le \( \dfrac{4\delta}{1-\delta} \) est la valeur
+      d'aujourd'hui d'une rente éternelle de 4 qui <strong>ne commence que la semaine
+      prochaine</strong> — d'où le \( \delta \) au numérateur.
+    </p>
+  </div>
+</div>
+
+<div class="box box-piege">
+  <div class="box-title">Piège central — \( \dfrac{4\delta}{1-\delta} \) ou \( \dfrac{4}{1-\delta} \) ?</div>
+  <p>
+    Ces deux expressions se ressemblent beaucoup et ne veulent pas du tout dire la même chose :
+  </p>
+  <ul>
+    <li>
+      \( \dfrac{4}{1-\delta} \) est la valeur d'une rente de 4 qui commence
+      <strong>aujourd'hui</strong> : semaines 0, 1, 2, 3, …
+    </li>
+    <li>
+      \( \dfrac{4\delta}{1-\delta} \) est celle d'une rente de 4 qui commence
+      <strong>la semaine prochaine</strong> : semaines 1, 2, 3, …
+    </li>
+  </ul>
+  <p>
+    Ici, la semaine 0 est occupée par le festin de 14 : la punition ne peut commencer qu'en
+    semaine 1. Il faut donc le \( \delta \). <strong>Test de sécurité imparable :</strong> fais
+    \( \delta = 0 \) (une station totalement myope, pour qui le futur ne vaut rien). La punition
+    future doit alors valoir 0. Or \( \dfrac{4\times 0}{1-0} = 0 \) ✓, tandis que
+    \( \dfrac{4}{1-0} = 4 \) ✗. La première expression passe le test, la seconde non. Utilise ce
+    réflexe chaque fois que tu hésites.
+  </p>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">4.</span> Poser la condition d'équilibre</div>
+  <p>
+    (grim, grim) est un équilibre de Nash du jeu répété si <strong>aucune station ne gagne à
+    changer seule de règle de conduite</strong>. Comme la seule déviation à examiner est la
+    meilleure d'entre elles (celle qu'on vient de construire), cela s'écrit :
+  </p>
+  <div class="calc">
+    <div class="step">
+      \[ \Pi^{C} \;\ge\; \Pi^{D} \]
+      <div class="why">
+        Traduction directe de la définition : ma stratégie doit être une <em>meilleure
+        réponse</em> à celle de l'autre, donc rapporter au moins autant que n'importe quelle autre
+        règle — en particulier au moins autant que la déviation la plus juteuse. Note le
+        \( \ge \) (« supérieur ou égal ») et non le \( &gt; \) : en cas d'égalité parfaite, la
+        station est indifférente, et rester fidèle reste une meilleure réponse. C'est pour cela
+        que le seuil 3/5 est <em>inclus</em> dans la réponse.
+      </div>
+    </div>
+    <div class="step">
+      \[ \frac{8}{1-\delta} \;\ge\; 14 + \frac{4\,\delta}{1-\delta} \]
+      <div class="why">
+        Je remplace chaque payoff par l'expression calculée aux étapes 1 et 3. Il ne reste plus
+        qu'une seule inconnue dans cette inéquation : \( \delta \). Tout le reste du travail est
+        de l'algèbre de classe de quatrième — mais il faut la faire proprement.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="etape">
+  <div class="etape-title"><span class="num">5.</span> Résoudre l'inéquation, sans sauter une seule ligne</div>
+  <div class="calc">
+    <div class="step">
+      \[ \frac{8}{1-\delta} \;\ge\; 14 + \frac{4\,\delta}{1-\delta} \]
+      <div class="why">
+        Point de départ. Les deux fractions ont le même dénominateur \( (1-\delta) \) : c'est une
+        invitation à s'en débarrasser d'un coup.
+      </div>
+    </div>
+    <div class="step">
+      \[ 8 \;\ge\; 14\,(1-\delta) + 4\,\delta \]
+      <div class="why">
+        Je multiplie <strong>les deux membres</strong> par \( (1-\delta) \). C'est LE point à
+        justifier : multiplier une inégalité par un nombre <em>négatif</em> en renverserait le
+        sens. Ici \( \delta &lt; 1 \), donc \( 1-\delta &gt; 0 \) : le facteur est strictement
+        positif, <strong>le sens de l'inégalité est conservé</strong>. À gauche,
+        \( \frac{8}{1-\delta}\times(1-\delta) = 8 \). À droite, le 14 (qui n'était pas une
+        fraction) devient \( 14(1-\delta) \), et \( \frac{4\delta}{1-\delta}\times(1-\delta) \)
+        se simplifie en \( 4\delta \).
+      </div>
+    </div>
+    <div class="step">
+      \[ 8 \;\ge\; 14 - 14\,\delta + 4\,\delta \]
+      <div class="why">
+        Je développe \( 14(1-\delta) \) en distribuant le 14 sur chacun des deux termes de la
+        parenthèse : \( 14 \times 1 = 14 \) et \( 14 \times (-\delta) = -14\delta \).
+      </div>
+    </div>
+    <div class="step">
+      \[ 8 \;\ge\; 14 - 10\,\delta \]
+      <div class="why">
+        Je regroupe les deux termes qui contiennent \( \delta \) : \( -14\delta + 4\delta \). On
+        additionne les coefficients : \( -14 + 4 = -10 \), donc \( -10\delta \). Le membre de
+        droite est maintenant aussi simple que possible.
+      </div>
+    </div>
+    <div class="step">
+      \[ 8 + 10\,\delta \;\ge\; 14 \]
+      <div class="why">
+        J'ajoute \( 10\delta \) des <strong>deux</strong> côtés. Objectif : faire passer le terme
+        en \( \delta \) à gauche et le rendre positif, ce qui évitera de diviser par un négatif
+        plus tard. Ajouter la même quantité aux deux membres ne change jamais le sens d'une
+        inégalité.
+      </div>
+    </div>
+    <div class="step">
+      \[ 10\,\delta \;\ge\; 6 \]
+      <div class="why">
+        Je retranche 8 des deux côtés pour isoler le terme en \( \delta \) : à gauche il reste
+        \( 10\delta \), à droite \( 14 - 8 = 6 \).
+      </div>
+    </div>
+    <div class="step">
+      \[ \delta \;\ge\; \frac{6}{10} \;=\; \frac{3}{5} \;=\; 0{,}6 \]
+      <div class="why">
+        Je divise les deux membres par 10. Comme 10 est positif, le sens est conservé. Puis je
+        simplifie \( 6/10 \) en divisant numérateur et dénominateur par 2, ce qui donne
+        \( 3/5 \), soit 0,6 en écriture décimale.
+      </div>
+    </div>
+  </div>
+  <p>
+    <strong>Et le « si et seulement si » ?</strong> Regarde bien : chacune des sept lignes
+    ci-dessus est <em>réversible</em>. Multiplier par un nombre strictement positif, développer,
+    regrouper, ajouter la même quantité aux deux membres, diviser par 10 : toutes ces opérations
+    peuvent se refaire à l'envers. Donc la dernière ligne est <strong>équivalente</strong> à la
+    première, et pas seulement impliquée par elle. C'est exactement ce qu'exige l'énoncé. Une
+    phrase du type « toutes les étapes sont des équivalences, d'où le si et seulement si » suffit
+    à sécuriser le point.
+  </p>
+</div>
+
+<div class="result">
+  <div class="result-title">Résultat 3 sur 3 — la condition demandée</div>
+  <p>
+    \[ \Pi^{C} \ge \Pi^{D} \quad\Longleftrightarrow\quad \boxed{\ \delta \;\ge\; \tfrac{3}{5} \;=\; 0{,}6\ } \]
+  </p>
+  <p>
+    Le calcul de Grandsart est identique, le jeu étant symétrique. Donc
+    <strong>(grim, grim) est un équilibre de Nash du jeu répété si et seulement si
+    \( \delta \ge 3/5 \)</strong>. Autrement dit : l'entente sur les prix peut tenir toute seule,
+    sans contrat ni gendarme, à condition que les deux stations accordent assez de valeur à leur
+    avenir commun. En dessous de 0,6, chacune préfère empocher le festin immédiat, et l'entente
+    s'effondre dès la première semaine.
+  </p>
+</div>
+
+<div class="box box-why">
+  <div class="box-title">Pour aller un peu plus loin — Nash, ou parfait en sous-jeux ?</div>
+  <p>
+    L'énoncé demande « équilibre », et c'est bien ce qu'on a vérifié : aucune station ne gagne à
+    changer sa règle de conduite. On peut cependant dire mieux, en une ligne. Comme la punition
+    consiste à jouer (B, B), qui est <em>l'équilibre de Nash du jeu d'étape</em> (question 4.1 !),
+    celle qui punit n'a jamais à se forcer : elle fait ce qui est déjà son intérêt immédiat. La
+    menace est donc <span class="term">crédible</span>, et le profil (grim, grim) est même, pour
+    \( \delta \ge 3/5 \), un <span class="term">équilibre de Nash parfait en sous-jeux</span>
+    (ENPS). Mentionner cette phrase est un bonus apprécié, jamais une obligation.
+  </p>
+</div>
+
+<h3>Vérification numérique — voir les nombres tomber juste</h3>
+
+<p>
+  Un résultat algébrique, c'est bien. Le voir fonctionner sur des nombres concrets, c'est
+  beaucoup mieux : ça transforme une formule en intuition, et ça te permet, le jour de l'examen,
+  de détecter une erreur de calcul en trente secondes. Testons deux valeurs de \( \delta \). À
+  chaque fois, je calcule <em>les deux</em> flux et je les compare.
+</p>
+
+<h4>Test n° 1 — \( \delta = 0{,}6 \), exactement au seuil</h4>
+
+<div class="calc">
+  <div class="step">
+    \[ \Pi^{C} \;=\; \frac{8}{1-0{,}6} \;=\; \frac{8}{0{,}4} \;=\; 20 \]
+    <div class="why">
+      Je remplace \( \delta \) par 0,6 dans la première formule. \( 1 - 0{,}6 = 0{,}4 \), puis
+      \( 8 \div 0{,}4 = 20 \). (Diviser par 0,4 revient à multiplier par 2,5 :
+      \( 8 \times 2{,}5 = 20 \).)
+    </div>
+  </div>
+  <div class="step">
+    \[ \Pi^{D} \;=\; 14 + \frac{4 \times 0{,}6}{0{,}4} \;=\; 14 + \frac{2{,}4}{0{,}4} \;=\; 14 + 6 \;=\; 20 \]
+    <div class="why">
+      Même substitution dans la seconde formule. \( 4 \times 0{,}6 = 2{,}4 \), puis
+      \( 2{,}4 \div 0{,}4 = 6 \), et \( 14 + 6 = 20 \).
+    </div>
+  </div>
+  <div class="step">
+    \[ 20 \;=\; 20 \quad\Longrightarrow\quad \text{indifférence exacte} \]
+    <div class="why">
+      Les deux payoffs sont <strong>égaux</strong>. C'est exactement ce que doit produire un
+      seuil : à \( \delta = 0{,}6 \), la station est parfaitement indifférente entre rester loyale
+      et trahir. Que les deux nombres tombent pile confirme que l'algèbre est juste. Si tu
+      trouvais 20 d'un côté et 21 de l'autre, tu saurais immédiatement qu'il y a une erreur
+      quelque part.
+    </div>
+  </div>
+</div>
+
+<h4>Test n° 2 — \( \delta = 0{,}8 \), des stations patientes</h4>
+
+<div class="calc">
+  <div class="step">
+    \[ \Pi^{C} \;=\; \frac{8}{1-0{,}8} \;=\; \frac{8}{0{,}2} \;=\; 40 \]
+    <div class="why">
+      \( 1 - 0{,}8 = 0{,}2 \) et \( 8 \div 0{,}2 = 40 \). Comme la station est très patiente, la
+      rente éternelle de 8 vaut énormément à ses yeux : l'équivalent de 40, soit cinq semaines de
+      profit d'entente d'un coup.
+    </div>
+  </div>
+  <div class="step">
+    \[ \Pi^{D} \;=\; 14 + \frac{4 \times 0{,}8}{0{,}2} \;=\; 14 + \frac{3{,}2}{0{,}2} \;=\; 14 + 16 \;=\; 30 \]
+    <div class="why">
+      \( 4 \times 0{,}8 = 3{,}2 \), puis \( 3{,}2 \div 0{,}2 = 16 \), et \( 14 + 16 = 30 \). Le
+      festin de 14 est toujours là, mais il est suivi d'une très longue punition à 4 par semaine
+      — et cette longueur pèse maintenant lourd.
+    </div>
+  </div>
+  <div class="step">
+    \[ 40 \;&gt;\; 30 \quad\Longrightarrow\quad \text{la collusion tient} \]
+    <div class="why">
+      Coopérer rapporte 10 de plus que trahir. Une station patiente ne trahira jamais. Conforme à
+      la condition trouvée, puisque \( 0{,}8 \ge 0{,}6 \) ✓
+    </div>
+  </div>
+</div>
+
+<h4>Test n° 3 (bonus) — \( \delta = 0{,}4 \), des stations impatientes</h4>
+
+<div class="calc">
+  <div class="step">
+    \[ \Pi^{C} \;=\; \frac{8}{0{,}6} \;\approx\; 13{,}33 \qquad\text{et}\qquad \Pi^{D} \;=\; 14 + \frac{1{,}6}{0{,}6} \;\approx\; 16{,}67 \]
+    <div class="why">
+      \( 8 \div 0{,}6 = 13{,}33\ldots \) et \( 4 \times 0{,}4 = 1{,}6 \), puis
+      \( 1{,}6 \div 0{,}6 \approx 2{,}67 \), d'où \( 14 + 2{,}67 = 16{,}67 \). Le symbole
+      \( \approx \) se lit « environ égal à » : on arrondit, parce que ces divisions ont une
+      infinité de décimales.
+    </div>
+  </div>
+  <div class="step">
+    \[ 13{,}33 \;&lt;\; 16{,}67 \quad\Longrightarrow\quad \text{la collusion s'effondre} \]
+    <div class="why">
+      Trahir rapporte davantage. Une station pressée casse son prix dès la première semaine, et
+      (grim, grim) n'est pas un équilibre. Conforme, puisque \( 0{,}4 &lt; 0{,}6 \) ✓
+    </div>
+  </div>
+</div>
+
+<table class="compare">
+  <tr>
+    <th class="left">Valeur de \( \delta \)</th>
+    <th>\( \Pi^{C} = \dfrac{8}{1-\delta} \)</th>
+    <th>\( \Pi^{D} = 14 + \dfrac{4\delta}{1-\delta} \)</th>
+    <th class="left">Verdict</th>
+  </tr>
+  <tr>
+    <td class="left">0,4 (impatientes)</td><td>13,33</td><td>16,67</td>
+    <td class="left">Trahir gagne → collusion impossible</td>
+  </tr>
+  <tr>
+    <td class="left"><strong>0,6 (le seuil)</strong></td><td><strong>20</strong></td><td><strong>20</strong></td>
+    <td class="left">Indifférence exacte → tout juste soutenable</td>
+  </tr>
+  <tr>
+    <td class="left">0,8 (patientes)</td><td>40</td><td>30</td>
+    <td class="left">Coopérer gagne → collusion soutenable</td>
+  </tr>
+</table>
+
+<figure>
+  <svg viewBox="0 0 600 400" width="100%" style="max-width:12cm" role="img"
+       aria-label="Graphique des deux payoffs escomptés en fonction de delta : la courbe de coopération et celle de déviation se croisent exactement en delta égal 0,6">
+    <defs>
+      <pattern id="e2q4f3-hach" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="8" stroke="#047857" stroke-width="1.2"></line>
+      </pattern>
+    </defs>
+    <polygon points="435,185 466,164 497,137 529,98 560,40 560,112 529,142 497,161 466,175"
+             fill="url(#e2q4f3-hach)" stroke="none"></polygon>
+    <line x1="60" y1="330" x2="575" y2="330" stroke="#111827" stroke-width="1.4"></line>
+    <line x1="60" y1="34" x2="60" y2="330" stroke="#111827" stroke-width="1.4"></line>
+    <text x="24" y="180" text-anchor="middle" font-size="13" transform="rotate(-90 24 180)">payoff escompté</text>
+    <text x="586" y="336" text-anchor="end" font-size="16" font-weight="bold">δ</text>
+    <line x1="56" y1="330" x2="60" y2="330" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="334" text-anchor="end" font-size="12">0</text>
+    <line x1="56" y1="272" x2="60" y2="272" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="276" text-anchor="end" font-size="12">8</text>
+    <line x1="56" y1="228" x2="60" y2="228" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="232" text-anchor="end" font-size="12">14</text>
+    <line x1="56" y1="185" x2="60" y2="185" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="189" text-anchor="end" font-size="12" font-weight="bold">20</text>
+    <line x1="56" y1="112" x2="60" y2="112" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="116" text-anchor="end" font-size="12">30</text>
+    <line x1="56" y1="40" x2="60" y2="40" stroke="#111827" stroke-width="1.2"></line>
+    <text x="52" y="44" text-anchor="end" font-size="12">40</text>
+    <line x1="185" y1="330" x2="185" y2="334" stroke="#111827" stroke-width="1.2"></line>
+    <text x="185" y="350" text-anchor="middle" font-size="12">0,2</text>
+    <line x1="310" y1="330" x2="310" y2="334" stroke="#111827" stroke-width="1.2"></line>
+    <text x="310" y="350" text-anchor="middle" font-size="12">0,4</text>
+    <line x1="435" y1="330" x2="435" y2="334" stroke="#111827" stroke-width="1.2"></line>
+    <text x="435" y="350" text-anchor="middle" font-size="12" font-weight="bold">0,6</text>
+    <line x1="560" y1="330" x2="560" y2="334" stroke="#111827" stroke-width="1.2"></line>
+    <text x="560" y="350" text-anchor="middle" font-size="12">0,8</text>
+    <polyline points="60,272 123,266 185,258 248,247 310,233 373,214 435,185 466,164 497,137 529,98 548,66 560,40"
+              fill="none" stroke="#047857" stroke-width="2.6"></polyline>
+    <polyline points="60,228 123,225 185,221 248,216 310,209 373,200 435,185 466,175 497,161 529,142 560,112"
+              fill="none" stroke="#be123c" stroke-width="2.6" stroke-dasharray="8 4"></polyline>
+    <line x1="435" y1="330" x2="435" y2="185" stroke="#111827" stroke-width="1.2" stroke-dasharray="4 4"></line>
+    <line x1="60" y1="185" x2="435" y2="185" stroke="#111827" stroke-width="1.2" stroke-dasharray="4 4"></line>
+    <circle cx="435" cy="185" r="4.5" fill="#111827"></circle>
+    <rect x="76" y="44" width="262" height="56" rx="4" fill="#ffffff" stroke="#d1d5db" stroke-width="1"></rect>
+    <line x1="86" y1="62" x2="120" y2="62" stroke="#047857" stroke-width="2.6"></line>
+    <text x="128" y="67" font-size="13.5">Π coopérer = 8 / (1 − δ)</text>
+    <line x1="86" y1="87" x2="120" y2="87" stroke="#be123c" stroke-width="2.6" stroke-dasharray="8 4"></line>
+    <text x="128" y="92" font-size="13.5">Π dévier = 14 + 4δ / (1 − δ)</text>
+    <path d="M 62 366 L 62 372 L 433 372 L 433 366" fill="none" stroke="#be123c" stroke-width="1.2"></path>
+    <text x="247" y="390" text-anchor="middle" font-size="12.5" style="fill:#be123c">la collusion s'effondre (δ &lt; 0,6)</text>
+    <path d="M 437 366 L 437 372 L 560 372 L 560 366" fill="none" stroke="#047857" stroke-width="1.2"></path>
+    <text x="498" y="390" text-anchor="middle" font-size="12.5" style="fill:#047857">elle tient</text>
+  </svg>
+  <figcaption>
+    Les deux payoffs escomptés en fonction de \( \delta \). À gauche du seuil, la courbe en tirets
+    (dévier) est au-dessus : trahir rapporte plus. Les deux courbes se croisent exactement en
+    <strong>\( \delta = 0{,}6 \)</strong>, où elles valent 20 toutes les deux — c'est notre test
+    n° 1. À droite, la zone hachurée mesure l'avantage de la coopération : il grandit très vite
+    avec la patience.
+  </figcaption>
+</figure>
+
+<div class="box box-why">
+  <div class="box-title">Pourquoi la courbe de coopération explose et pas l'autre</div>
+  <p>
+    Les deux courbes montent quand \( \delta \) augmente — normal : tout le futur vaut plus cher.
+    Mais la verte monte <em>beaucoup</em> plus vite. Pourquoi ? Parce que la coopération rapporte
+    8 chaque semaine éternellement, contre 4 seulement pour la déviation après la première
+    semaine. Plus on valorise l'éternité, plus l'écart entre « 8 pour toujours » et « 4 pour
+    toujours » se creuse. Le 14 de la trahison, lui, est <strong>fixe</strong> : c'est un gain
+    unique, qui ne profite d'aucune patience. Voilà toute l'économie de la question en une image
+    — et c'est aussi la raison pour laquelle il existe forcément un seuil, un point où la verte
+    rattrape puis dépasse la rouge.
+  </p>
+</div>
+
+<hr class="soft">
+
+<h2>5. Question 4.3 — quand la détection est retardée (8 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 4.3 (8 points)</div>
+<p>
+  <strong>4.3)</strong> Supposez maintenant que la détection soit retardée : une station qui casse
+  son prix n'est repérée par sa rivale qu'au bout de deux semaines. Une station qui dévie touche
+  donc son profit de déviation pendant deux semaines (\( t = 0 \) et \( t = 1 \)), et la punition
+  ne commence qu'en \( t = 2 \). Établissez la nouvelle condition sur \( \delta \) pour que la
+  collusion soit soutenable, puis comparez-la à celle de la question 4.2 et interprétez
+  (2 à 3 lignes).
+</p>
+</div>
+
+<h3>5.1 Traduisons la question</h3>
+
+<dl class="lexique">
+<dt>« la détection est retardée »</dt>
+<dd>
+  Jusqu'ici, on supposait que la rivale voyait la trahison <strong>immédiatement</strong> et
+  punissait dès la semaine suivante. Maintenant, elle met deux semaines à s'en apercevoir. Le
+  tricheur profite donc de son mauvais coup plus longtemps avant que la sanction ne tombe.
+</dd>
+<dt>« touche son profit de déviation pendant deux semaines (\( t = 0 \) et \( t = 1 \)) »</dt>
+<dd>
+  L'énoncé te donne le calendrier exact, ne l'invente pas : le tricheur encaisse <strong>14 deux
+  fois</strong> — une fois en \( t = 0 \) (non escompté) et une fois en \( t = 1 \) (escompté une
+  fois, donc pondéré par \( \delta \)).
+</dd>
+<dt>« la punition ne commence qu'en \( t = 2 \) »</dt>
+<dd>
+  À partir de la troisième semaine seulement, les deux stations jouent B pour toujours et
+  touchent 4 chacune. Ce flux commence donc en \( t = 2 \), avec un poids de \( \delta^2 \).
+</dd>
+<dt>« comparez et interprétez »</dt>
+<dd>
+  Deux ou trois lignes suffisent, mais elles sont notées : il faut dire si le seuil monte ou
+  descend, et <em>pourquoi</em> cela a du sens économiquement.
+</dd>
+</dl>
+
+<h3>5.2 La résolution, pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Le flux de coopération : inchangé</div>
+<div class="calc">
+<div class="step">
+\[ \Pi^{\text{coop}} = 8 + 8\delta + 8\delta^2 + \dots = \frac{8}{1-\delta} \]
+<div class="why">Rien ne change de ce côté : si personne ne triche, personne n'est jamais détecté,
+et les deux stations touchent 8 chaque semaine pour toujours. C'est la même somme géométrique
+qu'en 4.2.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Le flux de déviation : c'est lui qui change</div>
+<p>
+  Construisons-le semaine par semaine, en écrivant le poids de chaque terme au-dessus. C'est la
+  partie délicate : prends le temps de la poser.
+</p>
+<table class="compare">
+<tr><th>Semaine</th><th>\( t = 0 \)</th><th>\( t = 1 \)</th><th>\( t = 2 \)</th><th>\( t = 3 \)</th><th>…</th></tr>
+<tr><th class="left">profit encaissé</th><td>14</td><td>14</td><td>4</td><td>4</td><td>…</td></tr>
+<tr><th class="left">poids (escompte)</th><td>1</td><td>\( \delta \)</td><td>\( \delta^2 \)</td><td>\( \delta^3 \)</td><td>…</td></tr>
+</table>
+<div class="calc">
+<div class="step">
+\[ \Pi^{\text{dev}} = 14 + 14\delta + 4\delta^2 + 4\delta^3 + 4\delta^4 + \dots \]
+<div class="why">Je recopie simplement le tableau sous forme de somme : deux semaines à 14, puis
+4 pour l'éternité.</div>
+</div>
+<div class="step">
+\[ 4\delta^2 + 4\delta^3 + \dots = 4\delta^2\big(1 + \delta + \delta^2 + \dots\big) = \frac{4\delta^2}{1-\delta} \]
+<div class="why">Je mets \( 4\delta^2 \) en facteur dans la queue infinie ; ce qui reste entre
+parenthèses est la somme géométrique classique, qui vaut \( \frac{1}{1-\delta} \).</div>
+</div>
+<div class="step">
+\[ \Pi^{\text{dev}} = 14 + 14\delta + \frac{4\delta^2}{1-\delta} \]
+<div class="why">Voilà le flux complet du tricheur. Compare-le à celui de la question 4.2
+(\( 14 + \frac{4\delta}{1-\delta} \)) : il a gagné une semaine entière à 14 au lieu de 4, et la
+punition démarre un cran plus loin (\( \delta^2 \) au lieu de \( \delta \)).</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Poser la condition et la simplifier</div>
+<div class="calc">
+<div class="step">
+\[ \frac{8}{1-\delta} \ \ge\ 14 + 14\delta + \frac{4\delta^2}{1-\delta} \]
+<div class="why">La collusion tient si respecter l'entente rapporte au moins autant que
+trahir.</div>
+</div>
+<div class="step">
+\[ 8 \ \ge\ 14(1-\delta) + 14\delta(1-\delta) + 4\delta^2 \]
+<div class="why">Je multiplie les <strong>deux</strong> côtés par \( (1-\delta) \), qui est
+positif puisque \( \delta < 1 \) — le sens de l'inégalité est donc préservé. À gauche, les
+\( (1-\delta) \) se simplifient ; à droite, chaque terme est multiplié, et le dernier voit son
+dénominateur disparaître.</div>
+</div>
+<div class="step">
+\[ 8 \ \ge\ 14 - 14\delta + 14\delta - 14\delta^2 + 4\delta^2 \]
+<div class="why">Je développe les deux produits : \( 14(1-\delta) = 14 - 14\delta \), et
+\( 14\delta(1-\delta) = 14\delta - 14\delta^2 \).</div>
+</div>
+<div class="step">
+\[ 8 \ \ge\ 14 - 10\delta^2 \]
+<div class="why">Je regroupe : les termes \( -14\delta \) et \( +14\delta \) s'annulent
+exactement, et \( -14\delta^2 + 4\delta^2 = -10\delta^2 \). Remarque comme c'est net — c'est
+souvent le signe qu'on ne s'est pas trompé.</div>
+</div>
+<div class="step">
+\[ 10\delta^2 \ \ge\ 6 \quad \Longleftrightarrow \quad \delta^2 \ \ge\ \frac{3}{5} \]
+<div class="why">Je fais passer \( 10\delta^2 \) à gauche et le 8 à droite : \( 10\delta^2 \ge 14 - 8 = 6 \).
+Puis je divise par 10 : \( \delta^2 \ge 0{,}6 = 3/5 \).</div>
+</div>
+<div class="step">
+\[ \delta \ \ge\ \sqrt{\tfrac{3}{5}} \approx 0{,}77 \]
+<div class="why">Dernière étape, celle qu'on oublie : il faut prendre la <strong>racine
+carrée</strong>. Comme \( \delta \) est une probabilité-poids comprise entre 0 et 1, seule la
+racine positive a un sens. Numériquement, \( \sqrt{0{,}6} \approx 0{,}7746 \).</div>
+</div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 4.3</div>
+<p>\[ \delta \ \ge\ \sqrt{\tfrac{3}{5}} \approx 0{,}77 \]</p>
+<p>
+  contre \( \delta \ge \tfrac{3}{5} = 0{,}60 \) à la question 4.2 : le seuil de patience requis
+  <strong>augmente</strong>.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Vérifier sur deux valeurs numériques</div>
+<p>
+  Testons \( \delta = 0{,}7 \), qui se situe entre les deux seuils : la collusion devrait tenir
+  avec détection immédiate, mais pas avec détection retardée.
+</p>
+<div class="calc">
+<div class="step">
+\[ \Pi^{\text{coop}} = \frac{8}{1 - 0{,}7} = \frac{8}{0{,}3} \approx 26{,}67 \]
+<div class="why">Le flux de coopération.</div>
+</div>
+<div class="step">
+\[ \Pi^{\text{dev}} = 14 + 14(0{,}7) + \frac{4(0{,}49)}{0{,}3} = 14 + 9{,}8 + 6{,}53 \approx 30{,}33 \]
+<div class="why">Le flux de déviation avec détection retardée. Il dépasse 26,67 : trahir est
+<strong>rentable</strong>, la collusion s'effondre — conforme au seuil de 0,77.</div>
+</div>
+<div class="step">
+\[ \text{avec } \delta = 0{,}8 : \quad \Pi^{\text{coop}} = 40 \quad\text{contre}\quad \Pi^{\text{dev}} = 14 + 11{,}2 + 12{,}8 = 38 \]
+<div class="why">Cette fois 40 &gt; 38 : la collusion tient. Les nombres confirment le seuil
+\( \approx 0{,}77 \), qui se situe bien entre 0,7 et 0,8.</div>
+</div>
+</div>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 230" width="100%" style="max-width:12cm" role="img"
+     aria-label="Un axe du facteur d'escompte de zéro à un, avec les deux seuils, zéro virgule soixante pour la détection immédiate et zéro virgule soixante-dix-sept pour la détection retardée">
+  <line x1="50" y1="90" x2="420" y2="90" stroke="#111827" stroke-width="1.8"/>
+  <text x="44" y="112" font-size="12" text-anchor="middle">0</text>
+  <text x="420" y="112" font-size="12" text-anchor="middle">1</text>
+  <text x="235" y="30" font-size="12.5" text-anchor="middle" font-weight="bold">facteur d'escompte δ (la patience)</text>
+  <!-- seuil 0,60 -->
+  <line x1="272" y1="74" x2="272" y2="106" stroke="#4338ca" stroke-width="2.4"/>
+  <text x="272" y="68" font-size="12" text-anchor="middle" style="fill:#4338ca" font-weight="bold">0,60</text>
+  <!-- seuil 0,77 -->
+  <line x1="335" y1="74" x2="335" y2="106" stroke="#be123c" stroke-width="2.4"/>
+  <text x="335" y="68" font-size="12" text-anchor="middle" style="fill:#be123c" font-weight="bold">0,77</text>
+  <!-- zones -->
+  <line x1="272" y1="132" x2="420" y2="132" stroke="#4338ca" stroke-width="6"/>
+  <text x="50" y="136" font-size="11.5" style="fill:#4338ca">détection immédiate : collusion possible →</text>
+  <line x1="335" y1="162" x2="420" y2="162" stroke="#be123c" stroke-width="6"/>
+  <text x="50" y="166" font-size="11.5" style="fill:#be123c">détection retardée : collusion possible →</text>
+  <path d="M 276 196 L 331 196" stroke="#111827" stroke-width="1.6"/>
+  <polygon points="333,196 325,192 325,200" fill="#111827"/>
+  <text x="235" y="216" font-size="11.5" text-anchor="middle" font-weight="bold">le retard de détection déplace le seuil vers la droite : il faut être plus patient</text>
+</svg>
+<figcaption>
+  Figure — Les deux seuils sur l'axe de la patience. La bande bleue (détection immédiate) est plus
+  large que la rouge (détection retardée) : retarder la détection <em>réduit</em> l'éventail des
+  situations où l'entente peut tenir.
+</figcaption>
+</figure>
+
+<div class="box box-why">
+<div class="box-title">L'interprétation économique</div>
+<p>
+  Retarder la détection revient à <strong>offrir au tricheur une semaine de tricherie
+  gratuite</strong>. Son butin passe de « 14 une fois » à « 14 deux fois », tandis que la
+  sanction, elle, est repoussée d'un cran — et donc davantage escomptée, c'est-à-dire moins
+  redoutée.
+</p>
+<p>
+  La trahison devient donc plus tentante, et il faut une patience plus grande (\( \delta \ge 0{,}77 \)
+  au lieu de 0,60) pour que la perspective des punitions futures suffise encore à dissuader.
+</p>
+<p>
+  Le message pratique est important : <strong>la solidité d'une entente dépend autant de la
+  rapidité de la surveillance mutuelle que de la patience des firmes</strong>. C'est d'ailleurs
+  pour cela que les cartels réels s'organisent pour observer les prix de leurs membres le plus
+  vite possible — et que les autorités de concurrence cherchent, à l'inverse, à opacifier
+  l'information.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 4.3</div>
+<p>
+  « Avec une détection retardée, le tricheur touche 14 en \( t = 0 \) et en \( t = 1 \), puis 4 à
+  partir de \( t = 2 \) :
+  \( \Pi^{\text{dev}} = 14 + 14\delta + \frac{4\delta^2}{1-\delta} \).<br>
+  La condition \( \frac{8}{1-\delta} \ge 14 + 14\delta + \frac{4\delta^2}{1-\delta} \) donne, après
+  multiplication par \( (1-\delta) \) : \( 8 \ge 14 - 14\delta + 14\delta - 14\delta^2 + 4\delta^2
+  = 14 - 10\delta^2 \), soit \( 10\delta^2 \ge 6 \), donc
+  <strong>\( \delta \ge \sqrt{3/5} \approx 0{,}77 \)</strong>.<br>
+  Le seuil passe de 0,60 à 0,77 : la collusion est <em>plus difficile</em> à soutenir. Retarder la
+  détection offre au tricheur une période supplémentaire de profit élevé et repousse la punition,
+  qui est donc davantage escomptée ; il faut alors être plus patient pour renoncer à trahir. »
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 4.3</div>
+<ul>
+  <li><strong>Écrire \( 14 + 14\delta + \frac{4\delta}{1-\delta} \)</strong>, en oubliant que la
+      punition démarre en \( t = 2 \) : le numérateur doit porter \( \delta^2 \), pas \( \delta \).</li>
+  <li><strong>Oublier de prendre la racine</strong> et conclure \( \delta \ge 3/5 \). On obtient
+      \( \delta^2 \ge 3/5 \) : ce n'est pas la même chose, et c'est même l'inverse de ce que
+      l'énoncé veut montrer (0,77 &gt; 0,60).</li>
+  <li><strong>Escompter le premier 14.</strong> Le profit de la semaine \( t = 0 \) est encaissé
+      tout de suite : son poids est 1, pas \( \delta \).</li>
+  <li><strong>Répondre sans interpréter.</strong> L'énoncé demande explicitement 2 à 3 lignes de
+      comparaison : elles valent des points.</li>
+</ul>
+</div>
+
+<hr class="soft">
+
+<h2>6. Récapitulatif : toute la Question 4 sur une page</h2>
+
+<table class="compare">
+<tr><th>Q</th><th class="left">Réponse</th><th class="left">Le geste décisif</th></tr>
+<tr>
+  <td>4.1<br>(8 pts)</td>
+  <td class="left">B strictement dominante ⇒ (B, B) unique équilibre, à (4 ; 4)</td>
+  <td class="left">comparer colonne par colonne : 14 &gt; 8 et 4 &gt; 0</td>
+</tr>
+<tr>
+  <td>4.2<br>(14 pts)</td>
+  <td class="left">\( \delta \ge \tfrac{3}{5} = 0{,}60 \)</td>
+  <td class="left">comparer \( \frac{8}{1-\delta} \) à \( 14 + \frac{4\delta}{1-\delta} \)</td>
+</tr>
+<tr>
+  <td>4.3<br>(8 pts)</td>
+  <td class="left">\( \delta \ge \sqrt{\tfrac{3}{5}} \approx 0{,}77 \) : plus exigeant</td>
+  <td class="left">deux semaines à 14, punition en \( \delta^2 \), et ne pas oublier la racine</td>
+</tr>
+</table>
+
+<div class="box box-methode">
+<div class="box-title">La recette générale d'une condition de soutien</div>
+<ol>
+  <li><strong>Identifie les trois profits</strong> : coopération (ici 8), déviation (14),
+      punition (4).</li>
+  <li><strong>Écris le flux de coopération</strong> : \( \frac{\pi^{\text{coop}}}{1-\delta} \).</li>
+  <li><strong>Écris le flux de déviation</strong> en respectant scrupuleusement le calendrier de
+      l'énoncé : combien de périodes au profit élevé, à partir de quand la punition tombe.</li>
+  <li><strong>Pose l'inégalité</strong>, multiplie par \( (1-\delta) \), développe, regroupe.</li>
+  <li><strong>Isole \( \delta \)</strong> — et si tu obtiens \( \delta^2 \), \( \delta^3 \)…,
+      n'oublie pas la racine à la fin.</li>
+  <li><strong>Teste une valeur numérique</strong> de part et d'autre du seuil pour vérifier.</li>
+</ol>
+<p>
+  Généralisation utile : si la punition ne démarre qu'après \( n \) périodes de tricherie, la
+  condition devient \( \delta^n \ge \tfrac{3}{5} \) dans cet exercice. Plus \( n \) est grand,
+  plus le seuil se rapproche de 1 — au-delà d'un certain retard, aucune entente ne tient.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Checklist avant de tourner la page</div>
+<ol>
+  <li>Ai-je montré la dominance de B <em>pour les deux stations</em> en 4.1 ?</li>
+  <li>Ai-je écrit les deux flux <em>complets</em>, avec leurs sommes géométriques ?</li>
+  <li>Ai-je multiplié les deux côtés par \( (1-\delta) \) en justifiant que ce nombre est positif ?</li>
+  <li>En 4.3, le terme de punition porte-t-il bien \( \delta^2 \) ?</li>
+  <li>Ai-je pris la racine carrée à la fin, et comparé 0,77 à 0,60 ?</li>
+  <li>Ai-je écrit les 2 à 3 lignes d'interprétation demandées ?</li>
+</ol>
+</div>
+</section>

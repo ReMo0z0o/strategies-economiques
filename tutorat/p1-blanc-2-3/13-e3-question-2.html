@@ -1,0 +1,2685 @@
+<section class="chapter">
+  <div class="chapter-tag">Chapitre 13 — Examen n° 3, Question 2 · 40 points</div>
+  <h1>Pile je gagne 84, face je perds 39 : faut-il accepter ce pari ?</h1>
+  <p class="chapter-intro">
+    Un individu possède 400 euros. On lui propose de jouer à pile ou face : pile, il empoche
+    84 euros de plus ; face, il en perd 39. Doit-il dire oui ? Cinq sous-questions, 40 points, et
+    une découverte importante : <em>être averse au risque ne veut pas dire refuser tous les
+    paris</em>. Il faut seulement que le pari paie assez cher. Ce chapitre te montre comment
+    calculer ce « assez cher », au centime près.
+  </p>
+
+  <div class="box box-methode">
+    <div class="box-title">Comment lire ce chapitre</div>
+    <p>
+      Comme tous les autres : pour chaque sous-question, <strong>(1)</strong> l'énoncé rappelé avec
+      son barème ; <strong>(2)</strong> « traduisons en français simple » ; <strong>(3)</strong> le
+      cours dont tu as besoin ; <strong>(4)</strong> la résolution pas à pas, chaque ligne
+      justifiée ; <strong>(5)</strong> l'encadré vert « ce qu'il fallait écrire sur la copie » ;
+      <strong>(6)</strong> les pièges et le réflexe à retenir.
+    </p>
+    <p>
+      Une différence, cette fois : le vocabulaire de base (loterie, VMA, utilité espérée, aversion
+      au risque, équivalent certain, prime de risque) a <strong>déjà été construit en entier dans
+      le chapitre 2 du volume 1</strong>, avec la livreuse et son vélo cargo. Ici, on ne le refait
+      pas : on le rappelle en encadrés bleus « Rappel du volume 1 », courts et denses. Toute la
+      place gagnée est réinvestie dans les <strong>trois nouveautés</strong> de cet examen :
+    </p>
+    <ul>
+      <li><strong>démontrer</strong> l'aversion au risque par la dérivée seconde, et
+        <strong>énoncer le théorème</strong> qui la relie à la concavité (question 2.1) ;</li>
+      <li>la <strong>règle de décision</strong> « accepter ou refuser » — un mécanisme que le
+        volume 1 n'avait jamais utilisé (question 2.3) ;</li>
+      <li>le <strong>cadrage étroit</strong> (« narrow framing ») appliqué à une seconde
+        proposition de pari (question 2.5).</li>
+    </ul>
+    <p>
+      Si tu as oublié le volume 1, pas de panique : chaque rappel est autosuffisant pour répondre.
+      Mais si un encadré bleu te laisse perplexe, va relire la section indiquée — cinq minutes
+      suffisent.
+    </p>
+  </div>
+
+  <h2>1. L'énoncé, tel qu'il tombe à l'examen</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 2 (40 points), texte commun</div>
+    <p>
+      Considérez un individu rationnel possédant une richesse certaine de \( w = 400 \) euros et
+      dont la fonction d'utilité de Bernoulli est
+    </p>
+    <p>\[ u(w) = \sqrt{w} \]</p>
+    <p>
+      On lui propose le pari suivant, basé sur le lancer d'une pièce de monnaie équilibrée : si la
+      pièce tombe sur pile, il gagne 84 euros ; si elle tombe sur face, il perd 39 euros.
+    </p>
+    <p><strong>2.1)</strong> Montrez que cet individu est averse au risque. Énoncez précisément le
+      théorème du cours sur lequel vous vous appuyez. (8 points)</p>
+    <p><strong>2.2)</strong> Calculez la valeur monétaire attendue (VMA) du pari. Un individu
+      neutre au risque accepterait-il ce pari ? (6 points)</p>
+    <p><strong>2.3)</strong> Calculez l'utilité espérée de l'individu s'il accepte le pari.
+      Accepte-t-il le pari ? Détaillez votre raisonnement. (10 points)</p>
+    <p><strong>2.4)</strong> On suppose que l'individu accepte le pari. Sa richesse finale est
+      alors un actif risqué. Calculez l'équivalent certain \( C \) de cette richesse finale
+      risquée, ainsi que la prime de risque minimale
+      \( \mathrm{PRM} = \mathrm{VMA} - C \). (10 points)</p>
+    <p><strong>2.5)</strong> L'individu a accepté le pari. Avant de connaître le résultat du
+      lancer, on lui propose de prendre le même pari une seconde fois. Sans faire aucun calcul :
+      expliquez comment un décideur rationnel doit évaluer cette seconde proposition, et en quoi un
+      individu atteint du biais de cadrage étroit (« narrow framing ») raisonnerait
+      différemment. (6 points)</p>
+  </div>
+
+  <p>
+    Trois nombres, une racine carrée, et c'est tout : 400, 84, 39. L'énoncé tient en quatre lignes.
+    C'est la marque des bonnes questions d'examen — peu de données, beaucoup de raisonnement.
+    Regarde d'abord le trajet complet, parce que les cinq sous-questions s'emboîtent : la réponse
+    de la 2.3 sert directement dans la 2.4, et la 2.4 éclaire la 2.5.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 546 148" width="100%" style="max-width:12cm" role="img"
+         aria-label="Chaine des cinq sous-questions : 2.1 montrer l'aversion au risque, 2.2 la VMA du pari egale 22 virgule 5 euros, 2.3 l'utilite esperee egale 20 virgule 5 donc il accepte, 2.4 l'equivalent certain 420 virgule 25 et la prime de risque 2 virgule 25, 2.5 le cadrage etroit">
+      <g fill="none" stroke="#111827" stroke-width="1.3">
+        <rect x="6" y="16" width="96" height="88" rx="4"/>
+        <rect x="118" y="16" width="96" height="88" rx="4"/>
+        <rect x="230" y="16" width="96" height="88" rx="4"/>
+        <rect x="342" y="16" width="96" height="88" rx="4"/>
+        <rect x="454" y="16" width="86" height="88" rx="4"/>
+      </g>
+      <g stroke="#111827" stroke-width="1.6" fill="#111827">
+        <path d="M104 58 L114 58"/><path d="M110 54 L118 58 L110 62 Z"/>
+        <path d="M216 58 L226 58"/><path d="M222 54 L230 58 L222 62 Z"/>
+        <path d="M328 58 L338 58"/><path d="M334 54 L342 58 L334 62 Z"/>
+        <path d="M440 58 L450 58"/><path d="M446 54 L454 58 L446 62 Z"/>
+      </g>
+      <g font-size="12" text-anchor="middle">
+        <text x="54" y="34" font-weight="bold">2.1</text>
+        <text x="54" y="52">La forme de u</text>
+        <text x="54" y="68">u'' inférieure</text>
+        <text x="54" y="83">à zéro : averse</text>
+        <text x="54" y="98" font-weight="bold">8 pts</text>
+
+        <text x="166" y="34" font-weight="bold">2.2</text>
+        <text x="166" y="52">VMA du pari</text>
+        <text x="166" y="70" font-weight="bold">+22,5 €</text>
+        <text x="166" y="86">un neutre dit</text>
+        <text x="166" y="100">oui · 6 pts</text>
+
+        <text x="278" y="34" font-weight="bold">2.3</text>
+        <text x="278" y="52">Utilité espérée</text>
+        <text x="278" y="70" font-weight="bold">20,5 &gt; 20</text>
+        <text x="278" y="86">il accepte</text>
+        <text x="278" y="100">10 pts</text>
+
+        <text x="390" y="34" font-weight="bold">2.4</text>
+        <text x="390" y="52">C = 420,25 €</text>
+        <text x="390" y="68">VMA = 422,5 €</text>
+        <text x="390" y="84" font-weight="bold">PRM = 2,25 €</text>
+        <text x="390" y="100">10 pts</text>
+
+        <text x="497" y="34" font-weight="bold">2.5</text>
+        <text x="497" y="52">Un second</text>
+        <text x="497" y="68">pari : cadrage</text>
+        <text x="497" y="84">étroit</text>
+        <text x="497" y="100">6 pts</text>
+      </g>
+      <text x="273" y="130" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        2.3 utilise 2.1 · 2.4 utilise 2.2 et 2.3 · 2.5 raisonne sur tout ce qui précède
+      </text>
+      <text x="273" y="144" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        (les valeurs affichées sont les réponses : tu les retrouveras une par une)
+      </text>
+    </svg>
+    <figcaption>
+      Figure 1 — La carte du chapitre. Les cinq sous-questions forment une chaîne : chacune
+      réutilise un résultat de la précédente. Si tu te trompes en 2.3, la 2.4 tombe aussi — d'où
+      l'importance des vérifications de cohérence qu'on installera à chaque étape.
+    </figcaption>
+  </figure>
+
+  <h2>2. Ce que le volume 1 t'a déjà appris (rappels express)</h2>
+
+  <p>
+    Cette question est la jumelle de la question 2 de l'examen blanc n° 1 : même fonction
+    d'utilité \( \sqrt{w} \), même famille de calculs. Voici, en une page, tout le matériel dont tu
+    as besoin. Lis-la même si tu crois la connaître : les définitions sont écrites dans les termes
+    exacts qu'attend le correcteur.
+  </p>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel du volume 1 (chapitre 2, § 3) — loterie et états du monde</div>
+    <p>
+      Un <span class="term">état du monde</span> est un scénario possible, et un seul se réalisera.
+      Une <span class="term">loterie</span> (ou <span class="term">actif risqué</span>) est la liste
+      complète des états du monde, avec pour chacun sa <strong>probabilité</strong> et la
+      <strong>richesse finale totale</strong> qu'il procure. On note une loterie ainsi :
+    </p>
+    <p>\[ a_r = \bigl( \pi \text{ ; } x \text{ ; } 1-\pi \text{ ; } y \bigr) \]</p>
+    <p>
+      qui se lit « l'actif risqué donne \( x \) avec probabilité \( \pi \), et \( y \) avec
+      probabilité \( 1-\pi \) ». Les probabilités doivent toujours faire 1 au total.
+      <strong>Point capital</strong> : \( x \) et \( y \) sont des <em>richesses finales</em>, pas
+      des gains ni des pertes.
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel du volume 1 (chapitre 2, § 4) — la valeur monétaire attendue</div>
+    <p>
+      La <span class="term">valeur monétaire attendue</span> (VMA) d'une loterie est la
+      <strong>moyenne pondérée par les probabilités</strong> des montants qu'elle peut donner :
+    </p>
+    <p>\[ \mathrm{VMA}(a_r) = \pi\,x + (1-\pi)\,y \]</p>
+    <p>
+      C'est un montant <strong>en euros</strong>. Ce n'est pas ce que l'individu recevra (il
+      recevra \( x \) ou \( y \), jamais la moyenne) : c'est ce qu'il recevrait en moyenne si on
+      rejouait la loterie des milliers de fois.
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel du volume 1 (chapitre 2, § 5) — Bernoulli et utilité espérée</div>
+    <p>
+      La <span class="term">fonction d'utilité de Bernoulli</span> \( u(w) \) traduit un montant
+      <em>certain</em> en « note de satisfaction ». L'<span class="term">utilité espérée</span>
+      \( U \) (majuscule) d'une loterie est la moyenne pondérée de ces notes :
+    </p>
+    <p>\[ U(a_r) = \pi\,u(x) + (1-\pi)\,u(y) \]</p>
+    <p>
+      Le <strong>piège absolu</strong>, celui qui coûte le plus de points de tout le cours :
+      appliquer \( u \) à la moyenne au lieu de faire la moyenne des \( u \). En général
+    </p>
+    <p>\[ E\bigl[u(w)\bigr] \ne u\bigl(E[w]\bigr) \]</p>
+    <p>
+      L'ordre des opérations est : <strong>racine d'abord, moyenne ensuite</strong>.
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel du volume 1 (chapitre 2, § 6) — équivalent certain et prime de risque</div>
+    <p>
+      L'<span class="term">équivalent certain</span> \( C(a_r) \) est le montant sûr qui procure
+      exactement la même satisfaction que la loterie :
+    </p>
+    <p>\[ u\bigl(C(a_r)\bigr) = U(a_r) \]</p>
+    <p>
+      La <span class="term">prime de risque minimale</span> est l'écart entre la moyenne de la
+      loterie et cet équivalent certain :
+    </p>
+    <p>\[ \mathrm{PRM}(a_r) = \mathrm{VMA}(a_r) - C(a_r) \]</p>
+    <p>
+      Pour un individu averse au risque, \( C < \mathrm{VMA} \), donc \( \mathrm{PRM} > 0 \) : c'est
+      le « rabais » qu'il exige sur la moyenne pour accepter de porter le risque.
+    </p>
+  </div>
+
+  <table class="compare">
+    <tr>
+      <th class="left">Symbole</th>
+      <th class="left">Comment le lire à voix haute</th>
+      <th class="left">Ce que c'est</th>
+      <th class="left">Unité</th>
+    </tr>
+    <tr>
+      <td class="left">\( w \)</td>
+      <td class="left">« double vé »</td>
+      <td class="left">une richesse, un montant d'argent</td>
+      <td class="left">euros</td>
+    </tr>
+    <tr>
+      <td class="left">\( u(w) \)</td>
+      <td class="left">« u de double vé »</td>
+      <td class="left">la satisfaction d'un montant <em>certain</em></td>
+      <td class="left">« utils » (sans unité)</td>
+    </tr>
+    <tr>
+      <td class="left">\( u'(w) \)</td>
+      <td class="left">« u prime de double vé »</td>
+      <td class="left">l'utilité marginale : le gain de satisfaction du prochain euro</td>
+      <td class="left">utils par euro</td>
+    </tr>
+    <tr>
+      <td class="left">\( u''(w) \)</td>
+      <td class="left">« u seconde de double vé »</td>
+      <td class="left">la variation de \( u' \) : est-ce que le prochain euro rapporte plus ou
+        moins que le précédent ?</td>
+      <td class="left">—</td>
+    </tr>
+    <tr>
+      <td class="left">\( U(a_r) \)</td>
+      <td class="left">« grand U de a indice r »</td>
+      <td class="left">la satisfaction moyenne d'une <em>loterie</em></td>
+      <td class="left">utils</td>
+    </tr>
+    <tr>
+      <td class="left">\( \mathrm{VMA} \)</td>
+      <td class="left">« vé-èm-a »</td>
+      <td class="left">la moyenne en argent</td>
+      <td class="left">euros</td>
+    </tr>
+    <tr>
+      <td class="left">\( C \)</td>
+      <td class="left">« C » ou « l'équivalent certain »</td>
+      <td class="left">le montant sûr aussi satisfaisant que la loterie</td>
+      <td class="left">euros</td>
+    </tr>
+    <tr>
+      <td class="left">\( \mathrm{PRM} \)</td>
+      <td class="left">« pé-èr-èm »</td>
+      <td class="left">le prix du risque</td>
+      <td class="left">euros</td>
+    </tr>
+  </table>
+
+  <p>
+    Voilà. Avec ces huit lignes, tu peux déjà répondre à trois des cinq sous-questions. Passons au
+    socle du problème : dessiner correctement la loterie de <em>ce</em> pari.
+  </p>
+
+  <h2>3. Le socle : quelle est exactement la loterie de ce pari ?</h2>
+
+  <h3>3.1 Les deux états du monde</h3>
+
+  <p>
+    Une pièce de monnaie <strong>équilibrée</strong> (on dit aussi « non truquée ») a exactement une
+    chance sur deux de tomber sur pile et une chance sur deux de tomber sur face. En langage de
+    probabilités :
+  </p>
+
+  <p>\[ P(\text{pile}) = \frac{1}{2} = 0{,}5 \qquad\qquad P(\text{face}) = \frac{1}{2} = 0{,}5 \]</p>
+
+  <p>
+    Il y a donc <strong>deux états du monde</strong> : « la pièce tombe sur pile » et « la pièce
+    tombe sur face ». Ils sont exhaustifs (il n'y a pas de troisième possibilité — on écarte la
+    pièce qui reste sur la tranche) et incompatibles (ils ne peuvent pas se produire ensemble).
+    Leurs probabilités s'additionnent bien pour donner \( \tfrac12 + \tfrac12 = 1 \).
+  </p>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège n° 1 — ce que l'énoncé te donne n'est pas ce que tu dois utiliser</div>
+    <p>
+      Relis l'énoncé : « il <strong>gagne</strong> 84 euros », « il <strong>perd</strong> 39 euros ».
+      Ce sont des <em>variations</em> de richesse, pas des richesses. Or toute la théorie de la
+      décision face au risque se construit sur les <strong>richesses finales</strong> : le montant
+      total que la personne possède à la fin, une fois que le monde a choisi son état.
+    </p>
+    <p>
+      Pourquoi cette insistance ? Parce que la fonction d'utilité \( u(w) = \sqrt{w} \) mesure la
+      satisfaction d'<em>être riche de \( w \) euros</em>, pas la satisfaction de « gagner 84 ».
+      Écrire \( \sqrt{84} \) n'a aucun sens économique ici : personne ne vit avec « 84 euros de
+      gain », on vit avec un patrimoine.
+    </p>
+    <p>
+      Ce piège a deux têtes, et on les traitera séparément :
+    </p>
+    <ul>
+      <li><strong>tête n° 1</strong> (question 2.3) : calculer \( \tfrac12\sqrt{84} \) au lieu de
+        \( \tfrac12\sqrt{484} \) ;</li>
+      <li><strong>tête n° 2</strong> (questions 2.2 et 2.4) : confondre la <strong>VMA du
+        pari</strong> (22,5 €, un gain moyen) et la <strong>VMA de la richesse finale</strong>
+        (422,5 €, un patrimoine moyen). C'est LE piège de cet énoncé, et on lui consacrera une
+        section entière.</li>
+    </ul>
+  </div>
+
+  <h3>3.2 De la richesse de départ aux richesses finales</h3>
+
+  <p>
+    Le calcul est une addition d'école primaire, mais faisons-le proprement, parce que c'est la
+    fondation de tout le reste. La richesse de départ, celle que l'individu possède <em>avant</em>
+    de jouer, vaut \( w = 400 \) euros. Elle est <strong>certaine</strong> : personne ne peut la lui
+    prendre.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ w_{\text{pile}} = 400 + 84 = 484 \]
+      <div class="why">Si la pièce tombe sur pile, il ajoute 84 euros à ses 400 euros. Le signe est
+        un « plus » parce que c'est un gain.</div>
+    </div>
+    <div class="step">
+      \[ w_{\text{face}} = 400 - 39 = 361 \]
+      <div class="why">Si la pièce tombe sur face, il retire 39 euros de ses 400 euros. Le signe est
+        un « moins » parce que c'est une perte. Attention : on écrit \( 400 - 39 \), et surtout pas
+        \( -39 \) tout seul — il ne se retrouve pas avec une richesse négative, il lui reste
+        361 euros.</div>
+    </div>
+  </div>
+
+  <p>
+    La loterie de la richesse finale s'écrit donc, avec la notation du cours :
+  </p>
+
+  <p>\[ a_r = \Bigl( \tfrac{1}{2} \text{ ; } 484 \text{ ; } \tfrac{1}{2} \text{ ; } 361 \Bigr) \]</p>
+
+  <p>
+    Et si l'individu <strong>refuse</strong> le pari, il n'y a plus de loterie du tout : il garde
+    ses 400 euros avec certitude. On dira que refuser, c'est choisir l'<span class="term">actif
+    sûr</span> \( a_s = 400 \).
+  </p>
+
+  <p>
+    Voici les deux options dessinées côte à côte. Ce petit arbre, tu dois savoir le tracer en
+    trente secondes le jour de l'examen : c'est lui qui t'évite la plupart des erreurs.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 560 268" width="100%" style="max-width:12cm" role="img"
+         aria-label="Arbre du pari : au depart 400 euros ; s'il refuse il garde 400 euros avec certitude ; s'il accepte, une branche pile de probabilite un demi mene a 484 euros et une branche face de probabilite un demi mene a 361 euros">
+      <rect x="8" y="104" width="96" height="56" rx="4" fill="none" stroke="#111827" stroke-width="1.6"/>
+      <text x="56" y="126" font-size="12.5" text-anchor="middle" font-weight="bold">Départ</text>
+      <text x="56" y="146" font-size="13" text-anchor="middle" font-weight="bold">w = 400 €</text>
+
+      <line x1="104" y1="132" x2="176" y2="222" stroke="#111827" stroke-width="1.6"/>
+      <text x="126" y="196" font-size="12" font-weight="bold">refuser</text>
+
+      <rect x="180" y="196" width="150" height="52" rx="4" fill="none" stroke="#111827" stroke-width="1.4"/>
+      <text x="255" y="217" font-size="12.5" text-anchor="middle">actif sûr</text>
+      <text x="255" y="237" font-size="13" text-anchor="middle" font-weight="bold">400 € à coup sûr</text>
+
+      <line x1="104" y1="120" x2="176" y2="92" stroke="#111827" stroke-width="1.6"/>
+      <text x="120" y="98" font-size="12" font-weight="bold">accepter</text>
+
+      <circle cx="182" cy="90" r="7" fill="none" stroke="#111827" stroke-width="1.6"/>
+      <text x="182" y="72" font-size="11.5" text-anchor="middle" style="fill:#4b5563">le hasard</text>
+
+      <line x1="189" y1="84" x2="330" y2="40" stroke="#111827" stroke-width="2"/>
+      <line x1="189" y1="96" x2="330" y2="148" stroke="#111827" stroke-width="2" stroke-dasharray="7 4"/>
+
+      <text x="252" y="52" font-size="13" text-anchor="middle" font-weight="bold">1/2</text>
+      <text x="252" y="67" font-size="11.5" text-anchor="middle">pile</text>
+      <text x="252" y="122" font-size="13" text-anchor="middle" font-weight="bold">1/2</text>
+      <text x="252" y="137" font-size="11.5" text-anchor="middle">face</text>
+
+      <rect x="336" y="14" width="216" height="54" rx="4" fill="none" stroke="#111827" stroke-width="1.4"/>
+      <text x="348" y="34" font-size="12">gain de +84 € :</text>
+      <text x="348" y="55" font-size="13.5" font-weight="bold">400 + 84 = 484 €</text>
+
+      <rect x="336" y="120" width="216" height="54" rx="4" fill="none" stroke="#111827"
+            stroke-width="1.4" stroke-dasharray="7 4"/>
+      <text x="348" y="140" font-size="12">perte de −39 € :</text>
+      <text x="348" y="161" font-size="13.5" font-weight="bold">400 − 39 = 361 €</text>
+
+      <text x="280" y="266" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        les deux nombres qui comptent pour toute la suite : 484 et 361
+      </text>
+    </svg>
+    <figcaption>
+      Figure 2 — L'arbre du pari. Trait plein = pile, trait pointillé = face (le pointillé permet de
+      distinguer les deux branches même sur une photocopie en noir et blanc). Le petit cercle
+      symbolise le hasard : c'est la pièce, pas l'individu, qui choisit la branche. Retiens bien :
+      au bout des branches, on écrit <strong>484</strong> et <strong>361</strong>, jamais
+      <strong>+84</strong> et <strong>−39</strong>.
+    </figcaption>
+  </figure>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe de méthode n° 1 — poser la loterie avant d'écrire quoi que ce soit</div>
+    <p>
+      Devant n'importe quel énoncé de décision face au risque, la première chose que tu écris sur ta
+      copie, ce n'est jamais une formule : c'est un tableau à trois colonnes.
+    </p>
+    <table class="data">
+      <tr><th>État du monde</th><th>Probabilité</th><th>Richesse finale</th></tr>
+      <tr><td>pile</td><td>\( \tfrac{1}{2} \)</td><td>\( 400 + 84 = 484 \) €</td></tr>
+      <tr><td>face</td><td>\( \tfrac{1}{2} \)</td><td>\( 400 - 39 = 361 \) €</td></tr>
+    </table>
+    <p>
+      Trois vérifications immédiates, qui prennent cinq secondes et rapportent beaucoup :
+      <strong>(1)</strong> les probabilités font 1 ; <strong>(2)</strong> les richesses finales sont
+      toutes positives (sinon la racine carrée n'existe pas) ; <strong>(3)</strong> le montant de
+      départ apparaît dans chaque ligne. Si l'une des trois échoue, tu t'es trompé — corrige avant
+      de continuer.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>4. Question 2.1 — Montrer que l'individu est averse au risque (8 points)</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 2.1 (8 points)</div>
+    <p>
+      Montrez que cet individu est averse au risque. Énoncez précisément le théorème du cours sur
+      lequel vous vous appuyez.
+    </p>
+  </div>
+
+  <h3>4.1 Traduisons la question en français simple</h3>
+
+  <p>
+    Cette question a l'air courte. Elle vaut pourtant 8 points, et elle en contient deux, cachées
+    derrière deux verbes. Décortiquons-la mot par mot.
+  </p>
+
+  <dl class="lexique">
+    <dt>« Montrez que »</dt>
+    <dd>
+      Ce n'est pas « dites que », ni « affirmez que ». C'est un ordre de
+      <strong>démonstration</strong> : on te demande de partir de la formule
+      \( u(w) = \sqrt{w} \), de faire un <em>calcul</em>, et d'arriver à la conclusion. Écrire
+      « l'individu est averse au risque car sa fonction est une racine carrée » ne rapporte
+      quasiment rien : c'est une affirmation, pas une démonstration. Le correcteur veut voir la
+      <strong>dérivée seconde</strong>.
+    </dd>
+    <dt>« averse au risque »</dt>
+    <dd>
+      Se lit « avèrs au risque ». Le mot vient du latin <em>aversio</em>, « le fait de se
+      détourner ». Un individu averse au risque est quelqu'un qui, mis face à un choix entre
+      recevoir une somme <em>à coup sûr</em> et jouer une loterie qui donne <em>en moyenne</em>
+      cette même somme, préfère toujours la somme sûre. Traduction quotidienne : entre « je te
+      donne 100 euros » et « on tire à pile ou face, pile tu gagnes 200, face tu n'as rien », il
+      prend les 100 euros. Ce n'est pas de la peur ni de la lâcheté : c'est une propriété
+      mathématique de sa fonction d'utilité.
+    </dd>
+    <dt>« Énoncez précisément »</dt>
+    <dd>
+      « Précisément » est là pour te prévenir : une paraphrase vague coûte des points. Il faut
+      écrire le théorème <strong>avec ses quantificateurs</strong> (« pour tout \( w > 0 \) ») et
+      avec le bon sens de l'implication (ici c'est une <strong>équivalence</strong>, « si et
+      seulement si »). Le barème officiel donne <strong>4 points sur 8</strong> pour ce seul
+      énoncé, et 4 points pour le calcul. Autant dire que réciter le théorème rapporte autant que
+      dériver deux fois.
+    </dd>
+    <dt>« le théorème du cours »</dt>
+    <dd>
+      Il n'y en a qu'un qui convienne ici : celui qui relie <strong>l'attitude face au risque</strong>
+      (un comportement) à la <strong>forme géométrique de la fonction d'utilité</strong> (une
+      propriété mathématique). C'est le théorème « aversion au risque ⇔ concavité ». On l'énoncera
+      en entier au § 4.5.
+    </dd>
+  </dl>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi ce théorème existe-t-il ?</div>
+    <p>
+      Parce que « être averse au risque » est une définition <em>comportementale</em> : elle parle
+      de préférences, de choix, de ce que la personne ferait. Impossible à vérifier directement sans
+      lui poser une infinité de questions (« et entre cette loterie-ci et ce montant sûr-là ? »).
+    </p>
+    <p>
+      Le théorème transforme cette question infinie en un <strong>test à une ligne</strong> :
+      calcule \( u'' \), regarde son signe, tu as ta réponse. C'est un formidable raccourci, et
+      c'est pour cela qu'il tombe à l'examen presque à chaque session.
+    </p>
+  </div>
+
+  <h3>4.2 Le cours dont tu as besoin (1) — les trois attitudes face au risque</h3>
+
+  <p>
+    Avant de parler de courbure, plantons le décor. Face à un pari, il existe exactement
+    <strong>trois</strong> attitudes possibles dans ce cours. On les définit toutes les trois en
+    comparant deux objets : la loterie \( a_r \) d'un côté, et sa <strong>valeur monétaire
+    attendue reçue avec certitude</strong> de l'autre.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — les trois attitudes face au risque</div>
+    <p>
+      Soit une loterie \( a_r \) et soit \( \mathrm{VMA}(a_r) \) sa valeur monétaire attendue.
+      Imagine qu'on propose à l'individu le choix suivant : « ou bien tu joues la loterie, ou bien
+      je te donne \( \mathrm{VMA}(a_r) \) euros cash, sans jouer ». Alors l'individu est :
+    </p>
+    <ul>
+      <li><strong>averse au risque</strong> s'il préfère <em>toujours</em> l'argent cash :
+        \( u\bigl(\mathrm{VMA}(a_r)\bigr) > U(a_r) \) ;</li>
+      <li><strong>neutre au risque</strong> s'il est <em>toujours</em> indifférent entre les deux :
+        \( u\bigl(\mathrm{VMA}(a_r)\bigr) = U(a_r) \) ;</li>
+      <li><strong>amateur de risque</strong> (on dit aussi « preneur de risque ») s'il préfère
+        <em>toujours</em> jouer : \( u\bigl(\mathrm{VMA}(a_r)\bigr) < U(a_r) \).</li>
+    </ul>
+    <p>
+      Le mot <em>toujours</em> compte : l'attitude est une propriété de la personne, pas de la
+      loterie. Elle doit valoir pour n'importe quelle loterie qu'on lui propose.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Un exemple de la vie de tous les jours</div>
+    <p>
+      Ton contrat d'assurance habitation est la preuve que tu es averse au risque. Une compagnie
+      d'assurance doit gagner de l'argent : la prime qu'elle te fait payer est
+      <em>supérieure</em> au dommage moyen qu'elle te remboursera. En moyenne, tu perds de l'argent
+      en t'assurant. Et pourtant tu signes. Pourquoi ? Parce que tu préfères perdre 200 euros à coup
+      sûr chaque année plutôt que d'avoir une chance sur mille de perdre 150 000 euros — alors même
+      que la seconde option est « moins chère en moyenne » (150 euros).
+    </p>
+    <p>
+      À l'inverse, quelqu'un qui joue à l'EuroMillions se comporte, sur ce billet, comme un amateur
+      de risque : la VMA d'un billet à 2,50 euros est d'environ 1,20 euro, et il achète quand même.
+    </p>
+  </div>
+
+  <h3>4.3 Le cours dont tu as besoin (2) — ce que « concave » veut dire</h3>
+
+  <p>
+    Le mot <span class="term">concave</span> décrit une <strong>forme</strong>, une courbure. Voici
+    trois façons de le comprendre ; garde celle qui te parle le plus.
+  </p>
+
+  <ol>
+    <li>
+      <strong>L'image du dos d'âne.</strong> Une courbe concave monte, mais de moins en moins vite :
+      elle s'aplatit. Elle a la forme du sommet d'une colline vue de profil, ou du dos d'un âne.
+    </li>
+    <li>
+      <strong>Le test du bol.</strong> Si tu essayais de verser de l'eau <em>sur</em> la courbe,
+      elle glisserait et coulerait : la courbe est un bol <em>retourné</em>. (Une courbe
+      <span class="term">convexe</span>, elle, retient l'eau : c'est un bol à l'endroit.)
+    </li>
+    <li>
+      <strong>Le test de la corde</strong> — c'est la définition mathématique, et c'est celle qui
+      sert pour l'aversion au risque. Prends deux points quelconques de la courbe et relie-les par
+      un segment de droite (une « corde »). Si la corde passe <strong>en dessous</strong> de la
+      courbe entre ces deux points, la fonction est concave.
+    </li>
+  </ol>
+
+  <figure>
+    <svg viewBox="0 0 560 232" width="100%" style="max-width:12cm" role="img"
+         aria-label="Trois vignettes comparant une fonction concave dont la corde passe sous la courbe, une fonction lineaire dont la corde est confondue avec la courbe, et une fonction convexe dont la corde passe au-dessus de la courbe">
+      <g stroke="#111827" stroke-width="1.2" fill="none">
+        <path d="M30 178 L30 34"/><path d="M30 178 L178 178"/>
+        <path d="M212 178 L212 34"/><path d="M212 178 L360 178"/>
+        <path d="M394 178 L394 34"/><path d="M394 178 L542 178"/>
+      </g>
+
+      <path d="M38 166 Q 78 60 168 46" fill="none" stroke="#111827" stroke-width="2.4"/>
+      <line x1="38" y1="166" x2="168" y2="46" stroke="#111827" stroke-width="1.4" stroke-dasharray="6 4"/>
+      <circle cx="38" cy="166" r="3.2" fill="#111827"/>
+      <circle cx="168" cy="46" r="3.2" fill="#111827"/>
+
+      <line x1="220" y1="166" x2="350" y2="46" stroke="#111827" stroke-width="2.4"/>
+      <line x1="220" y1="166" x2="350" y2="46" stroke="#ffffff" stroke-width="1" stroke-dasharray="6 4"/>
+      <circle cx="220" cy="166" r="3.2" fill="#111827"/>
+      <circle cx="350" cy="46" r="3.2" fill="#111827"/>
+
+      <path d="M402 166 Q 492 156 532 46" fill="none" stroke="#111827" stroke-width="2.4"/>
+      <line x1="402" y1="166" x2="532" y2="46" stroke="#111827" stroke-width="1.4" stroke-dasharray="6 4"/>
+      <circle cx="402" cy="166" r="3.2" fill="#111827"/>
+      <circle cx="532" cy="46" r="3.2" fill="#111827"/>
+
+      <g font-size="12" text-anchor="middle">
+        <text x="104" y="24" font-weight="bold">CONCAVE</text>
+        <text x="286" y="24" font-weight="bold">LINÉAIRE</text>
+        <text x="468" y="24" font-weight="bold">CONVEXE</text>
+        <text x="104" y="198">corde EN DESSOUS</text>
+        <text x="286" y="198">corde CONFONDUE</text>
+        <text x="468" y="198">corde AU-DESSUS</text>
+        <text x="104" y="214" font-weight="bold">u'' &lt; 0</text>
+        <text x="286" y="214" font-weight="bold">u'' = 0</text>
+        <text x="468" y="214" font-weight="bold">u'' &gt; 0</text>
+        <text x="104" y="228" style="fill:#4b5563">averse</text>
+        <text x="286" y="228" style="fill:#4b5563">neutre</text>
+        <text x="468" y="228" style="fill:#4b5563">amateur de risque</text>
+      </g>
+    </svg>
+    <figcaption>
+      Figure 3 — Le test de la corde. Trait épais = la fonction d'utilité, trait pointillé = la
+      corde qui relie deux de ses points. À gauche (concave), la corde est sous la courbe : la
+      loterie, dont l'utilité espérée se lit <em>sur la corde</em>, vaut moins que le montant sûr,
+      dont l'utilité se lit <em>sur la courbe</em>. C'est exactement l'aversion au risque. Au
+      centre, corde et courbe se confondent : l'individu est indifférent, il est neutre. À droite,
+      la corde domine : l'individu préfère jouer.
+    </figcaption>
+  </figure>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi la corde, c'est la loterie</div>
+    <p>
+      Ce point est le cœur de tout le chapitre, alors prends trente secondes de plus. Reprends la
+      formule de l'utilité espérée :
+    </p>
+    <p>\[ U(a_r) = \pi\,u(x) + (1-\pi)\,u(y) \]</p>
+    <p>
+      Mathématiquement, « \( \pi \) fois le point A plus \( (1-\pi) \) fois le point B », avec des
+      poids qui font 1, c'est la formule d'un <strong>point situé sur le segment [AB]</strong>. Donc
+      l'utilité espérée d'une loterie à deux issues, c'est toujours une <strong>hauteur lue sur la
+      corde</strong> qui joint les deux points de la courbe.
+    </p>
+    <p>
+      Et l'utilité de la moyenne, \( u\bigl(\mathrm{VMA}\bigr) \) ? C'est une hauteur lue
+      <strong>sur la courbe</strong>, à la même abscisse. Corde en dessous de la courbe = loterie
+      moins bien que le montant sûr = aversion au risque. Tout le théorème tient dans ce dessin.
+    </p>
+  </div>
+
+  <h3>4.4 Le cours dont tu as besoin (3) — la dérivée seconde, détecteur de courbure</h3>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel du volume 1 (chapitre 0, § 6) — ce que mesure une dérivée</div>
+    <p>
+      La <span class="term">dérivée</span> \( u'(w) \), lue « u prime de w », mesure la
+      <strong>pente</strong> de la courbe au point \( w \) : de combien monte \( u \) quand \( w \)
+      augmente d'une toute petite unité. Une pente positive veut dire « ça monte ».
+    </p>
+    <p>
+      La <span class="term">dérivée seconde</span> \( u''(w) \), lue « u seconde de w », est la
+      dérivée de la dérivée : elle mesure de combien la <strong>pente elle-même</strong> change.
+      Pente qui diminue = courbe qui s'aplatit = concave.
+    </p>
+    <p>
+      La règle de dérivation dont on a besoin est celle des <strong>puissances</strong> :
+    </p>
+    <p>\[ \text{si } f(w) = w^{n} \text{ alors } f'(w) = n\,w^{\,n-1} \]</p>
+    <p>
+      « L'exposant descend devant, et on lui enlève 1. » Elle marche pour <em>tous</em> les
+      exposants, y compris les fractions comme \( \tfrac12 \) et les négatifs.
+    </p>
+  </div>
+
+  <p>
+    Voici la traduction économique, celle qu'on attend dans une copie d'économie et pas seulement
+    dans une copie de maths :
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — utilité marginale et utilité marginale décroissante</div>
+    <p>
+      L'<span class="term">utilité marginale</span> de la richesse est \( u'(w) \) : c'est le
+      supplément de satisfaction que procure <strong>un euro de plus</strong>, quand on en possède
+      déjà \( w \).
+    </p>
+    <p>
+      On dit qu'elle est <span class="term">décroissante</span> si \( u'(w) \) diminue quand
+      \( w \) augmente — autrement dit si \( u''(w) < 0 \). Traduction : <em>plus tu es riche, moins
+      l'euro suivant te fait plaisir.</em>
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Un exemple de la vie de tous les jours</div>
+    <p>
+      Le premier verre d'eau après une randonnée dans la chaleur : un bonheur. Le deuxième : très
+      agréable. Le cinquième : tu le bois par politesse. Le dixième : tu ne peux plus. La quantité
+      d'eau a augmenté à chaque fois du même volume, mais le plaisir apporté par chaque verre
+      supplémentaire diminue. C'est exactement \( u' > 0 \) (chaque verre apporte encore quelque
+      chose, donc l'utilité totale monte) et \( u'' < 0 \) (mais de moins en moins).
+    </p>
+    <p>
+      Avec de l'argent : 100 euros trouvés dans la rue changent la semaine d'un étudiant, mais ne
+      changent rien à celle d'un millionnaire. Même somme, satisfaction très différente, parce
+      qu'ils ne partent pas du même \( w \).
+    </p>
+  </div>
+
+  <p>
+    Ce lien entre « chaque euro supplémentaire rapporte moins » et « je refuse les paris
+    équitables » est très intuitif une fois qu'on le voit sur un pari symétrique. Imagine un pari
+    « je gagne 39 ou je perds 39, à pile ou face », en partant de 400 euros.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ u(439) - u(400) = \sqrt{439} - 20 \approx 20{,}952 - 20 = +0{,}952 \]
+      <div class="why">Le gain de satisfaction si je gagne 39 euros. J'ajoute 39 à 400, je prends la
+        racine, je retire l'utilité de départ.</div>
+    </div>
+    <div class="step">
+      \[ u(400) - u(361) = 20 - 19 = +1{,}000 \]
+      <div class="why">La perte de satisfaction si je perds 39 euros. Elle est
+        <strong>plus grande</strong> (1,000) que le gain de satisfaction (0,952), pour exactement le
+        même nombre d'euros en jeu.</div>
+    </div>
+    <div class="step">
+      \[ 0{,}952 < 1{,}000 \;\Longrightarrow\; \tfrac12(0{,}952) - \tfrac12(1{,}000) < 0 \]
+      <div class="why">En moyenne, ce pari symétrique fait <em>perdre</em> de la satisfaction. Voilà
+        pourquoi un individu à utilité marginale décroissante refuse tout pari équitable : côté
+        perte, les euros perdus sont « chers » ; côté gain, les euros gagnés sont « bon marché ».</div>
+    </div>
+  </div>
+
+  <p>
+    Retiens cette phrase, elle vaut de l'or à l'oral comme à l'écrit : <strong>pour un individu
+    averse au risque, un euro perdu fait plus mal qu'un euro gagné ne fait plaisir</strong>. Ce
+    n'est pas de la psychologie, c'est \( u'' < 0 \).
+  </p>
+
+  <h3>4.5 Le théorème du cours, énoncé mot à mot</h3>
+
+  <p>
+    Le voici. Apprends-le par cœur : ces trois lignes valent 4 points, et elles retomberont dans
+    toutes les questions d'aversion au risque de ta scolarité.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Théorème (aversion au risque et concavité)</div>
+    <p>
+      Soit un individu dont les préférences face au risque sont représentées par une fonction
+      d'utilité de Bernoulli \( u \), dérivable deux fois sur \( \mathbb{R}_+^{*} \). Alors les
+      trois propositions suivantes sont <strong>équivalentes</strong> :
+    </p>
+    <ol>
+      <li>l'individu est <strong>averse au risque</strong> : pour toute loterie non dégénérée
+        \( a_r \), il préfère strictement recevoir avec certitude la valeur monétaire attendue de
+        \( a_r \) plutôt que de jouer \( a_r \) ;</li>
+      <li>sa fonction d'utilité de Bernoulli \( u \) est <strong>strictement concave</strong> ;</li>
+      <li>son <strong>utilité marginale est strictement décroissante</strong> :
+        \( u''(w) < 0 \) pour tout \( w > 0 \).</li>
+    </ol>
+    <p>
+      Et la formulation (1) s'écrit, avec l'inégalité dite <span class="term">de Jensen</span> :
+    </p>
+    <p>\[ u\bigl(E[w]\bigr) > E\bigl[u(w)\bigr] \]</p>
+    <p>
+      qui se lit : « l'utilité de la richesse moyenne est strictement supérieure à la moyenne des
+      utilités ». Dit autrement : <strong>la moyenne d'abord, la racine ensuite, ça vaut mieux que
+      la racine d'abord et la moyenne ensuite</strong>.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les mots qu'il ne faut pas oublier dans l'énoncé du théorème</div>
+    <ul>
+      <li><strong>« si et seulement si »</strong> (ou « équivalentes »). Le théorème marche dans les
+        deux sens : concave ⇒ averse, et averse ⇒ concave. Écrire seulement une implication est une
+        réponse incomplète.</li>
+      <li><strong>« pour tout \( w > 0 \) »</strong>. Le signe de \( u'' \) doit être négatif
+        <em>partout</em> sur le domaine, pas juste en \( w = 400 \). Une fonction peut être concave
+        sur un morceau et convexe sur un autre (c'est même le cas des fonctions d'utilité de
+        Friedman-Savage, utilisées pour expliquer qu'on s'assure <em>et</em> qu'on joue au Loto).</li>
+      <li><strong>« strictement »</strong>. Avec \( u'' = 0 \) (fonction linéaire) on est neutre au
+        risque, pas averse. La concavité stricte est ce qui donne la préférence stricte.</li>
+      <li><strong>« de Bernoulli »</strong>. C'est la fonction qui s'applique à un montant
+        <em>certain</em>. Ne dis jamais « la fonction d'utilité espérée est concave » : l'utilité
+        espérée \( U \) est un nombre attaché à une loterie, pas une fonction de la richesse.</li>
+    </ul>
+  </div>
+
+  <h3>4.6 La résolution pas à pas</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Réécrire la racine carrée en puissance</div>
+    <p>
+      On ne sait pas dériver « une racine carrée » directement : on sait dériver des puissances. Or
+      la racine carrée <em>est</em> une puissance. Par définition de l'exposant \( \tfrac12 \) :
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ u(w) = \sqrt{w} = w^{1/2} \]
+        <div class="why">C'est la même chose écrite autrement, ce n'est pas un calcul. Le lien vient
+          de \( \bigl(w^{1/2}\bigr)^2 = w^{(1/2)\times 2} = w^1 = w \) : \( w^{1/2} \) est bien le
+          nombre dont le carré vaut \( w \), c'est-à-dire la racine carrée de \( w \).</div>
+      </div>
+    </div>
+    <p>
+      Petit rappel utile pour toute la suite : \( w^{-n} = \dfrac{1}{w^{\,n}} \). Un exposant négatif
+      signifie « passe au dénominateur ». Par exemple \( w^{-1/2} = \dfrac{1}{w^{1/2}} =
+      \dfrac{1}{\sqrt w} \), et \( w^{-3/2} = \dfrac{1}{w^{3/2}} = \dfrac{1}{w\sqrt w} \).
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Dériver une première fois</div>
+    <p>
+      On applique la règle des puissances avec \( n = \tfrac12 \) : l'exposant descend en facteur, et
+      on lui retire 1.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ u'(w) = \tfrac{1}{2}\,w^{\frac12 - 1} \]
+        <div class="why">Le \( \tfrac12 \) qui était en exposant descend devant. Le nouvel exposant
+          est l'ancien moins un.</div>
+      </div>
+      <div class="step">
+        \[ \tfrac12 - 1 = \tfrac12 - \tfrac22 = -\tfrac12 \]
+        <div class="why">Je détaille la soustraction de fractions : j'écris 1 sous la forme
+          \( \tfrac22 \) pour avoir le même dénominateur, puis je soustrais les numérateurs.
+          C'est ici que la plupart des erreurs se produisent — beaucoup écrivent \( +\tfrac12 \).</div>
+      </div>
+      <div class="step">
+        \[ u'(w) = \tfrac{1}{2}\,w^{-1/2} \]
+        <div class="why">Je remplace l'exposant par sa valeur. La dérivée est terminée ; il reste à
+          la rendre lisible.</div>
+      </div>
+      <div class="step">
+        \[ u'(w) = \frac{1}{2}\cdot\frac{1}{w^{1/2}} = \frac{1}{2\sqrt{w}} \]
+        <div class="why">J'utilise \( w^{-1/2} = 1/w^{1/2} \) (exposant négatif = au dénominateur),
+          puis je repasse de \( w^{1/2} \) à \( \sqrt w \). C'est la forme sous laquelle le
+          corrigé écrit la réponse.</div>
+      </div>
+    </div>
+    <div class="result">
+      <div class="result-title">Résultat intermédiaire</div>
+      <p>\[ u'(w) = \frac{1}{2\sqrt{w}} > 0 \quad \text{pour tout } w > 0 \]</p>
+      <p>
+        Pourquoi strictement positif ? Parce que si \( w > 0 \) alors \( \sqrt w > 0 \), donc
+        \( 2\sqrt w > 0 \), et une fraction dont le numérateur (1) et le dénominateur sont positifs
+        est positive. <strong>Interprétation économique</strong> : l'utilité est croissante, plus
+        d'argent vaut toujours mieux que moins d'argent. C'est ce qu'on appelle la
+        <em>non-satiété</em>, et il faut le dire — cela fait partie de la réponse attendue.
+      </p>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Dériver une seconde fois</div>
+    <p>
+      On repart de la forme en puissance \( u'(w) = \tfrac12 w^{-1/2} \) — surtout pas de la forme
+      \( \dfrac{1}{2\sqrt w} \), qui obligerait à utiliser la règle du quotient. On applique de
+      nouveau la règle des puissances, cette fois avec \( n = -\tfrac12 \), en gardant le facteur
+      \( \tfrac12 \) qui est une constante multiplicative.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ u''(w) = \tfrac{1}{2}\times\Bigl(-\tfrac{1}{2}\Bigr)\,w^{-\frac12 - 1} \]
+        <div class="why">Le \( -\tfrac12 \) descend devant et vient multiplier le \( \tfrac12 \) déjà
+          présent. Le nouvel exposant, c'est encore « l'ancien moins un ».</div>
+      </div>
+      <div class="step">
+        \[ \tfrac{1}{2}\times\Bigl(-\tfrac{1}{2}\Bigr) = -\tfrac{1}{4} \]
+        <div class="why">Produit de deux fractions : numérateurs entre eux
+          (\( 1\times 1 = 1 \)), dénominateurs entre eux (\( 2\times 2 = 4 \)), et le signe « moins »
+          reste parce que « plus fois moins égale moins ».</div>
+      </div>
+      <div class="step">
+        \[ -\tfrac12 - 1 = -\tfrac12 - \tfrac22 = -\tfrac{3}{2} \]
+        <div class="why">Encore une soustraction de fractions, même méthode : 1 devient
+          \( \tfrac22 \). Attention au signe : on part d'un nombre négatif et on retire encore, donc
+          on descend à \( -\tfrac32 \).</div>
+      </div>
+      <div class="step">
+        \[ u''(w) = -\frac{1}{4}\,w^{-3/2} \]
+        <div class="why">Je réunis les deux morceaux. C'est exactement la forme du corrigé
+          officiel.</div>
+      </div>
+      <div class="step">
+        \[ u''(w) = -\frac{1}{4\,w^{3/2}} = -\frac{1}{4\,w\sqrt{w}} \]
+        <div class="why">Forme équivalente, parfois plus parlante : l'exposant négatif repasse au
+          dénominateur, et \( w^{3/2} = w^{1}\times w^{1/2} = w\sqrt w \). Les deux écritures sont
+          acceptées.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Déterminer le signe de la dérivée seconde</div>
+    <p>
+      C'est l'étape que les étudiants bâclent, et c'est pourtant elle qui contient la démonstration.
+      Il faut <strong>justifier</strong> le signe, pas juste l'écrire. On procède morceau par
+      morceau.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ w > 0 \;\Longrightarrow\; \sqrt{w} > 0 \;\Longrightarrow\; w^{3/2} = w\sqrt{w} > 0 \]
+        <div class="why">Un produit de deux nombres strictement positifs est strictement positif.
+          Le dénominateur \( 4w^{3/2} \) est donc lui aussi strictement positif (4 est
+          positif).</div>
+      </div>
+      <div class="step">
+        \[ \frac{1}{4\,w^{3/2}} > 0 \;\Longrightarrow\; -\frac{1}{4\,w^{3/2}} < 0 \]
+        <div class="why">Une fraction à numérateur et dénominateur positifs est positive ; son
+          opposé est donc négatif. Le signe « moins » devant est ce qui fait toute la
+          conclusion.</div>
+      </div>
+      <div class="step">
+        \[ \boxed{\,u''(w) < 0 \quad \text{pour tout } w > 0\,} \]
+        <div class="why">Voilà la propriété cherchée, valable sur tout le domaine de définition —
+          et pas seulement en \( w = 400 \). C'est cette universalité qui autorise à conclure que
+          l'individu est averse au risque <em>en général</em>.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">5.</span> Conclure en invoquant le théorème</div>
+    <p>
+      La conclusion n'est pas « donc il est averse au risque » tout seul : c'est « \( u'' < 0 \),
+      <strong>donc \( u \) est strictement concave</strong>, <strong>or</strong> le théorème dit que
+      concavité et aversion au risque sont équivalentes, <strong>donc</strong> il est averse au
+      risque ». Trois maillons, dans cet ordre. C'est la structure d'un syllogisme, et c'est ce que
+      le correcteur cherche des yeux.
+    </p>
+  </div>
+
+  <h3>4.7 Vérification numérique : voir la décroissance de \( u' \) de ses propres yeux</h3>
+
+  <p>
+    Une démonstration formelle est parfaite, mais rien ne remplace un tableau de nombres pour être
+    <em>sûr</em> qu'on ne s'est pas trompé de signe. Calculons \( u'(w) = \dfrac{1}{2\sqrt w} \) pour
+    quelques richesses, et regardons si ça décroît vraiment.
+  </p>
+
+  <table class="data">
+    <tr>
+      <th>Richesse \( w \)</th>
+      <th>\( \sqrt{w} \)</th>
+      <th>\( u'(w) = \dfrac{1}{2\sqrt w} \)</th>
+      <th>Valeur du 1<sup>er</sup> euro suivant</th>
+    </tr>
+    <tr><td>100</td><td>10</td><td>\( \tfrac{1}{20} = 0{,}0500 \)</td><td>0,050 util</td></tr>
+    <tr><td>361</td><td>19</td><td>\( \tfrac{1}{38} \approx 0{,}0263 \)</td><td>0,026 util</td></tr>
+    <tr><td>400</td><td>20</td><td>\( \tfrac{1}{40} = 0{,}0250 \)</td><td>0,025 util</td></tr>
+    <tr><td>484</td><td>22</td><td>\( \tfrac{1}{44} \approx 0{,}0227 \)</td><td>0,023 util</td></tr>
+    <tr><td>900</td><td>30</td><td>\( \tfrac{1}{60} \approx 0{,}0167 \)</td><td>0,017 util</td></tr>
+  </table>
+
+  <p>
+    La dernière colonne descend, ligne après ligne : 0,050 puis 0,026, 0,025, 0,023, 0,017. Chaque
+    euro supplémentaire vaut de moins en moins. Un euro donné à quelqu'un qui a 100 euros lui
+    apporte trois fois plus de satisfaction qu'à quelqu'un qui en a 900. C'est <em>ça</em>,
+    \( u'' < 0 \), vu de près.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 560 320" width="100%" style="max-width:12cm" role="img"
+         aria-label="Courbe racine de w entre 340 et 500 euros montrant que gagner 84 euros fait monter l'utilite de 2 unites tandis que perdre 39 euros la fait descendre de 1 unite">
+      <g stroke="#111827" stroke-width="1.3" fill="none">
+        <path d="M62 286 L62 34"/><path d="M62 286 L534 286"/>
+      </g>
+      <polyline fill="none" stroke="#111827" stroke-width="2.6"
+        points="70,276 127,246 185,212 242,180 300,148 357,117 415,86 472,57 530,30"/>
+
+      <g stroke="#111827" stroke-width="1" stroke-dasharray="4 3">
+        <path d="M127 246 L62 246"/><path d="M127 246 L127 286"/>
+        <path d="M242 180 L62 180"/><path d="M242 180 L242 286"/>
+        <path d="M472 57 L62 57"/><path d="M472 57 L472 286"/>
+      </g>
+
+      <circle cx="127" cy="246" r="4" fill="#111827"/>
+      <circle cx="242" cy="180" r="4" fill="#111827"/>
+      <circle cx="472" cy="57" r="4" fill="#111827"/>
+
+      <g font-size="11.5" text-anchor="middle">
+        <text x="127" y="302">361</text>
+        <text x="242" y="302">400</text>
+        <text x="472" y="302">484</text>
+        <text x="300" y="316" style="fill:#4b5563">richesse finale w (en euros)</text>
+      </g>
+      <g font-size="11.5" text-anchor="end">
+        <text x="56" y="250">19</text>
+        <text x="56" y="184">20</text>
+        <text x="56" y="61">22</text>
+      </g>
+      <text x="30" y="30" font-size="11.5">u(w)</text>
+
+      <g stroke="#111827" stroke-width="1.5">
+        <path d="M256 180 L256 62"/><path d="M252 68 L256 57 L260 68"/><path d="M252 174 L256 185 L260 174"/>
+        <path d="M113 180 L113 240"/><path d="M109 186 L113 175 L117 186"/><path d="M109 240 L113 251 L117 240"/>
+      </g>
+      <text x="266" y="118" font-size="12" font-weight="bold">+2 utils</text>
+      <text x="266" y="134" font-size="11.5">pour +84 €</text>
+      <text x="70" y="214" font-size="12" font-weight="bold">−1 util</text>
+      <text x="70" y="229" font-size="11.5">pour −39 €</text>
+
+      <g stroke="#111827" stroke-width="1.2">
+        <path d="M242 292 L472 292"/><path d="M242 288 L242 296"/><path d="M472 288 L472 296"/>
+      </g>
+    </svg>
+    <figcaption>
+      Figure 4 — Pourquoi il faudra un gros gain pour compenser une petite perte. Sur la courbe
+      \( \sqrt w \), monter de 400 à 484 (soit <strong>+84 €</strong>) ne rapporte que
+      <strong>2 unités</strong> d'utilité, alors que descendre de 400 à 361 (soit
+      <strong>−39 €</strong>, deux fois moins d'euros) en coûte déjà <strong>1</strong>. Rapporté à
+      l'euro : chaque euro gagné vaut 2/84 ≈ 0,024 util, chaque euro perdu coûte 1/39 ≈ 0,026 util.
+      L'individu est bien averse au risque — et pourtant, comme on le verra en 2.3, il acceptera ce
+      pari-là, parce que 84 est <em>beaucoup</em> plus grand que 39.
+    </figcaption>
+  </figure>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie — question 2.1</div>
+    <p>
+      <strong>Théorème du cours.</strong> Un individu dont les préférences sont représentées par une
+      fonction d'utilité de Bernoulli \( u \), deux fois dérivable, est averse au risque
+      <strong>si et seulement si</strong> \( u \) est strictement concave, c'est-à-dire si et
+      seulement si son utilité marginale de la richesse est strictement décroissante :
+      \( u''(w) < 0 \) pour tout \( w > 0 \). De façon équivalente, il préfère toujours recevoir
+      avec certitude la valeur monétaire attendue d'une loterie plutôt que de jouer cette loterie :
+      \( u\bigl(E[w]\bigr) > E\bigl[u(w)\bigr] \) (inégalité de Jensen).
+    </p>
+    <p><strong>Application.</strong> Ici \( u(w) = \sqrt{w} = w^{1/2} \). On dérive deux fois :</p>
+    <p>\[ u'(w) = \tfrac{1}{2}\,w^{-1/2} = \frac{1}{2\sqrt{w}} > 0 \]</p>
+    <p>\[ u''(w) = -\tfrac{1}{4}\,w^{-3/2} = -\frac{1}{4\,w\sqrt{w}} < 0 \]</p>
+    <p>
+      Pour tout \( w > 0 \), \( w\sqrt w > 0 \), donc \( u''(w) < 0 \). La fonction \( \sqrt{w} \)
+      est donc strictement concave sur \( \mathbb{R}_+^{*} \) : l'utilité marginale est
+      décroissante (chaque euro supplémentaire apporte moins de satisfaction que le précédent).
+    </p>
+    <p>
+      <strong>Conclusion.</strong> Par le théorème ci-dessus, <strong>l'individu est averse au
+      risque</strong>. On note au passage que \( u' > 0 \) : il préfère toujours plus de richesse à
+      moins (non-satiété).
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les quatre pièges de la question 2.1</div>
+    <ol>
+      <li>
+        <strong>Répondre sans dériver.</strong> « \( \sqrt w \) est concave, c'est connu » : 0 sur
+        les 4 points de calcul. Le verbe « montrez » impose la dérivation.
+      </li>
+      <li>
+        <strong>Se tromper d'exposant.</strong> Écrire \( u'(w) = \tfrac12 w^{1/2} \) (on a oublié
+        de retirer 1) ou \( u''(w) = \tfrac14 w^{-3/2} \) (on a perdu le signe moins). Le signe moins
+        est <em>toute</em> la réponse : sans lui, tu conclus que l'individu est amateur de risque.
+      </li>
+      <li>
+        <strong>Confondre \( u' \) et \( u'' \).</strong> \( u' > 0 \) ne dit rien sur l'aversion au
+        risque : cela dit seulement que l'individu aime l'argent. Un amateur de risque aussi a
+        \( u' > 0 \). Le critère d'aversion, c'est <strong>uniquement</strong> le signe de
+        \( u'' \).
+      </li>
+      <li>
+        <strong>Oublier le domaine.</strong> Dire « \( u''(400) < 0 \) donc il est averse » est
+        insuffisant : il faut « pour tout \( w > 0 \) ». Sinon tu n'as montré la concavité qu'en un
+        point.
+      </li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Recette réutilisable — « montrer que l'individu est averse au risque »</div>
+    <ol>
+      <li>Réécris \( u \) sous forme de puissances (\( \sqrt w = w^{1/2} \),
+        \( \ln w \) reste \( \ln w \), \( w^{0{,}3} \) est déjà prêt).</li>
+      <li>Calcule \( u' \) et donne son signe (\( u' > 0 \) : non-satiété).</li>
+      <li>Calcule \( u'' \) <em>à partir de la forme en puissance</em>, jamais de la forme
+        fractionnaire.</li>
+      <li>Justifie le signe de \( u'' \) en analysant numérateur et dénominateur séparément.</li>
+      <li>Énonce le théorème (équivalence, « pour tout \( w > 0 \) », « strictement »), puis
+        conclus.</li>
+    </ol>
+    <p>
+      Les trois fonctions qui reviennent tout le temps, à connaître de tête :
+    </p>
+    <table class="compare">
+      <tr><th class="left">\( u(w) \)</th><th class="left">\( u'(w) \)</th><th class="left">\( u''(w) \)</th><th class="left">Attitude</th></tr>
+      <tr><td class="left">\( \sqrt w = w^{1/2} \)</td><td class="left">\( \tfrac12 w^{-1/2} \)</td><td class="left">\( -\tfrac14 w^{-3/2} < 0 \)</td><td class="left">averse</td></tr>
+      <tr><td class="left">\( \ln w \)</td><td class="left">\( \tfrac1w \)</td><td class="left">\( -\tfrac{1}{w^2} < 0 \)</td><td class="left">averse</td></tr>
+      <tr><td class="left">\( a w + b \), \( a>0 \)</td><td class="left">\( a \)</td><td class="left">\( 0 \)</td><td class="left">neutre</td></tr>
+      <tr><td class="left">\( w^2 \)</td><td class="left">\( 2w \)</td><td class="left">\( 2 > 0 \)</td><td class="left">amateur</td></tr>
+    </table>
+  </div>
+
+  <hr class="soft">
+
+  <h2>5. Question 2.2 — La VMA du pari, et l'individu neutre au risque (6 points)</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 2.2 (6 points)</div>
+    <p>
+      Calculez la valeur monétaire attendue (VMA) du pari. Un individu neutre au risque
+      accepterait-il ce pari ?
+    </p>
+  </div>
+
+  <h3>5.1 Traduisons la question en français simple</h3>
+
+  <dl class="lexique">
+    <dt>« la VMA <strong>du pari</strong> »</dt>
+    <dd>
+      Trois mots, dont deux qui décident de tout : <em>du pari</em>. On ne te demande pas la VMA de
+      la richesse finale, ni la VMA de la loterie \( a_r \). On te demande la moyenne de ce que le
+      <strong>pari lui-même</strong> rapporte, c'est-à-dire la moyenne des deux <em>variations</em>
+      \( +84 \) et \( -39 \). Le résultat sera un petit nombre (22,5), pas un nombre autour de 400.
+      Cette distinction fait l'objet de toute la section 6.
+    </dd>
+    <dt>« neutre au risque »</dt>
+    <dd>
+      Un individu dont la fonction d'utilité de Bernoulli est <strong>linéaire</strong>
+      (\( u(w) = aw + b \) avec \( a > 0 \)), donc \( u'' = 0 \). Pour lui, chaque euro
+      supplémentaire vaut exactement autant que le précédent. Conséquence : il ne classe les options
+      que par leur <strong>valeur monétaire attendue</strong>, et le risque lui est parfaitement
+      indifférent. Une entreprise qui répète des milliers de fois la même petite opération se
+      comporte souvent ainsi.
+    </dd>
+    <dt>« accepterait-il »</dt>
+    <dd>
+      Conditionnel : on ne parle plus de <em>notre</em> individu (qui, lui, est averse), mais d'un
+      <em>autre</em> individu, hypothétique, neutre au risque. C'est un point de comparaison que
+      l'énoncé installe exprès, pour que la question 2.3 puisse être surprenante.
+    </dd>
+  </dl>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — la règle de décision d'un individu neutre au risque</div>
+    <p>
+      Un individu neutre au risque accepte un pari <strong>si et seulement si sa VMA est
+      strictement positive</strong>, et le refuse si elle est strictement négative. Si elle est
+      nulle (« pari équitable »), il est indifférent.
+    </p>
+    <p>
+      Pourquoi ? Parce qu'avec \( u(w) = aw + b \), l'utilité espérée est
+      \( E[u(w)] = a\,E[w] + b = u\bigl(E[w]\bigr) \) : sa satisfaction est une simple traduction
+      linéaire de son espérance d'argent. Maximiser son utilité espérée et maximiser son espérance
+      de gain sont exactement le même problème.
+    </p>
+  </div>
+
+  <h3>5.2 La résolution pas à pas</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Écrire la loterie des gains du pari</div>
+    <p>
+      Le pari, considéré isolément, est une loterie sur des <strong>variations</strong> de richesse.
+      Pile : \( +84 \). Face : \( -39 \). Chacune avec probabilité \( \tfrac12 \).
+    </p>
+    <table class="data">
+      <tr><th>État du monde</th><th>Probabilité</th><th>Gain du pari</th></tr>
+      <tr><td>pile</td><td>\( \tfrac12 \)</td><td>\( +84 \) €</td></tr>
+      <tr><td>face</td><td>\( \tfrac12 \)</td><td>\( -39 \) €</td></tr>
+    </table>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Appliquer la formule de la moyenne pondérée</div>
+    <div class="calc">
+      <div class="step">
+        \[ \mathrm{VMA}_{\text{pari}} = \tfrac12 \times 84 + \tfrac12 \times (-39) \]
+        <div class="why">Chaque montant est multiplié par sa probabilité, puis on additionne. Les
+          parenthèses autour de \( -39 \) sont indispensables : on multiplie \( \tfrac12 \) par un
+          nombre <em>négatif</em>, et oublier la parenthèse est le meilleur moyen d'oublier le
+          signe.</div>
+      </div>
+      <div class="step">
+        \[ \tfrac12 \times 84 = 42 \qquad ; \qquad \tfrac12 \times (-39) = -19{,}5 \]
+        <div class="why">Je calcule les deux moitiés séparément. La moitié de 84, c'est 42. La moitié
+          de 39, c'est 19,5 (parce que \( 39 = 38 + 1 \), et \( 19 + 0{,}5 = 19{,}5 \)), et elle
+          garde le signe moins.</div>
+      </div>
+      <div class="step">
+        \[ \mathrm{VMA}_{\text{pari}} = 42 - 19{,}5 = 22{,}5 \]
+        <div class="why">Addition d'un positif et d'un négatif : cela revient à une soustraction.
+          \( 42 - 19{,}5 = 22{,}5 \), qu'on peut vérifier à l'envers : \( 22{,}5 + 19{,}5 = 42 \)
+          ✔.</div>
+      </div>
+    </div>
+    <div class="result">
+      <div class="result-title">Résultat</div>
+      <p>\[ \mathrm{VMA}_{\text{pari}} = 22{,}50 \text{ euros} \]</p>
+      <p>
+        Traduction en français : <em>si l'individu pouvait rejouer ce pari des milliers de fois, il
+        gagnerait en moyenne 22,50 euros par partie.</em> Il ne gagnera jamais 22,50 euros dans une
+        partie donnée — il gagnera 84 ou il perdra 39 — mais c'est la tendance sur le long terme.
+      </p>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Conclure pour l'individu neutre au risque</div>
+    <p>
+      La règle est mécanique : un neutre au risque compare la VMA à zéro.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ \mathrm{VMA}_{\text{pari}} = 22{,}50 > 0 \]
+        <div class="why">Je compare la VMA du pari au gain que procure le refus, qui est de 0 euro
+          (refuser, c'est ne rien gagner et ne rien perdre).</div>
+      </div>
+      <div class="step">
+        \[ \Longrightarrow \text{un individu neutre au risque } \textbf{accepte} \text{ le pari} \]
+        <div class="why">Puisque son seul critère est la moyenne en argent, et que cette moyenne est
+          positive, il dit oui sans hésiter. Le risque, pour lui, n'entre pas dans la balance.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi le pari n'est pas « équitable »</div>
+    <p>
+      Un <span class="term">pari équitable</span> (en anglais <em>fair bet</em>) est un pari dont la
+      VMA est <strong>nulle</strong> : par exemple « pile je gagne 50, face je perds 50 ». Ici, ce
+      n'est pas le cas : le gain (84) est bien plus gros que la perte (39), pour des chances
+      identiques. Le pari est donc <strong>favorable</strong> à l'individu.
+    </p>
+    <p>
+      C'est capital pour la suite. Le théorème du § 4.5 dit qu'un individu averse au risque refuse
+      tous les paris <em>équitables</em>. Il ne dit rien des paris <em>favorables</em> : sur ceux-là,
+      il faut calculer. Voilà pourquoi la question 2.3 ne peut pas se répondre « il est averse donc
+      il refuse ».
+    </p>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie — question 2.2</div>
+    <p>
+      Le pari rapporte \( +84 \) euros avec probabilité \( \tfrac12 \) et \( -39 \) euros avec
+      probabilité \( \tfrac12 \). Sa valeur monétaire attendue est la moyenne pondérée de ces gains :
+    </p>
+    <p>\[ \mathrm{VMA} = \tfrac12 \times 84 + \tfrac12 \times (-39) = 42 - 19{,}5 = 22{,}50 \text{ €} \]</p>
+    <p>
+      Un individu neutre au risque ne classe les actifs que d'après leur valeur monétaire attendue
+      (sa fonction d'utilité est linéaire, donc \( E[u(w)] = u(E[w]) \)). Comme
+      \( 22{,}50 > 0 \), le pari est favorable : <strong>il l'accepterait</strong>.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les pièges de la question 2.2</div>
+    <ul>
+      <li>
+        <strong>Écrire \( \tfrac12(84) + \tfrac12(39) = 61{,}5 \).</strong> On a oublié que la
+        seconde issue est une <em>perte</em>. Réflexe : dès que l'énoncé dit « il perd », écris le
+        nombre avec un signe moins <em>et</em> une parenthèse.
+      </li>
+      <li>
+        <strong>Répondre 422,50.</strong> Ce n'est pas faux en soi, mais ce n'est pas la question :
+        422,50 est la VMA de la <em>richesse finale</em>. On te demandait la VMA <em>du pari</em>.
+        Le correcteur attend 22,50 ici, et 422,50 à la question 2.4. Voir la section 6.
+      </li>
+      <li>
+        <strong>Répondre « il refuse car il est averse au risque ».</strong> Piège de lecture : la
+        question 2.2 parle d'un individu <strong>neutre</strong> au risque, pas de celui de
+        l'énoncé.
+      </li>
+      <li>
+        <strong>Confondre \( \tfrac{84-39}{2} \) et la VMA.</strong> Ici les deux donnent le même
+        nombre (22,5) parce que les probabilités sont égales à \( \tfrac12 \) — mais c'est un
+        accident. Si les probabilités étaient \( 0{,}3 \) et \( 0{,}7 \), la « demi-somme » serait
+        fausse. Utilise toujours la formule complète.
+      </li>
+    </ul>
+  </div>
+
+  <hr class="soft">
+
+  <h2>6. La section anti-catastrophe : il y a DEUX VMA dans cet exercice</h2>
+
+  <p>
+    On s'arrête cinq minutes. Ce qui suit est la source d'erreur numéro un de cet énoncé, et elle
+    coûte typiquement 6 à 10 points sur 40. Pas parce qu'elle est difficile : parce qu'elle est
+    <em>invisible</em>. Deux nombres portent le même nom, « VMA », et ce ne sont pas les mêmes.
+  </p>
+
+  <h3>6.1 Les deux objets</h3>
+
+  <table class="compare">
+    <tr>
+      <th class="left"></th>
+      <th class="left">VMA <strong>du pari</strong></th>
+      <th class="left">VMA de la <strong>richesse finale</strong></th>
+    </tr>
+    <tr>
+      <td class="left">Sur quoi porte la moyenne ?</td>
+      <td class="left">sur les <em>variations</em> : \( +84 \) et \( -39 \)</td>
+      <td class="left">sur les <em>patrimoines</em> : \( 484 \) et \( 361 \)</td>
+    </tr>
+    <tr>
+      <td class="left">Le calcul</td>
+      <td class="left">\( \tfrac12(84) + \tfrac12(-39) \)</td>
+      <td class="left">\( \tfrac12(484) + \tfrac12(361) \)</td>
+    </tr>
+    <tr>
+      <td class="left">Le résultat</td>
+      <td class="left">\( \mathbf{22{,}50} \) €</td>
+      <td class="left">\( \mathbf{422{,}50} \) €</td>
+    </tr>
+    <tr>
+      <td class="left">Ce que ça veut dire</td>
+      <td class="left">« en moyenne, je m'enrichis de 22,50 € »</td>
+      <td class="left">« en moyenne, je finis avec 422,50 € en poche »</td>
+    </tr>
+    <tr>
+      <td class="left">Où on l'utilise</td>
+      <td class="left">question 2.2 (décision d'un neutre au risque)</td>
+      <td class="left">question 2.4 (calcul de la prime de risque)</td>
+    </tr>
+    <tr>
+      <td class="left">Signe de référence</td>
+      <td class="left">on la compare à <strong>0</strong></td>
+      <td class="left">on la compare à <strong>\( w = 400 \)</strong> et à \( C \)</td>
+    </tr>
+  </table>
+
+  <h3>6.2 La relation entre les deux (et pourquoi elle est utile)</h3>
+
+  <p>
+    Les deux nombres ne sont pas indépendants : ils diffèrent exactement de la richesse initiale.
+    Démontrons-le, parce que ça donne une <strong>vérification gratuite</strong> à l'examen.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \mathrm{VMA}(a_r) = \tfrac12(400 + 84) + \tfrac12(400 - 39) \]
+      <div class="why">Je pars de la VMA de la richesse finale, en réécrivant 484 et 361 sous leur
+        forme d'origine « 400 plus quelque chose ». Rien n'a changé, j'ai juste évité de faire
+        l'addition tout de suite.</div>
+    </div>
+    <div class="step">
+      \[ = \tfrac12(400) + \tfrac12(84) + \tfrac12(400) + \tfrac12(-39) \]
+      <div class="why">Je distribue chaque \( \tfrac12 \) sur sa parenthèse (c'est la distributivité :
+        \( a(b+c) = ab + ac \)). J'obtiens quatre morceaux au lieu de deux.</div>
+    </div>
+    <div class="step">
+      \[ = \underbrace{\tfrac12(400) + \tfrac12(400)}_{= \,400} \; + \; \underbrace{\tfrac12(84) + \tfrac12(-39)}_{= \,22{,}5} \]
+      <div class="why">Je regroupe les morceaux « richesse initiale » ensemble, et les morceaux
+        « pari » ensemble. Deux fois la moitié de 400, ça fait 400. Et le second groupe, c'est
+        exactement la VMA du pari calculée en 2.2.</div>
+    </div>
+    <div class="step">
+      \[ \mathrm{VMA}(a_r) = w + \mathrm{VMA}_{\text{pari}} = 400 + 22{,}5 = 422{,}5 \]
+      <div class="why">La relation générale. Elle est logique : en moyenne, on garde ce qu'on avait
+        et on ajoute le gain moyen du pari.</div>
+    </div>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">La vérification qui sauve : \( \mathrm{VMA}(a_r) = w + \mathrm{VMA}_{\text{pari}} \)</div>
+    <p>
+      À l'examen, calcule les deux VMA <strong>séparément</strong>, puis vérifie que leur écart vaut
+      bien la richesse initiale :
+    </p>
+    <p>\[ 422{,}50 - 22{,}50 = 400 = w \quad ✔ \]</p>
+    <p>
+      Si l'écart n'est pas exactement \( w \), c'est qu'une des deux est fausse — le plus souvent un
+      signe perdu sur la perte. Cette vérification prend dix secondes et attrape 90 % des erreurs de
+      cette question.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 560 300" width="100%" style="max-width:12cm" role="img"
+         aria-label="Deux axes paralleles : en haut l'axe des gains du pari avec moins 39, zero et plus 84 et la VMA du pari a plus 22 virgule 5 ; en bas l'axe des richesses finales avec 361, 400 et 484 et la VMA de la richesse finale a 422 virgule 5 ; les deux axes sont decales de 400 euros">
+      <line x1="40" y1="86" x2="530" y2="86" stroke="#111827" stroke-width="1.6"/>
+      <text x="40" y="42" font-size="12.5" font-weight="bold">Axe n° 1 — les GAINS du pari</text>
+      <text x="40" y="58" font-size="11.5" style="fill:#4b5563">ce que l'énoncé te donne · question 2.2</text>
+
+      <g stroke="#111827" stroke-width="1.4">
+        <path d="M110 79 L110 93"/><path d="M226 79 L226 93"/><path d="M492 79 L492 93"/>
+      </g>
+      <g font-size="12" text-anchor="middle">
+        <text x="110" y="110">−39</text>
+        <text x="226" y="110">0</text>
+        <text x="492" y="110">+84</text>
+      </g>
+      <circle cx="293" cy="86" r="5" fill="#111827"/>
+      <text x="293" y="72" font-size="12.5" text-anchor="middle" font-weight="bold">+22,5</text>
+      <text x="293" y="126" font-size="11.5" text-anchor="middle">VMA du pari</text>
+
+      <line x1="40" y1="228" x2="530" y2="228" stroke="#111827" stroke-width="1.6"/>
+      <text x="40" y="184" font-size="12.5" font-weight="bold">Axe n° 2 — les RICHESSES FINALES</text>
+      <text x="40" y="200" font-size="11.5" style="fill:#4b5563">ce sur quoi on calcule u · questions 2.3 et 2.4</text>
+
+      <g stroke="#111827" stroke-width="1.4">
+        <path d="M110 221 L110 235"/><path d="M226 221 L226 235"/><path d="M492 221 L492 235"/>
+      </g>
+      <g font-size="12" text-anchor="middle">
+        <text x="110" y="252">361</text>
+        <text x="226" y="252">400</text>
+        <text x="492" y="252">484</text>
+      </g>
+      <circle cx="293" cy="228" r="5" fill="#111827"/>
+      <text x="293" y="214" font-size="12.5" text-anchor="middle" font-weight="bold">422,5</text>
+      <text x="293" y="268" font-size="11.5" text-anchor="middle">VMA de la richesse finale</text>
+
+      <g stroke="#111827" stroke-width="1.2" stroke-dasharray="5 4">
+        <path d="M110 93 L110 221"/><path d="M226 93 L226 221"/>
+        <path d="M492 93 L492 221"/><path d="M293 93 L293 221"/>
+      </g>
+      <text x="342" y="160" font-size="12" font-weight="bold">même axe, décalé de +400 €</text>
+      <text x="285" y="292" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        22,5 + 400 = 422,5 · la vérification de cohérence
+      </text>
+    </svg>
+    <figcaption>
+      Figure 5 — Les deux VMA sont le même point, lu sur deux règles différentes. L'axe du haut est
+      gradué en « ce que je gagne » ; celui du bas en « ce que je possède à la fin ». Passer de l'un
+      à l'autre, c'est ajouter 400 partout. Les positions relatives sont identiques : la VMA tombe
+      exactement au même endroit sur les deux règles, parce qu'ajouter une constante ne change pas la
+      structure du risque.
+    </figcaption>
+  </figure>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège n° 1, la version courte à retenir</div>
+    <p>
+      <strong>22,50 € n'est pas un patrimoine, et 422,50 € n'est pas un gain.</strong>
+    </p>
+    <ul>
+      <li>Dès que tu écris \( u(\cdot) \) ou \( \sqrt{\cdot} \) : ce qui rentre dedans est une
+        <strong>richesse finale</strong> (autour de 400). Jamais 84, jamais 22,5.</li>
+      <li>Dès que tu compares à zéro : tu travailles sur les <strong>gains</strong>.</li>
+      <li>Dès que tu compares à \( w = 400 \) ou que tu calcules une PRM : tu travailles sur les
+        <strong>richesses finales</strong>.</li>
+    </ul>
+    <p>
+      Petite consolation : le barème officiel de la question 2.4 accepte aussi le raisonnement mené
+      entièrement <em>en gains nets</em> (on trouve alors \( C - 400 = 20{,}25 \) et la même PRM de
+      2,25 €). Ce qui est sanctionné, c'est de <strong>mélanger</strong> les deux univers dans un
+      même calcul — par exemple comparer un équivalent certain de 420,25 à une VMA de 22,50.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>7. Question 2.3 — Utilité espérée et décision : accepte-t-il ? (10 points)</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 2.3 (10 points)</div>
+    <p>
+      Calculez l'utilité espérée de l'individu s'il accepte le pari. Accepte-t-il le pari ?
+      Détaillez votre raisonnement.
+    </p>
+  </div>
+
+  <h3>7.1 Traduisons la question en français simple</h3>
+
+  <dl class="lexique">
+    <dt>« l'utilité espérée de l'individu <strong>s'il accepte</strong> »</dt>
+    <dd>
+      Le nombre \( U(\text{accepter}) = \tfrac12\,u(484) + \tfrac12\,u(361) \). « Espérée » est le
+      mot des probabilités pour « moyenne » : ce n'est pas un espoir, c'est une moyenne pondérée.
+      On le lit « grand U de accepter ».
+    </dd>
+    <dt>« Accepte-t-il le pari ? »</dt>
+    <dd>
+      C'est une <strong>question de décision</strong>, et une décision se prend toujours en
+      <em>comparant</em> deux options. Il ne suffit donc pas de calculer 20,5 : il faut aussi
+      calculer ce que vaut l'option adverse (refuser), puis comparer. Une copie qui s'arrête à
+      « \( U = 20{,}5 \) » perd les 3 points de la comparaison et de la décision.
+    </dd>
+    <dt>« Détaillez votre raisonnement »</dt>
+    <dd>
+      Signal explicite : le correcteur veut voir la <em>règle de décision</em> écrite, pas seulement
+      le résultat. Formule attendue : « il accepte si et seulement si
+      \( U(\text{accepter}) > u(400) \) ». Écris-la avant de calculer, comme une thèse qu'on va
+      vérifier.
+    </dd>
+  </dl>
+
+  <h3>7.2 Le cours dont tu as besoin — la règle de décision (nouveauté)</h3>
+
+  <p>
+    Le volume 1 t'a appris à <em>calculer</em> une utilité espérée, un équivalent certain, une prime
+    de risque. Il ne t'a jamais fait <em>trancher</em> entre deux options. C'est le mécanisme
+    nouveau de cette question, et il est d'une simplicité désarmante — à condition de l'écrire
+    correctement.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — le critère de l'utilité espérée (von Neumann-Morgenstern)</div>
+    <p>
+      Un décideur rationnel face au risque choisit, parmi toutes les options disponibles, celle dont
+      l'<strong>utilité espérée est la plus grande</strong>. Rien d'autre n'entre en ligne de
+      compte : ni la VMA, ni le montant maximal possible, ni la probabilité de perdre.
+    </p>
+    <p>
+      Appliqué à un pari « à prendre ou à laisser », il n'y a que deux options, donc la règle
+      devient :
+    </p>
+    <p>\[ \text{accepter} \iff U(\text{accepter}) > U(\text{refuser}) \]</p>
+    <p>
+      Et comme refuser signifie garder \( w \) avec certitude, \( U(\text{refuser}) \) se réduit à
+      \( u(w) \) : une loterie qui donne \( w \) avec probabilité 1, c'est juste \( w \). D'où la
+      forme finale, celle à écrire sur la copie :
+    </p>
+    <p>\[ \text{accepter} \iff \tfrac12\,u(w + g) + \tfrac12\,u(w - p) \;>\; u(w) \]</p>
+    <p>
+      où \( g \) est le gain et \( p \) la perte. En cas d'égalité, l'individu est indifférent.
+    </p>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi on ne compare pas les VMA</div>
+    <p>
+      La tentation est grande : la VMA du pari est \( +22{,}5 \), donc c'est bon, non ? Non — pas
+      pour un individu averse au risque. La VMA ignore complètement la <em>forme</em> de \( u \), or
+      c'est précisément cette forme qui encode l'aversion. Deux individus face au même pari, avec la
+      même VMA, peuvent prendre des décisions opposées : celui qui a \( u(w) = w \) accepte toujours
+      un pari de VMA positive ; celui qui a \( u(w) = \sqrt w \) doit calculer.
+    </p>
+    <p>
+      Autrement dit : la VMA sert de <em>signal</em> (« ça vaut peut-être le coup »), l'utilité
+      espérée sert de <em>verdict</em>.
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel du volume 1 (chapitre 2, § 5) — l'ordre des opérations</div>
+    <p>
+      \( E[u(w)] \) et \( u(E[w]) \) ne sont pas la même chose. Pour \( E[u(w)] \), l'ordre est :
+    </p>
+    <ol>
+      <li>calculer la richesse finale de chaque état du monde ;</li>
+      <li>appliquer \( u \) (ici : prendre la racine) <strong>à chacune séparément</strong> ;</li>
+      <li>seulement ensuite, faire la moyenne pondérée des résultats.</li>
+    </ol>
+    <p>
+      « Racine d'abord, moyenne ensuite. » Si tu inverses, tu calcules \( u(E[w]) = \sqrt{422{,}5}
+      \approx 20{,}55 \), un nombre proche mais faux — et surtout, tu détruis toute la question 2.4,
+      puisque l'écart entre ces deux nombres <em>est</em> la prime de risque.
+    </p>
+  </div>
+
+  <h3>7.3 La résolution pas à pas</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Poser la règle de décision avant tout calcul</div>
+    <p>
+      On écrit d'abord ce qu'on cherche à comparer. Cela structure la copie et rapporte des points
+      même si un calcul dérape ensuite.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ U(\text{accepter}) = \tfrac12\,\sqrt{484} + \tfrac12\,\sqrt{361} \]
+        <div class="why">L'option « accepter » est la loterie \( a_r \) : deux richesses finales,
+          484 et 361, chacune avec probabilité un demi. Je prends la racine de chacune
+          <em>séparément</em>, puis je ferai la moyenne.</div>
+      </div>
+      <div class="step">
+        \[ U(\text{refuser}) = u(400) = \sqrt{400} = 20 \]
+        <div class="why">L'option « refuser » est l'actif sûr : 400 euros avec probabilité 1. Son
+          utilité espérée est simplement l'utilité de 400. \( \sqrt{400} = 20 \) parce que
+          \( 20 \times 20 = 400 \).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Calculer les deux racines carrées à la main</div>
+    <p>
+      Pas de calculatrice à l'examen ? Aucun problème : l'énoncé a été construit pour que les deux
+      racines tombent juste. Voici comment le vérifier en dix secondes.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ 22^2 = (20+2)^2 = 20^2 + 2\times 20\times 2 + 2^2 \]
+        <div class="why">J'utilise l'identité remarquable \( (a+b)^2 = a^2 + 2ab + b^2 \), avec
+          \( a = 20 \) et \( b = 2 \), parce que 20 est un nombre dont je connais le carré par
+          cœur.</div>
+      </div>
+      <div class="step">
+        \[ = 400 + 80 + 4 = 484 \quad\Longrightarrow\quad \sqrt{484} = 22 \]
+        <div class="why">Le carré de 22 vaut bien 484 : la racine carrée de 484 est donc exactement
+          22, sans arrondi.</div>
+      </div>
+      <div class="step">
+        \[ 19^2 = (20-1)^2 = 20^2 - 2\times 20\times 1 + 1^2 \]
+        <div class="why">Même méthode avec l'autre identité, \( (a-b)^2 = a^2 - 2ab + b^2 \), cette
+          fois avec \( a = 20 \) et \( b = 1 \).</div>
+      </div>
+      <div class="step">
+        \[ = 400 - 40 + 1 = 361 \quad\Longrightarrow\quad \sqrt{361} = 19 \]
+        <div class="why">Le carré de 19 vaut 361 : la racine carrée de 361 est exactement 19. Encore
+          une valeur ronde — l'énoncé est fait pour ça.</div>
+      </div>
+    </div>
+    <div class="box box-methode">
+      <div class="box-title">Les carrés à connaître par cœur pour cet examen</div>
+      <table class="data">
+        <tr><th>\( n \)</th><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+        <tr><th>\( n^2 \)</th><td>289</td><td>324</td><td>361</td><td>400</td><td>441</td><td>484</td><td>529</td></tr>
+      </table>
+      <p>
+        Dès qu'un énoncé te donne une richesse comme 361, 400, 441 ou 484 avec une utilité en racine
+        carrée, tu sais que le concepteur a choisi ces nombres exprès : la racine sera entière.
+        Si tu obtiens une racine qui ne tombe pas juste, relis ton calcul de richesse finale.
+      </p>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Faire la moyenne des deux utilités</div>
+    <div class="calc">
+      <div class="step">
+        \[ U(\text{accepter}) = \tfrac12 \times 22 + \tfrac12 \times 19 \]
+        <div class="why">Je remplace chaque racine par sa valeur. À ce stade, je manipule des
+          « utils », pas des euros : 22 et 19 sont des niveaux de satisfaction.</div>
+      </div>
+      <div class="step">
+        \[ = 11 + 9{,}5 \]
+        <div class="why">La moitié de 22, c'est 11. La moitié de 19, c'est 9,5 (parce que 19 est
+          impair, sa moitié a une décimale).</div>
+      </div>
+      <div class="step">
+        \[ U(\text{accepter}) = 20{,}5 \]
+        <div class="why">Somme des deux moitiés. Vérification rapide : la moyenne de 19 et 22 doit
+          tomber entre les deux, plus près du milieu. Le milieu de \( [19\,;22] \) est
+          \( 20{,}5 \) ✔.</div>
+      </div>
+    </div>
+    <div class="result">
+      <div class="result-title">Résultat</div>
+      <p>\[ U(\text{accepter}) = \tfrac12\sqrt{484} + \tfrac12\sqrt{361} = 20{,}5 \]</p>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Comparer et trancher</div>
+    <div class="calc">
+      <div class="step">
+        \[ U(\text{accepter}) = 20{,}5 \qquad ; \qquad U(\text{refuser}) = 20 \]
+        <div class="why">Les deux nombres à comparer sont enfin côte à côte. Ils sont dans la même
+          unité (des utils), ce qui est indispensable : on ne compare jamais des utils à des
+          euros.</div>
+      </div>
+      <div class="step">
+        \[ 20{,}5 > 20 \]
+        <div class="why">L'écart est de \( +0{,}5 \) util en faveur de l'acceptation. Petit, mais
+          strictement positif — et c'est le signe qui décide, pas la taille.</div>
+      </div>
+      <div class="step">
+        \[ \Longrightarrow \textbf{l'individu accepte le pari} \]
+        <div class="why">Par le critère de l'utilité espérée : entre deux options, on prend celle
+          dont l'utilité espérée est la plus grande.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>7.4 Le point important : averse ne veut pas dire poltron</h3>
+
+  <p>
+    Arrête-toi sur ce résultat, parce qu'il est contre-intuitif et que c'est exactement ce que
+    l'examinateur veut tester. On vient de démontrer en 2.1 que l'individu est
+    <strong>averse au risque</strong>. Et il <strong>accepte</strong> quand même de jouer à pile ou
+    face. Contradiction ? Absolument pas.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Ce que l'aversion au risque interdit — et ce qu'elle n'interdit pas</div>
+    <p>
+      <strong>Elle interdit</strong> d'accepter un pari <em>équitable</em> (de VMA nulle) ou
+      <em>défavorable</em> (de VMA négative). Un averse au risque refuse toujours « pile je gagne 50,
+      face je perds 50 ».
+    </p>
+    <p>
+      <strong>Elle n'interdit pas</strong> d'accepter un pari <em>favorable</em>. Si la VMA est
+      suffisamment positive, la compensation en argent l'emporte sur le désagrément du risque.
+    </p>
+    <p>
+      La bonne formule à retenir : <em>l'aversion au risque n'est pas un refus du risque, c'est un
+      prix demandé pour le risque.</em> Ici, ce prix est de 2,25 euros (on le calculera en 2.4), et
+      le pari en offre 22,50. L'offre dépasse le prix, donc c'est oui.
+    </p>
+  </div>
+
+  <p>
+    On peut même mesurer la marge. Combien le gain « pile » pouvait-il être plus faible avant que
+    l'individu ne bascule dans le refus ? On cherche le gain \( g \) qui rend l'individu
+    exactement indifférent.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \tfrac12\sqrt{400+g} + \tfrac12\sqrt{361} = 20 \]
+      <div class="why">Je pose l'égalité qui traduit l'indifférence : l'utilité espérée d'accepter
+        égale exactement l'utilité de refuser.</div>
+    </div>
+    <div class="step">
+      \[ \tfrac12\sqrt{400+g} = 20 - 9{,}5 = 10{,}5 \]
+      <div class="why">Je remplace \( \tfrac12\sqrt{361} = \tfrac12 \times 19 = 9{,}5 \), puis je le
+        fais passer de l'autre côté par soustraction.</div>
+    </div>
+    <div class="step">
+      \[ \sqrt{400+g} = 21 \;\Longrightarrow\; 400+g = 441 \;\Longrightarrow\; g = 41 \]
+      <div class="why">Je multiplie les deux côtés par 2, puis j'élève au carré pour supprimer la
+        racine (\( 21^2 = 441 \)), et enfin je retire 400. Il faut donc au minimum un gain de
+        <strong>41 euros</strong> pour compenser une perte possible de 39 euros.</div>
+    </div>
+  </div>
+
+  <p>
+    Voilà l'aversion au risque chiffrée : pour risquer 39 euros à pile ou face, cet individu exige au
+    moins 41 euros en face — soit 2 euros de plus que ce que la « justice arithmétique » demanderait.
+    Comme l'énoncé lui en offre 84, il est très largement au-dessus du seuil. Sa décision n'est même
+    pas serrée.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 560 400" width="100%" style="max-width:12cm" role="img"
+         aria-label="Courbe de racine de w avec les points 361 virgule 19 et 484 virgule 22, la corde qui les relie, l'utilite esperee 20 virgule 5 au milieu de la corde, et le point 400 virgule 20 sur la courbe, montrant que 20 virgule 5 depasse 20">
+      <g stroke="#111827" stroke-width="1.3" fill="none">
+        <path d="M70 366 L70 46"/><path d="M70 366 L540 366"/>
+      </g>
+      <text x="34" y="42" font-size="12">u(w)</text>
+      <text x="470" y="390" font-size="12">w (€)</text>
+
+      <polyline fill="none" stroke="#111827" stroke-width="2.6"
+        points="70,334 133,294 197,255 260,217 324,179 387,143 451,107 530,64"/>
+      <text x="470" y="52" font-size="12.5" font-weight="bold">u(w) = √w</text>
+
+      <line x1="105" y1="312" x2="495" y2="83" stroke="#111827" stroke-width="1.5" stroke-dasharray="7 4"/>
+      <text x="392" y="152" font-size="11.5" style="fill:#4b5563">la corde = toutes les loteries</text>
+      <text x="392" y="166" font-size="11.5" style="fill:#4b5563">entre 361 et 484</text>
+
+      <circle cx="105" cy="312" r="4.5" fill="#111827"/>
+      <circle cx="495" cy="83" r="4.5" fill="#111827"/>
+      <circle cx="229" cy="236" r="4.5" fill="#111827"/>
+      <circle cx="300" cy="197" r="5.5" fill="none" stroke="#111827" stroke-width="2.2"/>
+
+      <g stroke="#111827" stroke-width="1" stroke-dasharray="4 3">
+        <path d="M105 312 L70 312"/><path d="M105 312 L105 366"/>
+        <path d="M495 83 L70 83"/><path d="M495 83 L495 366"/>
+        <path d="M229 236 L70 236"/><path d="M229 236 L229 366"/>
+        <path d="M300 197 L70 197"/><path d="M300 197 L300 366"/>
+      </g>
+
+      <g font-size="11.5" text-anchor="end">
+        <text x="64" y="316">19</text>
+        <text x="64" y="240">20</text>
+        <text x="64" y="201" font-weight="bold">20,5</text>
+        <text x="64" y="87">22</text>
+      </g>
+      <g font-size="11.5" text-anchor="middle">
+        <text x="105" y="382">361</text>
+        <text x="229" y="382">400</text>
+        <text x="300" y="382">422,5</text>
+        <text x="495" y="382">484</text>
+      </g>
+
+      <text x="118" y="300" font-size="11.5">face</text>
+      <text x="470" y="100" font-size="11.5">pile</text>
+      <text x="240" y="230" font-size="11.5">refuser</text>
+      <text x="308" y="188" font-size="11.5" font-weight="bold">accepter</text>
+
+      <text x="330" y="132" font-size="12" font-weight="bold">20,5 &gt; 20</text>
+      <text x="330" y="147" font-size="11.5">donc il accepte</text>
+    </svg>
+    <figcaption>
+      Figure 6 — La décision de la question 2.3, lue sur le graphique. Le cercle plein en
+      \( (400\,;20) \) est l'option « refuser », lue <em>sur la courbe</em>. Le cercle creux en
+      \( (422{,}5\,;20{,}5) \) est l'option « accepter », lue <em>sur la corde</em> : c'est le milieu
+      du segment qui joint les deux issues, puisque les deux probabilités valent \( \tfrac12 \). Le
+      cercle creux est <strong>plus haut</strong> que le cercle plein, donc l'utilité espérée
+      d'accepter dépasse celle de refuser. Ce qui rend cela possible malgré la concavité, c'est que
+      le point « accepter » n'est pas au-dessus de 400 mais au-dessus de 422,5 : le pari
+      <em>déplace la moyenne vers la droite</em>, et ce déplacement rapporte plus que la concavité ne
+      coûte.
+    </figcaption>
+  </figure>
+
+  <figure>
+    <svg viewBox="0 0 560 220" width="100%" style="max-width:12cm" role="img"
+         aria-label="Axe vertical des utilites graduee de 19 a 22 montrant refuser a 20 utils et accepter a 20 virgule 5 utils, l'ecart de 0 virgule 5 util en faveur de l'acceptation">
+      <line x1="120" y1="30" x2="120" y2="190" stroke="#111827" stroke-width="1.6"/>
+      <text x="120" y="20" font-size="12" text-anchor="middle">utils</text>
+
+      <g stroke="#111827" stroke-width="1.2">
+        <path d="M114 178 L126 178"/><path d="M114 130 L126 130"/>
+        <path d="M114 106 L126 106"/><path d="M114 46 L126 46"/>
+      </g>
+      <g font-size="11.5" text-anchor="end">
+        <text x="108" y="182">19</text>
+        <text x="108" y="134">20</text>
+        <text x="108" y="110">20,5</text>
+        <text x="108" y="50">22</text>
+      </g>
+
+      <rect x="150" y="122" width="150" height="16" rx="3" fill="none" stroke="#111827" stroke-width="1.4" stroke-dasharray="6 4"/>
+      <text x="225" y="134" font-size="11.5" text-anchor="middle">REFUSER : 20</text>
+
+      <rect x="330" y="98" width="180" height="16" rx="3" fill="none" stroke="#111827" stroke-width="2"/>
+      <text x="420" y="110" font-size="11.5" text-anchor="middle" font-weight="bold">ACCEPTER : 20,5</text>
+
+      <g stroke="#111827" stroke-width="1.2" stroke-dasharray="4 3">
+        <path d="M126 130 L150 130"/><path d="M126 106 L330 106"/>
+      </g>
+
+      <g stroke="#111827" stroke-width="1.5">
+        <path d="M318 130 L318 106"/>
+        <path d="M314 112 L318 103 L322 112"/>
+        <path d="M314 124 L318 133 L322 124"/>
+      </g>
+      <text x="326" y="150" font-size="11.5">écart : +0,5 util</text>
+
+      <text x="300" y="200" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        la barre la plus haute gagne — c'est toute la règle de décision
+      </text>
+      <text x="300" y="214" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        (trait plein = option choisie · pointillés = option écartée)
+      </text>
+    </svg>
+    <figcaption>
+      Figure 7 — Accepter contre refuser, sur l'axe des utilités. Les deux options sont mesurées dans
+      la même unité (des « utils »), condition indispensable pour pouvoir les comparer. L'écart n'est
+      que de 0,5 util, mais en théorie de la décision une préférence stricte est une préférence
+      stricte : il n'y a pas de « trop peu pour compter ». Attention toutefois — 0,5 util n'est
+      <em>pas</em> 0,5 euro. Pour traduire cet écart en argent, il faudra passer par l'équivalent
+      certain, c'est-à-dire par la question 2.4.
+    </figcaption>
+  </figure>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie — question 2.3</div>
+    <p>
+      On raisonne sur les <strong>richesses finales</strong>. S'il accepte, sa richesse vaut
+      \( 400 + 84 = 484 \) euros en cas de pile et \( 400 - 39 = 361 \) euros en cas de face, chacune
+      avec probabilité \( \tfrac12 \). Son utilité espérée est donc :
+    </p>
+    <p>\[ U(\text{accepter}) = \tfrac12\sqrt{484} + \tfrac12\sqrt{361} \]</p>
+    <p>\[ = \tfrac12 \times 22 + \tfrac12 \times 19 = 11 + 9{,}5 = 20{,}5 \]</p>
+    <p>S'il refuse, il conserve 400 euros avec certitude :</p>
+    <p>\[ U(\text{refuser}) = u(400) = \sqrt{400} = 20 \]</p>
+    <p>
+      Le critère de l'utilité espérée impose de choisir l'option d'utilité espérée maximale. Comme
+      \( 20{,}5 > 20 \), <strong>l'individu accepte le pari</strong>.
+    </p>
+    <p>
+      Ce résultat n'est pas contradictoire avec la question 2.1 : être averse au risque signifie
+      refuser tout pari <em>équitable</em>, pas tout pari. Ici le pari est nettement favorable
+      (VMA de \( +22{,}50 \) euros), et cette compensation suffit à couvrir le coût du risque.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les cinq pièges de la question 2.3</div>
+    <ol>
+      <li>
+        <strong>Calculer \( \tfrac12\sqrt{84} + \tfrac12\sqrt{-39} \).</strong> La racine d'un nombre
+        négatif n'existe même pas dans les réels : si tu écris \( \sqrt{-39} \), c'est le signal que
+        tu as confondu gains et richesses finales. Reviens au tableau à trois colonnes.
+      </li>
+      <li>
+        <strong>Calculer \( \sqrt{422{,}5} \approx 20{,}55 \).</strong> C'est \( u(E[w]) \), pas
+        \( E[u(w)] \). Tu as pris la moyenne d'abord et la racine ensuite : l'ordre est inversé. Le
+        nombre obtenu est <em>toujours plus grand</em> que le bon (c'est Jensen), donc il ne se
+        repère pas au « ça a l'air faux ».
+      </li>
+      <li>
+        <strong>Oublier de calculer \( u(400) \).</strong> Sans terme de comparaison, il n'y a pas de
+        décision. 3 points perdus sur 10.
+      </li>
+      <li>
+        <strong>Comparer 20,5 à 22,5 ou à 422,5.</strong> On ne compare que des grandeurs de même
+        nature : des utils avec des utils. 20,5 est un util, 22,5 et 422,5 sont des euros.
+      </li>
+      <li>
+        <strong>Conclure « il refuse car il est averse au risque ».</strong> C'est l'erreur de
+        raisonnement la plus fréquente sur cette question — et elle annule aussi la question 2.4,
+        dont l'énoncé suppose explicitement qu'il a accepté.
+      </li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Recette réutilisable — « accepte-t-il le pari ? »</div>
+    <ol>
+      <li><strong>Tableau</strong> : états du monde, probabilités, richesses <em>finales</em>.</li>
+      <li><strong>Règle</strong> : écris « il accepte si et seulement si
+        \( U(\text{accepter}) > u(w) \) » avant tout calcul.</li>
+      <li><strong>Gauche</strong> : calcule \( U(\text{accepter}) \) — racine de chaque richesse
+        finale d'abord, moyenne ensuite.</li>
+      <li><strong>Droite</strong> : calcule \( u(w) \), l'utilité du refus.</li>
+      <li><strong>Verdict</strong> : compare, et écris une phrase en français qui tranche.</li>
+      <li><strong>Commentaire</strong> : une ligne d'interprétation (« averse mais le pari est assez
+        favorable ») — c'est souvent le point de la « qualité de raisonnement ».</li>
+    </ol>
+  </div>
+
+  <hr class="soft">
+
+  <h2>8. Question 2.4 — Équivalent certain et prime de risque minimale (10 points)</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 2.4 (10 points)</div>
+    <p>
+      On suppose que l'individu accepte le pari. Sa richesse finale est alors un actif risqué.
+      Calculez l'équivalent certain \( C \) de cette richesse finale risquée, ainsi que la prime de
+      risque minimale \( \mathrm{PRM} = \mathrm{VMA} - C \).
+    </p>
+  </div>
+
+  <h3>8.1 Traduisons la question en français simple</h3>
+
+  <dl class="lexique">
+    <dt>« Sa richesse finale est alors un actif risqué »</dt>
+    <dd>
+      L'énoncé te souffle la réponse au piège n° 1 : l'objet dont on parle maintenant, c'est
+      \( a_r = (\tfrac12 \text{ ; } 484 \text{ ; } \tfrac12 \text{ ; } 361) \). Tous les calculs de
+      cette question se font sur des <strong>patrimoines</strong>, autour de 400 euros. Le
+      \( \mathrm{VMA} \) de la formule \( \mathrm{PRM} = \mathrm{VMA} - C \) est donc celle de la
+      richesse finale : <strong>422,50</strong>, pas 22,50.
+    </dd>
+    <dt>« l'équivalent certain \( C \) »</dt>
+    <dd>
+      Le montant d'argent <em>sûr</em> qui rendrait l'individu exactement aussi heureux que sa
+      position risquée. C'est le prix auquel il serait tout juste prêt à <strong>vendre</strong> son
+      pari à quelqu'un d'autre. Il se lit « C » ou « le C-E ». C'est un montant
+      <strong>en euros</strong>, jamais en utils — et c'est là que se joue la moitié des erreurs.
+    </dd>
+    <dt>« la prime de risque minimale »</dt>
+    <dd>
+      L'écart, en euros, entre la moyenne de sa position risquée et son équivalent certain. C'est le
+      <strong>rabais</strong> qu'il consent pour se débarrasser du risque, ou, vu de l'autre côté du
+      guichet, le <strong>supplément</strong> qu'une compagnie d'assurance pourrait lui facturer
+      au-delà du coût moyen du sinistre. Le mot « minimale » indique qu'en dessous de ce montant,
+      l'individu refuserait de céder son risque.
+    </dd>
+    <dt>« On suppose que l'individu accepte »</dt>
+    <dd>
+      Ce n'est pas une hypothèse gratuite : elle confirme que ta réponse à la 2.3 était bien
+      « il accepte ». Si tu avais conclu l'inverse, cette phrase de l'énoncé aurait dû t'alerter.
+    </dd>
+  </dl>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel du volume 1 (chapitre 2, § 6) — les deux définitions à réécrire</div>
+    <p>L'équivalent certain est défini par l'<strong>égalité d'utilité</strong> :</p>
+    <p>\[ u\bigl(C(a_r)\bigr) = U(a_r) \]</p>
+    <p>« L'utilité du montant sûr \( C \) égale l'utilité espérée de la loterie. »</p>
+    <p>La prime de risque minimale est définie par une <strong>différence en euros</strong> :</p>
+    <p>\[ \mathrm{PRM}(a_r) = \mathrm{VMA}(a_r) - C(a_r) \]</p>
+    <p>
+      Pour un individu averse au risque, \( C < \mathrm{VMA} \), donc \( \mathrm{PRM} > 0 \). Pour
+      un neutre, \( C = \mathrm{VMA} \) et \( \mathrm{PRM} = 0 \). Pour un amateur de risque,
+      \( C > \mathrm{VMA} \) et \( \mathrm{PRM} < 0 \).
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">L'équivalent certain, version marché aux puces</div>
+    <p>
+      Imagine que juste après avoir accepté le pari, mais avant le lancer de la pièce, un ami te
+      propose : « je te rachète ta position — je prends le pari à ta place, tu me donnes ton billet,
+      je te donne du cash tout de suite ». Combien de cash accepterais-tu au minimum ?
+    </p>
+    <p>
+      Si l'ami propose 415 euros, tu refuses : ta position risquée vaut mieux que ça à tes yeux. S'il
+      propose 425 euros, tu signes tout de suite. Quelque part entre les deux, il y a un montant
+      exact qui te laisse parfaitement indifférent. Ce montant, c'est \( C \). On va montrer qu'il
+      vaut 420,25 euros.
+    </p>
+  </div>
+
+  <h3>8.2 La résolution pas à pas</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Calculer la VMA de la richesse finale</div>
+    <p>
+      C'est la moyenne pondérée des deux <em>patrimoines</em> possibles — pas des gains.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ \mathrm{VMA}(a_r) = \tfrac12 \times 484 + \tfrac12 \times 361 \]
+        <div class="why">Les deux richesses finales trouvées au § 3.2, chacune pondérée par sa
+          probabilité \( \tfrac12 \). Les deux montants sont positifs : pas de piège de signe
+          ici.</div>
+      </div>
+      <div class="step">
+        \[ \tfrac12 \times 484 = 242 \qquad ; \qquad \tfrac12 \times 361 = 180{,}5 \]
+        <div class="why">Moitié de 484 : \( 484 = 480 + 4 \), donc \( 240 + 2 = 242 \). Moitié de
+          361 : \( 361 = 360 + 1 \), donc \( 180 + 0{,}5 = 180{,}5 \).</div>
+      </div>
+      <div class="step">
+        \[ \mathrm{VMA}(a_r) = 242 + 180{,}5 = 422{,}50 \text{ euros} \]
+        <div class="why">Simple addition. Vérification immédiate avec la relation du § 6.2 :
+          \( 400 + 22{,}5 = 422{,}5 \) ✔. Et le résultat est bien compris entre 361 et 484, comme
+          toute moyenne doit l'être ✔.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Poser l'équation de l'équivalent certain</div>
+    <p>
+      On applique la définition, en remplaçant \( u \) par sa formule et \( U(a_r) \) par la valeur
+      calculée à la question 2.3.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ u(C) = U(a_r) \]
+        <div class="why">La définition, écrite en toutes lettres avant tout remplacement. Le
+          correcteur cherche cette ligne : elle vaut à elle seule une bonne partie des 5 points de
+          la première moitié de la question.</div>
+      </div>
+      <div class="step">
+        \[ \sqrt{C} = 20{,}5 \]
+        <div class="why">À gauche, \( u(C) \) devient \( \sqrt C \) puisque \( u(w) = \sqrt w \). À
+          droite, \( U(a_r) = 20{,}5 \), la valeur trouvée en 2.3. Remarque bien : ce \( 20{,}5 \)
+          est un <em>util</em>, et il est ici comparé à une racine carrée d'euros — c'est
+          normal, c'est précisément ce que fait la fonction \( u \).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Résoudre : passer de la racine au nombre</div>
+    <p>
+      Pour « défaire » une racine carrée, on élève les deux côtés au carré. C'est légitime ici parce
+      que les deux côtés sont positifs.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ \bigl(\sqrt{C}\bigr)^2 = (20{,}5)^2 \]
+        <div class="why">J'élève au carré des <strong>deux</strong> côtés de l'égalité : c'est la
+          règle de base des équations, ce qu'on fait à gauche, on le fait à droite.</div>
+      </div>
+      <div class="step">
+        \[ C = (20{,}5)^2 \]
+        <div class="why">À gauche, la racine et le carré s'annulent : \( (\sqrt C)^2 = C \). C'est
+          tout l'intérêt de la manœuvre.</div>
+      </div>
+      <div class="step">
+        \[ (20{,}5)^2 = (20 + 0{,}5)^2 = 20^2 + 2\times 20 \times 0{,}5 + (0{,}5)^2 \]
+        <div class="why">Encore l'identité \( (a+b)^2 = a^2 + 2ab + b^2 \), avec \( a = 20 \) et
+          \( b = 0{,}5 \). C'est le moyen le plus sûr de calculer ce carré de tête, sans poser la
+          multiplication.</div>
+      </div>
+      <div class="step">
+        \[ = 400 + 20 + 0{,}25 = 420{,}25 \]
+        <div class="why">\( 2\times 20\times 0{,}5 = 20 \) (deux fois vingt fois un demi, c'est
+          vingt) et \( 0{,}5 \times 0{,}5 = 0{,}25 \). D'où le total.</div>
+      </div>
+    </div>
+    <div class="result">
+      <div class="result-title">Résultat</div>
+      <p>\[ C(a_r) = 420{,}25 \text{ euros} \]</p>
+      <p>
+        Cet individu est <em>indifférent</em> entre garder sa position risquée (484 ou 361, à pile ou
+        face) et recevoir 420,25 euros en liquide, tout de suite, sans jouer.
+      </p>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Calculer la prime de risque minimale</div>
+    <div class="calc">
+      <div class="step">
+        \[ \mathrm{PRM}(a_r) = \mathrm{VMA}(a_r) - C(a_r) \]
+        <div class="why">La définition. Les deux termes sont en euros, donc leur différence est en
+          euros : la PRM est un montant d'argent.</div>
+      </div>
+      <div class="step">
+        \[ \mathrm{PRM} = 422{,}50 - 420{,}25 \]
+        <div class="why">Je remplace par les deux valeurs calculées. Attention à ne pas glisser
+          \( 22{,}50 \) à la place de \( 422{,}50 \) : c'est exactement le piège n° 1, et il
+          donnerait une PRM négative absurde de \( -397{,}75 \).</div>
+      </div>
+      <div class="step">
+        \[ \mathrm{PRM} = 2{,}25 \text{ euros} \]
+        <div class="why">Soustraction : \( 422{,}50 - 420{,}25 \). On enlève d'abord 420 (il reste
+          2,50), puis 0,25 (il reste 2,25).</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>8.3 Les vérifications de cohérence (à écrire sur la copie)</h3>
+
+  <p>
+    Cette question se prête magnifiquement à l'autocontrôle. Quatre tests, quatre lignes, et tu sais
+    si tu t'es trompé.
+  </p>
+
+  <table class="compare">
+    <tr><th class="left">Test</th><th class="left">Ce qu'on vérifie</th><th class="left">Ici</th></tr>
+    <tr>
+      <td class="left">1. Aversion</td>
+      <td class="left">\( C < \mathrm{VMA} \), donc \( \mathrm{PRM} > 0 \)</td>
+      <td class="left">\( 420{,}25 < 422{,}50 \) ✔ et \( 2{,}25 > 0 \) ✔</td>
+    </tr>
+    <tr>
+      <td class="left">2. Encadrement</td>
+      <td class="left">\( C \) est compris entre la pire et la meilleure issue</td>
+      <td class="left">\( 361 < 420{,}25 < 484 \) ✔</td>
+    </tr>
+    <tr>
+      <td class="left">3. Décision</td>
+      <td class="left">il a accepté en 2.3, donc \( C > w \)</td>
+      <td class="left">\( 420{,}25 > 400 \) ✔</td>
+    </tr>
+    <tr>
+      <td class="left">4. Définition</td>
+      <td class="left">\( u(C) \) doit redonner \( U(a_r) \)</td>
+      <td class="left">\( \sqrt{420{,}25} = 20{,}5 \) ✔</td>
+    </tr>
+  </table>
+
+  <div class="box box-why">
+    <div class="box-title">Le test n° 3 est une seconde règle de décision, et elle est très élégante</div>
+    <p>
+      Regarde ce qu'il dit : l'individu accepte le pari si et seulement si l'équivalent certain de sa
+      richesse finale dépasse sa richesse actuelle.
+    </p>
+    <p>\[ \text{accepter} \iff C(a_r) > w \]</p>
+    <p>
+      Pourquoi est-ce équivalent au critère de la question 2.3 ? Parce que la fonction \( u \) est
+      strictement croissante (\( u' > 0 \)) : comparer \( u(C) \) et \( u(w) \) revient exactement à
+      comparer \( C \) et \( w \). Or \( u(C) = U(a_r) \) par définition. Donc
+      \( U(a_r) > u(w) \iff u(C) > u(w) \iff C > w \).
+    </p>
+    <p>
+      L'avantage de cette version : elle compare des <strong>euros</strong>, pas des utils, donc elle
+      se raconte en français courant. « Ma position risquée vaut 420,25 euros à mes yeux ; je n'en
+      avais que 400 avant ; le pari m'a donc enrichi de 20,25 euros en équivalent certain. Je
+      signe. » Aucun util dans cette phrase, et pourtant c'est la même décision.
+    </p>
+  </div>
+
+  <p>
+    Ce « gain net en équivalent certain » de \( 420{,}25 - 400 = 20{,}25 \) euros est le troisième
+    nombre à ne pas confondre avec les deux autres. Récapitulons les trois, une fois pour toutes.
+  </p>
+
+  <table class="compare">
+    <tr><th class="left">Nombre</th><th class="left">Nom</th><th class="left">Signification</th></tr>
+    <tr>
+      <td class="left">\( 22{,}50 \) €</td>
+      <td class="left">VMA du pari</td>
+      <td class="left">le gain moyen, en ignorant le risque</td>
+    </tr>
+    <tr>
+      <td class="left">\( 20{,}25 \) €</td>
+      <td class="left">gain en équivalent certain</td>
+      <td class="left">le gain moyen <em>corrigé</em> du coût du risque</td>
+    </tr>
+    <tr>
+      <td class="left">\( 2{,}25 \) €</td>
+      <td class="left">prime de risque minimale</td>
+      <td class="left">l'écart entre les deux : le coût du risque lui-même</td>
+    </tr>
+  </table>
+
+  <p>
+    Et l'on retrouve bien \( 22{,}50 - 20{,}25 = 2{,}25 \). Les trois nombres forment un triangle
+    cohérent : <strong>ce que le pari rapporte en moyenne, moins ce que le risque coûte, égale ce
+    que le pari rapporte vraiment à cet individu.</strong>
+  </p>
+
+  <h3>8.4 La figure centrale du chapitre</h3>
+
+  <p>
+    Voici le dessin qui contient toute la question 2. Si tu ne devais retenir qu'une image de ce
+    chapitre, ce serait celle-là. Prends le temps de repérer chaque élément avant de lire la
+    légende.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 560 424" width="100%" style="max-width:12cm" role="img"
+         aria-label="Figure centrale : la courbe racine de w entre 361 et 484, la corde reliant les points 361 virgule 19 et 484 virgule 22, l'utilite esperee 20 virgule 5 au milieu de la corde a l'abscisse 422 virgule 5, l'equivalent certain 420 virgule 25 sur la courbe a la meme hauteur, la prime de risque de 2 virgule 25 euros entre les deux, et le point 400 virgule 20 correspondant au refus">
+      <g stroke="#111827" stroke-width="1.3" fill="none">
+        <path d="M70 366 L70 46"/><path d="M70 366 L540 366"/>
+      </g>
+      <text x="34" y="42" font-size="12">u(w)</text>
+      <text x="500" y="360" font-size="12">w (€)</text>
+
+      <polyline fill="none" stroke="#111827" stroke-width="2.6"
+        points="70,334 133,294 197,255 260,217 324,179 387,143 451,107 530,64"/>
+      <text x="452" y="48" font-size="12.5" font-weight="bold">u(w) = √w</text>
+
+      <line x1="105" y1="312" x2="495" y2="83" stroke="#111827" stroke-width="1.5" stroke-dasharray="7 4"/>
+
+      <line x1="70" y1="197" x2="345" y2="197" stroke="#111827" stroke-width="1.1" stroke-dasharray="3 3"/>
+      <line x1="70" y1="236" x2="240" y2="236" stroke="#111827" stroke-width="1.1" stroke-dasharray="3 3"/>
+
+      <g stroke="#111827" stroke-width="1.1" stroke-dasharray="3 3">
+        <path d="M105 312 L105 366"/><path d="M229 236 L229 366"/>
+        <path d="M293 197 L293 366"/><path d="M300 197 L300 366"/>
+        <path d="M495 83 L495 366"/>
+        <path d="M105 312 L70 312"/><path d="M495 83 L70 83"/>
+      </g>
+
+      <circle cx="105" cy="312" r="4.5" fill="#111827"/>
+      <circle cx="495" cy="83" r="4.5" fill="#111827"/>
+      <circle cx="229" cy="236" r="4.5" fill="#111827"/>
+      <circle cx="293" cy="197" r="4.5" fill="#111827"/>
+      <circle cx="300" cy="197" r="5.5" fill="none" stroke="#111827" stroke-width="2.2"/>
+
+      <g stroke="#111827" stroke-width="1.7">
+        <path d="M293 190 L293 204"/><path d="M300 190 L300 204"/>
+      </g>
+      <path d="M297 190 L360 152" stroke="#111827" stroke-width="1.1"/>
+      <text x="364" y="150" font-size="12" font-weight="bold">PRM = 2,25 €</text>
+      <text x="364" y="165" font-size="11.5">l'écart C ↔ VMA</text>
+      <text x="364" y="180" font-size="11.5">(agrandi : figure 9)</text>
+
+      <g font-size="11.5" text-anchor="end">
+        <text x="64" y="316">19</text>
+        <text x="64" y="240">20</text>
+        <text x="64" y="201" font-weight="bold">20,5</text>
+        <text x="64" y="87">22</text>
+      </g>
+
+      <g font-size="11.5" text-anchor="middle">
+        <text x="105" y="382">361</text>
+        <text x="229" y="382">400</text>
+        <text x="495" y="382">484</text>
+      </g>
+
+      <path d="M293 372 L200 400" stroke="#111827" stroke-width="1.1"/>
+      <text x="196" y="404" font-size="11.5" text-anchor="end" font-weight="bold">C = 420,25</text>
+      <path d="M300 372 L392 400" stroke="#111827" stroke-width="1.1"/>
+      <text x="396" y="404" font-size="11.5" font-weight="bold">VMA = 422,5</text>
+
+      <text x="120" y="304" font-size="11.5">face</text>
+      <text x="462" y="98" font-size="11.5">pile</text>
+      <text x="150" y="230" font-size="11.5">refuser (400 ; 20)</text>
+
+      <text x="280" y="420" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        point plein = lu sur la courbe · cercle creux = lu sur la corde
+      </text>
+    </svg>
+    <figcaption>
+      Figure 8 — La figure centrale. <strong>La courbe</strong> \( \sqrt w \) porte tout ce qui est
+      <em>certain</em> ; <strong>la corde</strong> (pointillés) porte tout ce qui est
+      <em>risqué</em>. Les deux issues du pari, \( (361\,;19) \) et \( (484\,;22) \), sont sur la
+      courbe. Le cercle creux, au milieu exact de la corde, est la position risquée : abscisse
+      \( \mathrm{VMA} = 422{,}5 \), ordonnée \( U(a_r) = 20{,}5 \). En glissant horizontalement de ce
+      cercle creux jusqu'à la courbe, on tombe sur l'équivalent certain \( C = 420{,}25 \) : même
+      satisfaction, mais sans risque, et pour 2,25 euros de moins. Ces 2,25 euros, c'est la
+      <strong>prime de risque</strong> — la distance horizontale entre la corde et la courbe. Enfin
+      le point \( (400\,;20) \) est l'option « refuser » : il est plus bas que 20,5, ce qui explique
+      la décision de la question 2.3.
+    </figcaption>
+  </figure>
+
+  <p>
+    Le seul défaut de cette figure, c'est l'échelle : 2,25 euros sur un axe qui va de 361 à 484,
+    c'est 1,8 % de la largeur. Agrandissons la zone qui nous intéresse.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 560 300" width="100%" style="max-width:12cm" role="img"
+         aria-label="Agrandissement de la zone entre 415 et 428 euros : la courbe et la corde y sont presque paralleles ; a la hauteur 20 virgule 5, la courbe est atteinte en 420 virgule 25 et la corde en 422 virgule 5, l'ecart de 2 virgule 25 euros etant la prime de risque">
+      <g stroke="#111827" stroke-width="1.3" fill="none">
+        <path d="M70 270 L70 20"/><path d="M70 270 L540 270"/>
+      </g>
+      <text x="30" y="18" font-size="11.5">u(w)</text>
+      <text x="500" y="264" font-size="11.5">w (€)</text>
+
+      <polyline fill="none" stroke="#111827" stroke-width="2.6"
+        points="70,245 141,211 212,176 282,142 353,108 424,74 530,23"/>
+      <line x1="70" y1="283" x2="530" y2="61" stroke="#111827" stroke-width="1.5" stroke-dasharray="7 4"/>
+
+      <line x1="70" y1="155" x2="380" y2="155" stroke="#111827" stroke-width="1.1" stroke-dasharray="3 3"/>
+      <text x="88" y="148" font-size="11.5">niveau d'utilité 20,5</text>
+
+      <circle cx="256" cy="155" r="5" fill="#111827"/>
+      <circle cx="335" cy="155" r="6" fill="none" stroke="#111827" stroke-width="2.2"/>
+
+      <g stroke="#111827" stroke-width="1.1" stroke-dasharray="3 3">
+        <path d="M256 155 L256 270"/><path d="M335 155 L335 270"/>
+      </g>
+
+      <g stroke="#111827" stroke-width="1.8">
+        <path d="M256 200 L335 200"/>
+        <path d="M264 196 L254 200 L264 204"/>
+        <path d="M327 196 L337 200 L327 204"/>
+      </g>
+      <text x="296" y="192" font-size="12.5" text-anchor="middle" font-weight="bold">2,25 €</text>
+      <text x="296" y="218" font-size="11.5" text-anchor="middle">la prime de risque</text>
+
+      <g font-size="11.5" text-anchor="middle">
+        <text x="256" y="288" font-weight="bold">C = 420,25</text>
+        <text x="400" y="288" font-weight="bold">VMA = 422,5</text>
+      </g>
+      <path d="M335 274 L372 282" stroke="#111827" stroke-width="1"/>
+
+      <text x="420" y="120" font-size="11.5">la courbe (certain)</text>
+      <text x="420" y="230" font-size="11.5">la corde (risqué)</text>
+      <path d="M418 116 L392 96" stroke="#111827" stroke-width="1"/>
+      <path d="M418 226 L400 210" stroke="#111827" stroke-width="1"/>
+    </svg>
+    <figcaption>
+      Figure 9 — Zoom sur la fenêtre \( [415\,;428] \) euros. À cette échelle, la prime de risque
+      devient visible : pour obtenir le même niveau de satisfaction (20,5), il faut 422,50 euros
+      <em>en moyenne mais au hasard</em> (sur la corde), contre seulement 420,25 euros
+      <em>garantis</em> (sur la courbe). L'individu est prêt à sacrifier 2,25 euros d'espérance pour
+      obtenir la certitude : c'est le prix qu'il attache à la tranquillité. Note aussi que la courbe
+      passe <em>au-dessus</em> de la corde partout : c'est la concavité de la question 2.1, vue de
+      près.
+    </figcaption>
+  </figure>
+
+  <h3>8.5 Interpréter la prime de risque : 2,25 euros, c'est beaucoup ou c'est peu ?</h3>
+
+  <p>
+    Un nombre tout seul ne dit rien. Rapporte-le à quelque chose.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Rapportée au risque pris</strong> : l'individu met en jeu un écart de
+      \( 484 - 361 = 123 \) euros entre ses deux issues possibles. Il facture 2,25 euros pour
+      supporter cet écart, soit environ 1,8 % de l'amplitude du risque. C'est modeste : cet individu
+      n'est que <em>modérément</em> averse.
+    </li>
+    <li>
+      <strong>Rapportée au gain moyen</strong> : le pari lui rapporte 22,50 euros en moyenne, dont
+      2,25 sont « mangés » par le risque. Il lui reste 20,25 euros de gain réel. Le risque lui coûte
+      donc 10 % de son gain espéré.
+    </li>
+    <li>
+      <strong>En lecture assurantielle</strong> : si une compagnie proposait de reprendre son pari
+      contre un versement fixe, l'individu accepterait de payer jusqu'à 2,25 euros
+      <em>au-delà</em> de ce que le pari lui rapporte en moyenne. C'est la marge maximale de
+      l'assureur sur ce contrat.
+    </li>
+  </ul>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi la prime est-elle si petite ici ?</div>
+    <p>
+      Parce que \( \sqrt w \) est presque droite dans la zone qui nous intéresse. Entre 361 et 484,
+      la courbe ne s'écarte que très légèrement de sa corde : sa pente passe de
+      \( \tfrac{1}{2\times 19} \approx 0{,}0263 \) à \( \tfrac{1}{2\times 22} \approx 0{,}0227 \).
+      Une variation de pente de 14 % seulement.
+    </p>
+    <p>
+      Règle générale à retenir : <strong>la prime de risque augmente avec la courbure de \( u \) et
+      avec la taille du risque</strong> (plus précisément, avec la variance de la loterie). Un risque
+      deux fois plus large produit, pour de petits risques, une prime environ quatre fois plus
+      grande. C'est pourquoi personne ne s'assure contre le risque de perdre 5 euros, alors que tout
+      le monde s'assure contre l'incendie de sa maison.
+    </p>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie — question 2.4</div>
+    <p>
+      La richesse finale est l'actif risqué
+      \( a_r = \bigl(\tfrac12 \text{ ; } 484 \text{ ; } \tfrac12 \text{ ; } 361\bigr) \). Sa valeur
+      monétaire attendue vaut :
+    </p>
+    <p>\[ \mathrm{VMA}(a_r) = \tfrac12 \times 484 + \tfrac12 \times 361 = 242 + 180{,}5 = 422{,}50 \text{ €} \]</p>
+    <p>(cohérent avec \( 400 + 22{,}50 \), la richesse initiale plus la VMA du pari).</p>
+    <p>
+      L'équivalent certain \( C \) est le montant sûr procurant la même utilité que l'actif risqué,
+      soit \( u(C) = U(a_r) \) :
+    </p>
+    <p>\[ \sqrt{C} = 20{,}5 \quad\Longrightarrow\quad C = (20{,}5)^2 = 420{,}25 \text{ €} \]</p>
+    <p>La prime de risque minimale est l'écart entre les deux :</p>
+    <p>\[ \mathrm{PRM} = \mathrm{VMA}(a_r) - C = 422{,}50 - 420{,}25 = 2{,}25 \text{ €} \]</p>
+    <p>
+      <strong>Vérification.</strong> L'individu étant averse au risque, on doit avoir
+      \( C < \mathrm{VMA} \) et \( \mathrm{PRM} > 0 \) : c'est bien le cas.
+      <strong>Interprétation.</strong> Il est indifférent entre sa position risquée et 420,25 euros
+      en liquide ; il exige donc un rabais de 2,25 euros sur la moyenne pour accepter de supporter
+      le risque. Comme \( C = 420{,}25 > w = 400 \), on retrouve la décision de la question 2.3 :
+      il accepte le pari.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les pièges de la question 2.4</div>
+    <ol>
+      <li>
+        <strong>Utiliser \( \mathrm{VMA} = 22{,}50 \) dans la formule de la PRM.</strong> Le piège
+        n° 1 en action. On obtient \( 22{,}50 - 420{,}25 = -397{,}75 \), une prime de risque
+        négative gigantesque : un individu qui <em>paierait</em> 398 euros pour avoir le droit de
+        jouer. Absurde, mais malheureusement écrit chaque année.
+      </li>
+      <li>
+        <strong>Écrire \( C = 20{,}5 \).</strong> On a oublié d'élever au carré : on a répondu
+        l'utilité au lieu du montant. Test de bon sens : un équivalent certain doit être du même
+        ordre de grandeur que les issues (entre 361 et 484). 20,5 n'y est pas.
+      </li>
+      <li>
+        <strong>Calculer \( C = \sqrt{20{,}5} \).</strong> Inversion de l'opération : on applique
+        \( u \) au lieu de son inverse. Souviens-toi du sens : \( u \) transforme des euros en
+        utils ; pour revenir des utils aux euros, il faut faire l'opération contraire, donc élever au
+        carré.
+      </li>
+      <li>
+        <strong>Mélanger les deux univers.</strong> Si tu choisis de travailler en gains nets (ce que
+        le barème accepte), il faut être cohérent d'un bout à l'autre : \( C_{\text{net}} = 20{,}25 \)
+        et \( \mathrm{VMA}_{\text{net}} = 22{,}50 \), donc \( \mathrm{PRM} = 2{,}25 \) — la même. Ce
+        qui est faux, c'est de prendre \( C \) dans un univers et \( \mathrm{VMA} \) dans l'autre.
+      </li>
+      <li>
+        <strong>Oublier les unités.</strong> \( C \) et \( \mathrm{PRM} \) sont en euros,
+        \( U(a_r) \) est en utils. Écrire « \( \mathrm{PRM} = 2{,}25 \) utils » coûte un point de
+        rigueur.
+      </li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Recette réutilisable — équivalent certain et prime de risque</div>
+    <ol>
+      <li>Calcule \( U(a_r) \) : racine (ou log, ou autre \( u \)) de chaque richesse finale, puis
+        moyenne pondérée.</li>
+      <li>Écris \( u(C) = U(a_r) \) en toutes lettres.</li>
+      <li><strong>Inverse</strong> la fonction \( u \) : si \( u = \sqrt{\cdot} \), élève au carré ;
+        si \( u = \ln(\cdot) \), prends l'exponentielle ; si \( u(w) = w^{\alpha} \), élève à la
+        puissance \( 1/\alpha \).</li>
+      <li>Calcule \( \mathrm{VMA}(a_r) \) sur les <strong>mêmes</strong> grandeurs que \( C \)
+        (richesses finales, ou gains nets — mais pas un mélange).</li>
+      <li>\( \mathrm{PRM} = \mathrm{VMA} - C \), et vérifie que le signe correspond à l'attitude face
+        au risque trouvée en 2.1.</li>
+    </ol>
+  </div>
+
+  <hr class="soft">
+
+<hr class="soft">
+
+<h2>9. Question 2.5 — le cadrage étroit (6 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 2.5 (6 points)</div>
+<p>
+  <strong>2.5)</strong> L'individu a accepté le pari. Avant de connaître le résultat du lancer, on
+  lui propose de prendre le même pari une seconde fois. Sans faire aucun calcul : expliquez
+  comment un décideur rationnel doit évaluer cette seconde proposition, et en quoi un individu
+  atteint du biais de cadrage étroit (« narrow framing ») raisonnerait différemment.
+</p>
+</div>
+
+<h3>9.1 Traduisons la question</h3>
+
+<dl class="lexique">
+<dt>« avant de connaître le résultat du lancer »</dt>
+<dd>
+  Détail capital : les deux paris sont <strong>en cours en même temps</strong>. Il ne s'agit pas
+  de « j'ai gagné, je rejoue » — il s'agit de porter deux risques simultanément, sans savoir où
+  en est le premier.
+</dd>
+<dt>« sans faire aucun calcul »</dt>
+<dd>
+  C'est une consigne. Le correcteur attend un <strong>raisonnement en français</strong>, pas une
+  utilité espérée. Lance-toi dans les racines carrées et tu perdras du temps sans gagner de
+  points.
+</dd>
+<dt>« comment un décideur rationnel doit évaluer »</dt>
+<dd>
+  Le mot « doit » signale qu'on te demande la <strong>norme</strong> : ce que prescrit la théorie
+  du choix rationnel, pas ce que font les gens.
+</dd>
+<dt>« cadrage étroit (narrow framing) »</dt>
+<dd>
+  « Cadrage » = la façon dont on découpe mentalement un problème ; « étroit » = on le découpe
+  trop petit. C'est un <strong>biais</strong>, c'est-à-dire un écart systématique par rapport à
+  la norme rationnelle.
+</dd>
+</dl>
+
+<h3>9.2 Ce que fait le décideur rationnel</h3>
+
+<div class="box box-def">
+<div class="box-title">Le principe : on évalue la richesse finale, globalement</div>
+<p>
+  La théorie de l'utilité espérée porte sur la <span class="term">richesse finale</span> — le
+  montant total dont on disposera à la fin, une fois <em>tous</em> les risques dénoués. Pas sur
+  les gains et pertes de chaque pari pris séparément.
+</p>
+<p>
+  Face à une seconde proposition, un décideur rationnel doit donc :
+</p>
+<ol>
+  <li><strong>agréger</strong> les deux paris en une seule loterie, en listant toutes les
+      combinaisons possibles (les deux gagnent, l'un gagne et l'autre perd, les deux perdent) avec
+      leurs probabilités ;</li>
+  <li><strong>calculer l'utilité espérée de cette loterie globale</strong>, à partir des richesses
+      finales qu'elle produit ;</li>
+  <li><strong>la comparer</strong> à l'utilité espérée de la situation où il garde seulement le
+      premier pari. Il accepte si le total est meilleur.</li>
+</ol>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 250" width="100%" style="max-width:12cm" role="img"
+     aria-label="À gauche, deux paris évalués séparément ; à droite, les deux paris agrégés en une seule loterie à trois issues possibles">
+  <text x="118" y="24" font-size="12.5" text-anchor="middle" font-weight="bold" style="fill:#be123c">Cadrage étroit</text>
+  <text x="118" y="42" font-size="11.5" text-anchor="middle" style="fill:#be123c">deux tiroirs séparés</text>
+  <rect x="46" y="56" width="144" height="52" fill="#fff1f2" stroke="#be123c" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="118" y="78" font-size="12" text-anchor="middle">pari 1 : +84 ou −39</text>
+  <text x="118" y="96" font-size="11.5" text-anchor="middle">« est-il bon ? »</text>
+  <rect x="46" y="124" width="144" height="52" fill="#fff1f2" stroke="#be123c" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="118" y="146" font-size="12" text-anchor="middle">pari 2 : +84 ou −39</text>
+  <text x="118" y="164" font-size="11.5" text-anchor="middle">« est-il bon ? »</text>
+  <text x="118" y="200" font-size="11.5" text-anchor="middle">chaque tiroir jugé seul,</text>
+  <text x="118" y="216" font-size="11.5" text-anchor="middle">comme si l'autre n'existait pas</text>
+
+  <line x1="235" y1="40" x2="235" y2="230" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="5 4"/>
+
+  <text x="352" y="24" font-size="12.5" text-anchor="middle" font-weight="bold" style="fill:#047857">Décideur rationnel</text>
+  <text x="352" y="42" font-size="11.5" text-anchor="middle" style="fill:#047857">une seule richesse finale</text>
+  <rect x="276" y="56" width="152" height="120" fill="#ecfdf5" stroke="#047857" stroke-width="1.8"/>
+  <text x="352" y="78" font-size="12" text-anchor="middle" font-weight="bold">les deux paris ensemble</text>
+  <text x="290" y="100" font-size="11.5">les deux gagnent</text>
+  <text x="290" y="120" font-size="11.5">un gagne, l'autre perd</text>
+  <text x="290" y="140" font-size="11.5">un perd, l'autre gagne</text>
+  <text x="290" y="160" font-size="11.5">les deux perdent</text>
+  <text x="352" y="200" font-size="11.5" text-anchor="middle">une seule loterie,</text>
+  <text x="352" y="216" font-size="11.5" text-anchor="middle">une seule utilité espérée</text>
+</svg>
+<figcaption>
+  Figure — Deux façons de découper le même problème. À droite, la façon correcte : les risques se
+  combinent en une seule distribution de richesse finale. À gauche, le cadrage étroit : chaque
+  pari est enfermé dans son propre tiroir mental.
+</figcaption>
+</figure>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi l'agrégation change quelque chose</div>
+<p>
+  Parce que deux paris indépendants se <strong>compensent partiellement</strong>. Si le premier
+  tourne mal, le second peut le rattraper. Le scénario catastrophique (perdre les deux) devient
+  plus rare — sa probabilité tombe à une chance sur quatre au lieu d'une sur deux — tandis que
+  les résultats intermédiaires deviennent les plus probables.
+</p>
+<p>
+  Or c'est précisément le scénario catastrophique que redoute quelqu'un d'averse au risque. En
+  regroupant les paris, on <strong>lisse</strong> le risque : c'est la même idée que la
+  diversification d'un portefeuille, ou que le proverbe « ne pas mettre tous ses œufs dans le
+  même panier ».
+</p>
+</div>
+
+<h3>9.3 Ce que fait l'individu au cadrage étroit</h3>
+
+<div class="box box-def">
+<div class="box-title">Définition — le cadrage étroit</div>
+<p>
+  Il y a <span class="term">cadrage étroit</span> quand un décideur évalue chaque risque
+  <strong>isolément</strong>, dans son propre « compte mental », au lieu de l'intégrer à
+  l'ensemble de sa situation financière.
+</p>
+<p>
+  Autrement dit : il se demande « ce pari-ci, pris tout seul, est-il bon pour moi ? » — sans tenir
+  compte du fait qu'il porte déjà un autre risque, ni de sa richesse globale.
+</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Exemple — le cadrage étroit dans la vie courante</div>
+<ul>
+  <li>Refuser une petite assurance parce qu'« elle n'est pas rentable », alors qu'on en a déjà dix
+      autres et que ce qui compte est le risque total.</li>
+  <li>Vendre une action en perte « pour ne pas rester sur un échec », en oubliant qu'elle fait
+      partie d'un portefeuille dont l'ensemble se porte bien.</li>
+  <li>Se réjouir d'avoir économisé 20 € sur un grille-pain tout en acceptant sans discuter 500 €
+      d'options sur une voiture : chaque dépense est jugée dans son propre tiroir.</li>
+</ul>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Le résultat contre-intuitif à connaître</div>
+<p>
+  Le cadrage étroit conduit à des décisions <strong>incohérentes entre elles</strong>. On peut
+  ainsi refuser une série de paris qu'on accepterait pourtant un par un — ou l'inverse. Un
+  décideur rationnel, lui, ne peut jamais se contredire de cette façon : puisqu'il ne raisonne
+  que sur la richesse finale, sa décision ne dépend pas de la manière dont on lui présente le
+  découpage.
+</p>
+<p>
+  C'est bien ce qui fait du cadrage étroit un <em>biais</em> : ce n'est pas une préférence
+  différente, c'est une <strong>violation de la cohérence</strong> exigée par la théorie.
+</p>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 2.5</div>
+<p>
+  Le décideur <strong>rationnel</strong> agrège les deux paris en une seule loterie sur sa
+  richesse finale et compare l'utilité espérée globale à celle d'un seul pari. L'individu atteint
+  de <strong>cadrage étroit</strong> juge le second pari isolément, comme si le premier n'existait
+  pas — il ignore la compensation entre les deux risques, et ses décisions peuvent devenir
+  incohérentes.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 2.5</div>
+<p>
+  « Un décideur rationnel raisonne sur sa <strong>richesse finale</strong> : il doit agréger les
+  deux paris en une seule loterie (les deux gagnent, l'un gagne et l'autre perd, les deux perdent,
+  avec les probabilités correspondantes), calculer l'utilité espérée de cette loterie globale, et
+  la comparer à celle de la situation où il garde seulement le premier pari. Les deux risques se
+  compensent partiellement, ce qui réduit la probabilité du pire scénario : l'ensemble est donc
+  moins risqué que la somme des perceptions séparées.<br>
+  Un individu atteint de <strong>cadrage étroit</strong> évalue au contraire le second pari
+  <em>isolément</em>, dans un compte mental distinct, comme si le premier n'existait pas. Il
+  néglige la compensation entre les deux risques et sa richesse globale, ce qui le conduit à des
+  décisions incohérentes — par exemple refuser un ensemble de paris qu'il accepterait pourtant
+  un par un. »
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 2.5</div>
+<ul>
+  <li><strong>Faire les calculs alors que l'énoncé l'interdit.</strong> Aucun point à gagner, du
+      temps à perdre.</li>
+  <li><strong>Décrire le cadrage étroit sans décrire d'abord la norme rationnelle.</strong> La
+      question demande les deux, et dans cet ordre : on ne peut définir un écart qu'en ayant
+      posé la référence.</li>
+  <li><strong>Confondre avec l'effet de dotation ou le framing des gains et pertes.</strong> Ici,
+      le biais porte sur le <em>périmètre</em> de l'évaluation (un pari plutôt que l'ensemble),
+      pas sur la possession ni sur la formulation.</li>
+  <li><strong>Dire que le cadrage étroit consiste à « être trop prudent ».</strong> Pas
+      forcément : selon les cas il conduit à trop refuser ou à trop accepter. Ce qui le
+      caractérise, c'est l'<em>incohérence</em>, pas le sens de l'erreur.</li>
+</ul>
+</div>
+
+<hr class="soft">
+
+<h2>10. Récapitulatif : toute la Question 2 sur une page</h2>
+
+<table class="compare">
+<tr><th>Q</th><th class="left">Réponse</th><th class="left">Le geste décisif</th></tr>
+<tr>
+  <td>2.1<br>(8 pts)</td>
+  <td class="left">\( u'' < 0 \) ⇒ concave ⇒ averse au risque</td>
+  <td class="left">calculer \( u'' = -\tfrac14 w^{-3/2} \) et énoncer le théorème (Jensen)</td>
+</tr>
+<tr>
+  <td>2.2<br>(6 pts)</td>
+  <td class="left">VMA du pari = 22,5 &gt; 0 ⇒ un neutre accepterait</td>
+  <td class="left">bien prendre la VMA <em>du pari</em>, pas de la richesse</td>
+</tr>
+<tr>
+  <td>2.3<br>(10 pts)</td>
+  <td class="left">\( E[u] = 20{,}5 > u(400) = 20 \) ⇒ il accepte</td>
+  <td class="left">comparer à l'utilité de la richesse <em>certaine</em>, pas à la VMA</td>
+</tr>
+<tr>
+  <td>2.4<br>(10 pts)</td>
+  <td class="left">\( C = 420{,}25 \) ; \( \mathrm{PRM} = 422{,}5 - 420{,}25 = 2{,}25 \)</td>
+  <td class="left">élever 20,5 au carré, et utiliser la VMA de la <em>richesse finale</em></td>
+</tr>
+<tr>
+  <td>2.5<br>(6 pts)</td>
+  <td class="left">agrégation contre évaluation isolée</td>
+  <td class="left">poser la norme rationnelle avant de décrire le biais</td>
+</tr>
+</table>
+
+<div class="box box-copie">
+<div class="box-title">Checklist avant de tourner la page</div>
+<ol>
+  <li>Ai-je bien distingué les <strong>deux VMA</strong> : celle du pari (22,5) et celle de la
+      richesse finale (422,5) ?</li>
+  <li>Ai-je énoncé le théorème du cours en 2.1, et pas seulement calculé la dérivée seconde ?</li>
+  <li>Ai-je comparé \( E[u] = 20{,}5 \) à \( u(400) = 20 \), et conclu explicitement « il
+      accepte » ?</li>
+  <li>L'équivalent certain est-il bien le <em>carré</em> de l'utilité espérée ?</li>
+  <li>Ma prime de risque est-elle positive (elle doit l'être pour un averse au risque) ?</li>
+  <li>En 2.5, ai-je répondu sans aucun calcul, en traitant la norme <em>puis</em> le biais ?</li>
+</ol>
+</div>
+</section>

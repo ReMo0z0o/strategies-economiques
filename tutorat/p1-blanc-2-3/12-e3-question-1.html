@@ -1,0 +1,2786 @@
+<section class="chapter">
+  <div class="chapter-tag">Chapitre 12 — Examen n° 3, Question 1 · 50 points</div>
+  <h1>L'île, les deux salaires et la taxe : qui choisit de travailler combien</h1>
+  <p class="chapter-intro">
+    Une île, un très grand nombre d'habitants, deux salaires seulement, un gouvernement qui prélève
+    une taxe et qui redistribue tout à parts égales. Cinq sous-questions, 50 points — et la seule
+    question de tout le document qui exige un <em>Lagrangien</em>. C'est donc la plus technique.
+    Bonne nouvelle : elle est aussi la plus mécanique. Une fois qu'on a compris ce que veut dire
+    « choisir son loisir », tout s'enchaîne. On part de zéro : tu n'as jamais entendu les mots
+    « contrainte de budget », « coût d'opportunité », « courbe d'indifférence », « Lagrangien »,
+    « multiplicateur », « transfert forfaitaire », « statique comparative » ? Parfait. Ils sont tous
+    construits ici, un par un, avec des exemples de la vie de tous les jours, et aucune ligne de
+    calcul n'est écrite sans être justifiée.
+  </p>
+
+  <div class="box box-methode">
+    <div class="box-title">Comment lire ce chapitre</div>
+    <p>
+      Chaque sous-question suit toujours le même moule, dans cet ordre :
+      <strong>(1)</strong> l'énoncé rappelé mot pour mot, avec son barème ;
+      <strong>(2)</strong> « traduisons la question en français simple » : ce qu'on te demande
+      vraiment, mot par mot ; <strong>(3)</strong> « le cours dont tu as besoin » : le mini-cours
+      complet, depuis zéro ; <strong>(4)</strong> la résolution pas à pas, où <em>aucune</em> ligne
+      de calcul n'est écrite sans être justifiée ; <strong>(5)</strong> l'encadré vert « ce qu'il
+      fallait écrire sur la copie », rédigé mot à mot ; <strong>(6)</strong> les pièges et le
+      réflexe de méthode à retenir.
+    </p>
+    <p>
+      Avant les cinq sous-questions, il y a une longue <strong>section 3</strong> : le socle commun.
+      C'est le vrai cours de ce chapitre — le modèle « consommation–loisir ». Ne la saute pas :
+      les cinq réponses en découlent toutes, et une fois qu'elle est lue, les sous-questions se
+      répondent presque toutes seules.
+    </p>
+    <p>
+      Le <strong>chapitre 6</strong> (la nouvelle boîte à outils) présente en général le
+      logarithme \( \ln \), sa dérivée \( 1/x \) et la méthode du Lagrangien. Tu n'as pas besoin d'y
+      retourner : tout ce qu'on utilise ici est réexpliqué sur place, avec les chiffres de cet
+      énoncé précis.
+    </p>
+  </div>
+
+  <h2>1. L'énoncé, tel qu'il tombe à l'examen</h2>
+
+  <p>
+    Voici le texte exact. Lis-le une fois sans chercher à comprendre : c'est parfaitement normal de
+    ne rien saisir au premier passage. On le démonte mot par mot juste après.
+  </p>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 1 (50 points), le décor commun</div>
+    <p>
+      Considérez une île où habitent un très grand nombre \( N \) de travailleurs. La moitié de ces
+      travailleurs a un salaire brut \( s_H = 20 \) et l'autre moitié un salaire brut
+      \( s_B = 10 \). La dotation en temps de chaque travailleur est \( L = 1 \) et le prix d'une
+      unité de consommation est \( p = 1 \). Les préférences de chaque travailleur sur sa
+      consommation \( c \) et son temps de loisir \( l \) sont représentées par la fonction
+      d'utilité
+    </p>
+    <p>\[ U(l,\, c) = c + 4\ln(l) \]</p>
+    <p>
+      Le gouvernement prélève une taxe au taux \( t \) sur les revenus bruts du travail. Il répartit
+      le montant total collecté en parts égales entre tous les travailleurs, qui reçoivent donc
+      chacun un montant forfaitaire \( M(t) \).
+    </p>
+    <p>
+      <em>Note —</em> comme \( N \) est très grand, chaque travailleur considère le montant
+      \( M(t) \) comme une <strong>donnée</strong> lorsqu'il choisit son temps de travail.
+    </p>
+    <p>
+      <strong>Dans les sous-questions 1.1) à 1.3), supposez que \( t = 0{,}2 \).</strong>
+    </p>
+  </div>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — les cinq sous-questions et leur barème</div>
+    <p>
+      <strong>1.1)</strong> Écrivez la contrainte de budget d'un travailleur à haut salaire, puis
+      celle d'un travailleur à bas salaire. <em>(10 points)</em>
+    </p>
+    <p>
+      <strong>1.2)</strong> En utilisant la méthode du Lagrangien, calculez le temps de travail
+      optimal de chacun des deux types de travailleurs. Détaillez votre raisonnement.
+      <em>(15 points)</em>
+    </p>
+    <p>
+      <strong>1.3)</strong> Calculez le revenu du travail net perçu par chaque type de travailleur.
+      <em>(8 points)</em>
+    </p>
+    <p>
+      <strong>1.4)</strong> Le gouvernement envisage d'augmenter le taux de taxe \( t \). En vous
+      appuyant sur l'expression du loisir optimal obtenue en 1.2), déterminez l'effet d'une hausse
+      de \( t \) sur l'offre de travail de chaque type, puis donnez l'intuition économique de ce
+      résultat. <em>(8 points)</em>
+    </p>
+    <p>
+      <strong>1.5)</strong> On admet qu'en refaisant tous les calculs pour un taux de taxe
+      \( t = 0{,}5 \), puis en calculant les utilités atteintes, on obtient le tableau ci-dessous.
+      L'une des deux allocations domine-t-elle l'autre au sens de Pareto ? Détaillez votre
+      raisonnement. <em>(9 points)</em>
+    </p>
+    <table class="data">
+      <tr><th></th><th>\( M(t) \)</th><th>\( U_H \)</th><th>\( U_B \)</th></tr>
+      <tr><th>\( t = 0{,}2 \)</th><td>2</td><td>8,45</td><td>3,23</td></tr>
+      <tr><th>\( t = 0{,}5 \)</th><td>3,5</td><td>5,83</td><td>3,61</td></tr>
+    </table>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Où vont les 50 points — le barème détaillé</div>
+    <p>
+      Connaître le barème change la façon d'écrire une copie. Le voici, tel qu'il est appliqué :
+    </p>
+    <table class="compare">
+      <tr>
+        <th class="left">Sous-question</th><th>Points</th>
+        <th class="left">Ce qui est compté</th>
+      </tr>
+      <tr>
+        <td class="left">1.1</td><td>10</td>
+        <td class="left">5 par contrainte : revenu net du travail correct (3) + transfert
+          \( M(t) \) ajouté comme donnée (2)</td>
+      </tr>
+      <tr>
+        <td class="left">1.2</td><td>15</td>
+        <td class="left">Lagrangien correct (5) · les trois conditions de premier ordre (4) ·
+          formule du loisir optimal (3) · les deux valeurs numériques (3)</td>
+      </tr>
+      <tr>
+        <td class="left">1.3</td><td>8</td>
+        <td class="left">4 points par revenu net</td>
+      </tr>
+      <tr>
+        <td class="left">1.4</td><td>8</td>
+        <td class="left">effet formel, \( l^* \) croissant en \( t \) (4) · intuition économique,
+          coût d'opportunité du loisir (4)</td>
+      </tr>
+      <tr>
+        <td class="left">1.5</td><td>9</td>
+        <td class="left">critère de Pareto correctement énoncé (3) · comparaison des deux types (4)
+          · conclusion (2)</td>
+      </tr>
+    </table>
+    <p>
+      Retiens surtout ceci : <strong>en 1.2, écrire le Lagrangien rapporte 5 points à lui seul</strong>,
+      avant même d'avoir dérivé quoi que ce soit. Et en 1.4, la moitié des points est dans une
+      phrase d'intuition, pas dans un calcul. Ne laisse jamais ces points-là sur la table.
+    </p>
+  </div>
+
+  <p>
+    Si en lisant l'énoncé tu as ressenti un vide total, c'est exactement pour ça que ce chapitre
+    existe. Commence par regarder le trajet complet qu'on va parcourir. Les cinq sous-questions ne
+    sont pas cinq exercices indépendants : ce sont cinq étapes d'une seule histoire, et chacune se
+    sert de la précédente.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 540 292" width="100%" style="max-width:12.5cm" role="img"
+         aria-label="Carte des cinq sous-questions : 1.1 la contrainte de budget, 1.2 le Lagrangien donne un loisir de 0,25 et 0,5, 1.3 les revenus nets 12 et 4, 1.4 une hausse de la taxe augmente le loisir, 1.5 aucune allocation ne domine l'autre au sens de Pareto">
+      <g fill="none" stroke="#111827" stroke-width="1.3">
+        <rect x="14" y="30" width="150" height="86" rx="4"/>
+        <rect x="196" y="30" width="150" height="86" rx="4"/>
+        <rect x="378" y="30" width="148" height="86" rx="4"/>
+        <rect x="105" y="166" width="150" height="86" rx="4"/>
+        <rect x="287" y="166" width="150" height="86" rx="4"/>
+      </g>
+      <g stroke="#111827" stroke-width="1.5" fill="#111827">
+        <path d="M166 73 L184 73"/><path d="M180 69 L190 73 L180 77 Z"/>
+        <path d="M348 73 L366 73"/><path d="M362 69 L372 73 L362 77 Z"/>
+        <path d="M452 120 L452 144 L180 144 L180 160"/><path d="M176 152 L180 162 L184 152 Z"/>
+        <path d="M257 209 L275 209"/><path d="M271 205 L281 209 L271 213 Z"/>
+      </g>
+      <g font-size="12.5" text-anchor="middle">
+        <text x="89" y="48" font-weight="bold">1.1 — le possible</text>
+        <text x="89" y="67">la contrainte</text>
+        <text x="89" y="83">de budget</text>
+        <text x="89" y="101" font-weight="bold">c = 16(1−l)+2</text>
+        <text x="89" y="112" font-weight="bold">c = 8(1−l)+2</text>
+
+        <text x="271" y="48" font-weight="bold">1.2 — le choix</text>
+        <text x="271" y="67">le Lagrangien</text>
+        <text x="271" y="83">donne le loisir</text>
+        <text x="271" y="101" font-weight="bold">travail : 0,75</text>
+        <text x="271" y="112" font-weight="bold">et 0,5</text>
+
+        <text x="452" y="48" font-weight="bold">1.3 — l'argent</text>
+        <text x="452" y="67">revenu du travail</text>
+        <text x="452" y="83">net</text>
+        <text x="452" y="101" font-weight="bold">12 pour H</text>
+        <text x="452" y="112" font-weight="bold">4 pour B</text>
+
+        <text x="180" y="184" font-weight="bold">1.4 — et si t monte ?</text>
+        <text x="180" y="203">le salaire net baisse,</text>
+        <text x="180" y="219">le loisir augmente :</text>
+        <text x="180" y="237" font-weight="bold">les deux types</text>
+        <text x="180" y="248" font-weight="bold">travaillent moins</text>
+
+        <text x="362" y="184" font-weight="bold">1.5 — qui préfère quoi</text>
+        <text x="362" y="203">H perd, B gagne</text>
+        <text x="362" y="219">⇒ pas d'unanimité</text>
+        <text x="362" y="237" font-weight="bold">aucune domination</text>
+        <text x="362" y="248" font-weight="bold">de Pareto</text>
+      </g>
+      <text x="270" y="278" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        chaque case se sert du résultat de la précédente — on lit de gauche à droite, puis on redescend
+      </text>
+    </svg>
+    <figcaption>
+      Figure 1 — La carte de la question 1. Toute l'histoire tient en une phrase : la taxe fait
+      travailler tout le monde moins, elle enrichit les bas salaires et appauvrit les hauts
+      salaires — et le critère de Pareto, à lui seul, refuse alors de trancher.
+    </figcaption>
+  </figure>
+
+  <h2>2. Traduisons l'énoncé en français simple</h2>
+
+  <p>
+    L'énoncé fait huit lignes et contient une douzaine de mots techniques. On les prend un par un.
+    Aucun n'est difficile ; ils sont juste inhabituels. Lis cette liste lentement : à la fin, tu
+    dois pouvoir raconter l'histoire de l'île à quelqu'un qui n'a pas lu l'énoncé.
+  </p>
+
+  <h3>2.1 Le lexique, mot par mot</h3>
+
+  <dl class="lexique">
+    <dt>« une île où habitent un très grand nombre \( N \) de travailleurs »</dt>
+    <dd>
+      L'île, c'est juste une façon de dire « une petite économie fermée » : personne n'entre,
+      personne ne sort, on ne commerce avec personne d'autre. Le « très grand nombre » n'est pas
+      décoratif : il sert à une chose précise, expliquée dans la note de l'énoncé. Retiens pour
+      l'instant que \( N \) est énorme — pense à un million.
+    </dd>
+
+    <dt>« la moitié a un salaire brut \( s_H = 20 \), l'autre moitié \( s_B = 10 \) »</dt>
+    <dd>
+      Il n'y a que <strong>deux sortes de gens</strong> sur l'île. Les uns sont payés 20 euros de
+      l'heure avant impôt, les autres 10 euros de l'heure avant impôt. Les lettres en indice se
+      lisent « s indice H » et « s indice B » : le \( H \) est pour <em>haut</em> salaire, le
+      \( B \) pour <em>bas</em> salaire. Ce ne sont pas des puissances, juste des étiquettes qui
+      disent de qui on parle. Et « moitié–moitié » veut dire qu'il y a exactement autant de gens
+      dans chaque groupe — ça servira plus tard, quand on calculera la moyenne des impôts.
+    </dd>
+
+    <dt>« salaire <em>brut</em> »</dt>
+    <dd>
+      <span class="term">Brut</span> = avant impôt. C'est le chiffre écrit sur le contrat, celui
+      que l'employeur verse. Le salaire <span class="term">net</span>, c'est ce qui reste une fois
+      la taxe prélevée — c'est celui qui arrive sur le compte en banque. Toute la question 1 joue
+      sur l'écart entre les deux. Souviens-toi de ta première fiche de paie : le grand nombre en
+      haut (le brut) et le plus petit nombre en bas (le net).
+    </dd>
+
+    <dt>« la dotation en temps de chaque travailleur est \( L = 1 \) »</dt>
+    <dd>
+      <span class="term">Dotation</span> = ce que tu possèdes au départ, avant tout choix. Ici on
+      te dote de <strong>temps</strong> : chaque habitant dispose d'une quantité de temps égale à
+      1. Un quoi ? Peu importe : une journée, une semaine, une vie. On a décidé d'appeler
+      « 1 » la totalité du temps disponible. C'est une <em>normalisation</em>, un choix d'unité,
+      exactement comme quand on dit « le gâteau entier vaut 1 » et qu'une part vaut alors 0,25.
+      Tu ne peux pas dépenser plus de 1 : c'est ta seule ressource physique.
+    </dd>
+
+    <dt>« le prix d'une unité de consommation est \( p = 1 \) »</dt>
+    <dd>
+      Il n'y a qu'un seul bien à acheter sur l'île (appelle-le « la nourriture », ou « les
+      courses »), et il coûte 1 euro l'unité. Encore une normalisation : elle permet de confondre
+      « euros dépensés » et « quantité consommée ». Si tu as 14 euros, tu achètes 14 unités. Ça
+      simplifie énormément l'écriture : chaque fois que tu verras \( p\,c \), tu pourras écrire
+      simplement \( c \).
+    </dd>
+
+    <dt>« sa consommation \( c \) »</dt>
+    <dd>
+      La quantité de bien que la personne achète et consomme. Comme \( p = 1 \), c'est aussi le
+      montant d'argent qu'elle dépense. Attention : \( c \) est une <strong>quantité choisie</strong>,
+      pas une donnée de l'énoncé. C'est une des deux inconnues du problème.
+    </dd>
+
+    <dt>« son temps de loisir \( l \) »</dt>
+    <dd>
+      La part de sa dotation de temps qu'elle <strong>ne passe pas à travailler</strong> : dormir,
+      manger, voir des amis, ne rien faire. La lettre se lit « l » comme <em>loisir</em> (et comme
+      <em>leisure</em> en anglais). C'est la seconde inconnue. <strong>Point capital, source de
+      la moitié des erreurs à l'examen :</strong> \( l \) est le <em>loisir</em>, pas le travail.
+      Le temps de travail, c'est ce qui reste, donc \( L - l = 1 - l \).
+    </dd>
+
+    <dt>« la fonction d'utilité \( U(l, c) = c + 4\ln(l) \) »</dt>
+    <dd>
+      Une <span class="term">fonction d'utilité</span> est une machine à donner des notes de
+      satisfaction. Tu lui donnes un couple (loisir, consommation) et elle te rend un nombre : plus
+      le nombre est grand, plus la personne est contente. \( U(l, c) \) se lit « U de l virgule
+      c ». Le nombre lui-même n'a aucune signification physique (ce ne sont ni des euros ni des
+      points de bonheur) : seule la <strong>comparaison</strong> entre deux nombres compte. Ici,
+      une personne aime deux choses : consommer (\( c \)) et se reposer (\( 4\ln(l) \)).
+    </dd>
+
+    <dt>« le gouvernement prélève une taxe au taux \( t \) sur les revenus bruts du travail »</dt>
+    <dd>
+      Un <span class="term">taux</span>, c'est une proportion. \( t = 0{,}2 \) signifie que l'État
+      prend 20 \% de ce que tu gagnes brut. Si tu gagnes 100 brut, tu paies 20 et tu gardes 80.
+      D'où la formule que tu vas voir partout : ce qui te reste, c'est \( (1 - t) \) fois ton brut,
+      c'est-à-dire ici \( 0{,}8 \) fois ton brut.
+    </dd>
+
+    <dt>« il répartit le montant collecté en parts égales : chacun reçoit \( M(t) \) »</dt>
+    <dd>
+      Tout ce qui a été prélevé est remis dans un pot commun, puis divisé par le nombre
+      d'habitants et redistribué. <strong>Tout le monde reçoit le même chèque</strong>, riche ou
+      pauvre, travailleur ou paresseux. L'écriture \( M(t) \) rappelle simplement que la taille du
+      chèque dépend du taux de taxe choisi : avec \( t = 0{,}2 \) on trouvera \( M = 2 \), avec
+      \( t = 0{,}5 \) on trouvera \( M = 3{,}5 \). Les parenthèses ne sont pas une multiplication !
+      \( M(t) \) se lit « M de t » : « le montant, en tant que fonction du taux ».
+    </dd>
+
+    <dt>« montant <em>forfaitaire</em> »</dt>
+    <dd>
+      <span class="term">Forfaitaire</span> = un montant fixe, identique pour tous, qui ne dépend
+      pas de ce que tu fais. C'est le mot le plus important de l'énoncé et on lui consacre toute
+      une section (3.5). Résumé en une phrase : <strong>tu ne peux rien faire pour l'augmenter ou
+      le diminuer</strong>. C'est le contraire d'une prime au mérite.
+    </dd>
+
+    <dt>« chaque travailleur considère \( M(t) \) comme une donnée »</dt>
+    <dd>
+      Une <span class="term">donnée</span> (on dit aussi « exogène », ou « pris comme donné »),
+      c'est un nombre que l'individu subit sans pouvoir l'influencer. Pourquoi ici ? Parce que
+      \( N \) est gigantesque. Si <em>toi</em> tu décides de travailler une heure de plus, tu
+      verses un peu plus d'impôt, le pot commun grossit d'un tout petit peu… puis on le divise par
+      un million. Ta contribution personnelle au chèque de chacun est donc invisible. Tu raisonnes
+      donc comme si \( M \) était gravé dans le marbre.
+    </dd>
+  </dl>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — « une donnée », en vrai</div>
+    <p>
+      Tu es une des 40 000 personnes qui votent à une élection communale. Est-ce que ton vote
+      change le résultat ? Mathématiquement, un petit peu ; concrètement, non — tu prends le
+      résultat comme une donnée. C'est exactement le raisonnement de l'île : chacun est trop petit
+      pour bouger la moyenne. On dit qu'il est <strong>« preneur »</strong> du montant \( M \),
+      comme on dit qu'un petit vendeur est « preneur de prix ».
+    </p>
+    <p>
+      Conséquence <em>opérationnelle</em>, celle qui compte pour ta copie : dans la contrainte de
+      budget d'un individu, on écrit \( M(t) \) et on <strong>s'arrête là</strong>. On ne remplace
+      jamais \( M \) par sa formule de financement. Si tu le faisais, tu ferais dire à l'individu
+      « en travaillant plus, j'augmente mon propre chèque », ce qui est faux dans ce modèle.
+    </p>
+  </div>
+
+  <h3>2.2 Les six nombres à garder sous la main</h3>
+
+  <p>
+    Avant d'attaquer, recopie ce petit tableau sur ton brouillon. Tout l'exercice se joue avec ces
+    six nombres et rien d'autre.
+  </p>
+
+  <table class="data">
+    <tr>
+      <th>Symbole</th><th>Valeur</th><th class="left">Comment ça se lit</th>
+      <th class="left">À quoi ça sert</th>
+    </tr>
+    <tr>
+      <td>\( s_H \)</td><td>20</td><td class="left">« s indice H »</td>
+      <td class="left">salaire brut horaire du type « haut »</td>
+    </tr>
+    <tr>
+      <td>\( s_B \)</td><td>10</td><td class="left">« s indice B »</td>
+      <td class="left">salaire brut horaire du type « bas »</td>
+    </tr>
+    <tr>
+      <td>\( L \)</td><td>1</td><td class="left">« grand L »</td>
+      <td class="left">temps total disponible (loisir + travail)</td>
+    </tr>
+    <tr>
+      <td>\( p \)</td><td>1</td><td class="left">« p »</td>
+      <td class="left">prix d'une unité de consommation</td>
+    </tr>
+    <tr>
+      <td>\( t \)</td><td>0,2</td><td class="left">« t »</td>
+      <td class="left">taux de taxe sur le revenu brut (en 1.1 à 1.3)</td>
+    </tr>
+    <tr>
+      <td>\( M \)</td><td>2</td><td class="left">« M de t »</td>
+      <td class="left">chèque reçu par chacun, identique pour tous</td>
+    </tr>
+  </table>
+
+  <p>
+    Et deux <em>inconnues</em>, celles que la personne choisit : le loisir \( l \) et la
+    consommation \( c \). Voilà. Deux inconnues, six données. Le problème est petit.
+  </p>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège n° 0 — le plus fréquent de tous, à lire maintenant</div>
+    <p>
+      \( l \) est le <strong>loisir</strong>. Le temps de <strong>travail</strong> est
+      \( 1 - l \). Chaque année, des copies calculent parfaitement \( l^* = 0{,}25 \) puis
+      répondent « le type H travaille 0,25 » et perdent les points de la question 1.2 et de la 1.3
+      dans la foulée.
+    </p>
+    <p>
+      Le remède prend trois secondes : dès que tu obtiens un \( l \), écris juste en dessous
+      <strong>« travail \( = 1 - l = \) … »</strong> sur la ligne suivante. Toujours. Même si la
+      question ne le demande pas encore.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>3. Le cours dont tu as besoin : le modèle « consommation–loisir »</h2>
+
+  <p>
+    Voici le vrai cours de ce chapitre. Il est long, mais il est unique : les cinq sous-questions
+    tapent toutes dedans. Prends ton temps sur cette section, et les cinq réponses tomberont
+    presque toutes seules ensuite.
+  </p>
+
+  <h3>3.1 L'idée de départ : personne ne « gagne » de l'argent, on l'échange contre du temps</h3>
+
+  <p>
+    En économie, un travailleur n'est pas vu comme quelqu'un qui « a » un revenu. Il est vu comme
+    quelqu'un qui <strong>possède du temps</strong> et qui peut, s'il le souhaite, en vendre une
+    partie contre de l'argent. Le salaire est le <em>prix de vente</em> de son temps.
+  </p>
+
+  <p>
+    Cette façon de voir a l'air d'un détail de vocabulaire. Elle change en fait tout le
+    raisonnement, parce qu'elle transforme une question morale (« faut-il travailler dur ? ») en
+    une question d'échange parfaitement ordinaire : <strong>combien de mon temps suis-je prêt à
+    vendre, à ce prix-là ?</strong> Exactement comme tu te demanderais combien de kilos de pommes
+    de ton verger tu veux vendre au marché, sachant que ce que tu ne vends pas, tu le manges.
+  </p>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — le stand de crêpes</div>
+    <p>
+      Tu tiens un stand de crêpes le samedi. Chaque heure passée derrière la plaque te rapporte
+      12 euros ; chaque heure passée à ne pas y être te rapporte… du repos. Si le stand marche
+      bien et que tu passes à 25 euros de l'heure, tu vas sans doute rester plus longtemps :
+      l'heure de repos est devenue « chère ». Si le stand tourne mal et que tu tombes à 4 euros de
+      l'heure, tu plies boutique plus tôt : l'heure de repos est devenue « bon marché ».
+    </p>
+    <p>
+      Tu viens de faire, sans le savoir, exactement le raisonnement de la question 1.2. Le modèle
+      ne fait que l'écrire proprement.
+    </p>
+  </div>
+
+  <h3>3.2 La dotation en temps : \( l \) d'un côté, \( 1 - l \) de l'autre</h3>
+
+  <p>
+    Chaque habitant possède une quantité de temps \( L = 1 \). Il la coupe en deux morceaux, et
+    seulement deux :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \underbrace{l}_{\text{loisir}} \;+\; \underbrace{(1-l)}_{\text{travail}} \;=\; 1 \]
+      <div class="why">
+        Rien de plus qu'une évidence comptable : les deux morceaux d'un gâteau entier font le
+        gâteau entier. Mais elle mérite d'être écrite, parce qu'elle contient la définition du
+        temps de travail : <strong>le travail, c'est le reste</strong>. Si on t'annonce
+        \( l = 0{,}25 \), le travail vaut \( 1 - 0{,}25 = 0{,}75 \).
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Pourquoi le modèle choisit-il de faire choisir \( l \) plutôt que le travail ? Pure convention.
+    Comme \( l \) et \( 1 - l \) sont liés par l'égalité ci-dessus, choisir l'un revient
+    exactement à choisir l'autre : c'est le même choix vu de deux côtés. La tradition écrit
+    l'utilité en fonction du loisir parce que le loisir est un <em>bien</em> (on l'aime) alors que
+    le travail est un <em>mal</em> (on le subit), et qu'il est plus commode de manipuler des choses
+    qu'on aime. Toi, tu dois juste ne jamais oublier de faire la traduction à la fin.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 540 268" width="100%" style="max-width:12.5cm" role="img"
+         aria-label="Trois barres de temps de longueur 1 : le cas général coupé en loisir l et travail 1 moins l, le type H coupé en 0,25 de loisir et 0,75 de travail, le type B coupé en 0,5 et 0,5">
+      <g font-size="12.5">
+        <text x="10" y="30" font-weight="bold">En général :</text>
+        <g fill="none" stroke="#111827" stroke-width="1.4">
+          <rect x="60" y="40" width="440" height="34"/>
+          <line x1="280" y1="40" x2="280" y2="74" stroke-width="2"/>
+        </g>
+        <rect x="60" y="40" width="220" height="34" fill="#111827" opacity="0.08"/>
+        <text x="170" y="62" text-anchor="middle">loisir : ℓ</text>
+        <text x="390" y="62" text-anchor="middle">travail : 1 − ℓ</text>
+
+        <text x="10" y="112" font-weight="bold">Type H (t = 0,2) :</text>
+        <g fill="none" stroke="#111827" stroke-width="1.4">
+          <rect x="60" y="122" width="440" height="34"/>
+          <line x1="170" y1="122" x2="170" y2="156" stroke-width="2"/>
+        </g>
+        <rect x="60" y="122" width="110" height="34" fill="#111827" opacity="0.08"/>
+        <text x="115" y="144" text-anchor="middle">0,25</text>
+        <text x="335" y="144" text-anchor="middle">travail = 0,75</text>
+
+        <text x="10" y="194" font-weight="bold">Type B (t = 0,2) :</text>
+        <g fill="none" stroke="#111827" stroke-width="1.4">
+          <rect x="60" y="204" width="440" height="34"/>
+          <line x1="280" y1="204" x2="280" y2="238" stroke-width="2"/>
+        </g>
+        <rect x="60" y="204" width="220" height="34" fill="#111827" opacity="0.08"/>
+        <text x="170" y="226" text-anchor="middle">0,5</text>
+        <text x="390" y="226" text-anchor="middle">travail = 0,5</text>
+      </g>
+      <g stroke="#111827" stroke-width="1">
+        <line x1="60" y1="20" x2="60" y2="12"/><line x1="500" y1="20" x2="500" y2="12"/>
+        <line x1="60" y1="16" x2="500" y2="16"/>
+      </g>
+      <text x="280" y="11" font-size="11.5" text-anchor="middle">dotation totale L = 1</text>
+      <text x="280" y="260" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        la barre a toujours la même longueur : ce qu'on ne met pas à gauche part à droite
+      </text>
+    </svg>
+    <figcaption>
+      Figure 2 — La dotation en temps se partage en deux, et seulement deux. Le curseur qui coupe
+      la barre est <em>la seule</em> décision de temps que prend le travailleur. Le déplacer vers
+      la gauche, c'est travailler plus ; vers la droite, c'est se reposer plus. Note bien la
+      position du curseur pour chaque type : le type H, mieux payé, travaille davantage.
+    </figcaption>
+  </figure>
+
+  <h3>3.3 Du salaire brut au salaire net : d'où sort le nombre 16</h3>
+
+  <p>
+    Le travailleur de type H vend son temps 20 euros de l'heure. Mais il ne voit pas 20 euros
+    arriver sur son compte : l'État prend d'abord sa part.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \text{taxe payée par heure} = t \times s = 0{,}2 \times 20 = 4 \]
+      <div class="why">
+        Le taux \( t = 0{,}2 \) veut dire « 20 \% ». Prendre 20 \% de 20, c'est multiplier 20 par
+        0,2 : on obtient 4. L'État encaisse 4 euros par heure travaillée par un type H.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{salaire net par heure} = s - t\,s = 20 - 4 = 16 \]
+      <div class="why">
+        Ce qui reste au travailleur : le brut moins la taxe. Seize euros de l'heure.
+      </div>
+    </div>
+    <div class="step">
+      \[ s - t\,s = s\,(1 - t) = 20 \times 0{,}8 = 16 \]
+      <div class="why">
+        Même chose, écrite en <em>mettant \( s \) en facteur</em> : c'est la mise en facteur
+        classique \( a - b\,a = a(1 - b) \). Cette écriture \( s(1-t) \) est celle qu'on utilisera
+        partout : elle est plus courte et elle met en évidence le seul nombre qui compte pour le
+        travailleur, la <strong>fraction gardée</strong> \( 1 - t = 0{,}8 \), soit 80 \%.
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Refais le même calcul pour le type B, à titre d'entraînement :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ s_B\,(1-t) = 10 \times (1 - 0{,}2) = 10 \times 0{,}8 = 8 \]
+      <div class="why">
+        Huit euros nets de l'heure. Retiens ces deux nombres, <strong>16 et 8</strong> : ce sont
+        les seuls salaires qui apparaîtront dans tous les calculs des sous-questions 1.1 à 1.3.
+        Le 20 et le 10 de l'énoncé ne resserviront plus qu'une fois, pour vérifier le montant de
+        \( M \).
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — salaire net \( s(1-t) \)</div>
+    <p>
+      Le <span class="term">salaire net</span> est ce que le travailleur garde réellement pour
+      chaque unité de temps vendue : \( s(1-t) \). C'est <strong>lui</strong>, et pas le salaire
+      brut, qui gouverne le comportement. Le brut concerne l'employeur et le fisc ; le net
+      concerne la décision.
+    </p>
+    <table class="compare">
+      <tr>
+        <th class="left">Type</th><th>brut \( s \)</th><th>gardé \( 1-t \)</th>
+        <th>net \( s(1-t) \)</th>
+      </tr>
+      <tr><td class="left">Haut salaire (H)</td><td>20</td><td>0,8</td><td><strong>16</strong></td></tr>
+      <tr><td class="left">Bas salaire (B)</td><td>10</td><td>0,8</td><td><strong>8</strong></td></tr>
+    </table>
+    <p>
+      Remarque au passage : le rapport entre les deux nets (16 / 8 = 2) est le même que le rapport
+      entre les deux bruts (20 / 10 = 2). Une taxe <em>proportionnelle</em> comme celle-ci ne
+      change pas les écarts relatifs de salaire. Ce qui va réduire l'inégalité sur cette île, ce
+      n'est donc pas la taxe elle-même : c'est le <strong>chèque forfaitaire</strong> qu'elle
+      finance. Garde cette idée en tête, elle réapparaîtra en 1.5.
+    </p>
+  </div>
+
+  <h3>3.4 Le coût d'opportunité d'une heure de loisir</h3>
+
+  <p>
+    On arrive à la notion centrale de tout le chapitre. Elle n'a l'air de rien et pourtant elle
+    porte à elle seule les quatre points d'intuition de la question 1.4.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — coût d'opportunité</div>
+    <p>
+      Le <span class="term">coût d'opportunité</span> d'un choix, c'est <strong>ce à quoi tu
+      renonces</strong> en le faisant — la meilleure chose que tu aurais pu avoir à la place. Ce
+      n'est pas un prix affiché quelque part : c'est un manque à gagner.
+    </p>
+    <p>
+      Exemple hors économie : le coût d'opportunité d'une soirée passée devant une série, ce n'est
+      pas 0 euro, c'est « le chapitre de révision que je n'ai pas fait ». Exemple du quotidien :
+      le coût d'opportunité de garder 10 000 euros sur un compte courant, c'est les intérêts que
+      tu n'as pas touchés en les plaçant.
+    </p>
+  </div>
+
+  <p>
+    Applique-le à notre travailleur. Il envisage de prendre une unité de loisir de plus. Combien ça
+    lui coûte ? Rien en apparence : le repos est gratuit, personne ne lui présente de facture.
+    Mais :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \text{1 unité de loisir en plus} \;\Longrightarrow\; \text{1 unité de travail en moins} \]
+      <div class="why">
+        Puisque \( l + (1-l) = 1 \), il n'y a pas d'autre possibilité : le temps pris d'un côté est
+        forcément retiré de l'autre.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{1 unité de travail en moins} \;\Longrightarrow\; s(1-t)\ \text{euros en moins} \]
+      <div class="why">
+        Chaque unité de temps vendue rapporte le salaire <em>net</em>. Ne pas la vendre, c'est ne
+        pas encaisser ce net.
+      </div>
+    </div>
+    <div class="step">
+      \[ s(1-t)\ \text{euros en moins} \;\Longrightarrow\; s(1-t)\ \text{unités de } c \text{ en moins} \]
+      <div class="why">
+        Parce que \( p = 1 \) : un euro achète exactement une unité de consommation. Sans cette
+        normalisation, il faudrait diviser par \( p \) et écrire \( s(1-t)/p \).
+      </div>
+    </div>
+    <div class="step">
+      \[ \boxed{\ \text{coût d'opportunité du loisir} = s(1-t)\ } \]
+      <div class="why">
+        Voilà le résultat à retenir par cœur. Pour le type H, une unité de loisir coûte 16 unités
+        de consommation. Pour le type B, elle en coûte 8. <strong>Le loisir est deux fois moins
+        cher pour le type B que pour le type H</strong> — et c'est précisément pour ça qu'il en
+        prendra davantage. Retiens la phrase : <em>le salaire net EST le prix du loisir.</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi c'est LA phrase du chapitre</div>
+    <p>
+      Une taxe sur le revenu ressemble à un prélèvement neutre : l'État prend une part du gâteau.
+      Mais vue du côté du travailleur, elle fait autre chose de beaucoup plus intéressant : elle
+      <strong>baisse le prix du loisir</strong>. Se reposer devient moins cher. Et quand quelque
+      chose devient moins cher, on en prend davantage — c'est vrai pour les tomates, c'est vrai
+      pour le repos.
+    </p>
+    <p>
+      Toute la question 1.4 est là. Si tu ne devais retenir qu'une phrase de ce chapitre pour
+      l'examen, ce serait : « <em>la taxe réduit le salaire net, donc le coût d'opportunité du
+      loisir, donc le loisir augmente et l'offre de travail diminue</em> ». Quatre points.
+    </p>
+  </div>
+
+  <h3>3.5 Le transfert forfaitaire \( M(t) \) : de l'argent qui tombe du ciel</h3>
+
+  <p>
+    L'État a prélevé. Maintenant il rend. Comment ? En divisant le pot commun en \( N \) parts
+    égales et en distribuant une part à chacun. Chacun reçoit donc \( M(t) \), le même montant
+    pour tous.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — transfert forfaitaire (« lump sum »)</div>
+    <p>
+      Un <span class="term">transfert forfaitaire</span> est une somme versée à quelqu'un dont le
+      montant <strong>ne dépend d'aucune de ses décisions</strong>. Il la reçoit qu'il travaille
+      beaucoup, peu, ou pas du tout ; qu'il consomme beaucoup ou rien.
+    </p>
+    <p>
+      Contre-exemple, pour bien voir la différence : une prime de 10 \% du salaire n'est
+      <em>pas</em> forfaitaire, parce qu'en travaillant plus tu la fais grossir. Une allocation
+      universelle de 500 euros par mois versée à tout le monde, si.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — l'héritage de la grand-tante</div>
+    <p>
+      Une grand-tante que tu connaissais à peine te laisse 3 000 euros. Tu n'as rien fait pour les
+      obtenir, tu ne peux rien faire pour en obtenir davantage. Ces 3 000 euros
+      <strong>augmentent tes possibilités</strong> — tu peux consommer 3 000 euros de plus qu'avant
+      — mais ils ne changent <strong>pas le prix relatif</strong> des choses : une heure de repos
+      te coûte toujours autant d'euros de salaire perdus qu'avant.
+    </p>
+    <p>
+      C'est exactement le rôle de \( M \) dans ce modèle : il déplace la droite de budget vers le
+      haut, parallèlement à elle-même, sans en changer la pente. Et comme on va le voir, avec
+      <em>cette</em> fonction d'utilité précise, il ne changera même pas le choix de loisir.
+    </p>
+  </div>
+
+  <p>
+    Vérifions tout de suite d'où sortent les 2 euros annoncés par l'énoncé, pour que le chiffre ne
+    soit pas magique. Il faut d'abord connaître les temps de travail (qu'on obtiendra en 1.2 :
+    0,75 pour H et 0,5 pour B), mais faisons-le maintenant, ça éclaire la mécanique.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \text{impôt payé par un type H} = t \times s_H \times (1 - l_H) = 0{,}2 \times 20 \times 0{,}75 \]
+      <div class="why">
+        L'impôt porte sur le revenu <strong>brut</strong>, c'est-à-dire le salaire brut multiplié
+        par le nombre d'unités de temps travaillées.
+      </div>
+    </div>
+    <div class="step">
+      \[ = 0{,}2 \times 15 = 3 \]
+      <div class="why">
+        Le type H a un revenu brut de 15 et verse 3 au fisc.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{impôt payé par un type B} = 0{,}2 \times 10 \times 0{,}5 = 0{,}2 \times 5 = 1 \]
+      <div class="why">
+        Le type B a un revenu brut de 5 et verse 1.
+      </div>
+    </div>
+    <div class="step">
+      \[ M = \frac{3 + 1}{2} = 2 \]
+      <div class="why">
+        Il y a autant de H que de B : la recette moyenne par habitant est donc la moyenne simple
+        des deux impôts. \( (3+1)/2 = 2 \). On retrouve bien le \( M = 2 \) de l'énoncé —
+        rassurant, le modèle est cohérent. (Si les proportions n'étaient pas 50–50, il faudrait
+        une moyenne pondérée.)
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Qui gagne à ce système ? Le calcul en deux lignes</div>
+    <p>
+      Le type H verse 3 et reçoit 2 : il est <strong>perdant net de 1</strong>. Le type B verse 1
+      et reçoit 2 : il est <strong>gagnant net de 1</strong>. La machine transfère donc bien de
+      l'argent du haut vers le bas — c'est de la <em>redistribution</em>, au sens propre.
+    </p>
+    <p>
+      Retiens ce petit calcul : il donne d'avance le sens de la réponse de la question 1.5. Si
+      l'État augmente la taxe, il déplace davantage d'argent de H vers B. On s'attend donc à ce que
+      H soit moins content et B plus content. Ce qui est exactement ce que dira le tableau des
+      utilités. Le savoir à l'avance te permet de vérifier que tu ne t'es pas trompé.
+    </p>
+  </div>
+
+  <h3>3.6 La contrainte de budget, construite ligne par ligne</h3>
+
+  <p>
+    Une <span class="term">contrainte de budget</span> est une phrase qui dit : « voilà tout ce que
+    je peux m'offrir ». Elle a toujours la même forme — <em>ce que je dépense</em> d'un côté,
+    <em>ce dont je dispose</em> de l'autre, et un signe \( \le \) entre les deux. On la construit
+    en trois questions.
+  </p>
+
+  <h4>Question A — combien je dépense ?</h4>
+
+  <div class="calc">
+    <div class="step">
+      \[ \text{dépense} = p \times c = 1 \times c = c \]
+      <div class="why">
+        Il n'y a qu'un seul bien sur l'île. Acheter \( c \) unités à \( p \) euros l'unité coûte
+        \( p\,c \) euros. Comme \( p = 1 \), la dépense est tout simplement \( c \). C'est le
+        moment où la normalisation du prix nous rend service.
+      </div>
+    </div>
+  </div>
+
+  <h4>Question B — combien j'encaisse ?</h4>
+
+  <div class="calc">
+    <div class="step">
+      \[ \text{temps travaillé} = 1 - l \]
+      <div class="why">
+        Le reste de la dotation, une fois le loisir mis de côté. (Voir la figure 2.)
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{revenu brut} = s \times (1 - l) \]
+      <div class="why">
+        Chaque unité de temps vendue rapporte \( s \) euros bruts ; on en vend \( 1 - l \).
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{revenu net du travail} = s\,(1-t)\,(1 - l) \]
+      <div class="why">
+        On enlève la taxe : il ne reste que la fraction \( (1-t) \) du brut. C'est la formule à
+        écrire sur la copie ; elle vaut 3 des 5 points de chaque contrainte.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{ressources totales} = s\,(1-t)\,(1-l) \;+\; M(t) \]
+      <div class="why">
+        On ajoute le chèque du gouvernement. Le \( M \) est la deuxième source de revenu, et il
+        vaut 2 points sur 5. Ne l'oublie jamais : c'est de l'argent que le travailleur a
+        réellement en poche.
+      </div>
+    </div>
+  </div>
+
+  <h4>Question C — on assemble</h4>
+
+  <div class="calc">
+    <div class="step">
+      \[ p\,c \;\le\; s\,(1-t)\,(1-l) \;+\; M(t) \]
+      <div class="why">
+        « Ce que je dépense ne peut pas dépasser ce dont je dispose. » C'est la contrainte de
+        budget générale, valable pour n'importe quel type, n'importe quel taux de taxe. Le signe
+        \( \le \) se lit « est inférieur ou égal à ».
+      </div>
+    </div>
+    <div class="step">
+      \[ c \;=\; s\,(1-t)\,(1-l) \;+\; M(t) \]
+      <div class="why">
+        Deux changements. D'abord \( p = 1 \) disparaît. Ensuite on remplace \( \le \) par
+        \( = \) : pourquoi a-t-on le droit ? Parce que l'utilité \( U = c + 4\ln(l) \) est
+        <strong>strictement croissante en \( c \)</strong> : consommer plus rend toujours plus
+        heureux, il n'y a aucune raison de laisser de l'argent dormir. À l'optimum, tout est donc
+        dépensé. On dit que la contrainte est <span class="term">saturée</span>. Écrire l'égalité
+        est accepté (et même attendu) à l'examen.
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Recette — écrire n'importe quelle contrainte de budget en 30 secondes</div>
+    <p>
+      Trois questions, toujours les mêmes, dans cet ordre :
+    </p>
+    <p>
+      <strong>1.</strong> Qu'est-ce que j'achète et à quel prix ? → membre de gauche.<br>
+      <strong>2.</strong> Qu'est-ce que je vends, et combien me reste-t-il après impôt ? → premier
+      morceau du membre de droite.<br>
+      <strong>3.</strong> Est-ce que je reçois quelque chose sans rien faire (dotation, transfert,
+      héritage, allocation) ? → deuxième morceau du membre de droite.
+    </p>
+    <p>
+      La question 3 est celle qu'on oublie. Prends l'habitude de te la poser à voix haute.
+    </p>
+  </div>
+
+  <h3>3.7 La droite de budget : la même chose, en dessin</h3>
+
+  <p>
+    Écrivons la contrainte du type H avec les chiffres, et développons-la pour la mettre sous la
+    forme d'une équation de droite \( y = ax + b \) que tu connais depuis le lycée.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ c = 16\,(1 - l) + 2 \]
+      <div class="why">
+        La contrainte du type H avec \( s_H(1-t) = 16 \) et \( M = 2 \).
+      </div>
+    </div>
+    <div class="step">
+      \[ c = 16 - 16\,l + 2 \]
+      <div class="why">
+        On distribue le 16 sur la parenthèse : \( 16 \times 1 = 16 \) et
+        \( 16 \times (-l) = -16l \).
+      </div>
+    </div>
+    <div class="step">
+      \[ c = 18 - 16\,l \]
+      <div class="why">
+        On additionne les deux constantes \( 16 + 2 = 18 \). Voilà une droite : l'ordonnée à
+        l'origine vaut 18, la pente vaut \( -16 \).
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Que racontent ces deux nombres ?
+  </p>
+
+  <ul>
+    <li>
+      <strong>18</strong> : c'est la consommation atteinte si \( l = 0 \), c'est-à-dire si la
+      personne travaille tout son temps. Elle gagne alors 16 nets, plus le chèque de 2 : 18. C'est
+      son maximum absolu de consommation.
+    </li>
+    <li>
+      <strong>\( -16 \)</strong> : la pente. Elle dit « chaque unité de loisir en plus me coûte 16
+      unités de consommation ». Tu la reconnais ? C'est le <em>coût d'opportunité du loisir</em>
+      de la section 3.4. La pente de la droite de budget <strong>est</strong> le coût d'opportunité
+      du loisir. Toujours.
+    </li>
+  </ul>
+
+  <p>
+    Et l'autre bout ? Si \( l = 1 \) (la personne ne travaille pas du tout), il reste
+    \( c = 18 - 16 = 2 \) : uniquement le chèque. Pour le type B :
+    \( c = 8(1-l) + 2 = 10 - 8l \), donc 10 si elle travaille tout son temps, et 2 si elle ne
+    travaille pas. Les deux droites <strong>se rejoignent au point \( (l = 1,\ c = 2) \)</strong>,
+    puisque quelqu'un qui ne travaille pas ne touche que le forfait, quel que soit son salaire.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 520 400" width="100%" style="max-width:12.5cm" role="img"
+         aria-label="Deux droites de budget dans le plan loisir-consommation : celle du type H part de 18 et descend avec une pente de moins 16, celle du type B part de 10 avec une pente de moins 8, les deux se rejoignant au point loisir égal 1 et consommation égale 2">
+      <g stroke="#111827" stroke-width="1.4" fill="none">
+        <line x1="70" y1="40" x2="70" y2="330"/>
+        <line x1="60" y1="330" x2="492" y2="330"/>
+        <path d="M64 48 L70 36 L76 48 Z" fill="#111827"/>
+        <path d="M484 324 L496 330 L484 336 Z" fill="#111827"/>
+      </g>
+      <g stroke="#111827" stroke-width="1">
+        <line x1="170" y1="330" x2="170" y2="336"/>
+        <line x1="270" y1="330" x2="270" y2="336"/>
+        <line x1="370" y1="330" x2="370" y2="336"/>
+        <line x1="470" y1="330" x2="470" y2="336"/>
+        <line x1="64" y1="260" x2="70" y2="260"/>
+        <line x1="64" y1="190" x2="70" y2="190"/>
+        <line x1="64" y1="120" x2="70" y2="120"/>
+        <line x1="64" y1="50" x2="70" y2="50"/>
+      </g>
+      <g font-size="11.5" text-anchor="middle">
+        <text x="70" y="349">0</text><text x="170" y="349">0,25</text>
+        <text x="270" y="349">0,5</text><text x="370" y="349">0,75</text>
+        <text x="470" y="349">1</text>
+      </g>
+      <g font-size="11.5" text-anchor="end">
+        <text x="60" y="264">5</text><text x="60" y="194">10</text>
+        <text x="60" y="124">15</text><text x="60" y="54">20</text>
+      </g>
+      <text x="490" y="366" font-size="12.5" text-anchor="end">loisir ℓ</text>
+      <text x="78" y="32" font-size="12.5">consommation c</text>
+
+      <line x1="70" y1="78" x2="470" y2="302" stroke="#111827" stroke-width="2.2"/>
+      <line x1="70" y1="190" x2="470" y2="302" stroke="#111827" stroke-width="1.6"
+            stroke-dasharray="7 4"/>
+
+      <g stroke="#111827" stroke-width="0.9" stroke-dasharray="3 3">
+        <line x1="170" y1="330" x2="170" y2="134"/>
+        <line x1="70" y1="134" x2="170" y2="134"/>
+        <line x1="270" y1="330" x2="270" y2="246"/>
+        <line x1="70" y1="246" x2="270" y2="246"/>
+      </g>
+      <circle cx="170" cy="134" r="4.5" fill="#111827"/>
+      <circle cx="270" cy="246" r="4.5" fill="#111827"/>
+      <circle cx="470" cy="302" r="4" fill="none" stroke="#111827" stroke-width="1.6"/>
+
+      <g font-size="12">
+        <text x="200" y="96">type H : c = 18 − 16 ℓ</text>
+        <text x="120" y="182">type B :</text>
+        <text x="120" y="197">c = 10 − 8 ℓ</text>
+        <text x="182" y="128" font-weight="bold">optimum H</text>
+        <text x="182" y="143">(0,25 ; 14)</text>
+        <text x="282" y="240" font-weight="bold">optimum B</text>
+        <text x="282" y="255">(0,5 ; 6)</text>
+        <text x="392" y="296" text-anchor="end">M = 2</text>
+      </g>
+      <text x="270" y="386" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        les deux droites se rejoignent en ℓ = 1 : qui ne travaille pas ne touche que le forfait
+      </text>
+    </svg>
+    <figcaption>
+      Figure 3 — Les deux droites de budget. Chaque droite dit « voilà tout ce que ce travailleur
+      peut se payer ». Le trait plein est le type H, le trait pointillé le type B. La droite du
+      type H est <strong>deux fois plus pentue</strong> : pour lui, une unité de loisir coûte 16
+      unités de consommation, contre 8 pour le type B. Les deux points noirs sont les choix
+      optimaux qu'on démontrera en 1.2 — pour l'instant, contente-toi de constater que le mieux
+      payé se repose moins.
+    </figcaption>
+  </figure>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — l'axe horizontal porte le LOISIR, pas le travail</div>
+    <p>
+      Sur ce graphique, on se déplace vers la droite en se reposant davantage, donc en travaillant
+      <em>moins</em>. Le coin en bas à droite, c'est « je ne fais rien de la journée » ; le coin en
+      haut à gauche, c'est « je travaille tout mon temps ». Beaucoup d'étudiants lisent le
+      graphique à l'envers et concluent que le type H travaille 0,25. Relis le point noir : son
+      abscisse 0,25 est son <strong>loisir</strong>.
+    </p>
+  </div>
+
+  <h3>3.8 La fonction d'utilité \( U = c + 4\ln(l) \), décodée morceau par morceau</h3>
+
+  <p>
+    Cette fonction a deux morceaux. On les regarde séparément.
+  </p>
+
+  <h4>a) Le morceau \( c \) : la consommation entre « telle quelle »</h4>
+
+  <p>
+    Une unité de consommation en plus, c'est un point d'utilité en plus. Toujours un, quel que soit
+    le niveau déjà atteint. Que tu consommes 3 unités ou 300, la 301<sup>e</sup> t'apporte
+    exactement 1. En langage technique : l'<span class="term">utilité marginale</span> de la
+    consommation vaut 1, constamment.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — utilité marginale</div>
+    <p>
+      L'<span class="term">utilité marginale</span> d'un bien, c'est le supplément de satisfaction
+      apporté par <strong>une unité de plus</strong> de ce bien. Mathématiquement, c'est la
+      <em>dérivée</em> de la fonction d'utilité par rapport à ce bien. Le mot « marginal » en
+      économie veut toujours dire « pour une petite unité supplémentaire » — jamais
+      « négligeable ».
+    </p>
+    <p>
+      Exemple : si manger une part de pizza t'apporte 10 points, la deuxième 6 points, la
+      troisième 2 points, ce sont là trois utilités marginales, et elles sont décroissantes. Notre
+      \( c \) est le cas exceptionnel où elles ne décroissent pas : elles restent à 1.
+    </p>
+  </div>
+
+  <h4>b) Le morceau \( 4\ln(l) \) : d'abord, qu'est-ce que \( \ln \) ?</h4>
+
+  <p>
+    Le <span class="term">logarithme népérien</span>, noté \( \ln \), se lit « logarithme
+    népérien de » ou plus simplement « L N de ». C'est une fonction qui prend un nombre strictement
+    positif et en rend un autre. Tu n'as pas besoin de savoir ce qu'elle « est » : tu as besoin de
+    connaître trois faits sur elle.
+  </p>
+
+  <p>
+    <strong>Fait n° 1 — elle est croissante.</strong> Plus le nombre d'entrée est grand, plus la
+    sortie est grande. Donc plus de loisir donne plus d'utilité : le loisir est bien un bien, on
+    l'aime.
+  </p>
+
+  <p>
+    <strong>Fait n° 2 — elle est concave, elle s'aplatit.</strong> Elle monte de plus en plus
+    lentement. Les premières unités de loisir apportent énormément ; les suivantes, de moins en
+    moins.
+  </p>
+
+  <p>
+    <strong>Fait n° 3 — sa dérivée est \( 1/l \).</strong> C'est le seul fait dont on aura besoin
+    dans les calculs. Il se retient tel quel :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \bigl(\ln(l)\bigr)' = \frac{1}{l} \qquad\text{donc}\qquad \bigl(4\ln(l)\bigr)' = \frac{4}{l} \]
+      <div class="why">
+        La dérivée de \( \ln \) est l'inverse. Et une constante devant une fonction reste devant sa
+        dérivée (règle \( (k f)' = k f' \), vue au chapitre 0 du volume 1) : le 4 sort et on obtient
+        \( 4/l \). <strong>Apprends cette ligne par cœur</strong> : c'est elle qui fournit les
+        15 points de la question 1.2.
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Voici quelques valeurs, pour que \( \ln \) cesse d'être un symbole abstrait. Toutes sont
+    obtenues à la calculatrice, touche « ln ».
+  </p>
+
+  <table class="data">
+    <tr>
+      <th>\( l \)</th><th>0,1</th><th>0,25</th><th>0,4</th><th>0,5</th><th>0,8</th><th>1</th>
+    </tr>
+    <tr>
+      <th>\( \ln(l) \)</th><td>−2,30</td><td>−1,386</td><td>−0,916</td><td>−0,693</td>
+      <td>−0,223</td><td>0</td>
+    </tr>
+    <tr>
+      <th>\( 4\ln(l) \)</th><td>−9,21</td><td>−5,55</td><td>−3,67</td><td>−2,77</td>
+      <td>−0,89</td><td>0</td>
+    </tr>
+    <tr>
+      <th>pente \( 4/l \)</th><td>40</td><td>16</td><td>10</td><td>8</td><td>5</td><td>4</td>
+    </tr>
+  </table>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — « le logarithme est négatif, j'ai dû me tromper »</div>
+    <p>
+      Non. Entre 0 et 1, \( \ln \) est <strong>négatif</strong> ; il vaut 0 exactement en 1 et
+      devient positif au-delà. Comme notre loisir \( l \) vit entre 0 et 1 (c'est une fraction de
+      la dotation), le terme \( 4\ln(l) \) sera <em>toujours négatif</em> dans cet exercice. Ce
+      n'est pas une erreur, et ce n'est pas grave : le niveau d'une utilité n'a aucun sens en
+      soi, seules comptent les comparaisons. Une utilité de \( 8{,}45 \) est simplement
+      « meilleure » qu'une utilité de \( 5{,}83 \), et c'est tout ce qu'on lui demande.
+    </p>
+    <p>
+      Vérifie quand même sur ta calculatrice que tu obtiens bien \( \ln(0{,}25) = -1{,}386 \) et
+      non un message d'erreur : certaines machines demandent la touche « ln » <em>avant</em> le
+      nombre, d'autres après.
+    </p>
+  </div>
+
+  <p>
+    Regarde maintenant la courbe. Deux choses à y voir : elle s'aplatit, et sa pente en un point
+    donne pile les nombres 16 et 8 qu'on cherche.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 520 372" width="100%" style="max-width:12.5cm" role="img"
+         aria-label="Courbe de 4 log naturel de l, montante et concave, avec deux tangentes : au point l égal 0,25 la pente vaut 16, au point l égal 0,5 la pente vaut 8">
+      <g stroke="#111827" stroke-width="1.4" fill="none">
+        <line x1="70" y1="300" x2="70" y2="44"/>
+        <line x1="60" y1="60" x2="486" y2="60"/>
+        <path d="M64 52 L70 40 L76 52 Z" fill="#111827"/>
+        <path d="M478 54 L490 60 L478 66 Z" fill="#111827"/>
+      </g>
+      <g stroke="#111827" stroke-width="1">
+        <line x1="161" y1="60" x2="161" y2="66"/>
+        <line x1="252" y1="60" x2="252" y2="66"/>
+        <line x1="434" y1="60" x2="434" y2="66"/>
+        <line x1="64" y1="104" x2="70" y2="104"/>
+        <line x1="64" y1="192" x2="70" y2="192"/>
+        <line x1="64" y1="280" x2="70" y2="280"/>
+      </g>
+      <g font-size="11.5" text-anchor="middle">
+        <text x="161" y="78">0,25</text><text x="252" y="78">0,5</text><text x="434" y="78">1</text>
+      </g>
+      <g font-size="11.5" text-anchor="end">
+        <text x="60" y="64">0</text><text x="60" y="108">−2</text>
+        <text x="60" y="196">−6</text><text x="60" y="284">−10</text>
+      </g>
+      <text x="484" y="94" font-size="12.5" text-anchor="end">loisir ℓ</text>
+      <text x="78" y="36" font-size="12.5">valeur de 4 ln(ℓ)</text>
+
+      <path d="M99 282 L106 263 L125 227 L143 202 L161 182 L179 166 L216 141 L252 121
+               L288 105 L325 91 L361 80 L398 69 L434 60"
+            fill="none" stroke="#111827" stroke-width="2.4"/>
+
+      <line x1="101" y1="240" x2="221" y2="124" stroke="#111827" stroke-width="1.4"
+            stroke-dasharray="6 4"/>
+      <line x1="172" y1="160" x2="332" y2="82" stroke="#111827" stroke-width="1.4"
+            stroke-dasharray="2 3"/>
+      <circle cx="161" cy="182" r="4.5" fill="#111827"/>
+      <circle cx="252" cy="121" r="4.5" fill="#111827"/>
+
+      <g font-size="12">
+        <text x="226" y="126">pente = 4 / 0,25 = 16</text>
+        <text x="336" y="80">pente = 4 / 0,5 = 8</text>
+        <text x="300" y="180">la courbe monte,</text>
+        <text x="300" y="196">mais de moins en moins vite :</text>
+        <text x="300" y="212">chaque unité de loisir en plus</text>
+        <text x="300" y="228">apporte moins que la précédente</text>
+      </g>
+      <text x="270" y="358" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        16 et 8 : ce sont exactement les deux salaires nets — ce n'est pas un hasard, c'est la réponse
+      </text>
+    </svg>
+    <figcaption>
+      Figure 4 — La courbe \( 4\ln(l) \) et ses pentes. En \( l = 0{,}25 \) la pente vaut 16, en
+      \( l = 0{,}5 \) elle vaut 8. Or 16 est le salaire net du type H et 8 celui du type B. Toute
+      la question 1.2 consiste à démontrer cette coïncidence : <strong>on s'arrête là où la pente
+      du plaisir du loisir égale le prix du loisir</strong>. Plus on va vers la droite, plus la
+      pente s'écrase — l'ennui guette.
+    </figcaption>
+  </figure>
+
+  <h4>c) Le mot savant : une utilité « quasi-linéaire »</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — utilité quasi-linéaire</div>
+    <p>
+      Une fonction d'utilité est dite <span class="term">quasi-linéaire</span> quand un des deux
+      biens y entre de façon <strong>linéaire</strong> (tout seul, sans être transformé) et l'autre
+      de façon courbée. Ici \( c \) entre linéairement et \( l \) passe par un logarithme :
+      \( U = c + 4\ln(l) \) est donc quasi-linéaire en \( c \).
+    </p>
+    <p>
+      Conséquence spectaculaire, qu'on démontrera en 1.2 et qui fait le sel de la question 1.4 :
+      <strong>la quantité choisie du bien « courbé » ne dépend pas du revenu</strong>. Si on te
+      donne 1 000 euros de plus, tu ne prendras pas une minute de loisir en plus : tu
+      consommeras 1 000 unités de plus, point. On dit qu'il n'y a <strong>pas d'effet de
+      revenu</strong> sur le loisir.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — le sel dans la cuisine</div>
+    <p>
+      Si tu gagnais au loto demain, achèterais-tu plus de sel ? Non : tu en achètes ce qu'il te
+      faut, et le reste de l'argent va ailleurs. Le sel se comporte comme le loisir dans ce
+      modèle : sa quantité est fixée par son <em>prix</em>, pas par ta richesse. Tout supplément
+      de revenu part intégralement dans « l'autre bien ».
+    </p>
+    <p>
+      C'est une hypothèse commode plus qu'une description fidèle du monde (dans la réalité, les
+      gagnants du loto travaillent moins). Elle est choisie ici pour rendre les calculs propres —
+      et elle a le mérite d'isoler parfaitement l'effet d'incitation de la taxe.
+    </p>
+  </div>
+
+  <h3>3.9 Les courbes d'indifférence et la tangence</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — courbe d'indifférence</div>
+    <p>
+      Une <span class="term">courbe d'indifférence</span> rassemble tous les couples
+      (loisir, consommation) qui procurent <strong>exactement la même utilité</strong>. La personne
+      est « indifférente » entre tous les points de la courbe : elle les aime pareil, elle
+      hausserait les épaules si on lui demandait de choisir.
+    </p>
+    <p>
+      Image : une courbe de niveau sur une carte de randonnée. Tous les points d'une même courbe
+      sont à la même altitude. Ici, l'altitude s'appelle « utilité », et on cherche à monter le
+      plus haut possible.
+    </p>
+  </div>
+
+  <p>
+    Trouvons l'équation d'une courbe d'indifférence. On fixe un niveau d'utilité, appelons-le
+    \( \bar{U} \) (« U barre »), et on cherche tous les \( (l, c) \) qui le donnent.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ c + 4\ln(l) = \bar{U} \]
+      <div class="why">
+        La définition : l'utilité vaut le niveau fixé.
+      </div>
+    </div>
+    <div class="step">
+      \[ c = \bar{U} - 4\ln(l) \]
+      <div class="why">
+        On isole \( c \) en faisant passer \( 4\ln(l) \) de l'autre côté (donc en changeant son
+        signe). C'est l'équation de la courbe : elle donne la consommation nécessaire pour rester
+        au même niveau de bonheur, quand on a \( l \) de loisir.
+      </div>
+    </div>
+    <div class="step">
+      \[ \frac{dc}{dl} = -\frac{4}{l} \]
+      <div class="why">
+        La pente de cette courbe, obtenue en dérivant par rapport à \( l \) : la dérivée de
+        \( \bar U \) (une constante) est nulle, et la dérivée de \( -4\ln(l) \) est \( -4/l \).
+        Elle est <strong>négative</strong> (la courbe descend : plus de loisir permet moins de
+        consommation à bonheur constant) et son intensité \( 4/l \) diminue quand \( l \) grandit.
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — taux marginal de substitution (TMS)</div>
+    <p>
+      La pente d'une courbe d'indifférence, prise en valeur absolue, s'appelle le
+      <span class="term">taux marginal de substitution</span>. Elle répond à la question :
+      « combien d'unités de consommation suis-je prêt à sacrifier pour obtenir une unité de loisir
+      en plus, sans être ni plus ni moins heureux ? »
+    </p>
+    <p>
+      Ici : \( \text{TMS} = 4/l \). En \( l = 0{,}25 \), il vaut 16 : la personne est prête à payer
+      jusqu'à 16 unités de consommation pour une unité de loisir de plus. En \( l = 0{,}5 \), il
+      n'est plus que de 8 : rassasiée de repos, elle n'est plus prête à payer que 8. Le TMS est
+      la <strong>disposition à payer</strong> pour le loisir ; le salaire net \( s(1-t) \) en est
+      le <strong>prix</strong>.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 520 404" width="100%" style="max-width:12.5cm" role="img"
+         aria-label="Droite de budget du type H et trois courbes d'indifférence : la plus haute est hors de portée, la plus basse coupe la droite en deux points, celle du milieu est tangente au point loisir 0,25 consommation 14">
+      <g stroke="#111827" stroke-width="1.4" fill="none">
+        <line x1="70" y1="40" x2="70" y2="330"/>
+        <line x1="60" y1="330" x2="492" y2="330"/>
+        <path d="M64 48 L70 36 L76 48 Z" fill="#111827"/>
+        <path d="M484 324 L496 330 L484 336 Z" fill="#111827"/>
+      </g>
+      <g stroke="#111827" stroke-width="1">
+        <line x1="170" y1="330" x2="170" y2="336"/>
+        <line x1="270" y1="330" x2="270" y2="336"/>
+        <line x1="370" y1="330" x2="370" y2="336"/>
+        <line x1="470" y1="330" x2="470" y2="336"/>
+        <line x1="64" y1="190" x2="70" y2="190"/>
+        <line x1="64" y1="134" x2="70" y2="134"/>
+      </g>
+      <g font-size="11.5" text-anchor="middle">
+        <text x="70" y="349">0</text><text x="170" y="349">0,25</text>
+        <text x="270" y="349">0,5</text><text x="370" y="349">0,75</text>
+        <text x="470" y="349">1</text>
+      </g>
+      <g font-size="11.5" text-anchor="end">
+        <text x="60" y="194">10</text><text x="60" y="138">14</text>
+      </g>
+      <text x="490" y="366" font-size="12.5" text-anchor="end">loisir ℓ</text>
+      <text x="78" y="32" font-size="12.5">consommation c</text>
+
+      <line x1="70" y1="78" x2="470" y2="302" stroke="#111827" stroke-width="2.2"/>
+
+      <path d="M150 86 L170 98 L210 117 L270 137 L350 156 L470 176" fill="none"
+            stroke="#111827" stroke-width="1.3" stroke-dasharray="2 4"/>
+      <path d="M122 97 L130 105 L150 122 L170 134 L190 144 L230 160 L270 173 L310 183
+               L350 192 L410 202 L470 212" fill="none" stroke="#111827" stroke-width="2"/>
+      <path d="M122 132 L150 156 L170 168 L210 187 L270 207 L350 226 L470 246" fill="none"
+            stroke="#111827" stroke-width="1.3" stroke-dasharray="7 4"/>
+
+      <circle cx="170" cy="134" r="5" fill="#111827"/>
+      <circle cx="139" cy="127" r="4" fill="none" stroke="#111827" stroke-width="1.4"/>
+      <circle cx="243" cy="235" r="4" fill="none" stroke="#111827" stroke-width="1.4"/>
+
+      <g font-size="12">
+        <text x="300" y="132" text-anchor="start">U = 11 : hors de portée</text>
+        <text x="330" y="206" text-anchor="start">U = 8,45 : tangente ✔</text>
+        <text x="330" y="262" text-anchor="start">U = 6 : atteignable,</text>
+        <text x="330" y="277" text-anchor="start">mais on peut mieux</text>
+        <text x="180" y="128" font-weight="bold">optimum</text>
+      </g>
+      <text x="270" y="390" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        les deux petits cercles sont les points où la courbe U = 6 croise le budget : entre eux, on fait mieux
+      </text>
+    </svg>
+    <figcaption>
+      Figure 5 — Pourquoi l'optimum est un point de <em>tangence</em>. La courbe basse (tirets
+      longs) coupe la droite de budget en deux points : entre ces deux points, tout le segment de
+      budget est au-dessus d'elle, donc meilleur — on peut faire mieux, ce n'est pas l'optimum. La
+      courbe haute (pointillés fins) ne touche jamais la droite : elle est inaccessible. Entre les
+      deux, il existe exactement une courbe qui <strong>frôle</strong> la droite sans la couper :
+      elle la touche au point (0,25 ; 14). C'est le meilleur niveau atteignable.
+    </figcaption>
+  </figure>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi la tangence, et pas autre chose</div>
+    <p>
+      Raisonne par l'absurde, c'est plus parlant qu'une formule. Suppose que tu sois sur ta droite
+      de budget en un point où la courbe d'indifférence <em>croise</em> la droite au lieu de la
+      frôler. Alors, juste à côté du point, la droite passe au-dessus de la courbe. Or être
+      au-dessus de sa courbe d'indifférence actuelle, c'est être plus heureux. Donc en te déplaçant
+      un tout petit peu le long de ta droite de budget, tu gagnes de l'utilité : tu n'étais pas à
+      l'optimum.
+    </p>
+    <p>
+      Ce raisonnement ne s'arrête que lorsque plus aucun déplacement ne fait gagner quoi que ce
+      soit, c'est-à-dire quand la droite et la courbe ont <strong>la même pente</strong>. D'où :
+    </p>
+    <p>\[ \underbrace{\frac{4}{l}}_{\text{ce que je suis prêt à payer}} \;=\; \underbrace{s(1-t)}_{\text{ce que ça coûte}} \]</p>
+    <p>
+      Tant que le TMS dépasse le salaire net, le loisir « vaut plus qu'il ne coûte » : on en prend
+      encore. Dès qu'il passe en dessous, on en a pris trop. L'optimum est pile à l'égalité. Cette
+      équation, tu vas la retrouver dans deux pages au bout du Lagrangien — c'est la même, obtenue
+      par une machine plus systématique.
+    </p>
+  </div>
+
+  <h3>3.10 Le Lagrangien : la machine à optimiser sous contrainte</h3>
+
+  <p>
+    L'énoncé <em>impose</em> cette méthode en 1.2, et 5 points sont attribués à la simple écriture
+    du Lagrangien. Il faut donc savoir l'écrire même si on ne comprend pas tout. Mais on va faire
+    mieux que ça : comprendre.
+  </p>
+
+  <h4>a) Le problème que la méthode résout</h4>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel du volume 1 — maximiser sans contrainte (chapitre 0)</div>
+    <p>
+      Tu sais déjà maximiser une fonction d'<em>une</em> variable sans contrainte : tu dérives, tu
+      poses la dérivée égale à zéro, tu résous, et tu vérifies avec la dérivée seconde. Au sommet
+      d'une colline, la pente est plate.
+    </p>
+    <p>
+      Le problème d'aujourd'hui est différent sur deux points : il y a <strong>deux</strong>
+      variables (\( l \) et \( c \)), et elles sont <strong>liées</strong> par la contrainte de
+      budget. Tu ne peux pas augmenter \( c \) librement : chaque unité de \( c \) en plus doit
+      être payée par du travail, donc par du loisir en moins. La méthode du Lagrangien est
+      précisément l'outil conçu pour ce cas.
+    </p>
+  </div>
+
+  <p>
+    Écrivons le problème proprement. C'est déjà la moitié du travail, et ça se rédige en deux
+    lignes sur la copie :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \max_{l,\, c} \; \bigl[\, c + 4\ln(l) \,\bigr] \]
+      <div class="why">
+        « Maximiser, en choisissant \( l \) et \( c \), la quantité entre crochets. » Le
+        \( \max \) avec des lettres en dessous se lit « maximum par rapport à l et c » : les
+        lettres en dessous rappellent <em>de quoi on est libre</em>.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{sous la contrainte} \quad c = s(1-t)(1-l) + M \]
+      <div class="why">
+        « Sous contrainte » (en anglais « subject to », abrégé s.t.) veut dire : parmi tous les
+        couples \( (l,c) \) imaginables, seuls ceux qui vérifient cette égalité sont autorisés.
+      </div>
+    </div>
+  </div>
+
+  <h4>b) L'idée de Lagrange, en français</h4>
+
+  <p>
+    Joseph-Louis Lagrange (mathématicien du XVIII<sup>e</sup> siècle) a eu l'idée suivante :
+    plutôt que de traîner la contrainte à côté du problème comme une condition gênante,
+    <strong>faisons-la entrer dans la fonction à maximiser</strong>, en la multipliant par un
+    nombre inconnu qu'on appellera \( \lambda \).
+  </p>
+
+  <p>
+    La lettre \( \lambda \) est la lettre grecque « lambda ». Elle porte le nom de
+    <span class="term">multiplicateur de Lagrange</span>. On la traite comme une troisième
+    inconnue, au même titre que \( l \) et \( c \).
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \mathcal{L} = \underbrace{c + 4\ln(l)}_{\text{ce qu'on veut maximiser}}
+         \; + \; \lambda \underbrace{\bigl[\, s(1-t)(1-l) + M - c \,\bigr]}_{\text{ce qui reste dans la poche}} \]
+      <div class="why">
+        Le \( \mathcal{L} \) calligraphié se lit « Lagrangien » (ne le confonds pas avec la
+        dotation \( L \) : c'est pour ça qu'on l'écrit en lettre ronde). La règle de construction
+        est mécanique : <strong>l'objectif, plus lambda fois (le disponible moins le
+        dépensé)</strong>. Le crochet vaut zéro quand la contrainte est respectée.
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Recette — écrire un Lagrangien sans réfléchir (5 points garantis)</div>
+    <p>
+      <strong>1.</strong> Recopie la fonction objectif telle quelle.<br>
+      <strong>2.</strong> Écris « \( + \lambda [\ \ ] \) ».<br>
+      <strong>3.</strong> Dans le crochet, mets la contrainte réarrangée pour valoir zéro : tout
+      ce qui rentre, moins tout ce qui sort.
+    </p>
+    <p>
+      Les deux orientations du crochet sont acceptées, à condition d'être cohérent :
+    </p>
+    <p>\[ \mathcal{L} = c + 4\ln(l) + \lambda\bigl[s(1-t)(1-l) + M - c\bigr] \]</p>
+    <p>\[ \mathcal{L} = c + 4\ln(l) - \lambda\bigl[c - s(1-t)(1-l) - M\bigr] \]</p>
+    <p>
+      Ce sont exactement la même chose : dans la seconde, le signe moins devant \( \lambda \)
+      compense le crochet retourné. On utilisera la <strong>première</strong> dans ce chapitre
+      (« objectif plus lambda fois ce qui reste »), parce que c'est celle où \( \lambda \)
+      sort positif et se lit le plus facilement.
+    </p>
+  </div>
+
+  <h4>c) Pourquoi ça marche, et ce que signifie \( \lambda \)</h4>
+
+  <p>
+    Voici l'intuition, en une image. Le crochet représente l'argent <em>non encore dépensé</em>.
+    Le \( \lambda \) est le « taux de change » entre cet argent et le bonheur : il dit combien
+    d'utilité vaut un euro qui resterait en poche.
+  </p>
+
+  <p>
+    En cherchant le maximum du Lagrangien, on cherche donc le point où l'on ne peut plus rien
+    gagner ni en bougeant \( l \), ni en bougeant \( c \), ni en relâchant le budget. Les trois
+    conditions de premier ordre traduisent chacune une de ces trois questions.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — condition de premier ordre (CPO)</div>
+    <p>
+      Une <span class="term">condition de premier ordre</span> est simplement l'équation
+      « dérivée \( = 0 \) » pour une des variables. On en écrit une par inconnue. Trois inconnues
+      (\( c \), \( l \), \( \lambda \)) donnent trois CPO, donc trois équations pour trois
+      inconnues : le système se résout.
+    </p>
+    <p>
+      La notation \( \dfrac{\partial \mathcal{L}}{\partial c} \) se lit « dérivée partielle de L
+      par rapport à c ». Le \( \partial \) (« d rond ») signale qu'on dérive par rapport à une
+      variable <strong>en traitant toutes les autres comme des constantes</strong>. C'est le seul
+      changement par rapport aux dérivées du volume 1 : quand tu dérives par rapport à \( c \), la
+      lettre \( l \) devient un simple nombre, et réciproquement.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — la dérivée partielle en trois secondes</div>
+    <p>
+      Prends \( f(x, y) = 3x + 5y^2 + 7 \).
+    </p>
+    <p>
+      Dérivée par rapport à \( x \) : on regarde \( y \) comme un nombre fixe, donc \( 5y^2 \) et
+      \( 7 \) sont des constantes qui disparaissent. Il reste
+      \( \partial f / \partial x = 3 \).
+    </p>
+    <p>
+      Dérivée par rapport à \( y \) : cette fois \( 3x \) et \( 7 \) sont des constantes qui
+      disparaissent, et \( 5y^2 \) se dérive normalement.
+      \( \partial f / \partial y = 10y \).
+    </p>
+    <p>
+      C'est tout. Aucune règle nouvelle : uniquement les règles du chapitre 0, appliquées en
+      fermant les yeux sur les autres lettres.
+    </p>
+  </div>
+
+  <h4>d) La lecture économique de \( \lambda \) — et pourquoi il vaut 1 ici</h4>
+
+  <p>
+    Le multiplicateur \( \lambda \) a une signification très concrète : c'est
+    <strong>l'utilité que rapporterait un euro supplémentaire</strong> de budget. On l'appelle
+    l'utilité marginale du revenu.
+  </p>
+
+  <p>
+    Or dans notre modèle, un euro de plus permet d'acheter une unité de consommation en plus (car
+    \( p = 1 \)), et une unité de consommation en plus rapporte exactement 1 point d'utilité (car
+    \( c \) entre linéairement avec un coefficient 1). Donc \( \lambda = 1 \), et on peut le
+    prédire avant même de dériver. Le calcul le confirmera à la première CPO.
+  </p>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi \( \lambda = 1 \) simplifie tout</div>
+    <p>
+      Dans la plupart des exercices d'optimisation, \( \lambda \) est une inconnue pénible qu'il
+      faut éliminer en divisant une CPO par une autre. Ici, la première CPO le livre tout de suite,
+      gratuitement, sous la forme \( 1 - \lambda = 0 \). C'est le cadeau de la forme
+      quasi-linéaire, et c'est ce qui rend cette question 1.2 accessible en dix lignes. Profites-en,
+      mais ne t'attends pas à ce que ce soit toujours le cas.
+    </p>
+  </div>
+
+  <h3>3.11 L'autre chemin : la substitution</h3>
+
+  <p>
+    L'énoncé demande le Lagrangien, donc c'est le Lagrangien qu'il faut écrire pour empocher les
+    points. Mais il existe une seconde méthode, plus courte, qui donne le même résultat. Elle est
+    excellente comme <strong>vérification</strong>, et elle sauve la mise le jour où tu paniques et
+    que tu ne te souviens plus de la forme du Lagrangien.
+  </p>
+
+  <p>
+    L'idée : la contrainte donne \( c \) en fonction de \( l \). On <em>injecte</em> cette
+    expression dans l'utilité. Il ne reste alors qu'une seule variable, \( l \), et plus aucune
+    contrainte — on est retombé sur un problème de maximisation ordinaire, exactement celui du
+    chapitre 0 du volume 1.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ U = \underbrace{s(1-t)(1-l) + M}_{= \; c} \; + \; 4\ln(l) \]
+      <div class="why">
+        On a remplacé \( c \) par ce que vaut \( c \) d'après la contrainte. Maintenant \( U \) ne
+        dépend plus que de \( l \) : on peut la maximiser à l'ancienne.
+      </div>
+    </div>
+    <div class="step">
+      \[ \frac{dU}{dl} = -s(1-t) + \frac{4}{l} \]
+      <div class="why">
+        On dérive par rapport à \( l \), terme par terme. \( s(1-t)(1-l) \) est de la forme
+        « constante fois \( (1-l) \) », sa dérivée est « constante fois \( -1 \) », soit
+        \( -s(1-t) \). Le \( M \) est une constante : sa dérivée est nulle — <strong>c'est
+        exactement là que \( M \) disparaît de l'histoire</strong>. Enfin \( 4\ln(l) \) donne
+        \( 4/l \).
+      </div>
+    </div>
+    <div class="step">
+      \[ -s(1-t) + \frac{4}{l} = 0 \quad\Longleftrightarrow\quad \frac{4}{l} = s(1-t) \]
+      <div class="why">
+        On pose la dérivée égale à zéro et on fait passer le premier terme à droite. On retrouve
+        mot pour mot la condition de tangence de la section 3.9 : disposition à payer = prix.
+      </div>
+    </div>
+    <div class="step">
+      \[ l^* = \frac{4}{s(1-t)} \]
+      <div class="why">
+        On isole \( l \) : on multiplie les deux côtés par \( l \), on divise par \( s(1-t) \).
+        Même résultat que par le Lagrangien, en trois lignes au lieu de dix.
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe — faire les deux, écrire celle qu'on demande</div>
+    <p>
+      À l'examen : rédige le <strong>Lagrangien</strong> (c'est ce qui est demandé, c'est ce qui est
+      barémé). Puis, sur ton brouillon, refais le calcul par substitution en trente secondes. Si les
+      deux donnent le même \( l^* \), tu es tranquille. S'ils diffèrent, tu as une erreur de signe
+      quelque part et tu le sais <em>avant</em> de rendre la copie.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>4. Sous-question 1.1 — les deux contraintes de budget</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 1.1 (10 points)</div>
+    <p>
+      Écrivez la contrainte de budget d'un travailleur à haut salaire, puis celle d'un travailleur
+      à bas salaire. (On rappelle que \( t = 0{,}2 \).)
+    </p>
+  </div>
+
+  <h3>4.1 Traduisons la question en français simple</h3>
+
+  <dl class="lexique">
+    <dt>« Écrivez »</dt>
+    <dd>
+      Le verbe est important : on ne te demande pas de <em>résoudre</em> quoi que ce soit, ni de
+      calculer un optimum. On te demande une <strong>équation</strong>, deux fois. C'est la
+      question la plus facile des cinq, et elle vaut 10 points — soit un cinquième de la question
+      entière. Ne la bâcle pas et ne la survole pas : c'est là que se prennent les points les moins
+      chers de tout l'examen.
+    </dd>
+    <dt>« la contrainte de budget »</dt>
+    <dd>
+      L'équation qui décrit tout ce que la personne peut se payer, construite en section 3.6 :
+      dépense d'un côté, ressources de l'autre.
+    </dd>
+    <dt>« d'un travailleur à haut salaire », « à bas salaire »</dt>
+    <dd>
+      Les deux types de l'énoncé, \( s_H = 20 \) et \( s_B = 10 \). Il faut donc
+      <strong>deux</strong> équations, avec des chiffres différents. Écrire une seule contrainte
+      « générale » sans la décliner dans les deux cas te coûterait la moitié des points.
+    </dd>
+  </dl>
+
+  <div class="box box-why">
+    <div class="box-title">Ce que le correcteur cherche dans ta copie</div>
+    <p>
+      Le barème est explicite : 5 points par contrainte, dont <strong>3 pour le revenu net du
+      travail</strong> correctement écrit et <strong>2 pour le transfert \( M(t) \) ajouté</strong>.
+      Traduction : il y a deux façons de perdre des points, et une seule chance de tout gagner.
+    </p>
+    <ul>
+      <li>Tu écris \( c = 20(1-l) + 2 \) → tu as oublié la taxe : le \( (1-t) \) manque. Tu perds
+        les 3 points du revenu net.</li>
+      <li>Tu écris \( c = 16(1-l) \) → tu as oublié le chèque. Tu perds les 2 points du
+        transfert.</li>
+      <li>Tu écris \( c = 16\,l + 2 \) → tu as confondu loisir et travail. Le correcteur voit
+        immédiatement que tout le reste de ta copie sera faux.</li>
+    </ul>
+  </div>
+
+  <h3>4.2 La résolution pas à pas</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Poser le temps de travail</div>
+    <p>
+      Avant toute chose, on nomme le temps de travail. C'est ce qui évite la confusion \( l \) /
+      travail dans toute la suite.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ \text{temps de travail} = L - l = 1 - l \]
+        <div class="why">
+          La dotation totale vaut \( L = 1 \) et on en réserve \( l \) au loisir. Le reste est
+          vendu sur le marché du travail. Écrire cette ligne sur la copie coûte cinq secondes et
+          prouve au correcteur que tu as compris le modèle.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Calculer le revenu brut du travail</div>
+    <div class="calc">
+      <div class="step">
+        \[ \text{revenu brut} = s_i \times (1 - l_i) \]
+        <div class="why">
+          L'indice \( i \) est un joker : il vaut \( H \) ou \( B \) selon le type dont on parle.
+          Écrire une formule avec un indice générique, puis la décliner, est la façon la plus
+          propre de rédiger — et la plus rapide.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Retirer la taxe</div>
+    <div class="calc">
+      <div class="step">
+        \[ \text{revenu net du travail} = s_i\,(1-t)\,(1-l_i) \]
+        <div class="why">
+          L'État prend la fraction \( t \) du brut ; il reste la fraction \( 1 - t \). Ce facteur
+          \( (1-t) \) est le cœur des 3 points principaux.
+        </div>
+      </div>
+      <div class="step">
+        \[ \text{avec } t = 0{,}2 : \quad 1 - t = 0{,}8 \]
+        <div class="why">
+          Le travailleur garde 80 \% de son brut.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Ajouter le transfert</div>
+    <div class="calc">
+      <div class="step">
+        \[ \text{ressources} = s_i\,(1-t)\,(1-l_i) + M(t) \]
+        <div class="why">
+          Le chèque du gouvernement est une ressource comme une autre. Il s'<strong>ajoute</strong>
+          au revenu du travail : c'est une addition, pas une multiplication, et surtout pas une
+          soustraction (l'État <em>rend</em> l'argent, il ne le reprend pas une deuxième fois).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">5.</span> Égaler à la dépense</div>
+    <div class="calc">
+      <div class="step">
+        \[ p\,c_i \;\le\; s_i\,(1-t)\,(1-l_i) + M(t) \]
+        <div class="why">
+          La contrainte générale. On peut la laisser avec \( \le \) : c'est la forme la plus
+          rigoureuse.
+        </div>
+      </div>
+      <div class="step">
+        \[ c_i \;=\; s_i\,(1-t)\,(1-l_i) + M(t) \]
+        <div class="why">
+          On remplace \( p \) par 1, et on sature la contrainte (voir 3.6 : l'utilité croît en
+          \( c \), donc on dépense tout). C'est cette forme qu'on utilisera en 1.2.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">6.</span> Décliner pour les deux types</div>
+    <div class="calc">
+      <div class="step">
+        \[ s_H(1-t) = 20 \times 0{,}8 = 16 \qquad s_B(1-t) = 10 \times 0{,}8 = 8 \]
+        <div class="why">
+          Les deux salaires nets, calculés une bonne fois pour toutes.
+        </div>
+      </div>
+      <div class="step">
+        \[ \text{Type H :} \quad c_H = 16\,(1 - l_H) + 2 \]
+        <div class="why">
+          On remplace \( s_H(1-t) \) par 16 et \( M \) par 2. C'est la première réponse demandée.
+        </div>
+      </div>
+      <div class="step">
+        \[ \text{Type B :} \quad c_B = 8\,(1 - l_B) + 2 \]
+        <div class="why">
+          Idem avec le salaire net du type B. Voilà la seconde réponse.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat</div>
+    <p>
+      Contrainte générale : \( \; p\,c_i \le s_i(1-t)(1-l_i) + M(t) \).
+    </p>
+    <p>
+      Avec \( p = 1 \), \( t = 0{,}2 \) et \( M = 2 \) :
+    </p>
+    <p>\[ \textbf{Type H :}\quad c_H = 16\,(1 - l_H) + 2 \]</p>
+    <p>\[ \textbf{Type B :}\quad c_B = 8\,(1 - l_B) + 2 \]</p>
+    <p>
+      Sous forme développée, ce sont les droites \( c_H = 18 - 16\,l_H \) et
+      \( c_B = 10 - 8\,l_B \) (figure 3).
+    </p>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie — question 1.1</div>
+    <p>
+      Un travailleur dispose d'une dotation en temps \( L = 1 \) qu'il répartit entre le loisir
+      \( l_i \) et le travail \( 1 - l_i \). Son revenu brut du travail est \( s_i(1-l_i) \) ;
+      après prélèvement de la taxe au taux \( t \), il ne lui reste que
+      \( s_i(1-t)(1-l_i) \). Il reçoit en outre le transfert forfaitaire \( M(t) \), qu'il prend
+      comme une donnée puisque \( N \) est très grand. Sa contrainte de budget s'écrit donc :
+    </p>
+    <p>\[ p\,c_i \;\le\; s_i(1-t)(1-l_i) + M(t), \qquad i \in \{H, B\} \]</p>
+    <p>
+      Comme l'utilité est strictement croissante en \( c_i \), la contrainte est saturée à
+      l'optimum et on peut écrire l'égalité. Avec \( p = 1 \), \( t = 0{,}2 \) (donc
+      \( 1 - t = 0{,}8 \)) et \( M(t) = 2 \) :
+    </p>
+    <p>\[ \text{haut salaire :} \quad c_H = 20 \times 0{,}8 \times (1 - l_H) + 2 = 16\,(1-l_H) + 2 \]</p>
+    <p>\[ \text{bas salaire :} \quad c_B = 10 \times 0{,}8 \times (1 - l_B) + 2 = 8\,(1-l_B) + 2 \]</p>
+    <p>
+      Le salaire net \( s_i(1-t) \) est aussi la pente (en valeur absolue) de la droite de budget :
+      c'est le coût d'opportunité d'une unité de loisir, 16 pour le type H et 8 pour le type B.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les pièges de la 1.1</div>
+    <p>
+      <strong>Piège 1 — remplacer \( M(t) \) par sa formule de financement.</strong> Certains
+      étudiants, voulant bien faire, écrivent \( M = t \times \) (revenu moyen) et l'injectent dans
+      la contrainte individuelle. C'est une erreur conceptuelle, explicitement signalée par le
+      corrigé officiel : l'individu prend \( M \) comme une donnée. Écrire \( M(t) \), ou même
+      directement 2, est la bonne réponse.
+    </p>
+    <p>
+      <strong>Piège 2 — écrire \( c = s(1-t)\,l + M \).</strong> Le \( l \) au lieu du
+      \( (1-l) \). Erreur mortelle : la droite monterait au lieu de descendre, ce qui voudrait dire
+      qu'on gagne de l'argent en se reposant.
+    </p>
+    <p>
+      <strong>Piège 3 — appliquer la taxe au transfert.</strong> Non : la taxe frappe les
+      <em>revenus bruts du travail</em>, pas le chèque redistribué. On n'écrit jamais
+      \( (1-t)\bigl[s(1-l) + M\bigr] \).
+    </p>
+    <p>
+      <strong>Piège 4 — oublier de faire deux contraintes.</strong> La question dit « puis celle
+      d'un travailleur à bas salaire ». Deux équations, deux fois 5 points.
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Recette réutilisable — la contrainte de budget travail/loisir</div>
+    <p>
+      Elle a <em>toujours</em> cette forme, dans tous les exercices de ce type :
+    </p>
+    <p>\[ p\,c = \underbrace{w_{\text{net}} \times (\text{temps total} - \text{loisir})}_{\text{ce que je gagne en vendant mon temps}} + \underbrace{R}_{\text{revenu non salarial}} \]</p>
+    <p>
+      Où \( w_{\text{net}} \) est le salaire après impôt et \( R \) regroupe tout ce qui tombe sans
+      travailler : transferts, allocations, dividendes, héritage, pension. Coche mentalement les
+      quatre cases — prix, salaire net, temps travaillé, revenu non salarial — et tu ne peux plus
+      te tromper.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>5. Sous-question 1.2 — le Lagrangien et le temps de travail optimal</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 1.2 (15 points)</div>
+    <p>
+      En utilisant la méthode du Lagrangien, calculez le temps de travail optimal de chacun des
+      deux types de travailleurs. Détaillez votre raisonnement.
+    </p>
+  </div>
+
+  <h3>5.1 Traduisons la question en français simple</h3>
+
+  <dl class="lexique">
+    <dt>« en utilisant la méthode du Lagrangien »</dt>
+    <dd>
+      La méthode est <strong>imposée</strong>. Ce n'est pas une suggestion : si tu résous par
+      substitution sans écrire le Lagrangien, tu perds les 5 points de sa rédaction, même si ta
+      réponse finale est juste. Écris-le, quitte à refaire ensuite le calcul comme tu veux.
+    </dd>
+    <dt>« calculez le temps de travail optimal »</dt>
+    <dd>
+      <strong>Le temps de travail</strong>, donc \( 1 - l \), et pas \( l \). C'est écrit noir sur
+      blanc dans l'énoncé, et c'est là que la moitié de la promotion se plante. Le calcul te
+      donnera \( l^* \) ; il te restera une soustraction à faire, et c'est elle qui est notée.
+    </dd>
+    <dt>« optimal »</dt>
+    <dd>
+      <span class="term">Optimal</span> = le meilleur possible pour la personne concernée, compte
+      tenu de ce qu'elle peut se payer. Ce n'est pas « le mieux pour la société », ni « ce qui
+      serait raisonnable » : c'est le point le plus haut atteignable sur sa droite de budget. On
+      met une étoile en exposant pour le signaler : \( l^* \) se lit « l étoile » et veut dire
+      « la valeur de \( l \) choisie à l'optimum ».
+    </dd>
+    <dt>« de chacun des deux types »</dt>
+    <dd>
+      Deux réponses numériques attendues. Le barème donne 3 points pour « les valeurs
+      numériques des deux temps de travail » : une seule des deux ne vaut pas la moitié des points
+      dans une copie mal finie, elle vaut souvent zéro parce que le correcteur ne trouve pas la
+      seconde.
+    </dd>
+    <dt>« détaillez votre raisonnement »</dt>
+    <dd>
+      Invitation explicite à écrire les étapes intermédiaires. Les CPO valent 4 points à elles
+      seules. Une copie qui saute directement à \( l^* = 4/(s(1-t)) \) sans montrer les dérivées
+      perd 9 des 15 points, même si le résultat est exact.
+    </dd>
+  </dl>
+
+  <h3>5.2 La résolution pas à pas</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Écrire le problème d'optimisation</div>
+    <p>
+      Toujours commencer par là. Ça ne coûte rien et ça structure la copie.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ \max_{l_i,\; c_i} \; c_i + 4\ln(l_i) \]
+        <div class="why">
+          L'objectif : la fonction d'utilité de l'énoncé. On maximise en choisissant le loisir et
+          la consommation.
+        </div>
+      </div>
+      <div class="step">
+        \[ \text{s.c.} \quad c_i = s_i(1-t)(1-l_i) + M(t) \]
+        <div class="why">
+          « s.c. » = sous contrainte. C'est la contrainte de la question 1.1, qu'on réutilise telle
+          quelle. Une question d'examen bien construite est toujours un escalier : chaque marche
+          s'appuie sur la précédente.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Écrire le Lagrangien (5 points)</div>
+    <div class="calc">
+      <div class="step">
+        \[ \mathcal{L}_i = c_i + 4\ln(l_i) + \lambda_i\bigl[\, s_i(1-t)(1-l_i) + M(t) - c_i \,\bigr] \]
+        <div class="why">
+          Recette de la section 3.10 : objectif, plus \( \lambda \) fois le crochet
+          « ressources moins dépenses ». L'indice \( i \) sur le \( \lambda \) rappelle que chaque
+          type a son propre problème et donc son propre multiplicateur — même si, ici, ils
+          vaudront tous les deux 1.
+        </div>
+      </div>
+    </div>
+    <p>
+      Une remarque de rédaction : n'oublie pas de préciser que \( \lambda_i \) est le multiplicateur
+      de Lagrange associé à la contrainte de budget. C'est une ligne de texte, elle rassure le
+      correcteur sur le fait que tu sais ce que tu écris.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Première CPO : dériver par rapport à \( c_i \)</div>
+    <div class="calc">
+      <div class="step">
+        \[ \frac{\partial \mathcal{L}_i}{\partial c_i} = 1 - \lambda_i = 0 \qquad (1) \]
+        <div class="why">
+          On dérive le Lagrangien par rapport à \( c_i \), en traitant \( l_i \) et
+          \( \lambda_i \) comme des constantes. Où est \( c_i \) dans le Lagrangien ? À deux
+          endroits : le \( c_i \) tout seul au début (sa dérivée vaut 1) et le \( -\lambda_i c_i \)
+          dans le crochet (sa dérivée vaut \( -\lambda_i \)). Le terme \( 4\ln(l_i) \) ne contient
+          pas de \( c_i \) : il disparaît.
+        </div>
+      </div>
+      <div class="step">
+        \[ \lambda_i = 1 \]
+        <div class="why">
+          On isole immédiatement : c'est le cadeau annoncé en 3.10 d. Un euro de plus vaut un point
+          d'utilité de plus.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Deuxième CPO : dériver par rapport à \( l_i \)</div>
+    <p>
+      C'est la ligne clé de toute la question. On y va très lentement.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ \mathcal{L}_i = c_i + 4\ln(l_i) + \lambda_i s_i(1-t)(1-l_i) + \lambda_i M(t) - \lambda_i c_i \]
+        <div class="why">
+          D'abord, on développe le crochet pour voir clairement où se cache \( l_i \). Il n'est
+          qu'à deux endroits : dans \( 4\ln(l_i) \) et dans \( (1 - l_i) \).
+        </div>
+      </div>
+      <div class="step">
+        \[ \frac{\partial}{\partial l_i}\bigl[ 4\ln(l_i) \bigr] = \frac{4}{l_i} \]
+        <div class="why">
+          Le fait n° 3 de la section 3.8 : la dérivée de \( \ln \) est l'inverse, et le 4 reste
+          devant.
+        </div>
+      </div>
+      <div class="step">
+        \[ \frac{\partial}{\partial l_i}\bigl[ \lambda_i s_i(1-t)(1-l_i) \bigr] = -\lambda_i s_i(1-t) \]
+        <div class="why">
+          Tout le paquet \( \lambda_i s_i(1-t) \) est une constante vis-à-vis de \( l_i \). Il
+          multiplie \( (1 - l_i) \), dont la dérivée vaut \( -1 \). Constante fois \( -1 \) : d'où
+          le signe moins. <strong>C'est ce signe moins qui fait tout le sens économique</strong> :
+          se reposer plus, c'est gagner moins.
+        </div>
+      </div>
+      <div class="step">
+        \[ \frac{\partial \mathcal{L}_i}{\partial l_i} = \frac{4}{l_i} - \lambda_i\, s_i(1-t) = 0 \qquad (2) \]
+        <div class="why">
+          On rassemble : les termes \( c_i \), \( \lambda_i M(t) \) et \( -\lambda_i c_i \) ne
+          contiennent pas \( l_i \) et donnent zéro. Il ne reste que les deux morceaux ci-dessus,
+          et on pose l'ensemble égal à zéro.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">5.</span> Troisième CPO : dériver par rapport à \( \lambda_i \)</div>
+    <div class="calc">
+      <div class="step">
+        \[ \frac{\partial \mathcal{L}_i}{\partial \lambda_i} = s_i(1-t)(1-l_i) + M(t) - c_i = 0 \qquad (3) \]
+        <div class="why">
+          Le \( \lambda_i \) ne multiplie que le crochet : en dérivant par rapport à lui, il ne
+          reste que le crochet.
+        </div>
+      </div>
+      <div class="step">
+        \[ \Longleftrightarrow \quad c_i = s_i(1-t)(1-l_i) + M(t) \]
+        <div class="why">
+          On retombe sur la contrainte de budget ! Ce n'est pas un hasard : la troisième CPO d'un
+          Lagrangien redonne <em>toujours</em> la contrainte. C'est un excellent contrôle : si tu
+          ne la retrouves pas, tu as mal écrit ton Lagrangien.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">6.</span> Résoudre le système</div>
+    <div class="calc">
+      <div class="step">
+        \[ \frac{4}{l_i} - 1 \times s_i(1-t) = 0 \]
+        <div class="why">
+          On injecte \( \lambda_i = 1 \), obtenu en (1), dans l'équation (2). Le multiplicateur
+          disparaît du problème.
+        </div>
+      </div>
+      <div class="step">
+        \[ \frac{4}{l_i} = s_i(1-t) \]
+        <div class="why">
+          On fait passer le second terme à droite. Voilà la condition économique :
+          <strong>utilité marginale du loisir = coût d'opportunité du loisir</strong>. On retrouve
+          exactement la condition de tangence de la figure 5, sans avoir eu besoin de dessiner.
+        </div>
+      </div>
+      <div class="step">
+        \[ 4 = l_i \times s_i(1-t) \]
+        <div class="why">
+          On multiplie les deux côtés par \( l_i \) pour faire disparaître le dénominateur. (C'est
+          légitime : \( l_i &gt; 0 \), puisque \( \ln(0) \) n'existe pas — personne ne choisira un
+          loisir nul.)
+        </div>
+      </div>
+      <div class="step">
+        \[ \boxed{\ l_i^* = \frac{4}{s_i(1-t)}\ } \]
+        <div class="why">
+          On divise les deux côtés par \( s_i(1-t) \). C'est la formule du loisir optimal, celle
+          qui vaut 3 points et qui servira aussi en 1.4. Encadre-la sur ta copie.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">7.</span> Les valeurs numériques du loisir</div>
+    <div class="calc">
+      <div class="step">
+        \[ l_H^* = \frac{4}{20 \times 0{,}8} = \frac{4}{16} = 0{,}25 \]
+        <div class="why">
+          On remplace \( s_H = 20 \) et \( 1 - t = 0{,}8 \). Le dénominateur est le salaire net,
+          16. Quatre seizièmes font un quart.
+        </div>
+      </div>
+      <div class="step">
+        \[ l_B^* = \frac{4}{10 \times 0{,}8} = \frac{4}{8} = 0{,}5 \]
+        <div class="why">
+          Même chose pour le type B, dont le salaire net vaut 8. Quatre huitièmes font un demi.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">8.</span> Passer au temps de travail — la ligne à ne jamais oublier</div>
+    <div class="calc">
+      <div class="step">
+        \[ \text{travail}_H = 1 - l_H^* = 1 - 0{,}25 = 0{,}75 = \frac{3}{4} \]
+        <div class="why">
+          C'est <strong>ça</strong>, la réponse à la question posée. Le type H consacre les trois
+          quarts de son temps au travail.
+        </div>
+      </div>
+      <div class="step">
+        \[ \text{travail}_B = 1 - l_B^* = 1 - 0{,}5 = 0{,}5 = \frac{1}{2} \]
+        <div class="why">
+          Le type B travaille la moitié de son temps.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">9.</span> Vérifier (30 secondes bien investies)</div>
+    <p>
+      Trois contrôles rapides, à faire systématiquement :
+    </p>
+    <ul>
+      <li>
+        <strong>Les valeurs sont-elles entre 0 et 1 ?</strong> \( 0{,}25 \) et \( 0{,}5 \) : oui.
+        Un loisir supérieur à 1 ou négatif serait absurde et signalerait une erreur (ou une
+        solution en coin, voir l'encadré suivant).
+      </li>
+      <li>
+        <strong>Le mieux payé travaille-t-il plus ?</strong> 0,75 contre 0,5 : oui. C'est cohérent
+        avec l'intuition du stand de crêpes (3.1) : quand le temps se vend cher, on en vend
+        davantage.
+      </li>
+      <li>
+        <strong>La consommation est-elle positive ?</strong>
+        \( c_H = 16 \times 0{,}75 + 2 = 14 \) et \( c_B = 8 \times 0{,}5 + 2 = 6 \). Deux nombres
+        positifs : tout va bien.
+      </li>
+    </ul>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat</div>
+    <p>\[ l_i^* = \frac{4}{s_i(1-t)} \qquad\Longrightarrow\qquad l_H^* = 0{,}25 \;;\quad l_B^* = 0{,}5 \]</p>
+    <p>
+      <strong>Temps de travail optimal :</strong>
+    </p>
+    <p>\[ 1 - l_H^* = \mathbf{0{,}75} = \frac{3}{4} \qquad\qquad 1 - l_B^* = \mathbf{0{,}5} = \frac{1}{2} \]</p>
+    <p>
+      Le travailleur à haut salaire travaille les trois quarts de son temps, celui à bas salaire la
+      moitié.
+    </p>
+  </div>
+
+  <h3>5.3 La même chose par substitution (contrôle en trente secondes)</h3>
+
+  <p>
+    Refaisons-le sans Lagrangien, avec les chiffres du type H, pour se convaincre.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ U_H = \bigl[\,16(1 - l) + 2\,\bigr] + 4\ln(l) \]
+      <div class="why">
+        On a remplacé \( c \) par la contrainte du type H. Une seule variable reste.
+      </div>
+    </div>
+    <div class="step">
+      \[ U_H = 18 - 16\,l + 4\ln(l) \]
+      <div class="why">
+        On développe et on regroupe les constantes, comme en 3.7.
+      </div>
+    </div>
+    <div class="step">
+      \[ \frac{dU_H}{dl} = -16 + \frac{4}{l} \]
+      <div class="why">
+        Dérivée du 18 : zéro. Dérivée de \( -16l \) : \( -16 \). Dérivée de \( 4\ln(l) \) :
+        \( 4/l \).
+      </div>
+    </div>
+    <div class="step">
+      \[ -16 + \frac{4}{l} = 0 \quad\Longleftrightarrow\quad l = \frac{4}{16} = 0{,}25 \]
+      <div class="why">
+        Identique au résultat du Lagrangien. Contrôle réussi.
+      </div>
+    </div>
+    <div class="step">
+      \[ \frac{d^2 U_H}{dl^2} = -\frac{4}{l^2} \; &lt; \; 0 \]
+      <div class="why">
+        La dérivée seconde (dérivée de \( 4 l^{-1} \), qui vaut \( -4 l^{-2} \)) est négative pour
+        tout \( l &gt; 0 \). C'est bien un <strong>maximum</strong> et non un minimum. Une ligne, et
+        la copie devient irréprochable. (Voir le chapitre 0 du volume 1 pour le critère de la
+        dérivée seconde.)
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Et si le salaire net était trop bas ? (la solution en coin)</div>
+    <p>
+      La formule \( l^* = 4 / \bigl(s(1-t)\bigr) \) donne un nombre plus grand que 1 dès que le
+      salaire net descend sous 4. Or un loisir supérieur à la dotation est impossible : on ne peut
+      pas se reposer plus que tout son temps. Dans ce cas, la vraie solution est
+      \( l^* = 1 \) : la personne ne travaille pas du tout. On appelle ça une
+      <span class="term">solution en coin</span> — l'optimum est bloqué au bord du domaine
+      autorisé.
+    </p>
+    <p>
+      Ici, avec \( t = 0{,}2 \), les salaires nets valent 16 et 8, tous deux bien au-dessus de 4 :
+      pas de souci. Mais garde l'idée en tête pour la question 1.4, où l'on fera monter \( t \).
+      Signaler cette réserve en une phrase dans ta copie est le genre de détail qui distingue une
+      très bonne copie d'une bonne copie.
+    </p>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie — question 1.2</div>
+    <p>
+      Chaque travailleur de type \( i \in \{H, B\} \) résout :
+    </p>
+    <p>\[ \max_{l_i,\, c_i} \; c_i + 4\ln(l_i) \quad \text{s.c.} \quad c_i = s_i(1-t)(1-l_i) + M(t) \]</p>
+    <p>
+      En notant \( \lambda_i \) le multiplicateur associé à la contrainte de budget, le Lagrangien
+      s'écrit :
+    </p>
+    <p>\[ \mathcal{L}_i = c_i + 4\ln(l_i) + \lambda_i\bigl[ s_i(1-t)(1-l_i) + M(t) - c_i \bigr] \]</p>
+    <p>Les conditions de premier ordre sont :</p>
+    <p>\[ \frac{\partial \mathcal{L}_i}{\partial c_i} = 1 - \lambda_i = 0 \qquad (1) \]</p>
+    <p>\[ \frac{\partial \mathcal{L}_i}{\partial l_i} = \frac{4}{l_i} - \lambda_i s_i(1-t) = 0 \qquad (2) \]</p>
+    <p>\[ \frac{\partial \mathcal{L}_i}{\partial \lambda_i} = s_i(1-t)(1-l_i) + M(t) - c_i = 0 \qquad (3) \]</p>
+    <p>
+      De (1) : \( \lambda_i = 1 \). En reportant dans (2) : \( \dfrac{4}{l_i} = s_i(1-t) \),
+      c'est-à-dire l'égalité entre l'utilité marginale du loisir et son coût d'opportunité. D'où :
+    </p>
+    <p>\[ l_i^* = \frac{4}{s_i(1-t)} \]</p>
+    <p>Avec \( t = 0{,}2 \) :</p>
+    <p>\[ l_H^* = \frac{4}{20 \times 0{,}8} = \frac{1}{4} \qquad\qquad l_B^* = \frac{4}{10 \times 0{,}8} = \frac{1}{2} \]</p>
+    <p>
+      Les <strong>temps de travail optimaux</strong> sont donc
+      \( 1 - l_H^* = \mathbf{3/4} \) pour le type H et \( 1 - l_B^* = \mathbf{1/2} \) pour le
+      type B. Le type B travaille moins parce que son salaire net (8) rémunère chaque unité de
+      temps deux fois moins bien : le loisir lui « coûte » moins cher.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les pièges de la 1.2</div>
+    <p>
+      <strong>Piège 1 — répondre \( l^* \) au lieu de \( 1 - l^* \).</strong> Le piège n° 1 de tout
+      le chapitre. La question demande le <em>temps de travail</em>. Écris toujours la ligne
+      « travail \( = 1 - l = \) … ».
+    </p>
+    <p>
+      <strong>Piège 2 — oublier le \( (1-t) \) dans la CPO.</strong> Si tu dérives
+      \( \lambda s(1-l) \) au lieu de \( \lambda s(1-t)(1-l) \), tu trouves
+      \( l_H = 4/20 = 0{,}2 \) au lieu de 0,25. Erreur discrète et coûteuse.
+    </p>
+    <p>
+      <strong>Piège 3 — perdre le signe moins.</strong> La dérivée de \( (1 - l_i) \) vaut
+      \( -1 \), pas \( +1 \). Avec le mauvais signe, la CPO (2) devient
+      \( 4/l + s(1-t) = 0 \), qui donne un loisir négatif. Si tu obtiens un nombre négatif,
+      cherche ton signe ici.
+    </p>
+    <p>
+      <strong>Piège 4 — croire que \( M \) intervient.</strong> Regarde bien la CPO (2) :
+      \( M(t) \) n'y apparaît pas, parce qu'il ne dépend pas de \( l_i \) et disparaît en dérivant.
+      C'est un résultat, pas un oubli — et c'est justement le sujet de la question 1.4.
+    </p>
+    <p>
+      <strong>Piège 5 — dériver \( \ln \) « comme une puissance ».</strong> La dérivée de
+      \( 4\ln(l) \) est \( 4/l \), pas \( 4l \) ni \( 1/(4l) \) ni \( \ln'(4l) \). Cette seule
+      ligne pilote toute la réponse.
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Recette réutilisable — optimiser sous contrainte en six gestes</div>
+    <p>
+      <strong>1.</strong> Écrire « max … s.c. … ».<br>
+      <strong>2.</strong> Écrire \( \mathcal{L} = \) objectif \( + \lambda\,[\text{disponible} -
+      \text{dépensé}] \).<br>
+      <strong>3.</strong> Une CPO par variable de choix, plus une pour \( \lambda \).<br>
+      <strong>4.</strong> Éliminer \( \lambda \) (ici il vaut 1 ; ailleurs, on divise une CPO par
+      l'autre).<br>
+      <strong>5.</strong> Résoudre, puis <em>traduire</em> le résultat dans les termes de la
+      question.<br>
+      <strong>6.</strong> Vérifier : signe, ordre de grandeur, cohérence économique.
+    </p>
+    <p>
+      Le geste 5 est celui qu'on oublie sous la pression. Relis la question juste avant d'écrire ta
+      conclusion, à chaque fois.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+<h2>6. Sous-question 1.3 — le revenu du travail net de chaque type (8 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 1.3 (8 points)</div>
+<p><strong>1.3)</strong> Calculez le revenu du travail net perçu par chaque type de travailleur.</p>
+</div>
+
+<h3>6.1 Traduisons la question</h3>
+
+<dl class="lexique">
+<dt>« le revenu du travail »</dt>
+<dd>
+  C'est l'argent gagné <strong>en travaillant</strong>, et rien d'autre. Le transfert \( M \)
+  n'en fait donc pas partie : il tombe du ciel, pas du travail. Attention, c'est exactement le
+  genre de détail qui distingue une réponse à 8/8 d'une réponse à 4/8.
+</dd>
+<dt>« net »</dt>
+<dd>
+  <span class="term">Net</span> signifie « après impôt », par opposition à <span class="term">brut</span>
+  qui signifie « avant impôt ». Le salaire horaire brut vaut \( s \) ; après une taxe au taux
+  \( t \), il ne reste que \( s(1-t) \) par heure. Avec \( t = 0{,}2 \), on garde 80 \% de ce qu'on
+  gagne.
+</dd>
+<dt>« de chaque type »</dt>
+<dd>
+  Il y a deux types de travailleurs sur l'île : ceux à haut salaire (\( s_H = 20 \)) et ceux à bas
+  salaire (\( s_B = 10 \)). Il faut donc <strong>deux</strong> réponses chiffrées.
+</dd>
+</dl>
+
+<div class="box box-methode">
+<div class="box-title">Méthode — la formule à poser</div>
+<p>Le revenu du travail net, c'est le salaire net horaire multiplié par le nombre d'heures travaillées :</p>
+<p>\[ R^{\text{net}} = \underbrace{s(1-t)}_{\text{ce que rapporte une heure, après impôt}} \times \underbrace{(1 - l^*)}_{\text{nombre d'heures travaillées}} \]</p>
+<p>
+  Les deux facteurs sont déjà connus : \( s(1-t) \) vient de l'énoncé, et \( l^* \) a été calculé
+  à la question 1.2. Il ne reste qu'à multiplier.
+</p>
+</div>
+
+<h3>6.2 La résolution, pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Le travailleur à haut salaire</div>
+<div class="calc">
+<div class="step">
+\[ s_H(1-t) = 20 \times (1 - 0{,}2) = 20 \times 0{,}8 = 16 \]
+<div class="why">Son heure est payée 20 brut ; l'État en prélève 20 \%, il lui en reste 80 \%,
+soit 16. C'est son <strong>salaire net horaire</strong>.</div>
+</div>
+<div class="step">
+\[ 1 - l_H^* = 1 - 0{,}25 = 0{,}75 \]
+<div class="why">La question 1.2 a donné \( l_H^* = 0{,}25 \) : il consacre un quart de son temps
+au loisir, donc les trois quarts au travail.</div>
+</div>
+<div class="step">
+\[ R_H^{\text{net}} = 16 \times 0{,}75 = 12 \]
+<div class="why">Je multiplie le salaire net horaire par le temps travaillé. Vérification mentale :
+16 × 0,75, c'est 16 moins un quart de 16, soit \( 16 - 4 = 12 \). ✓</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Le travailleur à bas salaire</div>
+<div class="calc">
+<div class="step">
+\[ s_B(1-t) = 10 \times 0{,}8 = 8 \]
+<div class="why">Même prélèvement de 20 \%, appliqué à un salaire brut de 10 : il reste 8 par
+heure.</div>
+</div>
+<div class="step">
+\[ 1 - l_B^* = 1 - 0{,}5 = 0{,}5 \]
+<div class="why">La question 1.2 a donné \( l_B^* = 0{,}5 \) : il partage son temps en deux moitiés
+égales, loisir et travail.</div>
+</div>
+<div class="step">
+\[ R_B^{\text{net}} = 8 \times 0{,}5 = 4 \]
+<div class="why">La moitié de 8 fait 4.</div>
+</div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 1.3</div>
+<p>\[ R_H^{\text{net}} = 12 \qquad\text{et}\qquad R_B^{\text{net}} = 4 \]</p>
+<p>
+  Le travailleur à haut salaire perçoit <strong>trois fois</strong> le revenu net du travailleur à
+  bas salaire, alors que son salaire horaire n'est que <em>deux</em> fois plus élevé.
+</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi un rapport de 3 et non de 2 ?</div>
+<p>
+  Parce que l'écart de salaire joue <strong>deux fois</strong>. Le travailleur bien payé gagne
+  davantage par heure (16 contre 8) <em>et</em> il travaille davantage d'heures (0,75 contre 0,5).
+  L'écart de revenu combine donc les deux effets : \( \frac{16 \times 0{,}75}{8 \times 0{,}5} =
+  \frac{12}{4} = 3 \).
+</p>
+<p>
+  Et pourquoi travaille-t-il plus ? Parce que renoncer à une heure de loisir lui coûte plus cher
+  (16 au lieu de 8) : son <span class="term">coût d'opportunité</span> du loisir est plus élevé,
+  donc il en consomme moins. C'est le mécanisme central de tout le modèle.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 1.3</div>
+<ul>
+  <li><strong>Ajouter le transfert \( M = 2 \)</strong> et répondre 14 et 6. Ce serait le
+      <em>revenu total</em> (donc la consommation), pas le revenu du travail. L'énoncé dit bien
+      « revenu du travail ».</li>
+  <li><strong>Donner le revenu brut</strong> (\( 20 \times 0{,}75 = 15 \) et
+      \( 10 \times 0{,}5 = 5 \)). L'énoncé dit « net » : il faut appliquer \( (1-t) \).</li>
+  <li><strong>Multiplier par \( l \) au lieu de \( 1 - l \).</strong> On est payé pour le temps
+      travaillé, pas pour le temps de loisir.</li>
+</ul>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 1.3</div>
+<p>
+  « Le revenu du travail net vaut \( s(1-t)(1-l^*) \).<br>
+  Haut salaire : \( 20 \times 0{,}8 \times (1 - 0{,}25) = 16 \times 0{,}75 = \mathbf{12} \).<br>
+  Bas salaire : \( 10 \times 0{,}8 \times (1 - 0{,}5) = 8 \times 0{,}5 = \mathbf{4} \).<br>
+  (Le transfert forfaitaire \( M = 2 \) n'est pas un revenu du travail : il s'ajoute à la
+  consommation, qui vaut donc 14 et 6 respectivement.) »
+</p>
+</div>
+
+<hr class="soft">
+
+<h2>7. Sous-question 1.4 — l'effet d'une hausse de la taxe (8 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 1.4 (8 points)</div>
+<p>
+  <strong>1.4)</strong> Le gouvernement envisage d'augmenter le taux de taxe \( t \). En vous
+  appuyant sur l'expression du loisir optimal obtenue en 1.2), déterminez l'effet d'une hausse de
+  \( t \) sur l'offre de travail de chaque type, puis donnez l'intuition économique de ce
+  résultat.
+</p>
+</div>
+
+<h3>7.1 Traduisons la question</h3>
+
+<dl class="lexique">
+<dt>« en vous appuyant sur l'expression du loisir optimal »</dt>
+<dd>
+  On te dit quoi faire : reprends la <strong>formule littérale</strong> \( l^* = \frac{4}{s(1-t)} \)
+  et regarde ce qui se passe quand \( t \) monte. Pas besoin de refaire le Lagrangien.
+</dd>
+<dt>« l'offre de travail »</dt>
+<dd>
+  C'est le nombre d'heures travaillées, soit \( 1 - l^* \). Attention au sens : si le loisir
+  <em>augmente</em>, l'offre de travail <em>diminue</em>. Les deux varient toujours en sens
+  opposé, puisque leur somme fait 1.
+</dd>
+<dt>« l'intuition économique »</dt>
+<dd>
+  Une explication en français, sans formule, qui dit <em>pourquoi</em> les gens réagissent ainsi.
+  C'est la moitié des points de la question : ne la bâcle pas.
+</dd>
+</dl>
+
+<h3>7.2 La résolution, pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Suivre le paramètre dans la formule</div>
+<div class="calc">
+<div class="step">
+\[ l^* = \frac{4}{s(1-t)} \]
+<div class="why">Je repars de la formule de 1.2. Le taux \( t \) n'apparaît qu'à un seul endroit :
+dans le facteur \( (1-t) \), au dénominateur.</div>
+</div>
+<div class="step">
+\[ t \uparrow \quad \Longrightarrow \quad (1-t) \downarrow \]
+<div class="why">Si \( t \) augmente, on retranche davantage à 1, donc \( (1-t) \) diminue.
+Exemple : \( t \) passe de 0,2 à 0,5 ⇒ \( (1-t) \) passe de 0,8 à 0,5.</div>
+</div>
+<div class="step">
+\[ (1-t) \downarrow \quad \Longrightarrow \quad s(1-t) \downarrow \quad \Longrightarrow \quad \frac{4}{s(1-t)} \uparrow \]
+<div class="why">Le dénominateur rétrécit. Or une fraction dont le dénominateur diminue
+<strong>augmente</strong> — souviens-toi que \( \frac{4}{2} = 2 \) mais \( \frac{4}{1} = 4 \).
+Donc le loisir optimal augmente.</div>
+</div>
+<div class="step">
+\[ l^* \uparrow \quad \Longrightarrow \quad 1 - l^* \downarrow \]
+<div class="why">Et comme le temps total vaut 1, plus de loisir signifie mécaniquement moins de
+travail. <strong>L'offre de travail diminue</strong>, et ce pour les deux types.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Vérifier sur des nombres</div>
+<p>Une vérification chiffrée ne coûte rien et sécurise la réponse. Prenons \( t = 0{,}5 \) :</p>
+<table class="compare">
+<tr><th>Type</th><th>\( l^* \) si \( t = 0{,}2 \)</th><th>\( l^* \) si \( t = 0{,}5 \)</th><th>travail : \( 0{,}2 \to 0{,}5 \)</th></tr>
+<tr><td>haut salaire</td><td>\( \frac{4}{16} = 0{,}25 \)</td><td>\( \frac{4}{10} = 0{,}4 \)</td><td>0,75 → 0,60</td></tr>
+<tr><td>bas salaire</td><td>\( \frac{4}{8} = 0{,}5 \)</td><td>\( \frac{4}{5} = 0{,}8 \)</td><td>0,50 → 0,20</td></tr>
+</table>
+<p>
+  Les deux travaillent moins, comme annoncé. Note au passage que le travailleur à bas salaire
+  réduit son travail bien plus fortement (de 0,50 à 0,20) : il est plus sensible, parce que son
+  salaire net horaire tombe très bas (5 seulement).
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> L'intuition économique</div>
+<div class="box box-why">
+<div class="box-title">Pourquoi taxer le travail fait travailler moins</div>
+<p>
+  Renoncer à une heure de loisir, ce n'est pas gratuit : cela « coûte » ce qu'on aurait pu gagner
+  en travaillant cette heure-là. C'est le <span class="term">coût d'opportunité</span> du loisir,
+  et il vaut exactement le salaire net horaire \( s(1-t) \).
+</p>
+<p>
+  Quand la taxe augmente, ce salaire net baisse : <strong>le loisir devient moins cher</strong>.
+  Or on consomme davantage de ce qui devient moins cher — le loisir ne fait pas exception. Les
+  travailleurs en « achètent » donc plus, c'est-à-dire qu'ils travaillent moins.
+</p>
+</div>
+<div class="box box-rappel">
+<div class="box-title">Le point remarquable : le transfert ne change rien</div>
+<p>
+  Regarde bien la formule \( l^* = \frac{4}{s(1-t)} \) : <strong>\( M \) n'y figure pas</strong>.
+  Recevoir 2 ou 3,50 de transfert ne modifie donc pas d'une minute le temps de travail choisi.
+</p>
+<p>
+  La raison tient à la forme de l'utilité, \( U = c + 4\ln(l) \) : la consommation y entre de
+  façon <em>linéaire</em> (on dit que les préférences sont <span class="term">quasi-linéaires</span>).
+  Recevoir de l'argent en plus déplace le niveau de bien-être, mais ne change pas l'arbitrage
+  entre une heure de loisir et les euros correspondants. Seul l'<strong>effet de substitution</strong>
+  joue ici ; il n'y a pas d'effet de revenu qui viendrait le contrarier.
+</p>
+<p>
+  C'est une remarque qui rapporte des points : elle montre que tu as compris <em>pourquoi</em>
+  la formule ne contient que \( s \) et \( t \).
+</p>
+</div>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 300" width="100%" style="max-width:12cm" role="img"
+     aria-label="La droite de budget pivote vers le bas quand la taxe augmente : l'optimum se déplace vers la droite, c'est-à-dire vers davantage de loisir">
+  <line x1="60" y1="30" x2="60" y2="245" stroke="#111827" stroke-width="1.6"/>
+  <line x1="60" y1="245" x2="420" y2="245" stroke="#111827" stroke-width="1.6"/>
+  <text x="426" y="249" font-size="12.5">l</text>
+  <text x="34" y="26" font-size="12.5">c</text>
+  <line x1="390" y1="241" x2="390" y2="249" stroke="#111827" stroke-width="1.4"/>
+  <text x="390" y="265" font-size="12" text-anchor="middle">1</text>
+  <!-- budget t = 0,2 : pente -16, ordonnee a l'origine 18, en l=1 : 2 -->
+  <line x1="60" y1="60" x2="390" y2="225" stroke="#4338ca" stroke-width="2.6"/>
+  <text x="196" y="118" font-size="12" style="fill:#4338ca" font-weight="bold">t = 0,2</text>
+  <!-- budget t = 0,5 : pente -10, ordonnee 13,5, en l=1 : 3,5 -->
+  <line x1="60" y1="105" x2="390" y2="208" stroke="#be123c" stroke-width="2.6" stroke-dasharray="8 4"/>
+  <text x="150" y="160" font-size="12" style="fill:#be123c" font-weight="bold">t = 0,5</text>
+  <!-- optima -->
+  <circle cx="142" cy="101" r="5" fill="#4338ca"/>
+  <line x1="142" y1="101" x2="142" y2="245" stroke="#4338ca" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="142" y="265" font-size="11.5" text-anchor="middle" style="fill:#4338ca">0,25</text>
+  <circle cx="192" cy="146" r="5" fill="#be123c"/>
+  <line x1="192" y1="146" x2="192" y2="245" stroke="#be123c" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="196" y="265" font-size="11.5" text-anchor="middle" style="fill:#be123c">0,40</text>
+  <path d="M 150 88 Q 172 82 190 90" fill="none" stroke="#111827" stroke-width="1.6"/>
+  <polygon points="190,90 182,84 183,93" fill="#111827"/>
+  <text x="212" y="82" font-size="11.5">l'optimum glisse vers plus de loisir</text>
+  <text x="60" y="288" font-size="11.5">Travailleur à haut salaire. Quand la taxe monte, la droite de budget s'aplatit (le salaire net baisse).</text>
+</svg>
+<figcaption>
+  Figure — L'effet d'une hausse de la taxe pour le travailleur à haut salaire. La droite de budget
+  pivote : elle part d'un point plus haut sur l'axe vertical (le transfert \( M \) a augmenté)
+  mais elle est moins pentue (le salaire net horaire est passé de 16 à 10). L'optimum se déplace
+  de \( l = 0{,}25 \) à \( l = 0{,}40 \) : plus de loisir, donc moins de travail.
+</figcaption>
+</figure>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 1.4</div>
+<p>
+  « Le loisir optimal vaut \( l^* = \frac{4}{s(1-t)} \). Une hausse de \( t \) réduit \( (1-t) \),
+  donc réduit le dénominateur, donc <strong>augmente \( l^* \)</strong> ; comme l'offre de travail
+  vaut \( 1 - l^* \), elle <strong>diminue</strong>, et ce pour les deux types.<br>
+  Intuition : le coût d'opportunité d'une heure de loisir est le salaire net horaire
+  \( s(1-t) \). La taxe le fait baisser, donc le loisir devient relativement moins cher et
+  les travailleurs en consomment davantage.<br>
+  Remarque : \( M \) n'apparaît pas dans \( l^* \) — avec des préférences quasi-linéaires en
+  consommation, le transfert forfaitaire n'a pas d'effet de revenu sur le choix travail-loisir. »
+</p>
+</div>
+
+<hr class="soft">
+
+<h2>8. Sous-question 1.5 — comparer deux allocations au sens de Pareto (9 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 1.5 (9 points)</div>
+<p>
+  <strong>1.5)</strong> On admet qu'en refaisant tous les calculs pour un taux de taxe
+  \( t = 0{,}5 \), puis en calculant les utilités atteintes, on obtient le tableau suivant.
+  L'une des deux allocations domine-t-elle l'autre au sens de Pareto ? Détaillez votre
+  raisonnement.
+</p>
+<table class="data">
+<tr><th></th><th>\( M(t) \)</th><th>\( U_H \)</th><th>\( U_B \)</th></tr>
+<tr><th>\( t = 0{,}2 \)</th><td>2</td><td>8,45</td><td>3,23</td></tr>
+<tr><th>\( t = 0{,}5 \)</th><td>3,5</td><td>5,83</td><td>3,61</td></tr>
+</table>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel du volume 1 — la domination de Pareto</div>
+<p>
+  Une allocation \( X \) <span class="term">domine</span> une allocation \( Y \) au sens de Pareto
+  si <strong>personne n'y perd</strong> et <strong>au moins une personne y gagne</strong> :
+</p>
+<p>\[ U_i(X) \ \ge\ U_i(Y) \ \text{ pour tout } i, \qquad \text{avec au moins une inégalité stricte.} \]</p>
+<p>
+  Le mot important est <em>tout</em> : il suffit d'<strong>un seul</strong> perdant pour qu'il n'y
+  ait pas domination. C'est un critère très exigeant — et c'est justement pour cela qu'il est
+  souvent muet. (Volume 1, chapitre 1.)
+</p>
+</div>
+
+<h3>8.1 La résolution, pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Comparer type par type</div>
+<div class="calc">
+<div class="step">
+\[ \text{haut salaire : } U_H(0{,}2) = 8{,}45 \quad\text{contre}\quad U_H(0{,}5) = 5{,}83 \]
+<div class="why">Je lis la colonne \( U_H \) du tableau. En passant de 0,2 à 0,5, il perd
+\( 8{,}45 - 5{,}83 = 2{,}62 \) unités d'utilité. <strong>Il préfère nettement \( t = 0{,}2 \).</strong></div>
+</div>
+<div class="step">
+\[ \text{bas salaire : } U_B(0{,}2) = 3{,}23 \quad\text{contre}\quad U_B(0{,}5) = 3{,}61 \]
+<div class="why">Je lis la colonne \( U_B \). Cette fois c'est l'inverse : il gagne
+\( 3{,}61 - 3{,}23 = 0{,}38 \). <strong>Il préfère \( t = 0{,}5 \).</strong></div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Conclure</div>
+<p>Les deux comparaisons vont en sens contraire. Testons donc les deux directions de domination :</p>
+<table class="compare">
+<tr><th>Direction testée</th><th class="left">Ce qu'il faudrait</th><th class="left">Verdict</th></tr>
+<tr>
+  <td>\( t = 0{,}2 \) domine \( t = 0{,}5 \) ?</td>
+  <td class="left">que personne ne perde en passant de 0,5 à 0,2</td>
+  <td class="left"><strong>Non</strong> : le bas salaire y perdrait (3,61 → 3,23)</td>
+</tr>
+<tr>
+  <td>\( t = 0{,}5 \) domine \( t = 0{,}2 \) ?</td>
+  <td class="left">que personne ne perde en passant de 0,2 à 0,5</td>
+  <td class="left"><strong>Non</strong> : le haut salaire y perdrait (8,45 → 5,83)</td>
+</tr>
+</table>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 1.5</div>
+<p>
+  <strong>Aucune des deux allocations ne domine l'autre au sens de Pareto.</strong> Elles sont
+  <span class="term">Pareto-incomparables</span> : le passage de l'une à l'autre fait toujours un
+  gagnant et un perdant.
+</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 290" width="100%" style="max-width:12cm" role="img"
+     aria-label="Les deux allocations placées dans un repère où l'axe horizontal est l'utilité du haut salaire et l'axe vertical celle du bas salaire : chacune se trouve dans un quadrant incomparable par rapport à l'autre">
+  <line x1="70" y1="30" x2="70" y2="240" stroke="#111827" stroke-width="1.6"/>
+  <line x1="70" y1="240" x2="420" y2="240" stroke="#111827" stroke-width="1.6"/>
+  <text x="404" y="262" font-size="12.5">U(haut salaire)</text>
+  <text x="24" y="26" font-size="12.5">U(bas)</text>
+  <!-- reperes -->
+  <line x1="330" y1="236" x2="330" y2="244" stroke="#111827" stroke-width="1.3"/>
+  <text x="330" y="258" font-size="11.5" text-anchor="middle">8,45</text>
+  <line x1="180" y1="236" x2="180" y2="244" stroke="#111827" stroke-width="1.3"/>
+  <text x="180" y="258" font-size="11.5" text-anchor="middle">5,83</text>
+  <line x1="66" y1="170" x2="74" y2="170" stroke="#111827" stroke-width="1.3"/>
+  <text x="60" y="174" font-size="11.5" text-anchor="end">3,23</text>
+  <line x1="66" y1="95" x2="74" y2="95" stroke="#111827" stroke-width="1.3"/>
+  <text x="60" y="99" font-size="11.5" text-anchor="end">3,61</text>
+  <!-- points -->
+  <circle cx="330" cy="170" r="6" fill="#4338ca"/>
+  <text x="338" y="164" font-size="12" font-weight="bold" style="fill:#4338ca">t = 0,2</text>
+  <circle cx="180" cy="95" r="6" fill="#be123c"/>
+  <text x="188" y="89" font-size="12" font-weight="bold" style="fill:#be123c">t = 0,5</text>
+  <!-- quadrants depuis t=0,2 -->
+  <line x1="330" y1="170" x2="70" y2="170" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <line x1="330" y1="170" x2="330" y2="30" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="100" y="60" font-size="11.5" style="fill:#4b5563">zone « domine t = 0,2 » :</text>
+  <text x="100" y="76" font-size="11.5" style="fill:#4b5563">en haut ET à droite du point bleu</text>
+  <path d="M 214 92 Q 270 70 326 90" fill="none" stroke="#111827" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <polygon points="326,90 317,86 319,95" fill="#111827"/>
+  <text x="228" y="126" font-size="11.5" font-weight="bold">le point rouge est plus haut mais plus à gauche :</text>
+  <text x="228" y="142" font-size="11.5" font-weight="bold">il est hors de la zone, donc incomparable</text>
+  <text x="70" y="282" font-size="11.5">Chaque point est une allocation. Dominer, c'est être au-dessus ET à droite.</text>
+</svg>
+<figcaption>
+  Figure — Les deux allocations dans le plan des utilités. Pour qu'une allocation en domine une
+  autre, il faudrait qu'elle soit à la fois plus à droite (meilleure pour le haut salaire) et plus
+  haut (meilleure pour le bas salaire). Ici chacune est meilleure sur un axe et moins bonne sur
+  l'autre : aucune ne domine.
+</figcaption>
+</figure>
+
+<div class="box box-why">
+<div class="box-title">Ce que ce résultat nous apprend vraiment</div>
+<p>
+  Le critère de Pareto est <strong>incapable de trancher</strong> entre ces deux politiques
+  fiscales — et ce n'est pas un échec du critère, c'est sa nature même. Il ne se prononce que
+  lorsqu'une option est meilleure pour <em>tout le monde</em>. Dès qu'il y a un arbitrage entre
+  gagnants et perdants, il se tait.
+</p>
+<p>
+  Choisir entre \( t = 0{,}2 \) et \( t = 0{,}5 \) relève donc d'un <strong>jugement
+  redistributif</strong> : combien de bien-être du travailleur aisé accepte-t-on de sacrifier
+  pour améliorer celui du travailleur modeste ? C'est une question politique, pas une question
+  d'efficacité. Écris cette phrase : elle vaut des points.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 1.5</div>
+<ul>
+  <li><strong>Additionner les utilités</strong> (\( 8{,}45 + 3{,}23 = 11{,}68 \) contre
+      \( 5{,}83 + 3{,}61 = 9{,}44 \)) et conclure que \( t = 0{,}2 \) est meilleure. Interdit :
+      Pareto ne compare jamais les utilités <em>entre</em> individus, et une utilité n'est qu'un
+      classement — la somme n'a aucun sens.</li>
+  <li><strong>Regarder \( M(t) \)</strong> et conclure que \( t = 0{,}5 \) est mieux parce que le
+      transfert y est plus élevé. Le transfert n'est qu'un ingrédient ; ce qui compte, c'est
+      l'utilité finale, déjà donnée dans le tableau.</li>
+  <li><strong>Ne tester qu'une seule direction.</strong> Le barème attend les deux : « 0,2 ne
+      domine pas 0,5 » <em>et</em> « 0,5 ne domine pas 0,2 ».</li>
+  <li><strong>Confondre « ne domine pas » et « est inefficace ».</strong> Les deux allocations
+      peuvent parfaitement être toutes deux Pareto-efficaces ; l'absence de domination ne dit
+      rien de leur efficacité.</li>
+</ul>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 1.5</div>
+<p>
+  « Une allocation en domine une autre au sens de Pareto si personne n'y perd et si au moins une
+  personne y gagne.<br>
+  En passant de \( t = 0{,}2 \) à \( t = 0{,}5 \) : le travailleur à haut salaire passe de 8,45 à
+  5,83, il <strong>perd</strong> ; le travailleur à bas salaire passe de 3,23 à 3,61, il
+  <strong>gagne</strong>.<br>
+  Donc \( t = 0{,}5 \) ne domine pas \( t = 0{,}2 \) (le haut salaire y perd), et \( t = 0{,}2 \)
+  ne domine pas \( t = 0{,}5 \) (le bas salaire y perdrait). <strong>Aucune des deux allocations
+  ne domine l'autre au sens de Pareto</strong> : elles sont incomparables selon ce critère.<br>
+  Le choix entre les deux relève donc d'un arbitrage redistributif entre les deux types, et non
+  d'un critère d'efficacité. »
+</p>
+</div>
+
+<hr class="soft">
+
+<h2>9. Récapitulatif : toute la Question 1 sur deux pages</h2>
+
+<table class="compare">
+<tr><th>Q</th><th class="left">Réponse</th><th class="left">Le geste décisif</th></tr>
+<tr>
+  <td>1.1<br>(10 pts)</td>
+  <td class="left">\( c = 16(1-l) + 2 \) et \( c = 8(1-l) + 2 \)</td>
+  <td class="left">écrire le salaire <em>net</em> \( s(1-t) \) et ne pas oublier le transfert \( M \)</td>
+</tr>
+<tr>
+  <td>1.2<br>(15 pts)</td>
+  <td class="left">\( l^* = \frac{4}{s(1-t)} \) ⇒ travail 0,75 (haut) et 0,5 (bas)</td>
+  <td class="left">poser le Lagrangien, trouver \( \lambda = 1 \), puis \( \frac{4}{l} = s(1-t) \)</td>
+</tr>
+<tr>
+  <td>1.3<br>(8 pts)</td>
+  <td class="left">12 et 4</td>
+  <td class="left">multiplier le salaire net horaire par \( 1 - l^* \), sans ajouter \( M \)</td>
+</tr>
+<tr>
+  <td>1.4<br>(8 pts)</td>
+  <td class="left">loisir ↑, offre de travail ↓ pour les deux types</td>
+  <td class="left">suivre \( t \) dans la formule, puis donner l'intuition du coût d'opportunité</td>
+</tr>
+<tr>
+  <td>1.5<br>(9 pts)</td>
+  <td class="left">aucune domination de Pareto</td>
+  <td class="left">tester les <em>deux</em> directions et nommer le perdant à chaque fois</td>
+</tr>
+</table>
+
+<div class="box box-methode">
+<div class="box-title">La recette d'un exercice d'offre de travail, en 6 temps</div>
+<ol>
+  <li><strong>Poser le temps</strong> : dotation \( L \), loisir \( l \), travail \( L - l \).</li>
+  <li><strong>Écrire la contrainte de budget</strong> : consommation = salaire net × heures
+      travaillées + revenus non salariaux.</li>
+  <li><strong>Substituer</strong> la contrainte dans l'utilité (ou poser le Lagrangien).</li>
+  <li><strong>Dériver par rapport au loisir</strong> et annuler : c'est la condition de premier
+      ordre.</li>
+  <li><strong>Isoler \( l^* \)</strong> sous forme littérale — c'est cette formule qui servira
+      pour la statique comparative.</li>
+  <li><strong>Appliquer les nombres</strong>, type par type, puis interpréter.</li>
+</ol>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Checklist avant de tourner la page</div>
+<ol>
+  <li>Ai-je bien distingué le loisir \( l \) du temps de travail \( 1 - l \) partout ?</li>
+  <li>Ai-je utilisé le salaire <em>net</em> \( s(1-t) \), et pas le brut ?</li>
+  <li>Ai-je inclus \( M \) dans la contrainte de budget — et exclu \( M \) du revenu du travail ?</li>
+  <li>Ai-je gardé la formule littérale \( l^* = \frac{4}{s(1-t)} \) avant d'appliquer les nombres ?</li>
+  <li>En 1.4, ai-je donné le sens de variation <em>et</em> l'intuition économique ?</li>
+  <li>En 1.5, ai-je testé les deux directions de domination et nommé le perdant de chaque côté ?</li>
+</ol>
+</div>
+</section>

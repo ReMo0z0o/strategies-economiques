@@ -1,0 +1,1551 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<link rel="stylesheet" href="file:///workspace/strategies-economiques/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///workspace/strategies-economiques/tutorat/template/tutorat.css">
+<script src="file:///workspace/strategies-economiques/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///workspace/strategies-economiques/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<style>body{width:17.6cm;margin:0}</style></head><body><section class="chapter">
+  <div class="chapter-tag">Annexe du volume 2 — à consulter en boucle</div>
+  <h1>Lexique &amp; formulaire du volume 2 — les nouveaux termes et les nouvelles formules</h1>
+  <p class="chapter-intro">
+    Voici ton dictionnaire personnel pour les examens n° 2 et n° 3. Le volume 1 avait déjà le
+    sien ; celui-ci ne le remplace pas, il le <em>complète</em>. Quatre parties : un rappel
+    express d'une page sur tout ce que tu connais déjà, le lexique alphabétique des notions
+    <strong>nouvelles</strong>, le formulaire classé par thème, et enfin les réflexes de méthode
+    avec un plan de révision pour les derniers jours.
+  </p>
+
+  <div class="box box-rappel">
+    <div class="box-title">Comment se servir de ce chapitre</div>
+    <p>Tu ne le lis pas d'une traite. Tu l'ouvres quand tu es coincé.</p>
+    <ul>
+      <li><strong>Un mot du volume 1 t'échappe ?</strong> → partie 1 : dix mots de rappel par
+          terme, juste de quoi rallumer la lumière.</li>
+      <li><strong>Un mot nouveau t'échappe ?</strong> → partie 2 : définition simple, reformulation
+          encore plus simple, exemple, formule, renvois.</li>
+      <li><strong>Tu ne sais plus quelle formule sortir ?</strong> → partie 3 : chaque symbole
+          décodé, l'indice de l'énoncé, une valeur numérique.</li>
+      <li><strong>Tu ne sais pas par où commencer ?</strong> → partie 4 : l'arbre d'aiguillage,
+          huit recettes, le plan de révision et les dix erreurs à éviter.</li>
+    </ul>
+  </div>
+
+  <hr class="soft">
+
+  <h2>1. Rappel express du volume 1</h2>
+
+  <p>
+    Un terme par ligne, dix mots de rappel. Ce ne sont <em>pas</em> des définitions complètes :
+    ce sont des déclencheurs de mémoire. Si une ligne ne te dit rien du tout, c'est le signal
+    qu'il faut rouvrir le chapitre correspondant du volume 1.
+  </p>
+
+  <table class="compare">
+    <tr><th class="left">Terme du volume 1</th><th class="left">Le rappel en dix mots</th></tr>
+    <tr><td class="left">Agent</td><td class="left">Celui qui travaille ; son effort n'est pas observable par l'autre.</td></tr>
+    <tr><td class="left">Aléa moral</td><td class="left">« On ne me voit pas, donc je me fatigue moins. »</td></tr>
+    <tr><td class="left">Aversion au risque</td><td class="left">À moyenne égale, on préfère le sûr. Fonction \( u \) concave.</td></tr>
+    <tr><td class="left">Aversion aux pertes</td><td class="left">Perdre 10 € fait plus mal que gagner 10 € ne réjouit.</td></tr>
+    <tr><td class="left">CPO</td><td class="left">« Dérivée = 0 » : l'équation qui donne le sommet.</td></tr>
+    <tr><td class="left">Contrainte de participation</td><td class="left">« Paie-moi au moins ce que je vaux ailleurs, sinon je pars. »</td></tr>
+    <tr><td class="left">Dérivée</td><td class="left">La pente : de combien \( f \) monte quand \( x \) avance.</td></tr>
+    <tr><td class="left">Dilemme du prisonnier</td><td class="left">Chacun trahit, tous perdent : l'égoïsme rationnel produit un mauvais résultat.</td></tr>
+    <tr><td class="left">DAA / DAP</td><td class="left">Prix minimum pour vendre / prix maximum pour acheter.</td></tr>
+    <tr><td class="left">Dominance</td><td class="left">Une stratégie fait mieux que l'autre quoi qu'il arrive.</td></tr>
+    <tr><td class="left">Effet de dotation</td><td class="left">Posséder un objet gonfle sa valeur à nos yeux.</td></tr>
+    <tr><td class="left">Efficacité de Pareto</td><td class="left">Personne ne peut gagner sans qu'un autre y perde.</td></tr>
+    <tr><td class="left">Élimination itérative</td><td class="left">On raye les stratégies dominées, puis on recommence sur ce qui reste.</td></tr>
+    <tr><td class="left">Équilibre de Nash</td><td class="left">Personne n'a intérêt à changer seul de stratégie.</td></tr>
+    <tr><td class="left">Équivalent certain</td><td class="left">Le montant sûr qui vaut exactement autant que la loterie.</td></tr>
+    <tr><td class="left">Espérance</td><td class="left">La moyenne pondérée par les probabilités : \( \sum p_i x_i \).</td></tr>
+    <tr><td class="left">Facteur d'escompte \( \delta \)</td><td class="left">Combien vaut aujourd'hui un euro reçu la période prochaine.</td></tr>
+    <tr><td class="left">Fonction de Bernoulli</td><td class="left">\( u(w) \) : la satisfaction d'un montant sûr \( w \).</td></tr>
+    <tr><td class="left">Information asymétrique</td><td class="left">L'un des deux sait quelque chose que l'autre ignore.</td></tr>
+    <tr><td class="left">Jeu répété</td><td class="left">Le même jeu, encore et encore, avec mémoire des coups passés.</td></tr>
+    <tr><td class="left">Jeu simultané</td><td class="left">Chacun joue sans avoir vu le coup de l'autre.</td></tr>
+    <tr><td class="left">Loterie</td><td class="left">Une liste de résultats possibles avec leurs probabilités.</td></tr>
+    <tr><td class="left">Matrice (de payoffs)</td><td class="left">Le tableau : lignes = joueur 1, colonnes = joueur 2.</td></tr>
+    <tr><td class="left">Meilleure réponse</td><td class="left">Ce qu'on joue de mieux, l'action de l'autre étant donnée.</td></tr>
+    <tr><td class="left">Neutralité au risque</td><td class="left">On ne regarde que la moyenne. Fonction \( u \) linéaire.</td></tr>
+    <tr><td class="left">Payoff</td><td class="left">Le gain d'un joueur dans une case : point, euro, profit.</td></tr>
+    <tr><td class="left">Prime de risque</td><td class="left">\( \mathrm{VMA} - EC \) : le prix psychologique du hasard.</td></tr>
+    <tr><td class="left">Principal</td><td class="left">Celui qui rédige le contrat et ne voit que le résultat.</td></tr>
+    <tr><td class="left">PSS (stratégie strictement dominée)</td><td class="left">Toujours strictement moins bonne : à rayer sans hésiter.</td></tr>
+    <tr><td class="left">Série géométrique</td><td class="left">\( 1 + \delta + \delta^2 + \dots = \dfrac{1}{1-\delta} \) quand \( \delta &lt; 1 \).</td></tr>
+    <tr><td class="left">Stratégie pure</td><td class="left">Un choix ferme, sans tirage au sort.</td></tr>
+    <tr><td class="left">Stratégie mixte</td><td class="left">Un tirage au sort entre plusieurs actions, avec des probabilités.</td></tr>
+    <tr><td class="left">Stratégie dominante</td><td class="left">Meilleure quoi que fasse l'adversaire : on la joue, point.</td></tr>
+    <tr><td class="left">Stratégie grim</td><td class="left">On coopère ; à la première trahison, on punit pour toujours.</td></tr>
+    <tr><td class="left">Surplus</td><td class="left">Ce qu'un échange rapporte en plus de ce qu'il coûte.</td></tr>
+    <tr><td class="left">Tarif actuariellement juste</td><td class="left">Prime d'assurance égale à la probabilité du sinistre : \( p = \pi \).</td></tr>
+    <tr><td class="left">Utilité de réserve</td><td class="left">Le niveau \( \bar{U} \) atteint en refusant le contrat.</td></tr>
+    <tr><td class="left">Utilité espérée</td><td class="left">Utilité d'abord, moyenne ensuite : \( \sum p_i\,u(x_i) \).</td></tr>
+    <tr><td class="left">Utilité marginale décroissante</td><td class="left">Chaque euro de plus apporte moins que le précédent.</td></tr>
+    <tr><td class="left">VMA</td><td class="left">Valeur monétaire attendue : la moyenne, en euros.</td></tr>
+  </table>
+
+  <div class="box box-rappel">
+    <div class="box-title">Où retourner si une ligne ne te parle pas</div>
+    <p>
+      Chapitres du <strong>volume 1</strong> : 0 = maths, dérivée, espérance, séries géométriques
+      (complété par le chapitre 6 de ce volume) · 1 = Pareto, DAA/DAP, effet de dotation ·
+      2 = VMA, utilité espérée, équivalent certain, prime de risque, assurance · 3 = dominance,
+      équilibre de Nash, stratégies mixtes · 4 = principal-agent et aléa moral · 5 = jeu répété,
+      grim, facteur d'escompte.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>2. Lexique alphabétique des nouvelles notions</h2>
+
+  <p>
+    Chaque entrée suit le même moule : une <strong>définition</strong> en français ordinaire, une
+    reformulation <em>« autrement dit »</em> encore plus simple, un <em>exemple</em> tiré de
+    l'examen n° 2 (noté <strong>E2</strong>) ou de l'examen n° 3 (<strong>E3</strong>), la formule
+    quand il y en a une, et un renvoi « → voir aussi ». Aucune définition ne s'appuie sur un mot
+    qui n'a pas sa propre entrée.
+  </p>
+
+  <h3>A</h3>
+
+  <dl class="lexique">
+    <dt>Arbre de jeu</dt>
+    <dd>Le dessin d'un jeu où les joueurs jouent l'un après l'autre : un point de départ, une
+        branche par décision possible, et au bout de chaque suite de branches les gains de tout le
+        monde.</dd>
+    <dd><em>Autrement dit :</em> l'arbre généalogique du jeu. On le lit dans l'ordre où les choses
+        se passent.</dd>
+    <dd><em>Exemple :</em> E2 Q3 — la commune choisit la zone, puis A décide, puis B. Huit bouts de
+        branches, donc huit triplets de payoffs. → voir
+        <span class="term">Forme extensive</span>, <span class="term">Nœud de décision</span>,
+        <span class="term">Sous-jeu</span>.</dd>
+
+    <dt>Avantage du premier joueur</dt>
+    <dd>Le fait d'obtenir un meilleur gain <em>parce qu'on joue en premier</em> : le choix, une
+        fois posé, contraint la réaction de l'autre. Ce n'est pas une loi universelle — dans
+        d'autres jeux, jouer en second est un avantage.</dd>
+    <dd><em>Autrement dit :</em> parler le premier, c'est fixer le cadre de la discussion.</dd>
+    <dd><em>Exemple :</em> E3 Q5.1 — le leader produit 30 et gagne 450 ; le follower produit 15 et
+        gagne 225. → voir <span class="term">Stackelberg</span>,
+        <span class="term">Engagement crédible</span>.</dd>
+  </dl>
+
+  <h3>B</h3>
+
+  <dl class="lexique">
+    <dt>Bêta chapeau (\( \hat\beta \))</dt>
+    <dd>La valeur du biais du présent que le décideur <em>croit</em> avoir — à distinguer de
+        \( \beta \), celle qu'il a réellement. Le chapeau « ^ » se lit « chapeau » et signale une
+        croyance.</dd>
+    <dd><em>Autrement dit :</em> \( \beta \) = ce que je fais vraiment ; \( \hat\beta \) = ce que
+        je pense que je ferai.</dd>
+    <dd><em>Exemple :</em> E2 Q1 — le naïf a \( \hat\beta = 1 \) alors que \( \beta = \tfrac12 \).
+        → voir <span class="term">Naïf</span>, <span class="term">Sophistiqué</span>.</dd>
+
+    <dt>Biais du présent (\( \beta \))</dt>
+    <dd>La tendance à donner au moment présent un poids supplémentaire par rapport à
+        <em>tout</em> le futur, quelle que soit sa distance. On l'écrit avec un coefficient
+        \( \beta \in\, ]0\,;1] \) qui multiplie d'un seul coup toutes les périodes futures, en plus
+        de l'escompte habituel \( \delta \).</dd>
+    <dd><em>Autrement dit :</em> « demain ou l'an prochain, c'est pareil — et de toute façon moins
+        important qu'aujourd'hui ». Se lit « bêta » ; on parle de préférences « bêta-delta ».</dd>
+    <dd><em>Formule :</em> vu de la date \( t \),
+        \( U_t = u_t + \beta(\delta u_{t+1} + \delta^2 u_{t+2} + \dots) \).</dd>
+    <dd><em>Exemple :</em> E2 Q1 — avec \( \beta = \tfrac12 \), le bénéfice \( b = 12 \) ne pèse
+        que 6 au moment de grimper : 6 séances au lieu de 12. → voir
+        <span class="term">Incohérence temporelle</span>,
+        <span class="term">Commitment device</span>.</dd>
+
+    <dt>Bien d'investissement</dt>
+    <dd>Une activité dont le coût est <strong>immédiat</strong> et le bénéfice <strong>plus
+        tard</strong> : le sport, les révisions, l'épargne. Son contraire est le <em>bien de
+        tentation</em> (plaisir tout de suite, coût après) : la cigarette, la série à 2 h du
+        matin.</dd>
+    <dd><em>Autrement dit :</em> ça fait mal maintenant, ça fait du bien après.</dd>
+    <dd><em>Exemple :</em> E2 Q1 — l'escalade : coût \( \tfrac{k^2}{2} \) en période 1, bénéfice
+        \( bk \) en période 2. C'est cette structure qui fait qu'un individu au biais du présent en
+        fait <em>trop peu</em>. → voir <span class="term">Biais du présent</span>.</dd>
+  </dl>
+
+  <h3>C</h3>
+
+  <dl class="lexique">
+    <dt>Cadrage étroit (« narrow framing »)</dt>
+    <dd>Le fait d'évaluer chaque décision risquée toute seule, dans sa bulle, au lieu de regarder
+        l'ensemble de ce qu'on possède déjà. Le décideur rationnel, lui, raisonne toujours sur sa
+        <strong>richesse finale totale</strong>.</dd>
+    <dd><em>Autrement dit :</em> juger un pari comme s'il était le seul au monde.</dd>
+    <dd><em>Exemple :</em> E3 Q2.5 — on repropose le pari alors que le premier n'est pas résolu. Le
+        rationnel compare « deux paris » à « un seul » ; le cadrage étroit repart de zéro.</dd>
+
+    <dt>Chemin d'équilibre (et « hors chemin »)</dt>
+    <dd>La suite d'actions effectivement jouées quand chacun suit sa stratégie d'équilibre — donc
+        les nœuds réellement atteints. Les autres nœuds sont dits <em>hors chemin
+        d'équilibre</em> : ce sont les branches mortes.</dd>
+    <dd><em>Autrement dit :</em> ce qui se passe pour de vrai, par opposition à tout ce qui aurait
+        pu se passer ailleurs dans l'arbre.</dd>
+    <dd><em>Exemple :</em> E2 Q3.4 — le chemin est (E, I, I), payoffs (8 ; 3 ; 3). Comme les
+        branches mortes ne changent aucun payoff, un équilibre de Nash y tolère n'importe quoi —
+        un ENPS, non. → voir <span class="term">Menace non crédible</span>,
+        <span class="term">ENPS</span>.</dd>
+
+    <dt>Commitment device (dispositif d'engagement)</dt>
+    <dd>Un mécanisme par lequel on restreint volontairement ses propres options futures — ou on les
+        rend plus coûteuses — pour forcer son « moi de demain » à suivre le plan jugé bon
+        aujourd'hui.</dd>
+    <dd><em>Autrement dit :</em> se lier les mains exprès. Ulysse attaché au mât ; un compte
+        d'épargne bloqué ; une application qui coupe les réseaux sociaux.</dd>
+    <dd><em>Exemple :</em> E2 Q1.6 — l'abonnement coûte 16 € contre 12 € pour 6 séances à l'unité,
+        et le sophistiqué le prend quand même : en ramenant le prix marginal à zéro, il pousse son
+        futur moi à grimper davantage. → voir <span class="term">Sophistiqué</span>,
+        <span class="term">Prix marginal</span>.</dd>
+
+    <dt>Contrainte de budget</dt>
+    <dd>L'inégalité qui dit que la dépense ne peut pas dépasser les ressources : à gauche prix ×
+        quantité, à droite ce qu'on gagne plus ce qu'on reçoit. À l'optimum on la
+        <em>sature</em> (on écrit « = »), parce qu'on préfère toujours consommer plus.</dd>
+    <dd><em>Autrement dit :</em> « je ne peux pas dépenser ce que je n'ai pas ».</dd>
+    <dd><em>Formule (E3 Q1) :</em> \( p\,c_i \le s_i(1-t)(1-l_i) + M(t) \), soit ici
+        \( c_H \le 16(1-l_H) + M(t) \). → voir <span class="term">Dotation en temps</span>,
+        <span class="term">Transfert forfaitaire</span>,
+        <span class="term">Lagrangien</span>.</dd>
+
+    <dt>Cournot (duopole de)</dt>
+    <dd>Le modèle de duopole où les deux firmes choisissent leur quantité <strong>en même
+        temps</strong>, sans voir ce que fait l'autre.</dd>
+    <dd><em>Autrement dit :</em> Cournot = simultané, Stackelberg = l'un après l'autre. Une seule
+        différence, mais elle change tout le résultat.</dd>
+    <dd><em>Exemple :</em> avec les données de E3 Q5, Cournot donnerait \( q_1 = q_2 = 20 \),
+        \( p = 40 \), \( \pi_1 = \pi_2 = 400 \). → voir
+        <span class="term">Stackelberg</span>.</dd>
+
+    <dt>Courbe d'indifférence</dt>
+    <dd>L'ensemble des paniers (tant de loisir, tant de consommation) qui procurent exactement la
+        même utilité.</dd>
+    <dd><em>Autrement dit :</em> une ligne de niveau, comme sur une carte de randonnée : même
+        altitude de satisfaction partout.</dd>
+    <dd><em>Exemple :</em> E3 Q1 — les \( (l,c) \) tels que \( c + 4\ln(l) \) est constant.
+        L'optimum est le point où la courbe la plus haute touche la contrainte de budget.</dd>
+
+    <dt>Coût d'opportunité</dt>
+    <dd>Ce à quoi on renonce en choisissant une chose plutôt qu'une autre — le vrai coût d'une
+        décision, même quand aucun euro ne change de main.</dd>
+    <dd><em>Autrement dit :</em> « ce que ça me coûte » = « ce que j'aurais eu à la place ».</dd>
+    <dd><em>Exemple :</em> E3 Q1.4 — le coût d'opportunité d'une heure de loisir est le salaire net
+        \( s_i(1-t) \). Quand la taxe monte, il baisse, donc on prend plus de loisir. → voir
+        <span class="term">Statique comparative</span>.</dd>
+
+    <dt>Coût marginal</dt>
+    <dd>Ce que coûte <em>une unité supplémentaire</em> — la prochaine, pas la moyenne des
+        précédentes.</dd>
+    <dd><em>Autrement dit :</em> « combien me coûte la suivante ? »</dd>
+    <dd><em>Exemple :</em> E3 Q5 — \( c_1 = c_2 = 20 \). Dans un profit \( \pi = (p-c)q \), c'est
+        le \( c \). → voir <span class="term">Prix marginal</span>,
+        <span class="term">Demande inverse</span>.</dd>
+
+    <dt>Croyance</dt>
+    <dd>La probabilité qu'un joueur attribue à chaque possibilité qu'il ne peut pas observer —
+        typiquement le type de son adversaire. C'est un nombre entre 0 et 1, et l'ensemble des
+        croyances d'un joueur fait 1.</dd>
+    <dd><em>Autrement dit :</em> ce que je parie sur ce que je ne sais pas.</dd>
+    <dd><em>Exemple :</em> E3 Q3 — Léa croit Maxime sérieux avec probabilité \( p = 0{,}8 \). Elle
+        calcule donc des <em>espérances</em>, pas des gains certains. → voir
+        <span class="term">Type</span>,
+        <span class="term">Équilibre de Nash bayésien</span>,
+        <span class="term">Seuil de croyance</span>.</dd>
+  </dl>
+
+  <h3>D</h3>
+
+  <dl class="lexique">
+    <dt>Demande inverse</dt>
+    <dd>La fonction qui donne le <strong>prix</strong> du marché à partir de la
+        <strong>quantité totale</strong> vendue : plus il y a de marchandise, plus le prix
+        baisse.</dd>
+    <dd><em>Autrement dit :</em> la demande ordinaire répond à « combien achète-t-on à ce prix ? » ;
+        la demande inverse répond à « à quel prix faut-il vendre pour écouler cette quantité ? »</dd>
+    <dd><em>Formule (E3 Q5) :</em> \( p = 80 - Q \) avec \( Q = q_1 + q_2 \) ; si
+        \( Q = 45 \), alors \( p = 35 \). → voir <span class="term">Duopole</span>.</dd>
+
+    <dt>Dérivée d'une racine composée</dt>
+    <dd>La règle pour dériver \( \sqrt{\text{quelque chose}} \) quand ce « quelque chose » dépend
+        lui aussi de la variable : on dérive la racine, puis on multiplie par la dérivée de
+        l'intérieur (règle de la chaîne).</dd>
+    <dd><em>Formule :</em>
+        \( \dfrac{d}{dx}\sqrt{a+bx} = \dfrac{b}{2\sqrt{a+bx}} \).</dd>
+    <dd><em>Exemple :</em> E2 Q2.2 — \( \sqrt{900+3A} \) donne
+        \( \dfrac{3}{2\sqrt{900+3A}} \) (le 3 vient de l'intérieur) et \( \sqrt{900-A} \) donne
+        \( \dfrac{-1}{2\sqrt{900-A}} \). Oublier ce facteur est l'erreur numéro un de la
+        question.</dd>
+
+    <dt>Détection retardée</dt>
+    <dd>Dans un jeu répété, le cas où une trahison n'est repérée qu'au bout de plusieurs périodes :
+        le tricheur encaisse son gain de déviation plusieurs fois avant la punition.</dd>
+    <dd><em>Autrement dit :</em> plus la police est lente, plus tricher est rentable — donc plus la
+        collusion est difficile à soutenir.</dd>
+    <dd><em>Exemple :</em> E2 Q4.3 — la condition passe de \( \delta \ge \tfrac35 = 0{,}60 \) à
+        \( \delta \ge \sqrt{\tfrac35} \approx 0{,}77 \).</dd>
+
+    <dt>Dotation en temps</dt>
+    <dd>Le nombre total d'heures dont on dispose sur la période, à répartir entre travail et
+        loisir. On la normalise souvent à \( L = 1 \) : \( l \) et \( 1-l \) sont alors des
+        <em>fractions</em> de la journée, pas des heures.</dd>
+    <dd><em>Autrement dit :</em> le gâteau de temps à découper.</dd>
+    <dd><em>Exemple :</em> E3 Q1 — \( l_H^* = \tfrac14 \) veut dire « un quart du temps en
+        loisir », donc \( \tfrac34 \) de travail.</dd>
+
+    <dt>Duopole</dt>
+    <dd>Un marché avec seulement <strong>deux</strong> vendeurs. Chacun est assez gros pour faire
+        bouger le prix, donc chacun doit tenir compte de l'autre : c'est de la théorie des
+        jeux.</dd>
+    <dd><em>Autrement dit :</em> ni monopole tranquille, ni foule d'anonymes : deux géants qui se
+        surveillent.</dd>
+    <dd><em>Exemple :</em> E3 Q5 — les firmes 1 et 2 sur le marché \( p = 80 - Q \). → voir
+        <span class="term">Cournot</span>, <span class="term">Stackelberg</span>.</dd>
+  </dl>
+
+  <h3>E</h3>
+
+  <dl class="lexique">
+    <dt>Engagement crédible</dt>
+    <dd>Une action déjà accomplie, ou impossible à défaire, qui modifie ce que l'adversaire a
+        intérêt à faire ensuite. Personne n'a besoin de te croire sur parole : le fait est là.</dd>
+    <dd><em>Autrement dit :</em> pas « je te promets que… » mais « c'est fait, débrouille-toi avec
+        ça ». Brûler ses vaisseaux.</dd>
+    <dd><em>Exemple :</em> E3 Q5 — le leader produit réellement 30 avant que le follower ne
+        choisisse ; celui-ci n'a plus qu'à s'adapter (\( q_2 = 15 \)). → voir
+        <span class="term">Menace non crédible</span>,
+        <span class="term">Avantage du premier joueur</span>.</dd>
+
+    <dt>ENPS — équilibre de Nash parfait en sous-jeux</dt>
+    <dd>Un profil de stratégies (la liste des stratégies, une par joueur) qui est un équilibre de
+        Nash <strong>dans chaque sous-jeu</strong>, y compris ceux qu'on n'atteint jamais.</dd>
+    <dd><em>Autrement dit :</em> un équilibre de Nash « sans bluff ». On l'obtient par l'induction
+        à rebours. Tout ENPS est un équilibre de Nash ; l'inverse est faux.</dd>
+    <dd><em>Exemple :</em> E2 Q3.3 — \( S^*_C = \text{E} \),
+        \( S^*_A = (\text{I si E}\,;\ \text{I si O}) \),
+        \( S^*_B = (\text{I}\,;\text{I}\,;\text{N}\,;\text{I}) \). → voir
+        <span class="term">Sous-jeu</span>, <span class="term">Induction à rebours</span>,
+        <span class="term">Menace non crédible</span>.</dd>
+
+    <dt>Équilibre de Nash bayésien (ENB)</dt>
+    <dd>Un profil dans lequel (i) chaque type du joueur informé joue au mieux compte tenu de la
+        stratégie de l'autre, et (ii) le joueur non informé joue au mieux compte tenu de ses
+        <em>croyances</em> et de la règle d'action de l'autre.</dd>
+    <dd><em>Autrement dit :</em> l'équilibre de Nash habituel, mais le joueur mal informé maximise
+        une espérance, et l'autre décide type par type.</dd>
+    <dd><em>Exemple :</em> E3 Q3.3 — pour \( p = 0{,}8 \), l'ENB est
+        ( Ambitieux ; (T si sérieux · R si paresseux) ), car \( 4{,}8 &gt; 2{,}8 \). → voir
+        <span class="term">Croyance</span>,
+        <span class="term">Stratégie contingente au type</span>,
+        <span class="term">Seuil de croyance</span>.</dd>
+  </dl>
+
+  <h3>F</h3>
+
+  <dl class="lexique">
+    <dt>Follower (suiveur)</dt>
+    <dd>Dans un duopole séquentiel, la firme qui joue <strong>en second</strong>, après avoir
+        observé la quantité du leader.</dd>
+    <dd><em>Autrement dit :</em> celui qui s'adapte : pas de pouvoir d'engagement, mais de
+        l'information.</dd>
+    <dd><em>Exemple :</em> E3 Q5 — la firme 2 applique \( q_2 = 30 - \tfrac{q_1}{2} \) et gagne
+        225. → voir <span class="term">Leader</span>,
+        <span class="term">Fonction de réaction</span>.</dd>
+
+    <dt>Fonction de réaction</dt>
+    <dd>La formule qui donne le meilleur choix d'un joueur <em>en fonction</em> du choix de
+        l'autre. Ce n'est pas un nombre, c'est une règle ; on l'obtient par une CPO où la variable
+        de l'autre reste une lettre.</dd>
+    <dd><em>Autrement dit :</em> « dis-moi ce que tu produis, je te dis ce que je produirai ».</dd>
+    <dd><em>Formule (E3 Q5) :</em> \( q_2^*(q_1) = 30 - \tfrac{q_1}{2} \) — si \( q_1 = 30 \)
+        alors \( q_2 = 15 \). Le leader s'en sert pour remplacer \( q_2 \) dans son profit.</dd>
+
+    <dt>Forme extensive</dt>
+    <dd>La description d'un jeu qui montre l'<strong>ordre</strong> des coups : qui joue, quand,
+        avec quelles informations, et quels payoffs au bout. C'est l'arbre. Sa version écrasée en
+        matrice s'appelle la <em>forme normale</em> (ou jeu réduit).</dd>
+    <dd><em>Autrement dit :</em> la version « film » du jeu ; la matrice en est la « photo ». La
+        photo perd la trace de l'ordre — c'est pour ça qu'elle laisse survivre des menaces non
+        crédibles.</dd>
+    <dd><em>Exemple :</em> E2 Q3, l'arbre C → A → B ; E3 Q5.2, le jeu réduit 2×2 qui possède
+        <em>deux</em> équilibres de Nash dont un seul est l'ENPS.</dd>
+  </dl>
+
+  <figure>
+    <svg viewBox="0 0 460 300" width="100%" style="max-width:11cm" role="img" aria-label="Anatomie d'un arbre de jeu : racine, nœuds de décision, branches, nœuds terminaux et sous-jeux">
+      <text x="230" y="15" text-anchor="middle" font-size="13" font-weight="bold">Anatomie d'un arbre de jeu</text>
+      <rect x="128" y="126" width="204" height="150" fill="none" stroke="#6b7280" stroke-width="1.1" stroke-dasharray="5 3"/>
+      <text x="230" y="290" text-anchor="middle" font-size="11.5">deux sous-jeux propres (encadrés en pointillés)</text>
+      <circle cx="230" cy="48" r="7" fill="#111827"/>
+      <text x="230" y="36" text-anchor="middle" font-size="12">Joueur 1</text>
+      <text x="352" y="48" font-size="11.5">← la racine : tout l'arbre</text>
+      <text x="352" y="62" font-size="11.5">est lui-même un sous-jeu</text>
+      <line x1="230" y1="55" x2="150" y2="140" stroke="#111827" stroke-width="1.6"/>
+      <text x="176" y="94" text-anchor="end" font-size="12">G</text>
+      <line x1="230" y1="55" x2="310" y2="140" stroke="#111827" stroke-width="1.6" stroke-dasharray="6 3"/>
+      <text x="288" y="94" font-size="12">D</text>
+      <circle cx="150" cy="147" r="7" fill="none" stroke="#111827" stroke-width="1.6"/>
+      <text x="150" y="136" text-anchor="middle" font-size="12">J2</text>
+      <circle cx="310" cy="147" r="7" fill="none" stroke="#111827" stroke-width="1.6"/>
+      <text x="310" y="136" text-anchor="middle" font-size="12">J2</text>
+      <text x="14" y="150" font-size="11.5">nœuds de</text>
+      <text x="14" y="164" font-size="11.5">décision</text>
+      <line x1="76" y1="152" x2="138" y2="150" stroke="#6b7280" stroke-width="1"/>
+      <line x1="150" y1="154" x2="112" y2="222" stroke="#111827" stroke-width="1.4"/>
+      <line x1="150" y1="154" x2="192" y2="222" stroke="#111827" stroke-width="1.4" stroke-dasharray="6 3"/>
+      <line x1="310" y1="154" x2="272" y2="222" stroke="#111827" stroke-width="1.4"/>
+      <line x1="310" y1="154" x2="352" y2="222" stroke="#111827" stroke-width="1.4" stroke-dasharray="6 3"/>
+      <text x="112" y="240" text-anchor="middle" font-size="12">(3 ; 1)</text>
+      <text x="192" y="240" text-anchor="middle" font-size="12">(0 ; 0)</text>
+      <text x="272" y="240" text-anchor="middle" font-size="12">(2 ; 4)</text>
+      <text x="352" y="240" text-anchor="middle" font-size="12">(1 ; 2)</text>
+      <text x="112" y="258" text-anchor="middle" font-size="11">nœuds terminaux :</text>
+      <text x="192" y="272" text-anchor="middle" font-size="11">les payoffs (J1 ; J2)</text>
+    </svg>
+    <figcaption>
+      Le vocabulaire d'un arbre : la racine, les nœuds de décision (« à qui de jouer ? »), les
+      branches (les actions ; les pointillés distinguent la seconde, pour l'impression en noir et
+      blanc) et les nœuds terminaux. Le joueur 2 a ici deux nœuds : une stratégie pour lui est donc
+      un <em>couple</em> d'actions. Ce jeu contient trois sous-jeux : les deux encadrés, plus
+      l'arbre entier.
+    </figcaption>
+  </figure>
+
+  <h3>I</h3>
+
+  <dl class="lexique">
+    <dt>Incohérence temporelle</dt>
+    <dd>Le fait de changer d'avis alors que rien de nouveau n'est arrivé : le plan fait pour demain
+        ne convient plus une fois demain arrivé.</dd>
+    <dd><em>Autrement dit :</em> « je me lève tôt demain » (hier soir), « cinq minutes de plus »
+        (ce matin). Aucune information nouvelle : juste le présent qui a changé de place.</dd>
+    <dd><em>Exemple :</em> E2 Q1 — en période 0 il veut 12 séances, en période 1 il n'en veut plus
+        que 6. → voir <span class="term">Biais du présent</span>,
+        <span class="term">Naïf</span>, <span class="term">Sophistiqué</span>.</dd>
+
+    <dt>Induction à rebours (backward induction)</dt>
+    <dd>La méthode de résolution d'un jeu séquentiel : on commence par les <strong>derniers</strong>
+        nœuds, on y choisit la meilleure action, on remplace ces nœuds par leurs payoffs, et on
+        remonte.</dd>
+    <dd><em>Autrement dit :</em> on lit l'histoire à l'envers. Chacun anticipe ce que fera celui qui
+        joue après lui.</dd>
+    <dd><em>Exemple :</em> E2 Q3.3 — d'abord les quatre nœuds de B, puis les deux de A, puis la
+        racine. → voir <span class="term">ENPS</span>, <span class="term">Sous-jeu</span>.</dd>
+
+    <dt>Information incomplète</dt>
+    <dd>Situation où un joueur ne connaît pas une caractéristique de l'autre (ses goûts, ses coûts,
+        ses gains). À ne pas confondre avec l'information <em>imparfaite</em>, qui est le fait de
+        ne pas voir ce que l'autre a joué.</dd>
+    <dd><em>Autrement dit :</em> « je ne sais pas à qui j'ai affaire ». On la modélise avec des
+        types et des croyances.</dd>
+    <dd><em>Exemple :</em> E3 Q3 — Léa ignore si Maxime est sérieux ou paresseux ; le jeu a deux
+        matrices au lieu d'une. → voir <span class="term">La Nature</span>,
+        <span class="term">Jeu bayésien</span>.</dd>
+  </dl>
+
+  <h3>J — L</h3>
+
+  <dl class="lexique">
+    <dt>Jeu bayésien</dt>
+    <dd>Un jeu à information incomplète, décrit avec des types, une probabilité par type, et une
+        matrice de payoffs par type. L'adjectif vient de Bayes, le mathématicien des probabilités
+        conditionnelles.</dd>
+    <dd><em>Autrement dit :</em> plusieurs jeux superposés, et un joueur qui ne sait pas dans lequel
+        il se trouve.</dd>
+    <dd><em>Exemple :</em> E3 Q3 — deux matrices, une croyance \( p \), un équilibre qui dépend de
+        \( p \). → voir <span class="term">Équilibre de Nash bayésien</span>.</dd>
+
+    <dt>Lagrangien</dt>
+    <dd>Une fonction auxiliaire fabriquée pour maximiser une utilité <em>sous contrainte</em> : on
+        prend l'utilité et on lui retranche la contrainte, multipliée par une nouvelle inconnue
+        \( \lambda \).</dd>
+    <dd><em>Autrement dit :</em> une astuce qui transforme « maximiser avec une règle à respecter »
+        en « maximiser sans règle » — on peut alors dériver tranquillement. La lettre
+        \( \mathcal{L} \) se lit « L ».</dd>
+    <dd><em>Formule (E3 Q1.2) :</em>
+        \( \mathcal{L} = c + 4\ln(l) - \lambda\bigl(c - s(1-t)(1-l) - M\bigr) \) ; les trois CPO
+        donnent \( \lambda = 1 \) puis \( l^* = \dfrac{4}{s(1-t)} \). → voir
+        <span class="term">Multiplicateur de Lagrange</span>,
+        <span class="term">Contrainte de budget</span>.</dd>
+
+    <dt>Leader (meneur)</dt>
+    <dd>Dans un duopole séquentiel, la firme qui choisit sa quantité <strong>en premier</strong>,
+        sachant que l'autre l'observera et s'adaptera.</dd>
+    <dd><em>Autrement dit :</em> celui qui pose le décor. Son avantage vient d'un engagement
+        crédible, pas d'une meilleure information.</dd>
+    <dd><em>Exemple :</em> E3 Q5 — la firme 1 produit 30 et gagne 450. → voir
+        <span class="term">Follower</span>, <span class="term">Stackelberg</span>.</dd>
+
+    <dt>Logarithme népérien (\( \ln \))</dt>
+    <dd>La fonction qui répond à « à quelle puissance élever \( e \approx 2{,}718 \) pour obtenir
+        \( x \) ? ». Elle croît sans jamais s'arrêter, mais de plus en plus lentement.</dd>
+    <dd><em>Autrement dit :</em> la fonction « satisfaction qui sature » : de 1 à 2 on gagne
+        beaucoup, de 100 à 101 presque rien. Se lit « L N de \( x \) ».</dd>
+    <dd><em>Formules :</em> \( (\ln x)' = \dfrac1x \) ; \( \ln 1 = 0 \) ;
+        \( \ln(ab) = \ln a + \ln b \).</dd>
+    <dd><em>Exemple :</em> E3 Q1 — dans \( c + 4\ln(l) \), la dérivée en \( l \) vaut
+        \( \tfrac4l \), d'où \( l^* = \tfrac{4}{s(1-t)} \). En E2 Q2.4, \( \ln w \) sert d'exemple
+        de fonction <em>plus</em> concave que \( \sqrt{w} \).</dd>
+  </dl>
+
+  <h3>M — N</h3>
+
+  <dl class="lexique">
+    <dt>Menace non crédible</dt>
+    <dd>Une action annoncée qu'on n'aurait aucun intérêt à exécuter si le moment arrivait
+        vraiment.</dd>
+    <dd><em>Autrement dit :</em> du bluff. Ça peut effrayer l'adversaire dans une matrice, mais
+        l'induction à rebours le démasque aussitôt.</dd>
+    <dd><em>Exemple :</em> E2 Q3.5 — B annonce « nous investirons partout », y compris au nœud
+        (O, I) où investir rapporte \( -2 \) contre 0. E3 Q5.3 — la firme 2 annonce « je produis 20
+        quoi qu'il arrive », alors qu'après \( q_1 = 30 \) elle gagnerait 225 avec \( q_2 = 15 \)
+        contre 200. → voir <span class="term">ENPS</span>,
+        <span class="term">Engagement crédible</span>.</dd>
+
+    <dt>Multiplicateur de Lagrange (\( \lambda \))</dt>
+    <dd>L'inconnue supplémentaire du Lagrangien. Sa valeur à l'optimum se lit « combien d'utilité
+        en plus si on desserrait la contrainte d'une unité ».</dd>
+    <dd><em>Autrement dit :</em> le prix, en points d'utilité, d'un euro supplémentaire. Se lit
+        « lambda ».</dd>
+    <dd><em>Exemple :</em> E3 Q1.2 — la CPO en \( c \) donne \( 1 - \lambda = 0 \), donc
+        \( \lambda = 1 \) : un euro vaut exactement un point d'utilité, parce que l'utilité est
+        linéaire en \( c \). → voir <span class="term">Préférences quasi-linéaires</span>.</dd>
+
+    <dt>Naïf</dt>
+    <dd>Un décideur qui a un biais du présent mais l'ignore : il croit que son futur moi exécutera
+        fidèlement le plan d'aujourd'hui (\( \hat\beta = 1 \)).</dd>
+    <dd><em>Autrement dit :</em> « demain, je m'y mets » — sincèrement, et pour la dixième fois.</dd>
+    <dd><em>Exemple :</em> E2 Q1.3–1.4 — il prend l'abonnement en croyant faire 12 séances, puis
+        n'en fait que 6. Il est surpris ; le sophistiqué ne l'est jamais.</dd>
+
+    <dt>Nature (la)</dt>
+    <dd>Un « joueur » fictif, sans intérêt propre, qui effectue les tirages au sort du jeu : c'est
+        elle qui décide du type de chacun, avec les probabilités de l'énoncé.</dd>
+    <dd><em>Autrement dit :</em> le hasard, promu personnage pour qu'on puisse le dessiner dans
+        l'arbre. On la place tout au début.</dd>
+    <dd><em>Exemple :</em> E3 Q3 — elle tire « sérieux » avec probabilité \( p \) ; Maxime voit le
+        résultat, Léa non. → voir <span class="term">Type</span>.</dd>
+
+    <dt>Nœud de décision</dt>
+    <dd>Un point de l'arbre où un joueur doit choisir. On l'identifie par tout ce qui s'est passé
+        avant lui.</dd>
+    <dd><em>Autrement dit :</em> un carrefour, avec le nom de celui qui tient le volant.</dd>
+    <dd><em>Exemple :</em> E2 Q3 — B a quatre nœuds : après (E, I), (E, N), (O, I) et (O, N), d'où
+        \( 2^4 = 16 \) stratégies. → voir
+        <span class="term">Stratégie (plan complet)</span>.</dd>
+  </dl>
+
+  <h3>P</h3>
+
+  <dl class="lexique">
+    <dt>Préférences quasi-linéaires</dt>
+    <dd>Des préférences où un bien entre de façon simplement additive, sans transformation :
+        \( U = c + v(l) \). La consommation est comptée « au comptant » ; seul l'autre bien passe
+        par une fonction.</dd>
+    <dd><em>Autrement dit :</em> conséquence pratique — la quantité optimale de l'autre bien ne
+        dépend <strong>pas</strong> du revenu.</dd>
+    <dd><em>Exemple :</em> E3 Q1 — avec \( U = c + 4\ln(l) \), le transfert \( M(t) \) n'apparaît
+        pas dans \( l^* \) : recevoir de l'argent ne change pas le temps de travail, seule la taxe
+        le change.</dd>
+
+    <dt>Prix marginal</dt>
+    <dd>Ce que coûte à l'acheteur <strong>une unité de plus</strong> — pas le prix moyen. Un forfait
+        illimité a un prix marginal nul, même s'il coûte cher au total.</dd>
+    <dd><em>Autrement dit :</em> le prix de la prochaine.</dd>
+    <dd><em>Exemple :</em> E2 Q1 — sans abonnement il vaut \( p = 2 \), avec abonnement 0 : c'est
+        pourquoi le nombre de séances passe de \( \beta b - p = 4 \) à \( \beta b = 6 \). → voir
+        <span class="term">Commitment device</span>,
+        <span class="term">Coût marginal</span>.</dd>
+  </dl>
+
+  <h3>S</h3>
+
+  <dl class="lexique">
+    <dt>Self-contrôle (problème de)</dt>
+    <dd>L'incapacité à tenir ses propres résolutions, non par manque d'information, mais parce que
+        le présent pèse trop lourd au moment d'agir. Dans le cours, cela se résume à un seul
+        paramètre : \( \beta &lt; 1 \).</dd>
+    <dd><em>Exemple :</em> E2 Q1 — deux fonctions d'utilité, \( U_0 \) et \( U_1 \), pour deux moi
+        qui ne sont pas d'accord. → voir <span class="term">Biais du présent</span>,
+        <span class="term">Incohérence temporelle</span>.</dd>
+
+    <dt>Seuil de croyance</dt>
+    <dd>La valeur de \( p \) à partir de laquelle le joueur mal informé change de meilleure
+        réponse. En dessous il joue une chose, au-dessus une autre, pile dessus il est
+        indifférent.</dd>
+    <dd><em>Autrement dit :</em> le point de bascule ; on le trouve en égalisant les deux
+        espérances.</dd>
+    <dd><em>Formule (E3 Q3.4) :</em> \( 6p = 2 + p \iff p^*_{\text{seuil}} = 0{,}4 \). Au-dessus,
+        Léa joue Ambitieux ; en dessous, Standard.</dd>
+
+    <dt>Solution intérieure / solution en coin</dt>
+    <dd><em>Intérieure</em> : l'optimum tombe strictement entre les bornes autorisées.
+        <em>En coin</em> : il se colle à une borne. La CPO ne vaut que pour les solutions
+        intérieures — d'où la vérification systématique.</dd>
+    <dd><em>Exemple :</em> E2 Q2.2 — \( A^* = 600 \) est bien dans \( [0\,;900] \). Si le calcul
+        avait donné 1 200, la réponse serait \( A^* = 900 \).</dd>
+
+    <dt>Sophistiqué</dt>
+    <dd>Un décideur qui a un biais du présent et qui le sait : il prévoit correctement son futur
+        comportement (\( \hat\beta = \beta \)) et décide en conséquence.</dd>
+    <dd><em>Autrement dit :</em> « je sais que je ne le ferai pas, donc je m'arrange pour être
+        obligé ». C'est lui, et lui seul, qui achète un commitment device.</dd>
+    <dd><em>Exemple :</em> E2 Q1.5 — il sait qu'il fera 6 séances avec abonnement et 4 sans, et
+        compare \( U_0(1,6) = 19 \) à \( U_0(0,4) = 16 \). → voir
+        <span class="term">Naïf</span>.</dd>
+
+    <dt>Sous-jeu</dt>
+    <dd>Un morceau d'arbre qu'on peut détacher et lire comme un jeu à part entière : il commence à
+        un nœud de décision unique et contient tout ce qui en descend.</dd>
+    <dd><em>Autrement dit :</em> « et si on repartait d'ici ? ». L'arbre entier est l'un de ses
+        propres sous-jeux ; les autres sont dits <em>propres</em>.</dd>
+    <dd><em>Exemple :</em> E2 Q3 — sept sous-jeux : l'arbre complet, les deux qui partent des nœuds
+        de A, les quatre qui partent des nœuds de B. → voir
+        <span class="term">ENPS</span>.</dd>
+
+    <dt>Stackelberg (duopole de)</dt>
+    <dd>Le modèle de duopole où le leader choisit sa quantité en premier et le follower répond après
+        l'avoir observée. On le résout par induction à rebours : d'abord la fonction de réaction du
+        follower, puis le leader qui l'intègre dans son profit.</dd>
+    <dd><em>Exemple :</em> E3 Q5.1 — \( q_1^* = 30 \), \( q_2^* = 15 \), \( p^* = 35 \),
+        \( \pi_1 = 450 \), \( \pi_2 = 225 \). → voir <span class="term">Leader</span>,
+        <span class="term">Follower</span>,
+        <span class="term">Avantage du premier joueur</span>.</dd>
+
+    <dt>Statique comparative</dt>
+    <dd>L'étude de la façon dont une solution optimale se déplace quand on modifie un paramètre de
+        l'énoncé (une taxe, un prix, une probabilité). On ne recalcule pas tout : on garde la
+        formule littérale et on regarde le sens de variation.</dd>
+    <dd><em>Autrement dit :</em> « et si \( t \) augmentait ? »</dd>
+    <dd><em>Exemple :</em> E3 Q1.4 — dans \( l^* = \tfrac{4}{s(1-t)} \), si \( t \) monte alors
+        \( l^* \) monte et l'offre de travail baisse. E2 Q2.4 — une fonction plus concave abaisse
+        \( A^* \).</dd>
+
+    <dt>Stratégie (plan complet)</dt>
+    <dd>Dans un jeu séquentiel, une stratégie n'est pas une action : c'est un plan qui prescrit une
+        action à <strong>chaque</strong> nœud de décision du joueur, y compris ceux qu'on
+        n'atteindra jamais.</dd>
+    <dd><em>Autrement dit :</em> la notice complète que tu confierais à un remplaçant : il doit
+        pouvoir jouer à ta place quoi qu'il arrive, sans te téléphoner.</dd>
+    <dd><em>Formule :</em>
+        \( \#\text{stratégies} = (\#\text{actions})^{\,\#\text{nœuds}} \) — E2 Q3.2 : \( 2^2 = 4 \)
+        pour A ; Q3.1 : \( 2^4 = 16 \) pour B. Répondre « B joue I » vaut zéro point. → voir
+        <span class="term">Nœud de décision</span>.</dd>
+
+    <dt>Stratégie contingente au type</dt>
+    <dd>Dans un jeu bayésien, la stratégie du joueur informé : une <em>règle d'action</em> qui dit
+        ce qu'il fait pour chacun de ses types possibles.</dd>
+    <dd><em>Autrement dit :</em> même idée que le plan complet, mais l'inconnue n'est plus « où
+        suis-je dans l'arbre ? », c'est « qui suis-je ? ».</dd>
+    <dd><em>Formule :</em> \( (\#\text{actions})^{\,\#\text{types}} \) — E3 Q3.1 : \( 2^2 = 4 \),
+        dont (T si sérieux · R si paresseux) ; E2 Q5.3 : \( 3^2 = 9 \). → voir
+        <span class="term">Type</span>.</dd>
+  </dl>
+
+  <h3>T</h3>
+
+  <dl class="lexique">
+    <dt>Théorème d'indifférence</dt>
+    <dd>Dans un équilibre en stratégies mixtes, chaque joueur est exactement indifférent entre
+        toutes les actions qu'il joue avec une probabilité strictement positive.</dd>
+    <dd><em>Autrement dit :</em> si une action était meilleure, il la jouerait à 100 % — pour qu'il
+        accepte de tirer au sort, il faut que les deux se valent. Le croisement à retenir :
+        <strong>l'indifférence de l'un donne la probabilité de l'autre</strong>.</dd>
+    <dd><em>Exemple :</em> E3 Q4.2 — l'indifférence du contrebandier donne \( q^* = \tfrac35 \),
+        celle du douanier donne \( p^* = \tfrac14 \). Croiser les deux coûte 3 points.</dd>
+
+    <dt>Transfert forfaitaire</dt>
+    <dd>Une somme versée à tout le monde, identique et indépendante de ce que chacun fait. Comme
+        elle ne dépend pas du comportement, elle ne modifie pas les incitations : elle déplace
+        seulement la contrainte de budget.</dd>
+    <dd><em>Autrement dit :</em> un chèque de la même taille pour tous, quoi que tu décides.</dd>
+    <dd><em>Exemple :</em> E3 Q1 — \( M(t) \) est redistribué à chacun. Comme \( N \) est très
+        grand, chacun le traite comme une <strong>donnée</strong> : il serait faux de le remplacer
+        par sa formule de financement dans la contrainte individuelle.</dd>
+
+    <dt>Type</dt>
+    <dd>La caractéristique privée d'un joueur : ce qui détermine ses gains et que les autres ne
+        peuvent pas observer. Le joueur, lui, connaît son propre type.</dd>
+    <dd><em>Autrement dit :</em> « quelle version de ce joueur ai-je en face de moi ? »</dd>
+    <dd><em>Exemple :</em> E3 Q3 — Maxime est « sérieux » ou « paresseux ». Les deux matrices ne
+        diffèrent que par <em>ses</em> gains : ceux de Léa sont identiques, ce qui simplifie
+        beaucoup le calcul. → voir <span class="term">Croyance</span>,
+        <span class="term">La Nature</span>.</dd>
+  </dl>
+  <hr class="soft">
+
+  <h2>3. Formulaire par thème</h2>
+
+  <p>
+    Pour chaque formule : l'écriture mathématique, le décodage de <em>chaque</em> symbole nouveau,
+    l'indice de l'énoncé qui te dit quand la sortir, et une valeur numérique tirée de ces deux
+    examens. Les réflexes de la partie 4 renvoient à ces numéros F1, F2…
+  </p>
+
+  <h3>3.1 Décision inter-temporelle et self-contrôle (E2, Q1)</h3>
+
+  <div class="box box-rappel">
+    <div class="box-title">Le décor</div>
+    <p>
+      Prix à l'unité \( p = 2 \), abonnement \( C = 16 \), bénéfice par séance \( b = 12 \), biais
+      \( \beta = \tfrac{1}{2} \), escompte \( \delta = 1 \). Trois périodes : on décide (0), on
+      grimpe (1), on récolte (2).
+    </p>
+  </div>
+
+  <h4>F1 — Les deux utilités : celle qui planifie, celle qui agit</h4>
+
+  \[ U_0(a,k) = -\beta\frac{k^2}{2} - \beta\bigl[aC + (1-a)pk\bigr] + \beta b k \]
+
+  \[ U_1(a,k) = -\frac{k^2}{2} - \bigl[aC + (1-a)pk\bigr] + \beta b k \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( a \)</td><td class="left">vaut 1 si on prend l'abonnement, 0 sinon</td></tr>
+    <tr><td class="left">\( k \)</td><td class="left">« k » — le nombre de séances effectuées en période 1</td></tr>
+    <tr><td class="left">\( \tfrac{k^2}{2} \)</td><td class="left">le coût d'effort : il grimpe de plus en plus vite</td></tr>
+    <tr><td class="left">\( aC + (1-a)pk \)</td><td class="left">la facture : \( C \) si abonné, \( pk \) sinon — un seul terme survit</td></tr>
+    <tr><td class="left">\( bk \)</td><td class="left">le bénéfice santé, encaissé en période 2</td></tr>
+    <tr><td class="left">\( \beta \)</td><td class="left">« bêta » — le biais ; il ne s'applique qu'à ce qui est <em>futur</em></td></tr>
+  </table>
+
+  <p>
+    <strong>Quand l'utiliser :</strong> \( U_0 \) dès qu'on demande ce que la personne
+    <em>souhaite</em>, <em>planifie</em> ou comment elle <em>évalue</em> une option en période 0 ;
+    \( U_1 \) dès qu'on lit « <em>réellement</em> », « effectivement », « en période 1 ».
+    <strong>La seule différence :</strong> dans \( U_0 \) tout est futur, donc \( \beta \) est en
+    facteur commun et <em>se simplifie</em> ; dans \( U_1 \) l'effort et la facture sont au présent
+    et échappent à \( \beta \), qui ne rabote plus que \( bk \).
+  </p>
+
+  <h4>F2 — Le nombre de séances : souhaité contre réalisé</h4>
+
+  \[ k^{\text{souhaité}} = b - (1-a)\,p \qquad ; \qquad k^{\text{réel}} = \beta b - (1-a)\,p \]
+
+  <table class="compare">
+    <tr><th class="left">Cas</th><th class="left">Calcul</th><th class="left">Valeur</th></tr>
+    <tr><td class="left">Abonné, souhaité (Q1.1)</td><td class="left">\( b \)</td><td class="left">\( \mathbf{12} \) séances</td></tr>
+    <tr><td class="left">Non abonné, souhaité (Q1.2)</td><td class="left">\( b - p \)</td><td class="left">\( 12 - 2 = \mathbf{10} \)</td></tr>
+    <tr><td class="left">Abonné, réel (Q1.4)</td><td class="left">\( k^{\text{réel}} = \beta b \)</td><td class="left">\( \tfrac{1}{2}\times 12 = \mathbf{6} \)</td></tr>
+    <tr><td class="left">Non abonné, réel (Q1.5)</td><td class="left">\( \beta b - p \)</td><td class="left">\( 6 - 2 = \mathbf{4} \)</td></tr>
+  </table>
+
+  <p>
+    <strong>D'où ça vient :</strong> la CPO de \( U_0 \) donne \( -k - (1-a)p + b = 0 \) ; celle de
+    \( U_1 \) donne \( -k - (1-a)p + \beta b = 0 \). Le \( \beta \) devant \( b \) est l'unique
+    différence — et c'est toute l'histoire du self-contrôle.
+  </p>
+
+  <h4>F3 — Le test « prend-il l'abonnement ? »</h4>
+
+  \[ \text{Abonnement} \iff U_0\bigl(1,\ k_{a=1}\bigr) \;&gt;\; U_0\bigl(0,\ k_{a=0}\bigr) \]
+
+  <table class="compare">
+    <tr><th class="left">Qui décide</th><th class="left">Quels \( k \) il place dans \( U_0 \)</th><th class="left">Le calcul de l'examen</th></tr>
+    <tr><td class="left">Naïf (\( \hat\beta = 1 \))</td><td class="left">les \( k \) <em>souhaités</em> : 12 et 10</td><td class="left">\( 28 &gt; 25 \) → abonnement (Q1.3)</td></tr>
+    <tr><td class="left">Sophistiqué (\( \hat\beta = \beta \))</td><td class="left">les \( k \) <em>réels</em> : 6 et 4</td><td class="left">\( 19 &gt; 16 \) → abonnement (Q1.5)</td></tr>
+  </table>
+
+  <p>
+    <strong>Le piège :</strong> les deux options n'ont pas le même \( k \) — évalue chaque option
+    <em>à son propre nombre de séances</em>. <strong>Et « le moins cher » (Q1.6) ?</strong> On
+    compare \( C = 16 \) à \( p \times k^{\text{réel}} = 2\times 6 = 12 \) : non, l'abonnement coûte
+    4 de plus. Le sophistiqué le prend quand même, parce que le vrai contrefactuel n'est pas
+    « 6 séances à l'unité » mais « 4 séances seulement ». Ces 4 € sont le prix d'un
+    <span class="term">commitment device</span>.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 460 250" width="100%" style="max-width:11cm" role="img" aria-label="Le poids des périodes vu de la période 0 puis vu de la période 1">
+      <text x="8" y="16" font-size="13" font-weight="bold">Vu de la période 0 (on planifie)</text>
+      <line x1="40" y1="60" x2="430" y2="60" stroke="#111827" stroke-width="1.4"/>
+      <circle cx="70" cy="60" r="5" fill="#111827"/>
+      <circle cx="230" cy="60" r="5" fill="#111827"/>
+      <circle cx="390" cy="60" r="5" fill="#111827"/>
+      <text x="70" y="80" text-anchor="middle" font-size="12">période 0</text>
+      <text x="230" y="80" text-anchor="middle" font-size="12">période 1</text>
+      <text x="390" y="80" text-anchor="middle" font-size="12">période 2</text>
+      <text x="70" y="44" text-anchor="middle" font-size="13" font-weight="bold">×1</text>
+      <text x="230" y="44" text-anchor="middle" font-size="13" font-weight="bold">×β</text>
+      <text x="390" y="44" text-anchor="middle" font-size="13" font-weight="bold">×β</text>
+      <text x="230" y="98" text-anchor="middle" font-size="11.5">effort et facture</text>
+      <text x="390" y="98" text-anchor="middle" font-size="11.5">bénéfice</text>
+      <text x="8" y="120" font-size="11.5">Même poids pour les deux : β se simplifie, le plan n'est pas déformé (12 séances).</text>
+      <line x1="8" y1="136" x2="452" y2="136" stroke="#6b7280" stroke-width="0.8" stroke-dasharray="4 3"/>
+      <text x="8" y="160" font-size="13" font-weight="bold">Vu de la période 1 (on agit)</text>
+      <line x1="40" y1="200" x2="430" y2="200" stroke="#111827" stroke-width="1.4"/>
+      <circle cx="70" cy="200" r="5" fill="none" stroke="#6b7280" stroke-width="1.3"/>
+      <circle cx="230" cy="200" r="5" fill="#111827"/>
+      <circle cx="390" cy="200" r="5" fill="#111827"/>
+      <text x="70" y="220" text-anchor="middle" font-size="12">(passée)</text>
+      <text x="230" y="220" text-anchor="middle" font-size="12">période 1</text>
+      <text x="390" y="220" text-anchor="middle" font-size="12">période 2</text>
+      <text x="230" y="184" text-anchor="middle" font-size="13" font-weight="bold">×1</text>
+      <text x="390" y="184" text-anchor="middle" font-size="13" font-weight="bold">×β</text>
+      <text x="8" y="242" font-size="11.5">Poids différents : l'effort compte plein pot, le bénéfice à moitié → 6 séances.</text>
+    </svg>
+    <figcaption>
+      Le biais du présent en une image : « maintenant » n'est jamais escompté, tout le reste est
+      multiplié par \( \beta \) d'un coup. Comme la case « maintenant » change de place entre les
+      deux dates, les deux moi ne veulent plus la même chose.
+    </figcaption>
+  </figure>
+
+  <h3>3.2 Choix sous contrainte : le Lagrangien (E3, Q1)</h3>
+
+  <div class="box box-rappel">
+    <div class="box-title">Le décor</div>
+    <p>
+      Salaires bruts \( s_H = 20 \) et \( s_B = 10 \), dotation en temps \( L = 1 \), prix
+      \( p = 1 \), utilité \( U(l,c) = c + 4\ln(l) \), taxe \( t = 0{,}2 \), transfert \( M(t) \).
+    </p>
+  </div>
+
+  <h4>F4 — La contrainte de budget</h4>
+
+  \[ p\,c_i \;\le\; s_i(1-t)(1-l_i) + M(t) \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( l_i \)</td><td class="left">« petit L » — le temps de loisir du type \( i \), entre 0 et 1</td></tr>
+    <tr><td class="left">\( 1 - l_i \)</td><td class="left">son temps de <em>travail</em> : ce qui reste de la dotation</td></tr>
+    <tr><td class="left">\( s_i \)</td><td class="left">son salaire <strong>brut</strong> par unité de temps (20 ou 10)</td></tr>
+    <tr><td class="left">\( 1 - t \)</td><td class="left">la part qui lui reste après la taxe (ici 0,8)</td></tr>
+    <tr><td class="left">\( M(t) \)</td><td class="left">le transfert forfaitaire : une <em>donnée</em>, jamais une variable de choix</td></tr>
+  </table>
+
+  <p>
+    <strong>Quand :</strong> « écrivez la contrainte de budget », ou dès qu'il y a un salaire, une
+    taxe et un temps à répartir. <strong>Valeurs (1.1) :</strong>
+    \( c_H \le 16(1-l_H) + M(t) \) et \( c_B \le 8(1-l_B) + M(t) \).
+  </p>
+
+  <h4>F5 — Le Lagrangien et ses trois CPO</h4>
+
+  \[ \mathcal{L}_i = c_i + 4\ln(l_i) - \lambda_i\Bigl(c_i - s_i(1-t)(1-l_i) - M(t)\Bigr) \]
+
+  \[ \frac{\partial \mathcal{L}_i}{\partial c_i} = 1 - \lambda_i = 0
+     \qquad ; \qquad
+     \frac{\partial \mathcal{L}_i}{\partial l_i} = \frac{4}{l_i} - \lambda_i s_i(1-t) = 0 \]
+
+  \[ \frac{\partial \mathcal{L}_i}{\partial \lambda_i} = 0
+     \iff c_i = s_i(1-t)(1-l_i) + M(t) \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( \mathcal{L} \)</td><td class="left">« lagrangien » — la fonction auxiliaire à maximiser sans contrainte</td></tr>
+    <tr><td class="left">\( \lambda \)</td><td class="left">« lambda » — le multiplicateur : l'utilité d'un euro de plus (ici 1)</td></tr>
+    <tr><td class="left">\( \partial \)</td><td class="left">« d rond » — dérivée par rapport à une variable, les autres tenues fixes</td></tr>
+    <tr><td class="left">\( \tfrac{4}{l} \)</td><td class="left">la dérivée de \( 4\ln(l) \) : l'utilité marginale du loisir</td></tr>
+    <tr><td class="left">\( s(1-t) \)</td><td class="left">le salaire net : le coût d'opportunité d'une unité de loisir</td></tr>
+  </table>
+
+  <p>
+    <strong>Le signe :</strong> on retranche \( \lambda \times (\text{dépense} -
+    \text{ressources}) \) ; la parenthèse vaut zéro à l'optimum, d'où la troisième CPO.
+  </p>
+
+  <h4>F6 — Le loisir optimal, le travail et le revenu net</h4>
+
+  \[ l_i^* = \frac{4}{s_i(1-t)} \qquad ; \qquad \text{travail} = 1 - l_i^*
+     \qquad ; \qquad R_i = s_i(1-t)(1-l_i^*) \]
+
+  <table class="compare">
+    <tr><th class="left">Type</th><th class="left">Loisir (1.2)</th><th class="left">Travail</th><th class="left">Revenu net (1.3)</th></tr>
+    <tr><td class="left">H (\( s = 20 \))</td><td class="left">\( \tfrac{4}{16} = \mathbf{0{,}25} \)</td><td class="left">\( \tfrac{3}{4} \)</td><td class="left">\( 16\times\tfrac{3}{4} = \mathbf{12} \)</td></tr>
+    <tr><td class="left">B (\( s = 10 \))</td><td class="left">\( \tfrac{4}{8} = \mathbf{0{,}5} \)</td><td class="left">\( \tfrac{1}{2} \)</td><td class="left">\( 8\times\tfrac{1}{2} = \mathbf{4} \)</td></tr>
+  </table>
+
+  <p>
+    <strong>À vérifier :</strong> \( 0 &lt; l^* &lt; 1 \), sinon la solution est « en coin ».
+    <strong>Le mot <em>net</em> :</strong> le revenu brut serait \( s_i(1-l_i^*) \), soit 15 et 5 ;
+    le revenu total ajouterait \( M(t) \). Et \( M(t) \) n'apparaît pas dans \( l^* \) : les
+    préférences sont quasi-linéaires, le transfert ne change pas l'offre de travail.
+  </p>
+
+  <h4>F7 — La statique comparative en \( t \)</h4>
+
+  \[ t \nearrow \;\Rightarrow\; (1-t) \searrow \;\Rightarrow\; l^* = \frac{4}{s(1-t)} \nearrow
+     \;\Rightarrow\; (1 - l^*) \searrow \]
+
+  <p>
+    <strong>Quand :</strong> « déterminez l'effet d'une hausse de \( t \) » (1.4).
+    <strong>La phrase à écrire :</strong> la taxe réduit le salaire net, qui est le coût
+    d'opportunité du loisir ; le loisir devient moins cher, on en prend plus, donc on travaille
+    moins. <strong>Contrôle chiffré :</strong> avec \( t = 0{,}5 \),
+    \( l_H^* = \tfrac{4}{10} = 0{,}4 &gt; 0{,}25 \).
+  </p>
+
+  <h4>F8 — Comparer deux allocations au sens de Pareto</h4>
+
+  <table class="compare">
+    <tr><th class="left"></th><th class="left">\( M(t) \)</th><th class="left">\( U_H \)</th><th class="left">\( U_B \)</th></tr>
+    <tr><td class="left">\( t = 0{,}2 \)</td><td class="left">2</td><td class="left">8,45</td><td class="left">3,23</td></tr>
+    <tr><td class="left">\( t = 0{,}5 \)</td><td class="left">3,5</td><td class="left">5,83</td><td class="left">3,61</td></tr>
+  </table>
+
+  <p>
+    <strong>La règle :</strong> une allocation domine l'autre si <em>tout le monde</em> y est au
+    moins aussi bien et <em>au moins un</em> strictement mieux. <strong>Ici (1.5) :</strong> H
+    préfère \( t = 0{,}2 \), B préfère \( t = 0{,}5 \) — un gagnant et un perdant, donc
+    <strong>aucune domination</strong>. Le critère de Pareto est muet ; départager exige un
+    jugement de valeur.
+  </p>
+
+  <h3>3.3 Décision face au risque (E2 Q2 et E3 Q2)</h3>
+
+  <h4>F9 — Richesse finale et utilité espérée d'un montant investi</h4>
+
+  \[ w_{\text{succès}} = w - A + 4A = w + 3A \qquad ; \qquad w_{\text{échec}} = w - A \]
+
+  \[ U(A) = \tfrac{1}{2}\sqrt{900 + 3A} + \tfrac{1}{2}\sqrt{900 - A} \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Comment ça se lit, ce que c'est</th></tr>
+    <tr><td class="left">\( A \)</td><td class="left">le montant investi, en euros : la variable de choix, ici dans \( [0\,;900] \)</td></tr>
+    <tr><td class="left">\( w - A \)</td><td class="left">la part gardée en poche — elle reste là dans les <em>deux</em> scénarios</td></tr>
+    <tr><td class="left">\( \tfrac{1}{2} \)</td><td class="left">la probabilité de chaque scénario</td></tr>
+    <tr><td class="left">\( \sqrt{\ } \)</td><td class="left">la fonction de Bernoulli, appliquée à la richesse <strong>finale</strong></td></tr>
+  </table>
+
+  <h4>F10 — Dériver une racine composée, puis la CPO</h4>
+
+  \[ \frac{d}{dA}\sqrt{a + bA} = \frac{b}{2\sqrt{a + bA}}
+     \qquad\Longrightarrow\qquad
+     U'(A) = \frac{3}{4\sqrt{900+3A}} - \frac{1}{4\sqrt{900-A}} \]
+
+  \[ 3\sqrt{900-A^*} = \sqrt{900+3A^*} \;\Longrightarrow\; 9(900 - A^*) = 900 + 3A^*
+     \;\Longrightarrow\; \boxed{A^* = 600} \]
+
+  <p>
+    <strong>Le détail qui rapporte 5 points :</strong> le 3 au numérateur vient de l'intérieur
+    \( 900 + 3A \), le signe « moins » de l'intérieur \( 900 - A \).
+    <strong>Toujours conclure par deux vérifications :</strong> \( A^* = 600 \) est bien intérieur,
+    et \( U \) est concave (somme de racines), donc la CPO donne bien un maximum.
+  </p>
+
+  <h4>F11 — Utilité à l'optimum et équivalent certain</h4>
+
+  \[ U(A^*) = \tfrac{1}{2}\sqrt{2700} + \tfrac{1}{2}\sqrt{300} = 20\sqrt{3} \approx 34{,}64 \]
+
+  \[ u(EC) = U \iff \sqrt{EC} = 20\sqrt{3} \iff EC = 400\times 3 = 1200 \]
+
+  <p>
+    <strong>Comment lire ça :</strong> \( EC = 1200 &gt; 900 = w \) — le portefeuille risqué
+    optimal vaut, en euros certains, 300 de plus que de ne rien faire. Une personne averse au
+    risque ne fuit pas le risque : elle l'achète au bon prix.
+  </p>
+
+  <h4>F12 — La chaîne VMA → EC → prime de risque (E3, Q2)</h4>
+
+  \[ \mathrm{VMA} = \tfrac{1}{2}x + \tfrac{1}{2}y \qquad ; \qquad u(C) = U
+     \qquad ; \qquad \mathrm{PRM} = \mathrm{VMA} - C \]
+
+  <table class="compare">
+    <tr><th class="left">Étape</th><th class="left">Le calcul de l'examen n° 3, Q2</th></tr>
+    <tr><td class="left">Richesses finales</td><td class="left">\( 400 + 84 = 484 \) ou \( 400 - 39 = 361 \)</td></tr>
+    <tr><td class="left">VMA du <em>pari</em> (2.2)</td><td class="left">\( \tfrac{1}{2}(84) + \tfrac{1}{2}(-39) = \mathbf{22{,}50} \) €</td></tr>
+    <tr><td class="left">Utilité espérée (2.3)</td><td class="left">\( \tfrac{1}{2}(22)+\tfrac{1}{2}(19) = \mathbf{20{,}5} &gt; \sqrt{400} = 20 \) → il accepte</td></tr>
+    <tr><td class="left">VMA de la <em>richesse</em> (2.4)</td><td class="left">\( \tfrac{1}{2}(484)+\tfrac{1}{2}(361) = 422{,}50 \) €</td></tr>
+    <tr><td class="left">Équivalent certain</td><td class="left">\( \sqrt{C} = 20{,}5 \Rightarrow C = \mathbf{420{,}25} \) €</td></tr>
+    <tr><td class="left">Prime de risque</td><td class="left">\( 422{,}50 - 420{,}25 = \mathbf{2{,}25} \) €</td></tr>
+  </table>
+
+  <p>
+    <strong>Le piège de vocabulaire :</strong> « VMA du pari » (22,50) et « VMA de la richesse
+    finale » (422,50) diffèrent exactement de \( w = 400 \). Lis de quoi on te demande la moyenne.
+  </p>
+
+  <h4>F13 — Aversion au risque et concavité</h4>
+
+  \[ u(w) = \sqrt{w} \;\Longrightarrow\; u'(w) = \frac{1}{2\sqrt{w}} &gt; 0
+     \;\; ; \;\; u''(w) = -\tfrac{1}{4}w^{-3/2} &lt; 0 \]
+
+  <p>
+    <strong>Le théorème à énoncer (E3, 2.1) :</strong> un individu est averse au risque
+    <em>si et seulement si</em> sa fonction de Bernoulli est concave, c'est-à-dire
+    \( u'' &lt; 0 \). <strong>Corollaire (E2, 2.4) :</strong> une fonction <em>plus</em> concave
+    (\( \ln w \) plutôt que \( \sqrt{w} \)) donne un \( A^* \) <strong>plus faible</strong> — le
+    scénario d'échec pèse plus lourd.
+  </p>
+
+  <h3>3.4 Les jeux : séquentiels, répétés, mixtes, bayésiens, duopoles</h3>
+
+  <h4>F14 — Compter les stratégies</h4>
+
+  \[ \text{séquentiel} : (\#\text{actions})^{\,\#\text{nœuds}}
+     \qquad ; \qquad
+     \text{bayésien} : (\#\text{actions})^{\,\#\text{types}} \]
+
+  <table class="compare">
+    <tr><th class="left">Situation</th><th class="left">Compte</th><th class="left">Résultat</th></tr>
+    <tr><td class="left">E2, Q3.2 — enseigne A</td><td class="left">2 nœuds, 2 actions</td><td class="left">\( 2^2 = \mathbf{4} \)</td></tr>
+    <tr><td class="left">E2, Q3.1 — enseigne B</td><td class="left">4 nœuds, 2 actions</td><td class="left">\( 2^4 = \mathbf{16} \)</td></tr>
+    <tr><td class="left">E2, Q5.3 — joueur bayésien</td><td class="left">2 types, 3 actions</td><td class="left">\( 3^2 = \mathbf{9} \)</td></tr>
+    <tr><td class="left">E3, Q3.1 — Maxime</td><td class="left">2 types, 2 actions</td><td class="left">\( 2^2 = \mathbf{4} \)</td></tr>
+  </table>
+
+  <p>
+    <strong>Le sens de l'exposant :</strong> on choisit une action <em>pour chaque</em> nœud (ou
+    type), donc les possibilités se multiplient. <strong>Le piège à 6 points :</strong> écrire une
+    action au lieu d'un plan complet.
+  </p>
+
+  <h4>F15 — L'induction à rebours</h4>
+
+  \[ \text{dernier étage} \to \text{on remonte les payoffs} \to \dots \to \text{racine} \]
+
+  <table class="compare">
+    <tr><th class="left">Étage (E2, Q3.3)</th><th class="left">On compare…</th><th class="left">Décision</th></tr>
+    <tr><td class="left">Nœuds de B</td><td class="left">le <strong>3<sup>e</sup></strong> payoff</td><td class="left">I, I, N, I</td></tr>
+    <tr><td class="left">Nœuds de A</td><td class="left">le <strong>2<sup>e</sup></strong>, réponses de B intégrées</td><td class="left">I après E, I après O</td></tr>
+    <tr><td class="left">Racine (commune)</td><td class="left">le <strong>1<sup>er</sup></strong>, tout intégré</td><td class="left">E (8 contre 3)</td></tr>
+  </table>
+
+  <p>
+    <strong>Résultat effectif (3.4) :</strong> chemin (E, I, I), payoffs
+    \( (C\,;A\,;B) = (8\,;3\,;3) \). <strong>Le piège :</strong> à chaque étage on ne regarde
+    <em>que</em> le payoff du joueur qui décide.
+  </p>
+
+  <h4>F16 — La condition de soutien d'une collusion (grim)</h4>
+
+  \[ \underbrace{\frac{\Pi^{\text{coop}}}{1-\delta}}_{\text{coopérer toujours}}
+     \;\ge\;
+     \underbrace{\Pi^{\text{dev}}}_{\text{la tentation}}
+     + \underbrace{\frac{\delta\,\Pi^{\text{pun}}}{1-\delta}}_{\text{la punition, dès demain}} \]
+
+  <table class="compare">
+    <tr><th class="left">Symbole</th><th class="left">Ce que c'est, valeur sur E2 Q4</th></tr>
+    <tr><td class="left">\( \Pi^{\text{coop}} \)</td><td class="left">le profit par période si l'entente tient ; ici 8</td></tr>
+    <tr><td class="left">\( \Pi^{\text{dev}} \)</td><td class="left">le profit de la <em>première</em> semaine de trahison ; ici 14</td></tr>
+    <tr><td class="left">\( \Pi^{\text{pun}} \)</td><td class="left">le profit une fois la guerre déclenchée ; ici 4</td></tr>
+    <tr><td class="left">\( \tfrac{1}{1-\delta} \)</td><td class="left">la somme d'une infinité de périodes identiques</td></tr>
+  </table>
+
+  \[ 8 \ge 14(1-\delta) + 4\delta = 14 - 10\delta \iff 10\delta \ge 6
+     \iff \boxed{\delta \ge \tfrac{3}{5} = 0{,}6} \]
+
+  <p>
+    <strong>Le \( \delta \) qu'on oublie :</strong> la punition ne commence qu'à la période
+    <em>suivante</em>, d'où le \( \delta \) au numérateur. <strong>Et on dit pourquoi</strong> on a
+    le droit de multiplier par \( (1-\delta) \) sans retourner l'inégalité : c'est positif.
+  </p>
+
+  <h4>F17 — La même condition avec détection retardée</h4>
+
+  \[ \frac{8}{1-\delta} \;\ge\; 14(1 + \delta) + \frac{4\delta^2}{1-\delta}
+     \iff 8 \ge 14 - 10\delta^2 \iff \boxed{\delta \ge \sqrt{\tfrac{3}{5}} \approx 0{,}77} \]
+
+  <p>
+    <strong>Ce qui change (4.3) :</strong> le tricheur encaisse 14 en \( t=0 \) <em>et</em> en
+    \( t=1 \), et la punition ne démarre qu'en \( t=2 \), d'où \( \delta^2 \). La simplification
+    utilise \( (1+\delta)(1-\delta) = 1-\delta^2 \). <strong>L'interprétation :</strong>
+    \( 0{,}77 &gt; 0{,}60 \) — plus la détection est lente, plus il faut des joueurs patients.
+  </p>
+
+  <h4>F18 — Le théorème d'indifférence (jeu mixte 2×2)</h4>
+
+  \[ \underbrace{q(-4) + (1-q)8}_{\text{Route}} = \underbrace{q(4) + (1-q)(-4)}_{\text{Montagne}}
+     \iff 8 - 12q = -4 + 8q \iff \boxed{q^* = \tfrac{3}{5}} \]
+
+  \[ \underbrace{p(6) + (1-p)0}_{\text{Route}} = \underbrace{p(0) + (1-p)2}_{\text{Montagne}}
+     \iff 6p = 2 - 2p \iff \boxed{p^* = \tfrac{1}{4}} \]
+
+  <p>
+    <strong>Le croisement à ne pas rater :</strong> \( p \) est la probabilité du
+    <em>contrebandier</em> mais sort de l'équation du <em>douanier</em>. Chacun choisit sa mixture
+    pour rendre l'<em>autre</em> indifférent. Croiser les deux coûte 3 points au barème.
+  </p>
+
+  <h4>F19 — Payoffs espérés à l'équilibre mixte</h4>
+
+  \[ U_C = 8 - 12q^* = \mathbf{0{,}8} \qquad ; \qquad U_D = 6p^* = \mathbf{1{,}5} \]
+
+  <p>
+    <strong>L'astuce :</strong> le joueur étant indifférent, une seule de ses stratégies pures
+    suffit — puis on vérifie avec l'autre (Montagne donne bien \( -4 + 8\times 0{,}6 = 0{,}8 \)).
+    <strong>Statique comparative (4.4) :</strong> si le gain du contrebandier passe de 8 à 28, son
+    équation change, donc \( q^* \) devient \( \tfrac{4}{5} \) et \( p^* \) reste
+    \( \tfrac{1}{4} \) : c'est le <em>douanier</em> qui modifie son comportement.
+  </p>
+
+  <h4>F20 — Jeu bayésien : la meilleure réponse type par type</h4>
+
+  <table class="compare">
+    <tr><th class="left">Type de Maxime (3.2)</th><th class="left">Si Léa joue A</th><th class="left">Si Léa joue S</th><th class="left">Conclusion</th></tr>
+    <tr><td class="left">sérieux</td><td class="left">T : 4 contre R : 1</td><td class="left">T : 3 contre R : 0</td><td class="left">T dominant</td></tr>
+    <tr><td class="left">paresseux</td><td class="left">T : 1 contre R : 3</td><td class="left">T : 0 contre R : 2</td><td class="left">R dominant</td></tr>
+  </table>
+
+  <p>
+    Chaque type compare des gains <strong>certains</strong>, dans <em>sa</em> matrice : aucune
+    probabilité n'intervient ici. La règle qui en sort — (T si sérieux · R si paresseux) — est ce
+    qu'on écrit à l'équilibre, jamais « Maxime joue T ».
+  </p>
+
+  <h4>F21 — Jeu bayésien : l'espérance du non-informé et le seuil de croyance</h4>
+
+  \[ E[\text{A}] = 6p \qquad ; \qquad E[\text{S}] = 3p + 2(1-p) = 2 + p \]
+
+  \[ E[\text{A}] = E[\text{S}] \iff 6p = 2 + p \iff \boxed{p^*_{\text{seuil}} = \tfrac{2}{5} = 0{,}4} \]
+
+  <table class="compare">
+    <tr><th class="left">Croyance</th><th class="left">Équilibre de Nash bayésien</th></tr>
+    <tr><td class="left">\( p = 0{,}8 &gt; 0{,}4 \) (3.3)</td><td class="left">( Ambitieux ; (T si sérieux · R si paresseux) ), car \( 4{,}8 &gt; 2{,}8 \)</td></tr>
+    <tr><td class="left">\( p = 0{,}4 \)</td><td class="left">Léa est indifférente : les deux profils sont des ENB</td></tr>
+    <tr><td class="left">\( p &lt; 0{,}4 \)</td><td class="left">( Standard ; (T si sérieux · R si paresseux) )</td></tr>
+  </table>
+
+  <p>
+    <strong>Le piège :</strong> dans chaque terme de l'espérance, prends le gain de la case
+    réellement atteinte compte tenu de l'action du type concerné — pas la colonne T pour les deux
+    types. <strong>À remarquer :</strong> la règle de Maxime ne dépend pas de \( p \) ; seule Léa
+    bascule.
+  </p>
+
+  <h4>F22 — Stackelberg : les quatre lignes du calcul</h4>
+
+  \[ \frac{\partial \pi_2}{\partial q_2} = 60 - q_1 - 2q_2 = 0
+     \;\Longrightarrow\; q_2^*(q_1) = 30 - \frac{q_1}{2} \quad\text{(fonction de réaction)} \]
+
+  \[ \pi_1 = \Bigl(30 - \frac{q_1}{2}\Bigr)q_1
+     \;\Longrightarrow\; \frac{\partial \pi_1}{\partial q_1} = 30 - q_1 = 0
+     \;\Longrightarrow\; \boxed{q_1 = 30} \]
+
+  <table class="compare">
+    <tr><th class="left">Grandeur</th><th class="left">Formule</th><th class="left">Valeur (5.1)</th></tr>
+    <tr><td class="left">Quantité du leader</td><td class="left">\( \tfrac{a-c}{2} \)</td><td class="left">\( \mathbf{30} \)</td></tr>
+    <tr><td class="left">Quantité du follower</td><td class="left">\( \tfrac{a-c}{4} \)</td><td class="left">\( \mathbf{15} \)</td></tr>
+    <tr><td class="left">Prix de marché</td><td class="left">\( a - Q \)</td><td class="left">\( 80 - 45 = \mathbf{35} \)</td></tr>
+    <tr><td class="left">Profits</td><td class="left">\( (p-c)q_i \)</td><td class="left">\( \pi_1 = \mathbf{450} \), \( \pi_2 = \mathbf{225} \)</td></tr>
+  </table>
+
+  <p>
+    <strong>Point de repère :</strong> en Cournot (simultané) les mêmes données donneraient
+    \( q_1 = q_2 = 20 \), \( p = 40 \), \( \pi_1 = \pi_2 = 400 \). Le leader gagne 50 de plus, le
+    follower 175 de moins : c'est l'avantage du premier joueur, chiffré.
+  </p>
+
+  <h4>F23 — Le jeu réduit et ses deux équilibres (5.2 et 5.3)</h4>
+
+  <table class="game">
+    <tr>
+      <td class="void"></td>
+      <td class="player" colspan="2">Firme 2 (follower)</td>
+    </tr>
+    <tr>
+      <td class="void"></td>
+      <td>\( q_2 = 30 - \tfrac{1}{2}q_1 \)</td>
+      <td>\( q_2 = 20 \) toujours</td>
+    </tr>
+    <tr>
+      <td class="player">Firme 1 : \( q_1 = 30 \)</td>
+      <td class="nash">(450 ; 225)</td>
+      <td>(300 ; 200)</td>
+    </tr>
+    <tr>
+      <td class="player">Firme 1 : \( q_1 = 20 \)</td>
+      <td>(400 ; 400)</td>
+      <td class="nash">(400 ; 400)</td>
+    </tr>
+  </table>
+
+  <p>
+    <strong>Deux équilibres de Nash</strong> (cases marquées), un seul ENPS : celui en haut à
+    gauche. L'autre repose sur « je produis 20 quoi qu'il arrive », qui n'est pas optimal dans le
+    sous-jeu suivant \( q_1 = 30 \) : la firme 2 y gagnerait 225 avec sa fonction de réaction
+    contre 200 en s'entêtant. <strong>Même mécanique</strong> que la menace de l'enseigne B en E2
+    Q3.5 : reconnais le motif, il revient sans arrêt.
+  </p>
+
+  <hr class="soft">
+
+  <h2>4. Réflexes de méthode et plan de révision</h2>
+
+  <p>
+    Huit recettes, à dérouler telles quelles. Repère d'abord ton cas dans l'arbre d'aiguillage,
+    puis applique la recette correspondante, étape par étape.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 470 520" width="100%" style="max-width:11.5cm" role="img" aria-label="Arbre de décision : des mots-signaux de l'énoncé vers la méthode à appliquer">
+      <text x="235" y="16" text-anchor="middle" font-size="13" font-weight="bold">Quelle méthode pour quelle question ?</text>
+
+      <rect x="4" y="256" width="98" height="54" fill="#f3f4f6" stroke="#111827" stroke-width="1.3"/>
+      <text x="53" y="275" text-anchor="middle" font-size="11">Repère les</text>
+      <text x="53" y="289" text-anchor="middle" font-size="11">mots-signaux</text>
+      <text x="53" y="303" text-anchor="middle" font-size="11">de l'énoncé</text>
+
+      <line x1="102" y1="283" x2="106" y2="283" stroke="#111827" stroke-width="1.2"/>
+      <line x1="106" y1="118" x2="106" y2="448" stroke="#111827" stroke-width="1.2"/>
+      <line x1="106" y1="118" x2="110" y2="118" stroke="#111827" stroke-width="1.2"/>
+      <line x1="106" y1="298" x2="110" y2="298" stroke="#111827" stroke-width="1.2"/>
+      <line x1="106" y1="448" x2="110" y2="448" stroke="#111827" stroke-width="1.2"/>
+
+      <rect x="110" y="91" width="112" height="54" fill="#e5e7eb" stroke="#111827" stroke-width="1.3"/>
+      <text x="166" y="112" text-anchor="middle" font-size="11">UN décideur</text>
+      <text x="166" y="128" text-anchor="middle" font-size="11">(pas de jeu)</text>
+
+      <rect x="110" y="271" width="112" height="54" fill="#e5e7eb" stroke="#111827" stroke-width="1.3" stroke-dasharray="5 3"/>
+      <text x="166" y="292" text-anchor="middle" font-size="11">PLUSIEURS,</text>
+      <text x="166" y="308" text-anchor="middle" font-size="11">en même temps</text>
+
+      <rect x="110" y="421" width="112" height="54" fill="#e5e7eb" stroke="#111827" stroke-width="2"/>
+      <text x="166" y="442" text-anchor="middle" font-size="11">PLUSIEURS,</text>
+      <text x="166" y="458" text-anchor="middle" font-size="10.5">l'un après l'autre</text>
+
+      <line x1="222" y1="118" x2="230" y2="118" stroke="#111827" stroke-width="1.2"/>
+      <line x1="230" y1="58" x2="230" y2="178" stroke="#111827" stroke-width="1.2"/>
+      <line x1="230" y1="58" x2="238" y2="58" stroke="#111827" stroke-width="1.2"/>
+      <line x1="230" y1="118" x2="238" y2="118" stroke="#111827" stroke-width="1.2"/>
+      <line x1="230" y1="178" x2="238" y2="178" stroke="#111827" stroke-width="1.2"/>
+
+      <line x1="222" y1="298" x2="230" y2="298" stroke="#111827" stroke-width="1.2"/>
+      <line x1="230" y1="238" x2="230" y2="358" stroke="#111827" stroke-width="1.2"/>
+      <line x1="230" y1="238" x2="238" y2="238" stroke="#111827" stroke-width="1.2"/>
+      <line x1="230" y1="298" x2="238" y2="298" stroke="#111827" stroke-width="1.2"/>
+      <line x1="230" y1="358" x2="238" y2="358" stroke="#111827" stroke-width="1.2"/>
+
+      <line x1="222" y1="448" x2="230" y2="448" stroke="#111827" stroke-width="1.2"/>
+      <line x1="230" y1="418" x2="230" y2="478" stroke="#111827" stroke-width="1.2"/>
+      <line x1="230" y1="418" x2="238" y2="418" stroke="#111827" stroke-width="1.2"/>
+      <line x1="230" y1="478" x2="238" y2="478" stroke="#111827" stroke-width="1.2"/>
+
+      <rect x="238" y="32" width="228" height="52" fill="none" stroke="#111827" stroke-width="1.2"/>
+      <text x="246" y="49" font-size="11">« β », périodes 0-1-2, abonnement,</text>
+      <text x="246" y="63" font-size="11">« naïf » / « sophistiqué »</text>
+      <text x="246" y="78" font-size="11" font-weight="bold">→ Réflexe 1 : self-contrôle</text>
+
+      <rect x="238" y="92" width="228" height="52" fill="none" stroke="#111827" stroke-width="1.2"/>
+      <text x="246" y="109" font-size="11">contrainte de budget, salaire, taxe,</text>
+      <text x="246" y="123" font-size="11">maximiser une utilité sous contrainte</text>
+      <text x="246" y="138" font-size="11" font-weight="bold">→ Réflexe 2 : Lagrangien</text>
+
+      <rect x="238" y="152" width="228" height="52" fill="none" stroke="#111827" stroke-width="1.2"/>
+      <text x="246" y="169" font-size="11">u(w) = √w, probabilités, « quel</text>
+      <text x="246" y="183" font-size="11">montant investir ? », prime de risque</text>
+      <text x="246" y="198" font-size="11" font-weight="bold">→ Réflexe 3 : utilité espérée + CPO</text>
+
+      <rect x="238" y="212" width="228" height="52" fill="none" stroke="#111827" stroke-width="1.2" stroke-dasharray="5 3"/>
+      <text x="246" y="229" font-size="11">deux matrices, « type », croyance p,</text>
+      <text x="246" y="243" font-size="11">« elle ne connaît pas son type »</text>
+      <text x="246" y="258" font-size="11" font-weight="bold">→ Réflexe 5 : jeu bayésien</text>
+
+      <rect x="238" y="272" width="228" height="52" fill="none" stroke="#111827" stroke-width="1.2" stroke-dasharray="5 3"/>
+      <text x="246" y="289" font-size="11">« aucun équilibre en pur », on</text>
+      <text x="246" y="303" font-size="11">demande p* et q*, poursuite</text>
+      <text x="246" y="318" font-size="11" font-weight="bold">→ Réflexe 6 : indifférence</text>
+
+      <rect x="238" y="332" width="228" height="52" fill="none" stroke="#111827" stroke-width="1.2" stroke-dasharray="5 3"/>
+      <text x="246" y="349" font-size="11">« répété à l'infini », δ, grim,</text>
+      <text x="246" y="363" font-size="11">collusion, entente sur les prix</text>
+      <text x="246" y="378" font-size="11" font-weight="bold">→ Réflexe 7 : condition de soutien</text>
+
+      <rect x="238" y="392" width="228" height="52" fill="none" stroke="#111827" stroke-width="2"/>
+      <text x="246" y="409" font-size="11">arbre, forme extensive, ENPS,</text>
+      <text x="246" y="423" font-size="11">« cette menace est-elle crédible ? »</text>
+      <text x="246" y="438" font-size="11" font-weight="bold">→ Réflexe 4 : induction à rebours</text>
+
+      <rect x="238" y="452" width="228" height="52" fill="none" stroke="#111827" stroke-width="2"/>
+      <text x="246" y="469" font-size="11">p = 80 − Q, leader / follower,</text>
+      <text x="246" y="483" font-size="11">duopole, coût marginal</text>
+      <text x="246" y="498" font-size="11" font-weight="bold">→ Réflexe 8 : Stackelberg</text>
+    </svg>
+    <figcaption>
+      Première question : combien de décideurs, et jouent-ils en même temps ou l'un après l'autre ?
+      Deuxième question : quels mots exacts figurent dans l'énoncé ? Les trois familles se
+      distinguent aussi par le trait (fin, pointillé, épais), pour rester lisibles en noir et blanc.
+    </figcaption>
+  </figure>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 1 — Un problème de self-contrôle (naïf ou sophistiqué)</div>
+    <ol>
+      <li>Écris les <strong>deux</strong> utilités, F1 : \( U_0 \) (tout est futur, \( \beta \)
+          partout) et \( U_1 \) (le présent échappe à \( \beta \)).</li>
+      <li>CPO sur \( U_0 \) → le \( k \) <strong>souhaité</strong> ; CPO sur \( U_1 \) → le \( k \)
+          <strong>réel</strong> (F2). Fais-le pour les deux tarifs.</li>
+      <li>Identifie le personnage : le <strong>naïf</strong> évalue les options avec les \( k \)
+          souhaités, le <strong>sophistiqué</strong> avec les \( k \) réels.</li>
+      <li>Compare les deux options <em>chacune à son propre \( k \)</em>, toujours avec \( U_0 \) —
+          c'est en période 0 qu'on décide (F3).</li>
+      <li>Conclus par une phrase : le naïf se trompe sur lui-même, le sophistiqué achète un
+          commitment device.</li>
+      <li>Contrôle : \( U_0 \) et \( U_1 \) doivent devenir négatifs pour \( k \) très grand (le
+          coût \( k^2/2 \) finit par gagner). Sinon, tu as perdu un signe.</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 2 — Maximiser sous contrainte avec un Lagrangien</div>
+    <ol>
+      <li>Écris la <strong>contrainte de budget</strong> seule, en français puis en symboles :
+          « dépense ≤ revenu net du travail + transferts » (F4).</li>
+      <li>Sépare les <strong>données</strong> (salaire, taxe, transfert) des <strong>variables de
+          choix</strong> (consommation, loisir). Ne remplace jamais une donnée par sa formule de
+          financement.</li>
+      <li>Construis \( \mathcal{L} = U - \lambda(\text{dépense} - \text{ressources}) \), puis écris
+          les <strong>trois</strong> CPO — dont celle en \( \lambda \), qui redonne la contrainte
+          saturée (F5).</li>
+      <li>Résous : la CPO la plus simple livre souvent \( \lambda \) tout de suite ; injecte-la
+          dans les autres.</li>
+      <li>Isole la variable demandée en <strong>littéral</strong> d'abord — c'est cette formule qui
+          servira à la statique comparative — puis remplace par les nombres, type par type.</li>
+      <li>Vérifie que le résultat a un sens (\( 0 &lt; l^* &lt; 1 \)) et réponds à ce qui est
+          demandé : si on veut le temps de <em>travail</em>, écris \( 1 - l^* \).</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 3 — Le montant optimal à investir dans un projet risqué</div>
+    <ol>
+      <li>Nomme la variable de choix et son intervalle : \( A \in [0\,;900] \).</li>
+      <li>Écris la <strong>richesse finale</strong> de chaque scénario sans oublier la part gardée
+          \( w - A \), puis \( U(A) \) : \( u \) d'abord, moyenne ensuite (F9).</li>
+      <li>Dérive avec la règle de la racine composée — n'oublie pas le facteur venu de l'intérieur
+          (F10).</li>
+      <li>Pose \( U'(A^*) = 0 \) ; si tu obtiens une égalité entre deux racines, élève au carré
+          (les deux membres sont positifs, tu as le droit — dis-le).</li>
+      <li>Vérifie que \( A^* \) est <strong>intérieur</strong> et justifie le maximum par la
+          concavité.</li>
+      <li>Si on le demande : \( U(A^*) \), puis l'équivalent certain en retournant \( u \), puis la
+          comparaison à \( w \), commentée en euros (F11).</li>
+      <li>Question finale « et si elle était plus averse ? » : réponds <em>plus faible</em>, justifie
+          par la concavité, ne recalcule rien (F13).</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 4 — Résoudre un jeu séquentiel par induction à rebours</div>
+    <ol>
+      <li>Compte les <strong>nœuds</strong> de chaque joueur et déduis son nombre de stratégies
+          (F14) : ce comptage rapporte des points à lui seul.</li>
+      <li>Note en marge la <strong>position</strong> du payoff de chaque joueur dans les
+          parenthèses (« C ; A ; B »). C'est l'erreur la plus fréquente.</li>
+      <li>Traite les nœuds du <strong>dernier</strong> joueur un par un, en comparant seulement
+          <em>son</em> payoff. Entoure l'action retenue.</li>
+      <li>Remonte d'un étage : chaque branche est remplacée par le triplet qui suivra
+          effectivement. Termine par la racine.</li>
+      <li>Écris l'ENPS comme <strong>une stratégie complète par joueur</strong>, couvrant tous ses
+          nœuds — même ceux hors chemin d'équilibre — puis décris le résultat effectif
+          séparément.</li>
+      <li>Si on demande un équilibre de Nash <em>non</em> parfait : garde le chemin d'équilibre,
+          transforme une action <em>hors chemin</em> en menace, vérifie qu'aucun joueur ne peut
+          dévier profitablement, puis nomme le sous-jeu où la menace n'est pas une meilleure
+          réponse.</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 5 — Résoudre un jeu bayésien</div>
+    <ol>
+      <li>Identifie qui a un <strong>type</strong>, combien, et qui ne les observe pas. Compte les
+          stratégies du joueur informé (F14) et énumère-les.</li>
+      <li>Pour <strong>chaque type</strong>, cherche la meilleure réponse dans <em>sa</em> matrice,
+          colonne par colonne : aucune probabilité n'intervient à ce stade (F20).</li>
+      <li>Écris la <strong>règle d'action</strong> qui en résulte : « X si type 1 · Y si
+          type 2 ».</li>
+      <li>Calcule les <strong>espérances</strong> du joueur non informé face à cette règle, en
+          prenant dans chaque terme la case réellement atteinte (F21).</li>
+      <li>Compare, choisis la meilleure réponse, puis vérifie la <strong>réciprocité</strong> et
+          écris l'ENB sous la forme ( action ; règle complète ).</li>
+      <li>Pour le seuil : refais les espérances avec \( p \) littéral, pose l'égalité, résous, et
+          décris les deux régimes de part et d'autre.</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 6 — L'équilibre en stratégies mixtes d'un jeu 2×2</div>
+    <ol>
+      <li>Montre d'abord qu'il n'y a <strong>aucun équilibre en pur</strong> : parcours les quatre
+          cases et exhibe à chaque fois une déviation profitable.</li>
+      <li>Nomme les probabilités et dis à qui elles appartiennent : \( p \) pour la ligne, \( q \)
+          pour la colonne.</li>
+      <li>Indifférence du joueur <strong>ligne</strong> → tu obtiens \( q^* \) ; indifférence du
+          joueur <strong>colonne</strong> → tu obtiens \( p^* \) (F18).</li>
+      <li>Contrôle du croisement, et vérifie que \( p^*, q^* \in\, ]0\,;1[ \).</li>
+      <li>Payoffs espérés : évalue <em>une</em> stratégie pure de chaque joueur, puis vérifie avec
+          l'autre — les deux doivent coïncider (F19).</li>
+      <li>Si un payoff change dans l'énoncé : ne recalcule que l'équation <em>de l'autre
+          joueur</em>, et commente le paradoxe.</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 7 — La condition de soutien d'une collusion</div>
+    <ol>
+      <li>Résous d'abord le jeu <strong>joué une fois</strong> : dominance, équilibre, unicité.
+          C'est lui qui donne le profit de punition.</li>
+      <li>Nomme les trois nombres avant tout calcul : \( \Pi^{\text{coop}} \) (8),
+          \( \Pi^{\text{dev}} \) (14), \( \Pi^{\text{pun}} \) (4).</li>
+      <li>Coopération éternelle : \( \tfrac{\Pi^{\text{coop}}}{1-\delta} \). Déviation : la
+          tentation une fois, puis la punition <strong>à partir de la période suivante</strong>,
+          d'où le \( \delta \) (F16).</li>
+      <li>Pose « coopérer ≥ dévier », multiplie par \( (1-\delta) &gt; 0 \) en disant pourquoi
+          l'inégalité ne se retourne pas, isole \( \delta \), encadre.</li>
+      <li>Conclus par la symétrie : le même calcul vaut pour l'autre joueur, donc (grim, grim) est
+          un équilibre.</li>
+      <li>Variante « détection retardée » : la tentation dure \( n \) périodes et la punition
+          commence en \( \delta^n \) ; compare la nouvelle condition à l'ancienne et interprète
+          (F17).</li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe 8 — Résoudre un duopole de Stackelberg</div>
+    <ol>
+      <li>Écris \( \pi_i = (p - c_i)q_i \) avec \( p = a - q_1 - q_2 \), et développe.</li>
+      <li>Commence par le <strong>follower</strong> (c'est de l'induction à rebours) : dérive
+          \( \pi_2 \) en \( q_2 \), \( q_1 \) tenu pour constant.</li>
+      <li>Isole la <strong>fonction de réaction</strong> \( q_2^*(q_1) \) : ce n'est pas un nombre,
+          garde \( q_1 \) dedans (F22).</li>
+      <li>Injecte-la dans \( \pi_1 \) — c'est <em>là</em> que se joue l'avantage du leader —
+          simplifie, dérive en \( q_1 \), pose = 0.</li>
+      <li>Redescends : \( q_2^* \), \( Q \), \( p \), les deux profits. Vérifie que
+          \( p &gt; c \).</li>
+      <li>Forme normale réduite : calcule les quatre cases, cherche les équilibres de Nash, puis
+          montre que la stratégie « rigide » n'est pas une meilleure réponse dans le sous-jeu qui
+          suit la quantité du leader (200 contre 225) — d'où un seul ENPS (F23).</li>
+    </ol>
+  </div>
+
+  <hr class="soft">
+
+  <h3>4.1 Le plan de révision des derniers jours</h3>
+
+  <div class="box box-copie">
+    <div class="box-title">Dans quel ordre reprendre les chapitres des deux volumes</div>
+    <p>
+      Cinq jours. L'ordre n'est pas chronologique : il va du plus rentable au moins rentable, et
+      commence par ce qui se <em>calcule</em> — c'est là que les points sont les plus sûrs.
+    </p>
+    <ol>
+      <li><strong>Jour 1 — les maths, rien d'autre.</strong> Chapitre 0 du volume 1, puis chapitre 6
+          de celui-ci. Dériver \( \sqrt{a+bx} \), \( \ln x \), \( x^2 \) ; poser une CPO ; résoudre
+          un système 2×2 ; sommer une série géométrique. Si cette journée n'est pas solide, les
+          suivantes s'effondrent.</li>
+      <li><strong>Jour 2 — la décision individuelle.</strong> Matin : le risque (chapitre 2 du
+          volume 1, puis chapitres 8 et 13) — la chaîne VMA → \( U \) → EC → PRM et le montant
+          \( A^* \). Après-midi : le self-contrôle (chapitres 6 et 7) — \( U_0 \) contre
+          \( U_1 \), naïf contre sophistiqué.</li>
+      <li><strong>Jour 3 — les jeux, première moitié.</strong> Matin : jeux simultanés
+          (chapitre 3 du volume 1). Après-midi : stratégies mixtes (chapitre 15) et jeux bayésiens
+          (chapitres 14 et 11). Ce sont les chapitres où l'on perd le plus de points par simple
+          étourderie.</li>
+      <li><strong>Jour 4 — les jeux, seconde moitié.</strong> Matin : séquentiels, arbres, ENPS,
+          menaces non crédibles (chapitres 9 et 16). Après-midi : jeux répétés et collusion
+          (chapitre 5 du volume 1, puis chapitre 10), avec les deux versions de la condition de
+          soutien.</li>
+      <li><strong>Jour 5 — le Lagrangien et le tour de piste.</strong> Matin : chapitre 12 en
+          entier, la question la plus « procédurale » des deux examens. Après-midi : refais les
+          deux examens en conditions réelles, montre en main, sans les corrigés. Le soir : relis
+          uniquement ce chapitre-ci.</li>
+    </ol>
+    <p>
+      <strong>Si tu n'as que deux jours :</strong> jour 1 = points 1 et 2 ; jour 2 = points 3 et 4,
+      en remplaçant l'examen complet par les seules questions de jeux.
+    </p>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Par cœur d'un côté, par raisonnement de l'autre</div>
+    <p><strong>À savoir par cœur (ça tient sur une carte) :</strong></p>
+    <ul>
+      <li>\( (x^n)' = nx^{n-1} \) ; \( (\sqrt{x})' = \tfrac{1}{2\sqrt{x}} \) ;
+          \( (\ln x)' = \tfrac{1}{x} \) ; la règle de la chaîne.</li>
+      <li>\( 1 + \delta + \delta^2 + \dots = \tfrac{1}{1-\delta} \) et
+          \( \delta + \delta^2 + \dots = \tfrac{\delta}{1-\delta} \).</li>
+      <li>La chaîne du risque VMA → \( U \) → \( u(EC) = U \) → \( \mathrm{PRM} \), et
+          « aversion ⇔ \( u \) concave ⇔ \( u'' &lt; 0 \) ⇔ \( \mathrm{PRM} &gt; 0 \) ».</li>
+      <li>\( \mathcal{L} = U - \lambda(\text{dépense} - \text{ressources}) \), et « autant de CPO
+          que de variables, plus celle en \( \lambda \) ».</li>
+      <li>Le comptage des stratégies : \( (\#\text{actions})^{\,\#\text{nœuds ou types}} \).</li>
+      <li>La condition de collusion \( \tfrac{\Pi^{\text{coop}}}{1-\delta} \ge \Pi^{\text{dev}} +
+          \tfrac{\delta\Pi^{\text{pun}}}{1-\delta} \).</li>
+      <li>Dix définitions à réciter en deux phrases : Nash, ENPS, sous-jeu, menace non crédible,
+          type, croyance, commitment device, effet de dotation, cadrage étroit, domination de
+          Pareto.</li>
+    </ul>
+    <p><strong>À retrouver par raisonnement (n'encombre pas ta mémoire) :</strong></p>
+    <ul>
+      <li>Les résultats de Stackelberg : quatre lignes de calcul les reconstruisent. Apprends la
+          <em>procédure</em>, pas les nombres.</li>
+      <li>\( l^* = 4/(s(1-t)) \), les \( k \) du grimpeur (12, 10, 6, 4), les valeurs de \( p^* \)
+          et \( q^* \), les seuils de \( \delta \) : tous dépendent des chiffres de l'énoncé et
+          sortent en trois lignes.</li>
+      <li>Les intuitions économiques : elles se lisent dans la formule. « La taxe baisse le salaire
+          net, qui est le coût d'opportunité du loisir » se voit directement dans
+          \( l^* = 4/(s(1-t)) \).</li>
+    </ul>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">La demi-heure avant, et les cinq dernières minutes</div>
+    <p>
+      <strong>Avant :</strong> relis uniquement la partie 3 (le formulaire) et l'arbre
+      d'aiguillage. Ne commence aucun exercice neuf — à ce stade, une difficulté nouvelle ne
+      t'apprend plus rien et te démoralise. <strong>Pendant :</strong> lis les cinq questions avant
+      d'écrire une ligne et commence par celle que tu sais faire ; les points sont additifs,
+      l'ordre est sans importance pour le correcteur.
+    </p>
+    <p>
+      <strong>Les cinq dernières minutes :</strong> vérifie que chaque résultat encadré a son unité
+      (euros, séances, heures, unités produites) ; que chaque stratégie écrite est un
+      <em>plan complet</em> ; que chaque « expliquez » a bien reçu ses trois à cinq lignes de
+      français ; et qu'aucune ligne pointillée n'est restée vide — même une réponse partielle
+      rapporte.
+    </p>
+  </div>
+
+  <h3>4.2 Les dix erreurs qui coûtent le plus de points</h3>
+
+  <div class="box box-piege">
+    <div class="box-title">Le classement, du plus cher au moins cher</div>
+    <ol>
+      <li><strong>Écrire une action au lieu d'une stratégie.</strong> « B joue I », « Maxime
+          travaille » : zéro point. Une stratégie couvre <em>tous</em> les nœuds ou <em>tous</em>
+          les types. Jusqu'à 6 points par question.</li>
+      <li><strong>Oublier le facteur intérieur en dérivant une racine.</strong>
+          \( \bigl(\sqrt{900+3A}\bigr)' = \tfrac{3}{2\sqrt{900+3A}} \). Sans le 3, toute la
+          question s'écroule.</li>
+      <li><strong>Oublier le \( \delta \) devant la punition.</strong> C'est
+          \( \tfrac{\delta\Pi^{\text{pun}}}{1-\delta} \), jamais
+          \( \tfrac{\Pi^{\text{pun}}}{1-\delta} \) : la punition commence la période suivante.</li>
+      <li><strong>Croiser les équations d'indifférence.</strong> L'indifférence du joueur ligne
+          donne \( q^* \), celle de la colonne donne \( p^* \). Le barème retire 3 points.</li>
+      <li><strong>Comparer deux options au même \( k \)</strong> en self-contrôle. Chaque option a
+          son propre nombre de séances : 6 avec abonnement, 4 sans.</li>
+      <li><strong>Confondre \( \beta \) et \( \hat\beta \).</strong> Le naïf agit avec \( \beta \)
+          mais planifie avec \( \hat\beta = 1 \). Utiliser \( \beta \) partout transforme le naïf
+          en sophistiqué.</li>
+      <li><strong>Lire le mauvais payoff dans un jeu à trois joueurs.</strong> Au nœud de B, c'est
+          le <em>troisième</em> nombre. Écris « C ; A ; B » en marge avant de commencer.</li>
+      <li><strong>Substituer \( M(t) \) par sa formule de financement</strong> dans la contrainte
+          individuelle : ce serait prêter au travailleur un pouvoir sur la caisse commune qu'il
+          n'a pas.</li>
+      <li><strong>Confondre « VMA du pari » et « VMA de la richesse finale ».</strong> 22,50 € et
+          422,50 € : la différence est exactement la richesse initiale.</li>
+      <li><strong>Conclure sans phrase.</strong> Un nombre encadré sans unité, sans interprétation
+          et sans réponse explicite (« oui, il accepte », « non, aucune allocation ne domine »)
+          laisse des points sur la table : les barèmes en réservent 1 à 4 par sous-question.</li>
+    </ol>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Un dernier mot</div>
+    <p>
+      Regarde ce que tu tiens : deux examens complets, cinq questions chacun, et tu sais désormais
+      nommer chaque objet qui s'y trouve. Il y a quelques semaines, « ENPS », « Lagrangien » et
+      « biais du présent » n'étaient que des sons ; ce sont maintenant des recettes numérotées.
+    </p>
+    <p>
+      Aucune de ces questions ne demande d'invention. Toutes demandent la même chose : reconnaître
+      le motif, sortir la bonne formule, décoder les symboles, calculer proprement, conclure par
+      une phrase en français. Alors le jour J : lis les cinq questions, respire, commence par celle
+      que tu préfères, et écris tout ce que tu sais. Bon courage.
+    </p>
+  </div>
+</section>
+</body></html>

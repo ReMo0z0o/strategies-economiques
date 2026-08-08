@@ -1,0 +1,2923 @@
+<section class="chapter">
+  <div class="chapter-tag">Chapitre 7 — Examen n° 2, Question 1 · 50 points</div>
+  <h1>La salle d'escalade de Jambes : vouloir grimper douze fois et n'y aller que six</h1>
+  <p class="chapter-intro">
+    Un grimpeur débutant, deux tarifs, trois périodes et un seul problème : il <em>veut</em> une
+    chose aujourd'hui et il en <em>fera</em> une autre demain. Six sous-questions, 50 points — c'est
+    la question la plus lourde de l'examen n° 2. On part vraiment de zéro : tu n'as jamais entendu
+    les mots « bien d'investissement », « biais du présent », « prix marginal », « naïf »,
+    « sophistiqué », « commitment device » ? Parfait. Ils sont tous construits ici, un par un, avec
+    des exemples de la vie de tous les jours, et aucun calcul n'est écrit sans être justifié ligne
+    par ligne.
+  </p>
+
+  <div class="box box-methode">
+    <div class="box-title">Comment lire ce chapitre</div>
+    <p>
+      Chaque sous-question suit toujours le même moule, dans cet ordre :
+      <strong>(1)</strong> l'énoncé rappelé mot pour mot, avec son barème ;
+      <strong>(2)</strong> « traduisons la question en français simple » : ce qu'on te demande
+      vraiment, mot par mot ; <strong>(3)</strong> « le cours dont tu as besoin » : le mini-cours
+      complet, depuis zéro ; <strong>(4)</strong> la résolution pas à pas, où <em>aucune</em> ligne
+      de calcul n'est écrite sans être justifiée ; <strong>(5)</strong> l'encadré vert « ce qu'il
+      fallait écrire sur la copie » ; <strong>(6)</strong> les pièges et le réflexe de méthode à
+      retenir.
+    </p>
+    <p>
+      Avant les six sous-questions, il y a une longue <strong>section 3</strong> : le socle commun.
+      C'est le vrai cours de ce chapitre. Ne la saute pas : les six réponses en découlent toutes.
+      Si tu as déjà lu le <strong>chapitre 6</strong> (la nouvelle boîte à outils), tu y as vu le
+      modèle \( \beta\text{–}\delta \) en général ; ici on le réexplique quand même sur place, avec
+      les chiffres de cet énoncé précis, pour que tu n'aies jamais à feuilleter en arrière.
+    </p>
+  </div>
+
+  <h2>1. L'énoncé, tel qu'il tombe à l'examen</h2>
+
+  <p>
+    Voici le texte exact. Lis-le une fois sans chercher à comprendre : c'est normal de ne rien
+    saisir au premier passage. On le démonte mot par mot juste après.
+  </p>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 1 (50 points), le décor commun</div>
+    <p>
+      Une salle d'escalade de bloc vient d'ouvrir à Jambes. Elle propose deux tarifications à un
+      grimpeur débutant : soit il paie un prix \( p = 2 \) pour chacune de ses séances, soit il
+      prend un abonnement au prix \( C = 16 \) et peut alors grimper autant de fois qu'il le
+      désire. Il y a trois périodes : la période 0 durant laquelle le grimpeur décide de prendre
+      un abonnement ou non, la période 1 durant laquelle il effectue un nombre \( k \) de séances,
+      et la période 2 durant laquelle il reçoit un bénéfice (santé et progression) \( b = 12 \)
+      pour chaque séance effectuée en période 1.
+    </p>
+    <p>
+      Le grimpeur a un problème de self-contrôle. Ses préférences en période 0 sur le nombre de
+      séances et sur le fait de prendre un abonnement (\( a = 1 \)) ou pas (\( a = 0 \)) sont
+      représentées par
+    </p>
+    <p>\[ U_0(a,k) = \underbrace{-\beta\frac{k^2}{2} - \beta\bigl[aC + (1-a)pk\bigr]}_{\text{période 1}} + \underbrace{\beta b k}_{\text{période 2}} \]</p>
+    <p>
+      où le premier terme capture le coût d'effort des séances (l'escalade est un <em>bien
+      d'investissement</em>) et où le biais de self-contrôle est \( \beta = \tfrac{1}{2} \). Étant
+      donné son problème de self-contrôle, ses préférences en période 1 sont représentées par
+    </p>
+    <p>\[ U_1(a,k) = \underbrace{-\frac{k^2}{2} - \bigl[aC + (1-a)pk\bigr]}_{\text{période 1}} + \underbrace{\beta b k}_{\text{période 2}} \]</p>
+    <p>
+      où \( a \) est fixé à la valeur choisie en période 0.
+    </p>
+    <p>
+      <em>Note —</em> On suppose un facteur d'escompte \( \delta = 1 \). \( U_0 \) suppose que le
+      montant dû à la salle est payé en période 1 : le self-contrôle n'affecte que la décision de
+      grimper, pas l'allocation des coûts monétaires dans le temps.
+    </p>
+  </div>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — les six sous-questions et leur barème</div>
+    <p>
+      <strong>1.1)</strong> En période 0, combien de séances le grimpeur souhaite-t-il effectuer
+      s'il prend un abonnement (\( a = 1 \)) ? Détaillez votre calcul. <em>(8 points)</em>
+    </p>
+    <p>
+      <strong>1.2)</strong> En période 0, combien de séances souhaite-t-il effectuer s'il ne prend
+      pas d'abonnement (\( a = 0 \)) ? <em>(8 points)</em>
+    </p>
+    <p>
+      <strong>1.3)</strong> Si le grimpeur est naïf à propos de son problème de self-contrôle
+      (\( \hat\beta = 1 \)), va-t-il prendre un abonnement en période 0 ? Détaillez votre
+      raisonnement. <em>(10 points)</em>
+    </p>
+    <p>
+      <strong>1.4)</strong> Étant donné le choix tarifaire effectué à la question 1.3, combien de
+      séances le grimpeur naïf va-t-il <em>réellement</em> effectuer en période 1 ?
+      <em>(8 points)</em>
+    </p>
+    <p>
+      <strong>1.5)</strong> Si le grimpeur est sophistiqué à propos de son problème de
+      self-contrôle (\( \hat\beta = \beta \)), va-t-il prendre un abonnement en période 0 ?
+      Détaillez votre raisonnement. <em>(10 points)</em>
+    </p>
+    <p>
+      <strong>1.6)</strong> Pour le nombre de séances que le grimpeur sophistiqué effectuera
+      réellement, l'abonnement est-il l'option tarifaire la moins chère ? Expliquez pourquoi le
+      sophistiqué choisit néanmoins cette option (3 à 5 lignes). <em>(6 points)</em>
+    </p>
+  </div>
+
+  <p>
+    Si en lisant ça tu as ressenti un vide total, c'est exactement pour ça que ce chapitre existe.
+    Commence par regarder le trajet complet qu'on va parcourir. Les six sous-questions ne sont pas
+    six exercices indépendants : ce sont six étapes d'une seule histoire, et chacune se sert de la
+    précédente.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 540 260" width="100%" style="max-width:12.5cm" role="img"
+         aria-label="Carte des six sous-questions : 1.1 et 1.2 donnent les nombres de seances souhaites 12 et 10, 1.3 le naif prend l'abonnement, 1.4 il fait reellement 6 seances, 1.5 le sophistique prend aussi l'abonnement, 1.6 l'abonnement n'est pas le moins cher mais sert de commitment device">
+      <g fill="none" stroke="#111827" stroke-width="1.3">
+        <rect x="14" y="30" width="150" height="76" rx="4"/>
+        <rect x="196" y="30" width="150" height="76" rx="4"/>
+        <rect x="378" y="30" width="148" height="76" rx="4"/>
+        <rect x="14" y="152" width="150" height="76" rx="4"/>
+        <rect x="196" y="152" width="150" height="76" rx="4"/>
+        <rect x="378" y="152" width="148" height="76" rx="4"/>
+      </g>
+      <g stroke="#111827" stroke-width="1.5" fill="#111827">
+        <path d="M166 68 L184 68"/><path d="M180 64 L190 68 L180 72 Z"/>
+        <path d="M348 68 L366 68"/><path d="M362 64 L372 68 L362 72 Z"/>
+        <path d="M166 190 L184 190"/><path d="M180 186 L190 190 L180 194 Z"/>
+        <path d="M348 190 L366 190"/><path d="M362 186 L372 190 L362 194 Z"/>
+        <path d="M452 110 L452 132 L90 132 L90 148"/><path d="M86 140 L90 150 L94 140 Z"/>
+      </g>
+      <g font-size="12.5" text-anchor="middle">
+        <text x="89" y="48" font-weight="bold">1.1 et 1.2</text>
+        <text x="89" y="67">Ce qu'il SOUHAITE</text>
+        <text x="89" y="84" font-weight="bold">12 avec abo.</text>
+        <text x="89" y="100" font-weight="bold">10 sans abo.</text>
+
+        <text x="271" y="48" font-weight="bold">1.3 — le naïf</text>
+        <text x="271" y="67">28 contre 25</text>
+        <text x="271" y="84" font-weight="bold">il prend</text>
+        <text x="271" y="100" font-weight="bold">l'abonnement</text>
+
+        <text x="452" y="48" font-weight="bold">1.4 — la réalité</text>
+        <text x="452" y="67">au moment d'agir</text>
+        <text x="452" y="84" font-weight="bold">il n'y va que</text>
+        <text x="452" y="100" font-weight="bold">6 fois</text>
+
+        <text x="89" y="170" font-weight="bold">1.5 — le sophistiqué</text>
+        <text x="89" y="189">il sait qu'il fera 6</text>
+        <text x="89" y="206">(ou 4 sans abo.)</text>
+        <text x="89" y="222" font-weight="bold">19 contre 16</text>
+
+        <text x="271" y="170" font-weight="bold">1.5 — conclusion</text>
+        <text x="271" y="189">il prend</text>
+        <text x="271" y="206" font-weight="bold">aussi</text>
+        <text x="271" y="222" font-weight="bold">l'abonnement</text>
+
+        <text x="452" y="170" font-weight="bold">1.6 — pourquoi ?</text>
+        <text x="452" y="189">16 &gt; 12 : pas</text>
+        <text x="452" y="206">le moins cher, mais</text>
+        <text x="452" y="222" font-weight="bold">il se lie les mains</text>
+      </g>
+      <text x="270" y="248" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        chaque case se sert du résultat de la précédente — on lit de gauche à droite, puis on redescend
+      </text>
+    </svg>
+    <figcaption>
+      Figure 1 — La carte de la question 1. Toute l'histoire tient en une phrase : il souhaite
+      12 séances, il n'en fera que 6, et il paie l'abonnement <em>exprès</em> pour ne pas tomber
+      encore plus bas.
+    </figcaption>
+  </figure>
+
+  <h2>2. Décodage de l'énoncé, mot par mot</h2>
+
+  <p>
+    Avant tout calcul, on traduit l'énoncé en français ordinaire. Chaque expression est un mot de
+    code du cours ; en voici la clé, dans l'ordre où les mots apparaissent.
+  </p>
+
+  <dl class="lexique">
+    <dt>« Une salle d'escalade de <em>bloc</em> »</dt>
+    <dd>
+      Aucune importance économique : c'est juste le décor. Le bloc est de l'escalade sans corde, sur
+      des murs de 4 mètres. Ce qui compte, c'est qu'il s'agit d'une activité <strong>fatigante
+      maintenant</strong> et <strong>bénéfique plus tard</strong>. Retiens ça : c'est le cœur du
+      problème.
+    </dd>
+
+    <dt>« il paie un prix \( p = 2 \) pour <em>chacune</em> de ses séances »</dt>
+    <dd>
+      C'est le tarif <strong>à l'unité</strong>. Le mot « chacune » est essentiel : si le grimpeur
+      fait 5 séances il paie \( 2 \times 5 = 10 \) ; s'il en fait 7 il paie 14. La dépense
+      <em>augmente avec le nombre de séances</em>. On note ce coût total \( p\,k \), qui se lit
+      « p fois k ».
+    </dd>
+
+    <dt>« soit il prend un abonnement au prix \( C = 16 \) »</dt>
+    <dd>
+      C'est le tarif <strong>forfaitaire</strong>. Un <span class="term">forfait</span> est une
+      somme qu'on paie une fois, quelle que soit la quantité consommée. La lettre \( C \) vient de
+      l'anglais <em>cost</em> (coût). Attention : \( C = 16 \) n'est pas « 16 euros par séance »,
+      c'est 16 euros en tout.
+    </dd>
+
+    <dt>« et peut alors grimper <em>autant de fois qu'il le désire</em> »</dt>
+    <dd>
+      Traduction économique : une fois l'abonnement payé, la séance suivante est
+      <strong>gratuite</strong>. C'est la phrase la plus importante de tout l'énoncé, et on lui
+      consacre toute la section 3.7. Elle veut dire que le <em>prix marginal</em> d'une séance
+      tombe à zéro.
+    </dd>
+
+    <dt>« Il y a trois périodes »</dt>
+    <dd>
+      Une <span class="term">période</span>, ici, n'est pas une durée précise (un jour, un mois) :
+      c'est un <strong>moment de décision ou de conséquence</strong>. Période 0 = « je choisis mon
+      tarif ». Période 1 = « je grimpe et je paie ». Période 2 = « je récolte les bienfaits ».
+      Trois moments, dans cet ordre, sans retour en arrière.
+    </dd>
+
+    <dt>« la période 1 durant laquelle il effectue un nombre \( k \) de séances »</dt>
+    <dd>
+      \( k \) est la <span class="term">variable de décision</span> : c'est le nombre que le
+      grimpeur choisit, et c'est ce qu'on cherche dans quatre des six sous-questions. Le modèle
+      autorise \( k \) à prendre n'importe quelle valeur positive (y compris 6,5) ; ici tous les
+      résultats tomberont juste sur des entiers, ce qui est un bon signe de contrôle.
+    </dd>
+
+    <dt>« il reçoit un bénéfice (santé et progression) \( b = 12 \) pour <em>chaque</em> séance »</dt>
+    <dd>
+      Encore le mot « chaque » : le bénéfice total vaut \( b \times k = 12k \). S'il grimpe 6 fois,
+      il récolte \( 12 \times 6 = 72 \). Ce bénéfice n'est pas de l'argent : c'est du bien-être
+      (être en forme, progresser). Il est exprimé dans la même unité que le reste de la formule,
+      des <em>points d'utilité</em>.
+    </dd>
+
+    <dt>« Le grimpeur a un <em>problème de self-contrôle</em> »</dt>
+    <dd>
+      C'est l'annonce du sujet. Un <span class="term">problème de self-contrôle</span>, dans ce
+      cours, a une définition précise et étroite : <strong>ce que la personne veut faire demain
+      change quand demain arrive</strong>, alors que rien de nouveau ne s'est produit. Ce n'est pas
+      de la paresse ni de l'irrationalité : c'est un décalage entre deux moments. Section 3.6.
+    </dd>
+
+    <dt>« ses <em>préférences</em> … sont représentées par \( U_0(a,k) \) »</dt>
+    <dd>
+      « Représentées par » signifie : on a réussi à écrire ses goûts sous forme de formule, de sorte
+      que <strong>plus le nombre sorti par la formule est grand, plus la personne est
+      contente</strong>. Ce nombre s'appelle l'<span class="term">utilité</span>. Choisir devient
+      alors un problème de mathématiques : trouver ce qui rend la formule la plus grande possible.
+    </dd>
+
+    <dt>« sur le fait de prendre un abonnement (\( a = 1 \)) ou pas (\( a = 0 \)) »</dt>
+    <dd>
+      \( a \) est une <span class="term">variable indicatrice</span> (on dit aussi « binaire ») :
+      elle ne peut valoir que 0 ou 1, comme un interrupteur. \( a = 1 \) veut dire « oui,
+      abonnement », \( a = 0 \) veut dire « non, pas d'abonnement ». Son seul rôle est
+      d'<strong>allumer ou d'éteindre</strong> des morceaux de la formule ; on le voit en détail en
+      3.3.
+    </dd>
+
+    <dt>« le premier terme capture le coût d'effort des séances »</dt>
+    <dd>
+      Le premier terme est \( -\beta\frac{k^2}{2} \). « Coût d'effort » = la fatigue, les
+      courbatures, le temps passé, la flemme de préparer son sac. Le signe moins dit que ça
+      <em>diminue</em> le bien-être. Pourquoi \( k^2/2 \) et pas simplement \( k \) ? Section 3.4,
+      c'est une vraie question et elle a une vraie réponse.
+    </dd>
+
+    <dt>« l'escalade est un <em>bien d'investissement</em> »</dt>
+    <dd>
+      Vocabulaire officiel du cours. Un <span class="term">bien d'investissement</span> coûte
+      maintenant et rapporte plus tard (sport, épargne, révisions). Son contraire est le
+      <span class="term">bien de tentation</span>, qui rapporte maintenant et coûte plus tard
+      (chips, alcool, Netflix à 2 h du matin). Section 3.2.
+    </dd>
+
+    <dt>« le biais de self-contrôle est \( \beta = \tfrac{1}{2} \) »</dt>
+    <dd>
+      \( \beta \) est la lettre grecque « bêta ». C'est un <strong>coefficient de rabotage</strong>
+      appliqué à tout ce qui est futur. Avec \( \beta = \tfrac{1}{2} \), tout ce qui arrive plus
+      tard ne compte plus que pour <strong>moitié</strong> dans la décision du moment. Un
+      \( \beta \) petit = un gros biais ; \( \beta = 1 \) = aucun biais, personne parfaitement
+      rationnelle.
+    </dd>
+
+    <dt>« ses préférences en période 1 sont représentées par \( U_1(a,k) \) »</dt>
+    <dd>
+      Voilà le vrai piège de l'énoncé : <strong>il y a deux fonctions d'utilité, pas une</strong>.
+      \( U_0 \) décrit ce que le grimpeur veut <em>quand il est en période 0</em>. \( U_1 \) décrit
+      ce qu'il veut <em>quand il est en période 1</em>. Elles ne se ressemblent presque, mais pas
+      tout à fait — et c'est de ce « presque » que sort toute la question.
+    </dd>
+
+    <dt>« où \( a \) est fixé à la valeur choisie en période 0 »</dt>
+    <dd>
+      En période 1, le tarif n'est plus une décision : c'est un fait accompli. Il a déjà signé (ou
+      pas). Il ne lui reste qu'une seule variable à choisir : \( k \). C'est ce qui rend la question
+      1.4 facile une fois qu'on l'a compris.
+    </dd>
+
+    <dt>« On suppose un facteur d'escompte \( \delta = 1 \) »</dt>
+    <dd>
+      \( \delta \) est la lettre grecque « delta ». C'est l'impatience <em>normale</em>, celle de
+      tout le monde : demain vaut un peu moins qu'aujourd'hui (voir chapitre 6). Poser
+      \( \delta = 1 \) veut dire : <strong>on la met de côté</strong>. Un cadeau, en réalité : la
+      seule déformation du temps qui reste dans le problème est \( \beta \), le biais. Tu ne verras
+      donc jamais de \( \delta \) dans les calculs de ce chapitre.
+    </dd>
+
+    <dt>« \( U_0 \) suppose que le montant dû à la salle est payé en période 1 »</dt>
+    <dd>
+      Cette note technique explique pourquoi le morceau « argent » porte un \( \beta \) dans
+      \( U_0 \) (vu de la période 0, payer est un événement futur) et n'en porte pas dans
+      \( U_1 \) (vu de la période 1, payer c'est maintenant). Sans elle, tu pourrais te demander si
+      l'abonnement se paie en 0 ou en 1. Réponse : en période 1, comme tout le reste.
+    </dd>
+  </dl>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel — lire les notations à voix haute</div>
+    <p>
+      Une notation qu'on ne sait pas prononcer reste un mur. Voici comment lire toutes celles de
+      cette question :
+    </p>
+    <ul>
+      <li>\( k \) se lit « ka » : le nombre de séances. C'est <em>la</em> inconnue du problème.</li>
+      <li>\( p \) se lit « pé » : le prix d'une séance à l'unité, ici 2.</li>
+      <li>\( C \) se lit « cé » : le prix de l'abonnement, ici 16.</li>
+      <li>\( b \) se lit « bé » : le bénéfice par séance en période 2, ici 12.</li>
+      <li>\( a \) se lit « a » : l'interrupteur abonnement, 0 ou 1.</li>
+      <li>\( \beta \) se lit « bêta » : le biais de self-contrôle, ici \( \tfrac{1}{2} \).</li>
+      <li>\( \hat\beta \) se lit « bêta chapeau » : ce que le grimpeur <em>croit</em> être son
+        propre bêta. Le chapeau signale toujours une <em>estimation</em>, une croyance, pas la
+        réalité.</li>
+      <li>\( \delta \) se lit « delta » : le facteur d'escompte, ici 1 (donc neutre).</li>
+      <li>\( U_0(a,k) \) se lit « u zéro de a, k » : l'utilité vue depuis la période 0, quand on a
+        choisi le tarif \( a \) et le nombre de séances \( k \).</li>
+      <li>\( U_1(a,k) \) se lit « u un de a, k » : la même chose, mais vue depuis la période 1.</li>
+      <li>\( k^* \) se lit « ka étoile » ou « ka optimal » : la <em>meilleure</em> valeur de
+        \( k \), celle qui rend l'utilité maximale.</li>
+      <li>\( \dfrac{\partial U_0}{\partial k} \) se lit « d rond U zéro sur d rond k » : la dérivée
+        de \( U_0 \) par rapport à \( k \). C'est expliqué en 3.10, entièrement.</li>
+      <li>\( \tfrac{k^2}{2} \) se lit « ka au carré sur deux ».</li>
+    </ul>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Le piège de lecture n° 1, avant même de commencer</div>
+    <p>
+      Les lettres \( p \), \( C \), \( b \), \( k \) désignent des choses <strong>différentes</strong>
+      dans d'autres chapitres de ce cours (\( C \) était la couverture d'assurance au volume 1,
+      \( p \) était un prix d'assurance…). Ne récite pas de formule apprise ailleurs : ici,
+      <strong>seules comptent les définitions données par cet énoncé</strong>. Reprends-les à
+      chaque fois, en tête de copie. Ça coûte trente secondes et ça sauve la question.
+    </p>
+  </div>
+
+  <hr class="soft">
+  <h2>3. Le socle commun : le cours dont les six questions ont besoin</h2>
+
+  <p>
+    Cette section est le vrai cours de ce chapitre. Elle construit, depuis rien, les huit idées
+    dont tu auras besoin partout ensuite. Lis-la lentement, dans l'ordre. À la fin, les six
+    sous-questions deviennent presque mécaniques.
+  </p>
+
+  <h3>3.1 Le décor : trois périodes, trois choses différentes</h3>
+
+  <p>
+    La toute première chose à faire, sur ta copie comme dans ta tête, est de dessiner la frise du
+    temps. Elle répond à trois questions : <em>quand décide-t-il ?</em>, <em>quand agit-il ?</em>,
+    <em>quand en profite-t-il ?</em>
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 540 215" width="100%" style="max-width:12.5cm" role="img"
+         aria-label="Frise des trois periodes : en periode 0 il choisit son tarif, en periode 1 il grimpe k fois, supporte le cout d'effort et paie, en periode 2 il recoit 12 fois k de benefice">
+      <line x1="20" y1="52" x2="520" y2="52" stroke="#111827" stroke-width="1.6"/>
+      <path d="M512 47 L524 52 L512 57 Z" fill="#111827"/>
+      <g stroke="#111827" stroke-width="1.6">
+        <line x1="90" y1="44" x2="90" y2="60"/>
+        <line x1="272" y1="44" x2="272" y2="60"/>
+        <line x1="454" y1="44" x2="454" y2="60"/>
+      </g>
+      <g font-size="13" text-anchor="middle" font-weight="bold">
+        <text x="90" y="34">Période 0</text>
+        <text x="272" y="34">Période 1</text>
+        <text x="454" y="34">Période 2</text>
+      </g>
+      <g fill="none" stroke="#111827" stroke-width="1.3">
+        <rect x="18" y="72" width="144" height="104" rx="4"/>
+        <rect x="200" y="72" width="144" height="104" rx="4"/>
+        <rect x="382" y="72" width="144" height="104" rx="4"/>
+      </g>
+      <g font-size="12" text-anchor="middle">
+        <text x="90" y="92" font-weight="bold">Il DÉCIDE</text>
+        <text x="90" y="112">abonnement ?</text>
+        <text x="90" y="130">a = 1 ou a = 0</text>
+        <text x="90" y="152">rien n'est encore</text>
+        <text x="90" y="168">payé ni fait</text>
+
+        <text x="272" y="92" font-weight="bold">Il AGIT</text>
+        <text x="272" y="112">il grimpe k fois</text>
+        <text x="272" y="130">effort : k²/2</text>
+        <text x="272" y="152">il paie C = 16</text>
+        <text x="272" y="168">ou 2k</text>
+
+        <text x="454" y="92" font-weight="bold">Il RÉCOLTE</text>
+        <text x="454" y="112">santé, progrès</text>
+        <text x="454" y="130">b × k = 12k</text>
+        <text x="454" y="152">aucune décision</text>
+        <text x="454" y="168">ici</text>
+      </g>
+      <text x="270" y="200" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        les COÛTS sont en période 1 · le BÉNÉFICE est en période 2 : voilà pourquoi c'est un bien d'investissement
+      </text>
+    </svg>
+    <figcaption>
+      Figure 2 — La frise des trois périodes. Deux décisions seulement dans toute l'histoire :
+      \( a \) en période 0, puis \( k \) en période 1. La période 2 ne fait qu'encaisser.
+    </figcaption>
+  </figure>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi trois périodes et pas deux ?</div>
+    <p>
+      Parce qu'il faut séparer trois choses qui, dans la vraie vie, se confondent : le moment où on
+      <em>projette</em> (période 0), le moment où on <em>fait</em> (période 1), et le moment où on
+      <em>en profite</em> (période 2). Tout le problème de self-contrôle naît du fait que le
+      grimpeur de la période 0 et celui de la période 1 ne voient pas la période 2 de la même
+      façon : pour le premier, elle est « loin » comme le reste ; pour le second, elle est
+      <strong>la seule chose qui reste au loin</strong>.
+    </p>
+  </div>
+
+  <h3>3.2 Bien d'investissement contre bien de tentation</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — bien d'investissement / bien de tentation</div>
+    <p>
+      Imagine une activité dont l'effet s'étale sur deux moments : elle apporte \( b_1 \) tout de
+      suite et \( b_2 \) plus tard (ces nombres pouvant être négatifs).
+    </p>
+    <ul>
+      <li>Un <span class="term">bien d'investissement</span> a \( b_1 &lt; 0 \) et \( b_2 &gt; 0 \) :
+        <strong>ça coûte maintenant, ça rapporte plus tard</strong>. Sport, épargne, révisions,
+        dentiste, apprendre le néerlandais.</li>
+      <li>Un <span class="term">bien de tentation</span> a \( b_1 &gt; 0 \) et \( b_2 &lt; 0 \) :
+        <strong>ça rapporte maintenant, ça coûte plus tard</strong>. Chips, cigarette, dernier
+        épisode à 2 h du matin, découvert bancaire.</li>
+    </ul>
+    <p>
+      Conséquence du biais du présent (démontrée en 3.5) : les biens d'investissement sont
+      <strong>sous-consommés</strong> (on les repousse), les biens de tentation sont
+      <strong>sur-consommés</strong> (on craque).
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — reconnaître les deux familles en trois secondes</div>
+    <p>
+      Pose-toi la question : « le désagrément vient-il avant ou après le plaisir ? »
+    </p>
+    <ul>
+      <li>Aller courir sous la pluie : désagrément d'abord, forme après →
+        <strong>investissement</strong>.</li>
+      <li>Une deuxième part de tarte : plaisir d'abord, regret après →
+        <strong>tentation</strong>.</li>
+      <li>Réviser un examen en avance : effort d'abord, note après →
+        <strong>investissement</strong>.</li>
+      <li>Une soirée la veille de l'examen : plaisir d'abord, catastrophe après →
+        <strong>tentation</strong>.</li>
+    </ul>
+    <p>
+      Notre salle d'escalade : effort et argent en période 1, santé en période 2. C'est un
+      <strong>bien d'investissement</strong>, et l'énoncé le dit d'ailleurs explicitement. Attends-toi
+      donc à trouver qu'il grimpe <em>moins</em> que ce qu'il souhaitait — jamais plus.
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe de méthode n° 1 — anticiper le sens de la réponse</div>
+    <p>
+      Dès la lecture de l'énoncé, écris en marge : « bien d'investissement ⇒ sous-consommation ⇒
+      \( k_{\text{réel}} &lt; k_{\text{souhaité}} \) ». Si à la fin tu trouves un \( k \) réel
+      <em>plus grand</em> que le \( k \) souhaité, tu as forcément fait une erreur de signe ou
+      placé un \( \beta \) au mauvais endroit. Ce contrôle prend deux secondes et te sauve la moitié
+      de la question.
+    </p>
+  </div>
+
+  <h3>3.3 Décodons \( U_0 \), morceau par morceau</h3>
+
+  <p>
+    Reprenons la formule et coupons-la en tranches. Elle fait peur parce qu'elle est longue, pas
+    parce qu'elle est difficile.
+  </p>
+
+  <p>\[ U_0(a,k) = \underbrace{-\beta\frac{k^2}{2} - \beta\bigl[aC + (1-a)pk\bigr]}_{\text{période 1}} + \underbrace{\beta b k}_{\text{période 2}} \]</p>
+
+  <h4>a) Les accolades \( \underbrace{\ }_{\text{période 1}} \) et \( \underbrace{\ }_{\text{période 2}} \)</h4>
+
+  <p>
+    Ces grandes accolades sous la formule ne sont <strong>pas</strong> des opérations
+    mathématiques : ce sont des étiquettes, comme des post-it. Elles disent seulement
+    « ce paquet-là concerne la période 1 » et « ce paquet-là concerne la période 2 ». Tu peux les
+    effacer sans rien changer au calcul. Elles sont là pour t'aider à voir <em>quand</em> chaque
+    chose se produit — et c'est justement ce qui compte pour comprendre le biais.
+  </p>
+
+  <table class="data">
+    <tr>
+      <th>Morceau</th>
+      <th>Quand ?</th>
+      <th class="left">Ce que ça représente en français</th>
+    </tr>
+    <tr>
+      <td>\( -\beta\dfrac{k^2}{2} \)</td>
+      <td>période 1</td>
+      <td class="left">La fatigue des \( k \) séances. Signe moins : ça fait mal.</td>
+    </tr>
+    <tr>
+      <td>\( -\beta\,aC \)</td>
+      <td>période 1</td>
+      <td class="left">Le prix de l'abonnement, s'il l'a pris (\( a = 1 \)).</td>
+    </tr>
+    <tr>
+      <td>\( -\beta\,(1-a)pk \)</td>
+      <td>période 1</td>
+      <td class="left">Le prix des séances à l'unité, s'il n'a pas d'abonnement (\( a = 0 \)).</td>
+    </tr>
+    <tr>
+      <td>\( +\beta b k \)</td>
+      <td>période 2</td>
+      <td class="left">La santé et la progression récoltées. Signe plus : ça fait du bien.</td>
+    </tr>
+  </table>
+
+  <h4>b) L'interrupteur \( a \) : \( aC + (1-a)pk \)</h4>
+
+  <p>
+    C'est le seul morceau vraiment astucieux de la formule, et il est très simple une fois qu'on l'a
+    vu fonctionner. Ce crochet contient <strong>les deux tarifs à la fois</strong>, et \( a \) sert
+    à n'en laisser passer qu'un.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ a = 1 \;:\quad aC + (1-a)pk = 1 \times C + (1-1) \times pk = C + 0 = C \]
+      <div class="why">
+        Je remplace \( a \) par 1. Le premier morceau devient \( 1 \times C = C \). Le second est
+        multiplié par \( (1 - 1) = 0 \), donc il s'annule entièrement. Il ne reste que le prix de
+        l'abonnement, 16, et <strong>plus aucune trace de \( k \)</strong>.
+      </div>
+    </div>
+    <div class="step">
+      \[ a = 0 \;:\quad aC + (1-a)pk = 0 \times C + (1-0) \times pk = 0 + pk = pk \]
+      <div class="why">
+        Je remplace \( a \) par 0. Le premier morceau est multiplié par 0, il disparaît. Le second
+        est multiplié par \( (1-0) = 1 \), il reste intact. Il ne reste que \( pk = 2k \) : ce qu'il
+        paie dépend maintenant du nombre de séances.
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi les auteurs écrivent-ils ça au lieu de deux formules ?</div>
+    <p>
+      Pour n'écrire qu'une seule fonction au lieu de deux. Le prof pourrait dire : « si abonnement,
+      la dépense est \( C \) ; sinon, elle est \( pk \) ». L'écriture \( aC + (1-a)pk \) dit
+      exactement la même chose en une ligne. C'est une <strong>écriture-valise</strong>, très
+      fréquente en économie. Le réflexe correct, en examen, est de la <em>vider</em> tout de
+      suite : dès qu'on sait si \( a \) vaut 0 ou 1, on réécrit la formule en clair. C'est
+      exactement ce que font les questions 1.1 et 1.2.
+    </p>
+  </div>
+
+  <p>
+    Écrivons donc les deux versions « en clair » de \( U_0 \). Ce sont elles qu'on utilisera :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ U_0(1,k) = -\beta\frac{k^2}{2} - \beta C + \beta b k \]
+      <div class="why">
+        Version <strong>avec abonnement</strong>. Le morceau argent vaut \( \beta C = 0{,}5 \times 16
+        = 8 \), et surtout : il ne contient plus \( k \). Retiens ça, c'est la clé de la question 1.1.
+      </div>
+    </div>
+    <div class="step">
+      \[ U_0(0,k) = -\beta\frac{k^2}{2} - \beta p k + \beta b k \]
+      <div class="why">
+        Version <strong>sans abonnement</strong>. Le morceau argent vaut \( \beta p k \), il contient
+        \( k \) : chaque séance supplémentaire coûte encore 2 euros. C'est la clé de la question 1.2.
+      </div>
+    </div>
+  </div>
+
+  <h3>3.4 Pourquoi le coût d'effort s'écrit-il \( k^2/2 \) ?</h3>
+
+  <p>
+    C'est la question que tout le monde se pose et que personne n'ose poser. Réponse : parce que
+    <strong>la fatigue n'augmente pas régulièrement</strong>. La deuxième séance de la semaine coûte
+    plus que la première ; la sixième coûte beaucoup plus que la deuxième ; la douzième est un
+    supplice.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — coût marginal</div>
+    <p>
+      Le <span class="term">coût marginal</span> d'une séance est <strong>ce que coûte en plus la
+      séance suivante</strong>, quand on en a déjà fait un certain nombre. « Marginal » veut dire,
+      en économie, « d'une unité supplémentaire ». Ce n'est jamais le coût total : c'est le coût du
+      <em>dernier pas</em>.
+    </p>
+    <p>
+      Ce mot va revenir sans arrêt dans ce chapitre, et sous deux formes : le coût marginal
+      d'<em>effort</em> (la fatigue de la séance suivante) et le prix marginal (l'argent de la
+      séance suivante, section 3.7). Ne les confonds pas.
+    </p>
+  </div>
+
+  <p>
+    Calculons le coût marginal de la fonction \( k^2/2 \), séance par séance. Il suffit de faire la
+    différence entre deux valeurs successives.
+  </p>
+
+  <table class="data">
+    <tr>
+      <th>Nombre de séances \( k \)</th>
+      <th>Fatigue totale \( k^2/2 \)</th>
+      <th>Coût de <em>cette</em> séance-là</th>
+    </tr>
+    <tr><td>0</td><td>0</td><td>—</td></tr>
+    <tr><td>1</td><td>\( 1/2 = 0{,}5 \)</td><td>\( 0{,}5 - 0 = 0{,}5 \)</td></tr>
+    <tr><td>2</td><td>\( 4/2 = 2 \)</td><td>\( 2 - 0{,}5 = 1{,}5 \)</td></tr>
+    <tr><td>3</td><td>\( 9/2 = 4{,}5 \)</td><td>\( 4{,}5 - 2 = 2{,}5 \)</td></tr>
+    <tr><td>4</td><td>\( 16/2 = 8 \)</td><td>\( 8 - 4{,}5 = 3{,}5 \)</td></tr>
+    <tr><td>6</td><td>\( 36/2 = 18 \)</td><td>\( 5{,}5 \)</td></tr>
+    <tr><td>10</td><td>\( 100/2 = 50 \)</td><td>\( 9{,}5 \)</td></tr>
+    <tr><td>12</td><td>\( 144/2 = 72 \)</td><td>\( 11{,}5 \)</td></tr>
+  </table>
+
+  <p>
+    Regarde la troisième colonne : 0,5 puis 1,5 puis 2,5 puis 3,5… La \( k \)-ième séance coûte
+    environ \( k \). Autrement dit : <strong>le coût marginal de l'effort est \( k \)</strong>. Ce
+    n'est pas un hasard, c'est exactement ce que donnera la dérivée de \( k^2/2 \) en 3.10.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 540 330" width="100%" style="max-width:12.5cm" role="img"
+         aria-label="Courbe du cout d'effort k carre sur deux : elle part de zero et monte de plus en plus vite, la premiere seance coute 0,5 et la douzieme coute 11,5">
+      <line x1="60" y1="270" x2="510" y2="270" stroke="#111827" stroke-width="1.4"/>
+      <line x1="60" y1="270" x2="60" y2="38" stroke="#111827" stroke-width="1.4"/>
+      <path d="M502 265 L514 270 L502 275 Z" fill="#111827"/>
+      <path d="M55 46 L60 34 L65 46 Z" fill="#111827"/>
+
+      <polyline fill="none" stroke="#111827" stroke-width="2"
+        points="60,270 95,268.5 130,263.8 165,256 200,245.2 235,231.3 270,214.2 305,194 340,170.8 375,144.5 410,115 445,82.5 480,46.8"/>
+
+      <g stroke="#111827" stroke-width="1" stroke-dasharray="4 3">
+        <line x1="95" y1="268.5" x2="95" y2="270"/>
+        <line x1="270" y1="214.2" x2="270" y2="270"/>
+        <line x1="60" y1="214.2" x2="270" y2="214.2"/>
+        <line x1="480" y1="46.8" x2="480" y2="270"/>
+        <line x1="60" y1="46.8" x2="480" y2="46.8"/>
+      </g>
+      <circle cx="270" cy="214.2" r="4" fill="#111827"/>
+      <circle cx="480" cy="46.8" r="4" fill="#111827"/>
+
+      <g font-size="12" text-anchor="end">
+        <text x="54" y="274">0</text>
+        <text x="54" y="219">18</text>
+        <text x="54" y="51">72</text>
+      </g>
+      <g font-size="12" text-anchor="middle">
+        <text x="60" y="290">0</text>
+        <text x="130" y="290">2</text>
+        <text x="200" y="290">4</text>
+        <text x="270" y="290">6</text>
+        <text x="340" y="290">8</text>
+        <text x="410" y="290">10</text>
+        <text x="480" y="290">12</text>
+      </g>
+      <text x="285" y="310" font-size="12.5" text-anchor="middle">nombre de séances k</text>
+      <text x="120" y="60" font-size="12.5">fatigue totale = k²/2</text>
+      <text x="150" y="150" font-size="12">la 1re séance coûte 0,5…</text>
+      <text x="150" y="168" font-size="12">…la 12e en coûte 11,5</text>
+      <text x="290" y="205" font-size="12">k = 6 : fatigue 18</text>
+      <text x="470" y="38" font-size="12" text-anchor="end">k = 12 : fatigue 72</text>
+    </svg>
+    <figcaption>
+      Figure 3 — Le coût d'effort \( k^2/2 \). La courbe ne monte pas en ligne droite : elle
+      s'incline de plus en plus. C'est ça, un coût « croissant et accéléré ». Doubler le nombre de
+      séances (6 → 12) <em>quadruple</em> la fatigue (18 → 72).
+    </figcaption>
+  </figure>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi diviser par 2 ?</div>
+    <p>
+      Uniquement pour que la dérivée soit jolie. La dérivée de \( \tfrac{k^2}{2} \) vaut exactement
+      \( k \) (on le démontre en 3.10) ; celle de \( k^2 \) vaudrait \( 2k \), ce qui traînerait un
+      facteur 2 dans tous les calculs. Les auteurs d'exercices mettent ce \( /2 \) par pure
+      gentillesse. Ne t'en méfie pas : c'est un cadeau.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — « pourquoi ne pas écrire simplement \( -k \) ? »</div>
+    <p>
+      Si le coût d'effort était \( k \) (chaque séance fatigue autant), le modèle exploserait : le
+      bénéfice net par séance serait constant, donc il faudrait faire soit
+      <strong>zéro</strong> séance, soit une <strong>infinité</strong>. Aucun optimum intérieur, pas
+      d'exercice possible. Le \( k^2/2 \) sert précisément à ce que la fatigue finisse par rattraper
+      le bénéfice, et donc à ce qu'un nombre de séances raisonnable existe.
+    </p>
+  </div>
+
+  <h3>3.5 Décodons \( U_1 \), et voyons ce qui change</h3>
+
+  <p>
+    Mettons les deux formules l'une au-dessus de l'autre et cherchons les différences. Il n'y en a
+    qu'une, mais elle change tout.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ U_0(a,k) = -\boldsymbol{\beta}\frac{k^2}{2} - \boldsymbol{\beta}\bigl[aC + (1-a)pk\bigr] + \boldsymbol{\beta} b k \]
+      <div class="why">
+        Vu de la <strong>période 0</strong> : les trois morceaux sont dans le futur (période 1 et
+        période 2). Ils portent donc <em>tous les trois</em> un \( \beta \).
+      </div>
+    </div>
+    <div class="step">
+      \[ U_1(a,k) = -\frac{k^2}{2} - \bigl[aC + (1-a)pk\bigr] + \boldsymbol{\beta} b k \]
+      <div class="why">
+        Vu de la <strong>période 1</strong> : l'effort et l'argent, c'est <em>maintenant</em>, donc
+        plus de \( \beta \) devant eux. Seul le bénéfice, qui reste dans le futur, garde son
+        \( \beta \). <strong>Un seul \( \beta \) sur trois</strong> : voilà toute la différence.
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — le biais du présent \( \beta \)</div>
+    <p>
+      Dans le modèle \( (\beta,\delta) \) du cours, une personne évaluant l'avenir depuis
+      l'instant \( t \) pèse ainsi ses satisfactions :
+    </p>
+    <p>\[ u(c_t) + \beta\delta\,u(c_{t+1}) + \beta\delta^2 u(c_{t+2}) + \cdots \]</p>
+    <p>
+      Lis-la comme ceci : <strong>ce qui est maintenant compte pour ce qu'il vaut</strong> (aucun
+      \( \beta \)) ; <strong>tout ce qui n'est pas maintenant est raboté d'un coup par
+      \( \beta \)</strong>, quelle que soit sa distance. Avec \( \beta = \tfrac{1}{2} \), « demain »
+      et « dans dix ans » sont tous les deux divisés par deux — c'est une cassure nette entre le
+      présent et le reste, pas une décroissance douce.
+    </p>
+    <p>
+      \( \beta = 1 \) veut dire <em>pas de biais</em> : on retombe sur l'individu parfaitement
+      rationnel du chapitre 6. \( \beta \) proche de 0 veut dire <em>biais énorme</em> : seul
+      l'instant présent compte.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — le réveil, version chiffrée</div>
+    <p>
+      Dimanche soir, tu mets ton réveil à 6 h pour aller courir lundi. Vu de dimanche, l'effort de
+      se lever (coût 10) et la forme gagnée (bénéfice 30) sont <em>tous les deux</em> demain : ils
+      sont rabotés pareil, et le bilan est \( \beta(-10 + 30) = 10\beta &gt; 0 \). Tu programmes le
+      réveil, sincèrement.
+    </p>
+    <p>
+      Lundi 6 h : l'effort est <em>maintenant</em> (il compte 10 plein pot), la forme est
+      <em>plus tard</em> (elle compte \( \beta \times 30 = 15 \)). Bilan :
+      \( -10 + 15 = 5 &gt; 0 \)… tu te lèves encore. Mais si la forme ne valait que 18 : dimanche,
+      \( \beta(-10+18) = 4\beta &gt; 0 \), tu programmes ; lundi,
+      \( -10 + \beta \times 18 = -10 + 9 = -1 &lt; 0 \), tu te rendors. <strong>Rien n'a changé
+      dans le monde entre dimanche et lundi</strong> — sauf la position du présent.
+    </p>
+  </div>
+
+  <p>
+    La figure suivante est la plus importante de tout le chapitre. Elle montre les mêmes trois
+    morceaux, avec les poids que leur donne la période 0, puis ceux que leur donne la période 1.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 540 330" width="100%" style="max-width:12.5cm" role="img"
+         aria-label="Comparaison des poids : vue de la periode 0 les trois postes effort argent et benefice portent tous le poids beta, vue de la periode 1 l'effort et l'argent portent le poids 1 et seul le benefice porte beta">
+      <text x="16" y="22" font-size="13" font-weight="bold">A. Vu de la période 0 — fonction U₀</text>
+      <g fill="none" stroke="#111827" stroke-width="1.3">
+        <rect x="16" y="32" width="156" height="80" rx="4"/>
+        <rect x="192" y="32" width="156" height="80" rx="4"/>
+        <rect x="368" y="32" width="156" height="80" rx="4"/>
+      </g>
+      <g font-size="12" text-anchor="middle">
+        <text x="94" y="52">effort (période 1)</text>
+        <text x="94" y="70">poids appliqué :</text>
+        <text x="94" y="97" font-size="17" font-weight="bold">β</text>
+        <text x="270" y="52">argent (période 1)</text>
+        <text x="270" y="70">poids appliqué :</text>
+        <text x="270" y="97" font-size="17" font-weight="bold">β</text>
+        <text x="446" y="52">bénéfice (période 2)</text>
+        <text x="446" y="70">poids appliqué :</text>
+        <text x="446" y="97" font-size="17" font-weight="bold">β</text>
+      </g>
+      <text x="270" y="133" font-size="12.5" text-anchor="middle" font-weight="bold">
+        les trois poids sont identiques → β se met en facteur → il ne change RIEN au plan
+      </text>
+
+      <line x1="16" y1="150" x2="524" y2="150" stroke="#9ca3af" stroke-width="1"/>
+
+      <text x="16" y="180" font-size="13" font-weight="bold">B. Vu de la période 1 — fonction U₁</text>
+      <g fill="none" stroke="#111827" stroke-width="1.3">
+        <rect x="16" y="190" width="156" height="80" rx="4"/>
+        <rect x="192" y="190" width="156" height="80" rx="4"/>
+        <rect x="368" y="190" width="156" height="80" rx="4" stroke-dasharray="6 3"/>
+      </g>
+      <g font-size="12" text-anchor="middle">
+        <text x="94" y="210">effort = MAINTENANT</text>
+        <text x="94" y="228">poids appliqué :</text>
+        <text x="94" y="255" font-size="17" font-weight="bold">1</text>
+        <text x="270" y="210">argent = MAINTENANT</text>
+        <text x="270" y="228">poids appliqué :</text>
+        <text x="270" y="255" font-size="17" font-weight="bold">1</text>
+        <text x="446" y="210">bénéfice = PLUS TARD</text>
+        <text x="446" y="228">poids appliqué :</text>
+        <text x="446" y="255" font-size="17" font-weight="bold">β</text>
+      </g>
+      <text x="270" y="291" font-size="12.5" text-anchor="middle" font-weight="bold">
+        les poids sont différents → β ne se met plus en facteur → il DÉFORME la décision
+      </text>
+      <text x="270" y="314" font-size="12" text-anchor="middle" style="fill:#4b5563">
+        le bénéfice est le seul poste raboté : il pèse deux fois moins qu'il ne le devrait
+      </text>
+    </svg>
+    <figcaption>
+      Figure 4 — Toute la question tient dans cette image. En haut, \( \beta \) frappe partout : il
+      se simplifie et le grimpeur planifie « correctement ». En bas, \( \beta \) ne frappe que le
+      bénéfice : il ne se simplifie plus, et le grimpeur agit « mal ».
+    </figcaption>
+  </figure>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi « β en facteur » veut dire « ça ne change rien »</div>
+    <p>
+      Prends la version avec abonnement de \( U_0 \) et mets \( \beta \) en évidence :
+    </p>
+    <p>\[ U_0(1,k) = \beta\Bigl[-\frac{k^2}{2} - C + b k\Bigr] \]</p>
+    <p>
+      Le crochet ne contient plus aucun \( \beta \). Or multiplier une quantité par un nombre
+      <strong>positif fixe</strong> (ici \( \beta = 0{,}5 \)) ne déplace pas son maximum : si tu
+      divises par deux toutes les notes d'une classe, le premier de la classe reste le premier.
+      Donc <strong>le \( k \) qui maximise \( U_0 \) est le même que si \( \beta \) valait 1</strong>.
+      Le grimpeur, en période 0, fait des projets de personne rationnelle. C'est exactement ce que
+      dit le corrigé officiel de la question 1.1.
+    </p>
+    <p>
+      Dans \( U_1 \), impossible de faire pareil : \( -\tfrac{k^2}{2} - C + \beta b k \) contient un
+      \( \beta \) sur un seul des trois termes. Il ne sort pas. Il reste dans le calcul, et il tire
+      le résultat vers le bas.
+    </p>
+  </div>
+
+  <h3>3.6 L'incohérence temporelle : le vrai nom du problème</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — incohérence temporelle (problème de self-contrôle)</div>
+    <p>
+      Il y a <span class="term">incohérence temporelle</span> quand le plan préféré aujourd'hui
+      pour demain <strong>n'est plus le plan préféré demain</strong>, alors qu'aucune information
+      nouvelle n'est arrivée et que rien n'a changé dans le monde.
+    </p>
+    <p>
+      C'est ce que produit \( \beta &lt; 1 \), et c'est exactement ce qu'on va observer ici : le
+      grimpeur veut 12 séances vu de la période 0, et n'en veut plus que 6 une fois en période 1.
+      Personne ne l'a trompé, aucun prix n'a bougé. Seul le calendrier a avancé.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — « il a changé d'avis, donc il est irrationnel »</div>
+    <p>
+      Non. Dans ce modèle, le grimpeur <strong>maximise correctement</strong> à chaque instant : il
+      maximise \( U_0 \) en période 0 et \( U_1 \) en période 1. Il ne fait aucune erreur de calcul.
+      Le problème n'est pas dans sa tête au moment du calcul : il est dans le fait que
+      <strong>ses objectifs eux-mêmes bougent avec le temps</strong>. C'est pour ça qu'on parle de
+      « deux moi » plutôt que d'une seule personne confuse.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">L'image des « deux moi »</div>
+    <p>
+      Le modèle se lit beaucoup plus facilement si tu imagines <strong>deux personnes
+      différentes</strong> qui portent le même nom :
+    </p>
+    <ul>
+      <li><strong>Moi-0</strong>, en période 0. Il fait des projets. Il choisit \( a \). Il est
+        raisonnable, il aime le sport, il voit loin.</li>
+      <li><strong>Moi-1</strong>, en période 1. C'est lui qui doit se lever, mettre ses chaussons et
+        aller au mur. Il choisit \( k \). Il trouve que la santé, c'est loin.</li>
+    </ul>
+    <p>
+      Moi-0 ne peut pas forcer Moi-1 à faire quoi que ce soit : il ne contrôle que \( a \). La seule
+      arme de Moi-0, c'est de choisir un \( a \) qui <em>change les incitations</em> de Moi-1. Toute
+      la question 1.6 est là.
+    </p>
+  </div>
+
+  <h3>3.7 Le prix marginal : la vraie différence entre les deux tarifs</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — prix marginal</div>
+    <p>
+      Le <span class="term">prix marginal</span> d'une séance est <strong>ce que tu débourses en
+      plus pour faire une séance de plus</strong>, à partir de là où tu en es. C'est un prix
+      « au coup par coup », pas un prix moyen.
+    </p>
+    <ul>
+      <li><strong>Sans abonnement</strong> (\( a = 0 \)) : la dépense totale est \( pk = 2k \). Passer
+        de 5 à 6 séances fait passer la dépense de 10 à 12 : le prix marginal est
+        \( \boldsymbol{p = 2} \).</li>
+      <li><strong>Avec abonnement</strong> (\( a = 1 \)) : la dépense totale est \( C = 16 \), quel
+        que soit \( k \). Passer de 5 à 6 séances fait passer la dépense de 16 à 16 : le prix
+        marginal est <strong>0</strong>.</li>
+    </ul>
+    <p>
+      C'est <em>uniquement</em> le prix marginal qui influence la décision « j'y retourne ou pas ? ».
+      Le prix total, lui, a déjà été décidé en période 0.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 540 285" width="100%" style="max-width:12.5cm" role="img"
+         aria-label="Prix marginal : avec abonnement chaque seance supplementaire coute 0 euro, sans abonnement chaque seance supplementaire coute 2 euros">
+      <text x="135" y="22" font-size="13" font-weight="bold" text-anchor="middle">Avec abonnement (a = 1)</text>
+      <text x="405" y="22" font-size="13" font-weight="bold" text-anchor="middle">Sans abonnement (a = 0)</text>
+
+      <line x1="40" y1="180" x2="250" y2="180" stroke="#111827" stroke-width="1.4"/>
+      <line x1="40" y1="180" x2="40" y2="52" stroke="#111827" stroke-width="1.4"/>
+      <line x1="310" y1="180" x2="520" y2="180" stroke="#111827" stroke-width="1.4"/>
+      <line x1="310" y1="180" x2="310" y2="52" stroke="#111827" stroke-width="1.4"/>
+
+      <g font-size="11.5" text-anchor="end">
+        <text x="35" y="184">0</text>
+        <text x="35" y="132">2</text>
+        <text x="305" y="184">0</text>
+        <text x="305" y="132">2</text>
+      </g>
+      <g stroke="#9ca3af" stroke-width="0.8" stroke-dasharray="3 3">
+        <line x1="40" y1="128" x2="250" y2="128"/>
+        <line x1="310" y1="128" x2="520" y2="128"/>
+      </g>
+
+      <g fill="none" stroke="#111827" stroke-width="1.4">
+        <rect x="52" y="177" width="26" height="3"/>
+        <rect x="88" y="177" width="26" height="3"/>
+        <rect x="124" y="177" width="26" height="3"/>
+        <rect x="160" y="177" width="26" height="3"/>
+        <rect x="196" y="177" width="26" height="3"/>
+      </g>
+      <g fill="#111827">
+        <rect x="322" y="128" width="26" height="52"/>
+        <rect x="358" y="128" width="26" height="52"/>
+        <rect x="394" y="128" width="26" height="52"/>
+        <rect x="430" y="128" width="26" height="52"/>
+        <rect x="466" y="128" width="26" height="52"/>
+      </g>
+
+      <g font-size="11.5" text-anchor="middle">
+        <text x="65" y="196">1re</text>
+        <text x="101" y="196">2e</text>
+        <text x="137" y="196">3e</text>
+        <text x="173" y="196">4e</text>
+        <text x="209" y="196">5e</text>
+        <text x="335" y="196">1re</text>
+        <text x="371" y="196">2e</text>
+        <text x="407" y="196">3e</text>
+        <text x="443" y="196">4e</text>
+        <text x="479" y="196">5e</text>
+      </g>
+      <text x="135" y="214" font-size="12" text-anchor="middle">séance supplémentaire</text>
+      <text x="405" y="214" font-size="12" text-anchor="middle">séance supplémentaire</text>
+
+      <text x="135" y="90" font-size="13" text-anchor="middle" font-weight="bold">prix marginal = 0 €</text>
+      <text x="135" y="108" font-size="11.5" text-anchor="middle">(les 16 € sont déjà payés)</text>
+      <text x="405" y="90" font-size="13" text-anchor="middle" font-weight="bold">prix marginal = 2 €</text>
+      <text x="405" y="108" font-size="11.5" text-anchor="middle">(à chaque fois, sans exception)</text>
+
+      <text x="270" y="248" font-size="12.5" text-anchor="middle" font-weight="bold">
+        Seul le prix MARGINAL entre dans la décision « j'y retourne ou pas ? ».
+      </text>
+      <text x="270" y="268" font-size="12" text-anchor="middle" style="fill:#4b5563">
+        Les 16 € de l'abonnement sont un coût fixe : ils ne dépendent pas de k, donc ils ne pèsent sur aucun arbitrage.
+      </text>
+    </svg>
+    <figcaption>
+      Figure 5 — Le prix marginal d'une séance. À droite, chaque barre coûte 2 euros. À gauche,
+      toutes les barres sont plates : la salle est « gratuite » à la marge. C'est ce zéro qui fera
+      grimper le nombre de séances, en période 0 comme en période 1.
+    </figcaption>
+  </figure>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — coût fixe et coût irrécupérable (« sunk cost »)</div>
+    <p>
+      Un <span class="term">coût fixe</span> est un coût qui ne dépend pas de la quantité produite
+      ou consommée. Ici, \( C = 16 \) est un coût fixe : que le grimpeur vienne 1 fois ou 30 fois,
+      il paie 16.
+    </p>
+    <p>
+      En période 1, ce coût est en plus <span class="term">irrécupérable</span> : la décision de le
+      payer est déjà prise, elle ne peut plus être défaite. Conséquence mathématique très concrète :
+      dans la dérivée par rapport à \( k \), <strong>le terme \( -C \) disparaît</strong>, parce que
+      la dérivée d'une constante est nulle. Tu verras ce phénomène en direct à la question 1.4.
+    </p>
+  </div>
+
+  <h3>3.8 Naïf ou sophistiqué : sait-il qu'il a un problème ?</h3>
+
+  <p>
+    Une même personne avec le même \( \beta \) peut prendre des décisions opposées en période 0
+    selon qu'elle <em>se connaît</em> ou non. On note \( \hat\beta \) (« bêta chapeau ») ce que le
+    grimpeur <strong>croit</strong> être son bêta futur.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left">Type</th>
+      <th>Ce qu'il croit</th>
+      <th class="left">Ce que ça donne concrètement</th>
+    </tr>
+    <tr>
+      <td class="left"><strong>Naïf</strong></td>
+      <td>\( \hat\beta = 1 \)</td>
+      <td class="left">
+        Il croit que son moi de demain sera parfaitement rationnel. Il pense donc qu'il exécutera
+        <em>exactement</em> le plan fait aujourd'hui. Il ne se méfie pas de lui-même. Il se trompe :
+        son vrai \( \beta \) reste \( \tfrac{1}{2} \).
+      </td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Sophistiqué</strong></td>
+      <td>\( \hat\beta = \beta \)</td>
+      <td class="left">
+        Il sait exactement de quoi son moi de demain est capable. Il prévoit correctement qu'il
+        craquera, et il en tient compte <em>dès aujourd'hui</em> dans son choix de tarif.
+      </td>
+    </tr>
+    <tr>
+      <td class="left">Partiellement naïf</td>
+      <td>\( \beta &lt; \hat\beta &lt; 1 \)</td>
+      <td class="left">
+        Il se doute de quelque chose mais sous-estime son biais. Cas intermédiaire, non demandé
+        ici — mais bon à citer en une ligne pour montrer que tu connais le cours.
+      </td>
+    </tr>
+  </table>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège majeur — \( \hat\beta \) ne change JAMAIS ce qui se passe en période 1</div>
+    <p>
+      Retiens cette phrase, elle vaut plusieurs points : <strong>\( \hat\beta \) est une croyance,
+      \( \beta \) est la réalité</strong>. Le naïf et le sophistiqué ont le <em>même</em>
+      \( \beta = \tfrac{1}{2} \) : arrivés en période 1, ils se comportent
+      <strong>identiquement</strong>. Ce qui les distingue, c'est uniquement ce qu'ils
+      <em>prévoyaient</em> en période 0, donc uniquement leur choix de tarif.
+    </p>
+    <p>
+      Erreur classique en examen : calculer la question 1.4 « pour le naïf » avec
+      \( \hat\beta = 1 \) et répondre 12. Faux : en période 1, on utilise \( U_1 \), qui contient le
+      vrai \( \beta \). Le naïf est naïf, pas magique.
+    </p>
+  </div>
+
+  <h3>3.9 Le commitment device : se lier les mains volontairement</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — commitment device (dispositif d'engagement)</div>
+    <p>
+      Un <span class="term">commitment device</span> est une décision prise <strong>aujourd'hui</strong>
+      qui <strong>réduit ou renchérit volontairement les options de son moi futur</strong>, dans le
+      but de l'empêcher de mal se comporter.
+    </p>
+    <p>
+      L'image du cours est celle d'Ulysse et des sirènes : il veut entendre leur chant sans s'y
+      jeter, il sait qu'au moment venu il en sera incapable, alors il se fait
+      <strong>attacher au mât</strong> à l'avance. Il se prive lui-même de sa liberté future. Un
+      commitment device, c'est un mât qu'on se choisit soi-même.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemples — deux familles de mâts</div>
+    <ul>
+      <li><strong>Contre une tentation : la rendre indisponible.</strong> Ne pas acheter de paquet de
+        cigarettes du tout ; supprimer l'appli ; laisser sa carte bancaire chez un ami avant une
+        soirée.</li>
+      <li><strong>Pour un investissement : signer un contrat qui contraint ou incite.</strong>
+        Acheter une maison à crédit (te <em>forçant</em> à épargner tous les mois) ; annoncer
+        publiquement que tu cours le semi-marathon ; <strong>prendre un abonnement à la salle</strong>.
+        C'est exactement notre cas.</li>
+    </ul>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Le paradoxe à retenir (il tombe souvent en question de cours)</div>
+    <p>
+      Réduire volontairement ses propres options paraît absurde : avoir <em>plus</em> de choix ne
+      peut jamais nuire à quelqu'un de rationnel, qui peut toujours ignorer les options en trop. Et
+      c'est vrai : <strong>un individu avec \( \beta = 1 \) ne paierait jamais un centime pour un
+      commitment device</strong>.
+    </p>
+    <p>
+      Mais pour quelqu'un qui a un biais (\( \beta &lt; 1 \)) <strong>et</strong> qui le sait
+      (sophistiqué), se limiter peut augmenter son bien-être : renoncer à de la liberté demain,
+      c'est se protéger de soi-même. Et le naïf ? Il ne voit aucun problème à protéger — il n'en
+      cherche donc pas. (S'il en prend un quand même, comme ici, c'est pour une autre raison ; on le
+      verra en 1.3.)
+    </p>
+  </div>
+
+  <h3>3.10 L'unique outil de calcul du chapitre : maximiser \( -\dfrac{k^2}{2} + Mk \)</h3>
+
+  <p>
+    Bonne nouvelle : <strong>les quatre calculs de \( k \) de cette question sont le même
+    calcul</strong>, avec un seul nombre qui change. Construisons-le une bonne fois, très
+    lentement, et il servira quatre fois.
+  </p>
+
+  <h4>a) Ce qu'est une dérivée, en trente secondes</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — dérivée</div>
+    <p>
+      La <span class="term">dérivée</span> d'une fonction en un point, c'est sa <strong>pente</strong>
+      en ce point : de combien la valeur monte si on avance d'un tout petit peu. On la note
+      \( f'(k) \) (« f prime de k ») ou \( \dfrac{\partial f}{\partial k} \) (« d rond f sur d rond
+      k ») quand la fonction dépend de plusieurs lettres et qu'on ne dérive que par rapport à l'une
+      d'elles.
+    </p>
+    <ul>
+      <li>Dérivée <strong>positive</strong> ⇒ la fonction monte ⇒ augmenter \( k \) améliore les
+        choses ⇒ <em>continue</em>.</li>
+      <li>Dérivée <strong>négative</strong> ⇒ la fonction descend ⇒ <em>tu es allé trop loin</em>.</li>
+      <li>Dérivée <strong>nulle</strong> ⇒ terrain plat ⇒ c'est le <strong>sommet</strong> (pour une
+        fonction en cloche comme les nôtres).</li>
+    </ul>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel de maths — les trois seules dérivées dont tu as besoin ici</div>
+    <ul>
+      <li><strong>Une constante</strong> : \( (\text{nombre fixe})' = 0 \). Une droite horizontale
+        n'a aucune pente. C'est ce qui fera disparaître \( C \).</li>
+      <li><strong>Un terme en \( k \)</strong> : \( (Mk)' = M \). La fonction \( Mk \) est une droite
+        de pente \( M \).</li>
+      <li><strong>Un terme en \( k^2 \)</strong> : \( (k^2)' = 2k \), donc
+        \( \left(\dfrac{k^2}{2}\right)' = \dfrac{2k}{2} = k \). C'est exactement le coût marginal
+        qu'on avait trouvé « à la main » dans le tableau de la section 3.4 : la \( k \)-ième séance
+        coûte environ \( k \). Les deux méthodes se confirment.</li>
+    </ul>
+    <p>
+      Et une règle d'assemblage : <strong>la dérivée d'une somme est la somme des dérivées</strong>.
+      On dérive chaque morceau séparément, puis on recolle.
+    </p>
+  </div>
+
+  <h4>b) Le calcul générique, une fois pour toutes</h4>
+
+  <p>
+    Appelons \( M \) le <strong>bénéfice marginal net</strong> d'une séance : tout ce qu'une séance
+    supplémentaire rapporte, moins tout ce qu'elle coûte <em>en argent</em>, avant de compter la
+    fatigue. Toutes nos fonctions ont alors la forme
+  </p>
+
+  <p>\[ f(k) = -\frac{k^2}{2} + Mk + (\text{une constante qui ne dépend pas de } k) \]</p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \frac{\partial f}{\partial k} = -k + M \]
+      <div class="why">
+        Je dérive morceau par morceau. \( -\tfrac{k^2}{2} \) donne \( -k \). \( Mk \) donne \( M \).
+        La constante donne 0 : elle ne bouge pas quand \( k \) bouge, donc elle n'a aucune pente.
+      </div>
+    </div>
+    <div class="step">
+      \[ -k + M = 0 \]
+      <div class="why">
+        C'est la <strong>condition de premier ordre</strong> (CPO) : au sommet de la courbe, la
+        pente est nulle. J'écris donc que la dérivée vaut zéro, et je résous.
+      </div>
+    </div>
+    <div class="step">
+      \[ k^* = M \]
+      <div class="why">
+        Je fais passer \( k \) de l'autre côté : \( M = k \). Résultat d'une simplicité choquante —
+        <strong>le nombre optimal de séances est exactement égal au bénéfice marginal net</strong>.
+        C'est le cadeau du \( k^2/2 \).
+      </div>
+    </div>
+    <div class="step">
+      \[ f(k^*) = -\frac{M^2}{2} + M \cdot M + \text{cst} = \frac{M^2}{2} + \text{cst} \]
+      <div class="why">
+        Je remplace \( k \) par \( M \) pour obtenir la valeur au sommet :
+        \( -\tfrac{M^2}{2} + M^2 = \tfrac{M^2}{2} \). Utile pour vérifier tes calculs d'utilité en
+        1.3.
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi ce sommet est bien un maximum (et pas un minimum)</div>
+    <p>
+      Deux façons de s'en assurer, l'une intuitive, l'autre officielle.
+    </p>
+    <p>
+      <em>Intuitive :</em> le coefficient devant \( k^2 \) est négatif (\( -\tfrac{1}{2} \)). Une
+      parabole avec un \( k^2 \) négatif est tournée vers le bas : c'est une colline, pas une
+      cuvette. Son unique point plat est donc son sommet.
+    </p>
+    <p>
+      <em>Officielle (condition de second ordre) :</em> on dérive une seconde fois. La dérivée de
+      \( -k + M \) vaut \( -1 \), qui est \( &lt; 0 \). Une dérivée seconde négative signale un
+      maximum. En une ligne sur la copie, ça peut valoir un point.
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe de méthode n° 2 — la recette en quatre gestes</div>
+    <p>
+      Pour <em>chacune</em> des quatre situations de cette question, procède ainsi :
+    </p>
+    <ol>
+      <li><strong>Choisis la bonne fonction</strong> : \( U_0 \) si on demande ce qu'il
+        <em>souhaite</em> (période 0), \( U_1 \) si on demande ce qu'il <em>fait</em> (période 1).</li>
+      <li><strong>Remplace \( a \)</strong> par 0 ou 1 et écris la formule en clair.</li>
+      <li><strong>Range en \( -\tfrac{k^2}{2} + Mk + \text{cst} \)</strong> et lis \( M \) : c'est le
+        coefficient devant \( k \) tout seul.</li>
+      <li><strong>Conclus \( k^* = M \)</strong>, après avoir tout de même écrit la dérivée et la CPO
+        — le barème donne des points pour la <em>méthode</em>, pas seulement pour le nombre.</li>
+    </ol>
+  </div>
+
+  <p>
+    Et voici la carte des quatre situations. Ne la remplis pas de mémoire : on la construit ligne
+    par ligne dans les six sous-questions. Elle est reproduite ici pour que tu voies où l'on va.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left">Situation</th>
+      <th>Fonction</th>
+      <th>Bénéfice marginal net \( M \)</th>
+      <th>\( k^* = M \)</th>
+      <th>Question</th>
+    </tr>
+    <tr>
+      <td class="left">Ce qu'il <em>souhaite</em>, avec abonnement</td>
+      <td>\( U_0 \)</td>
+      <td>\( b = 12 \)</td>
+      <td><strong>12</strong></td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <td class="left">Ce qu'il <em>souhaite</em>, sans abonnement</td>
+      <td>\( U_0 \)</td>
+      <td>\( b - p = 12 - 2 = 10 \)</td>
+      <td><strong>10</strong></td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <td class="left">Ce qu'il <em>fait</em>, avec abonnement</td>
+      <td>\( U_1 \)</td>
+      <td>\( \beta b = 6 \)</td>
+      <td><strong>6</strong></td>
+      <td>1.4</td>
+    </tr>
+    <tr>
+      <td class="left">Ce qu'il <em>fait</em>, sans abonnement</td>
+      <td>\( U_1 \)</td>
+      <td>\( \beta b - p = 6 - 2 = 4 \)</td>
+      <td><strong>4</strong></td>
+      <td>1.5</td>
+    </tr>
+  </table>
+
+  <div class="box box-why">
+    <div class="box-title">Lis ce tableau en diagonale : il raconte toute l'histoire</div>
+    <p>
+      De haut en bas, deux mouvements se superposent :
+    </p>
+    <ul>
+      <li><strong>Horizontalement</strong> (avec/sans abonnement) : on perd 2 séances, parce que le
+        prix marginal passe de 0 à 2. C'est de l'économie ordinaire, sans aucun biais.</li>
+      <li><strong>Verticalement</strong> (souhaité/réel) : on perd la <em>moitié</em> du bénéfice,
+        parce que \( b = 12 \) devient \( \beta b = 6 \). Ça, c'est le biais du présent, et rien
+        d'autre.</li>
+    </ul>
+    <p>
+      Ne mélange jamais ces deux effets dans ta copie. Beaucoup d'étudiants attribuent au
+      self-contrôle la différence 12 → 10, qui n'a rien à voir avec lui.
+    </p>
+  </div>
+
+  <hr class="soft">
+  <h2>4. Question 1.1 — combien souhaite-t-il grimper <em>avec</em> l'abonnement ? (8 points)</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 1.1 (8 points)</div>
+    <p>
+      En période 0, combien de séances le grimpeur souhaite-t-il effectuer s'il prend un abonnement
+      (\( a = 1 \)) ? Détaillez votre calcul.
+    </p>
+  </div>
+
+  <h3>4.1 Traduisons la question en français simple</h3>
+
+  <dl class="lexique">
+    <dt>« En période 0 »</dt>
+    <dd>
+      C'est l'indication la plus importante de la phrase, et c'est celle qu'on oublie. Elle te dit
+      <strong>quelle fonction utiliser</strong> : la période 0, c'est \( U_0 \). Si l'énoncé avait
+      dit « en période 1 », il faudrait \( U_1 \), et la réponse ne serait pas la même du tout
+      (tu le verras en 1.4). Entoure ce « période 0 » sur ton énoncé.
+    </dd>
+
+    <dt>« combien de séances »</dt>
+    <dd>
+      On te demande un <strong>nombre</strong>, la valeur de \( k \). Pas une fourchette, pas une
+      discussion : un nombre, obtenu par un calcul de maximisation.
+    </dd>
+
+    <dt>« souhaite-t-il effectuer »</dt>
+    <dd>
+      Le verbe « souhaiter » est un mot-code. Il désigne le <strong>plan</strong>, l'intention,
+      ce que le grimpeur <em>aimerait</em> faire vu d'aujourd'hui. Ce n'est pas ce qu'il
+      <em>fera</em> — ce mot-là, « réellement », arrivera à la question 1.4. Tant que l'énoncé dit
+      « souhaite », on reste dans \( U_0 \).
+    </dd>
+
+    <dt>« s'il prend un abonnement (\( a = 1 \)) »</dt>
+    <dd>
+      C'est une <span class="term">hypothèse conditionnelle</span> : on ne demande pas s'il va le
+      prendre (ça, c'est 1.3), on demande « <em>si</em> jamais il le prend, alors combien ? ». On
+      pose donc \( a = 1 \) de force et on regarde ce qui se passe.
+    </dd>
+
+    <dt>« Détaillez votre calcul »</dt>
+    <dd>
+      Traduction du barème : le résultat seul ne rapporte que 2 points sur 8. Les 6 autres viennent
+      de la fonction écrite correctement et de la condition de premier ordre posée. Écris-les, même
+      si tu « vois » la réponse.
+    </dd>
+  </dl>
+
+  <div class="box box-why">
+    <div class="box-title">Reformulation en une phrase</div>
+    <p>
+      « Dans la version <em>abonnement</em> de sa fonction d'utilité de période 0, quelle valeur de
+      \( k \) donne le plus grand nombre ? » C'est tout. Un maximum de fonction, exactement comme
+      au chapitre 0 du volume 1.
+    </p>
+  </div>
+
+  <h3>4.2 Le cours dont tu as besoin ici</h3>
+
+  <p>
+    Tout est déjà dans la section 3 : la version « en clair » de \( U_0 \) avec \( a = 1 \)
+    (section 3.3) et la recette de maximisation (section 3.10). On ne rajoute qu'une seule idée,
+    petite mais payante.
+  </p>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel — diviser une équation par un nombre non nul</div>
+    <p>
+      On va tomber sur une équation de la forme \( \beta \times (\text{quelque chose}) = 0 \). Règle
+      d'école : <strong>un produit est nul si et seulement si l'un de ses facteurs est nul</strong>.
+      Comme ici \( \beta = \tfrac{1}{2} \), qui n'est pas nul, c'est forcément l'autre facteur qui
+      l'est. On peut donc « barrer » le \( \beta \) — autrement dit diviser les deux côtés par
+      \( \beta \). Ça n'a rien d'un tour de passe-passe : c'est la même opération que passer de
+      \( 3x = 0 \) à \( x = 0 \).
+    </p>
+  </div>
+
+  <h3>4.3 La résolution, pas à pas</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Recopier la bonne fonction et y mettre \( a = 1 \)</div>
+    <p>
+      On part de \( U_0 \) telle que l'énoncé la donne, et on remplace \( a \) par 1. C'est le seul
+      moment où l'interrupteur sert.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ U_0(a,k) = -\beta\frac{k^2}{2} - \beta\bigl[aC + (1-a)pk\bigr] + \beta b k \]
+        <div class="why">
+          La formule de départ, recopiée telle quelle. Ne saute jamais cette ligne sur ta copie :
+          elle rapporte des points à elle seule, et elle t'évite d'oublier un \( \beta \).
+        </div>
+      </div>
+      <div class="step">
+        \[ U_0(1,k) = -\beta\frac{k^2}{2} - \beta\bigl[1\cdot C + (1-1)pk\bigr] + \beta b k \]
+        <div class="why">
+          Je remplace <em>chaque</em> \( a \) par 1, sans encore simplifier. Écrire l'étape brute
+          avant de simplifier évite 90 \% des erreurs de distraction.
+        </div>
+      </div>
+      <div class="step">
+        \[ U_0(1,k) = -\beta\frac{k^2}{2} - \beta C + \beta b k \]
+        <div class="why">
+          Je simplifie le crochet : \( (1-1) = 0 \), donc le morceau \( (1-a)pk \) disparaît
+          entièrement. Il ne reste que \( C \) dans le crochet, et le crochet devient inutile.
+          <strong>Observation capitale : il n'y a plus aucun \( k \) dans le terme d'argent.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Mettre \( \beta \) en facteur pour voir ce qui se passe</div>
+    <p>
+      Ce n'est pas obligatoire pour trouver la réponse, mais ça vaut un point de commentaire et ça
+      rend le calcul limpide.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ U_0(1,k) = \beta\left[-\frac{k^2}{2} - C + b k\right] \]
+        <div class="why">
+          Les trois morceaux contenaient un \( \beta \) ; je le sors devant le crochet. C'est la
+          règle de distributivité lue à l'envers : \( \beta x + \beta y + \beta z = \beta(x+y+z) \).
+          Le crochet, lui, ne contient plus aucun biais : c'est la fonction d'une personne
+          parfaitement rationnelle.
+        </div>
+      </div>
+    </div>
+    <div class="box box-why">
+      <div class="box-title">Ce que cette ligne raconte</div>
+      <p>
+        Multiplier une fonction par un nombre positif fixe ne déplace pas son sommet. Le grimpeur
+        de la période 0 fait donc <strong>exactement le plan que ferait quelqu'un sans aucun biais</strong>.
+        Le biais existe, mais vu de la période 0 il frappe tout le monde de la même façon, donc il
+        ne <em>déforme</em> rien. Il ne se réveillera qu'en période 1. C'est le commentaire que le
+        corrigé officiel attend.
+      </p>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Identifier le bénéfice marginal net \( M \)</div>
+    <p>
+      Rappel de la section 3.10 : toutes nos fonctions ont la forme
+      \( -\tfrac{k^2}{2} + Mk + \text{constante} \), et alors \( k^* = M \). Rangeons donc notre
+      crochet dans cet ordre.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ -\frac{k^2}{2} - C + b k \;=\; -\frac{k^2}{2} + \underbrace{b}_{= M}\,k \;\underbrace{-\,C}_{\text{constante}} \]
+        <div class="why">
+          Je réorganise les termes : celui en \( k^2 \), puis celui en \( k \), puis ce qui ne
+          dépend pas de \( k \). Le coefficient devant \( k \) tout seul est \( b \) : donc
+          \( M = b = 12 \). Le \( -C = -16 \) ne dépend pas de \( k \), c'est une constante.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Dériver et poser la condition de premier ordre</div>
+    <p>
+      C'est le cœur du barème. On dérive par rapport à \( k \) — la seule variable qu'on ait le
+      droit de bouger ici — et on écrit que la pente est nulle au sommet.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ \frac{\partial U_0(1,k)}{\partial k} = -\beta k - 0 + \beta b \]
+        <div class="why">
+          Terme par terme. \( -\beta\tfrac{k^2}{2} \) se dérive en \( -\beta k \) (le \( \beta \)
+          est un simple facteur, il reste devant ; la dérivée de \( \tfrac{k^2}{2} \) est \( k \)).
+          \( -\beta C \) est une constante : sa dérivée est 0. \( \beta b k \) est de la forme
+          \( Mk \) avec \( M = \beta b \) : sa dérivée est \( \beta b \).
+        </div>
+      </div>
+      <div class="step">
+        \[ \frac{\partial U_0(1,k)}{\partial k} = \beta\,(-k + b) \]
+        <div class="why">
+          Je remets \( \beta \) en facteur : \( -\beta k + \beta b = \beta(-k + b) \). C'est la
+          forme qu'utilise le corrigé officiel.
+        </div>
+      </div>
+      <div class="step">
+        \[ \beta\,(-k + b) = 0 \]
+        <div class="why">
+          Voilà la <strong>condition de premier ordre</strong> (CPO). Je cherche le sommet de la
+          courbe ; au sommet, le terrain est plat, donc la pente vaut zéro. J'écris donc « dérivée
+          \( = 0 \) » et je résous.
+        </div>
+      </div>
+      <div class="step">
+        \[ -k + b = 0 \]
+        <div class="why">
+          Je divise les deux côtés par \( \beta = \tfrac{1}{2} \), ce qui est légitime puisque
+          \( \beta \neq 0 \). Autrement dit : ce produit ne peut être nul que parce que la
+          parenthèse l'est.
+        </div>
+      </div>
+      <div class="step">
+        \[ k^* = b = 12 \]
+        <div class="why">
+          J'ajoute \( k \) des deux côtés : \( b = k \). Je remplace \( b \) par sa valeur, 12.
+          <strong>Le grimpeur souhaite effectuer 12 séances.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">5.</span> Vérifier que c'est bien un maximum</div>
+    <div class="calc">
+      <div class="step">
+        \[ \frac{\partial^2 U_0(1,k)}{\partial k^2} = -\beta = -\tfrac{1}{2} &lt; 0 \]
+        <div class="why">
+          Je dérive une seconde fois : la dérivée de \( \beta(-k+b) \) par rapport à \( k \) vaut
+          \( -\beta \). Elle est négative, donc la fonction est une colline (concave) et le point
+          plat trouvé est bien son <strong>sommet</strong>, pas un creux. Une ligne, un point de
+          barème potentiel.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat</div>
+    <p>
+      Avec un abonnement, le grimpeur <strong>souhaite effectuer \( k^* = b = 12 \) séances</strong>
+      en période 1. Le \( \beta \) s'est simplifié : vu de la période 0, le biais ne déforme pas le
+      plan, parce qu'il rabote tous les postes de la même façon.
+    </p>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Lire la réponse : « \( k^* = b \) », qu'est-ce que ça veut dire ?</div>
+    <p>
+      \( b = 12 \) est le bénéfice d'<em>une</em> séance. Et le coût marginal d'effort de la
+      \( k \)-ième séance vaut \( k \) (section 3.4). Le grimpeur continue donc d'ajouter des
+      séances tant que le bénéfice de la suivante (12, toujours) dépasse sa fatigue (\( k \), qui
+      monte). Il s'arrête pile quand les deux s'égalisent : \( k = 12 \). C'est la règle universelle
+      de l'économie : <strong>on pousse une activité jusqu'à ce que le bénéfice marginal égale le
+      coût marginal</strong>.
+    </p>
+    <ul>
+      <li>À la 5<sup>e</sup> séance : elle rapporte 12, elle fatigue 5. Bilan \( +7 \) → il continue.</li>
+      <li>À la 11<sup>e</sup> : elle rapporte 12, elle fatigue 11. Bilan \( +1 \) → il continue encore.</li>
+      <li>À la 13<sup>e</sup> : elle rapporte 12, elle fatigue 13. Bilan \( -1 \) → il s'arrête.</li>
+    </ul>
+    <p>
+      La 12<sup>e</sup> est la dernière qui vaille encore la peine. Tu peux écrire ce petit tableau
+      sur ta copie : il montre au correcteur que tu comprends, pas seulement que tu calcules.
+    </p>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie — question 1.1</div>
+    <p>
+      Avec abonnement, \( a = 1 \), donc \( aC + (1-a)pk = C \). Les préférences de la période 0
+      s'écrivent :
+    </p>
+    <p>\[ U_0(1,k) = -\beta\frac{k^2}{2} - \beta C + \beta b k = \beta\left[-\frac{k^2}{2} - C + bk\right] \]</p>
+    <p>Condition de premier ordre :</p>
+    <p>\[ \frac{\partial U_0(1,k)}{\partial k} = \beta(-k + b) = 0 \;\Longrightarrow\; k^* = b = 12 \]</p>
+    <p>
+      La dérivée seconde vaut \( -\beta &lt; 0 \) : il s'agit bien d'un maximum. Le grimpeur souhaite
+      donc effectuer <strong>12 séances</strong>. On remarque que \( \beta \) se simplifie : vu de
+      la période 0, tous les termes sont futurs et sont rabotés par le même facteur, si bien que le
+      biais ne déforme pas le plan souhaité.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les quatre pièges de la question 1.1</div>
+    <ol>
+      <li>
+        <strong>Garder le terme \( -\beta C \) dans la dérivée.</strong> Il ne contient pas
+        \( k \) : sa dérivée est zéro. Si tu écris « \( \dots - \beta C \dots \) » après le signe
+        dérivée, tu as fait une faute. L'abonnement ne joue <em>aucun</em> rôle dans le nombre de
+        séances souhaité — seulement dans le niveau d'utilité atteint.
+      </li>
+      <li>
+        <strong>Répondre \( k^* = \beta b = 6 \).</strong> C'est la réponse de la question 1.4, pas
+        de la 1.1. Ici on est en période 0, où le \( \beta \) est <em>partout</em> et se simplifie.
+        Confondre les deux coûte deux questions d'un coup.
+      </li>
+      <li>
+        <strong>Oublier de diviser par \( \beta \).</strong> Certaines copies écrivent
+        « \( -\beta k + \beta b = 0 \) donc \( k = \beta b \) ». Non : \( \beta k = \beta b \)
+        donne \( k = b \), pas \( k = \beta b \). Le \( \beta \) est des <em>deux</em> côtés.
+      </li>
+      <li>
+        <strong>Ne donner que le nombre.</strong> « 12 » tout seul vaut 2 points sur 8. La fonction
+        et la CPO valent 6. Écris-les.
+      </li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">La recette réutilisable — « souhaité, avec forfait »</div>
+    <p>
+      Dès qu'un énoncé te donne un <strong>forfait</strong> (un prix qui ne dépend pas de la
+      quantité) et te demande la quantité <em>souhaitée</em> en période 0 :
+    </p>
+    <ol>
+      <li>écris la fonction de période 0 avec le forfait en constante ;</li>
+      <li>constate que le forfait ne contient pas la variable de décision ;</li>
+      <li>dérive : le forfait disparaît ;</li>
+      <li>la quantité optimale est le <em>bénéfice marginal brut</em>, ici \( b \).</li>
+    </ol>
+    <p>
+      Autrement dit : <strong>un forfait ne change jamais la quantité optimale, il change seulement
+      si l'on entre ou non dans le magasin.</strong> Cette phrase, à elle seule, résume la moitié du
+      chapitre.
+    </p>
+  </div>
+
+  <hr class="soft">
+  <h2>5. Question 1.2 — combien souhaite-t-il grimper <em>sans</em> l'abonnement ? (8 points)</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 1.2 (8 points)</div>
+    <p>
+      En période 0, combien de séances souhaite-t-il effectuer s'il ne prend pas d'abonnement
+      (\( a = 0 \)) ?
+    </p>
+  </div>
+
+  <h3>5.1 Traduisons la question en français simple</h3>
+
+  <p>
+    C'est <em>mot pour mot</em> la question précédente, avec un seul changement : l'interrupteur
+    passe de 1 à 0. On reste en période 0 (donc \( U_0 \)), on cherche encore ce qu'il
+    « souhaite » (donc un plan, pas un comportement réel), et on cherche encore un nombre de
+    séances.
+  </p>
+
+  <dl class="lexique">
+    <dt>« s'il ne prend pas d'abonnement (\( a = 0 \)) »</dt>
+    <dd>
+      Il paie à l'unité : \( p = 2 \) par séance. La conséquence mathématique est que la dépense
+      devient \( pk = 2k \), un terme qui <strong>contient \( k \)</strong>. C'est toute la
+      différence avec 1.1, et c'est elle qui va changer la réponse.
+    </dd>
+
+    <dt>« combien de séances souhaite-t-il effectuer »</dt>
+    <dd>
+      Même mot-code que tout à l'heure : « souhaite » ⇒ \( U_0 \) ⇒ plan de période 0. Le fait que
+      l'énoncé n'ait pas répété « détaillez votre calcul » ne change rien : le barème est le même
+      (3 + 3 + 2 points).
+    </dd>
+  </dl>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi cette question existe-t-elle ?</div>
+    <p>
+      Parce que la question 1.3 va demander de <em>choisir</em> entre les deux tarifs, et qu'on ne
+      peut pas comparer deux options sans savoir ce qu'on ferait dans chacune. Les questions 1.1 et
+      1.2 sont donc les deux moitiés d'une même préparation : elles calculent le plan associé à
+      chaque tarif. Retiens cette logique, elle est très fréquente en examen :
+      <strong>on évalue chaque option à son propre optimum</strong>.
+    </p>
+  </div>
+
+  <h3>5.2 Le cours dont tu as besoin ici</h3>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — bénéfice marginal <em>net</em></div>
+    <p>
+      Le <span class="term">bénéfice marginal net</span> d'une séance, c'est ce qu'elle rapporte
+      <strong>moins ce qu'elle coûte en argent</strong>, avant de compter la fatigue. On l'a noté
+      \( M \) en section 3.10.
+    </p>
+    <ul>
+      <li>Avec abonnement : elle rapporte \( b = 12 \), elle coûte 0 en argent → \( M = 12 \).</li>
+      <li>Sans abonnement : elle rapporte \( b = 12 \), elle coûte \( p = 2 \) →
+        \( M = b - p = 10 \).</li>
+    </ul>
+    <p>
+      Et la règle du chapitre est \( k^* = M \). Tu peux donc <em>deviner</em> la réponse avant de
+      calculer : 10. Mais devine seulement pour te contrôler — sur la copie, on déroule le calcul.
+    </p>
+  </div>
+
+  <h3>5.3 La résolution, pas à pas</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Écrire \( U_0 \) avec \( a = 0 \)</div>
+    <div class="calc">
+      <div class="step">
+        \[ U_0(0,k) = -\beta\frac{k^2}{2} - \beta\bigl[0\cdot C + (1-0)pk\bigr] + \beta b k \]
+        <div class="why">
+          Je remplace chaque \( a \) par 0, sans simplifier encore. Le premier morceau du crochet
+          est multiplié par 0, le second par \( (1-0) = 1 \).
+        </div>
+      </div>
+      <div class="step">
+        \[ U_0(0,k) = -\beta\frac{k^2}{2} - \beta p k + \beta b k \]
+        <div class="why">
+          Le crochet se vide : \( 0 \cdot C = 0 \) disparaît, et \( 1 \cdot pk = pk \) reste.
+          <strong>Le prix de l'abonnement, \( C = 16 \), n'apparaît nulle part</strong> — c'est
+          normal, il ne l'a pas pris. En revanche \( k \) apparaît maintenant dans le terme
+          d'argent.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Regrouper les deux termes en \( k \)</div>
+    <p>
+      C'est l'étape que beaucoup de copies sautent, et c'est celle qui fait apparaître la réponse.
+      Les deux derniers morceaux sont tous les deux « quelque chose fois \( k \) » : on peut les
+      fusionner.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ - \beta p k + \beta b k = \beta(b - p)\,k \]
+        <div class="why">
+          Je mets \( \beta k \) en facteur : \( -\beta p k + \beta b k = \beta k(-p + b)
+          = \beta(b-p)k \). C'est la même manipulation que \( -2x + 5x = 3x \), avec des lettres.
+        </div>
+      </div>
+      <div class="step">
+        \[ U_0(0,k) = -\beta\frac{k^2}{2} + \beta(b-p)\,k = \beta\left[-\frac{k^2}{2} + (b-p)k\right] \]
+        <div class="why">
+          Je sors ensuite \( \beta \) de tout, comme en 1.1. Le crochet est maintenant exactement de
+          la forme \( -\tfrac{k^2}{2} + Mk \), avec \( M = b - p \). Remarque au passage : il n'y a
+          même pas de constante ici, puisqu'il n'y a pas d'abonnement à payer.
+        </div>
+      </div>
+      <div class="step">
+        \[ b - p = 12 - 2 = 10 \quad\Longrightarrow\quad U_0(0,k) = \beta\left[-\frac{k^2}{2} + 10k\right] \]
+        <div class="why">
+          Je remplace par les chiffres de l'énoncé. Chaque séance rapporte 12 en bien-être futur et
+          coûte 2 en argent : son apport net est de 10, avant la fatigue.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Dériver, poser la CPO, conclure</div>
+    <div class="calc">
+      <div class="step">
+        \[ \frac{\partial U_0(0,k)}{\partial k} = -\beta k - \beta p + \beta b = \beta\,(-k - p + b) \]
+        <div class="why">
+          Terme par terme : \( -\beta\tfrac{k^2}{2} \) donne \( -\beta k \) ; \( -\beta p k \) est
+          de la forme \( Mk \) avec \( M = -\beta p \), sa dérivée est \( -\beta p \) ;
+          \( \beta b k \) donne \( \beta b \). Puis je mets \( \beta \) en facteur. C'est
+          exactement la ligne du corrigé officiel.
+        </div>
+      </div>
+      <div class="step">
+        \[ \beta\,(-k - p + b) = 0 \quad\Longrightarrow\quad -k - p + b = 0 \]
+        <div class="why">
+          CPO : la pente est nulle au sommet. Puis je divise par \( \beta \neq 0 \), ce qui le fait
+          disparaître.
+        </div>
+      </div>
+      <div class="step">
+        \[ k^* = b - p = 12 - 2 = 10 \]
+        <div class="why">
+          Je fais passer \( k \) de l'autre côté : \( b - p = k \). Numériquement,
+          \( 12 - 2 = 10 \). <strong>Il souhaite 10 séances.</strong>
+        </div>
+      </div>
+      <div class="step">
+        \[ \frac{\partial^2 U_0(0,k)}{\partial k^2} = -\beta &lt; 0 \]
+        <div class="why">
+          Dérivée seconde négative ⇒ c'est bien un maximum. Même contrôle qu'en 1.1, il coûte une
+          ligne.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat</div>
+    <p>
+      Sans abonnement, le grimpeur <strong>souhaite effectuer \( k^* = b - p = 10 \) séances</strong>.
+      Deux de moins qu'avec l'abonnement, parce que chaque séance lui coûte maintenant 2 euros de
+      plus.
+    </p>
+  </div>
+
+  <h3>5.4 Les deux paraboles, côte à côte</h3>
+
+  <p>
+    On a maintenant deux fonctions et deux sommets. Les dessiner ensemble rend l'histoire évidente,
+    et te donne un moyen de vérifier tes calculs sans refaire les calculs.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 540 380" width="100%" style="max-width:12.5cm" role="img"
+         aria-label="Deux paraboles : moins k carre sur deux plus douze k dont le sommet est en k egale douze et vaut 72, et moins k carre sur deux plus dix k dont le sommet est en k egale dix et vaut 50">
+      <line x1="60" y1="300" x2="516" y2="300" stroke="#111827" stroke-width="1.4"/>
+      <line x1="60" y1="300" x2="60" y2="40" stroke="#111827" stroke-width="1.4"/>
+      <path d="M508 295 L520 300 L508 305 Z" fill="#111827"/>
+      <path d="M55 48 L60 36 L65 48 Z" fill="#111827"/>
+
+      <polyline fill="none" stroke="#111827" stroke-width="2.2"
+        points="60,300 105,228.5 150,170 195,124.5 240,92 285,72.5 330,66 375,72.5 420,92 465,124.5 510,170"/>
+      <polyline fill="none" stroke="#111827" stroke-width="1.6" stroke-dasharray="7 4"
+        points="60,300 105,241.5 150,196 195,163.5 240,144 285,137.5 330,144 375,163.5 420,196 465,241.5 510,300"/>
+
+      <g stroke="#6b7280" stroke-width="1" stroke-dasharray="3 3">
+        <line x1="330" y1="66" x2="330" y2="300"/>
+        <line x1="60" y1="66" x2="330" y2="66"/>
+        <line x1="285" y1="137.5" x2="285" y2="300"/>
+        <line x1="60" y1="137.5" x2="285" y2="137.5"/>
+      </g>
+      <circle cx="330" cy="66" r="4.5" fill="#111827"/>
+      <circle cx="285" cy="137.5" r="4.5" fill="none" stroke="#111827" stroke-width="2"/>
+
+      <g font-size="12" text-anchor="end">
+        <text x="54" y="304">0</text>
+        <text x="54" y="141">50</text>
+        <text x="54" y="70">72</text>
+      </g>
+      <g font-size="12" text-anchor="middle">
+        <text x="60" y="320">0</text>
+        <text x="150" y="320">4</text>
+        <text x="240" y="320">8</text>
+        <text x="285" y="320" font-weight="bold">10</text>
+        <text x="330" y="320" font-weight="bold">12</text>
+        <text x="420" y="320">16</text>
+        <text x="510" y="320">20</text>
+      </g>
+      <text x="300" y="342" font-size="12.5" text-anchor="middle">nombre de séances k</text>
+
+      <text x="352" y="58" font-size="12" font-weight="bold">sommet : k = 12</text>
+      <text x="352" y="76" font-size="11.5">avec abonnement</text>
+      <text x="150" y="128" font-size="12" font-weight="bold">sommet : k = 10</text>
+      <text x="150" y="146" font-size="11.5">sans abonnement</text>
+
+      <g stroke="#111827" stroke-width="1.4">
+        <line x1="342" y1="70" x2="342" y2="114"/>
+        <path d="M338 106 L342 118 L346 106 Z" fill="#111827"/>
+      </g>
+      <text x="350" y="102" font-size="11.5">− C = − 16</text>
+      <text x="350" y="118" font-size="11.5">(descend, ne déplace pas)</text>
+
+      <text x="300" y="364" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        courbes tracées avant multiplication par β : β = 0,5 écrase tout de moitié sans bouger les sommets
+      </text>
+    </svg>
+    <figcaption>
+      Figure 6 — Les deux crochets \( -\tfrac{k^2}{2} + 12k \) (trait plein, avec abonnement) et
+      \( -\tfrac{k^2}{2} + 10k \) (pointillés, sans abonnement). Payer 2 euros par séance aplatit la
+      courbe et ramène son sommet de 12 à 10. La flèche rappelle que le \( -C = -16 \) de
+      l'abonnement fait <em>descendre</em> la courbe pleine de 16 sans déplacer son sommet : un coût
+      fixe change le niveau, jamais la quantité.
+    </figcaption>
+  </figure>
+
+  <div class="box box-why">
+    <div class="box-title">Comment lire cette figure sans se tromper</div>
+    <ul>
+      <li>
+        <strong>L'axe horizontal</strong> est le nombre de séances \( k \), l'axe vertical est la
+        valeur du crochet, c'est-à-dire l'utilité <em>avant</em> multiplication par \( \beta \).
+      </li>
+      <li>
+        <strong>Le sommet</strong> de chaque courbe donne la réponse : 12 pour la pleine, 10 pour
+        la pointillée. Une courbe plus « écrasée » a son sommet plus à gauche.
+      </li>
+      <li>
+        <strong>La hauteur des sommets</strong> te servira dès la question suivante :
+        \( 72 - 16 = 56 \) pour l'abonnement (après la flèche), et \( 50 \) sans. En divisant par
+        deux : 28 et 25. Ce sont exactement les deux nombres de la question 1.3, lus sur un
+        dessin.
+      </li>
+    </ul>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie — question 1.2</div>
+    <p>
+      Sans abonnement, \( a = 0 \), donc \( aC + (1-a)pk = pk \) : chaque séance coûte \( p = 2 \).
+    </p>
+    <p>\[ U_0(0,k) = -\beta\frac{k^2}{2} - \beta p k + \beta b k = \beta\left[-\frac{k^2}{2} + (b-p)k\right] \]</p>
+    <p>Condition de premier ordre :</p>
+    <p>\[ \frac{\partial U_0(0,k)}{\partial k} = \beta(-k - p + b) = 0 \;\Longrightarrow\; k^* = b - p = 12 - 2 = 10 \]</p>
+    <p>
+      Dérivée seconde \( -\beta &lt; 0 \) : maximum. Il souhaite donc effectuer
+      <strong>10 séances</strong>. Il en souhaite plus avec abonnement (12) que sans (10) : ce n'est
+      pas un effet de self-contrôle, mais un simple <strong>effet de coût marginal</strong> — le
+      prix marginal d'une séance est 0 avec l'abonnement contre \( p = 2 \) sans.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Le piège n° 1 de tout le chapitre — attribuer 12 → 10 au self-contrôle</div>
+    <p>
+      C'est l'erreur que le corrigé officiel prend la peine de signaler, ce qui veut dire qu'elle
+      est très fréquente. Écrire « il souhaite moins de séances sans abonnement parce qu'il a un
+      problème de self-contrôle » est <strong>faux</strong>, et coûte des points même si le nombre
+      10 est juste.
+    </p>
+    <p>
+      Preuve en une ligne : dans le calcul de 1.2, le \( \beta \) s'est <em>entièrement
+      simplifié</em>. Il a disparu avant même qu'on trouve 10. Un résultat où \( \beta \) n'apparaît
+      pas ne peut pas être causé par \( \beta \). La différence \( 12 \to 10 \) est exactement
+      \( p = 2 \), le prix de la séance : c'est de la microéconomie de première année, et une
+      personne sans aucun biais ferait exactement le même arbitrage.
+    </p>
+    <p>
+      La bonne phrase est : <em>« effet de coût marginal, pas effet de biais »</em>. Garde-la telle
+      quelle.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Deux autres erreurs de calcul classiques</div>
+    <ul>
+      <li>
+        <strong>Écrire \( k^* = b - pk \).</strong> Impossible : \( k \) ne peut pas apparaître des
+        deux côtés d'une réponse. Le \( k \) du terme \( pk \) a disparu à la dérivation ; ce qui
+        reste est \( p \) tout seul.
+      </li>
+      <li>
+        <strong>Soustraire \( C \) alors que \( a = 0 \).</strong> On voit des copies écrire
+        \( k^* = b - p - C \). Non : sans abonnement, on ne paie pas l'abonnement. Et de toute
+        façon une constante ne survit jamais à une dérivation.
+      </li>
+    </ul>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe de méthode n° 3 — le prix marginal se soustrait au bénéfice</div>
+    <p>
+      Formule à retenir pour toute cette famille d'exercices :
+    </p>
+    <p>\[ k^* = (\text{bénéfice marginal, éventuellement raboté}) - (\text{prix marginal}) \]</p>
+    <p>
+      Tout le chapitre consiste à savoir <em>lequel</em> des deux morceaux porte un \( \beta \) et
+      combien vaut le prix marginal. Quatre combinaisons, quatre réponses : 12, 10, 6, 4. Tu les
+      as déjà vues dans le tableau de la section 3.10 — deux sont maintenant démontrées.
+    </p>
+  </div>
+
+  <hr class="soft">
+  <h2>6. Question 1.3 — le grimpeur <em>naïf</em> prend-il l'abonnement ? (10 points)</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 1.3 (10 points)</div>
+    <p>
+      Si le grimpeur est naïf à propos de son problème de self-contrôle (\( \hat\beta = 1 \)),
+      va-t-il prendre un abonnement en période 0 ? Détaillez votre raisonnement.
+    </p>
+  </div>
+
+  <h3>6.1 Traduisons la question en français simple</h3>
+
+  <dl class="lexique">
+    <dt>« naïf … (\( \hat\beta = 1 \)) »</dt>
+    <dd>
+      Le grimpeur <strong>croit</strong> que son moi de demain n'aura aucun biais. Attention au
+      chapeau : \( \hat\beta \) est une <em>croyance</em>, pas la réalité. Son vrai \( \beta \)
+      reste \( \tfrac{1}{2} \) — il se trompe, simplement il ne le sait pas.
+    </dd>
+
+    <dt>« va-t-il prendre un abonnement ? »</dt>
+    <dd>
+      On te demande enfin de choisir \( a \). C'est une question <strong>oui / non</strong>, et la
+      réponse doit être justifiée par une <em>comparaison chiffrée de deux utilités</em>. Une
+      réponse sans les deux nombres ne vaut presque rien au barème.
+    </dd>
+
+    <dt>« en période 0 »</dt>
+    <dd>
+      Le choix se fait avec la fonction \( U_0 \), et seulement avec elle. C'est le
+      <strong>moi-0</strong> qui signe (ou pas) le contrat.
+    </dd>
+
+    <dt>« Détaillez votre raisonnement »</dt>
+    <dd>
+      Le barème découpe : comprendre <em>ce que</em> le naïf évalue (3 pts), calculer
+      \( U_0(1,12) \) (3 pts), calculer \( U_0(0,10) \) (3 pts), conclure (1 pt). La partie « ce
+      qu'il évalue » vaut autant qu'un calcul : écris-la en toutes lettres.
+    </dd>
+  </dl>
+
+  <h3>6.2 Le cours dont tu as besoin ici : comparer deux options</h3>
+
+  <div class="box box-methode">
+    <div class="box-title">La règle du choix entre deux options</div>
+    <p>
+      Choisir entre deux options, en théorie du choix rationnel (volume 1, chapitre 1), c'est
+      toujours la même mécanique en trois temps :
+    </p>
+    <ol>
+      <li><strong>Pour chaque option</strong>, déterminer ce qu'on ferait <em>si</em> on la
+        choisissait — c'est-à-dire son propre optimum.</li>
+      <li><strong>Chiffrer l'utilité</strong> de chaque option évaluée à son propre optimum.</li>
+      <li><strong>Comparer les deux nombres</strong> et prendre le plus grand.</li>
+    </ol>
+    <p>
+      Les questions 1.1 et 1.2 ont fait l'étape 1 pour le naïf. Il ne reste que 2 et 3.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — comparer les deux options « au même \( k \) »</div>
+    <p>
+      Erreur signalée par le corrigé : calculer \( U_0(1,12) \) et \( U_0(0,12) \), ou bien
+      \( U_0(1,10) \) et \( U_0(0,10) \). C'est faux. <strong>Le nombre de séances n'est pas le
+      même dans les deux mondes</strong> : avec abonnement il en veut 12, sans il en veut 10. Chaque
+      option doit être jugée <em>au mieux de ce qu'elle permet</em>.
+    </p>
+    <p>
+      Image : pour comparer deux restaurants, tu compares le meilleur plat de l'un au meilleur plat
+      de l'autre — pas le meilleur plat de l'un au plat que tu prendrais dans l'autre.
+    </p>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi le naïf utilise-t-il 12 et 10, et pas 6 et 4 ?</div>
+    <p>
+      Parce qu'il croit \( \hat\beta = 1 \). Dans sa tête, son moi de la période 1 maximisera
+      \( -\tfrac{k^2}{2} - [\dots] + \hat\beta b k \) avec \( \hat\beta = 1 \), c'est-à-dire
+      exactement le même objectif que son moi de la période 0. Il est donc persuadé qu'il exécutera
+      son plan à la lettre : 12 séances avec abonnement, 10 sans.
+    </p>
+    <p>
+      Il se trompe — on le verra en 1.4 — mais la question 1.3 demande <em>sa décision</em>, et sa
+      décision se prend avec ses croyances, fausses ou non. C'est un point conceptuel que le barème
+      paie 3 points.
+    </p>
+  </div>
+
+  <h3>6.3 La résolution, pas à pas</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Écrire ce que le naïf croit qu'il fera</div>
+    <p>
+      Avant tout calcul, une ligne de français qui vaut 3 points :
+    </p>
+    <div class="box box-copie">
+      <div class="box-title">La phrase à écrire</div>
+      <p>
+        « Le grimpeur naïf croit \( \hat\beta = 1 \) : il pense que son moi de la période 1
+        exécutera fidèlement le plan de la période 0. Il évalue donc l'option “abonnement” en
+        \( k = 12 \) (question 1.1) et l'option “à l'unité” en \( k = 10 \) (question 1.2). »
+      </p>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Calculer \( U_0(1,12) \), l'utilité de l'abonnement</div>
+    <p>
+      On reprend la formule de 1.1 et on y remplace \( k \) par 12, puis chaque lettre par son
+      chiffre. Je détaille chaque substitution séparément pour qu'aucune ne se perde.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ U_0(1,k) = -\beta\frac{k^2}{2} - \beta C + \beta b k = \beta\left[-\frac{k^2}{2} - C + bk\right] \]
+        <div class="why">
+          La fonction, dans sa version « \( \beta \) en facteur » : c'est celle qui donne le moins
+          d'occasions de se tromper, parce qu'on ne manipule qu'un seul \( \beta \) au lieu de
+          trois.
+        </div>
+      </div>
+      <div class="step">
+        \[ U_0(1,12) = \tfrac{1}{2}\left[-\frac{12^2}{2} - 16 + 12 \times 12\right] \]
+        <div class="why">
+          Je remplace : \( \beta = \tfrac{1}{2} \), \( k = 12 \), \( C = 16 \), \( b = 12 \).
+          Attention à ne pas confondre les deux « 12 » : celui de \( b \) (le bénéfice par séance)
+          et celui de \( k \) (le nombre de séances). Ils sont égaux par coïncidence — c'est même
+          la conclusion de 1.1, \( k^* = b \).
+        </div>
+      </div>
+      <div class="step">
+        \[ \frac{12^2}{2} = \frac{144}{2} = 72 \qquad 12 \times 12 = 144 \]
+        <div class="why">
+          Les deux petits calculs à part, pour ne pas les faire de tête au milieu d'une somme.
+          \( 12^2 = 144 \), moitié : 72. C'est la fatigue totale de 12 séances.
+        </div>
+      </div>
+      <div class="step">
+        \[ U_0(1,12) = \tfrac{1}{2}\,\bigl(-72 - 16 + 144\bigr) \]
+        <div class="why">
+          Je réinjecte. Trois nombres à l'intérieur : la fatigue \( -72 \), l'abonnement \( -16 \),
+          le bénéfice \( +144 \).
+        </div>
+      </div>
+      <div class="step">
+        \[ -72 - 16 + 144 = -88 + 144 = 56 \]
+        <div class="why">
+          Je regroupe d'abord les négatifs : \( -72 - 16 = -88 \). Puis \( 144 - 88 = 56 \).
+        </div>
+      </div>
+      <div class="step">
+        \[ U_0(1,12) = \tfrac{1}{2} \times 56 = 28 \]
+        <div class="why">
+          Enfin je multiplie par \( \beta = \tfrac{1}{2} \), c'est-à-dire je divise par 2.
+          <strong>L'option abonnement vaut 28 points d'utilité aux yeux du naïf.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Calculer \( U_0(0,10) \), l'utilité du tarif à l'unité</div>
+    <div class="calc">
+      <div class="step">
+        \[ U_0(0,k) = \beta\left[-\frac{k^2}{2} + (b-p)k\right] \quad\text{ou, développé,}\quad \beta\left[-\frac{k^2}{2} - pk + bk\right] \]
+        <div class="why">
+          La fonction de 1.2. J'écris les deux versions : la développée est plus sûre pour un
+          calcul numérique, parce qu'on voit séparément l'argent et le bénéfice.
+        </div>
+      </div>
+      <div class="step">
+        \[ U_0(0,10) = \tfrac{1}{2}\left[-\frac{10^2}{2} - 2 \times 10 + 12 \times 10\right] \]
+        <div class="why">
+          Je remplace \( k \) par 10, \( p \) par 2, \( b \) par 12. Ici le \( k \) vaut 10 et non
+          12, parce qu'on est dans le monde « sans abonnement ».
+        </div>
+      </div>
+      <div class="step">
+        \[ \frac{10^2}{2} = \frac{100}{2} = 50 \qquad 2 \times 10 = 20 \qquad 12 \times 10 = 120 \]
+        <div class="why">
+          Les trois calculs élémentaires, séparément : la fatigue 50, l'argent 20, le bénéfice 120.
+        </div>
+      </div>
+      <div class="step">
+        \[ U_0(0,10) = \tfrac{1}{2}\,\bigl(-50 - 20 + 120\bigr) = \tfrac{1}{2}\,(50) = 25 \]
+        <div class="why">
+          \( -50 - 20 = -70 \) puis \( 120 - 70 = 50 \), enfin moitié : 25.
+          <strong>L'option à l'unité vaut 25 points d'utilité.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Comparer et conclure</div>
+    <div class="calc">
+      <div class="step">
+        \[ U_0(1,12) = 28 \;>\; U_0(0,10) = 25 \]
+        <div class="why">
+          28 est plus grand que 25, d'exactement 3 points d'utilité. Comme l'utilité mesure le
+          contentement, l'option qui donne le plus grand nombre est celle qu'il choisit.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat</div>
+    <p>
+      \( U_0(1,12) = 28 \) contre \( U_0(0,10) = 25 \) : comme \( 28 > 25 \),
+      <strong>le grimpeur naïf prend l'abonnement</strong>. L'écart en sa faveur est de 3 points
+      d'utilité.
+    </p>
+  </div>
+
+  <h3>6.4 D'où viennent ces 3 points d'écart ?</h3>
+
+  <p>
+    Décomposer l'écart est le meilleur moyen de vérifier qu'on n'a pas fait d'erreur, et ça donne
+    une phrase de commentaire qui impressionne le correcteur. Poste par poste, après multiplication
+    par \( \beta = \tfrac{1}{2} \) :
+  </p>
+
+  <table class="data">
+    <tr>
+      <th class="left">Poste</th>
+      <th>Abonnement (\( k = 12 \))</th>
+      <th>À l'unité (\( k = 10 \))</th>
+      <th>Écart</th>
+    </tr>
+    <tr>
+      <td class="left">Fatigue \( -\beta k^2/2 \)</td>
+      <td>\( -36 \)</td>
+      <td>\( -25 \)</td>
+      <td>\( -11 \)</td>
+    </tr>
+    <tr>
+      <td class="left">Argent versé à la salle</td>
+      <td>\( -8 \)</td>
+      <td>\( -10 \)</td>
+      <td>\( +2 \)</td>
+    </tr>
+    <tr>
+      <td class="left">Bénéfice \( +\beta b k \)</td>
+      <td>\( +72 \)</td>
+      <td>\( +60 \)</td>
+      <td>\( +12 \)</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Total</strong></td>
+      <td><strong>28</strong></td>
+      <td><strong>25</strong></td>
+      <td><strong>+3</strong></td>
+    </tr>
+  </table>
+
+  <div class="box box-why">
+    <div class="box-title">La lecture de ce tableau</div>
+    <p>
+      L'abonnement lui fait faire 2 séances de plus. Ces 2 séances rapportent 12 points de bénéfice
+      supplémentaires (après \( \beta \)) et coûtent 11 points de fatigue supplémentaires : le
+      solde « séances » est de \( +1 \) seulement, car ce sont les séances les plus fatigantes, les
+      11<sup>e</sup> et 12<sup>e</sup>. Le reste de l'écart vient de l'argent : \( \beta C = 8 \)
+      contre \( \beta p k = 10 \), soit \( +2 \) en faveur de l'abonnement.
+    </p>
+    <p>
+      <strong>Autrement dit, dans le plan du naïf, l'abonnement est aussi le tarif le moins
+      cher</strong> : 16 euros pour 12 séances, contre 20 euros pour 10 séances (et même 24 s'il
+      voulait ses 12 séances à l'unité). Retiens bien ce point : à la question 1.6, une fois qu'on
+      saura qu'il ne fera que 6 séances, cette conclusion s'inversera.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 540 300" width="100%" style="max-width:12.5cm" role="img"
+         aria-label="Comparaison des deux options pour le naif : avec abonnement benefice plus 72 fatigue moins 36 argent moins 8 net 28 ; sans abonnement benefice plus 60 fatigue moins 25 argent moins 10 net 25">
+      <line x1="20" y1="170" x2="520" y2="170" stroke="#111827" stroke-width="1.4"/>
+      <line x1="270" y1="30" x2="270" y2="250" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 4"/>
+
+      <text x="140" y="24" font-size="13" font-weight="bold" text-anchor="middle">Abonnement, k = 12</text>
+      <text x="400" y="24" font-size="13" font-weight="bold" text-anchor="middle">À l'unité, k = 10</text>
+
+      <rect x="40" y="69.2" width="32" height="100.8" fill="#111827"/>
+      <rect x="80" y="170" width="32" height="50.4" fill="none" stroke="#111827" stroke-width="1.4"/>
+      <rect x="120" y="170" width="32" height="11.2" fill="none" stroke="#111827" stroke-width="1.4" stroke-dasharray="4 2"/>
+      <rect x="176" y="130.8" width="40" height="39.2" fill="#4b5563"/>
+
+      <rect x="300" y="86" width="32" height="84" fill="#111827"/>
+      <rect x="340" y="170" width="32" height="35" fill="none" stroke="#111827" stroke-width="1.4"/>
+      <rect x="380" y="170" width="32" height="14" fill="none" stroke="#111827" stroke-width="1.4" stroke-dasharray="4 2"/>
+      <rect x="436" y="135" width="40" height="35" fill="#4b5563"/>
+
+      <g font-size="11.5" text-anchor="middle">
+        <text x="56" y="63">+72</text>
+        <text x="96" y="234">−36</text>
+        <text x="136" y="195">−8</text>
+        <text x="196" y="124" font-weight="bold">28</text>
+        <text x="316" y="80">+60</text>
+        <text x="356" y="219">−25</text>
+        <text x="396" y="198">−10</text>
+        <text x="456" y="128" font-weight="bold">25</text>
+      </g>
+      <g font-size="11" text-anchor="middle">
+        <text x="56" y="264">bénéf.</text>
+        <text x="96" y="264">fatigue</text>
+        <text x="136" y="264">argent</text>
+        <text x="196" y="264" font-weight="bold">NET</text>
+        <text x="316" y="264">bénéf.</text>
+        <text x="356" y="264">fatigue</text>
+        <text x="396" y="264">argent</text>
+        <text x="456" y="264" font-weight="bold">NET</text>
+      </g>
+      <text x="270" y="290" font-size="12" text-anchor="middle" font-weight="bold">
+        28 &gt; 25 : le naïf signe pour l'abonnement (écart de 3 points d'utilité)
+      </text>
+    </svg>
+    <figcaption>
+      Figure 7 — Les deux options du naïf, poste par poste (valeurs déjà multipliées par
+      \( \beta = 0{,}5 \)). Les barres pleines montent : c'est le bénéfice. Les barres vides
+      descendent : ce sont les coûts. La barre grise donne le solde. Tout se joue à 3 points.
+    </figcaption>
+  </figure>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie — question 1.3</div>
+    <p>
+      Le naïf croit \( \hat\beta = 1 \) : il pense que son moi de la période 1 exécutera fidèlement
+      le plan souhaité en période 0, soit 12 séances avec abonnement (1.1) et 10 séances sans
+      (1.2). Il prend l'abonnement si \( U_0(1,12) > U_0(0,10) \).
+    </p>
+    <p>\[ U_0(1,12) = \tfrac{1}{2}\Bigl(-\tfrac{12^2}{2} - 16 + 12 \times 12\Bigr) = \tfrac{1}{2}(-72 - 16 + 144) = \tfrac{1}{2} \times 56 = 28 \]</p>
+    <p>\[ U_0(0,10) = \tfrac{1}{2}\Bigl(-\tfrac{10^2}{2} - 2 \times 10 + 12 \times 10\Bigr) = \tfrac{1}{2}(-50 - 20 + 120) = \tfrac{1}{2} \times 50 = 25 \]</p>
+    <p>
+      Comme \( 28 > 25 \), <strong>le grimpeur naïf prend l'abonnement</strong>. Chaque option est
+      bien évaluée à son propre nombre de séances souhaité.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les pièges de la question 1.3</div>
+    <ol>
+      <li>
+        <strong>Utiliser \( \hat\beta = 1 \) dans le calcul de \( U_0 \).</strong> Non : la fonction
+        \( U_0 \) est donnée par l'énoncé avec le <em>vrai</em> \( \beta = \tfrac{1}{2} \). Le
+        \( \hat\beta \) ne sert qu'à déterminer <em>quel \( k \)</em> il croit qu'il fera. Il
+        n'entre jamais dans la formule d'utilité elle-même.
+      </li>
+      <li>
+        <strong>Oublier le \( -C \).</strong> Il avait disparu à la dérivation en 1.1, ce qui fait
+        croire qu'il ne compte plus. Faux : il ne compte pas pour choisir \( k \), mais il compte
+        pleinement pour choisir \( a \). C'est même toute la tension de la question.
+      </li>
+      <li>
+        <strong>Comparer 12 séances et 10 séances au lieu de 28 et 25.</strong> « Il en fait plus
+        avec l'abonnement, donc il le prend » n'est pas un argument : plus de séances, c'est aussi
+        plus de fatigue. Il faut chiffrer les <em>utilités</em>.
+      </li>
+      <li>
+        <strong>Comparer \( U_0 \) et \( U_1 \).</strong> Le choix de \( a \) se fait entièrement
+        dans \( U_0 \). \( U_1 \) n'entre en scène qu'à la question suivante.
+      </li>
+    </ol>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe de méthode n° 4 — trois lignes, toujours les mêmes</div>
+    <p>
+      Toute question du type « va-t-il choisir A ou B ? » se rédige en trois lignes :
+    </p>
+    <ol>
+      <li>« Sous A, il fera \( k_A \) ; sous B, il fera \( k_B \) » (et dire <em>pourquoi</em> :
+        ici, parce qu'il est naïf).</li>
+      <li>Deux calculs : \( U_0(A, k_A) = \dots \) et \( U_0(B, k_B) = \dots \).</li>
+      <li>« Comme … \( > \) …, il choisit … ».</li>
+    </ol>
+    <p>
+      Cette trame te resservira telle quelle à la question 1.5 : seuls les nombres changeront.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+<h2>7. Question 1.4 — combien de séances le naïf effectue-t-il vraiment ? (8 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 1.4 (8 points)</div>
+<p>
+  <strong>1.4)</strong> Étant donné le choix tarifaire effectué à la question 1.3, combien de
+  séances le grimpeur naïf va-t-il réellement effectuer en période 1 ?
+</p>
+</div>
+
+<h3>7.1 Traduisons la question</h3>
+
+<dl class="lexique">
+<dt>« étant donné le choix tarifaire effectué à la question 1.3 »</dt>
+<dd>
+  On repart de la conclusion précédente : le naïf a <strong>pris l'abonnement</strong>, donc
+  \( a = 1 \). Ce choix est maintenant figé — il a payé, il ne peut plus revenir dessus.
+</dd>
+<dt>« va-t-il <em>réellement</em> effectuer »</dt>
+<dd>
+  Le mot « réellement » s'oppose à « souhaitait ». En période 0, il <em>prévoyait</em> 12 séances
+  (question 1.1). Mais quand la période 1 arrive, ce n'est plus le même « lui » qui décide : c'est
+  son <strong>moi de la période 1</strong>, avec ses préférences à lui, données par \( U_1 \).
+  Toute la question est là.
+</dd>
+<dt>« en période 1 »</dt>
+<dd>
+  Cela t'indique quelle fonction utiliser : <strong>\( U_1 \), pas \( U_0 \)</strong>. Se tromper
+  de fonction, c'est perdre les 8 points.
+</dd>
+</dl>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel — la différence entre \( U_0 \) et \( U_1 \)</div>
+<p>Reprenons les deux fonctions, et regardons précisément où elles diffèrent :</p>
+<p>\[ U_0(a,k) = -\beta\frac{k^2}{2} - \beta\big[aC + (1-a)pk\big] + \beta b k \]</p>
+<p>\[ U_1(a,k) = -\frac{k^2}{2} - \big[aC + (1-a)pk\big] + \beta b k \]</p>
+<p>
+  Vu de la période 0, <strong>tout</strong> est dans le futur : le coût d'effort comme le bénéfice
+  sont rabotés par \( \beta \). Vu de la période 1, en revanche, le coût d'effort est
+  <strong>immédiat</strong> (plus de \( \beta \) devant), tandis que le bénéfice, lui, reste dans
+  le futur (il garde son \( \beta \)).
+</p>
+<p>
+  C'est exactement ce déséquilibre qui crée le problème : <em>de près, l'effort fait plus mal que
+  de loin, alors que la récompense, elle, ne grossit pas</em>.
+</p>
+</div>
+
+<h3>7.2 La résolution, pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Écrire la fonction à maximiser en période 1</div>
+<div class="calc">
+<div class="step">
+\[ U_1(1,k) = -\frac{k^2}{2} - \big[1 \times C + 0 \times pk\big] + \beta b k \]
+<div class="why">Je remplace \( a \) par 1 (il a l'abonnement). Le terme \( (1-a)pk \) devient
+\( 0 \times pk = 0 \) : avec l'abonnement, il ne paie plus rien à la séance.</div>
+</div>
+<div class="step">
+\[ U_1(1,k) = -\frac{k^2}{2} - 16 + \tfrac12 \times 12 \times k = -\frac{k^2}{2} - 16 + 6k \]
+<div class="why">Je remplace les valeurs : \( C = 16 \), \( \beta = \tfrac12 \) et \( b = 12 \),
+donc \( \beta b = 6 \).</div>
+</div>
+</div>
+<div class="box box-why">
+<div class="box-title">Le point à bien voir : \( -16 \) est une constante</div>
+<p>
+  L'abonnement est déjà payé : quel que soit le nombre de séances, il coûte 16, ni plus ni moins.
+  Ce terme ne dépend donc pas de \( k \) et disparaîtra en dérivant. C'est un
+  <strong>coût irrécupérable</strong> (« sunk cost ») : au moment de décider combien grimper,
+  il ne doit plus peser dans la balance.
+</p>
+<p>
+  Traduction concrète : <strong>le prix marginal d'une séance est nul</strong>. Grimper une fois
+  de plus ne coûte pas un centime de plus.
+</p>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Dériver et annuler</div>
+<div class="calc">
+<div class="step">
+\[ \frac{\partial U_1}{\partial k} = -k - 0 + 6 \]
+<div class="why">Terme par terme : la dérivée de \( -\frac{k^2}{2} \) vaut \( -\frac{2k}{2} = -k \) ;
+celle de la constante \( -16 \) vaut 0 ; celle de \( 6k \) vaut 6.</div>
+</div>
+<div class="step">
+\[ -k + 6 = 0 \quad \Longleftrightarrow \quad k = 6 \]
+<div class="why">J'annule la dérivée et j'isole \( k \) en ajoutant \( k \) des deux côtés.</div>
+</div>
+<div class="step">
+\[ \frac{\partial^2 U_1}{\partial k^2} = -1 < 0 \]
+<div class="why">Dérivée seconde négative : c'est bien un maximum, pas un minimum. Une ligne,
+des points faciles.</div>
+</div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 1.4</div>
+<p>\[ k^{\text{réel}} = \beta b = \tfrac12 \times 12 = 6 \ \text{séances} \]</p>
+<p>
+  Il en avait planifié <strong>12</strong> en prenant son abonnement. Il n'en fera que
+  <strong>6</strong>, soit exactement la moitié.
+</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 300" width="100%" style="max-width:12cm" role="img"
+     aria-label="Deux paraboles : celle du moi de la période 0, dont le sommet est en douze séances, et celle du moi de la période 1, dont le sommet est en six séances">
+  <line x1="55" y1="30" x2="55" y2="250" stroke="#111827" stroke-width="1.6"/>
+  <line x1="55" y1="250" x2="430" y2="250" stroke="#111827" stroke-width="1.6"/>
+  <text x="436" y="254" font-size="12.5">k</text>
+  <text x="20" y="26" font-size="12.5">gain net</text>
+  <g font-size="12" text-anchor="middle">
+    <line x1="205" y1="246" x2="205" y2="254" stroke="#111827" stroke-width="1.3"/>
+    <text x="205" y="270">6</text>
+    <line x1="355" y1="246" x2="355" y2="254" stroke="#111827" stroke-width="1.3"/>
+    <text x="355" y="270">12</text>
+  </g>
+  <!-- moi periode 0 : -k^2/2 + 12k, sommet en 12, valeur 72 -->
+  <polyline fill="none" stroke="#4338ca" stroke-width="2.8"
+    points="55,250 105,180 155,126 205,88 255,64 305,52 355,48 405,52"/>
+  <text x="300" y="40" font-size="12.5" font-weight="bold" style="fill:#4338ca">le moi de la période 0 : sommet en 12</text>
+  <!-- moi periode 1 : -k^2/2 + 6k, sommet en 6, valeur 18 -->
+  <polyline fill="none" stroke="#be123c" stroke-width="2.8" stroke-dasharray="8 4"
+    points="55,250 105,213 155,190 205,182 255,190 305,213 355,250"/>
+  <text x="66" y="176" font-size="12.5" font-weight="bold" style="fill:#be123c">le moi de la période 1 : sommet en 6</text>
+  <circle cx="355" cy="48" r="5" fill="#4338ca"/>
+  <line x1="355" y1="48" x2="355" y2="250" stroke="#4338ca" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <circle cx="205" cy="182" r="5" fill="#be123c"/>
+  <line x1="205" y1="182" x2="205" y2="250" stroke="#be123c" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <path d="M 348 288 L 212 288" stroke="#111827" stroke-width="1.6"/>
+  <polygon points="210,288 218,284 218,292" fill="#111827"/>
+  <text x="280" y="284" font-size="11.5" text-anchor="middle">l'écart entre le plan et la réalité</text>
+</svg>
+<figcaption>
+  Figure — Deux « moi », deux courbes. Vu de la période 0, le sommet est à 12 séances. Vu de la
+  période 1, l'effort pèse deux fois plus lourd (il n'est plus escompté) alors que le bénéfice
+  garde son \( \beta \) : la courbe s'affaisse et son sommet recule à 6. Le grimpeur ne trahit
+  pas sa parole — c'est le même individu, avec des préférences qui ont changé de perspective.
+</figcaption>
+</figure>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 1.4</div>
+<p>
+  « En période 1, avec l'abonnement (\( a = 1 \)), le grimpeur maximise
+  \( U_1(1,k) = -\frac{k^2}{2} - 16 + \beta b k = -\frac{k^2}{2} - 16 + 6k \).<br>
+  Le coût de l'abonnement est une constante (coût irrécupérable), le prix marginal d'une séance
+  est nul. Condition de premier ordre : \( -k + 6 = 0 \), donc
+  <strong>\( k^{\text{réel}} = \beta b = 6 \)</strong> (et \( \partial^2 U_1/\partial k^2 = -1 < 0 \)).<br>
+  Il avait planifié 12 séances en période 0 : il n'en fera que la moitié. C'est la manifestation
+  de son biais de self-contrôle. »
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 1.4</div>
+<ul>
+  <li><strong>Utiliser \( U_0 \) au lieu de \( U_1 \)</strong> et répondre 12. C'est l'erreur qui
+      vide la question de son sens : tout l'exercice consiste à montrer que les deux diffèrent.</li>
+  <li><strong>Garder le terme d'abonnement dans la dérivée.</strong> \( -16 \) est constant : sa
+      dérivée est nulle. Le montant payé n'influence pas le nombre de séances.</li>
+  <li><strong>Oublier le \( \beta \) devant \( b \).</strong> En période 1, le bénéfice est encore
+      dans le futur : il vaut \( \beta b = 6 \), pas \( b = 12 \).</li>
+  <li><strong>Mettre un \( \beta \) devant \( k^2/2 \).</strong> En période 1, l'effort est
+      immédiat : plus de \( \beta \). C'est précisément ce qui distingue \( U_1 \) de \( U_0 \).</li>
+</ul>
+</div>
+
+<hr class="soft">
+
+<h2>8. Question 1.5 — le grimpeur sophistiqué prend-il l'abonnement ? (10 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 1.5 (10 points)</div>
+<p>
+  <strong>1.5)</strong> Si le grimpeur est sophistiqué à propos de son problème de self-contrôle
+  (\( \hat\beta = \beta \)), va-t-il prendre un abonnement en période 0 ? Détaillez votre
+  raisonnement.
+</p>
+</div>
+
+<h3>8.1 Traduisons la question</h3>
+
+<dl class="lexique">
+<dt>« sophistiqué »</dt>
+<dd>
+  Un grimpeur <span class="term">sophistiqué</span> <strong>se connaît</strong> : il sait qu'il a
+  un biais et il anticipe correctement ce que son moi futur fera. La notation \( \hat\beta = \beta \)
+  se lit « bêta chapeau égale bêta » : \( \hat\beta \) est la croyance qu'il a sur son propre
+  biais, et elle est <em>juste</em>. (Le naïf, lui, croyait \( \hat\beta = 1 \), c'est-à-dire
+  « je n'ai aucun problème ».)
+</dd>
+<dt>« va-t-il prendre un abonnement en période 0 ? »</dt>
+<dd>
+  Même question qu'en 1.3, mais avec un personnage lucide. La méthode est identique : comparer
+  \( U_0 \) avec abonnement et \( U_0 \) sans. <strong>La seule différence, c'est le nombre de
+  séances qu'il inscrit dans chaque comparaison</strong> : il n'y met plus ses souhaits, mais ses
+  prévisions réalistes.
+</dd>
+</dl>
+
+<div class="box box-methode">
+<div class="box-title">Méthode — naïf et sophistiqué : une seule différence</div>
+<p>Dans les deux cas, on évalue les deux options avec la fonction de la période 0, \( U_0 \). Mais :</p>
+<table class="compare">
+<tr><th></th><th class="left">k utilisé avec abonnement</th><th class="left">k utilisé sans abonnement</th></tr>
+<tr><th class="left">naïf</th><td class="left">12 (ce qu'il <em>souhaite</em>)</td><td class="left">10 (ce qu'il <em>souhaite</em>)</td></tr>
+<tr><th class="left">sophistiqué</th><td class="left">6 (ce qu'il <em>fera</em>)</td><td class="left">4 (ce qu'il <em>fera</em>)</td></tr>
+</table>
+<p>
+  Autrement dit : le naïf se ment sur son futur, le sophistiqué le prévoit correctement. Tout le
+  reste du calcul est identique.
+</p>
+</div>
+
+<h3>8.2 La résolution, pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Prévoir ce qu'il fera avec l'abonnement</div>
+<p>C'est exactement le calcul de la question 1.4, que le sophistiqué sait faire :</p>
+<div class="calc">
+<div class="step">
+\[ \max_k \ -\frac{k^2}{2} - 16 + 6k \quad \Longrightarrow \quad k = \beta b = 6 \]
+<div class="why">Avec l'abonnement, le prix marginal est nul ; son moi de la période 1 grimpera
+6 fois.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Prévoir ce qu'il fera sans abonnement</div>
+<p>Ce calcul est nouveau : il faut refaire la période 1, mais avec \( a = 0 \).</p>
+<div class="calc">
+<div class="step">
+\[ U_1(0,k) = -\frac{k^2}{2} - \big[0 \times C + 1 \times pk\big] + \beta b k = -\frac{k^2}{2} - 2k + 6k \]
+<div class="why">Sans abonnement, il paie \( p = 2 \) à chaque séance — et ce paiement est
+<strong>immédiat</strong> en période 1, donc sans \( \beta \) devant. Le bénéfice, lui, garde son
+\( \beta \) : \( \beta b = 6 \).</div>
+</div>
+<div class="step">
+\[ U_1(0,k) = -\frac{k^2}{2} + 4k \]
+<div class="why">Je regroupe : \( -2k + 6k = 4k \). Le prix de 2 par séance vient donc
+directement <em>ronger</em> le bénéfice perçu, qui tombe de 6 à 4.</div>
+</div>
+<div class="step">
+\[ \frac{\partial U_1}{\partial k} = -k + 4 = 0 \quad \Longrightarrow \quad k = 4 \]
+<div class="why">Même dérivation qu'avant. Sans abonnement, il ne grimperait que 4 fois : le prix
+à l'unité le décourage encore davantage.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Évaluer l'option « abonnement » depuis la période 0</div>
+<div class="calc">
+<div class="step">
+\[ U_0(1,6) = -\beta\frac{6^2}{2} - \beta \times 16 + \beta \times 12 \times 6 \]
+<div class="why">J'utilise \( U_0 \) — c'est en période 0 qu'il décide — mais avec
+\( k = 6 \), le nombre de séances qu'il <em>sait</em> qu'il fera.</div>
+</div>
+<div class="step">
+\[ U_0(1,6) = -\tfrac12(18) - \tfrac12(16) + \tfrac12(72) = -9 - 8 + 36 = 19 \]
+<div class="why">Détail : \( \frac{6^2}{2} = \frac{36}{2} = 18 \), et \( 12 \times 6 = 72 \).
+Puis je multiplie chaque terme par \( \beta = \tfrac12 \) : \( -9 \), \( -8 \), \( +36 \).
+Total : 19.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Évaluer l'option « paiement à la séance » depuis la période 0</div>
+<div class="calc">
+<div class="step">
+\[ U_0(0,4) = -\beta\frac{4^2}{2} - \beta \times (2 \times 4) + \beta \times 12 \times 4 \]
+<div class="why">Toujours \( U_0 \), avec cette fois \( k = 4 \) et le coût \( pk = 2 \times 4 = 8 \).</div>
+</div>
+<div class="step">
+\[ U_0(0,4) = -\tfrac12(8) - \tfrac12(8) + \tfrac12(48) = -4 - 4 + 24 = 16 \]
+<div class="why">\( \frac{4^2}{2} = 8 \), \( 2 \times 4 = 8 \), \( 12 \times 4 = 48 \). Chaque
+terme est ensuite divisé par 2.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">5.</span> Comparer et conclure</div>
+<div class="calc">
+<div class="step">
+\[ 19 > 16 \quad \Longrightarrow \quad \text{il prend l'abonnement} \]
+<div class="why">L'écart est de 3 unités d'utilité en faveur de l'abonnement.</div>
+</div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 1.5</div>
+<p>
+  Le grimpeur sophistiqué prend <strong>lui aussi l'abonnement</strong>, parce que
+  \( U_0(1,6) = 19 \) dépasse \( U_0(0,4) = 16 \).
+</p>
+<p>
+  Mais attention : il le prend pour une <em>tout autre raison</em> que le naïf. Le naïf croyait
+  qu'il grimperait 12 fois et voyait l'abonnement comme une bonne affaire. Le sophistiqué sait
+  parfaitement qu'il n'ira que 6 fois — et il choisit quand même l'abonnement, parce que ce
+  dispositif le fait aller <strong>6 fois plutôt que 4</strong>.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 1.5</div>
+<p>
+  « Le sophistiqué anticipe correctement son comportement futur. Avec abonnement, il sait qu'il
+  fera \( k = \beta b = 6 \) séances (question 1.4). Sans abonnement, en période 1 il maximiserait
+  \( -\frac{k^2}{2} - pk + \beta b k = -\frac{k^2}{2} + 4k \), donc \( k = 4 \).<br>
+  Il évalue alors les deux options avec ses préférences de période 0 :<br>
+  — avec abonnement : \( U_0(1,6) = -\tfrac12(18) - \tfrac12(16) + \tfrac12(72) = \mathbf{19} \) ;<br>
+  — sans abonnement : \( U_0(0,4) = -\tfrac12(8) - \tfrac12(8) + \tfrac12(48) = \mathbf{16} \).<br>
+  Comme \( 19 > 16 \), <strong>le sophistiqué prend l'abonnement</strong>. »
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 1.5</div>
+<ul>
+  <li><strong>Réutiliser 12 et 10.</strong> Ce sont les souhaits, pas les prévisions. Le
+      sophistiqué, lui, utilise 6 et 4.</li>
+  <li><strong>Oublier de recalculer le \( k \) sans abonnement.</strong> Beaucoup gardent 6 des
+      deux côtés : faux, sans abonnement le prix de 2 fait tomber le nombre de séances à 4.</li>
+  <li><strong>Évaluer avec \( U_1 \) au lieu de \( U_0 \).</strong> La décision d'abonnement se
+      prend en <em>période 0</em> : c'est \( U_0 \) qui la gouverne. On n'utilise \( U_1 \) que
+      pour <em>prévoir</em> le nombre de séances.</li>
+  <li><strong>Mettre le prix \( p \) dans la comparaison finale du cas « abonnement ».</strong>
+      Avec l'abonnement il n'y a plus de prix à la séance : seulement le forfait \( C \).</li>
+</ul>
+</div>
+
+<hr class="soft">
+
+<h2>9. Question 1.6 — payer plus cher, et pourtant avoir raison (6 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 1.6 (6 points)</div>
+<p>
+  <strong>1.6)</strong> Pour le nombre de séances que le grimpeur sophistiqué effectuera
+  réellement, l'abonnement est-il l'option tarifaire la moins chère ? Expliquez pourquoi le
+  sophistiqué choisit néanmoins cette option (3 à 5 lignes).
+</p>
+</div>
+
+<h3>9.1 Traduisons la question</h3>
+
+<dl class="lexique">
+<dt>« pour le nombre de séances qu'il effectuera réellement »</dt>
+<dd>
+  C'est-à-dire pour \( k = 6 \) (question 1.5). On compare donc les deux tarifs
+  <strong>à volume identique</strong>, ce qui est la bonne façon de comparer des prix.
+</dd>
+<dt>« l'option tarifaire la moins chère »</dt>
+<dd>
+  Ici on ne parle que d'<strong>argent</strong>, pas d'utilité : combien coûte chaque formule,
+  en euros, pour 6 séances ?
+</dd>
+<dt>« néanmoins »</dt>
+<dd>
+  Ce mot t'annonce la réponse : il va choisir l'option qui n'est <em>pas</em> la moins chère.
+  L'énoncé te demande d'expliquer ce paradoxe apparent. C'est là que se trouvent les points.
+</dd>
+</dl>
+
+<h3>9.2 La comparaison des deux tarifs</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Le coût de chaque formule pour 6 séances</div>
+<div class="calc">
+<div class="step">
+\[ \text{avec abonnement : } C = 16 \]
+<div class="why">Le forfait, indépendamment du nombre de séances.</div>
+</div>
+<div class="step">
+\[ \text{à la séance : } p \times k = 2 \times 6 = 12 \]
+<div class="why">Six séances à 2 euros pièce.</div>
+</div>
+<div class="step">
+\[ 12 < 16 \quad \Longrightarrow \quad \textbf{non, l'abonnement n'est pas le moins cher} \]
+<div class="why">Il paie <strong>4 euros de trop</strong> par rapport au paiement à l'unité, pour
+exactement le même nombre de séances.</div>
+</div>
+</div>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Le seuil de rentabilité, pour bien voir</div>
+<p>
+  L'abonnement devient plus avantageux à partir de \( 2k > 16 \), c'est-à-dire \( k > 8 \)
+  séances. Le sophistiqué n'en fera que 6 : il est donc clairement <em>du mauvais côté</em> du
+  seuil, et il le sait parfaitement.
+</p>
+</div>
+
+<h3>9.3 Alors pourquoi le prend-il quand même ?</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Ce que l'abonnement change vraiment</div>
+<p>
+  Parce que le tarif ne fait pas que coûter de l'argent : <strong>il modifie le comportement du
+  moi futur</strong>. Compare les deux scénarios du point de vue du moi de la période 0 :
+</p>
+<table class="compare">
+<tr><th></th><th>coût monétaire</th><th>séances effectuées</th><th>\( U_0 \)</th></tr>
+<tr><th class="left">avec abonnement</th><td>16</td><td><strong>6</strong></td><td><strong>19</strong></td></tr>
+<tr><th class="left">à la séance</th><td>12</td><td>4</td><td>16</td></tr>
+</table>
+<p>
+  L'abonnement coûte 4 de plus, mais il fait grimper 2 fois de plus. Et comme le moi de la
+  période 0 tient beaucoup à ces séances (il en voulait 12 !), ce gain vaut largement les 4 euros
+  supplémentaires : d'où l'écart d'utilité de 19 contre 16.
+</p>
+</div>
+
+<div class="box box-def">
+<div class="box-title">Définition — le commitment device</div>
+<p>
+  Un <span class="term">commitment device</span> (« dispositif d'engagement ») est un mécanisme
+  qu'on met en place aujourd'hui pour <strong>contraindre ou influencer ses propres choix
+  futurs</strong>, parce qu'on sait qu'on ne se comportera pas comme on le voudrait.
+</p>
+<p>
+  Ici, l'abonnement en est un : en supprimant le prix marginal, il retire à son moi futur une des
+  raisons de renoncer. Le sophistiqué <strong>paie 4 euros pour s'acheter de la discipline</strong>.
+</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 250" width="100%" style="max-width:12cm" role="img"
+     aria-label="Comparaison des deux formules : l'abonnement coûte quatre euros de plus mais produit deux séances de plus, ce qui améliore l'utilité vue de la période zéro">
+  <text x="118" y="26" font-size="12.5" text-anchor="middle" font-weight="bold">À la séance</text>
+  <text x="352" y="26" font-size="12.5" text-anchor="middle" font-weight="bold" style="fill:#047857">Abonnement</text>
+  <!-- couts -->
+  <rect x="60" y="48" width="90" height="34" fill="#f3f4f6" stroke="#111827" stroke-width="1.4"/>
+  <text x="105" y="70" font-size="12.5" text-anchor="middle">coût : 12 €</text>
+  <rect x="300" y="48" width="118" height="34" fill="#ecfdf5" stroke="#047857" stroke-width="1.4"/>
+  <text x="359" y="70" font-size="12.5" text-anchor="middle">coût : 16 €</text>
+  <!-- seances -->
+  <g fill="#9ca3af">
+    <rect x="60" y="106" width="18" height="34"/>
+    <rect x="84" y="106" width="18" height="34"/>
+    <rect x="108" y="106" width="18" height="34"/>
+    <rect x="132" y="106" width="18" height="34"/>
+  </g>
+  <text x="105" y="160" font-size="12" text-anchor="middle">4 séances</text>
+  <g fill="#047857">
+    <rect x="300" y="106" width="18" height="34"/>
+    <rect x="324" y="106" width="18" height="34"/>
+    <rect x="348" y="106" width="18" height="34"/>
+    <rect x="372" y="106" width="18" height="34"/>
+    <rect x="396" y="106" width="18" height="34"/>
+    <rect x="420" y="106" width="18" height="34"/>
+  </g>
+  <text x="369" y="160" font-size="12" text-anchor="middle">6 séances</text>
+  <!-- utilite -->
+  <text x="105" y="192" font-size="13" text-anchor="middle" font-weight="bold">U₀ = 16</text>
+  <text x="369" y="192" font-size="13" text-anchor="middle" font-weight="bold" style="fill:#047857">U₀ = 19</text>
+  <text x="235" y="224" font-size="11.5" text-anchor="middle">+4 € dépensés, +2 séances obtenues, +3 d'utilité :</text>
+  <text x="235" y="242" font-size="11.5" text-anchor="middle" font-weight="bold">le surcoût est le prix de la discipline</text>
+</svg>
+<figcaption>
+  Figure — Le calcul du sophistiqué. L'abonnement est bel et bien plus cher en euros, mais il
+  achète deux séances supplémentaires que son moi futur n'aurait jamais faites autrement. Vu de la
+  période 0, l'échange est nettement gagnant.
+</figcaption>
+</figure>
+
+<div class="result">
+<div class="result-title">Résultat de la question 1.6</div>
+<p>
+  <strong>Non</strong>, l'abonnement n'est pas la formule la moins chère : pour 6 séances, il
+  coûte 16 € contre 12 € au tarif à la séance, soit 4 € de plus.
+</p>
+<p>
+  Il le choisit néanmoins parce que l'abonnement agit comme un <strong>commitment device</strong> :
+  en annulant le prix marginal, il pousse son moi de la période 1 à faire 6 séances au lieu de 4,
+  ce qui le rapproche de ce que son moi de la période 0 souhaite vraiment.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 1.6</div>
+<p>
+  « Pour \( k = 6 \) séances, l'abonnement coûte \( C = 16 \) alors que le paiement à l'unité
+  coûterait \( pk = 2 \times 6 = 12 \) : <strong>l'abonnement n'est donc pas l'option la moins
+  chère</strong> (il ne le devient qu'au-delà de 8 séances).<br>
+  Le sophistiqué le choisit malgré tout parce qu'il connaît son biais de self-contrôle et sait
+  que, sans abonnement, il ne ferait que 4 séances. L'abonnement supprime le prix marginal et
+  l'amène à en faire 6, soit deux de plus. Il fonctionne donc comme un
+  <strong>commitment device</strong> : le grimpeur accepte de payer 4 € de plus pour contraindre
+  son moi futur à se rapprocher de ce que son moi présent désire. C'est pourquoi
+  \( U_0(1,6) = 19 > U_0(0,4) = 16 \). »
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 1.6</div>
+<ul>
+  <li><strong>Comparer 16 à \( 2 \times 12 = 24 \)</strong> en utilisant le nombre de séances
+      <em>souhaité</em>. L'énoncé dit bien « pour le nombre de séances qu'il effectuera
+      réellement », donc 6.</li>
+  <li><strong>Répondre « oui, c'est moins cher »</strong> par réflexe (« un abonnement, c'est
+      toujours rentable »). Ici, non : 16 &gt; 12.</li>
+  <li><strong>Confondre coût et utilité.</strong> L'abonnement est plus cher <em>en euros</em> et
+      pourtant meilleur <em>en utilité</em> : c'est tout le sel de la question. Dis-le
+      explicitement.</li>
+  <li><strong>Ne pas employer le terme « commitment device ».</strong> C'est le mot que le
+      correcteur cherche.</li>
+</ul>
+</div>
+
+<hr class="soft">
+
+<h2>10. Récapitulatif : toute la Question 1 sur deux pages</h2>
+
+<h3>10.1 Les six réponses</h3>
+
+<table class="compare">
+<tr><th>Q</th><th class="left">Réponse</th><th class="left">Le geste décisif</th></tr>
+<tr><td>1.1<br>(8 pts)</td><td class="left">\( k^* = 12 \)</td><td class="left">avec \( a = 1 \), maximiser \( -\frac{k^2}{2} + bk \) : le \( \beta \) se met en facteur et disparaît</td></tr>
+<tr><td>1.2<br>(8 pts)</td><td class="left">\( k^* = 10 \)</td><td class="left">avec \( a = 0 \), le prix \( p \) ronge le bénéfice : \( -\frac{k^2}{2} + (b-p)k \)</td></tr>
+<tr><td>1.3<br>(10 pts)</td><td class="left">oui, le naïf prend l'abonnement (28 &gt; 25)</td><td class="left">évaluer \( U_0 \) avec les \( k \) <em>souhaités</em> : 12 et 10</td></tr>
+<tr><td>1.4<br>(8 pts)</td><td class="left">\( k^{\text{réel}} = \beta b = 6 \)</td><td class="left">passer à \( U_1 \) : l'effort n'est plus escompté, le bénéfice l'est encore</td></tr>
+<tr><td>1.5<br>(10 pts)</td><td class="left">oui, le sophistiqué aussi (19 &gt; 16)</td><td class="left">évaluer \( U_0 \) avec les \( k \) <em>prévus</em> : 6 et 4</td></tr>
+<tr><td>1.6<br>(6 pts)</td><td class="left">non, 16 &gt; 12 ; c'est un commitment device</td><td class="left">séparer le coût monétaire de l'effet sur le comportement futur</td></tr>
+</table>
+
+<h3>10.2 Le tableau qui résume tout</h3>
+
+<table class="compare">
+<tr><th></th><th>ce qu'il planifie</th><th>ce qu'il fait</th><th>ce qu'il paie</th><th>pourquoi il s'abonne</th></tr>
+<tr>
+  <th class="left">naïf</th>
+  <td>12 séances</td><td>6 séances</td><td>16 €</td>
+  <td class="left">il croit à tort qu'il ira 12 fois : pour lui l'abonnement est « rentable »</td>
+</tr>
+<tr>
+  <th class="left">sophistiqué</th>
+  <td>6 séances</td><td>6 séances</td><td>16 €</td>
+  <td class="left">il sait qu'il n'ira que 6 fois, mais l'abonnement l'empêche de tomber à 4</td>
+</tr>
+</table>
+
+<div class="box box-methode">
+<div class="box-title">La recette d'un exercice de self-contrôle, en 5 temps</div>
+<ol>
+  <li><strong>Repère les deux fonctions</strong> : \( U_0 \) (vue d'avance, tout escompté) et
+      \( U_1 \) (vue du moment, l'effort immédiat n'est plus escompté).</li>
+  <li><strong>Calcule les souhaits</strong> en maximisant \( U_0 \) pour chaque option tarifaire.</li>
+  <li><strong>Calcule les comportements réels</strong> en maximisant \( U_1 \) pour chaque option.</li>
+  <li><strong>Choisis les \( k \) à injecter</strong> selon le personnage : les souhaits pour le
+      naïf, les comportements réels pour le sophistiqué.</li>
+  <li><strong>Compare les \( U_0 \)</strong> des deux options et conclus.</li>
+</ol>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Checklist avant de tourner la page</div>
+<ol>
+  <li>Ai-je bien utilisé \( U_0 \) pour les décisions de période 0 et \( U_1 \) pour le
+      comportement de période 1 ?</li>
+  <li>Ai-je mis le \( \beta \) au bon endroit — devant l'effort dans \( U_0 \), mais pas dans
+      \( U_1 \) ?</li>
+  <li>Ai-je traité l'abonnement comme une constante lors de la dérivation ?</li>
+  <li>Pour le naïf, ai-je utilisé 12 et 10 ; pour le sophistiqué, 6 et 4 ?</li>
+  <li>Ai-je bien recalculé le \( k \) sans abonnement pour le sophistiqué (\( k = 4 \)) ?</li>
+  <li>En 1.6, ai-je comparé les coûts <em>à 6 séances</em>, et employé le terme « commitment
+      device » ?</li>
+</ol>
+</div>
+
+<p>
+  Voilà la Question 1 entièrement décortiquée. L'idée à emporter : <strong>ce n'est pas le même
+  « moi » qui planifie et qui exécute</strong>. Le naïf l'ignore, le sophistiqué le sait — et
+  c'est cette lucidité qui lui fait accepter de payer pour se contraindre lui-même.
+</p>
+</section>

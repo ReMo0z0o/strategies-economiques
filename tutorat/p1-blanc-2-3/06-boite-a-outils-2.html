@@ -1,0 +1,1808 @@
+<section class="chapter">
+  <div class="chapter-tag">Chapitre 6 · Le socle du volume 2 — à lire en premier</div>
+  <h1>La nouvelle boîte à outils : les outils qui n'étaient pas dans le volume 1</h1>
+  <p class="chapter-intro">
+    Ce chapitre ne traite aucune question des examens n° 2 et n° 3. Il installe les
+    <em>nouveaux</em> outils — six, pas un de plus — dont les dix chapitres suivants auront
+    besoin. Tout ce qui a déjà été expliqué dans le volume 1 est ici simplement rappelé en une
+    ligne : on ne recommence pas, on continue. Comme au chapitre 0, prends ton temps : chaque
+    heure passée ici t'en fera gagner trois plus loin.
+  </p>
+
+  <p>
+    Commençons par la bonne nouvelle, et elle est vraiment bonne. Les examens n° 2 et n° 3
+    ressemblent beaucoup à l'examen n° 1. Même format, mêmes cinq questions, mêmes réflexes de
+    méthode. Tu ne repars pas de zéro : tu repars de ce que tu as déjà construit dans le
+    volume 1.
+  </p>
+  <p>
+    Ce qui change tient en six outils. Six, c'est peu — mais ces six-là reviennent partout dans
+    les deux examens, et si tu ne les as pas, tu es bloqué dès la deuxième ligne. D'où ce
+    chapitre. On va les monter un par un, en partant du strict minimum, avec des exemples
+    entièrement déroulés. Aucun ne demande de mathématiques compliquées : le plus « dur » est
+    une dérivée qui tient en une ligne.
+  </p>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel — le code couleur n'a pas changé</div>
+    <p>
+      Les encadrés fonctionnent exactement comme dans le volume 1 : <strong>bleu</strong> =
+      définition (à connaître), <strong>orange</strong> = pourquoi (à comprendre),
+      <strong>rouge</strong> = piège (à relire la veille), <strong>turquoise</strong> = méthode
+      (à appliquer mécaniquement), <strong>vert</strong> = ce qu'il fallait écrire,
+      <strong>ciel</strong> = rappel d'un point déjà vu, <strong>violet</strong> = exemple
+      chiffré. Si tu as oublié la clé de lecture, elle est au chapitre 0, section 1.1.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>1. Où on en est</h2>
+
+  <h3>1.1 Ce que tu sais déjà faire</h3>
+
+  <p>
+    Avant d'ajouter quoi que ce soit, faisons l'inventaire. Voici tout ce que le volume 1 t'a
+    donné. Chaque ligne du tableau est un geste que tu sais poser — et la dernière colonne te
+    dit où ce geste va te resservir dans les deux examens qui viennent. Si une ligne te fait
+    hésiter, retourne à la section indiquée du chapitre 0 <em>avant</em> de continuer : tout ce
+    qui suit s'appuie dessus.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left">Je sais déjà…</th>
+      <th class="left">Chapitre 0</th>
+      <th class="left">Où ça ressert ici</th>
+    </tr>
+    <tr>
+      <td class="left">…passer d'une fraction à une décimale à un pourcentage</td>
+      <td class="left">3.1</td>
+      <td class="left">Partout</td>
+    </tr>
+    <tr>
+      <td class="left">…calculer une racine carrée et retrouver le nombre de départ</td>
+      <td class="left">3.2</td>
+      <td class="left">E2 Q2, E3 Q2</td>
+    </tr>
+    <tr>
+      <td class="left">…isoler une inconnue dans une équation, et vérifier ma solution</td>
+      <td class="left">3.3</td>
+      <td class="left">Partout</td>
+    </tr>
+    <tr>
+      <td class="left">…résoudre un système de deux équations par substitution</td>
+      <td class="left">3.4</td>
+      <td class="left">E3 Q1, E3 Q4</td>
+    </tr>
+    <tr>
+      <td class="left">…dériver \( x^n \), une somme, un produit par une constante</td>
+      <td class="left">3.5</td>
+      <td class="left">E2 Q1, E3 Q1, E3 Q5</td>
+    </tr>
+    <tr>
+      <td class="left">…maximiser en posant « dérivée \( = 0 \) » (la CPO)</td>
+      <td class="left">3.6</td>
+      <td class="left">E2 Q1 et Q2, E3 Q1 et Q5</td>
+    </tr>
+    <tr>
+      <td class="left">…vérifier que c'est un maximum avec la dérivée seconde</td>
+      <td class="left">3.6</td>
+      <td class="left">E2 Q2, E3 Q2</td>
+    </tr>
+    <tr>
+      <td class="left">…calculer une espérance \( E(\cdot) \) en pondérant par les probabilités</td>
+      <td class="left">4.2</td>
+      <td class="left">E2 Q2, E3 Q2, Q3 et Q4</td>
+    </tr>
+    <tr>
+      <td class="left">…expliquer pourquoi \( E[u(w)] \neq u(E[w]) \)</td>
+      <td class="left">4.3</td>
+      <td class="left">E2 Q2, E3 Q2</td>
+    </tr>
+    <tr>
+      <td class="left">…utiliser \( \frac{1}{1-\delta} \) et \( \frac{\delta}{1-\delta} \)</td>
+      <td class="left">5.2 et 5.3</td>
+      <td class="left">E2 Q4</td>
+    </tr>
+    <tr>
+      <td class="left">…lire n'importe quelle case d'un tableau de jeu</td>
+      <td class="left">6.2</td>
+      <td class="left">E2 Q4, E3 Q3, Q4 et Q5</td>
+    </tr>
+    <tr>
+      <td class="left">…décoder \( x_1 \), \( e^* \), \( \delta \), \( \Sigma \), \( \ge \) contre \( &gt; \)</td>
+      <td class="left">7</td>
+      <td class="left">Partout</td>
+    </tr>
+  </table>
+
+  <p>
+    « E2 » veut dire examen blanc n° 2, « E3 » examen blanc n° 3 — j'utiliserai ces
+    abréviations tout au long du volume. Regarde bien la troisième colonne : elle est pleine.
+    Autrement dit, <strong>l'essentiel de ces deux examens se joue avec des outils que tu
+    possèdes déjà</strong>. Ce n'est pas une formule d'encouragement, c'est un fait : la
+    question 2 de l'examen n° 3, qui vaut 40 points, ne mobilise presque rien d'autre que le
+    volume 1.
+  </p>
+
+  <h3>1.2 Ce que ce chapitre ajoute</h3>
+
+  <p>
+    Passons maintenant à ce qui est nouveau. Voici les six outils que nous allons construire,
+    dans l'ordre, et l'endroit précis où chacun sert. Cette table est ta carte : quand tu seras
+    perdu au chapitre 12, tu sauras dans quelle section de ce chapitre 6 revenir.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left">L'outil nouveau</th>
+      <th class="left">Section</th>
+      <th class="left">Où il sert</th>
+    </tr>
+    <tr>
+      <td class="left">Dériver \( \sqrt{x} \), \( \ln x \), et surtout une <strong>racine composée</strong> \( \sqrt{u(x)} \)</td>
+      <td class="left">2</td>
+      <td class="left">E2 Q2.2 · E3 Q1.2 et Q2.1</td>
+    </tr>
+    <tr>
+      <td class="left">Maximiser <strong>sous contrainte</strong> : le Lagrangien</td>
+      <td class="left">3</td>
+      <td class="left">E3 Q1.2</td>
+    </tr>
+    <tr>
+      <td class="left">Le <strong>biais du présent</strong> \( \beta \), naïf contre sophistiqué</td>
+      <td class="left">4</td>
+      <td class="left">E2 Q1 (50 pts) · E2 Q5.2</td>
+    </tr>
+    <tr>
+      <td class="left">Lire un <strong>arbre de jeu</strong>, repérer les sous-jeux, écrire une stratégie complète</td>
+      <td class="left">5</td>
+      <td class="left">E2 Q3 (50 pts) · E3 Q5</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Types</strong> et <strong>croyances</strong> : le vocabulaire bayésien</td>
+      <td class="left">6</td>
+      <td class="left">E3 Q3 (50 pts) · E2 Q5.3</td>
+    </tr>
+    <tr>
+      <td class="left">La <strong>statique comparative</strong> : « et si ce paramètre augmente ? »</td>
+      <td class="left">7</td>
+      <td class="left">E3 Q1.4 et Q4.4 · E2 Q2.4 et Q4.3</td>
+    </tr>
+  </table>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi ces six-là, et pas d'autres</div>
+    <p>
+      J'ai lu les deux examens ligne par ligne et j'ai listé tout ce qu'ils demandent. Puis
+      j'ai retiré tout ce que le volume 1 couvrait déjà. Ce qui restait, ce sont exactement ces
+      six outils. Rien de plus ne sera enseigné dans ce chapitre — pas de théorie décorative,
+      pas de « culture générale ». Chaque page qui suit sert à gagner des points sur une
+      question précise, et je te dirai à chaque fois laquelle.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>2. Deux nouvelles dérivées (et une troisième, la plus utile)</h2>
+
+  <p>
+    Au chapitre 0, tu as appris à dériver. Une seule idée, que je redonne en une phrase.
+  </p>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel en dix secondes — ce qu'est une dérivée</div>
+    <p>
+      La <span class="term">dérivée</span> \( f'(x) \) répond à la question : « si j'augmente
+      \( x \) d'un tout petit peu, de combien bouge \( f(x) \) ? » C'est la
+      <strong>pente</strong> de la courbe à cet endroit. Grande et positive : ça grimpe fort.
+      Nulle : c'est plat — et c'est là que se trouvent les sommets, d'où la CPO. Les règles que
+      tu connais : \( (x^n)' = n\,x^{n-1} \), la constante disparaît, et on dérive une somme
+      terme par terme. Tout est au chapitre 0, sections 3.5 et 3.6.
+    </p>
+  </div>
+
+  <p>
+    Les deux examens qui viennent utilisent deux fonctions que tu n'as pas encore dérivées :
+    la <strong>racine carrée</strong> et le <strong>logarithme</strong>. Puis ils utilisent une
+    combinaison des deux idées — la <strong>racine d'une expression</strong>, du genre
+    \( \sqrt{900 + 3A} \) — et c'est celle-là, la troisième, qui rapporte le plus de points.
+    Allons-y dans l'ordre.
+  </p>
+
+  <h3>2.1 La dérivée de la racine carrée</h3>
+
+  <p>
+    Bonne surprise : tu n'as rien de nouveau à apprendre. Cette dérivée se déduit de la règle
+    \( (x^n)' = n\,x^{n-1} \) que tu connais déjà. Il faut juste savoir deux petites choses
+    d'écriture.
+  </p>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel — deux conventions d'écriture des puissances</div>
+    <ul>
+      <li>
+        <strong>Une puissance \( \tfrac12 \), c'est une racine carrée.</strong> On écrit
+        \( x^{1/2} = \sqrt{x} \). Pourquoi ? Parce que \( x^{1/2} \times x^{1/2} = x^{1} = x \),
+        et qu'un nombre qui, multiplié par lui-même, redonne \( x \), c'est exactement la
+        définition de \( \sqrt{x} \).
+      </li>
+      <li>
+        <strong>Une puissance négative, ça passe au dénominateur.</strong> On écrit
+        \( x^{-1} = \dfrac{1}{x} \), \( x^{-2} = \dfrac{1}{x^2} \), et donc
+        \( x^{-1/2} = \dfrac{1}{x^{1/2}} = \dfrac{1}{\sqrt{x}} \). Le signe moins de l'exposant
+        veut simplement dire « retourne la fraction ».
+      </li>
+    </ul>
+  </div>
+
+  <p>
+    Avec ces deux conventions, la dérivée de la racine tombe toute seule. Regarde, je la
+    déroule complètement :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ f(x) = \sqrt{x} = x^{1/2} \]
+      <div class="why">Je réécris la racine comme une puissance. C'est le seul geste « astucieux » de tout le calcul : une fois fait, je suis en terrain connu.</div>
+    </div>
+    <div class="step">
+      \[ f'(x) = \tfrac{1}{2}\,x^{\,\frac12 - 1} = \tfrac{1}{2}\,x^{-1/2} \]
+      <div class="why">J'applique la règle du chapitre 0 : l'exposant descend et multiplie, puis il diminue de 1. Ici l'exposant est \( \tfrac12 \) : il descend devant, et \( \tfrac12 - 1 = -\tfrac12 \).</div>
+    </div>
+    <div class="step">
+      \[ f'(x) = \frac{1}{2}\cdot\frac{1}{\sqrt{x}} = \frac{1}{2\sqrt{x}} \]
+      <div class="why">Je remets l'exposant négatif au dénominateur : \( x^{-1/2} = 1/\sqrt{x} \). Puis je réunis les deux fractions en une seule. C'est fini.</div>
+    </div>
+  </div>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — la dérivée de la racine carrée</div>
+    \[ \bigl(\sqrt{x}\bigr)' = \frac{1}{2\sqrt{x}} \]
+    <p>
+      Ça se lit à voix haute : « la dérivée de racine de x vaut un sur deux racine de x ».
+      Retiens-la sous cette forme : <strong>1 divisé par (2 fois la racine)</strong>. Elle est
+      valable pour \( x &gt; 0 \) — la racine de 0 existe, mais on ne peut pas diviser par 0.
+    </p>
+  </div>
+
+  <h4>Vérifions que cette formule dit quelque chose de sensé</h4>
+
+  <p>
+    Une formule qu'on ne comprend pas s'oublie. Mets-la à l'épreuve sur des nombres. Le tableau
+    ci-dessous donne, pour quelques valeurs de \( x \), la valeur de la fonction et la valeur de
+    sa pente.
+  </p>
+
+  <table class="data">
+    <tr>
+      <th>\( x \)</th>
+      <th>\( \sqrt{x} \)</th>
+      <th>la pente \( \dfrac{1}{2\sqrt{x}} \)</th>
+      <th>en clair</th>
+    </tr>
+    <tr><td>1</td><td>1</td><td>\( \frac{1}{2} = 0{,}5 \)</td><td>ça monte vite</td></tr>
+    <tr><td>4</td><td>2</td><td>\( \frac{1}{4} = 0{,}25 \)</td><td>deux fois moins vite</td></tr>
+    <tr><td>16</td><td>4</td><td>\( \frac{1}{8} = 0{,}125 \)</td><td>encore deux fois moins</td></tr>
+    <tr><td>100</td><td>10</td><td>\( \frac{1}{20} = 0{,}05 \)</td><td>presque plat</td></tr>
+    <tr><td>900</td><td>30</td><td>\( \frac{1}{60} \approx 0{,}017 \)</td><td>quasiment plat</td></tr>
+  </table>
+
+  <p>
+    Lis la troisième colonne de haut en bas : la pente <strong>diminue</strong> sans arrêt. Elle
+    reste positive — la fonction monte toujours — mais elle monte de moins en moins vite. C'est
+    exactement ce que montre la figure suivante.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 500 300" width="100%" style="max-width:12cm" role="img" aria-label="La courbe racine de x avec trois tangentes de pente décroissante">
+      <defs>
+        <marker id="c6-fl-a" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+          <path d="M0,0 L8,3.2 L0,6.4 z" fill="#111827"></path>
+        </marker>
+      </defs>
+      <line x1="60" y1="260" x2="475" y2="260" stroke="#111827" stroke-width="1.6" marker-end="url(#c6-fl-a)"></line>
+      <line x1="60" y1="260" x2="60" y2="30" stroke="#111827" stroke-width="1.6" marker-end="url(#c6-fl-a)"></line>
+      <text x="470" y="282" font-size="14" text-anchor="end">x</text>
+      <text x="68" y="42" font-size="14">√x</text>
+      <path d="M60,260 L68,229 L76,216 L92,198 L108,184 L124,172 L156,152 L204,128 L252,108 L316,84 L380,63 L460,40"
+            fill="none" stroke="#4338ca" stroke-width="3"></path>
+      <line x1="60" y1="238" x2="130" y2="142" stroke="#be123c" stroke-width="1.8" stroke-dasharray="7 4"></line>
+      <line x1="90" y1="195" x2="200" y2="120" stroke="#be123c" stroke-width="1.8" stroke-dasharray="7 4"></line>
+      <line x1="260" y1="103" x2="400" y2="55" stroke="#be123c" stroke-width="1.8" stroke-dasharray="7 4"></line>
+      <circle cx="76" cy="216" r="4.5" fill="#111827"></circle>
+      <circle cx="124" cy="172" r="4.5" fill="#111827"></circle>
+      <circle cx="316" cy="84" r="4.5" fill="#111827"></circle>
+      <text x="133" y="138" font-size="12.5">pente = 0,5</text>
+      <text x="205" y="118" font-size="12.5">pente = 0,25</text>
+      <text x="404" y="52" font-size="12.5" text-anchor="end">pente = 0,125</text>
+      <line x1="76" y1="260" x2="76" y2="255" stroke="#111827" stroke-width="1.4"></line>
+      <line x1="124" y1="260" x2="124" y2="255" stroke="#111827" stroke-width="1.4"></line>
+      <line x1="316" y1="260" x2="316" y2="255" stroke="#111827" stroke-width="1.4"></line>
+      <text x="76" y="277" font-size="13" text-anchor="middle">1</text>
+      <text x="124" y="277" font-size="13" text-anchor="middle">4</text>
+      <text x="316" y="277" font-size="13" text-anchor="middle">16</text>
+      <text x="150" y="240" font-size="12.5">la courbe s'aplatit</text>
+      <text x="150" y="256" font-size="12.5">quand on va vers la droite</text>
+    </svg>
+    <figcaption>
+      La courbe de \( \sqrt{x} \) (trait épais) et trois tangentes (pointillés). Une tangente,
+      c'est la droite qui « épouse » la courbe en un point ; sa pente est la dérivée en ce
+      point. En \( x = 1 \) la tangente est raide (pente 0,5) ; en \( x = 16 \) elle est presque
+      couchée (pente 0,125). La fonction monte toujours, mais de moins en moins vite.
+    </figcaption>
+  </figure>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi cette pente qui s'aplatit est LE cœur du cours</div>
+    <p>
+      Imagine que \( x \) soit ta richesse en euros et que \( \sqrt{x} \) mesure ta
+      satisfaction. La pente, c'est ce que t'apporte un euro de plus. Elle vaut 0,5 quand tu as
+      1 euro, et 0,017 quand tu en as 900. Autrement dit :
+      <strong>le même euro te fait beaucoup moins plaisir quand tu es déjà riche</strong>. C'est
+      ce qu'on appelle l'<span class="term">utilité marginale décroissante</span>.
+    </p>
+    <p>
+      Cette seule propriété explique toute la partie « risque » du cours. Elle explique pourquoi
+      perdre 100 euros fait plus mal que gagner 100 euros ne fait plaisir. Donc pourquoi un pari
+      équilibré est refusé. Donc l'<strong>aversion au risque</strong>. Donc le fait que
+      \( E[u(w)] &lt; u(E[w]) \) — l'inégalité du chapitre 0, section 4.3. Une courbe qui
+      s'aplatit, on dit qu'elle est <span class="term">concave</span> : retiens ce mot, il vaut
+      des points à la question 2.1 de l'examen n° 3.
+    </p>
+  </div>
+
+  <h3>2.2 La dérivée seconde de la racine carrée</h3>
+
+  <p>
+    La question 2.1 de l'examen n° 3 te demande de <em>démontrer</em> qu'un individu est averse
+    au risque. La démonstration attendue tient en une ligne : montrer que la dérivée seconde est
+    négative. Tu sais déjà ce qu'est une dérivée seconde (chapitre 0, section 3.6) : c'est la
+    dérivée de la dérivée, et elle dit si la pente monte ou descend. Dérivons donc
+    \( \frac{1}{2\sqrt{x}} \).
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ u'(x) = \frac{1}{2\sqrt{x}} = \tfrac{1}{2}\,x^{-1/2} \]
+      <div class="why">Je repasse en écriture « puissance », comme tout à l'heure. La fraction \( 1/\sqrt{x} \) devient \( x^{-1/2} \), et le \( \tfrac12 \) reste devant comme un simple facteur.</div>
+    </div>
+    <div class="step">
+      \[ u''(x) = \tfrac{1}{2}\times\Bigl(-\tfrac{1}{2}\Bigr)\,x^{-\frac12 - 1} \]
+      <div class="why">Même règle qu'avant : l'exposant \( -\tfrac12 \) descend devant et multiplie, puis il diminue de 1. Attention, \( -\tfrac12 - 1 = -\tfrac32 \), pas \( -\tfrac12 \).</div>
+    </div>
+    <div class="step">
+      \[ u''(x) = -\tfrac{1}{4}\,x^{-3/2} \;=\; -\,\frac{1}{4\,x\sqrt{x}} \]
+      <div class="why">Je multiplie les deux facteurs de devant : \( \tfrac12 \times (-\tfrac12) = -\tfrac14 \). Et je peux repasser au dénominateur si je préfère : \( x^{3/2} = x^{1} \times x^{1/2} = x\sqrt{x} \).</div>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat</div>
+    <p>
+      \( u(w) = \sqrt{w} \) donne \( u'(w) = \dfrac{1}{2\sqrt{w}} &gt; 0 \) et
+      \( u''(w) = -\dfrac{1}{4}\,w^{-3/2} &lt; 0 \) pour tout \( w &gt; 0 \).
+    </p>
+    <p>
+      La première dérivée est positive : la fonction monte (plus de richesse, plus de
+      satisfaction). La seconde est négative : la pente diminue, la fonction est
+      <strong>concave</strong>, donc l'individu est <strong>averse au risque</strong>. Ces deux
+      lignes valent 8 points à la question 2.1 de l'examen n° 3.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — pourquoi \( u'' \) est négative alors qu'il n'y avait aucun signe moins</div>
+    <p>
+      C'est l'exposant qui fabrique le signe moins. Quand on dérive \( x^{-1/2} \), l'exposant
+      \( -\tfrac12 \) descend devant : il apporte lui-même son signe négatif. Beaucoup
+      d'étudiants écrivent \( u'' = +\tfrac14 x^{-3/2} \) en oubliant ce moins — et concluent
+      alors que la fonction est convexe, donc que l'individu <em>aime</em> le risque. C'est la
+      réponse exactement inverse de la bonne. Vérifie toujours ton signe : une fonction dont la
+      pente passe de 0,5 à 0,05 a forcément une dérivée seconde négative.
+    </p>
+  </div>
+
+  <h3>2.3 Le logarithme \( \ln \) et sa dérivée</h3>
+
+  <p>
+    Le logarithme apparaît deux fois dans nos examens : dans la fonction d'utilité
+    \( U(l,c) = c + 4\ln(l) \) de la question 1 de l'examen n° 3, et dans une remarque de la
+    question 2.4 de l'examen n° 2. Tu n'as besoin de savoir que trois choses à son sujet. Trois,
+    vraiment — le reste de la théorie des logarithmes ne te servira jamais dans ce cours.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — le logarithme népérien, en français</div>
+    <p>
+      \( \ln(x) \) se lit « logarithme népérien de x », ou plus simplement « l-n de x ». C'est
+      une fonction qui prend un nombre <strong>strictement positif</strong> et en renvoie un
+      autre. Les trois choses à savoir :
+    </p>
+    <ul>
+      <li>
+        <strong>Elle monte, mais de moins en moins vite.</strong> Beaucoup plus lentement que
+        la racine carrée. Même famille d'idée : chaque unité de plus apporte moins que la
+        précédente.
+      </li>
+      <li>
+        <strong>\( \ln(1) = 0 \).</strong> C'est son point de repère. En dessous de 1, le
+        logarithme est <em>négatif</em> ; au-dessus, positif.
+      </li>
+      <li>
+        <strong>Sa dérivée est \( \dfrac{1}{x} \).</strong> C'est la plus simple de toutes les
+        dérivées du cours, et c'est tout ce qu'on te demandera d'en faire.
+      </li>
+    </ul>
+  </div>
+
+  <table class="data">
+    <tr>
+      <th>\( x \)</th>
+      <th>\( \ln(x) \)</th>
+      <th>la pente \( \dfrac{1}{x} \)</th>
+    </tr>
+    <tr><td>0,5</td><td>\( -0{,}69 \)</td><td>2</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td></tr>
+    <tr><td>2</td><td>0,69</td><td>0,5</td></tr>
+    <tr><td>4</td><td>1,39</td><td>0,25</td></tr>
+    <tr><td>10</td><td>2,30</td><td>0,1</td></tr>
+    <tr><td>100</td><td>4,61</td><td>0,01</td></tr>
+  </table>
+
+  <p>
+    Regarde la deuxième colonne : quand \( x \) est multiplié par 10 (de 10 à 100), le
+    logarithme ne fait qu'augmenter de 2,3. Il rampe. Et la troisième colonne montre que la
+    pente s'écrase : entre \( x = 1 \) et \( x = 100 \), elle est divisée par cent. Voici les
+    deux fonctions côte à côte.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 500 300" width="100%" style="max-width:12cm" role="img" aria-label="Comparaison des courbes racine de x et logarithme népérien de x">
+      <defs>
+        <marker id="c6-fl-b" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+          <path d="M0,0 L8,3.2 L0,6.4 z" fill="#111827"></path>
+        </marker>
+      </defs>
+      <line x1="60" y1="260" x2="475" y2="260" stroke="#111827" stroke-width="1.6" marker-end="url(#c6-fl-b)"></line>
+      <line x1="60" y1="285" x2="60" y2="30" stroke="#111827" stroke-width="1.6" marker-end="url(#c6-fl-b)"></line>
+      <text x="470" y="282" font-size="14" text-anchor="end">x</text>
+      <path d="M60,260 L76,220 L92,203 L124,180 L156,162 L204,140 L252,121 L316,100 L380,81 L460,60"
+            fill="none" stroke="#4338ca" stroke-width="3"></path>
+      <path d="M71,274 L76,260 L84,244 L92,232 L108,216 L124,205 L156,188 L204,172 L252,161 L316,149 L380,140 L460,131"
+            fill="none" stroke="#be123c" stroke-width="2.4" stroke-dasharray="8 4"></path>
+      <text x="464" y="56" font-size="13.5" text-anchor="end">√x</text>
+      <text x="464" y="127" font-size="13.5" text-anchor="end">ln x</text>
+      <circle cx="76" cy="260" r="4" fill="#be123c"></circle>
+      <text x="84" y="277" font-size="12.5">ln(1) = 0</text>
+      <line x1="76" y1="260" x2="76" y2="253" stroke="#111827" stroke-width="1.4"></line>
+      <text x="60" y="277" font-size="12.5" text-anchor="middle">0</text>
+      <text x="200" y="60" font-size="12.5">les deux montent…</text>
+      <text x="200" y="78" font-size="12.5">…de moins en moins vite,</text>
+      <text x="200" y="96" font-size="12.5">et ln bien plus lentement</text>
+    </svg>
+    <figcaption>
+      \( \sqrt{x} \) (trait plein épais) et \( \ln x \) (pointillés) sur les mêmes axes. Les
+      deux courbes ont la même allure : elles montent en s'aplatissant. Le logarithme est
+      simplement « plus plat » — il passe même sous l'axe pour \( x &lt; 1 \), là où la racine
+      reste positive. C'est cette platitude supérieure qui fait dire que \( \ln \) est
+      <em>plus concave</em> que \( \sqrt{\;} \), donc qu'elle décrit un individu
+      <em>plus averse au risque</em>.
+    </figcaption>
+  </figure>
+
+  <div class="box box-why">
+    <div class="box-title">À quoi \( \ln \) sert vraiment dans ce cours</div>
+    <p>
+      À exactement deux choses, et c'est tout.
+    </p>
+    <p>
+      <strong>Un : décrire une satisfaction qui sature.</strong> Dans
+      \( U(l,c) = c + 4\ln(l) \) (examen n° 3, question 1), le \( \ln \) porte sur le loisir
+      \( l \). Il dit : la première heure de repos est précieuse, la dixième beaucoup moins. Sa
+      dérivée \( 4/l \) est l'« utilité marginale du loisir » : elle diminue quand \( l \)
+      augmente. Sans le \( \ln \), l'individu prendrait soit 100 \% de loisir, soit 0 \% —
+      le modèle n'aurait aucun intérêt.
+    </p>
+    <p>
+      <strong>Deux : servir d'exemple de fonction « encore plus concave » que la racine.</strong>
+      C'est tout le sens de la question 2.4 de l'examen n° 2 : « et si elle avait \( \ln(w) \)
+      au lieu de \( \sqrt{w} \) ? ». Réponse : elle serait plus averse au risque. Tu n'as
+      aucun calcul à faire, juste à voir la courbe plus plate.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — trois erreurs classiques sur \( \ln \)</div>
+    <ul>
+      <li>
+        <strong>\( \ln(0) \) n'existe pas.</strong> Ni \( \ln \) d'un nombre négatif. Si un
+        calcul t'amène à \( \ln(0) \), c'est que tu t'es trompé quelque part — ou que la
+        solution est « à l'intérieur », jamais à la borne zéro. C'est d'ailleurs pour ça que le
+        travailleur de l'examen n° 3 ne prend jamais zéro loisir.
+      </li>
+      <li>
+        <strong>\( 4\ln(l) \) ne veut pas dire \( \ln(4l) \).</strong> Le 4 est un simple
+        facteur multiplicatif posé devant. Sa dérivée est \( 4 \times \frac{1}{l} = \frac{4}{l} \).
+      </li>
+      <li>
+        <strong>Tu n'as pas besoin des règles \( \ln(ab) = \ln a + \ln b \)</strong> ni
+        d'aucune autre propriété algébrique du logarithme. Aucune question de ces deux examens
+        ne les demande. Ne perds pas de temps là-dessus.
+      </li>
+    </ul>
+  </div>
+
+  <h3>2.4 La dérivée d'une racine composée — le morceau qui rapporte</h3>
+
+  <p>
+    Voilà le vrai sujet de cette section. Dans les examens, tu ne rencontreras presque jamais
+    \( \sqrt{x} \) tout nu. Tu rencontreras \( \sqrt{900 + 3A} \), ou \( \sqrt{900 - A} \). Il y
+    a quelque chose <em>à l'intérieur</em> de la racine, et ce quelque chose bouge lui aussi
+    quand \( A \) bouge. La règle qui gère ça s'appelle la règle de dérivation en chaîne. Voici
+    d'abord l'intuition, ensuite la formule.
+  </p>
+
+  <h4>L'intuition : une machine à deux étages</h4>
+
+  <p>
+    Imagine une machine en deux étapes. Tu entres \( A \). Le premier étage calcule
+    \( u = 900 + 3A \). Le second étage prend ce résultat et en fait la racine carrée. La
+    question est : <strong>si je pousse \( A \) d'un tout petit peu, de combien bouge la
+    sortie ?</strong>
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 520 250" width="100%" style="max-width:12cm" role="img" aria-label="Schéma d'une machine à deux étages : d'abord u égale 900 plus 3A, ensuite la racine carrée">
+      <defs>
+        <marker id="c6-fl-c" markerWidth="10" markerHeight="10" refX="9" refY="3.4" orient="auto">
+          <path d="M0,0 L9,3.4 L0,6.8 z" fill="#111827"></path>
+        </marker>
+      </defs>
+      <text x="35" y="72" font-size="15" text-anchor="middle">A</text>
+      <line x1="52" y1="66" x2="118" y2="66" stroke="#111827" stroke-width="1.8" marker-end="url(#c6-fl-c)"></line>
+      <rect x="125" y="38" width="150" height="56" fill="none" stroke="#4338ca" stroke-width="2.4" rx="4"></rect>
+      <text x="200" y="62" font-size="14" text-anchor="middle">étage 1</text>
+      <text x="200" y="82" font-size="14" text-anchor="middle">u = 900 + 3A</text>
+      <line x1="278" y1="66" x2="338" y2="66" stroke="#111827" stroke-width="1.8" marker-end="url(#c6-fl-c)"></line>
+      <text x="308" y="56" font-size="13" text-anchor="middle">u</text>
+      <rect x="345" y="38" width="130" height="56" fill="none" stroke="#0f766e" stroke-width="2.4" stroke-dasharray="7 4" rx="4"></rect>
+      <text x="410" y="62" font-size="14" text-anchor="middle">étage 2</text>
+      <text x="410" y="82" font-size="14" text-anchor="middle">on prend √u</text>
+      <text x="200" y="128" font-size="13" text-anchor="middle">si A monte de 1,</text>
+      <text x="200" y="146" font-size="13" text-anchor="middle">u monte de 3</text>
+      <text x="200" y="164" font-size="13.5" text-anchor="middle" font-weight="bold">vitesse = u′ = 3</text>
+      <text x="410" y="128" font-size="13" text-anchor="middle">si u monte de 1,</text>
+      <text x="410" y="146" font-size="13" text-anchor="middle">√u monte de 1/(2√u)</text>
+      <text x="410" y="164" font-size="13.5" text-anchor="middle" font-weight="bold">vitesse = 1/(2√u)</text>
+      <line x1="70" y1="190" x2="470" y2="190" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 3"></line>
+      <text x="270" y="216" font-size="14.5" text-anchor="middle" font-weight="bold">vitesse totale = 3 × 1/(2√u) = 3/(2√u)</text>
+      <text x="270" y="238" font-size="12.5" text-anchor="middle">on MULTIPLIE les vitesses des deux étages</text>
+    </svg>
+    <figcaption>
+      La règle de dérivation en chaîne, en image. Deux étages en série : les effets se
+      <strong>multiplient</strong>. Si le premier étage triple le mouvement et le second le
+      divise par \( 2\sqrt{u} \), l'effet total est le produit des deux. C'est la même logique
+      que deux engrenages montés l'un derrière l'autre.
+    </figcaption>
+  </figure>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — la dérivée d'une racine composée</div>
+    <p>
+      Si l'intérieur de la racine est une expression \( u(x) \) qui dépend de \( x \), alors :
+    </p>
+    \[ \Bigl(\sqrt{u(x)}\Bigr)' = \frac{u'(x)}{2\sqrt{u(x)}} \]
+    <p>
+      À voix haute : « la dérivée de l'intérieur, divisée par deux fois la racine ». Compare
+      avec le cas simple \( (\sqrt{x})' = \frac{1}{2\sqrt{x}} \) : c'est la même formule, où le
+      \( 1 \) du numérateur est remplacé par \( u'(x) \). Et c'est logique, puisque dans le cas
+      simple l'intérieur est \( u(x) = x \), dont la dérivée vaut justement 1.
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — dériver une racine composée en trois gestes</div>
+    <ol>
+      <li><strong>Nomme l'intérieur.</strong> Écris « je pose \( u = \) … » en recopiant tout ce qui est sous la racine.</li>
+      <li><strong>Dérive l'intérieur seul.</strong> Calcule \( u' \). C'est presque toujours un nombre tout simple, parce que l'intérieur est presque toujours du premier degré.</li>
+      <li><strong>Assemble.</strong> Écris \( \dfrac{u'}{2\sqrt{u}} \) en remettant l'intérieur complet sous la racine. Ne laisse jamais un \( u \) dans ta réponse finale.</li>
+    </ol>
+  </div>
+
+  <h4>Exemple 1 — entièrement déroulé</h4>
+
+  <p>
+    Dérivons \( f(A) = \sqrt{900 + 3A} \) par rapport à \( A \).
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ u(A) = 900 + 3A \]
+      <div class="why">Geste 1 : je nomme l'intérieur. Je recopie exactement ce qui se trouve sous le signe racine, rien de plus, rien de moins.</div>
+    </div>
+    <div class="step">
+      \[ u'(A) = 3 \]
+      <div class="why">Geste 2 : je dérive cet intérieur par rapport à \( A \). Le 900 est une constante, il disparaît. Le \( 3A \) a pour dérivée 3. C'est du chapitre 0.</div>
+    </div>
+    <div class="step">
+      \[ f'(A) = \frac{u'(A)}{2\sqrt{u(A)}} = \frac{3}{2\sqrt{900 + 3A}} \]
+      <div class="why">Geste 3 : j'assemble. Le 3 monte au numérateur, et je remets l'intérieur complet sous la racine au dénominateur. Terminé.</div>
+    </div>
+  </div>
+
+  <p>
+    Contrôle de bon sens : quand \( A \) augmente, l'intérieur augmente, donc la racine
+    augmente. La dérivée doit donc être positive. Elle l'est (\( 3 \) divisé par un nombre
+    positif). Bon signe.
+  </p>
+
+  <h4>Exemple 2 — entièrement déroulé, avec un signe moins</h4>
+
+  <p>
+    Dérivons maintenant \( g(A) = \sqrt{900 - A} \). C'est le même geste, mais l'intérieur
+    <em>diminue</em> quand \( A \) augmente. Surveille le signe.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ u(A) = 900 - A \]
+      <div class="why">Geste 1, toujours le même : je nomme l'intérieur.</div>
+    </div>
+    <div class="step">
+      \[ u'(A) = -1 \]
+      <div class="why">Geste 2. Le 900 disparaît. Le terme \( -A \), c'est \( -1 \times A \) : sa dérivée est \( -1 \). Ce signe moins est le point important de tout l'exemple.</div>
+    </div>
+    <div class="step">
+      \[ g'(A) = \frac{-1}{2\sqrt{900 - A}} \]
+      <div class="why">Geste 3 : j'assemble en gardant le signe moins au numérateur. La dérivée est négative — c'est bien ce qu'on attend, puisque plus \( A \) est grand, plus \( 900 - A \) est petit, donc plus sa racine est petite.</div>
+    </div>
+  </div>
+
+  <h4>Exemple 3 — pour vérifier que tu as compris</h4>
+
+  <p>
+    Dérivons \( h(x) = \sqrt{16 + x^2} \). Cache la suite et essaie d'abord seul.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ u(x) = 16 + x^2 \qquad\text{donc}\qquad u'(x) = 2x \]
+      <div class="why">Gestes 1 et 2 en une ligne. L'intérieur n'est plus du premier degré, mais rien ne change : je le dérive normalement, \( (x^2)' = 2x \).</div>
+    </div>
+    <div class="step">
+      \[ h'(x) = \frac{2x}{2\sqrt{16 + x^2}} = \frac{x}{\sqrt{16 + x^2}} \]
+      <div class="why">J'assemble, puis je simplifie : le 2 du haut et le 2 du bas s'annulent. Simplifier n'est pas obligatoire, mais ça rend la suite du calcul plus légère.</div>
+    </div>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège capital — oublier \( u' \), c'est perdre la question entière</div>
+    <p>
+      L'erreur numéro un, de très loin, est d'écrire :
+    </p>
+    \[ \Bigl(\sqrt{900 + 3A}\Bigr)' = \frac{1}{2\sqrt{900 + 3A}} \qquad \text{(FAUX)} \]
+    <p>
+      Il manque le 3. Pourquoi c'est grave ? Parce que le 3 ne disparaît pas dans la suite :
+      dans la question 2.2 de l'examen n° 2, c'est précisément le rapport entre le 3 d'un côté
+      et le \( -1 \) de l'autre qui donne la réponse. Sans lui, tu obtiens un montant investi
+      complètement faux, et tu perds les 14 points de la question.
+    </p>
+    <p>
+      <strong>Le réflexe qui te sauve :</strong> après avoir écrit ta dérivée, relis-la et
+      demande-toi « où est passée la dérivée de l'intérieur ? ». Si tu ne la vois pas au
+      numérateur, elle manque.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — pourquoi on vient de faire tout ça</div>
+    <p>
+      À la question 2 de l'examen n° 2, une investisseuse possède 900 euros et en place
+      \( A \) dans un projet risqué. Son utilité espérée s'écrit :
+    </p>
+    \[ U(A) = \tfrac{1}{2}\sqrt{900 + 3A} + \tfrac{1}{2}\sqrt{900 - A} \]
+    <p>
+      Tu reconnais nos exemples 1 et 2, à un facteur \( \tfrac12 \) près chacun. Pour trouver
+      le montant optimal, il faudra dériver cette expression et poser la dérivée égale à zéro
+      (la CPO du chapitre 0). Avec les trois gestes que tu viens d'apprendre, la dérivation
+      prend dix secondes :
+    </p>
+    \[ U'(A) = \frac{3}{4\sqrt{900+3A}} - \frac{1}{4\sqrt{900-A}} \]
+    <p>
+      Le \( \tfrac12 \) de devant multiplie chaque dérivée, ce qui transforme les
+      \( 2\sqrt{\;} \) en \( 4\sqrt{\;} \). Nous ferons tout ce calcul en détail au chapitre 8.
+      L'important, aujourd'hui, est que la ligne ci-dessus ne te fasse plus peur.
+    </p>
+  </div>
+
+  <h3>2.5 Résoudre une équation qui contient des racines</h3>
+
+  <p>
+    Une dernière compétence, courte mais indispensable. Une fois la CPO posée, tu te retrouves
+    avec une équation où l'inconnue est <em>sous</em> une racine. Comment l'en sortir ? On
+    élève les deux côtés au carré : c'est l'opération inverse de la racine, elle l'annule.
+  </p>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — faire disparaître une racine</div>
+    <ol>
+      <li>
+        <strong>Isole d'abord.</strong> Range l'équation de façon à avoir une racine (ou un
+        produit contenant une racine) de chaque côté, sans addition parasite.
+      </li>
+      <li>
+        <strong>Élève les deux côtés au carré.</strong> Autorisé si les deux côtés sont
+        positifs — ce qui est toujours le cas ici, puisque des racines carrées et des
+        probabilités sont positives. Écris-le, ça vaut des points de rigueur.
+      </li>
+      <li>
+        <strong>Attention au carré d'un produit :</strong> \( (3\sqrt{x})^2 = 9x \), pas
+        \( 3x \). Le facteur 3 est lui aussi élevé au carré.
+      </li>
+      <li><strong>Résous l'équation ordinaire</strong> qui reste, et vérifie en remplaçant.</li>
+    </ol>
+  </div>
+
+  <div class="calc">
+    <div class="step">
+      \[ 2\sqrt{x} = \sqrt{3x + 4} \]
+      <div class="why">L'équation de départ. L'inconnue est prisonnière sous deux racines : impossible de l'isoler telle quelle.</div>
+    </div>
+    <div class="step">
+      \[ \bigl(2\sqrt{x}\bigr)^2 = \bigl(\sqrt{3x+4}\bigr)^2 \]
+      <div class="why">J'élève les deux côtés au carré. C'est légitime parce que les deux membres sont positifs. Ce que je fais d'un côté, je le fais de l'autre : c'est la règle d'or des équations du chapitre 0.</div>
+    </div>
+    <div class="step">
+      \[ 4x = 3x + 4 \]
+      <div class="why">À gauche : le carré de 2 fait 4, et le carré de \( \sqrt{x} \) fait \( x \) — d'où \( 4x \). À droite, le carré annule simplement la racine. Les racines ont disparu.</div>
+    </div>
+    <div class="step">
+      \[ x = 4 \]
+      <div class="why">J'enlève \( 3x \) des deux côtés. Vérification : à gauche \( 2\sqrt{4} = 4 \) ; à droite \( \sqrt{12+4} = \sqrt{16} = 4 \). Les deux côtés valent 4. ✓</div>
+    </div>
+  </div>
+
+  <h3>2.6 Le tableau des dérivées, version complète</h3>
+
+  <p>
+    Voici, en un seul endroit, toutes les dérivées dont tu auras besoin dans ce volume. Les
+    quatre premières lignes viennent du chapitre 0, les trois dernières de ce chapitre-ci.
+    Photographie ce tableau.
+  </p>
+
+  <table class="data">
+    <tr><th>Si \( f(x) = \)</th><th>alors \( f'(x) = \)</th><th>Exemple</th></tr>
+    <tr>
+      <td>une constante \( c \)</td><td>\( 0 \)</td>
+      <td>\( f = 900 \Rightarrow f' = 0 \)</td>
+    </tr>
+    <tr>
+      <td>\( x^n \)</td><td>\( n\,x^{\,n-1} \)</td>
+      <td>\( f = \frac{k^2}{2} \Rightarrow f' = k \)</td>
+    </tr>
+    <tr>
+      <td>\( k \cdot f(x) \)</td><td>\( k \cdot f'(x) \)</td>
+      <td>\( f = 4x^2 \Rightarrow f' = 8x \)</td>
+    </tr>
+    <tr>
+      <td>\( f(x) + g(x) \)</td><td>\( f'(x) + g'(x) \)</td>
+      <td>on dérive terme par terme</td>
+    </tr>
+    <tr>
+      <td>\( \sqrt{x} \)</td><td>\( \dfrac{1}{2\sqrt{x}} \)</td>
+      <td>\( u = \sqrt{w} \Rightarrow u' = \dfrac{1}{2\sqrt{w}} \)</td>
+    </tr>
+    <tr>
+      <td>\( \sqrt{u(x)} \)</td><td>\( \dfrac{u'(x)}{2\sqrt{u(x)}} \)</td>
+      <td>\( \sqrt{900+3A} \Rightarrow \dfrac{3}{2\sqrt{900+3A}} \)</td>
+    </tr>
+    <tr>
+      <td>\( \ln(x) \)</td><td>\( \dfrac{1}{x} \)</td>
+      <td>\( 4\ln(l) \Rightarrow \dfrac{4}{l} \)</td>
+    </tr>
+  </table>
+
+
+  <hr class="soft">
+
+  <h2>3. Maximiser sous contrainte : le Lagrangien</h2>
+
+  <p>
+    Nous arrivons au morceau qui a la plus mauvaise réputation de tout le cours. Le mot
+    « Lagrangien » fait peur, le symbole \( \mathcal{L} \) fait peur, la lettre grecque
+    \( \lambda \) fait peur. Tout ça pour une recette qui tient en cinq lignes et que tu
+    appliqueras mécaniquement, sans réfléchir, en trois minutes le jour de l'examen.
+  </p>
+  <p>
+    Alors prenons-la vraiment depuis le début. D'abord le problème en français, ensuite pourquoi
+    la méthode du chapitre 0 ne suffit plus, ensuite la recette, ensuite un exemple entièrement
+    déroulé, ensuite une méthode alternative souvent plus rapide, et enfin le sens de
+    \( \lambda \). Une seule question de tout le volume utilise cet outil — la question 1.2 de
+    l'examen n° 3 — mais elle vaut 15 points et elle est parfaitement mécanique. C'est du point
+    facile.
+  </p>
+
+  <h3>3.1 Le problème, en français d'abord</h3>
+
+  <p>
+    Jusqu'ici, tu as maximisé des fonctions <em>libres</em>. On te donnait \( U(k) \), tu posais
+    \( U'(k) = 0 \), tu trouvais \( k^* \), terminé. Rien ne t'empêchait de choisir n'importe
+    quelle valeur de \( k \).
+  </p>
+  <p>
+    Le problème change quand une <strong>limite</strong> s'ajoute. Regarde ces deux phrases :
+  </p>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — la même envie, avec et sans limite</div>
+    <p>
+      <strong>Sans contrainte :</strong> « Quelle quantité de chocolat me rend le plus
+      heureux ? » Réponse : beaucoup. Peut-être une quantité infinie, si le chocolat ne coûtait
+      rien et ne donnait jamais mal au cœur. La question n'est pas très intéressante.
+    </p>
+    <p>
+      <strong>Sous contrainte :</strong> « J'ai 10 euros. Le chocolat coûte 2 euros la tablette,
+      le café 1 euro la tasse. Quelle combinaison de chocolat et de café me rend le plus
+      heureux <em>sans dépasser mes 10 euros</em> ? » Voilà une vraie question — et c'est
+      exactement celle que pose l'économie.
+    </p>
+  </div>
+
+  <p>
+    Un <span class="term">problème de maximisation sous contrainte</span> a donc toujours deux
+    morceaux, et il faut apprendre à les repérer séparément dans un énoncé :
+  </p>
+
+  <dl class="lexique">
+    <dt>L'objectif (ou fonction objectif)</dt>
+    <dd>
+      Ce qu'on cherche à rendre le plus grand possible. En théorie de la décision, c'est presque
+      toujours une <strong>utilité</strong> \( U \). C'est la phrase « il cherche à maximiser sa
+      satisfaction ».
+    </dd>
+    <dt>La contrainte</dt>
+    <dd>
+      La limite qu'on n'a pas le droit de franchir. En théorie du consommateur, c'est presque
+      toujours une <strong>contrainte de budget</strong> : « ce que je dépense ne peut pas
+      dépasser ce que j'ai ». C'est une <em>égalité</em> ou une <em>inégalité</em>, pas une
+      fonction à maximiser.
+    </dd>
+    <dt>Les variables de choix</dt>
+    <dd>
+      Ce sur quoi on a la main. Dans l'exemple : le nombre de tablettes et le nombre de tasses.
+      À l'examen n° 3 : la consommation \( c \) et le temps de loisir \( l \). Tout le reste
+      (les prix, le salaire, le taux de taxe) est <strong>donné</strong> : ce sont des
+      paramètres, pas des choix.
+    </dd>
+  </dl>
+
+  <p>
+    On écrit ce problème avec une notation compacte que tu vas voir partout :
+  </p>
+
+  \[ \max_{x,\;y}\; U(x,y) \qquad \text{s.c.} \qquad p_x\,x + p_y\,y = m \]
+
+  <p>
+    Décodons, morceau par morceau. Le \( \max \) se lit « maximise ». Les lettres écrites en
+    dessous, \( x, y \), disent <em>sur quoi</em> on maximise : ce sont les variables de choix.
+    Puis \( U(x,y) \), c'est l'objectif. Ensuite « s.c. » est l'abréviation de
+    <strong>« sous contrainte »</strong> (en anglais on écrit « s.t. », <em>subject to</em>).
+    Et après vient la contrainte : le prix du bien \( x \) fois la quantité de \( x \), plus le
+    prix du bien \( y \) fois la quantité de \( y \), doit être égal au revenu \( m \).
+  </p>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — pourquoi la contrainte est une égalité et pas une inégalité</div>
+    <p>
+      La vraie contrainte de budget est \( p_x x + p_y y \le m \) : je ne peux pas dépenser plus
+      que ce que j'ai. Mais on l'écrit presque toujours avec un <strong>signe égal</strong>. La
+      raison est simple et il faut savoir la dire en une phrase : <strong>si plus c'est mieux, on
+      dépense tout</strong>. Garder de l'argent inutilisé, ce serait renoncer à de la
+      satisfaction gratuite. Donc à l'optimum l'inégalité est « saturée », c'est-à-dire atteinte
+      pile : \( \le \) devient \( = \).
+    </p>
+    <p>
+      Sur ta copie, une phrase suffit : « la contrainte est saturée car l'utilité est croissante
+      en \( c \) ». C'est le genre de remarque qui rapporte un point de rigueur.
+    </p>
+  </div>
+
+  <h3>3.2 Pourquoi « dérivée \( = 0 \) » ne suffit plus</h3>
+
+  <p>
+    Essayons naïvement la méthode du chapitre 0 sur un exemple, pour voir ce qui casse. Prends
+    l'utilité de l'examen n° 3, \( U(l,c) = c + 4\ln(l) \), et oublie un instant la contrainte.
+    Dérivons par rapport à \( c \) :
+  </p>
+
+  \[ \frac{\partial U}{\partial c} = 1 \]
+
+  <div class="box box-def">
+    <div class="box-title">Notation — le \( \partial \) rond des dérivées partielles</div>
+    <p>
+      Le symbole \( \partial \) se lit « d rond », ou simplement « dérivée partielle ». On
+      l'utilise dès qu'une fonction a <strong>plusieurs</strong> variables. \( \frac{\partial
+      U}{\partial c} \) se lit « d rond U sur d rond c » et signifie : « je dérive \( U \) par
+      rapport à \( c \) <em>en traitant toutes les autres lettres comme des constantes</em> ».
+    </p>
+    <p>
+      C'est tout. Une dérivée partielle n'est pas plus difficile qu'une dérivée ordinaire : tu
+      choisis une lettre, tu dérives par rapport à elle, et tu regardes toutes les autres comme
+      de simples nombres. Dans \( U(l,c) = c + 4\ln(l) \), quand je dérive par rapport à
+      \( c \), le terme \( 4\ln(l) \) est une constante et disparaît ; il reste \( 1 \).
+    </p>
+  </div>
+
+  <p>
+    Et là, catastrophe. La dérivée vaut \( 1 \). Elle n'est <em>jamais</em> nulle. Poser
+    « dérivée \( = 0 \) » donnerait \( 1 = 0 \), ce qui est faux pour toute valeur de \( c \).
+    Le message mathématique est clair : <strong>sans contrainte, ce problème n'a pas de
+    solution</strong>. L'utilité augmente indéfiniment quand la consommation augmente. Notre
+    travailleur consommerait une infinité de biens. Évidemment.
+  </p>
+  <p>
+    Voilà pourquoi il faut une méthode différente. Ce n'est pas que la CPO du chapitre 0 est
+    fausse : c'est qu'il faut lui apprendre à tenir compte du budget.
+  </p>
+
+  <h3>3.3 L'image qui explique tout : la tangence</h3>
+
+  <p>
+    Avant la recette, une image. Elle ne sert pas à calculer, elle sert à ne jamais oublier
+    <em>ce qu'on cherche</em>. Deux objets vivent sur le même dessin.
+  </p>
+
+  <dl class="lexique">
+    <dt>La droite de budget</dt>
+    <dd>
+      L'ensemble de toutes les combinaisons que je peux acheter en dépensant exactement tout mon
+      argent. C'est une <strong>droite</strong>, parce que la contrainte \( p_x x + p_y y = m \)
+      est une équation du premier degré. Tout ce qui est en dessous est accessible, tout ce qui
+      est au-dessus est hors de prix.
+    </dd>
+    <dt>Une courbe d'indifférence</dt>
+    <dd>
+      L'ensemble de toutes les combinaisons qui me donnent <strong>exactement la même
+      satisfaction</strong>. « Indifférence » parce que, entre deux points de cette courbe, je
+      suis indifférent : les deux me plaisent autant. Il y en a une infinité, empilées les unes
+      au-dessus des autres. Plus une courbe est <strong>haute</strong> (loin de l'origine), plus
+      la satisfaction qu'elle représente est <strong>grande</strong>.
+    </dd>
+  </dl>
+
+  <p>
+    Le problème devient alors visuel : <strong>atteindre la courbe d'indifférence la plus haute
+    possible sans quitter la droite de budget</strong>. Et la réponse saute aux yeux dès qu'on
+    dessine.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 500 330" width="100%" style="max-width:12cm" role="img" aria-label="Droite de budget et trois courbes d'indifférence : l'optimum est le point de tangence">
+      <defs>
+        <marker id="c6-fl-d" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+          <path d="M0,0 L8,3.2 L0,6.4 z" fill="#111827"></path>
+        </marker>
+      </defs>
+      <line x1="70" y1="270" x2="470" y2="270" stroke="#111827" stroke-width="1.6" marker-end="url(#c6-fl-d)"></line>
+      <line x1="70" y1="270" x2="70" y2="30" stroke="#111827" stroke-width="1.6" marker-end="url(#c6-fl-d)"></line>
+      <text x="466" y="292" font-size="13" text-anchor="end">cafés (bien y)</text>
+      <text x="76" y="42" font-size="13">euros pour le reste (bien x)</text>
+
+      <line x1="70" y1="61" x2="430" y2="270" stroke="#be123c" stroke-width="2.6"></line>
+      <text x="400" y="240" font-size="12.5" text-anchor="end" fill="#be123c">droite de budget</text>
+      <text x="400" y="256" font-size="12.5" text-anchor="end" fill="#be123c">x + 2y = 20</text>
+
+      <path d="M92,53 L106,74 L124,91 L142,103 L178,120 L214,132 L286,149 L358,161 L430,170"
+            fill="none" stroke="#4338ca" stroke-width="3"></path>
+      <path d="M106,92 L142,121 L214,150 L286,167 L358,179 L430,189"
+            fill="none" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="6 4"></path>
+      <path d="M106,56 L142,85 L214,114 L286,131 L358,143 L430,152"
+            fill="none" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="2 4"></path>
+
+      <circle cx="142" cy="103" r="5.5" fill="#111827"></circle>
+      <line x1="142" y1="103" x2="142" y2="270" stroke="#111827" stroke-width="1.1" stroke-dasharray="3 3"></line>
+      <line x1="142" y1="103" x2="70" y2="103" stroke="#111827" stroke-width="1.1" stroke-dasharray="3 3"></line>
+      <text x="142" y="288" font-size="13" text-anchor="middle">y* = 2</text>
+      <text x="64" y="107" font-size="13" text-anchor="end">16</text>
+
+      <text x="196" y="98" font-size="12.5">optimum : les deux</text>
+      <text x="196" y="114" font-size="12.5">courbes se touchent</text>
+      <text x="196" y="130" font-size="12.5">sans se croiser</text>
+
+      <text x="250" y="196" font-size="12" fill="#374151">accessible, mais moins bien</text>
+      <text x="250" y="60" font-size="12" fill="#374151">mieux, mais hors budget</text>
+    </svg>
+    <figcaption>
+      La droite de budget (trait plein foncé, descendante) donne tout ce qu'on peut s'offrir. Les
+      trois courbes montantes de gauche à droite sont des courbes d'indifférence : celle du haut
+      (pointillés fins) est la plus désirable mais ne touche jamais le budget — inaccessible.
+      Celle du bas (tirets) coupe le budget en deux points : on peut faire mieux. La bonne est
+      celle du milieu (trait épais) : elle <strong>effleure</strong> la droite en un seul point.
+      Ce point de <span class="term">tangence</span> est l'optimum. « Tangence » veut dire :
+      elles se touchent et ont la même pente.
+    </figcaption>
+  </figure>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi la solution est forcément un point de tangence</div>
+    <p>
+      Raisonne par l'absurde, c'est très parlant. Suppose que la courbe d'indifférence
+      <em>coupe</em> la droite de budget au lieu de l'effleurer. Alors elle passe d'un côté puis
+      de l'autre : il existe donc, juste à côté, des points du budget qui sont
+      <strong>au-dessus</strong> de cette courbe, c'est-à-dire meilleurs. Tu n'étais donc pas au
+      maximum, puisque tu peux encore t'améliorer sans dépenser plus.
+    </p>
+    <p>
+      Conclusion : au vrai maximum, la courbe ne coupe pas, elle touche. Et « toucher sans
+      couper », pour deux courbes, cela signifie exactement : <strong>même pente au point de
+      contact</strong>. C'est de cette égalité de pentes que le Lagrangien va accoucher
+      automatiquement — tu n'auras rien à dessiner le jour J, mais tu sauras ce que ta formule
+      raconte.
+    </p>
+  </div>
+
+  <h3>3.4 La recette, en cinq gestes</h3>
+
+  <p>
+    Voici maintenant la mécanique. Lis-la une fois sans chercher à comprendre <em>pourquoi</em>
+    elle fonctionne — la démonstration est un théorème de mathématiques qui n'est pas au
+    programme. Ce qu'on te demande, c'est de savoir l'<strong>appliquer</strong>.
+  </p>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — résoudre un problème sous contrainte par le Lagrangien</div>
+    <ol>
+      <li>
+        <strong>Range l'énoncé.</strong> Écris d'un côté l'objectif \( U(\cdot) \), de l'autre la
+        contrainte mise sous la forme « quelque chose \( = 0 \) ». Par exemple
+        \( p_x x + p_y y - m = 0 \).
+      </li>
+      <li>
+        <strong>Écris le Lagrangien.</strong> C'est l'objectif, moins \( \lambda \) fois la
+        contrainte : \( \mathcal{L} = U(x,y) - \lambda\,(p_x x + p_y y - m) \). Rien de plus.
+      </li>
+      <li>
+        <strong>Dérive par rapport à chaque variable de choix</strong>, et pose chaque dérivée
+        égale à zéro. Deux variables, deux équations.
+      </li>
+      <li>
+        <strong>Dérive par rapport à \( \lambda \)</strong>, pose égal à zéro : tu récupères
+        exactement la contrainte. C'est automatique, mais écris-la : elle compte dans le barème.
+      </li>
+      <li>
+        <strong>Résous le système.</strong> Le plus souvent on élimine \( \lambda \) entre les
+        deux premières équations, ce qui donne une relation entre \( x \) et \( y \) ; on
+        l'injecte dans la contrainte, et tout se déverrouille.
+      </li>
+    </ol>
+  </div>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — le Lagrangien et le multiplicateur \( \lambda \)</div>
+    \[ \mathcal{L}(x, y, \lambda) \;=\; \underbrace{U(x,y)}_{\text{l'objectif}} \;-\; \lambda\,\underbrace{\bigl(p_x x + p_y y - m\bigr)}_{\text{la contrainte} \,=\, 0} \]
+    <p>
+      Le \( \mathcal{L} \) calligraphié se lit simplement « le Lagrangien ». Le \( \lambda \) est
+      la lettre grecque « lambda ». On l'appelle le <span class="term">multiplicateur de
+      Lagrange</span> : c'est une variable <em>supplémentaire</em>, inventée pour l'occasion, qui
+      n'existait pas dans l'énoncé.
+    </p>
+    <p>
+      L'idée, en une phrase : le morceau entre parenthèses vaut zéro exactement quand la
+      contrainte est respectée. Le \( \lambda \) sert de « prix de la désobéissance » — il pénalise
+      toute tentative de sortir du budget. À l'optimum, les deux forces s'équilibrent, et la
+      recette recrache automatiquement la condition de tangence de la figure précédente.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — le signe devant \( \lambda \), et pourquoi il ne change rien</div>
+    <p>
+      Tu verras deux écritures dans les livres, et parfois dans le même cours :
+    </p>
+    \[ \mathcal{L} = U - \lambda\,(\text{dépense} - \text{budget}) \]
+    \[ \mathcal{L} = U + \lambda\,(\text{budget} - \text{dépense}) \]
+    <p>
+      Ce sont <strong>exactement</strong> les mêmes, puisque \( -(a-b) = (b-a) \). Elles donnent
+      les mêmes \( x^* \) et \( y^* \), au signe de \( \lambda \) près. Ne perds pas une seconde
+      là-dessus : choisis-en une, tiens-t'y, et signale-la en une ligne sur ta copie. La
+      correction de l'examen n° 3 utilise la première ; c'est celle que j'utiliserai ici.
+    </p>
+    <p>
+      <strong>Le vrai piège, lui, est ailleurs :</strong> ne mets pas la contrainte à l'envers
+      <em>à l'intérieur</em> d'une même parenthèse en cours de route. Écris-la une fois, proprement,
+      et ne la retouche plus.
+    </p>
+  </div>
+
+  <h3>3.5 Un exemple complet, entièrement déroulé</h3>
+
+  <p>
+    Prenons un cas inventé, volontairement simple, mais construit exactement comme celui de
+    l'examen n° 3. Refais-le seul une fois avant d'attaquer le chapitre 12 : si tu y arrives,
+    la question 1.2 est à toi.
+  </p>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — les cafés de Chloé</div>
+    <p>
+      Chloé dispose de <strong>20 euros</strong> pour la semaine. Elle les répartit entre des
+      <strong>cafés</strong>, notés \( y \), qui coûtent 2 euros pièce, et <strong>tout le
+      reste</strong>, noté \( x \), dont le prix est de 1 euro par unité. Sa satisfaction est
+      décrite par
+    </p>
+    \[ U(x,y) = x + 4\ln(y) \]
+    <p>
+      Combien de cafés prend-elle ? Le \( \ln \) traduit qu'elle adore le premier café de la
+      semaine, aime bien le deuxième, et se lasse vite ensuite.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Ranger l'énoncé</div>
+    <p>
+      L'objectif est \( U(x,y) = x + 4\ln(y) \). La contrainte dit : ce que je dépense, c'est
+      \( 1 \times x \) pour le reste plus \( 2 \times y \) pour les cafés, et ça doit valoir 20.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ \text{objectif :}\quad U(x,y) = x + 4\ln(y) \]
+        <div class="why">Je recopie l'utilité telle quelle. C'est ce que Chloé veut rendre le plus grand possible.</div>
+      </div>
+      <div class="step">
+        \[ \text{contrainte :}\quad x + 2y - 20 = 0 \]
+        <div class="why">J'écris la contrainte sous la forme « quelque chose \( = 0 \) » en faisant passer le 20 à gauche. C'est ce morceau-là que je vais coller derrière \( \lambda \).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Écrire le Lagrangien</div>
+    <div class="calc">
+      <div class="step">
+        \[ \mathcal{L}(x,y,\lambda) = x + 4\ln(y) - \lambda\,\bigl(x + 2y - 20\bigr) \]
+        <div class="why">Je colle les deux morceaux : objectif d'abord, puis « moins lambda fois la contrainte ». C'est du copier-coller, il n'y a aucune réflexion à ce stade.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Dériver par rapport à chaque variable de choix</div>
+    <p>
+      Deux variables de choix : \( x \) et \( y \). Donc deux dérivées partielles, chacune posée
+      égale à zéro.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ \frac{\partial \mathcal{L}}{\partial x} = 1 - \lambda = 0 \qquad (1) \]
+        <div class="why">Je dérive par rapport à \( x \) en traitant \( y \) et \( \lambda \) comme des nombres. Le terme \( x \) donne 1 ; le terme \( 4\ln(y) \) ne contient pas de \( x \), il disparaît ; dans \( -\lambda(x + 2y - 20) \), seul \( -\lambda x \) contient un \( x \), sa dérivée est \( -\lambda \).</div>
+      </div>
+      <div class="step">
+        \[ \frac{\partial \mathcal{L}}{\partial y} = \frac{4}{y} - 2\lambda = 0 \qquad (2) \]
+        <div class="why">Je dérive par rapport à \( y \). Le \( x \) tout seul disparaît. \( 4\ln(y) \) donne \( 4 \times \frac{1}{y} = \frac{4}{y} \) — c'est la dérivée du logarithme de la section 2.3. Et \( -\lambda \times 2y \) donne \( -2\lambda \).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Dériver par rapport à \( \lambda \)</div>
+    <div class="calc">
+      <div class="step">
+        \[ \frac{\partial \mathcal{L}}{\partial \lambda} = -\bigl(x + 2y - 20\bigr) = 0 \]
+        <div class="why">Dans le Lagrangien, \( \lambda \) n'apparaît qu'une fois, multiplié par la parenthèse. Dériver par rapport à \( \lambda \) laisse donc simplement cette parenthèse (avec son signe moins).</div>
+      </div>
+      <div class="step">
+        \[ x + 2y = 20 \qquad (3) \]
+        <div class="why">Je change de signe et je remets le 20 à droite. Sans surprise : je retrouve la contrainte de départ. C'est normal, c'est même le but — cette troisième équation garantit que la solution respecte le budget.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">5.</span> Résoudre le système de trois équations</div>
+    <p>
+      Trois équations, trois inconnues \( (x, y, \lambda) \). On les prend dans l'ordre le plus
+      commode, et ici l'équation (1) est un cadeau.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ (1) \;\Longrightarrow\; \lambda = 1 \]
+        <div class="why">De \( 1 - \lambda = 0 \), j'ajoute \( \lambda \) des deux côtés : \( \lambda = 1 \). Le multiplicateur est directement connu, sans rien calculer d'autre. C'est la signature des utilités « quasi-linéaires », celles où une variable entre toute seule, sans transformation.</div>
+      </div>
+      <div class="step">
+        \[ (2) \;\Longrightarrow\; \frac{4}{y} = 2\lambda = 2 \]
+        <div class="why">Je remplace \( \lambda \) par sa valeur 1 dans l'équation (2), après avoir fait passer \( 2\lambda \) de l'autre côté du signe égal.</div>
+      </div>
+      <div class="step">
+        \[ y^* = \frac{4}{2} = 2 \]
+        <div class="why">De \( \frac{4}{y} = 2 \), je multiplie les deux côtés par \( y \) puis je divise par 2 : \( y = 4/2 = 2 \). Chloé prend deux cafés.</div>
+      </div>
+      <div class="step">
+        \[ (3) \;\Longrightarrow\; x^* = 20 - 2 \times 2 = 16 \]
+        <div class="why">J'injecte \( y^* = 2 \) dans la contrainte : elle dépense \( 2\times 2 = 4 \) euros en cafés, il lui reste 16 euros pour tout le reste.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat</div>
+    <p>
+      \( y^* = 2 \) cafés, \( x^* = 16 \) euros pour le reste, et \( \lambda = 1 \).
+    </p>
+    <p>
+      <strong>Vérification, toujours.</strong> Le budget est-il respecté ?
+      \( 16 + 2\times 2 = 20 \) ✓. La satisfaction atteinte vaut
+      \( U = 16 + 4\ln(2) \approx 16 + 2{,}77 = 18{,}77 \). Essaie une autre combinaison
+      accessible, par exemple 4 cafés et 12 euros de reste :
+      \( U = 12 + 4\ln(4) \approx 12 + 5{,}55 = 17{,}55 \). C'est moins bon. Ou 1 café et
+      18 euros de reste : \( U = 18 + 0 = 18 \). Moins bon aussi. Notre optimum tient.
+    </p>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Ce que ce résultat raconte, en économie</div>
+    <p>
+      Regarde l'équation (2) autrement. Elle dit \( \frac{4}{y} = 2\lambda \), c'est-à-dire :
+      <strong>le plaisir apporté par un café de plus</strong> (\( 4/y \), l'utilité marginale du
+      café) <strong>égale son prix</strong> (2) <strong>multiplié par la valeur d'un euro</strong>
+      (\( \lambda \)).
+    </p>
+    <p>
+      Autrement dit : Chloé achète des cafés tant que le plaisir du café suivant dépasse ce que
+      cet argent lui rapporterait ailleurs. Elle s'arrête pile quand les deux s'équilibrent. Le
+      quatrième café n'est pas « mauvais » — il est simplement moins intéressant que les 2 euros
+      qu'il coûte. C'est toute l'économie en une ligne.
+    </p>
+  </div>
+
+  <h3>3.6 La méthode alternative : la substitution</h3>
+
+  <p>
+    Il existe une seconde façon d'arriver au même résultat, sans \( \lambda \), sans
+    \( \mathcal{L} \), sans dérivée partielle. Elle est souvent plus rapide. Elle s'appelle la
+    <span class="term">substitution</span>, et tu la connais déjà : c'est exactement la technique
+    des systèmes 2×2 du chapitre 0, section 3.4.
+  </p>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — résoudre par substitution</div>
+    <ol>
+      <li>
+        <strong>Isole une variable dans la contrainte.</strong> Choisis celle qui s'isole le plus
+        facilement (celle dont le coefficient vaut 1, en général).
+      </li>
+      <li>
+        <strong>Remplace-la dans l'objectif.</strong> L'utilité ne dépend plus que d'
+        <em>une seule</em> variable.
+      </li>
+      <li>
+        <strong>Maximise normalement :</strong> une dérivée, égale à zéro. C'est la CPO du
+        chapitre 0, celle que tu maîtrises.
+      </li>
+      <li>
+        <strong>Remonte</strong> à l'autre variable en réutilisant la contrainte.
+      </li>
+    </ol>
+  </div>
+
+  <p>
+    Refaisons l'exemple de Chloé de cette manière, pour voir qu'on retombe bien sur les mêmes
+    nombres.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ x + 2y = 20 \;\Longrightarrow\; x = 20 - 2y \]
+      <div class="why">Geste 1 : j'isole \( x \) dans la contrainte. Il suffit de faire passer \( 2y \) de l'autre côté.</div>
+    </div>
+    <div class="step">
+      \[ U(y) = \underbrace{(20 - 2y)}_{= \,x} + \,4\ln(y) \]
+      <div class="why">Geste 2 : je remplace \( x \) par \( 20 - 2y \) dans l'objectif. L'utilité ne dépend plus que de \( y \) — je note d'ailleurs \( U(y) \) et non plus \( U(x,y) \), pour marquer qu'il n'y a plus qu'une variable.</div>
+    </div>
+    <div class="step">
+      \[ U'(y) = -2 + \frac{4}{y} \]
+      <div class="why">Geste 3, première moitié : je dérive. La dérivée de 20 est 0, celle de \( -2y \) est \( -2 \), celle de \( 4\ln(y) \) est \( 4/y \). Une dérivée ordinaire, plus aucune dérivée partielle.</div>
+    </div>
+    <div class="step">
+      \[ -2 + \frac{4}{y} = 0 \;\Longleftrightarrow\; \frac{4}{y} = 2 \;\Longleftrightarrow\; y^* = 2 \]
+      <div class="why">Geste 3, seconde moitié : je pose la dérivée égale à zéro et je résous. Je retrouve exactement l'équation (2) de la méthode du Lagrangien, avec \( \lambda \) déjà remplacé par 1.</div>
+    </div>
+    <div class="step">
+      \[ x^* = 20 - 2\times 2 = 16 \]
+      <div class="why">Geste 4 : je remonte à \( x \) par la contrainte. Même résultat qu'avec le Lagrangien, en deux fois moins de lignes.</div>
+    </div>
+  </div>
+
+  <table class="compare">
+    <tr>
+      <th class="left"></th>
+      <th class="left">Lagrangien</th>
+      <th class="left">Substitution</th>
+    </tr>
+    <tr>
+      <td class="left">Nombre d'équations à écrire</td>
+      <td class="left">3 (plus le Lagrangien lui-même)</td>
+      <td class="left">1 seule dérivée</td>
+    </tr>
+    <tr>
+      <td class="left">Donne \( \lambda \) ?</td>
+      <td class="left">Oui, et son interprétation</td>
+      <td class="left">Non, \( \lambda \) n'apparaît jamais</td>
+    </tr>
+    <tr>
+      <td class="left">Marche quand la contrainte est compliquée ?</td>
+      <td class="left">Toujours</td>
+      <td class="left">Seulement si une variable s'isole proprement</td>
+    </tr>
+    <tr>
+      <td class="left">Accepté à l'examen ?</td>
+      <td class="left">Oui — et exigé si l'énoncé dit « par le Lagrangien »</td>
+      <td class="left">Oui, sauf si l'énoncé impose l'autre</td>
+    </tr>
+  </table>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — quand l'énoncé impose la méthode</div>
+    <p>
+      La question 1.2 de l'examen n° 3 commence par : « <em>En utilisant la méthode du
+      Lagrangien…</em> ». Ce n'est pas une suggestion. Le barème accorde <strong>5 points rien
+      que pour l'écriture correcte du Lagrangien</strong> et 4 points pour les trois conditions
+      de premier ordre. Si tu résous par substitution, tu peux trouver le bon nombre et perdre
+      quand même 9 points sur 15.
+    </p>
+    <p>
+      <strong>Le bon réflexe :</strong> écris le Lagrangien et les trois CPO parce qu'on te les
+      demande — puis, si tu veux, vérifie ton résultat par substitution au brouillon. Les deux
+      méthodes doivent tomber d'accord ; si ce n'est pas le cas, tu as fait une erreur de calcul
+      quelque part, et tu viens de la détecter gratuitement.
+    </p>
+  </div>
+
+  <h3>3.7 Que représente \( \lambda \) ?</h3>
+
+  <p>
+    Une phrase à savoir, pas plus, parce qu'elle peut valoir un point de bonus dans une question
+    d'interprétation.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — l'interprétation de \( \lambda \)</div>
+    <p>
+      Le multiplicateur \( \lambda \) mesure <strong>de combien l'utilité maximale augmenterait
+      si le budget augmentait d'une unité</strong>. On l'appelle pour cette raison
+      l'<span class="term">utilité marginale du revenu</span> : la « valeur en satisfaction »
+      d'un euro supplémentaire.
+    </p>
+  </div>
+
+  <p>
+    Vérifions-le sur Chloé, c'est immédiat. On a trouvé \( \lambda = 1 \). La prédiction est
+    donc : « si Chloé recevait 1 euro de plus, sa satisfaction augmenterait d'environ 1 ». Or
+    avec 21 euros, la même résolution donne toujours \( y^* = 2 \) cafés (l'équation (2) ne
+    contient pas le budget) et \( x^* = 21 - 4 = 17 \), donc
+    \( U = 17 + 4\ln 2 \approx 19{,}77 \). C'était \( 18{,}77 \). L'utilité a bien augmenté
+    de 1, exactement comme \( \lambda \) l'annonçait.
+  </p>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie — le modèle de rédaction</div>
+    <p>
+      Voici la forme attendue d'une réponse « Lagrangien ». Six lignes, dans cet ordre, à chaque
+      fois :
+    </p>
+    <p>
+      « Le travailleur maximise \( U \) sous sa contrainte de budget, saturée puisque l'utilité
+      est croissante en \( c \). Le Lagrangien s'écrit
+      \( \mathcal{L} = U - \lambda(\text{dépense} - \text{ressources}) \). Les conditions de
+      premier ordre sont : \( \partial\mathcal{L}/\partial c = 0 \),
+      \( \partial\mathcal{L}/\partial l = 0 \) et \( \partial\mathcal{L}/\partial\lambda = 0 \),
+      soit […]. La première donne \( \lambda = 1 \). En l'injectant dans la deuxième,
+      j'obtiens \( l^* = \ldots \). La troisième me permet de retrouver \( c^* = \ldots \). »
+    </p>
+    <p>
+      Remarque la structure : on annonce, on écrit, on dérive, on résout, on conclut. Même
+      quand le calcul est raté, cette structure rapporte la moitié des points.
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel utile — deux dérivées partielles à connaître par cœur</div>
+    <p>
+      Dans tous les Lagrangiens de ce cours, les dérivées partielles se réduisent à deux gestes
+      déjà vus :
+    </p>
+    <ul>
+      <li>
+        une variable qui apparaît <strong>toute seule</strong> (comme le \( c \) de
+        \( c + 4\ln l \)) a pour dérivée partielle \( 1 \) ;
+      </li>
+      <li>
+        un terme \( a\ln(v) \) a pour dérivée partielle \( \dfrac{a}{v} \) par rapport à
+        \( v \), et \( 0 \) par rapport à toute autre lettre.
+      </li>
+    </ul>
+    <p>
+      C'est tout. Aucune dérivée exotique ne t'attend dans ces deux examens.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>4. Le temps : de l'actualisation au biais du présent</h2>
+
+  <p>
+    Cette section prépare la question 1 de l'examen n° 2 : cinquante points, la plus grosse
+    question des deux examens. Elle raconte l'histoire d'un grimpeur qui prend un abonnement à
+    une salle d'escalade et qui n'y va pas assez. Pour la traiter, il te faut un seul concept
+    nouveau — mais il faut le posséder à fond, parce que six sous-questions en dépendent.
+  </p>
+
+  <h3>4.1 Ce que tu sais déjà : \( \delta \), le facteur d'escompte</h3>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel — le facteur d'escompte \( \delta \) (chapitre 0, section 5, et chapitre 5)</div>
+    <p>
+      Une satisfaction future compte <em>moins</em> qu'une satisfaction immédiate. Pour en tenir
+      compte, on multiplie chaque utilité future par un <span class="term">facteur
+      d'escompte</span> \( \delta \) (lettre grecque « delta »), compris entre 0 et 1 :
+    </p>
+    \[ U = u_0 + \delta\,u_1 + \delta^2 u_2 + \delta^3 u_3 + \cdots \]
+    <p>
+      Une période d'attente, un facteur \( \delta \). Deux périodes, \( \delta^2 \). Et ainsi de
+      suite. Un \( \delta \) proche de 1 décrit quelqu'un de patient (le futur compte presque
+      autant que le présent) ; un \( \delta \) proche de 0 décrit quelqu'un d'impatient. C'est
+      aussi le \( \delta \) qui sert de « probabilité que le jeu continue » dans les jeux
+      répétés du chapitre 5.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — dans l'examen n° 2, \( \delta = 1 \)</div>
+    <p>
+      L'énoncé de la question 1 précise en note : « <em>On suppose un facteur d'escompte
+      \( \delta = 1 \)</em> ». Autrement dit, l'escompte classique est <strong>débranché</strong> :
+      une utilité de période 2 vaut autant qu'une utilité de période 1, tant qu'on regarde
+      les deux de loin. C'est fait exprès. En neutralisant \( \delta \), l'énoncé garantit que
+      tout ce qui se passera d'étrange dans cette question vient <em>uniquement</em> du nouveau
+      paramètre, \( \beta \). Ne cherche donc pas de \( \delta \) dans tes calculs : il n'y en a
+      pas.
+    </p>
+  </div>
+
+  <h3>4.2 Le problème que \( \delta \) n'explique pas</h3>
+
+  <p>
+    Le modèle avec \( \delta \) seul est cohérent, et c'est justement son défaut : il est
+    <em>trop</em> cohérent. Il prédit que ce que tu décides aujourd'hui pour demain, tu le feras
+    demain. Or regarde ta propre vie.
+  </p>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — deux situations que tout le monde reconnaît</div>
+    <p>
+      <strong>Le réveil.</strong> Dimanche soir, tu règles ton réveil sur 6 h 30 pour aller
+      courir avant les cours. Tu es sincère : c'est vraiment ce que tu veux. Lundi 6 h 30, la
+      main part toute seule sur « répéter ». Rien n'a changé entre-temps — ni ta forme, ni la
+      météo, ni tes objectifs. Seule la <strong>date</strong> a changé : l'effort, qui était
+      lointain, est devenu immédiat.
+    </p>
+    <p>
+      <strong>L'abonnement de sport.</strong> En janvier, tu prends un abonnement annuel en
+      calculant « à raison de deux séances par semaine, ça revient à 4 euros la séance ». En
+      juin, tu as fait onze séances au total, ce qui met la séance à 30 euros. Ce n'était pas
+      un mensonge : c'était une prévision faite par quelqu'un qui ne se connaissait pas assez.
+    </p>
+  </div>
+
+  <p>
+    Ce phénomène a un nom précis, et il faut savoir le prononcer dans une réponse :
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — problème de self-contrôle et incohérence temporelle</div>
+    <p>
+      Un individu a un <span class="term">problème de self-contrôle</span> si, <strong>au moment
+      de passer à l'action</strong>, il n'exécute pas le plan qu'il avait lui-même jugé optimal à
+      l'avance. « Je m'y mets demain » — et demain ne vient jamais.
+    </p>
+    <p>
+      On dit alors que ses préférences sont <span class="term">temporellement
+      incohérentes</span> : le classement qu'il fait entre deux options change avec le moment où
+      on lui pose la question, alors que les options, elles, n'ont pas bougé.
+    </p>
+  </div>
+
+  <h3>4.3 La solution : un seul paramètre de plus, \( \beta \)</h3>
+
+  <p>
+    Comment fabriquer un modèle qui produise ce comportement ? Les économistes O'Donoghue et
+    Rabin ont proposé une idée d'une simplicité désarmante : garder tout le modèle classique et
+    ajouter <strong>un seul</strong> nouveau paramètre, noté \( \beta \) (lettre grecque
+    « bêta »), qui rabote <em>tout le futur d'un coup</em>.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — le modèle \( \beta \)-\( \delta \) (bêta-delta)</div>
+    <p>
+      Vu depuis la période 0, l'utilité totale s'écrit :
+    </p>
+    \[ U_0 = u_0 + \beta\delta\,u_1 + \beta\delta^2 u_2 + \beta\delta^3 u_3 + \cdots \]
+    <p>
+      avec \( \beta \in [0\,;\,1] \). Note bien la dissymétrie, c'est <strong>tout</strong> le
+      modèle : l'utilité de la période <em>en cours</em>, \( u_0 \), n'a <strong>pas</strong> de
+      \( \beta \) ; toutes les autres en ont un, et un seul, quel que soit leur éloignement.
+    </p>
+    <p>
+      Plus \( \beta \) est petit, plus le biais est fort. Et si \( \beta = 1 \), le paramètre
+      disparaît et on retombe exactement sur le modèle rationnel du volume 1. Le modèle
+      \( \beta \)-\( \delta \) <em>contient</em> donc le modèle rationnel comme cas particulier :
+      il ne le remplace pas, il le généralise.
+    </p>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi un rabot « d'un coup », et pas un \( \delta \) plus petit</div>
+    <p>
+      Question légitime : si l'individu est impatient, pourquoi ne pas simplement diminuer
+      \( \delta \) ? Parce que ça ne produirait pas le bon comportement. Diminuer \( \delta \)
+      rend quelqu'un impatient <em>de façon régulière</em>, à toutes les échéances : il
+      préférerait toujours 100 euros aujourd'hui à 110 dans un an, <em>et</em> 100 euros dans
+      cinq ans à 110 dans six ans. Rien d'incohérent là-dedans, juste de l'impatience.
+    </p>
+    <p>
+      Le \( \beta \), lui, crée une <strong>marche d'escalier</strong> entre « maintenant » et
+      « pas maintenant ». Entre deux dates futures, il se simplifie et ne joue aucun rôle : vu
+      de loin, l'individu est parfaitement raisonnable. Mais dès que l'une des deux dates devient
+      « maintenant », le \( \beta \) ne se simplifie plus et l'arbitrage bascule. C'est
+      exactement le renversement qu'on observe dans la vraie vie.
+    </p>
+  </div>
+
+  <h3>4.4 L'incohérence temporelle, vue en image</h3>
+
+  <p>
+    Le point délicat, celui qui fait tout, est que la formule <strong>change quand on change de
+    point de vue</strong>. Ce n'est pas une seule utilité : c'est une utilité par période
+    d'observation. Regarde les poids que le grimpeur attribue à chaque période, d'abord vu de la
+    période 0, ensuite vu de la période 1. On prend \( \delta = 1 \) et
+    \( \beta = \tfrac12 \), comme dans l'examen.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 520 310" width="100%" style="max-width:12cm" role="img" aria-label="Frise des trois périodes avec les poids d'utilité, vus de la période 0 puis vus de la période 1">
+      <text x="18" y="30" font-size="14" font-weight="bold">Vu de la période 0</text>
+      <rect x="60" y="44" width="126" height="40" fill="none" stroke="#111827" stroke-width="1.8" rx="4"></rect>
+      <rect x="196" y="44" width="126" height="40" fill="none" stroke="#111827" stroke-width="1.8" rx="4"></rect>
+      <rect x="332" y="44" width="126" height="40" fill="none" stroke="#111827" stroke-width="1.8" rx="4"></rect>
+      <text x="123" y="69" font-size="13.5" text-anchor="middle">période 0</text>
+      <text x="259" y="69" font-size="13.5" text-anchor="middle">période 1</text>
+      <text x="395" y="69" font-size="13.5" text-anchor="middle">période 2</text>
+      <text x="123" y="104" font-size="13.5" text-anchor="middle" font-weight="bold">poids 1</text>
+      <text x="259" y="104" font-size="13.5" text-anchor="middle" font-weight="bold">poids β = 0,5</text>
+      <text x="395" y="104" font-size="13.5" text-anchor="middle" font-weight="bold">poids β = 0,5</text>
+      <path d="M196,118 L196,128 L458,128 L458,118" fill="none" stroke="#4338ca" stroke-width="1.8"></path>
+      <text x="327" y="146" font-size="13" text-anchor="middle" fill="#4338ca">rapport P1 / P2 = 0,5 / 0,5 = 1</text>
+
+      <line x1="18" y1="166" x2="502" y2="166" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5 4"></line>
+
+      <text x="18" y="194" font-size="14" font-weight="bold">Vu de la période 1</text>
+      <rect x="60" y="208" width="126" height="40" fill="none" stroke="#9ca3af" stroke-width="1.4" stroke-dasharray="5 4" rx="4"></rect>
+      <rect x="196" y="208" width="126" height="40" fill="none" stroke="#111827" stroke-width="1.8" rx="4"></rect>
+      <rect x="332" y="208" width="126" height="40" fill="none" stroke="#111827" stroke-width="1.8" rx="4"></rect>
+      <text x="123" y="233" font-size="13" text-anchor="middle" fill="#6b7280">déjà passée</text>
+      <text x="259" y="233" font-size="13.5" text-anchor="middle">période 1</text>
+      <text x="395" y="233" font-size="13.5" text-anchor="middle">période 2</text>
+      <text x="259" y="268" font-size="13.5" text-anchor="middle" font-weight="bold">poids 1</text>
+      <text x="395" y="268" font-size="13.5" text-anchor="middle" font-weight="bold">poids β = 0,5</text>
+      <path d="M196,282 L196,292 L458,292 L458,282" fill="none" stroke="#be123c" stroke-width="1.8"></path>
+      <text x="327" y="308" font-size="13" text-anchor="middle" fill="#be123c">rapport P1 / P2 = 1 / 0,5 = 2</text>
+    </svg>
+    <figcaption>
+      Les mêmes trois périodes, pesées de deux points de vue. En haut, depuis la période 0 : les
+      périodes 1 et 2 sont toutes les deux « du futur », elles reçoivent le même poids
+      \( \beta = 0{,}5 \) — leur rapport vaut 1. En bas, depuis la période 1 : la période 1 est
+      devenue « maintenant » et perd son \( \beta \), tandis que la période 2 le garde — le
+      rapport passe à 2. <strong>Le rapport a changé alors que rien d'objectif n'a bougé.</strong>
+      C'est précisément ça, l'incohérence temporelle.
+    </figcaption>
+  </figure>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple chiffré — « j'irai courir demain »</div>
+    <p>
+      Un individu a \( \delta = 1 \) et \( \beta = \tfrac12 \). Courir en période 1 lui coûte un
+      effort qui vaut \( -3 \) en utilité, et lui rapporte une meilleure forme qui vaut \( +5 \)
+      en période 2.
+    </p>
+    <p><strong>Ce qu'il souhaite, vu de la période 0 :</strong></p>
+    \[ U_0 = \beta\,(-3) + \beta\,(+5) = \tfrac12 \times 2 = 1 \;&gt;\; 0 \]
+    <p>
+      Positif, donc <strong>il veut courir</strong>. Remarque que \( \beta \) se met en facteur
+      des deux termes : il ne change pas le signe, donc il ne change pas la décision. Vu de loin,
+      cet individu est parfaitement raisonnable.
+    </p>
+    <p><strong>Ce qu'il fait, arrivé en période 1 :</strong></p>
+    \[ U_1 = -3 + \beta\,(+5) = -3 + 2{,}5 = -0{,}5 \;&lt;\; 0 \]
+    <p>
+      Négatif, donc <strong>il ne court pas</strong>. Le \( -3 \) est maintenant immédiat : il a
+      perdu son \( \beta \), il pèse de tout son poids. Le \( +5 \), lui, reste futur et reste
+      raboté. Même personne, mêmes chiffres, décision inversée.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège capital — savoir avec quelle utilité on calcule</div>
+    <p>
+      C'est <em>l'</em> erreur de la question 1 de l'examen n° 2. L'énoncé te donne
+      <strong>deux</strong> fonctions, \( U_0 \) et \( U_1 \), qui ne diffèrent que par la place
+      des \( \beta \). Avant chaque calcul, pose-toi une seule question :
+    </p>
+    <ul>
+      <li>
+        « Qu'est-ce qu'il <strong>souhaite</strong>, <strong>prévoit</strong>,
+        <strong>choisit à l'avance</strong> ? » → on travaille avec \( U_0 \).
+      </li>
+      <li>
+        « Qu'est-ce qu'il <strong>fait réellement</strong> le moment venu ? » → on travaille
+        avec \( U_1 \).
+      </li>
+    </ul>
+    <p>
+      Souligne le verbe de l'énoncé au crayon. « <em>souhaite-t-il effectuer</em> » (question 1.1)
+      : \( U_0 \). « <em>va-t-il réellement effectuer</em> » (question 1.4) : \( U_1 \). Un mot,
+      huit points.
+    </p>
+  </div>
+
+  <h3>4.5 Naïf ou sophistiqué : \( \hat\beta \), la conscience du biais</h3>
+
+  <p>
+    Reste une question, et c'est celle qui structure la moitié de l'examen n° 2 : <strong>cet
+    individu sait-il qu'il a un biais ?</strong> Il peut avoir un problème de self-contrôle et
+    l'ignorer complètement, ou l'avoir et le connaître parfaitement. Ce n'est pas la même
+    personne, et ça ne donne pas les mêmes décisions.
+  </p>
+  <p>
+    On note \( \hat\beta \) — « bêta chapeau » — l'<strong>estimation</strong> que l'individu
+    fait de son propre \( \beta \). Le petit chapeau, en statistique comme ici, signale toujours
+    une estimation, une croyance sur une quantité, par opposition à la vraie valeur.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left"></th>
+      <th class="left">Le naïf</th>
+      <th class="left">Le sophistiqué</th>
+    </tr>
+    <tr>
+      <td class="left">Ce qu'il croit sur lui-même</td>
+      <td class="left">\( \hat\beta = 1 \)</td>
+      <td class="left">\( \hat\beta = \beta \)</td>
+    </tr>
+    <tr>
+      <td class="left">En français</td>
+      <td class="left">« Mon moi de demain sera parfaitement rationnel. »</td>
+      <td class="left">« Mon moi de demain va craquer, je le sais. »</td>
+    </tr>
+    <tr>
+      <td class="left">Comment il prévoit son futur</td>
+      <td class="left">Il prend le plan souhaité (calculé avec \( U_0 \)) et croit qu'il l'exécutera</td>
+      <td class="left">Il calcule d'abord ce que fera son moi futur (avec \( U_1 \)), puis en tient compte</td>
+    </tr>
+    <tr>
+      <td class="left">Il se trompe ?</td>
+      <td class="left">Oui, systématiquement, et il ne s'en aperçoit jamais</td>
+      <td class="left">Non, sa prévision est exacte</td>
+    </tr>
+    <tr>
+      <td class="left">A-t-il besoin d'un garde-fou ?</td>
+      <td class="left">Il n'en voit pas l'intérêt</td>
+      <td class="left">Oui, et il est prêt à payer pour en avoir un</td>
+    </tr>
+    <tr>
+      <td class="left">Sous-questions concernées</td>
+      <td class="left">E2 Q1.3 et Q1.4</td>
+      <td class="left">E2 Q1.5 et Q1.6</td>
+    </tr>
+  </table>
+
+  <div class="box box-why">
+    <div class="box-title">L'image des « deux moi » — la clé pour ne plus jamais confondre</div>
+    <p>
+      Arrête de penser à une personne. Pense à <strong>deux personnes différentes</strong> qui
+      portent le même nom : le « moi de la période 0 », qui planifie, et le « moi de la période
+      1 », qui agit. Le premier n'a aucun pouvoir sur ce que fera le second : il peut seulement
+      essayer de le <em>deviner</em>, et éventuellement lui tendre des pièges bienveillants.
+    </p>
+    <p>
+      Le <strong>naïf</strong> croit que le second lui obéira. Le <strong>sophistiqué</strong>
+      sait que non, et il joue en conséquence — il peut par exemple choisir un tarif qui rendra
+      la bonne décision plus facile pour l'autre. C'est exactement ce que fait le grimpeur de la
+      question 1.5.
+    </p>
+  </div>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — biens de tentation et biens d'investissement</div>
+    <p>
+      Selon la façon dont un bien répartit ses effets dans le temps, le biais \( \beta \) produit
+      deux erreurs symétriques. Il faut savoir classer un bien en une seconde.
+    </p>
+    <ul>
+      <li>
+        <strong>Bien d'investissement</strong> : coût maintenant, bénéfice plus tard (sport,
+        épargne, révisions, dentiste). Le coût n'est pas raboté, le bénéfice l'est : il est
+        donc <strong>sous-consommé</strong>. On le repousse indéfiniment.
+      </li>
+      <li>
+        <strong>Bien de tentation</strong> : plaisir maintenant, coût plus tard (chips, écran à
+        2 h du matin, achat impulsif). Le plaisir n'est pas raboté, le regret l'est : il est
+        donc <strong>sur-consommé</strong>. On craque trop souvent.
+      </li>
+    </ul>
+    <p>
+      L'énoncé de l'examen n° 2 le dit explicitement entre parenthèses : « <em>l'escalade est un
+      bien d'investissement</em> ». Traduction : attends-toi à ce que le grimpeur en fasse
+      <em>moins</em> que ce qu'il avait prévu. Si ton calcul dit le contraire, relis-le.
+    </p>
+  </div>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — le commitment device (dispositif d'engagement)</div>
+    <p>
+      Un <span class="term">commitment device</span> est un dispositif que le « moi
+      d'aujourd'hui » met en place pour <strong>restreindre volontairement les options de son moi
+      de demain</strong>, afin de l'empêcher de céder. On dit en français « se lier les mains ».
+    </p>
+    <p>
+      Exemples : donner sa carte bancaire à un ami pendant un week-end, un livret d'épargne
+      bloqué, s'inscrire à une course avec des amis, désinstaller une application, et bien sûr
+      un <strong>abonnement</strong> — qui rend chaque séance supplémentaire gratuite et retire
+      donc au moi de demain l'excuse du prix.
+    </p>
+    <p>
+      Point crucial, et c'est la question 5.2 de l'examen n° 2 : un individu <strong>rationnel
+      (\( \beta = 1 \)) n'en a jamais besoin</strong>, et n'accepterait jamais de payer pour en
+      obtenir un. Pourquoi ? Parce que ses préférences sont cohérentes : son moi de demain
+      exécutera fidèlement le plan. Restreindre ses propres options ne peut alors que lui nuire,
+      ou au mieux ne rien changer — jamais l'aider. Seul quelqu'un qui se méfie de lui-même,
+      c'est-à-dire un <strong>sophistiqué</strong>, a une raison de payer pour se limiter.
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — traiter n'importe quelle question \( \beta \)-\( \delta \) en quatre gestes</div>
+    <ol>
+      <li>
+        <strong>Repère le verbe</strong> de la sous-question : « souhaite » / « prévoit » →
+        \( U_0 \) ; « fait réellement » / « effectue » → \( U_1 \).
+      </li>
+      <li>
+        <strong>Écris la fonction correspondante</strong> en remplaçant tous les paramètres
+        connus par leurs valeurs numériques (ici \( \beta = \tfrac12 \), \( b = 12 \),
+        \( p = 2 \), \( C = 16 \)).
+      </li>
+      <li>
+        <strong>Applique la CPO du chapitre 0</strong> : dérive par rapport à la variable de
+        choix (ici \( k \), le nombre de séances), pose égal à zéro, résous.
+      </li>
+      <li>
+        <strong>Pour un choix binaire</strong> (prendre l'abonnement ou non), calcule la valeur
+        de \( U_0 \) dans chacune des deux options — chacune évaluée <em>avec son propre</em>
+        nombre de séances — et compare les deux nombres.
+      </li>
+    </ol>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Piège — comparer les deux options au même nombre de séances</div>
+    <p>
+      Quand on compare « avec abonnement » et « sans abonnement », on est tenté de fixer le
+      nombre de séances et de comparer les coûts. C'est faux : le nombre de séances
+      <strong>dépend</strong> de l'option, puisque l'abonnement met le coût marginal d'une séance
+      à zéro. Il faut donc d'abord calculer \( k^* \) <em>dans chaque scénario séparément</em>,
+      puis comparer les deux utilités obtenues. Le corrigé de l'examen le signale explicitement ;
+      c'est l'erreur la plus fréquente de toute la question 1.
+    </p>
+  </div>

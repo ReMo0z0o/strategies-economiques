@@ -1,0 +1,1688 @@
+<section class="chapter">
+  <div class="chapter-tag">Chapitre 11 — Examen n° 2, Question 5 · 30 points</div>
+  <h1>Question 5 — Trois questions de concepts : dotation, commitment device, jeu bayésien</h1>
+  <p class="chapter-intro">
+    Trois sous-questions, dix points chacune, et pas une seule ligne de calcul difficile. Ici, tout
+    se joue sur la <em>rédaction</em> : le correcteur ne cherche pas un résultat, il cherche des
+    phrases précises. Ce chapitre est donc construit autrement que les autres — on y passe autant de
+    temps à écrire la réponse qu'à la trouver, et tu verras à chaque fois, côte à côte, la copie qui
+    récolte 4 points et celle qui en récolte 10.
+  </p>
+
+  <h2>Vue d'avion : ce que la question 5 te demande</h2>
+
+  <p>
+    Cette question est la dernière de l'examen n° 2, et c'est probablement la plus rentable de tout
+    le paquet. Trente points sans calcul : il n'y a rien à dériver, rien à résoudre, aucune équation
+    à poser. Il n'y a qu'à <strong>savoir</strong> et à <strong>écrire</strong>. Voici la carte des
+    trois morceaux.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left">Sous-question</th>
+      <th class="left">Ce qu'elle teste vraiment</th>
+      <th class="left">Chapitre du cours</th>
+      <th>Points</th>
+    </tr>
+    <tr>
+      <td class="left"><strong>5.1</strong> Les mugs de la brocante</td>
+      <td class="left">Sais-tu dire ce que la théorie rationnelle <em>prédit</em>, constater que la
+        réalité s'en écarte, et nommer le biais ?</td>
+      <td class="left">Économie comportementale</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>5.2</strong> Le commitment device</td>
+      <td class="left">Sais-tu définir un dispositif d'engagement, l'illustrer, et raisonner sur le
+        cas limite \( \beta = 1 \) ?</td>
+      <td class="left">Self-contrôle</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>5.3</strong> Type et stratégie</td>
+      <td class="left">Sais-tu définir deux objets du vocabulaire bayésien et faire un comptage
+        d'une ligne ?</td>
+      <td class="left">Jeux à information incomplète</td>
+      <td>10</td>
+    </tr>
+  </table>
+
+  <p>
+    Ces trois morceaux sont totalement <strong>indépendants</strong>. Rater le 5.1 n'empêche
+    absolument pas de faire un sans-faute au 5.3. Traite-les dans l'ordre que tu veux, en commençant
+    par celui que tu maîtrises le mieux : c'est du temps gagné et de la confiance en plus.
+  </p>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi une question « facile » fait perdre autant de points</div>
+    <p>
+      Sur une question de calcul, tu sais quand tu as fini : le nombre tombe. Sur une question de
+      concepts, il n'y a pas de signal d'arrêt — et c'est là le piège. L'étudiant qui « sait » la
+      réponse écrit trois lignes, se sent satisfait, et récolte 4 points sur 10. Non pas parce qu'il
+      s'est trompé, mais parce qu'il n'a écrit <em>qu'une partie</em> de ce que le barème demande.
+    </p>
+    <p>
+      Regarde le barème officiel de cette question : il est systématiquement découpé en
+      <strong>trois briques</strong> (3 + 3 + 4, ou 3 + 4 + 3). Chaque brique est une idée distincte
+      qui doit apparaître <em>explicitement</em> sur ta copie. Une idée que tu as en tête mais que
+      tu n'as pas écrite vaut zéro point. Toute la technique consiste donc à repérer les briques
+      avant d'écrire — et l'énoncé, tu vas le voir, te les donne presque toujours.
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — une question de concepts se rédige en 3 minutes, en 3 temps</div>
+    <p>
+      Voici le squelette à appliquer <em>mécaniquement</em> à chacune des trois sous-questions. Tu
+      le retrouveras à la fin du chapitre, développé.
+    </p>
+    <ol>
+      <li>
+        <strong>DÉFINIR.</strong> Énonce la définition du cours, au mot près, avant même de regarder
+        les données. C'est presque toujours entre 30 et 40 &#37; des points.
+      </li>
+      <li>
+        <strong>APPLIQUER aux données de l'énoncé.</strong> Reprends les chiffres, les mots, les
+        noms propres qu'on t'a donnés, et montre que la définition s'y applique. Une définition
+        récitée sans être appliquée perd la moitié des points.
+      </li>
+      <li>
+        <strong>CONCLURE en une phrase</strong> qui répond <em>littéralement</em> à la question
+        posée, en réutilisant ses propres mots (« ce biais s'appelle… », « il n'est donc jamais prêt
+        à payer… », « il possède donc 9 stratégies »).
+      </li>
+    </ol>
+    <p>
+      Trois minutes par sous-question, dix à quinze lignes : c'est le format visé. Ni deux lignes
+      (tu perds les briques), ni une page (tu perds du temps sur les questions à 50 points).
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>5.1 — Les mugs de la brocante : l'effet de dotation</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 5.1 (10 points)</div>
+    <p>
+      Lors d'une brocante organisée par un kot-à-projet namurois, la moitié des visiteurs, tirés au
+      sort à l'entrée, reçoivent gratuitement un mug sérigraphié. Une heure plus tard, on interroge
+      tous les visiteurs : ceux qui ont reçu un mug ne sont disposés à le céder que contre 9 euros
+      au moins (en moyenne), tandis que ceux qui n'en ont pas reçu ne sont disposés à payer que
+      4 euros au plus (en moyenne) pour en obtenir un. Quel biais comportemental cette observation
+      illustre-t-elle ? Expliquez en quoi elle constitue une déviation par rapport à la théorie de
+      la décision rationnelle.
+    </p>
+    <p>
+      <strong>Barème officiel :</strong> nommer l'effet de dotation (3 pts) ; expliquer
+      DAA &gt; DAP et le rôle de l'aversion aux pertes (3 pts) ; expliquer pourquoi la rationalité
+      impose DAA \( \approx \) DAP entre deux groupes tirés au sort (4 pts).
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Tu connais déjà cette question — c'est la même que la 1.2 du volume 1</div>
+    <p>
+      Dans l'examen blanc n° 1, on distribuait des <em>gourdes</em> au hasard dans un auditoire, et
+      on observait DAA = 8 € contre DAP = 4 €. Ici ce sont des <em>mugs</em> dans une brocante, et
+      les chiffres sont 9 € et 4 €. Le décor change, la mécanique est identique au mot près.
+    </p>
+    <p>
+      Voici donc le condensé de ce qu'on avait construit au chapitre 1 — si l'un de ces quatre
+      points ne te parle pas, retourne le lire, il est expliqué là-bas en dix pages :
+    </p>
+    <ul>
+      <li>
+        la <span class="term">DAP</span> (disposition à payer) est le montant <strong>maximal</strong>
+        qu'on accepte de débourser pour <em>acquérir</em> un bien qu'on n'a pas ;
+      </li>
+      <li>
+        la <span class="term">DAA</span> (disposition à accepter) est le montant
+        <strong>minimal</strong> qu'on exige pour <em>céder</em> un bien qu'on possède ;
+      </li>
+      <li>
+        une <span class="term">variable non-pertinente</span> est une information qui ne change rien
+        aux conséquences réelles d'un choix ; un individu rationnel n'en tient jamais compte ;
+      </li>
+      <li>
+        un <span class="term">biais</span> est un écart <strong>systématique</strong> et
+        <strong>prévisible</strong> entre le comportement réel et la prédiction rationnelle.
+      </li>
+    </ul>
+    <p>
+      Ce chapitre-ci ne va donc pas tout réexpliquer. Il va se concentrer sur deux choses : les
+      notions qu'on n'avait fait qu'effleurer (l'aversion aux pertes et le point de référence) et
+      surtout la <strong>rédaction</strong> — puisque c'est elle qui rapporte les points.
+    </p>
+  </div>
+
+  <h3>Traduisons la question en français simple</h3>
+
+  <p>
+    Cet énoncé fait sept lignes mais ne contient que deux nombres : 9 et 4. Tout le reste est du
+    <em>décor</em> — et ce décor n'est pas là pour faire joli, il est là pour verrouiller le
+    raisonnement. Décodons-le groupe de mots par groupe de mots.
+  </p>
+
+  <dl class="lexique">
+    <dt>« Lors d'une brocante organisée par un kot-à-projet namurois »</dt>
+    <dd>
+      Pur décor. Un kot-à-projet est un logement étudiant organisé autour d'un projet associatif :
+      cela n'a strictement aucune conséquence sur la réponse. Ne perds pas une seconde là-dessus.
+      Ce genre de détail sert seulement à ancrer la scène dans une situation réelle.
+    </dd>
+
+    <dt>« la moitié des visiteurs »</dt>
+    <dd>
+      La foule est coupée en deux groupes de taille comparable : les
+      <span class="term">détenteurs</span> (ceux qui repartent avec un mug) et les
+      <span class="term">non-détenteurs</span>. On va comparer ces deux groupes, pas deux personnes.
+    </dd>
+
+    <dt>« tirés au sort à l'entrée »</dt>
+    <dd>
+      <strong>Mot-signal n° 1, et le plus rentable de l'énoncé.</strong> C'est ce qu'on appelle une
+      <span class="term">assignation aléatoire</span> (ou randomisation). Ce n'est pas un détail
+      d'ambiance : à lui seul, il vaut une partie des 4 points de la troisième brique du barème. On
+      voit dans deux pages exactement ce qu'il permet de démontrer.
+    </dd>
+
+    <dt>« reçoivent gratuitement un mug »</dt>
+    <dd>
+      Les détenteurs n'ont rien payé et n'ont rien choisi. Impossible de dire « s'ils le valorisent,
+      c'est parce qu'ils l'ont acheté / parce qu'ils le voulaient » : le mug leur est tombé dessus.
+    </dd>
+
+    <dt>« Une heure plus tard »</dt>
+    <dd>
+      Une heure, c'est très court — et pourtant cela suffit. Ce détail souligne la force du biais :
+      il n'y a eu ni usage réel, ni attachement sentimental construit sur des années. La simple
+      possession, pendant soixante minutes, déplace déjà l'évaluation.
+    </dd>
+
+    <dt>« ne sont disposés à le <em>céder</em> que contre 9 euros <em>au moins</em> »</dt>
+    <dd>
+      « Céder » = vendre, se séparer. « Au moins » = c'est un <strong>seuil minimal</strong> : en
+      dessous de 9 €, ils refusent ; au-dessus, ils acceptent. C'est donc la
+      <strong>DAA</strong> des détenteurs, et elle vaut 9 €.
+    </dd>
+
+    <dt>« ne sont disposés à <em>payer</em> que 4 euros <em>au plus</em> »</dt>
+    <dd>
+      « Payer » = acheter. « Au plus » = c'est un <strong>plafond</strong> : au-dessus de 4 €, ils
+      renoncent ; en dessous, ils achètent. C'est donc la <strong>DAP</strong> des non-détenteurs,
+      et elle vaut 4 €.
+    </dd>
+
+    <dt>« (en moyenne) »</dt>
+    <dd>
+      Précision indispensable, répétée deux fois par l'énoncé. On ne compare pas Léa à Sam : on
+      compare la moyenne d'un groupe à la moyenne d'un autre groupe. Ta rédaction doit en tenir
+      compte — et c'est justement pour cela que le tirage au sort est décisif.
+    </dd>
+
+    <dt>« Quel biais comportemental cette observation illustre-t-elle ? »</dt>
+    <dd>
+      <strong>Mot-signal n° 2.</strong> On te demande un <strong>nom</strong>, précis, celui du
+      cours. Trois points sont attachés à ce seul mot. Écris-le en toutes lettres, souligne-le :
+      un correcteur doit pouvoir le trouver en une seconde.
+    </dd>
+
+    <dt>« Expliquez en quoi elle constitue une <em>déviation par rapport à</em> la théorie de la décision rationnelle »</dt>
+    <dd>
+      <strong>Mot-signal n° 3, celui qui dicte tout le plan.</strong> Une
+      <span class="term">déviation</span> est un écart <em>par rapport à une prédiction</em>. Le
+      groupe de mots « par rapport à » t'oblige à écrire deux choses, dans cet ordre : (1) ce que la
+      théorie rationnelle prédit, et pourquoi ; (2) ce qu'on observe, qui ne colle pas. Si tu ne
+      poses pas la référence, tu n'as, littéralement, rien démontré.
+    </dd>
+  </dl>
+
+  <div class="box box-methode">
+    <div class="box-title">Le plan de ta réponse est écrit dans la question</div>
+    <p>
+      Relis la consigne : deux verbes, deux tâches. « Quel biais ? » (nommer) et « expliquez en quoi
+      c'est une déviation » (démontrer). Le barème suit exactement ce découpage, et il ajoute une
+      troisième brique implicite. Ton plan de copie tient donc en trois blocs :
+    </p>
+    <ol>
+      <li>
+        <strong>La prédiction rationnelle</strong> : DAA = DAP, et surtout <em>pourquoi</em> — la
+        possession est une variable non-pertinente. <em>(≈ 4 points, avec le point suivant.)</em>
+      </li>
+      <li>
+        <strong>Le rôle du tirage au sort</strong> : il rend les deux groupes comparables, donc
+        l'égalité doit tenir <em>en moyenne entre les deux groupes</em>.
+      </li>
+      <li>
+        <strong>Le constat chiffré, le nom du biais et son mécanisme</strong> : 9 € contre 4 €,
+        c'est l'effet de dotation, expliqué par l'aversion aux pertes.
+        <em>(3 points pour le nom, 3 pour le mécanisme.)</em>
+      </li>
+    </ol>
+  </div>
+
+  <h3>Le cours dont tu as besoin</h3>
+
+  <h4>1) Ce qui change par rapport à la question des gourdes : les chiffres</h4>
+
+  <p>
+    Sur le fond, rien ne change. Sur la forme, deux détails valent la peine d'être relevés, parce
+    qu'ils rendent ta démonstration <em>plus</em> convaincante ici que dans le volume 1.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \text{DAA} = 9 \quad \text{et} \quad \text{DAP} = 4 \qquad (\text{en euros}) \]
+      <div class="why">les deux seules données chiffrées de l'énoncé. Recopie-les telles quelles sur
+        ta copie : un correcteur veut voir que tu as identifié qui répond quoi.</div>
+    </div>
+    <div class="step">
+      \[ \text{DAA} - \text{DAP} = 9 - 4 = 5 \]
+      <div class="why">l'écart absolu : 5 euros. C'est la mesure du biais, exprimée en euros.</div>
+    </div>
+    <div class="step">
+      \[ \frac{\text{DAA}}{\text{DAP}} = \frac{9}{4} = 2{,}25 \]
+      <div class="why">l'écart relatif : la DAA vaut plus du <strong>double</strong> de la DAP. Ce
+        n'est pas un petit bruit de mesure, c'est un facteur 2,25.</div>
+    </div>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi citer le rapport 2,25 et pas seulement la différence ?</div>
+    <p>
+      Parce qu'un sceptique pourrait dire : « 5 euros d'écart, la belle affaire, c'est du bruit ».
+      Le <em>rapport</em> tue cette objection. Dire « la DAA vaut plus du double de la DAP » montre
+      que l'écart n'est pas marginal : il est du même ordre de grandeur que la valeur du bien
+      elle-même. C'est une phrase qui coûte cinq secondes à écrire et qui montre au correcteur que
+      tu ne récites pas, tu raisonnes.
+    </p>
+  </div>
+
+  <p>
+    Notons au passage la lecture <em>en français</em> de ces deux nombres, parce que c'est
+    exactement ce que tu dois pouvoir dire à voix haute : « pour le même objet, dans la même
+    brocante, à la même heure, les gens demandent 9 € quand ils l'ont et n'en offrent que 4 € quand
+    ils ne l'ont pas ». Formulée comme ça, l'incohérence saute aux yeux.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 520 352" width="100%" style="max-width:12cm" role="img" aria-label="Deux barres comparant une disposition à accepter de 9 euros et une disposition à payer de 4 euros, avec en pointillés le niveau prédit par la théorie rationnelle">
+      <defs>
+        <pattern id="q11-hachures" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="8" stroke="#4b5563" stroke-width="1.3"></line>
+        </pattern>
+        <marker id="q11-fh" markerWidth="9" markerHeight="9" refX="4.5" refY="8" orient="auto">
+          <path d="M4.5,0 L9,9 L0,9 z" fill="#111827"></path>
+        </marker>
+        <marker id="q11-fb" markerWidth="9" markerHeight="9" refX="4.5" refY="1" orient="auto">
+          <path d="M4.5,9 L0,0 L9,0 z" fill="#111827"></path>
+        </marker>
+      </defs>
+      <line x1="70" y1="40" x2="70" y2="290" stroke="#111827" stroke-width="1.6"></line>
+      <line x1="70" y1="290" x2="495" y2="290" stroke="#111827" stroke-width="1.6"></line>
+      <text x="62" y="294" font-size="12" text-anchor="end" fill="#4b5563">0</text>
+      <line x1="64" y1="242" x2="70" y2="242" stroke="#111827" stroke-width="1.2"></line>
+      <text x="60" y="246" font-size="12" text-anchor="end" fill="#4b5563">2</text>
+      <line x1="64" y1="194" x2="70" y2="194" stroke="#111827" stroke-width="1.2"></line>
+      <text x="60" y="198" font-size="12" text-anchor="end" fill="#4b5563">4</text>
+      <line x1="64" y1="146" x2="70" y2="146" stroke="#111827" stroke-width="1.2"></line>
+      <text x="60" y="150" font-size="12" text-anchor="end" fill="#4b5563">6</text>
+      <line x1="64" y1="98" x2="70" y2="98" stroke="#111827" stroke-width="1.2"></line>
+      <text x="60" y="102" font-size="12" text-anchor="end" fill="#4b5563">8</text>
+      <text x="66" y="28" font-size="12" fill="#4b5563">euros</text>
+      <line x1="130" y1="74" x2="480" y2="74" stroke="#111827" stroke-width="1.3" stroke-dasharray="7 5"></line>
+      <text x="484" y="70" font-size="11.5" text-anchor="end" fill="#4b5563">niveau exigé par la théorie</text>
+      <rect x="130" y="74" width="95" height="216" fill="#e5e7eb" stroke="#111827" stroke-width="2"></rect>
+      <text x="177" y="102" font-size="17" text-anchor="middle" fill="#111827" font-weight="bold">9 €</text>
+      <rect x="300" y="194" width="95" height="96" fill="url(#q11-hachures)" stroke="#111827" stroke-width="2"></rect>
+      <text x="347" y="222" font-size="17" text-anchor="middle" fill="#111827" font-weight="bold">4 €</text>
+      <rect x="300" y="74" width="95" height="120" fill="none" stroke="#111827" stroke-width="1.6" stroke-dasharray="6 4"></rect>
+      <text x="347" y="118" font-size="11.5" text-anchor="middle" fill="#4b5563">ce que la théorie</text>
+      <text x="347" y="134" font-size="11.5" text-anchor="middle" fill="#4b5563">rationnelle</text>
+      <text x="347" y="150" font-size="11.5" text-anchor="middle" fill="#4b5563">prédisait ici</text>
+      <line x1="430" y1="194" x2="430" y2="74" stroke="#111827" stroke-width="1.8" marker-end="url(#q11-fh)" marker-start="url(#q11-fb)"></line>
+      <text x="438" y="126" font-size="12" fill="#111827" font-weight="bold">écart : 5 €</text>
+      <text x="438" y="143" font-size="11.5" fill="#4b5563">soit un rapport</text>
+      <text x="438" y="158" font-size="11.5" fill="#4b5563">de 2,25</text>
+      <text x="177" y="312" font-size="14" text-anchor="middle" fill="#111827" font-weight="bold">DAA = 9 €</text>
+      <text x="177" y="329" font-size="11.5" text-anchor="middle" fill="#4b5563">détenteurs : prix minimal</text>
+      <text x="177" y="345" font-size="11.5" text-anchor="middle" fill="#4b5563">pour céder le mug</text>
+      <text x="347" y="312" font-size="14" text-anchor="middle" fill="#111827" font-weight="bold">DAP = 4 €</text>
+      <text x="347" y="329" font-size="11.5" text-anchor="middle" fill="#4b5563">non-détenteurs : prix maximal</text>
+      <text x="347" y="345" font-size="11.5" text-anchor="middle" fill="#4b5563">pour acheter un mug</text>
+    </svg>
+    <figcaption>
+      La prédiction et l'observation sur le même dessin. Comme les mugs ont été attribués
+      <em>au sort</em>, la théorie rationnelle exige que les deux barres aient exactement la même
+      hauteur : le rectangle en pointillés est la barre que la DAP « aurait dû » atteindre. On
+      observe une barre deux fois plus courte. Ces 5 euros manquants, c'est l'effet de dotation,
+      mesuré en euros.
+    </figcaption>
+  </figure>
+
+  <h4>2) L'aversion aux pertes : le mécanisme derrière le biais</h4>
+
+  <p>
+    C'est la notion nouvelle de cette sous-question, et c'est elle qui te fait passer d'une réponse
+    « récitée » à une réponse « comprise ». Le barème lui consacre 3 points.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — aversion aux pertes (<em>loss aversion</em>)</div>
+    <p>
+      L'<span class="term">aversion aux pertes</span> est le fait que
+      <strong>perdre quelque chose fait plus mal que gagner exactement la même chose ne fait
+      plaisir</strong>. La même somme, le même objet, pèsent psychologiquement plus lourd du côté
+      de la perte que du côté du gain.
+    </p>
+    <p>
+      Les mesures expérimentales donnent un rapport d'environ <strong>deux pour un</strong> : perdre
+      50 € pèse à peu près autant que gagner 100 €.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple concret — le pari à pile ou face</div>
+    <p>
+      On te propose un jeu : on lance une pièce équilibrée. Face, tu gagnes 100 € ; pile, tu perds
+      100 €. Presque tout le monde refuse. Pourtant, en espérance, ce pari ne coûte rien :
+      la moitié du temps +100, la moitié du temps −100, moyenne nulle.
+    </p>
+    <p>
+      Maintenant on modifie : face, tu gagnes 200 € ; pile, tu perds 100 €. Là encore, beaucoup de
+      gens hésitent, alors que le pari est très favorable. Il faut souvent monter à 200 € de gain
+      contre 100 € de perte pour que les gens acceptent — le fameux rapport deux pour un. La
+      perspective de perdre 100 € pèse autant que celle d'en gagner 200.
+    </p>
+  </div>
+
+  <h4>3) Le point de référence : d'où l'on compte les gains et les pertes</h4>
+
+  <p>
+    Une question évidente se pose : perte par rapport à <em>quoi</em> ? Gain par rapport à
+    <em>quoi</em> ? La réponse est la deuxième notion à connaître, et elle est indissociable de la
+    première.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — point de référence</div>
+    <p>
+      Le <span class="term">point de référence</span> est la situation à partir de laquelle un
+      individu compte ses gains et ses pertes : son « zéro » psychologique, ce qu'il considère comme
+      sa situation normale.
+    </p>
+    <p>
+      Point capital : ce n'est <strong>pas</strong> une donnée objective. Le point de référence
+      s'ajuste très vite à ce qu'on possède — c'est d'ailleurs exactement ce que l'expérience du mug
+      met en évidence : une heure suffit.
+    </p>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Comment ces deux notions produisent l'effet de dotation, en trois temps</div>
+    <ol>
+      <li>
+        <strong>La possession déplace le point de référence.</strong> Dès qu'on me donne le mug, il
+        entre dans ma situation normale. Mon « zéro » n'est plus « pas de mug » mais « un mug ».
+      </li>
+      <li>
+        <strong>Céder le mug devient une perte.</strong> Puisque mon point de référence inclut le
+        mug, m'en séparer me fait passer <em>en dessous</em> de mon zéro. Mon cerveau code cela
+        comme une perte — et les pertes pèsent double.
+      </li>
+      <li>
+        <strong>Il faut donc une grosse compensation.</strong> Pour accepter cette perte lourde, il
+        me faut beaucoup d'argent : ma DAA gonfle, jusqu'à 9 €. Symétriquement, le non-détenteur qui
+        renonce à acheter ne perd rien : il renonce simplement à un gain, ce qui est bien plus
+        léger. Sa DAP reste modeste, à 4 €.
+      </li>
+    </ol>
+    <p>
+      Retiens la phrase-clé, elle vaut à elle seule les 3 points de la deuxième brique du barème :
+      <strong>ce n'est pas le même objet qui est évalué deux fois, c'est le même objet évalué depuis
+      deux points de référence différents.</strong>
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 520 372" width="100%" style="max-width:12cm" role="img" aria-label="Courbe de la valeur ressentie en fonction des gains et des pertes : la branche des pertes est nettement plus raide que celle des gains">
+      <line x1="60" y1="170" x2="480" y2="170" stroke="#111827" stroke-width="1.5"></line>
+      <line x1="260" y1="40" x2="260" y2="340" stroke="#111827" stroke-width="1.5"></line>
+      <text x="486" y="166" font-size="11.5" text-anchor="end" fill="#4b5563">gains</text>
+      <text x="66" y="166" font-size="11.5" fill="#4b5563">pertes</text>
+      <text x="268" y="52" font-size="11.5" fill="#4b5563">valeur ressentie (+)</text>
+      <text x="268" y="336" font-size="11.5" fill="#4b5563">valeur ressentie (−)</text>
+      <path d="M260,170 Q330,120 460,95" fill="none" stroke="#111827" stroke-width="2.4"></path>
+      <path d="M260,170 Q200,250 70,315" fill="none" stroke="#111827" stroke-width="2.4"></path>
+      <circle cx="260" cy="170" r="4" fill="#111827"></circle>
+      <text x="252" y="188" font-size="11.5" text-anchor="end" fill="#111827" font-weight="bold">point de</text>
+      <text x="252" y="203" font-size="11.5" text-anchor="end" fill="#111827" font-weight="bold">référence</text>
+      <line x1="422" y1="170" x2="422" y2="103" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="4 3"></line>
+      <line x1="260" y1="103" x2="422" y2="103" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="4 3"></line>
+      <circle cx="422" cy="103" r="3.4" fill="#111827"></circle>
+      <text x="428" y="99" font-size="11.5" fill="#111827">plaisir d'obtenir</text>
+      <text x="428" y="114" font-size="11.5" fill="#111827">le mug</text>
+      <text x="426" y="186" font-size="11.5" fill="#4b5563">+ 1 mug</text>
+      <line x1="98" y1="170" x2="98" y2="300" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="4 3"></line>
+      <line x1="98" y1="300" x2="260" y2="300" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="4 3"></line>
+      <circle cx="98" cy="300" r="3.4" fill="#111827"></circle>
+      <text x="106" y="322" font-size="11.5" fill="#111827">douleur de céder le mug</text>
+      <text x="106" y="337" font-size="11.5" fill="#111827">— environ deux fois plus forte</text>
+      <text x="76" y="160" font-size="11.5" fill="#4b5563">− 1 mug</text>
+      <line x1="500" y1="103" x2="500" y2="170" stroke="#111827" stroke-width="1.4"></line>
+      <line x1="496" y1="103" x2="504" y2="103" stroke="#111827" stroke-width="1.4"></line>
+      <line x1="496" y1="170" x2="504" y2="170" stroke="#111827" stroke-width="1.4"></line>
+      <line x1="512" y1="170" x2="512" y2="300" stroke="#111827" stroke-width="1.4"></line>
+      <line x1="508" y1="170" x2="516" y2="170" stroke="#111827" stroke-width="1.4"></line>
+      <line x1="508" y1="300" x2="516" y2="300" stroke="#111827" stroke-width="1.4"></line>
+    </svg>
+    <figcaption>
+      La même quantité (un mug) de part et d'autre du point de référence. Vers la droite, l'obtenir
+      procure un certain plaisir ; vers la gauche, le céder inflige une douleur nettement plus
+      grande — les deux petits segments verticaux de droite mesurent ces deux intensités. La courbe
+      est plus <em>raide</em> du côté des pertes : c'est le dessin de l'aversion aux pertes, et
+      c'est ce qui fait que la DAA dépasse la DAP.
+    </figcaption>
+  </figure>
+
+  <h4>4) Rappel express : ce que la théorie rationnelle prédit, et pourquoi</h4>
+
+  <div class="box box-rappel">
+    <div class="box-title">La prédiction rationnelle, en une ligne et sa justification</div>
+    <p>
+      Pour un individu rationnel, la valeur d'un bien ne dépend que de l'usage et du plaisir qu'il
+      en retirera : boire son café dedans, aimer le motif, en avoir déjà trois. Le fait que le mug
+      soit <em>actuellement</em> dans sa main plutôt que dans celle du voisin ne change rien à cet
+      usage futur : c'est une variable <strong>non-pertinente</strong>. Donc :
+    </p>
+    <p>\[ \text{DAA} = \text{DAP} \]</p>
+    <p>
+      Un individu rationnel a <strong>un seul</strong> prix de réserve par bien. En dessous, il
+      préfère l'argent ; au-dessus, il préfère le bien. Ce prix ne bouge pas selon qu'il se trouve
+      être acheteur ou vendeur.
+    </p>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Le tirage au sort, et l'objection qu'il détruit</div>
+    <p>
+      Attention : l'égalité DAA = DAP est écrite pour <em>une même personne</em>. Or ici on compare
+      deux groupes différents. Un correcteur exigeant peut donc objecter :
+    </p>
+    <p>
+      « Et si les gens qui ont le mug étaient simplement des amateurs de mugs ? Alors DAA &gt; DAP
+      serait parfaitement normal, et il n'y aurait aucun biais. »
+    </p>
+    <p>
+      Cette objection est excellente… et elle est tuée par trois mots de l'énoncé :
+      <strong>tirés au sort</strong>. Puisque c'est le hasard qui a décidé, les deux groupes sont en
+      moyenne composés du même genre de personnes : mêmes goûts pour les mugs, même budget, même
+      âge, même tout. La seule différence <em>systématique</em> entre eux est celle qu'on a
+      fabriquée exprès : <strong>posséder le mug ou non</strong>. Donc, pour des individus
+      rationnels, on devrait observer
+    </p>
+    <p>\[ \text{DAA}_{\text{moyenne}} \;\approx\; \text{DAP}_{\text{moyenne}} \]</p>
+    <p>
+      et toute différence observée entre les deux moyennes ne peut venir que de la possession. C'est
+      exactement ce qu'on voulait démontrer — et c'est pour cela que ce détail vaut 4 points.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple concret — le même principe qu'un essai clinique</div>
+    <p>
+      Pour tester un médicament, on ne donne pas le traitement aux volontaires et le placebo aux
+      autres : on <strong>tire au sort</strong>. Sinon, si les traités guérissent mieux, on ne
+      saurait jamais si c'est le médicament qui agit ou si les volontaires étaient au départ plus
+      motivés et en meilleure santé. Le tirage au sort garantit que les deux groupes étaient
+      comparables <em>avant</em> l'expérience. La brocante utilise exactement la même astuce, et le
+      symbole \( \approx \) (« environ égal ») rappelle simplement qu'avec un nombre fini de
+      visiteurs, on n'attend pas une égalité au centime près.
+    </p>
+  </div>
+
+  <h3>La construction de la réponse</h3>
+
+  <p>
+    On sait tout. Reste à empiler les briques dans le bon ordre. Voici les quatre étapes de la
+    rédaction, avec, à chaque fois, la raison pour laquelle le correcteur l'attend.
+  </p>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Je range qui est qui — DAA d'un côté, DAP de l'autre</div>
+    <p>
+      <strong>Pourquoi commencer par là ?</strong> Parce que les deux sigles se ressemblent et que
+      les intervertir inverse toute la conclusion. Une copie qui parle de « la DAP des détenteurs »
+      est incompréhensible : les détenteurs ne paient rien, ils vendent.
+    </p>
+    <table class="compare">
+      <tr>
+        <th class="left">Groupe</th>
+        <th class="left">Question qu'on lui pose</th>
+        <th class="left">Grandeur mesurée</th>
+        <th>Réponse</th>
+      </tr>
+      <tr>
+        <td class="left">Détenteurs (ils ont reçu le mug)</td>
+        <td class="left">« Contre combien acceptes-tu de le céder ? »</td>
+        <td class="left">DAA — disposition à accepter</td>
+        <td>9 €</td>
+      </tr>
+      <tr>
+        <td class="left">Non-détenteurs (ils n'en ont pas)</td>
+        <td class="left">« Jusqu'à combien es-tu prêt à payer ? »</td>
+        <td class="left">DAP — disposition à payer</td>
+        <td>4 €</td>
+      </tr>
+    </table>
+    <p>
+      Le moyen mnémotechnique du volume 1 reste valable : <strong>P</strong> comme <em>payer</em>
+      (j'achète, donc je ne l'ai pas) ; <strong>A</strong> comme <em>accepter</em> de l'argent (je
+      vends, donc je l'ai).
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> J'énonce la prédiction rationnelle — et je la justifie</div>
+    <p>
+      <strong>Pourquoi cette étape en premier sur la copie ?</strong> Parce que la question demande
+      une « déviation », et qu'une déviation se mesure toujours <em>par rapport à</em> une
+      référence. Tant que la référence n'est pas posée, il n'y a rien à comparer.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ \text{DAA} = \text{DAP} \]
+        <div class="why">la prédiction. Elle découle du fait que la possession est une variable
+          non-pertinente : elle ne change pas l'usage futur du mug.</div>
+      </div>
+    </div>
+    <p>
+      N'écris jamais cette ligne toute seule : accompagne-la de sa raison en une phrase. « Parce que
+      la valeur d'un bien pour un individu rationnel ne dépend pas du fait qu'il le possède déjà. »
+      C'est cette phrase-là qui est payée, pas le symbole.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Je passe de l'individu aux groupes grâce au tirage au sort</div>
+    <p>
+      <strong>Pourquoi cette étape est indispensable.</strong> On compare des moyennes de deux
+      groupes distincts, pas la DAA et la DAP d'une même personne. Sans le tirage au sort, la
+      comparaison ne prouverait rien. Avec lui, elle prouve tout.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ \text{tirage au sort} \;\Longrightarrow\; \text{mêmes goûts en moyenne dans les deux groupes} \]
+        <div class="why">le symbole \( \Longrightarrow \) se lit « implique » ou « donc ». Les deux
+          groupes sont interchangeables avant l'expérience.</div>
+      </div>
+      <div class="step">
+        \[ \Longrightarrow\; \text{DAA}_{\text{moyenne}} \;\approx\; \text{DAP}_{\text{moyenne}} \]
+        <div class="why">la prédiction rationnelle, transposée aux moyennes de groupes. C'est elle
+          qu'on va confronter aux chiffres.</div>
+      </div>
+    </div>
+    <p>
+      Quatre points du barème sont ici. Ne te contente pas de recopier « tirés au sort » : explique
+      <em>ce que cela permet d'écarter</em> (« on ne peut pas expliquer l'écart par une différence
+      de goûts entre les deux groupes »).
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Je constate l'écart, je le nomme, j'explique le mécanisme</div>
+    <div class="calc">
+      <div class="step">
+        \[ \text{DAA} = 9 \;&gt;\; 4 = \text{DAP} \]
+        <div class="why">j'écris l'observation sous la même forme que la prédiction, pour que la
+          contradiction saute aux yeux : on attendait « = », on obtient « &gt; ».</div>
+      </div>
+      <div class="step">
+        \[ \frac{9}{4} = 2{,}25 \]
+        <div class="why">et je quantifie : plus du double. L'écart n'est pas anecdotique.</div>
+      </div>
+    </div>
+    <p>
+      Puis, dans l'ordre : le nom (<strong>effet de dotation</strong>, en anglais
+      <em>endowment effect</em>), et le mécanisme (aversion aux pertes + point de référence).
+      L'écart est de plus <em>systématique</em> (on le retrouve dans toutes les répétitions de
+      l'expérience) et <em>prévisible</em> (toujours dans le même sens) : c'est donc bien un
+      <strong>biais</strong>, pas une erreur de mesure.
+    </p>
+  </div>
+
+  <h3>4 sur 10 ou 10 sur 10 : les deux copies côte à côte</h3>
+
+  <p>
+    Voici le cœur pédagogique de ce chapitre. Les deux réponses ci-dessous disent, au fond, la même
+    chose. L'une vaut 4 points, l'autre 10. Lis-les l'une après l'autre et repère ce qui manque à
+    gauche.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left">Copie à 4 / 10 — « je sais la réponse »</th>
+      <th class="left">Copie à 10 / 10 — « je démontre la réponse »</th>
+    </tr>
+    <tr>
+      <td class="left">
+        C'est l'effet de dotation. Les gens qui possèdent le mug le trouvent plus précieux, donc ils
+        demandent 9 € alors que les autres n'offrent que 4 €. C'est irrationnel parce qu'un individu
+        rationnel n'agirait pas comme ça : il ne devrait pas donner plus de valeur à un objet juste
+        parce qu'il l'a. C'est un biais comportemental bien connu.
+      </td>
+      <td class="left">
+        Pour un individu rationnel, la valeur d'un bien ne dépend que de l'usage qu'il en fera :
+        posséder déjà le mug est une variable non-pertinente. La théorie prédit donc
+        DAA = DAP. De plus, les mugs ont été attribués <em>par tirage au sort</em> : les deux
+        groupes ont en moyenne les mêmes goûts, et leurs évaluations moyennes devraient donc
+        coïncider — l'écart ne peut pas s'expliquer par une différence de préférences. Or on observe
+        DAA = 9 € contre DAP = 4 €, soit un rapport de 2,25. La prédiction est violée : c'est une
+        déviation. Ce biais est l'<strong>effet de dotation</strong>, expliqué par l'aversion aux
+        pertes : une fois le mug possédé, il entre dans le point de référence, le céder est vécu
+        comme une perte, et les pertes pèsent environ deux fois plus lourd que les gains
+        équivalents.
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    <strong>Où sont passés les six points perdus à gauche ?</strong> Fais l'inventaire, ligne par
+    ligne — c'est exactement le raisonnement du correcteur :
+  </p>
+
+  <ol>
+    <li>
+      <strong>Le nom du biais est là (3 pts acquis).</strong> C'est le seul bloc que la copie de
+      gauche remporte entièrement. Bonne nouvelle : c'est aussi le plus facile.
+    </li>
+    <li>
+      <strong>Le mécanisme est absent (−3 pts).</strong> « Le trouvent plus précieux » n'est pas une
+      explication, c'est une reformulation du constat. Il manque les deux mots du cours :
+      <em>aversion aux pertes</em> et <em>point de référence</em>. La copie de gauche décrit ; celle
+      de droite explique <em>pourquoi</em>.
+    </li>
+    <li>
+      <strong>La prédiction rationnelle n'est jamais énoncée (−3 pts).</strong> « Il ne devrait pas
+      donner plus de valeur » tourne autour du pot. Le barème attend l'égalité écrite noir sur
+      blanc — DAA = DAP — et sa raison : la possession est une variable non-pertinente.
+    </li>
+    <li>
+      <strong>Le tirage au sort est ignoré (−1 pt au moins).</strong> C'est le mot que l'énoncé a
+      pris la peine de placer, et la copie de gauche ne le mentionne même pas. Sans lui, l'objection
+      « ce sont peut-être simplement des amateurs de mugs » reste ouverte et la démonstration
+      s'effondre.
+    </li>
+  </ol>
+
+  <p>
+    Note bien la différence de <em>nature</em> entre les deux textes. À gauche, on affirme. À
+    droite, on suit une chaîne : prédiction → pourquoi cette prédiction → pourquoi elle est testable
+    ici → observation → contradiction → nom → mécanisme. Six charnières logiques, chacune en une
+    phrase courte. C'est cela, « rédiger » une question de concepts.
+  </p>
+
+  <div class="result">
+    <div class="result-title">Résultat — question 5.1</div>
+    <p>
+      Le biais est l'<strong>effet de dotation</strong>. La théorie rationnelle prédit
+      DAA = DAP (la possession est une variable non-pertinente) ; le tirage au sort rend les deux
+      groupes comparables, donc l'égalité devrait tenir entre leurs moyennes. On observe 9 € contre
+      4 € : la prédiction est violée. Mécanisme : l'aversion aux pertes, via le déplacement du point
+      de référence.
+    </p>
+  </div>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie</div>
+    <p>
+      Cette observation illustre l'<strong>effet de dotation</strong> (<em>endowment effect</em>) :
+      le simple fait de posséder un objet gonfle la valeur qu'on lui attribue. On observe ici une
+      disposition à accepter (DAA = 9 €) plus de deux fois supérieure à la disposition à payer
+      (DAP = 4 €).
+    </p>
+    <p>
+      C'est une déviation par rapport à la théorie de la décision rationnelle. Pour un individu
+      rationnel, la valeur d'un bien ne dépend que de l'usage et du plaisir qu'il en retirera : le
+      fait de le posséder déjà est une <em>variable non-pertinente</em>. La théorie prédit donc
+      DAA = DAP, c'est-à-dire un unique prix de réserve, identique que l'on soit acheteur ou
+      vendeur.
+    </p>
+    <p>
+      De plus, les mugs ont été attribués <em>par tirage au sort</em> : les détenteurs et les
+      non-détenteurs ont donc, en moyenne, exactement les mêmes préférences. La théorie rationnelle
+      prédit par conséquent DAA \( \approx \) DAP entre les deux groupes, et l'écart observé ne peut
+      pas être attribué à une différence de goûts.
+    </p>
+    <p>
+      Or on observe 9 € contre 4 €, soit un rapport de 2,25 : la prédiction est clairement violée, et
+      elle l'est de façon systématique et prévisible (toujours DAA &gt; DAP, jamais l'inverse) —
+      c'est donc bien un biais.
+    </p>
+    <p>
+      Le mécanisme est l'<strong>aversion aux pertes</strong> : une fois le mug reçu, il entre dans
+      le <em>point de référence</em> du détenteur ; s'en séparer est alors codé comme une
+      <em>perte</em>, alors que ne pas l'acquérir n'est qu'un gain auquel on renonce. Les pertes
+      pesant environ deux fois plus lourd que les gains équivalents, la compensation exigée pour
+      céder (DAA) dépasse le prix qu'on accepterait de payer pour acquérir (DAP).
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les pièges de la question 5.1</div>
+    <p>
+      <strong>Piège n° 1 — se contenter du nom.</strong> « C'est l'effet de dotation » : 3 points
+      sur 10, et l'affaire est pliée en dix secondes. C'est le piège le plus coûteux de tout
+      l'examen, parce qu'on a l'impression d'avoir répondu.
+    </p>
+    <p>
+      <strong>Piège n° 2 — confondre prédiction et observation.</strong> Écrire « la théorie prédit
+      que la DAA est supérieure à la DAP » est une faute grave : DAA &gt; DAP est ce qu'on
+      <em>observe</em>. La théorie, elle, exige l'égalité. Si tu confonds les deux, il n'y a plus de
+      déviation du tout et le raisonnement s'effondre.
+    </p>
+    <p>
+      <strong>Piège n° 3 — inverser DAA et DAP.</strong> Répète-toi l'ancrage avant d'écrire : je
+      possède, donc je vends, donc DAA ; je ne possède pas, donc j'achète, donc DAP.
+    </p>
+    <p>
+      <strong>Piège n° 4 — oublier le tirage au sort.</strong> Quatre points s'envolent, et
+      l'objection « ce sont peut-être des amateurs de mugs » reste sans réponse.
+    </p>
+    <p>
+      <strong>Piège n° 5 — invoquer un effet de richesse.</strong> Certains écrivent « le détenteur
+      est plus riche de un mug, donc il valorise différemment ». C'est théoriquement vrai, mais
+      totalement négligeable : on parle d'un objet à quelques euros. Un tel effet de richesse
+      expliquerait un écart de quelques centimes, pas un rapport de 2,25.
+    </p>
+    <p>
+      <strong>Piège n° 6 — se tromper de biais.</strong> Ce n'est ni le <em>framing</em> (là, c'est
+      la formulation qui change), ni les <em>coûts irrécupérables</em> (là, c'est de l'argent déjà
+      dépensé), ni l'<em>utilité de transaction</em> (là, c'est le plaisir de faire une affaire par
+      rapport à un prix de référence). Le déclencheur ici est la <strong>possession</strong> : c'est
+      l'effet de dotation, et rien d'autre.
+    </p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Méthode — reconnaître ce type de question</div>
+    <p>
+      <strong>Le signal :</strong> on te décrit une expérience, on te donne deux chiffres qui
+      « devraient » être égaux (deux prix, deux pourcentages, deux taux de participation), et on te
+      demande pourquoi c'est une « déviation », une « anomalie » ou une « violation ».
+    </p>
+    <p><strong>Le réflexe, toujours le même, en quatre temps :</strong></p>
+    <ol>
+      <li><strong>Quelle est la variable qui change entre les deux situations ?</strong> Ici :
+        posséder le mug ou non.</li>
+      <li><strong>Cette variable est-elle pertinente ?</strong> Ici : non, elle ne change rien à
+        l'usage futur du mug. Donc la théorie rationnelle prédit le même résultat des deux côtés.</li>
+      <li><strong>Écris la prédiction sous forme d'égalité</strong>, puis constate l'écart avec les
+        chiffres de l'énoncé, et quantifie-le (différence <em>et</em> rapport).</li>
+      <li><strong>Nomme le biais</strong> en te demandant ce qui déclenche l'écart : possession →
+        effet de dotation ; formulation gains / pertes → framing ; argent déjà dépensé → coûts
+        irrécupérables ; prix de référence → utilité de transaction.</li>
+    </ol>
+  </div>
+
+  <hr class="soft">
+
+
+  <h2>5.2 — Le commitment device : pourquoi un individu rationnel n'en veut jamais</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 5.2 (10 points)</div>
+    <p>
+      Qu'est-ce qu'un « commitment device » ? Donnez un exemple concret, puis expliquez pourquoi un
+      individu rationnel (\( \beta = 1 \)) n'a jamais besoin d'un tel dispositif — et n'est en
+      particulier jamais prêt à payer pour en obtenir un.
+    </p>
+    <p>
+      <strong>Barème officiel :</strong> définition (3 pts) ; exemple pertinent (3 pts) ; argument
+      « préférences cohérentes \( \Rightarrow \) restreindre ses options ne rapporte rien, donc
+      aucune disposition à payer » (4 pts).
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Ce que tu as déjà vu, et où</div>
+    <p>
+      Cette sous-question est la <em>version théorique</em> de la question 1.6 de ce même examen, que
+      le chapitre 7 a traitée en détail : le grimpeur sophistiqué prenait un abonnement à la salle
+      d'escalade <em>alors qu'il existait une formule moins chère</em>, précisément parce que
+      l'abonnement le forçait à venir. C'était un commitment device en action. Ici, on te demande le
+      concept nu, sans chiffres.
+    </p>
+    <p>Les trois briques du chapitre 6 et du chapitre 7 dont tu as besoin :</p>
+    <ul>
+      <li>
+        \( \beta \) (lettre grecque « bêta ») est le <strong>coefficient de rabotage</strong> qu'un
+        individu applique à tout ce qui n'est pas immédiat. Avec \( \beta = \tfrac{1}{2} \), tout ce
+        qui arrive plus tard compte moitié moins ;
+      </li>
+      <li>
+        \( \beta = 1 \) veut dire <strong>aucun rabotage</strong> : c'est l'individu parfaitement
+        rationnel, sans biais du présent ;
+      </li>
+      <li>
+        un individu est <span class="term">naïf</span> s'il ignore son propre biais
+        (\( \hat\beta = 1 \) alors que \( \beta &lt; 1 \)) et <span class="term">sophistiqué</span>
+        s'il le connaît (\( \hat\beta = \beta \)).
+      </li>
+    </ul>
+    <p>
+      Si ces trois lignes te paraissent obscures, va relire les pages du chapitre 7 consacrées à
+      \( U_0 \) et \( U_1 \) : tout y est construit depuis zéro. Ici, on va droit à la rédaction.
+    </p>
+  </div>
+
+  <h3>Traduisons la question en français simple</h3>
+
+  <p>
+    Cet énoncé est court, mais il est <em>très</em> bavard sur ce qu'il attend. Trois demandes
+    explicites, séparées par des points-virgules et des tirets. Décodons.
+  </p>
+
+  <dl class="lexique">
+    <dt>« Qu'est-ce qu'un <em>commitment device</em> ? »</dt>
+    <dd>
+      <strong>Mot-signal n° 1 : « Qu'est-ce que » = définis.</strong> On attend une phrase de
+      définition, complète, du type « c'est un dispositif par lequel… ». Pas un exemple à la place de
+      la définition : l'exemple est demandé juste après, séparément, et il est payé séparément.
+      L'expression se traduit littéralement par « dispositif d'engagement » ou « dispositif
+      d'auto-contrainte » ; le cours garde l'anglais, garde-le aussi.
+    </dd>
+
+    <dt>« Donnez un exemple concret »</dt>
+    <dd>
+      <strong>Mot-signal n° 2 : trois points, à eux seuls.</strong> « Concret » veut dire : une
+      situation réelle, nommable, qu'on pourrait photographier. « Se restreindre » n'est pas un
+      exemple, c'est une paraphrase de la définition. « Bloquer son épargne sur un compte à terme
+      jusqu'au 30 juin » en est un.
+    </dd>
+
+    <dt>« puis expliquez pourquoi »</dt>
+    <dd>
+      <strong>Mot-signal n° 3 : « expliquez pourquoi » = démontre.</strong> Il faut une chaîne de
+      raisons, pas une affirmation. Le mot « puis » indique en plus que cette partie vient
+      <em>après</em> les deux autres : respecte l'ordre, le correcteur coche dans l'ordre.
+    </dd>
+
+    <dt>« un individu rationnel (\( \beta = 1 \)) »</dt>
+    <dd>
+      La parenthèse est un <strong>cadeau</strong> : elle te dit exactement dans quel modèle
+      raisonner. On te demande le cas limite du modèle \( (\beta, \delta) \) du cours, pas une
+      dissertation générale sur la rationalité. Ta réponse doit contenir la lettre \( \beta \) et le
+      mot « cohérence temporelle ».
+    </dd>
+
+    <dt>« n'a jamais <em>besoin</em> d'un tel dispositif »</dt>
+    <dd>
+      Première conclusion à établir : le dispositif ne lui <em>sert à rien</em>. Il faut dire
+      pourquoi : parce que le problème que le dispositif est censé résoudre n'existe pas chez lui.
+    </dd>
+
+    <dt>« et n'est <em>en particulier</em> jamais prêt à payer pour en obtenir un »</dt>
+    <dd>
+      <strong>Mot-signal n° 4, le plus précieux.</strong> « En particulier » signale une conséquence
+      <em>plus forte</em> que la précédente : non seulement il n'en a pas besoin, mais sa disposition
+      à payer est <strong>nulle</strong> (et même négative : il faudrait le payer <em>lui</em> pour
+      qu'il accepte de se lier les mains). Ta copie doit contenir cette phrase-là, écrite noir sur
+      blanc. C'est le cœur des 4 points de la troisième brique.
+    </dd>
+  </dl>
+
+  <div class="box box-methode">
+    <div class="box-title">Le plan est littéralement dans l'énoncé</div>
+    <p>
+      Trois demandes, trois paragraphes, trois blocs de points. Numérote-les sur ton brouillon avant
+      d'écrire une seule phrase :
+    </p>
+    <ol>
+      <li><strong>§ 1 — Définition.</strong> Une à deux phrases. <em>(3 points.)</em></li>
+      <li><strong>§ 2 — Exemple concret</strong>, et en une demi-phrase : ce qu'il retire comme
+        option. <em>(3 points.)</em></li>
+      <li><strong>§ 3 — L'argument \( \beta = 1 \)</strong> en trois maillons : cohérence temporelle
+        → un menu réduit ne peut pas faire mieux → disposition à payer nulle.
+        <em>(4 points.)</em></li>
+    </ol>
+  </div>
+
+  <h3>Le cours dont tu as besoin</h3>
+
+  <h4>1) La fiction utile : le « moi présent » et le « moi futur »</h4>
+
+  <p>
+    Tout le chapitre du self-contrôle repose sur une image. On fait comme si une personne n'était pas
+    un décideur unique, mais une <strong>suite de décideurs</strong> : le moi de lundi, le moi de
+    mardi, le moi de l'an prochain. Chacun décide à son tour, et — c'est là toute l'affaire — ils
+    n'ont pas forcément les mêmes envies.
+  </p>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple concret — le réveil de 6 h 30</div>
+    <p>
+      Dimanche soir, tu règles ton réveil sur 6 h 30 pour aller courir. Le <strong>moi de dimanche
+      soir</strong> trouve ça excellent : une heure d'effort demain matin contre de la forme toute la
+      semaine, l'échange est clairement gagnant.
+    </p>
+    <p>
+      Lundi 6 h 30, le réveil sonne. Le <strong>moi de lundi matin</strong> regarde exactement le
+      même échange… et le refuse. Pas parce qu'il a appris quelque chose de nouveau (il ne pleut pas,
+      il n'est pas malade), mais parce que, vu de lundi 6 h 30, l'effort est <em>maintenant</em>
+      alors que la forme est <em>plus tard</em>.
+    </p>
+    <p>
+      Aucun des deux « moi » n'est fou. Ils appliquent la même règle. Mais cette règle rabote
+      l'avenir, et comme « l'avenir » n'est pas le même vu de dimanche soir et vu de lundi 6 h 30, le
+      verdict change. C'est le cœur du problème.
+    </p>
+  </div>
+
+  <h4>2) L'incohérence temporelle, et ce que \( \beta = 1 \) élimine</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — incohérence temporelle (ou biais du présent)</div>
+    <p>
+      Il y a <span class="term">incohérence temporelle</span> quand le plan qu'un individu juge
+      optimal aujourd'hui n'est <strong>plus</strong> celui qu'il jugera optimal au moment d'agir,
+      <em>alors qu'aucune information nouvelle n'est arrivée entre-temps</em>.
+    </p>
+    <p>
+      Le membre de phrase en italique est essentiel. Changer d'avis parce qu'on apprend qu'il neige
+      n'a rien d'incohérent : c'est une mise à jour rationnelle. L'incohérence temporelle, c'est
+      changer d'avis <strong>sans raison nouvelle</strong>, uniquement parce que le moment est
+      arrivé.
+    </p>
+  </div>
+
+  <p>
+    Dans le modèle du cours, la source de cette incohérence porte un nom et une lettre. L'individu
+    évalue une suite de satisfactions en pondérant ainsi :
+  </p>
+
+  <p>\[ u(c_t) + \beta\,\delta\,u(c_{t+1}) + \beta\,\delta^2 u(c_{t+2}) + \cdots \]</p>
+
+  <div class="box box-why">
+    <div class="box-title">Comment lire cette ligne, et pourquoi tout se joue sur \( \beta \)</div>
+    <p>
+      Le terme d'aujourd'hui, \( u(c_t) \), n'a aucun coefficient : il compte plein pot. Tous les
+      autres, quelle que soit leur distance, reçoivent d'un coup le facteur \( \beta \) — et en plus
+      un \( \delta \) par période d'éloignement.
+    </p>
+    <p>
+      \( \delta \) (« delta ») est l'escompte ordinaire, celui de tout le monde : demain vaut un peu
+      moins qu'aujourd'hui, après-demain un peu moins que demain. Il est <strong>régulier</strong>,
+      et il ne crée aucune incohérence : il rabote la même chose de la même façon vue de n'importe
+      quelle date.
+    </p>
+    <p>
+      \( \beta \), lui, crée une <strong>marche d'escalier</strong> entre « maintenant » et « tout le
+      reste ». Et cette marche se déplace avec le temps : dimanche soir, lundi matin est
+      « plus tard » (raboté par \( \beta \)) ; lundi matin, lundi matin est « maintenant » (plus de
+      \( \beta \)). Le classement des options bascule. Voilà l'incohérence.
+    </p>
+    <p>
+      <strong>Si \( \beta = 1 \), la marche disparaît.</strong> Il ne reste que \( \delta \), qui est
+      régulier. Le plan jugé optimal en période 0 reste jugé optimal en période 1, en période 2, à
+      chaque instant. On dit que les préférences sont
+      <strong>cohérentes dans le temps</strong> : le moi présent et le moi futur veulent
+      <em>exactement</em> la même chose.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Attention — « rationnel » ne veut pas dire « patient »</div>
+    <p>
+      Un individu avec \( \beta = 1 \) et \( \delta = 0{,}3 \) est <em>très</em> impatient : il se
+      moque presque complètement de l'avenir. Il est pourtant parfaitement rationnel au sens du
+      cours, parce qu'il est impatient <strong>de façon cohérente</strong> : il l'était hier, il le
+      sera demain, et il le sait. Il ne se surprendra jamais lui-même.
+    </p>
+    <p>
+      Ce qui définit le problème de self-contrôle, ce n'est donc pas d'être impatient : c'est d'être
+      <strong>plus impatient au moment d'agir qu'on ne l'avait prévu</strong>. C'est
+      \( \beta &lt; 1 \), pas \( \delta \) petit.
+    </p>
+  </div>
+
+  <h4>3) Le commitment device : la définition à réciter</h4>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — commitment device (dispositif d'engagement)</div>
+    <p>
+      Un <span class="term">commitment device</span> est un dispositif qu'un individu met en place
+      <strong>aujourd'hui</strong> pour <strong>restreindre volontairement — ou rendre plus coûteuses
+      — ses propres options futures</strong>, afin de forcer son « moi futur » à suivre le plan qu'il
+      juge optimal aujourd'hui.
+    </p>
+    <p>Quatre mots doivent absolument figurer dans ta phrase :</p>
+    <ul>
+      <li><strong>volontairement</strong> — ce n'est pas une contrainte imposée de l'extérieur ;
+        c'est lui qui se l'inflige ;</li>
+      <li><strong>ses propres</strong> options — il ne restreint pas les autres, il se restreint
+        lui-même ;</li>
+      <li><strong>futures</strong> — il agit maintenant sur un choix qui n'aura lieu que plus tard ;</li>
+      <li><strong>le plan optimal d'aujourd'hui</strong> — c'est le but visé, et c'est ce qui
+        distingue le dispositif d'une simple bêtise.</li>
+    </ul>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">L'image d'Ulysse, à connaître : elle vaut une définition</div>
+    <p>
+      Ulysse veut entendre le chant des sirènes sans se jeter à l'eau. Il <em>sait</em> que, le
+      moment venu, il en sera incapable. Sa solution : se faire attacher au mât à l'avance, et
+      ordonner à l'équipage de ne pas le détacher, quoi qu'il crie ensuite.
+    </p>
+    <p>
+      Regarde bien la structure : (1) il agit <em>avant</em> ; (2) il se retire <em>à lui-même</em>
+      l'option « nager vers les sirènes » ; (3) il le fait pour que son moi futur exécute le plan de
+      son moi présent ; (4) et il donne un ordre <em>irréversible</em>, sinon le moi futur
+      détricoterait le dispositif. Un commitment device, c'est un mât qu'on se choisit soi-même.
+    </p>
+  </div>
+
+  <h4>4) Le catalogue d'exemples — choisis-en un, et sache dire quelle option il retire</h4>
+
+  <p>
+    Le barème donne 3 points pour l'exemple. Un exemple rapporte tous ses points quand tu ajoutes une
+    demi-phrase disant <strong>quelle option devient indisponible ou plus chère</strong>. Voici de
+    quoi choisir.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left">Exemple</th>
+      <th class="left">L'option qu'on se retire (ou qu'on renchérit)</th>
+      <th class="left">Famille</th>
+    </tr>
+    <tr>
+      <td class="left">Compte d'épargne bloqué jusqu'au 30 juin</td>
+      <td class="left">« retirer l'argent avant juin » devient impossible</td>
+      <td class="left">On rend indisponible</td>
+    </tr>
+    <tr>
+      <td class="left">Ne pas acheter de biscuits en faisant les courses</td>
+      <td class="left">« manger des biscuits ce soir » devient impossible sans ressortir</td>
+      <td class="left">On rend indisponible</td>
+    </tr>
+    <tr>
+      <td class="left">Application qui coupe les réseaux sociaux de 9 h à 17 h</td>
+      <td class="left">« regarder Instagram pendant le blocus » devient impossible</td>
+      <td class="left">On rend indisponible</td>
+    </tr>
+    <tr>
+      <td class="left">Abonnement annuel à la salle d'escalade (question 1.6)</td>
+      <td class="left">« ne pas y aller » devient coûteux : on a déjà payé, chaque séance ratée est
+        de l'argent gaspillé</td>
+      <td class="left">On renchérit</td>
+    </tr>
+    <tr>
+      <td class="left">Annoncer publiquement qu'on arrête de fumer</td>
+      <td class="left">« recommencer » devient coûteux : il faudrait affronter le regard des
+        autres</td>
+      <td class="left">On renchérit</td>
+    </tr>
+    <tr>
+      <td class="left">Ulysse attaché au mât</td>
+      <td class="left">« nager vers les sirènes » devient physiquement impossible</td>
+      <td class="left">On rend indisponible</td>
+    </tr>
+  </table>
+
+  <div class="box box-piege">
+    <div class="box-title">Ce qui n'est PAS un commitment device</div>
+    <p>
+      <strong>« Je me motive », « je prends une bonne résolution », « je me promets d'y aller ».</strong>
+      Non : rien n'a changé dans le menu du moi futur. Il peut toujours craquer, et il craquera. Un
+      commitment device ne repose pas sur la volonté — il repose sur le fait que l'option
+      <em>n'est plus là</em> ou qu'elle <em>coûte plus cher</em>.
+    </p>
+    <p>
+      <strong>Une contrainte imposée par quelqu'un d'autre.</strong> Le couvre-feu décidé par tes
+      parents n'est pas un commitment device : tu ne l'as pas choisi. Le mot
+      <em>volontairement</em> est dans la définition pour cette raison.
+    </p>
+    <p>
+      <strong>Une simple incitation externe.</strong> Une prime versée par ton employeur si tu
+      arrives à l'heure change tes gains, mais ce n'est pas toi qui l'as mise en place. Si en
+      revanche <em>tu</em> paries 200 € avec un ami que tu iras courir, alors oui : tu as fabriqué
+      toi-même le coût.
+    </p>
+  </div>
+
+  <h4>5) Qui achète un commitment device, et qui n'en achète pas</h4>
+
+  <p>
+    Il faut deux conditions <strong>simultanées</strong> pour être client d'un tel dispositif. C'est
+    exactement ce tableau que l'énoncé teste, en te demandant la case du haut à gauche.
+  </p>
+
+  <table class="compare">
+    <tr>
+      <th class="left">Profil</th>
+      <th class="left">A-t-il un problème à résoudre ?</th>
+      <th class="left">Achète-t-il le dispositif ?</th>
+    </tr>
+    <tr>
+      <td class="left"><strong>Rationnel</strong> (\( \beta = 1 \))</td>
+      <td class="left">Non — ses préférences sont cohérentes, son moi futur fera le plan prévu</td>
+      <td class="left"><strong>Jamais.</strong> DAP = 0 (au mieux)</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Naïf</strong> (\( \beta &lt; 1 \), \( \hat\beta = 1 \))</td>
+      <td class="left">Oui, mais il ne le sait pas : il croit être rationnel</td>
+      <td class="left">Non plus — il ne voit aucune raison de payer</td>
+    </tr>
+    <tr>
+      <td class="left"><strong>Sophistiqué</strong> (\( \beta &lt; 1 \), \( \hat\beta = \beta \))</td>
+      <td class="left">Oui, et il le sait : il anticipe que son moi futur va craquer</td>
+      <td class="left"><strong>Oui</strong>, et il est prêt à payer un supplément pour l'obtenir</td>
+    </tr>
+  </table>
+
+  <p>
+    Cette ligne du milieu est un bon détail à glisser en fin de réponse : elle montre que tu as
+    compris que le besoin d'un dispositif exige <em>à la fois</em> un biais et la conscience de ce
+    biais. Mais ne t'y attarde pas : la question porte sur la première ligne.
+  </p>
+
+  <h4>6) Le cœur de la question : pourquoi \( \beta = 1 \) rend le dispositif inutile</h4>
+
+  <p>
+    On y est. Quatre points, et un raisonnement en trois maillons. Prends le temps de comprendre
+    chacun : ils s'enchaînent et se retiennent facilement une fois compris.
+  </p>
+
+  <p>
+    <strong>Maillon 1 — le problème que le dispositif résout n'existe pas.</strong> À quoi sert un
+    commitment device ? À empêcher le moi futur de dévier du plan. Or, avec \( \beta = 1 \), il n'y a
+    <em>pas</em> de déviation possible : le moi de la période 1 évalue les options avec exactement la
+    même règle que le moi de la période 0. Ce que le moi présent a choisi comme optimal, le moi futur
+    le choisira spontanément. Le dispositif est un parapluie construit pour une pluie qui ne tombera
+    pas.
+  </p>
+
+  <p>
+    <strong>Maillon 2 — réduire un menu ne peut jamais améliorer le résultat.</strong> C'est un fait
+    général, indépendant de toute psychologie, et il tient en une ligne de mathématiques.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ A \subset B \quad\Longrightarrow\quad \max_{x \in A} u(x) \;\le\; \max_{x \in B} u(x) \]
+      <div class="why">à lire à voix haute : « si l'ensemble \( A \) est inclus dans l'ensemble
+        \( B \), alors le meilleur élément de \( A \) ne vaut pas plus que le meilleur élément de
+        \( B \) ». Le signe \( \subset \) se lit « est inclus dans » ; \( \max_{x \in A} u(x) \) se
+        lit « le maximum de \( u(x) \) quand \( x \) parcourt \( A \) », c'est-à-dire la meilleure
+        satisfaction atteignable dans le menu \( A \).</div>
+    </div>
+    <div class="step">
+      \[ \text{ici} \quad A = \text{menu réduit par le dispositif}, \qquad B = \text{menu complet} \]
+      <div class="why">le dispositif ne fait qu'une chose : passer de \( B \) à \( A \), en enlevant
+        des options. Il n'en ajoute jamais.</div>
+    </div>
+  </div>
+
+  <p>
+    Pourquoi cette inégalité est-elle évidente ? Parce que tout ce qui est disponible dans le petit
+    menu l'est aussi dans le grand. Si la meilleure chose du petit menu vaut 7, alors le grand menu
+    contient lui aussi quelque chose qui vaut 7 — et peut-être mieux. Un restaurant qui retire des
+    plats de sa carte ne peut pas améliorer ton dîner ; au mieux il ne change rien, au pire il
+    supprime celui que tu allais commander.
+  </p>
+
+  <p>
+    <strong>Maillon 3 — donc le gain est nul, et la disposition à payer aussi.</strong> Assemblons.
+    Sans dispositif, le moi futur de l'individu rationnel choisit déjà le meilleur élément du menu
+    complet \( B \) — et c'est précisément celui que le moi présent voulait. Avec le dispositif, il
+    est confiné à \( A \), et obtient au mieux la même chose. Donc :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \text{gain du dispositif} \;=\; \max_{x \in A} u(x) \;-\; \max_{x \in B} u(x) \;\le\; 0 \]
+      <div class="why">le bénéfice est, au mieux, nul : l'individu ne peut rien y gagner. Or on ne
+        paie pas pour un bénéfice nul.</div>
+    </div>
+    <div class="step">
+      \[ \text{donc}\quad \text{DAP}(\text{dispositif}) \;=\; 0 \]
+      <div class="why">sa disposition à payer — le montant maximal qu'il accepterait de débourser —
+        est nulle. Et si le dispositif est vendu à un prix \( p &gt; 0 \), son bilan devient
+        strictement négatif : il refuse.</div>
+    </div>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Et même : le dispositif peut lui faire du mal</div>
+    <p>
+      L'inégalité est <em>large</em> (\( \le \)), mais elle devient souvent <em>stricte</em>
+      (\( &lt; \)) dès que quelque chose d'imprévu se produit. Le compte bloqué jusqu'au 30 juin est
+      neutre… jusqu'au jour où la chaudière lâche en février. Là, l'option « retirer l'argent »
+      aurait été précieuse, et elle n'est plus là.
+    </p>
+    <p>
+      C'est le second argument du barème, et il fait très bonne impression : pour un individu
+      rationnel, la flexibilité n'a jamais de valeur négative, alors que la rigidité peut coûter cher
+      si les circonstances changent. Sa disposition à payer n'est donc pas seulement nulle : il
+      faudrait plutôt <strong>le dédommager</strong> pour qu'il accepte de se lier les mains.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple concret — deux colocataires devant le même coffre-fort</div>
+    <p>
+      On propose à Nora et à Tom le même service : un coffre qui avale leurs 500 € et ne les rend que
+      dans six mois. Le service coûte 10 €.
+    </p>
+    <p>
+      <strong>Tom est sophistiqué et biaisé</strong> (\( \beta = \tfrac{1}{2} \)). Il sait que s'il
+      garde l'argent sous la main, il l'aura dépensé avant mars. Pour lui, le coffre transforme
+      « 0 € dans six mois » en « 500 € dans six mois ». Il paie les 10 € sans hésiter, et il a raison.
+    </p>
+    <p>
+      <strong>Nora est rationnelle</strong> (\( \beta = 1 \)). Elle a prévu de garder ses 500 €, et
+      elle les gardera : son moi de mars voudra exactement ce que veut son moi d'aujourd'hui. Le
+      coffre ne lui apporte donc rien du tout — elle finirait au même endroit sans lui. Payer 10 €
+      pour cela, c'est perdre 10 €. Et si sa voiture tombe en panne en avril, le coffre lui aura même
+      coûté bien plus. Elle refuse, et elle refuserait même à 1 centime.
+    </p>
+    <p>
+      Le service est identique, le prix est identique. Ce qui diffère, c'est \( \beta \). Toute la
+      question 5.2 tient dans cette comparaison.
+    </p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 520 470" width="100%" style="max-width:12cm" role="img" aria-label="Trois situations comparees : l'individu rationnel suit son plan tout seul ; l'individu biaise sans dispositif trahit son plan ; l'individu biaise avec commitment device se retire l'option de depenser et tient son plan">
+      <defs>
+        <marker id="q11b-fl" markerWidth="9" markerHeight="9" refX="8.4" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="#111827"></path>
+        </marker>
+        <pattern id="q11b-hach" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="7" stroke="#9ca3af" stroke-width="1.1"></line>
+        </pattern>
+      </defs>
+
+      <text x="24" y="24" font-size="12" font-weight="bold" fill="#111827">1 — Individu rationnel (β = 1), sans dispositif</text>
+      <rect x="24" y="36" width="108" height="96" fill="none" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="78" y="56" font-size="11" text-anchor="middle" fill="#4b5563">MOI PRÉSENT (t = 0)</text>
+      <text x="78" y="80" font-size="11.5" text-anchor="middle" fill="#111827">plan choisi :</text>
+      <text x="78" y="100" font-size="12.5" text-anchor="middle" fill="#111827" font-weight="bold">ÉPARGNER</text>
+      <line x1="134" y1="84" x2="164" y2="84" stroke="#111827" stroke-width="1.6" marker-end="url(#q11b-fl)"></line>
+      <rect x="168" y="36" width="166" height="96" fill="none" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="251" y="56" font-size="11" text-anchor="middle" fill="#4b5563">MENU DU MOI FUTUR (t = 1)</text>
+      <text x="186" y="82" font-size="12" fill="#111827">• épargner</text>
+      <text x="186" y="108" font-size="12" fill="#111827">• dépenser tout</text>
+      <line x1="338" y1="84" x2="366" y2="84" stroke="#111827" stroke-width="1.6" marker-end="url(#q11b-fl)"></line>
+      <rect x="370" y="36" width="126" height="96" fill="none" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="433" y="62" font-size="12" text-anchor="middle" fill="#111827" font-weight="bold">il épargne</text>
+      <text x="433" y="82" font-size="11" text-anchor="middle" fill="#4b5563">le plan est tenu</text>
+      <path d="M420,104 L428,113 L446,94" fill="none" stroke="#111827" stroke-width="2.6"></path>
+
+      <text x="24" y="168" font-size="12" font-weight="bold" fill="#111827">2 — Individu biaisé (β &lt; 1), sans dispositif</text>
+      <rect x="24" y="180" width="108" height="96" fill="none" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="78" y="200" font-size="11" text-anchor="middle" fill="#4b5563">MOI PRÉSENT (t = 0)</text>
+      <text x="78" y="224" font-size="11.5" text-anchor="middle" fill="#111827">plan choisi :</text>
+      <text x="78" y="244" font-size="12.5" text-anchor="middle" fill="#111827" font-weight="bold">ÉPARGNER</text>
+      <line x1="134" y1="228" x2="164" y2="228" stroke="#111827" stroke-width="1.6" marker-end="url(#q11b-fl)"></line>
+      <rect x="168" y="180" width="166" height="96" fill="none" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="251" y="200" font-size="11" text-anchor="middle" fill="#4b5563">MENU DU MOI FUTUR (t = 1)</text>
+      <text x="186" y="226" font-size="12" fill="#111827">• épargner</text>
+      <text x="186" y="252" font-size="12" fill="#111827" font-weight="bold">• dépenser tout</text>
+      <line x1="338" y1="228" x2="366" y2="228" stroke="#111827" stroke-width="1.6" marker-end="url(#q11b-fl)"></line>
+      <rect x="370" y="180" width="126" height="96" fill="none" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="433" y="206" font-size="12" text-anchor="middle" fill="#111827" font-weight="bold">il dépense tout</text>
+      <text x="433" y="226" font-size="11" text-anchor="middle" fill="#4b5563">le plan est trahi</text>
+      <line x1="421" y1="240" x2="445" y2="264" stroke="#111827" stroke-width="2.6"></line>
+      <line x1="445" y1="240" x2="421" y2="264" stroke="#111827" stroke-width="2.6"></line>
+
+      <text x="24" y="312" font-size="12" font-weight="bold" fill="#111827">3 — Individu biaisé (β &lt; 1), avec commitment device</text>
+      <rect x="24" y="324" width="108" height="110" fill="none" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="78" y="344" font-size="11" text-anchor="middle" fill="#4b5563">MOI PRÉSENT (t = 0)</text>
+      <text x="78" y="366" font-size="11.5" text-anchor="middle" fill="#111827" font-weight="bold">plan : ÉPARGNER</text>
+      <text x="78" y="390" font-size="11" text-anchor="middle" fill="#111827">et il bloque</text>
+      <text x="78" y="406" font-size="11" text-anchor="middle" fill="#111827">le compte</text>
+      <line x1="134" y1="379" x2="164" y2="379" stroke="#111827" stroke-width="1.6" marker-end="url(#q11b-fl)"></line>
+      <rect x="168" y="324" width="166" height="110" fill="none" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="251" y="344" font-size="11" text-anchor="middle" fill="#4b5563">MENU DU MOI FUTUR (t = 1)</text>
+      <text x="186" y="370" font-size="12" fill="#111827" font-weight="bold">• épargner</text>
+      <rect x="178" y="382" width="146" height="24" fill="url(#q11b-hach)" stroke="#6b7280" stroke-width="1.2" stroke-dasharray="4 3"></rect>
+      <text x="186" y="399" font-size="12" fill="#4b5563">• dépenser tout</text>
+      <line x1="182" y1="395" x2="286" y2="395" stroke="#111827" stroke-width="1.8"></line>
+      <text x="251" y="424" font-size="11" text-anchor="middle" fill="#4b5563">option retirée par le moi présent</text>
+      <line x1="338" y1="379" x2="366" y2="379" stroke="#111827" stroke-width="1.6" marker-end="url(#q11b-fl)"></line>
+      <rect x="370" y="324" width="126" height="110" fill="none" stroke="#111827" stroke-width="1.6"></rect>
+      <text x="433" y="350" font-size="12" text-anchor="middle" fill="#111827" font-weight="bold">il épargne</text>
+      <text x="433" y="370" font-size="11" text-anchor="middle" fill="#4b5563">le plan est tenu</text>
+      <path d="M420,388 L428,397 L446,378" fill="none" stroke="#111827" stroke-width="2.6"></path>
+      <text x="433" y="422" font-size="11" text-anchor="middle" fill="#4b5563">il n'avait plus le choix</text>
+    </svg>
+    <figcaption>
+      Le raisonnement complet en une image. Compare la ligne 1 et la ligne 3 : chez l'individu
+      rationnel, le résultat est <em>déjà</em> celui que le dispositif produirait — le mât d'Ulysse ne
+      change strictement rien à sa trajectoire, il n'a donc aucune valeur pour lui. Le dispositif ne
+      devient utile qu'à la ligne 2, c'est-à-dire quand le moi futur trahit le plan. Et remarque le
+      sens de la flèche du haut : c'est bien le <em>moi présent</em> qui coupe l'option, volontairement.
+    </figcaption>
+  </figure>
+
+  <figure>
+    <svg viewBox="0 0 520 268" width="100%" style="max-width:11cm" role="img" aria-label="Courbe decroissante : plus beta est proche de 1, plus la disposition a payer pour un commitment device est faible, et elle s'annule exactement en beta egal 1">
+      <line x1="70" y1="36" x2="70" y2="212" stroke="#111827" stroke-width="1.6"></line>
+      <line x1="70" y1="212" x2="480" y2="212" stroke="#111827" stroke-width="1.6"></line>
+      <text x="62" y="216" font-size="11.5" text-anchor="end" fill="#4b5563">0</text>
+      <text x="70" y="234" font-size="11.5" text-anchor="middle" fill="#4b5563">β = 0</text>
+      <text x="70" y="250" font-size="11" text-anchor="middle" fill="#4b5563">biais maximal</text>
+      <text x="440" y="234" font-size="11.5" text-anchor="middle" fill="#4b5563">β = 1</text>
+      <text x="440" y="250" font-size="11" text-anchor="middle" fill="#4b5563">aucun biais</text>
+      <text x="76" y="30" font-size="11.5" fill="#4b5563">disposition à payer pour un commitment device</text>
+      <path d="M78,62 C170,96 300,168 440,212" fill="none" stroke="#111827" stroke-width="2.4"></path>
+      <line x1="440" y1="212" x2="440" y2="36" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="5 4"></line>
+      <circle cx="440" cy="212" r="4.6" fill="#111827"></circle>
+      <text x="432" y="196" font-size="12" text-anchor="end" fill="#111827" font-weight="bold">DAP = 0</text>
+      <text x="150" y="130" font-size="11.5" fill="#4b5563">plus le biais est fort, plus</text>
+      <text x="150" y="146" font-size="11.5" fill="#4b5563">le dispositif vaut cher</text>
+      <text x="290" y="86" font-size="11.5" fill="#4b5563">(individu sophistiqué,</text>
+      <text x="290" y="102" font-size="11.5" fill="#4b5563">c'est-à-dire conscient</text>
+      <text x="290" y="118" font-size="11.5" fill="#4b5563">de son biais)</text>
+    </svg>
+    <figcaption>
+      L'allure du résultat. À gauche, un individu très biaisé et lucide est prêt à payer beaucoup
+      pour se lier les mains. En allant vers la droite, le biais s'atténue et le dispositif sert de
+      moins en moins. À l'extrémité droite, en \( \beta = 1 \), la courbe touche exactement zéro :
+      c'est la réponse à la question, et elle ne s'annule pas « presque », elle s'annule tout net.
+      Au-delà, si des imprévus sont possibles, la valeur deviendrait même négative.
+    </figcaption>
+  </figure>
+
+<hr class="soft">
+
+<h2>5.3 — Type et stratégie dans un jeu bayésien : le comptage (10 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 5.3 (10 points)</div>
+<p>
+  <strong>5.3)</strong> Dans un jeu à information incomplète (jeu bayésien) : qu'est-ce que le
+  <em>type</em> d'un joueur ? Qu'est-ce qu'une <em>stratégie</em> ? Illustrez à l'aide du
+  mini-exemple suivant : un joueur peut être de 2 types possibles et dispose de 3 actions
+  possibles — combien de stratégies possède-t-il ? Justifiez.
+</p>
+</div>
+
+<h3>Traduisons la question</h3>
+
+<p>
+  Trois demandes bien séparées, et le barème les compte séparément : <strong>(a)</strong> définir
+  le type, <strong>(b)</strong> définir la stratégie, <strong>(c)</strong> compter sur l'exemple
+  <em>en justifiant</em>. Le mot « justifiez » est décisif : donner « 9 » sans expliquer d'où il
+  vient ne vaut qu'une fraction des points.
+</p>
+
+<dl class="lexique">
+<dt>« information incomplète »</dt>
+<dd>
+  Une situation où un joueur <strong>ignore quelque chose sur son adversaire lui-même</strong> :
+  ses coûts, ses goûts, sa détermination. À distinguer de l'information <em>imparfaite</em>, où
+  l'on connaît parfaitement l'adversaire mais où l'on n'a pas vu son coup (c'est le cas de tout
+  jeu simultané ordinaire).
+</dd>
+<dt>« jeu bayésien »</dt>
+<dd>
+  Le nom que porte un jeu à information incomplète, en hommage à Thomas Bayes, le mathématicien
+  des probabilités : puisqu'on ne sait pas à qui l'on a affaire, on raisonne avec des
+  <em>probabilités</em> sur l'identité de l'autre.
+</dd>
+<dt>« illustrez à l'aide du mini-exemple »</dt>
+<dd>
+  L'énoncé fournit un cas abstrait volontairement minuscule (2 types, 3 actions). Il ne s'agit
+  pas de le relier au reste de l'examen : c'est un exercice de comptage pur, destiné à vérifier
+  que tu as compris <em>ce qu'est</em> une stratégie.
+</dd>
+</dl>
+
+<h3>(a) Le type d'un joueur</h3>
+
+<div class="box box-def">
+<div class="box-title">Définition — le type</div>
+<p>
+  Le <span class="term">type</span> d'un joueur est la <strong>caractéristique privée</strong> qui
+  influence ses gains et que lui seul connaît : ses coûts de production, l'intensité de ses
+  préférences, sa qualité, sa patience…
+</p>
+<p>
+  Autrement dit : <em>« je sais qui je suis, toi non »</em>. Chaque joueur connaît son propre
+  type avec certitude ; les autres ne connaissent que la <strong>probabilité</strong> de chaque
+  type possible — c'est ce qu'on appelle leurs <span class="term">croyances</span>.
+</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Exemple — trois types de la vie courante</div>
+<ul>
+  <li><strong>Un candidat à l'embauche</strong> est « très motivé » ou « peu motivé ». Il le sait ;
+      le recruteur, non — il estime seulement une probabilité.</li>
+  <li><strong>Un vendeur de voiture d'occasion</strong> connaît l'état réel du véhicule ;
+      l'acheteur ne connaît que la proportion d'épaves sur le marché.</li>
+  <li><strong>Un concurrent qui entre sur un marché</strong> a des coûts faibles ou élevés. Lui
+      les connaît ; la firme installée doit deviner.</li>
+</ul>
+<p>
+  Dans les trois cas, l'ignorance ne porte pas sur ce que l'autre <em>a joué</em>, mais sur ce
+  qu'il <em>est</em>. C'est exactement la différence entre information imparfaite et incomplète.
+</p>
+</div>
+
+<h3>(b) Ce qu'est une stratégie quand on a un type</h3>
+
+<div class="box box-def">
+<div class="box-title">Définition — la stratégie dans un jeu bayésien</div>
+<p>
+  Une <span class="term">stratégie</span> n'est pas une action : c'est une <strong>règle complète
+  qui associe une action à chacun des types possibles du joueur</strong>.
+</p>
+<p>
+  Autrement dit : « si je suis de type 1, je fais ceci ; si je suis de type 2, je fais cela ». La
+  stratégie est décidée <em>avant</em> de savoir quel type on est — ou, plus exactement, elle
+  décrit ce que ferait chaque version possible du joueur.
+</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi une stratégie doit couvrir tous les types</div>
+<p>
+  Cela paraît étrange : le joueur <em>connaît</em> son type, alors pourquoi décrire ce qu'il
+  ferait s'il était quelqu'un d'autre ?
+</p>
+<p>
+  Parce que la stratégie ne sert pas seulement au joueur lui-même : elle sert à <strong>son
+  adversaire</strong>. Léa, qui ne sait pas à quel Maxime elle a affaire, ne peut calculer son
+  espérance de gain que si elle sait ce que ferait <em>chacun</em> des Maxime possibles. Une règle
+  qui ne couvrirait qu'un seul type ne lui permettrait pas de faire sa moyenne.
+</p>
+<p>
+  C'est le même principe qu'en jeu séquentiel, où la stratégie doit prévoir une action à chaque
+  nœud, même ceux qu'on n'atteindra jamais. Ici, on prévoit une action pour chaque <em>version de
+  soi-même</em>.
+</p>
+</div>
+
+<h3>(c) Le comptage : 2 types, 3 actions</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Poser le problème comme un formulaire à remplir</div>
+<p>
+  Imagine une fiche à deux lignes, une par type. Sur chaque ligne, il faut inscrire une action —
+  et il y a trois actions possibles, appelons-les \( a \), \( b \) et \( c \).
+</p>
+<div class="calc">
+<div class="step">
+\[ \underbrace{3}_{\text{choix pour le type 1}} \times \underbrace{3}_{\text{choix pour le type 2}} = 3^2 = 9 \]
+<div class="why">Je <strong>multiplie</strong> parce que les deux lignes se remplissent
+<em>indépendamment</em> : pour chacune des 3 façons de remplir la première, il y a 3 façons de
+remplir la seconde. On n'additionne jamais dans ce genre de comptage.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Vérifier en écrivant les neuf</div>
+<p>
+  Le meilleur moyen de convaincre un correcteur : donner la liste. Je note une stratégie
+  \( (\text{action si type 1} \,;\, \text{action si type 2}) \).
+</p>
+<table class="compare">
+<tr><th></th><th>type 2 joue \( a \)</th><th>type 2 joue \( b \)</th><th>type 2 joue \( c \)</th></tr>
+<tr><th class="left">type 1 joue \( a \)</th><td>\( (a;a) \)</td><td>\( (a;b) \)</td><td>\( (a;c) \)</td></tr>
+<tr><th class="left">type 1 joue \( b \)</th><td>\( (b;a) \)</td><td>\( (b;b) \)</td><td>\( (b;c) \)</td></tr>
+<tr><th class="left">type 1 joue \( c \)</th><td>\( (c;a) \)</td><td>\( (c;b) \)</td><td>\( (c;c) \)</td></tr>
+</table>
+<p>
+  Trois lignes de trois cases : neuf cases, neuf stratégies. Le tableau <em>est</em> la
+  justification — il montre qu'on n'en a ni oublié ni inventé.
+</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 220" width="100%" style="max-width:12cm" role="img"
+     aria-label="Une fiche à deux lignes, une par type, chacune à remplir avec l'une des trois actions possibles, ce qui donne trois fois trois égale neuf stratégies">
+  <rect x="40" y="40" width="180" height="46" fill="#eef2ff" stroke="#4338ca" stroke-width="1.6"/>
+  <text x="52" y="68" font-size="12.5">si je suis de type 1 →</text>
+  <rect x="200" y="48" width="30" height="30" fill="#ffffff" stroke="#4338ca" stroke-width="1.4"/>
+  <text x="215" y="69" font-size="13" text-anchor="middle" font-weight="bold">?</text>
+  <rect x="40" y="100" width="180" height="46" fill="#eef2ff" stroke="#4338ca" stroke-width="1.6"/>
+  <text x="52" y="128" font-size="12.5">si je suis de type 2 →</text>
+  <rect x="200" y="108" width="30" height="30" fill="#ffffff" stroke="#4338ca" stroke-width="1.4"/>
+  <text x="215" y="129" font-size="13" text-anchor="middle" font-weight="bold">?</text>
+  <text x="266" y="56" font-size="12">3 possibilités</text>
+  <text x="266" y="72" font-size="12">(a, b ou c)</text>
+  <text x="266" y="116" font-size="12">3 possibilités</text>
+  <text x="266" y="132" font-size="12">(a, b ou c)</text>
+  <line x1="240" y1="63" x2="260" y2="63" stroke="#4338ca" stroke-width="1.4"/>
+  <line x1="240" y1="123" x2="260" y2="123" stroke="#4338ca" stroke-width="1.4"/>
+  <text x="235" y="186" font-size="13.5" text-anchor="middle" font-weight="bold">3 × 3 = 3² = 9 stratégies</text>
+  <text x="235" y="206" font-size="11.5" text-anchor="middle">une par façon de remplir les deux cases</text>
+</svg>
+<figcaption>
+  Figure — Une stratégie bayésienne est un formulaire à remplir : une ligne par type, une action
+  par ligne. Le nombre de stratégies est le produit des possibilités de chaque ligne, jamais leur
+  somme.
+</figcaption>
+</figure>
+
+<div class="box box-def">
+<div class="box-title">La règle générale à retenir</div>
+<p>
+  Un joueur ayant \( k \) types possibles et \( n \) actions à sa disposition possède
+</p>
+<p>\[ n^k \quad \text{stratégies.} \]</p>
+<p>
+  Attention à l'ordre : le nombre d'<strong>actions</strong> est la base (en bas), le nombre de
+  <strong>types</strong> est l'exposant (en haut). Ici \( n = 3 \) et \( k = 2 \), donc
+  \( 3^2 = 9 \) — et non \( 2^3 = 8 \).
+</p>
+<p>
+  C'est exactement la même règle que pour les jeux séquentiels du chapitre 9, en remplaçant
+  « nœuds de décision » par « types ». Dans les deux cas, l'idée est la même : une stratégie
+  couvre <em>toutes</em> les situations où le joueur pourrait avoir à décider.
+</p>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 5.3</div>
+<p>
+  Le <strong>type</strong> est la caractéristique privée du joueur, connue de lui seul. Une
+  <strong>stratégie</strong> est une règle qui associe une action à chacun de ses types. Avec
+  2 types et 3 actions, il possède
+</p>
+<p>\[ 3^2 = 9 \ \text{ stratégies.} \]</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 5.3</div>
+<p>
+  « Le <strong>type</strong> d'un joueur est sa caractéristique privée (coût, préférences,
+  qualité…), qui influence ses gains et qu'il est seul à connaître ; les autres joueurs ne
+  disposent que de croyances, c'est-à-dire d'une probabilité sur chaque type possible.<br>
+  Une <strong>stratégie</strong> dans un jeu bayésien n'est pas une action mais une
+  <em>règle complète</em> qui associe une action à chacun des types du joueur : « si je suis de
+  type 1, je joue telle action ; si je suis de type 2, telle autre ». Elle doit couvrir tous les
+  types, car c'est ce qui permet à l'adversaire, qui ignore le type, de calculer son gain
+  espéré.<br>
+  <strong>Comptage</strong> : pour chacun des 2 types, il faut choisir indépendamment l'une des
+  3 actions, donc \( 3 \times 3 = 3^2 = \mathbf{9} \) stratégies. Plus généralement, avec
+  \( n \) actions et \( k \) types, on en compte \( n^k \). »
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 5.3</div>
+<ul>
+  <li><strong>Répondre 3.</strong> C'est le nombre d'<em>actions</em>, pas de stratégies. La
+      confusion action / stratégie est l'erreur numéro un de tout le cours.</li>
+  <li><strong>Répondre \( 2^3 = 8 \).</strong> L'exposant est le nombre de <em>types</em>, la base
+      le nombre d'<em>actions</em>. Retiens la phrase : « une action à choisir <em>pour chaque</em>
+      type » — ce qui suit « pour chaque » est toujours l'exposant.</li>
+  <li><strong>Additionner (3 + 3 = 6).</strong> Les deux lignes du formulaire se combinent, elles
+      ne s'ajoutent pas.</li>
+  <li><strong>Donner 9 sans justification.</strong> L'énoncé écrit « Justifiez » : la phrase
+      « pour chacun des 2 types, 3 choix indépendants » est obligatoire, et le tableau des neuf
+      la rend imparable.</li>
+  <li><strong>Définir le type comme « le rôle du joueur »</strong> (joueur 1 / joueur 2). Non :
+      c'est une information <em>privée</em> sur ses gains, pas sa place dans le jeu.</li>
+</ul>
+</div>
+
+<hr class="soft">
+
+<h2>Récapitulatif : toute la Question 5 sur une page</h2>
+
+<table class="compare">
+<tr><th>Q</th><th class="left">Le mot-clé attendu</th><th class="left">Ce qui rapporte les points</th></tr>
+<tr>
+  <td>5.1<br>(10 pts)</td>
+  <td class="left">l'<strong>effet de dotation</strong></td>
+  <td class="left">insister sur le <em>tirage au sort</em> : il garantit que les deux groupes ont les mêmes goûts, donc la théorie rationnelle prédit DAA = DAP</td>
+</tr>
+<tr>
+  <td>5.2<br>(10 pts)</td>
+  <td class="left">le <strong>commitment device</strong></td>
+  <td class="left">expliquer que si \( \beta = 1 \), le « moi futur » veut déjà ce que veut le « moi présent » : se restreindre n'a aucune valeur, donc DAP nulle</td>
+</tr>
+<tr>
+  <td>5.3<br>(10 pts)</td>
+  <td class="left"><strong>type</strong>, <strong>règle par type</strong>, \( 3^2 = 9 \)</td>
+  <td class="left">justifier le comptage (« pour chacun des 2 types, 3 choix indépendants »)</td>
+</tr>
+</table>
+
+<div class="box box-methode">
+<div class="box-title">Méthode — traiter une question de concepts en trois minutes</div>
+<ol>
+  <li><strong>Définis</strong> le terme demandé, en une phrase précise, avec le vocabulaire du
+      cours.</li>
+  <li><strong>Applique</strong> la définition aux données concrètes de l'énoncé (les chiffres, le
+      dispositif décrit). C'est l'étape que la plupart des copies sautent, et c'est là que se
+      trouvent la moitié des points.</li>
+  <li><strong>Conclus</strong> par une phrase qui répond littéralement à la question posée
+      (« il s'agit donc de l'effet de dotation », « il n'est donc jamais prêt à payer », « il
+      possède donc 9 stratégies »).</li>
+</ol>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Checklist avant de tourner la page</div>
+<ol>
+  <li>Ai-je <em>nommé</em> le biais ou le concept, avec son nom exact du cours ?</li>
+  <li>Ai-je expliqué en quoi l'observation <em>dévie</em> de la prédiction rationnelle, en disant
+      ce que cette prédiction est ?</li>
+  <li>Ai-je utilisé les chiffres de l'énoncé (9 € et 4 €) plutôt que de rester abstrait ?</li>
+  <li>Pour le commitment device : ai-je donné un exemple concret <em>et</em> traité le cas
+      \( \beta = 1 \) ?</li>
+  <li>Pour le comptage : ai-je écrit \( 3^2 = 9 \) <em>et</em> justifié le produit ?</li>
+</ol>
+</div>
+</section>

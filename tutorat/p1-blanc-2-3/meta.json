@@ -1,0 +1,134 @@
+{
+  "eyebrow": "Cours particulier — volume 2, suite du document sur l'examen n° 1",
+  "title": "Examens blancs n° 2 et n° 3, expliqués de A à Z",
+  "subtitle": "La suite directe du volume 1 : tout ce qui est nouveau, réexpliqué depuis zéro",
+  "code": "ECGEB366",
+  "project": "Projet : stratégies et décisions économiques",
+  "part": "Partie 1 — Théorie de la décision et Théorie des jeux",
+  "footnote": "Volume 2 du document d'accompagnement (non officiel). Il prolonge le volume 1 consacré à l'examen blanc n° 1 : la numérotation des chapitres continue, et tout concept déjà traité dans le volume 1 est simplement rappelé — tout concept nouveau est, lui, entièrement construit depuis le début.",
+  "chapters": [
+    {
+      "file": "06-boite-a-outils-2.html",
+      "title": "Chapitre 6 — La nouvelle boîte à outils : les outils qui n'étaient pas dans le volume 1",
+      "sections": [
+        "Ce que tu sais déjà (récapitulatif du volume 1)",
+        "Deux nouvelles dérivées : la racine carrée et le logarithme",
+        "Maximiser sous contrainte : la méthode du Lagrangien",
+        "Le temps : actualisation, facteur d'escompte et biais du présent",
+        "Lire un arbre de jeu (forme extensive) et repérer les sous-jeux",
+        "Types, croyances et probabilités : le vocabulaire bayésien",
+        "La statique comparative : « et si un paramètre augmente ? »"
+      ]
+    },
+    {
+      "file": "07-e2-question-1.html",
+      "title": "Chapitre 7 — Examen n° 2, Question 1 : la salle d'escalade et le self-contrôle (50 pts)",
+      "sections": [
+        "1.1–1.2 Le nombre de séances souhaité, avec et sans abonnement",
+        "1.3 Le grimpeur naïf prend-il l'abonnement ?",
+        "1.4 Ce qu'il fait réellement en période 1",
+        "1.5 Le grimpeur sophistiqué",
+        "1.6 Pourquoi payer plus cher : le commitment device"
+      ]
+    },
+    {
+      "file": "08-e2-question-2.html",
+      "title": "Chapitre 8 — Examen n° 2, Question 2 : combien investir dans un projet risqué (40 pts)",
+      "sections": [
+        "2.1 Les deux scénarios et l'utilité espérée",
+        "2.2 Le montant optimal investi",
+        "2.3 Utilité à l'optimum et équivalent certain",
+        "2.4 Et si elle était plus averse au risque ?"
+      ]
+    },
+    {
+      "file": "09-e2-question-3.html",
+      "title": "Chapitre 9 — Examen n° 2, Question 3 : le jeu séquentiel à trois joueurs (50 pts)",
+      "sections": [
+        "3.1–3.2 Ce qu'est une stratégie dans un jeu séquentiel",
+        "3.3 L'induction à rebours et l'ENPS",
+        "3.4 Le déroulement effectif du jeu",
+        "3.5 Un équilibre de Nash non parfait : la menace non crédible"
+      ]
+    },
+    {
+      "file": "10-e2-question-4.html",
+      "title": "Chapitre 10 — Examen n° 2, Question 4 : les stations-service et la collusion répétée (30 pts)",
+      "sections": [
+        "4.1 L'unique équilibre du jeu joué une fois",
+        "4.2 La condition de soutien de la collusion",
+        "4.3 Quand la détection est retardée"
+      ]
+    },
+    {
+      "file": "11-e2-question-5.html",
+      "title": "Chapitre 11 — Examen n° 2, Question 5 : trois questions de concepts (30 pts)",
+      "sections": [
+        "5.1 Les mugs de la brocante : l'effet de dotation",
+        "5.2 Le commitment device et pourquoi un rationnel n'en veut pas",
+        "5.3 Type et stratégie dans un jeu bayésien : le comptage"
+      ]
+    },
+    {
+      "file": "12-e3-question-1.html",
+      "title": "Chapitre 12 — Examen n° 3, Question 1 : offre de travail, taxe et redistribution (50 pts)",
+      "sections": [
+        "1.1 Écrire une contrainte de budget",
+        "1.2 Le Lagrangien et le temps de travail optimal",
+        "1.3 Le revenu net de chaque type",
+        "1.4 L'effet d'une hausse de la taxe",
+        "1.5 Comparer deux allocations au sens de Pareto"
+      ]
+    },
+    {
+      "file": "13-e3-question-2.html",
+      "title": "Chapitre 13 — Examen n° 3, Question 2 : accepter ou refuser un pari (40 pts)",
+      "sections": [
+        "2.1 Démontrer l'aversion au risque",
+        "2.2 La valeur monétaire attendue du pari",
+        "2.3 Accepte-t-il le pari ?",
+        "2.4 Équivalent certain et prime de risque",
+        "2.5 Le cadrage étroit"
+      ]
+    },
+    {
+      "file": "14-e3-question-3.html",
+      "title": "Chapitre 14 — Examen n° 3, Question 3 : Léa, Maxime et le jeu bayésien (50 pts)",
+      "sections": [
+        "3.1 Ce qu'est une stratégie quand on a un type",
+        "3.2 La meilleure réponse de chaque type",
+        "3.3 L'équilibre de Nash bayésien pour p = 0,8",
+        "3.4 Le seuil de croyance qui fait basculer l'équilibre"
+      ]
+    },
+    {
+      "file": "15-e3-question-4.html",
+      "title": "Chapitre 15 — Examen n° 3, Question 4 : le contrebandier et le douanier (30 pts)",
+      "sections": [
+        "4.1 Aucun équilibre en stratégies pures",
+        "4.2 L'équilibre en stratégies mixtes",
+        "4.3 Les payoffs espérés",
+        "4.4 Quand la marchandise vaut plus cher : le résultat surprenant"
+      ]
+    },
+    {
+      "file": "16-e3-question-5.html",
+      "title": "Chapitre 16 — Examen n° 3, Question 5 : le duopole de Stackelberg (30 pts)",
+      "sections": [
+        "5.1 Résoudre le modèle leader–follower",
+        "5.2 Le jeu réduit en forme normale et ses équilibres de Nash",
+        "5.3 Pourquoi Stackelberg est parfait en sous-jeux et l'autre non"
+      ]
+    },
+    {
+      "file": "99-lexique-2.html",
+      "title": "Lexique & formulaire du volume 2 — les nouveaux termes et les nouvelles formules",
+      "sections": [
+        "Lexique alphabétique des nouvelles notions",
+        "Formulaire par thème",
+        "Les réflexes de méthode ajoutés par ces deux examens",
+        "Plan de révision pour les derniers jours"
+      ]
+    }
+  ]
+}

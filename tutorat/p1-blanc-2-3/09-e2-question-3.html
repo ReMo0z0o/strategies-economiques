@@ -1,0 +1,1706 @@
+<section class="chapter">
+<div class="chapter-tag">Chapitre 9 — Examen n° 2, Question 3 · 50 points</div>
+<h1>Question 3 : le jeu séquentiel d'implantation — forme extensive, sous-jeux, induction à rebours et menaces non crédibles</h1>
+<p class="chapter-intro">C'est la plus grosse question de l'examen n° 2 : 50 points sur 200, un quart de la note. Et c'est surtout la première fois que tu rencontres un jeu où les joueurs jouent <em>l'un après l'autre</em>, et où chacun <em>voit</em> ce que le précédent a fait. Tout le vocabulaire change : plus de tableau, mais un arbre ; plus de « choix », mais des « plans complets » ; plus de simple équilibre de Nash, mais un équilibre <em>parfait en sous-jeux</em>. On construit tout depuis zéro, en redessinant l'arbre à chaque étape.</p>
+
+<h2>0. La carte du chapitre : où on va, et pourquoi</h2>
+
+<p>Lis cette page-ci avant tout le reste. Elle te dit ce que la question demande, dans quel ordre on va s'y prendre, et à quoi ressemblent les réponses. Si tu te perds plus loin, reviens ici.</p>
+
+<p>La question 3 raconte <strong>une seule histoire</strong> — une commune qui aménage une zone commerciale, deux enseignes d'ameublement qui décident d'y venir ou non — et te pose cinq questions dessus.</p>
+
+<table class="data">
+<tr><th>Sous-question</th><th>Ce qu'on te demande</th><th>Points</th></tr>
+<tr><td>3.1</td><td>Donner un exemple de stratégie pour l'enseigne B</td><td>6</td></tr>
+<tr><td>3.2</td><td>Donner l'ensemble (la liste complète) des stratégies de l'enseigne A</td><td>8</td></tr>
+<tr><td>3.3</td><td>Résoudre le jeu par induction à rebours et donner l'ENPS</td><td>20</td></tr>
+<tr><td>3.4</td><td>Dire ce qui se passe concrètement : quelle zone, qui investit, qui gagne quoi</td><td>6</td></tr>
+<tr><td>3.5</td><td>Donner un équilibre de Nash qui n'est <em>pas</em> parfait en sous-jeux, et dire pourquoi</td><td>10</td></tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi ces cinq questions ne sont en réalité qu'une seule idée</div>
+<p>Elles racontent la montée en puissance d'un seul concept : <strong>la stratégie</strong>.</p>
+<ul>
+<li>3.1 et 3.2 — « qu'est-ce qu'une stratégie quand on joue à son tour ? » On apprend qu'une stratégie n'est pas <em>un</em> choix, mais un <strong>plan complet</strong> : une décision prévue d'avance à chaque endroit où l'on pourrait avoir à jouer.</li>
+<li>3.3 — « quel plan chaque joueur va-t-il adopter ? » On le trouve en partant de la fin du jeu et en remontant : c'est l'<strong>induction à rebours</strong>.</li>
+<li>3.4 — « et concrètement, qu'observe-t-on ? » On déroule le plan et on lit le résultat.</li>
+<li>3.5 — « existe-t-il d'autres plans stables, mais mensongers ? » Oui : ceux qui reposent sur une <strong>menace que personne ne mettrait jamais à exécution</strong>. Ils sont des équilibres de Nash, mais pas des ENPS.</li>
+</ul>
+<p>Une seule idée, cinq étages. Voilà tout le chapitre.</p>
+</div>
+
+<p>Voici, dès maintenant, les cinq réponses. Tu ne comprends probablement rien à ces mots pour l'instant — c'est normal, c'est même voulu. Reviens les relire à la fin du chapitre : elles te sembleront évidentes.</p>
+
+<div class="result">
+<div class="result-title">Les cinq réponses (à comprendre d'ici la fin du chapitre)</div>
+<ul>
+<li><strong>3.1</strong> — Une stratégie de B est un <strong>quadruplet</strong> : une action à chacun de ses 4 nœuds. Exemple : \( S_B = (\text{I},\ \text{I},\ \text{N},\ \text{I}) \). B possède \( 2^4 = 16 \) stratégies.</li>
+<li><strong>3.2</strong> — A joue à 2 nœuds, donc il a \( 2^2 = 4 \) stratégies : \( (\text{I},\text{I}) \), \( (\text{I},\text{N}) \), \( (\text{N},\text{I}) \), \( (\text{N},\text{N}) \).</li>
+<li><strong>3.3</strong> — L'ENPS est \( \bigl(\text{E}\;;\ (\text{I},\text{I})\;;\ (\text{I},\text{I},\text{N},\text{I})\bigr) \).</li>
+<li><strong>3.4</strong> — La <strong>zone Est</strong> est aménagée, <strong>les deux enseignes investissent</strong>, les payoffs sont <strong>(8 ; 3 ; 3)</strong>.</li>
+<li><strong>3.5</strong> — Avec \( S_B = (\text{I},\text{I},\text{I},\text{I}) \), \( S_A = (\text{I},\text{N}) \) et \( S_C = \text{E} \), on a un équilibre de Nash qui n'est pas parfait : la menace de B d'investir après (O, I) lui coûterait \( -2 \) au lieu de \( 0 \). Elle n'est <strong>pas crédible</strong>.</li>
+</ul>
+</div>
+
+<hr class="soft">
+
+<h2>1. Le cours dont tu as besoin (partie I) : lire un jeu séquentiel</h2>
+
+<p>Cette section ne résout aucune sous-question. Elle construit le vocabulaire sans lequel l'énoncé est incompréhensible. Prends ton temps : tout le reste du chapitre s'appuie dessus.</p>
+
+<h3>1.1 Ce que tu sais déjà : quatre rappels express du volume 1</h3>
+
+<p>Le volume 1 a introduit la théorie des jeux avec des jeux <em>simultanés</em> (deux magasins de sport qui choisissent leur emplacement, un pirate et une responsable de la sécurité). Quatre notions de ce volume restent valables mot pour mot ici. On les rappelle en accéléré ; si l'une d'elles te paraît floue, retourne au chapitre 3 du volume 1.</p>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel express n° 1 — joueur, action, payoff</div>
+<p>Un <span class="term">joueur</span> est quelqu'un qui décide. Ici il y en a <strong>trois</strong> : la commune de Hombourg (notée C), l'enseigne A, l'enseigne B.</p>
+<p>Une <span class="term">action</span> est une option concrète : « aménager l'Est », « investir ». Le <span class="term">payoff</span> (mot anglais, prononcé « pé-off ») est ce que le joueur récolte à la fin — ici un nombre abstrait qui mesure sa satisfaction : profit pour les enseignes, recettes fiscales et emplois pour la commune.</p>
+<p>Règle non négociable : <strong>un joueur veut le payoff le plus GRAND</strong>. C'est ce qu'on appelle être <span class="term">rationnel</span>. Attention aux nombres négatifs : \( -2 \) est plus petit que \( 0 \), donc perdre 2 est pire que ne rien faire.</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel express n° 2 — profil et notation \( u_i \)</div>
+<p>Un <span class="term">profil de stratégies</span> est une combinaison « une stratégie par joueur ». Ici un profil s'écrit avec trois composantes, dans l'ordre \( (S_C\,;\ S_A\,;\ S_B) \).</p>
+<p>La notation \( u_i \) se lit « le payoff du joueur \( i \) ». \( u_B \) est donc le payoff de l'enseigne B. Le petit caractère en bas s'appelle un <strong>indice</strong> : il dit <em>de qui</em> on parle, jamais <em>combien</em>.</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel express n° 3 — meilleure réponse et équilibre de Nash</div>
+<p>Une <span class="term">meilleure réponse</span> est le choix qui te rapporte le plus <em>face à un comportement précis des autres</em> : « si je savais qu'ils font ça, voici ce que je ferais ».</p>
+<p>Un <span class="term">équilibre de Nash</span> (EN) est un profil où <strong>chacun joue une meilleure réponse aux autres</strong>. Formulation équivalente, et c'est celle qu'on utilisera tout le chapitre : <strong>aucun joueur n'a intérêt à changer seul sa stratégie</strong>. On dit aussi : personne ne regrette son plan une fois les autres révélés.</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel express n° 4 — dominance</div>
+<p>Une stratégie est <span class="term">strictement dominée</span> s'il en existe une autre, du même joueur, qui rapporte strictement plus <em>dans tous les cas de figure</em>. Un joueur rationnel ne la joue jamais. On s'en servira une fois dans ce chapitre, en passant : le concept reste utile, mais ce n'est plus l'outil principal.</p>
+</div>
+
+<p>Voilà pour l'ancien. Tout le reste du chapitre est <strong>nouveau</strong>.</p>
+
+<h3>1.2 Le mot qui change tout : « séquentiel »</h3>
+
+<p>L'énoncé commence par « Considérez le jeu <strong>séquentiel</strong> suivant ». Ce mot n'est pas décoratif : il change complètement la manière de représenter le jeu et de le résoudre.</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — jeu séquentiel</div>
+<p>Un jeu est <span class="term">séquentiel</span> quand les joueurs jouent <strong>l'un après l'autre</strong> et que celui qui joue plus tard <strong>observe</strong> ce que les précédents ont fait avant de décider.</p>
+<p>Le contraire, c'est le jeu <span class="term">simultané</span> du volume 1 : chacun décide <strong>sans connaître</strong> le choix de l'autre.</p>
+<p>Retiens la vraie différence : ce n'est pas une histoire de chronomètre, c'est une histoire d'<strong>information</strong>. Simultané = « je décide dans le noir ». Séquentiel = « je décide en voyant ».</p>
+</div>
+
+<p>Dans notre énoncé, la phrase décisive est : « <strong>Après avoir observé la décision de A</strong>, l'enseigne B décide à son tour ». Elle nous dit noir sur blanc que B voit ce que A a fait. Et la première phrase — « une fois la zone aménagée » — nous dit que A et B voient tous les deux la zone choisie par la commune.</p>
+
+<figure>
+<svg viewBox="0 0 460 190" width="100%" style="max-width:12.5cm" role="img" aria-label="Comparaison entre un jeu simultané, où un mur d'information sépare les joueurs, et un jeu séquentiel, où le second joueur observe le choix du premier avant de décider">
+  <rect x="6" y="26" width="216" height="150" fill="none" stroke="#111827" stroke-width="1.5"/>
+  <text x="114" y="18" font-size="12.5" text-anchor="middle" font-weight="bold">Jeu SIMULTANÉ (volume 1)</text>
+  <rect x="26" y="50" width="70" height="40" fill="none" stroke="#111827" stroke-width="1.3"/>
+  <text x="61" y="75" font-size="14" text-anchor="middle" font-weight="bold">A</text>
+  <rect x="132" y="50" width="70" height="40" fill="none" stroke="#111827" stroke-width="1.3"/>
+  <text x="167" y="75" font-size="14" text-anchor="middle" font-weight="bold">B</text>
+  <line x1="114" y1="40" x2="114" y2="100" stroke="#be123c" stroke-width="3" stroke-dasharray="7 5"/>
+  <text x="114" y="120" font-size="11.5" text-anchor="middle">mur d'information</text>
+  <text x="114" y="146" font-size="11.5" text-anchor="middle">chacun choisit</text>
+  <text x="114" y="162" font-size="11.5" text-anchor="middle">sans voir l'autre</text>
+  <rect x="238" y="26" width="216" height="150" fill="none" stroke="#111827" stroke-width="1.5"/>
+  <text x="346" y="18" font-size="12.5" text-anchor="middle" font-weight="bold">Jeu SÉQUENTIEL (ici)</text>
+  <rect x="258" y="50" width="70" height="40" fill="none" stroke="#111827" stroke-width="1.3"/>
+  <text x="293" y="75" font-size="14" text-anchor="middle" font-weight="bold">A</text>
+  <rect x="366" y="50" width="70" height="40" fill="none" stroke="#111827" stroke-width="1.3"/>
+  <text x="401" y="75" font-size="14" text-anchor="middle" font-weight="bold">B</text>
+  <line x1="328" y1="70" x2="360" y2="70" stroke="#111827" stroke-width="2.2"/>
+  <polygon points="366,70 356,65 356,75" fill="#111827"/>
+  <text x="346" y="120" font-size="11.5" text-anchor="middle">B observe le choix de A</text>
+  <text x="346" y="146" font-size="11.5" text-anchor="middle">puis décide</text>
+  <text x="346" y="162" font-size="11.5" text-anchor="middle">en connaissance de cause</text>
+</svg>
+<figcaption>Figure 1 — La seule différence entre les deux mondes tient à la flèche de droite : l'information circule. C'est elle qui interdit d'utiliser un tableau et oblige à dessiner un arbre.</figcaption>
+</figure>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi un tableau ne suffit plus</div>
+<p>Dans le volume 1, un tableau à double entrée suffisait : une ligne par choix du joueur 1, une colonne par choix du joueur 2. Pourquoi ne peut-on plus faire pareil ?</p>
+<p>Parce que le tableau ne sait pas dire <em>« B a fait ceci PARCE QU'il avait vu cela »</em>. Un tableau donne des choix bruts, sans chronologie ni information. Or ici, B ne fait pas un choix : il fait <strong>quatre choix conditionnels</strong> (« si je vois ceci, je fais cela »). Il faut donc un objet capable de représenter le temps et le regard : c'est l'<strong>arbre</strong>.</p>
+<p>Bonne nouvelle : on pourra <em>quand même</em> revenir à un tableau si on le souhaite — c'est ce qu'on appelle passer en forme normale — mais seulement après avoir compris ce qu'est une stratégie dans un arbre. C'est justement l'objet des questions 3.1 et 3.2.</p>
+</div>
+
+<h3>1.3 L'anatomie d'un arbre (forme extensive)</h3>
+
+<div class="box box-def">
+<div class="box-title">Définition — forme extensive</div>
+<p>La <span class="term">forme extensive</span> d'un jeu, c'est sa représentation sous forme d'<strong>arbre</strong>. Elle indique quatre choses : <em>qui</em> joue, <em>quand</em>, <em>quelles actions</em> il a à ce moment-là, et <em>ce que chacun gagne</em> à la fin de chaque déroulement possible.</p>
+<p>Par opposition, la <span class="term">forme normale</span> est la représentation en tableau du volume 1.</p>
+</div>
+
+<p>Un arbre se compose de cinq éléments, et cinq seulement. Voici un petit arbre d'entraînement — plus simple que le nôtre — pour les nommer. Les numéros renvoient à la liste qui suit.</p>
+
+<figure>
+<svg viewBox="0 0 470 250" width="100%" style="max-width:12.5cm" role="img" aria-label="Petit arbre d'entraînement à deux étages, avec cinq repères numérotés désignant la racine, une branche, un nœud de décision, un nœud terminal et le vecteur de payoffs">
+  <g stroke="#111827" stroke-width="1.5" fill="none">
+    <line x1="58" y1="128" x2="200" y2="62"/>
+    <line x1="58" y1="128" x2="200" y2="194"/>
+    <line x1="200" y1="62" x2="316" y2="36"/>
+    <line x1="200" y1="62" x2="316" y2="88"/>
+    <line x1="200" y1="194" x2="316" y2="168"/>
+    <line x1="200" y1="194" x2="316" y2="220"/>
+  </g>
+  <g fill="#111827">
+    <circle cx="58" cy="128" r="4.5"/>
+    <circle cx="200" cy="62" r="4.5"/>
+    <circle cx="200" cy="194" r="4.5"/>
+  </g>
+  <g fill="none" stroke="#111827" stroke-width="1.4">
+    <circle cx="316" cy="36" r="3.4"/>
+    <circle cx="316" cy="88" r="3.4"/>
+    <circle cx="316" cy="168" r="3.4"/>
+    <circle cx="316" cy="220" r="3.4"/>
+  </g>
+  <g font-size="12.5" font-weight="bold">
+    <text x="58" y="112" text-anchor="middle">Joueur 1</text>
+    <text x="210" y="52" text-anchor="start">Joueur 2</text>
+    <text x="210" y="216" text-anchor="start">Joueur 2</text>
+  </g>
+  <g font-size="13" font-style="italic" text-anchor="middle">
+    <text x="118" y="86">haut</text>
+    <text x="118" y="176">bas</text>
+    <text x="262" y="40">g</text>
+    <text x="262" y="88">d</text>
+    <text x="262" y="172">g</text>
+    <text x="262" y="220">d</text>
+  </g>
+  <g font-size="12.5">
+    <text x="326" y="40">(4 ; 1)</text>
+    <text x="326" y="92">(2 ; 3)</text>
+    <text x="326" y="172">(0 ; 5)</text>
+    <text x="326" y="224">(1 ; 1)</text>
+  </g>
+  <g stroke="#4338ca" stroke-width="1.1" fill="none">
+    <line x1="32" y1="146" x2="50" y2="134"/>
+    <line x1="122" y1="118" x2="132" y2="106"/>
+    <line x1="168" y1="40" x2="190" y2="55"/>
+    <line x1="342" y1="118" x2="322" y2="97"/>
+    <line x1="404" y1="66" x2="378" y2="86"/>
+  </g>
+  <g fill="#4338ca">
+    <circle cx="26" cy="152" r="9"/>
+    <circle cx="118" cy="112" r="9"/>
+    <circle cx="162" cy="34" r="9"/>
+    <circle cx="346" cy="124" r="9"/>
+    <circle cx="410" cy="60" r="9"/>
+  </g>
+  <g font-size="11.5" font-weight="bold" text-anchor="middle">
+    <text x="26" y="156" style="fill:#ffffff">1</text>
+    <text x="118" y="116" style="fill:#ffffff">2</text>
+    <text x="162" y="38" style="fill:#ffffff">3</text>
+    <text x="346" y="128" style="fill:#ffffff">4</text>
+    <text x="410" y="64" style="fill:#ffffff">5</text>
+  </g>
+</svg>
+<figcaption>Figure 2 — Les cinq pièces d'un arbre, sur un exemple d'entraînement à deux joueurs et deux étages. L'arbre de l'examen aura la même grammaire, avec un étage de plus.</figcaption>
+</figure>
+
+<dl class="lexique">
+<dt>1 · La racine</dt>
+<dd>Le point de départ, tout à gauche. C'est le nœud où le jeu <strong>commence</strong>, et le joueur écrit à côté est celui qui joue <strong>en premier</strong>. Dans notre examen, la racine appartient à la commune C.</dd>
+<dt>2 · Une branche</dt>
+<dd>Un trait qui part d'un nœud. Chaque branche représente <strong>une action possible</strong> à cet endroit, et porte son nom (« haut », « I », « E »…). Deux actions possibles ⇒ deux branches.</dd>
+<dt>3 · Un nœud de décision</dt>
+<dd>Un point noir plein où quelqu'un doit choisir. On écrit à côté <strong>le nom du joueur qui décide là</strong>. Attention : un même joueur peut posséder <em>plusieurs</em> nœuds de décision — c'est le cas du Joueur 2 ci-dessus (deux nœuds), et ce sera le cas de A (deux nœuds) et de B (quatre nœuds) dans l'examen. Ce point est la clé de toute la question 3.</dd>
+<dt>4 · Un nœud terminal</dt>
+<dd>Un bout de branche où plus personne ne joue : le jeu est fini. On le dessine ici par un petit cercle vide. Un arbre a autant de nœuds terminaux que de déroulements possibles.</dd>
+<dt>5 · Le vecteur de payoffs</dt>
+<dd>Les nombres écrits au bout de chaque branche terminale : ce que <strong>chaque</strong> joueur récolte si le jeu se termine là. Un nombre par joueur, <strong>toujours dans le même ordre</strong> — l'énoncé précise lequel, et cet ordre est vital.</dd>
+</dl>
+
+<div class="box box-def">
+<div class="box-title">Définition — un chemin</div>
+<p>Un <span class="term">chemin</span> (on dit aussi une <em>histoire</em>, ou un <em>déroulement</em>) est une suite de branches partant de la racine et allant jusqu'à un nœud terminal. Dans l'arbre ci-dessus, « haut puis g » est un chemin, et il aboutit à \( (4\,;\,1) \).</p>
+<p>Un chemin décrit ce qui <strong>s'est réellement passé</strong>. Retiens bien cette phrase : à la question 3.4, on te demandera précisément un chemin, et pas des stratégies.</p>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Réflexe de méthode — comment on lit un arbre, dans l'ordre</div>
+<ol>
+<li>Repère la <strong>racine</strong> et note qui y joue.</li>
+<li>Descends étage par étage : à chaque étage, note <strong>qui</strong> joue et <strong>combien de nœuds</strong> il possède à cet étage.</li>
+<li>Compte les <strong>nœuds terminaux</strong> : c'est le nombre de déroulements possibles.</li>
+<li>Relis la légende des payoffs : <strong>dans quel ordre</strong> les joueurs y apparaissent-ils ?</li>
+<li>Traduis deux ou trois chemins en phrases françaises, pour vérifier que tu lis correctement.</li>
+</ol>
+<p>Ces cinq gestes prennent deux minutes en examen et évitent 90 pour cent des erreurs de lecture.</p>
+</div>
+
+<h3>1.4 Notre arbre à nous : trois étages, huit fins possibles</h3>
+
+<p>Appliquons la méthode à l'arbre de l'examen (tu le verras en grand dans l'énoncé de la question 3.1, page suivante).</p>
+
+<table class="data">
+<tr><th>Étage</th><th>Qui joue</th><th>Combien de nœuds</th><th>Ses actions</th></tr>
+<tr><td>1<sup>er</sup></td><td>la commune C</td><td>1 (la racine)</td><td>E = aménager la zone Est · O = aménager la zone Ouest</td></tr>
+<tr><td>2<sup>e</sup></td><td>l'enseigne A</td><td>2</td><td>I = investir · N = ne pas investir</td></tr>
+<tr><td>3<sup>e</sup></td><td>l'enseigne B</td><td>4</td><td>I = investir · N = ne pas investir</td></tr>
+<tr><td>fin</td><td>—</td><td>8 nœuds terminaux</td><td>on lit les payoffs (C ; A ; B)</td></tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi 1, puis 2, puis 4 nœuds ? La règle du doublement</div>
+<p>Regarde comment le nombre de nœuds évolue : 1, puis 2, puis 4, puis 8 fins. À chaque étage, il <strong>double</strong>. Ce n'est pas un hasard : chaque nœud de l'étage précédent a 2 branches, donc engendre 2 nœuds à l'étage suivant.</p>
+<p>Règle générale : si chaque joueur a \( n \) actions et qu'il y a \( t \) étages, l'arbre a \( n^t \) nœuds terminaux. Ici \( 2^3 = 8 \). Tu peux t'en servir pour vérifier que tu n'as oublié aucune branche en recopiant l'arbre.</p>
+<p><strong>C'est aussi la raison pour laquelle A a 2 nœuds et B en a 4</strong> : A joue au 2<sup>e</sup> étage (donc \( 2^1 = 2 \) situations possibles avant lui) et B au 3<sup>e</sup> (donc \( 2^2 = 4 \) situations possibles avant lui). Retiens ce comptage : il porte 14 des 50 points de la question.</p>
+</div>
+
+<h3>1.5 L'ordre des payoffs : (C ; A ; B), et jamais autrement</h3>
+
+<p>Sous l'arbre, l'énoncé écrit : « Les payoffs se lisent (C ; A ; B). » C'est la phrase la plus importante de tout l'énoncé, et c'est celle que les étudiants sautent.</p>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 1 — lire les payoffs dans le mauvais ordre</div>
+<p>Le triplet \( (8\,;\,3\,;\,3) \) se lit : <strong>8 pour la commune, 3 pour l'enseigne A, 3 pour l'enseigne B</strong>. Le premier nombre est celui du joueur qui joue en premier ; le deuxième, celui du deuxième joueur ; le troisième, celui du troisième.</p>
+<p>Conséquence pratique, à graver dans ta mémoire pour la question 3.3 :</p>
+<ul>
+<li>quand tu raisonnes sur <strong>B</strong>, tu ne regardes que le <strong>troisième</strong> nombre ;</li>
+<li>quand tu raisonnes sur <strong>A</strong>, tu ne regardes que le <strong>deuxième</strong> ;</li>
+<li>quand tu raisonnes sur <strong>C</strong>, tu ne regardes que le <strong>premier</strong>.</li>
+</ul>
+<p>Une inversion, et toute la question 3.3 devient fausse — 20 points partis. Au brouillon, entoure d'une couleur les troisièmes nombres avant même de commencer.</p>
+</div>
+
+<p>Traduisons maintenant les huit fins possibles en phrases françaises. Fais toujours ce travail en examen : il prend trois minutes et transforme une grille de chiffres en histoire compréhensible.</p>
+
+<table class="data">
+<tr><th>Chemin</th><th>Ce qui se passe concrètement</th><th>(C ; A ; B)</th></tr>
+<tr><td>E, I, I</td><td>Zone Est aménagée, les deux enseignes s'y installent : la zone est grande, il y a de la place pour deux, la commune est ravie</td><td>(8 ; 3 ; 3)</td></tr>
+<tr><td>E, I, N</td><td>Zone Est, A s'installe seul : A fait une très bonne affaire (pas de concurrent), la commune un peu moins</td><td>(5 ; 7 ; 0)</td></tr>
+<tr><td>E, N, I</td><td>Zone Est, A renonce, B s'installe seul : symétrique du cas précédent, mais B est un peu moins performant</td><td>(4 ; 0 ; 6)</td></tr>
+<tr><td>E, N, N</td><td>Zone Est aménagée pour rien : personne ne vient, tout le monde à zéro</td><td>(0 ; 0 ; 0)</td></tr>
+<tr><td>O, I, I</td><td>Zone Ouest, les deux s'installent : la zone est trop petite pour deux, les deux enseignes <strong>perdent</strong> de l'argent</td><td>(6 ; −2 ; −2)</td></tr>
+<tr><td>O, I, N</td><td>Zone Ouest, A seul : A gagne bien, la commune peu (petite zone)</td><td>(3 ; 5 ; 0)</td></tr>
+<tr><td>O, N, I</td><td>Zone Ouest, B seul : B gagne 4</td><td>(2 ; 0 ; 4)</td></tr>
+<tr><td>O, N, N</td><td>Zone Ouest aménagée pour rien : la commune sauve 1 (elle a moins dépensé qu'à l'Est)</td><td>(1 ; 0 ; 0)</td></tr>
+</table>
+
+<div class="box box-exemple">
+<div class="box-title">L'histoire derrière les chiffres — trois choses à remarquer</div>
+<p><strong>a) L'enseigne qui ne s'installe pas gagne toujours 0.</strong> Regarde : dès qu'une enseigne joue N, son payoff vaut 0. C'est logique — elle ne dépense rien, elle n'encaisse rien. Ce 0 sera notre point de comparaison permanent à la question 3.3.</p>
+<p><strong>b) Le seul \( -2 \) de tout l'arbre est au chemin (O, I, I).</strong> Deux magasins d'ameublement dans une petite zone se cannibalisent : les ventes ne couvrent même pas les frais. C'est ce \( -2 \) qui fait tout l'intérêt de la question 3.5, alors repère-le tout de suite.</p>
+<p><strong>c) La commune préfère toujours l'Est.</strong> Compare les payoffs de C ligne à ligne : 8 contre 6, 5 contre 3, 4 contre 2, 0 contre 1. L'Est bat l'Ouest partout… sauf dans le dernier cas, où personne ne vient (0 contre 1). Ce détail est amusant, mais il ne suffira pas à conclure : il faudra quand même faire l'induction à rebours proprement.</p>
+</div>
+
+
+<hr class="soft">
+
+<h2>2. Question 3.1 — un exemple de stratégie pour l'enseigne B (6 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.1 (6 points)</div>
+<p>Considérez le jeu séquentiel suivant. La commune de Hombourg souhaite attirer des enseignes d'ameublement sur son territoire. Elle doit choisir laquelle de ses deux zones commerciales aménager : la <strong>zone Est (E)</strong>, vaste et située le long de la nationale, ou la <strong>zone Ouest (O)</strong>, plus petite. Une fois la zone aménagée, l'enseigne A décide d'y <strong>investir (I)</strong> — c'est-à-dire d'y construire un magasin — ou de <strong>ne pas investir (N)</strong>. Après avoir observé la décision de A, l'enseigne B décide à son tour d'investir (I) ou non (N). Il y a donc trois joueurs : la commune (C), l'enseigne A et l'enseigne B. La représentation en forme extensive du jeu est donnée ci-dessous.</p>
+<p><strong>3.1) Donnez un exemple de stratégie pour l'enseigne B. (6 points)</strong></p>
+</div>
+
+<figure>
+<svg viewBox="0 0 520 640" width="100%" style="max-width:13cm" role="img" aria-label="Arbre du jeu d'implantation, dessiné de gauche à droite : la commune choisit E ou O, puis l'enseigne A choisit I ou N à chacun des deux nœuds, puis l'enseigne B choisit I ou N à chacun des quatre nœuds, et l'on lit les huit triplets de payoffs">
+  <g font-size="11">
+    <text x="4" y="14" style="fill:#4b5563">1. la commune C</text>
+    <text x="124" y="14" style="fill:#4b5563">2. l'enseigne A</text>
+    <text x="246" y="14" style="fill:#4b5563">3. l'enseigne B</text>
+    <text x="404" y="14" style="fill:#4b5563">payoffs (C ; A ; B)</text>
+  </g>
+  <g stroke="#111827" stroke-width="1.5" fill="none">
+    <line x1="35" y1="332" x2="155" y2="172"/>
+    <line x1="35" y1="332" x2="155" y2="492"/>
+    <line x1="155" y1="172" x2="275" y2="92"/>
+    <line x1="155" y1="172" x2="275" y2="252"/>
+    <line x1="155" y1="492" x2="275" y2="412"/>
+    <line x1="155" y1="492" x2="275" y2="572"/>
+    <line x1="275" y1="92" x2="390" y2="52"/>
+    <line x1="275" y1="92" x2="390" y2="132"/>
+    <line x1="275" y1="252" x2="390" y2="212"/>
+    <line x1="275" y1="252" x2="390" y2="292"/>
+    <line x1="275" y1="412" x2="390" y2="372"/>
+    <line x1="275" y1="412" x2="390" y2="452"/>
+    <line x1="275" y1="572" x2="390" y2="532"/>
+    <line x1="275" y1="572" x2="390" y2="612"/>
+  </g>
+  <g fill="#111827">
+    <circle cx="35" cy="332" r="4.5"/>
+    <circle cx="155" cy="172" r="4.5"/>
+    <circle cx="155" cy="492" r="4.5"/>
+    <circle cx="275" cy="92" r="4.5"/>
+    <circle cx="275" cy="252" r="4.5"/>
+    <circle cx="275" cy="412" r="4.5"/>
+    <circle cx="275" cy="572" r="4.5"/>
+  </g>
+  <g fill="#ffffff" stroke="#111827" stroke-width="1.3">
+    <circle cx="390" cy="52" r="3.4"/>
+    <circle cx="390" cy="132" r="3.4"/>
+    <circle cx="390" cy="212" r="3.4"/>
+    <circle cx="390" cy="292" r="3.4"/>
+    <circle cx="390" cy="372" r="3.4"/>
+    <circle cx="390" cy="452" r="3.4"/>
+    <circle cx="390" cy="532" r="3.4"/>
+    <circle cx="390" cy="612" r="3.4"/>
+  </g>
+  <g font-size="13.5" font-weight="bold" text-anchor="end">
+    <text x="26" y="336">C</text>
+    <text x="147" y="164">A</text>
+    <text x="147" y="504">A</text>
+    <text x="267" y="84">B</text>
+    <text x="267" y="264">B</text>
+    <text x="267" y="404">B</text>
+    <text x="267" y="584">B</text>
+  </g>
+  <g font-size="12.5" font-style="italic" text-anchor="middle">
+    <text x="92" y="236">E</text>
+    <text x="92" y="430">O</text>
+    <text x="213" y="122">I</text>
+    <text x="213" y="226">N</text>
+    <text x="213" y="442">I</text>
+    <text x="213" y="546">N</text>
+    <text x="330" y="64">I</text>
+    <text x="330" y="124">N</text>
+    <text x="330" y="224">I</text>
+    <text x="330" y="284">N</text>
+    <text x="330" y="384">I</text>
+    <text x="330" y="444">N</text>
+    <text x="330" y="544">I</text>
+    <text x="330" y="604">N</text>
+  </g>
+  <g font-size="12">
+    <text x="404" y="56.5">(8 ; 3 ; 3)</text>
+    <text x="404" y="136.5">(5 ; 7 ; 0)</text>
+    <text x="404" y="216.5">(4 ; 0 ; 6)</text>
+    <text x="404" y="296.5">(0 ; 0 ; 0)</text>
+    <text x="404" y="376.5">(6 ; −2 ; −2)</text>
+    <text x="404" y="456.5">(3 ; 5 ; 0)</text>
+    <text x="404" y="536.5">(2 ; 0 ; 4)</text>
+    <text x="404" y="616.5">(1 ; 0 ; 0)</text>
+  </g>
+</svg>
+<figcaption>Figure 3 — L'arbre du jeu, redessiné de la gauche vers la droite pour tenir sur une page. Il se lit exactement comme celui de l'énoncé : on part du point de gauche (la racine), on suit une branche par étage, et on lit le triplet de payoffs au bout. Le temps s'écoule de gauche à droite. Points noirs pleins = nœuds de décision ; petits cercles blancs = nœuds terminaux.</figcaption>
+</figure>
+
+<div class="box box-methode">
+<div class="box-title">Deux orientations, un seul et même arbre</div>
+<p>L'énoncé dessine l'arbre <strong>de haut en bas</strong> (la racine en haut, les payoffs en bas). Ici on le dessine <strong>de gauche à droite</strong>, uniquement parce que trois étages sur huit fins tiennent mieux ainsi sur une page A4.</p>
+<p>Rien d'autre ne change : mêmes nœuds, mêmes branches, mêmes payoffs. En examen, garde l'orientation de l'énoncé pour éviter toute confusion ; sur ton brouillon, dessine-le comme tu veux.</p>
+</div>
+
+<h3>2.1 Traduisons la question en français simple</h3>
+
+<p>La question tient en dix mots. Chacun compte.</p>
+
+<dl class="lexique">
+<dt>« Donnez un exemple »</dt>
+<dd>On ne te demande pas <em>la</em> bonne stratégie, ni la meilleure, ni celle de l'équilibre. On te demande <strong>n'importe laquelle</strong>, du moment qu'elle est bien formée. C'est une question de vocabulaire, pas de calcul : le correcteur veut savoir si tu as compris <em>ce qu'est</em> une stratégie. Tu peux donc inventer la tienne — mais elle doit être <strong>complète</strong>, et c'est là que tout se joue.</dd>
+<dt>« une stratégie »</dt>
+<dd>C'est le mot piège. En français courant, « stratégie » veut dire « ce que je compte faire ». En théorie des jeux, c'est beaucoup plus exigeant : c'est un <strong>plan complet d'action</strong>, une action prévue <em>à chaque endroit où l'on pourrait avoir à jouer</em>. On y consacre toute la section suivante.</dd>
+<dt>« pour l'enseigne B »</dt>
+<dd>Donc pour le joueur qui joue en <strong>dernier</strong> — celui qui a le plus de nœuds (quatre), et donc la description la plus longue. Ce n'est pas un hasard si l'examen commence par lui : c'est le cas le plus riche.</dd>
+<dt>« (6 points) »</dt>
+<dd>Six points pour deux lignes d'écriture. C'est le meilleur rapport points/effort de tout l'examen — à condition de ne pas tomber dans le piège du plan incomplet, qui vaut <strong>zéro</strong> selon le barème officiel.</dd>
+</dl>
+
+<h3>2.2 Le cours dont tu as besoin : ce qu'est vraiment une « stratégie »</h3>
+
+<p>Voici le concept central du chapitre, et probablement de tout le cours de théorie des jeux. Prends cinq minutes ici : si tu le comprends, les questions 3.1, 3.2 et 3.5 (soit 24 points sur 50) tombent toutes seules.</p>
+
+<h4>2.2.1 L'idée fausse qu'il faut abandonner tout de suite</h4>
+
+<p>Quand on demande à un étudiant « quelle est la stratégie de B ? », la réponse spontanée est du type : « B investit », ou « B joue I ». C'est faux. Pas approximatif : <strong>faux</strong>, et le barème le sanctionne par un zéro.</p>
+
+<p>Pourquoi ? Parce que la phrase « B investit » ne dit pas <em>dans quelle situation</em>. Or B ne se trouve pas dans une situation : il peut se retrouver dans <strong>quatre</strong> situations différentes, et rien ne dit qu'il ferait la même chose dans les quatre. Regarde la figure 3 : B possède quatre points noirs. Dire « B investit », c'est comme répondre « à gauche » à quelqu'un qui te demande l'itinéraire complet vers la gare.</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — stratégie (dans un jeu séquentiel)</div>
+<p>Une <span class="term">stratégie</span> d'un joueur est un <strong>plan complet d'action</strong> : elle indique, <strong>pour chacun des nœuds de décision de ce joueur</strong>, l'action qu'il y jouerait.</p>
+<p>Trois adjectifs, tous indispensables :</p>
+<ul>
+<li><strong>complet</strong> : aucun nœud du joueur ne peut être laissé vide ;</li>
+<li><strong>conditionnel</strong> : chaque action est attachée à une situation précise (« si je vois ceci, alors je fais cela ») ;</li>
+<li><strong>décidé à l'avance</strong> : le plan est écrit avant que le jeu ne commence.</li>
+</ul>
+<p>Conséquence immédiate : une stratégie de B, qui a 4 nœuds, est une liste de <strong>4 actions</strong> — un <span class="term">quadruplet</span>. Une stratégie de A, qui a 2 nœuds, est une liste de 2 actions — un <span class="term">couple</span>. Une stratégie de C, qui a 1 nœud, est une seule action.</p>
+</div>
+
+<h4>2.2.2 L'analogie du GPS</h4>
+
+<div class="box box-exemple">
+<div class="box-title">Exemple concret — pourquoi un GPS n'a pas d'itinéraire, mais un plan</div>
+<p>Tu programmes un GPS pour aller de chez toi à la gare. Le GPS affiche un itinéraire : « tout droit, puis à gauche, puis à droite ». Est-ce sa <em>stratégie</em> ? Non. C'est ce qu'il <em>prévoit</em> que tu feras.</p>
+<p>Sa vraie stratégie, c'est le programme entier qu'il a en mémoire : <em>« si le conducteur prend à droite au premier carrefour, alors je recalcule et je lui dis de faire demi-tour ; s'il rate la sortie, alors je lui indique la suivante ; s'il tourne trop tôt, alors… »</em>. Le GPS a une réponse prête <strong>à chaque bifurcation possible</strong>, y compris à celles que le conducteur ne prendra jamais.</p>
+<p>Et c'est justement pour ça qu'il est utile : un GPS qui n'aurait qu'un itinéraire et resterait muet dès que tu t'en écartes ne servirait à rien.</p>
+<p><strong>Retiens la formule :</strong> l'itinéraire affiché = le <em>chemin</em> ; le programme complet du GPS = la <em>stratégie</em>. La question 3.1 te demande le programme, pas l'itinéraire.</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Deuxième exemple — la consigne laissée à la baby-sitter</div>
+<p>Tu sors pour la soirée et tu laisses un mot à la personne qui garde ton enfant. Si tu écris seulement « couche-le à 20 h », tu n'as rien réglé. Une vraie consigne ressemble à ceci :</p>
+<ul>
+<li>s'il a fini son assiette → dessert ;</li>
+<li>s'il n'a pas fini → pas de dessert ;</li>
+<li>s'il pleure après 21 h → tu m'appelles ;</li>
+<li>s'il dort → tu ne fais rien.</li>
+</ul>
+<p>Quatre situations, quatre instructions. Voilà exactement la forme d'une stratégie de B. Et remarque : tu écris l'instruction « s'il pleure après 21 h » <strong>même si tu espères de tout cœur qu'elle ne servira pas</strong>. C'est le point suivant.</p>
+</div>
+
+<h4>2.2.3 Pourquoi faut-il prévoir les nœuds qu'on n'atteindra jamais ?</h4>
+
+<p>C'est la question que tout le monde se pose, et elle est excellente. Si, à l'équilibre, la commune choisit l'Est, à quoi bon dire ce que B ferait à l'Ouest ? Trois réponses, de la plus simple à la plus profonde.</p>
+
+<div class="box box-why">
+<div class="box-title">Trois raisons de remplir toutes les cases</div>
+<p><strong>Raison 1 — On ne sait pas encore ce qui va se passer.</strong> Quand on écrit les stratégies, on n'a pas encore résolu le jeu. B doit se préparer à tout, exactement comme tu prépares ta valise avant de connaître la météo.</p>
+<p><strong>Raison 2 — Un joueur ne contrôle pas ce qui l'amène à son nœud.</strong> B ne choisit ni la zone, ni la décision de A. Il subit les deux. Sa seule liberté est de décider quoi faire <em>dans chaque cas</em>. Une stratégie incomplète, ce serait un joueur qui refuse de jouer dans certains cas de figure — ça n'existe pas.</p>
+<p><strong>Raison 3 (la plus importante) — Ce que tu ferais « ailleurs » détermine ce qui se passe « ici ».</strong> C'est contre-intuitif, alors lis-la deux fois. A décide d'investir ou non <em>en anticipant</em> ce que B ferait ensuite. Donc le comportement de B dans une situation qui n'arrivera jamais influence quand même le choix de A — et par ricochet celui de la commune, et donc le déroulement réel du jeu.</p>
+<p>C'est exactement le mécanisme d'une menace : « si tu fais ça, je fais ceci ». La menace n'a pas besoin d'être exécutée pour être efficace ; il suffit qu'elle soit annoncée et crue. Toute la question 3.5 repose là-dessus.</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 2 — confondre la stratégie et le chemin suivi</div>
+<p>C'est <em>l'</em>erreur du chapitre, celle qui coûte le plus de points au total (elle frappe en 3.1, en 3.3 et en 3.5).</p>
+<table class="compare">
+<tr><th class="left">Un CHEMIN</th><th class="left">Une STRATÉGIE</th></tr>
+<tr><td class="left">Ce qui s'est <em>réellement</em> passé</td><td class="left">Ce que le joueur <em>ferait</em> dans chaque cas</td></tr>
+<tr><td class="left">Une suite d'actions, une par étage</td><td class="left">Une action par nœud <em>du joueur</em></td></tr>
+<tr><td class="left">Concerne <strong>tous</strong> les joueurs</td><td class="left">Concerne <strong>un seul</strong> joueur</td></tr>
+<tr><td class="left">Ex. : (E, I, I)</td><td class="left">Ex. : \( S_B = (\text{I},\text{I},\text{N},\text{I}) \)</td></tr>
+<tr><td class="left">Demandé en <strong>3.4</strong></td><td class="left">Demandé en <strong>3.1, 3.2, 3.3, 3.5</strong></td></tr>
+</table>
+<p>Test express : si ta réponse à 3.1 tient en une lettre, c'est un chemin — donc c'est faux.</p>
+</div>
+
+<h3>2.3 La résolution pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Repérer <em>tous</em> les nœuds de B, sans en oublier un seul</div>
+<p>Premier geste, toujours le même : je prends l'arbre et j'entoure les points noirs marqués « B ». Il y en a quatre. Les voici surlignés.</p>
+
+<figure>
+<svg viewBox="0 0 520 640" width="100%" style="max-width:13cm" role="img" aria-label="Le même arbre, avec les quatre nœuds de décision de l'enseigne B entourés et nommés d'après l'histoire qui y mène : après E puis I, après E puis N, après O puis I, après O puis N">
+  <g stroke="#111827" stroke-width="1.5" fill="none">
+    <line x1="35" y1="332" x2="155" y2="172"/>
+    <line x1="35" y1="332" x2="155" y2="492"/>
+    <line x1="155" y1="172" x2="275" y2="92"/>
+    <line x1="155" y1="172" x2="275" y2="252"/>
+    <line x1="155" y1="492" x2="275" y2="412"/>
+    <line x1="155" y1="492" x2="275" y2="572"/>
+    <line x1="275" y1="92" x2="390" y2="52"/>
+    <line x1="275" y1="92" x2="390" y2="132"/>
+    <line x1="275" y1="252" x2="390" y2="212"/>
+    <line x1="275" y1="252" x2="390" y2="292"/>
+    <line x1="275" y1="412" x2="390" y2="372"/>
+    <line x1="275" y1="412" x2="390" y2="452"/>
+    <line x1="275" y1="572" x2="390" y2="532"/>
+    <line x1="275" y1="572" x2="390" y2="612"/>
+  </g>
+  <g fill="#fef3c7" stroke="#b45309" stroke-width="2">
+    <circle cx="275" cy="92" r="12"/>
+    <circle cx="275" cy="252" r="12"/>
+    <circle cx="275" cy="412" r="12"/>
+    <circle cx="275" cy="572" r="12"/>
+  </g>
+  <g fill="#111827">
+    <circle cx="35" cy="332" r="4.5"/>
+    <circle cx="155" cy="172" r="4.5"/>
+    <circle cx="155" cy="492" r="4.5"/>
+    <circle cx="275" cy="92" r="4.5"/>
+    <circle cx="275" cy="252" r="4.5"/>
+    <circle cx="275" cy="412" r="4.5"/>
+    <circle cx="275" cy="572" r="4.5"/>
+  </g>
+  <g fill="#ffffff" stroke="#111827" stroke-width="1.3">
+    <circle cx="390" cy="52" r="3.4"/>
+    <circle cx="390" cy="132" r="3.4"/>
+    <circle cx="390" cy="212" r="3.4"/>
+    <circle cx="390" cy="292" r="3.4"/>
+    <circle cx="390" cy="372" r="3.4"/>
+    <circle cx="390" cy="452" r="3.4"/>
+    <circle cx="390" cy="532" r="3.4"/>
+    <circle cx="390" cy="612" r="3.4"/>
+  </g>
+  <g font-size="13.5" font-weight="bold" text-anchor="end">
+    <text x="26" y="336">C</text>
+    <text x="140" y="164">A</text>
+    <text x="140" y="504">A</text>
+  </g>
+  <g font-size="12.5" font-style="italic" text-anchor="middle">
+    <text x="92" y="236">E</text>
+    <text x="92" y="430">O</text>
+    <text x="213" y="118">I</text>
+    <text x="213" y="230">N</text>
+    <text x="213" y="438">I</text>
+    <text x="213" y="550">N</text>
+    <text x="330" y="64">I</text>
+    <text x="330" y="124">N</text>
+    <text x="330" y="224">I</text>
+    <text x="330" y="284">N</text>
+    <text x="330" y="384">I</text>
+    <text x="330" y="444">N</text>
+    <text x="330" y="544">I</text>
+    <text x="330" y="604">N</text>
+  </g>
+  <g font-size="11.5" font-weight="bold" text-anchor="middle">
+    <text x="345" y="96" style="fill:#b45309">nœud (E, I)</text>
+    <text x="345" y="256" style="fill:#b45309">nœud (E, N)</text>
+    <text x="345" y="416" style="fill:#b45309">nœud (O, I)</text>
+    <text x="345" y="576" style="fill:#b45309">nœud (O, N)</text>
+  </g>
+  <g font-size="12">
+    <text x="404" y="56.5">(8 ; 3 ; 3)</text>
+    <text x="404" y="136.5">(5 ; 7 ; 0)</text>
+    <text x="404" y="216.5">(4 ; 0 ; 6)</text>
+    <text x="404" y="296.5">(0 ; 0 ; 0)</text>
+    <text x="404" y="376.5">(6 ; −2 ; −2)</text>
+    <text x="404" y="456.5">(3 ; 5 ; 0)</text>
+    <text x="404" y="536.5">(2 ; 0 ; 4)</text>
+    <text x="404" y="616.5">(1 ; 0 ; 0)</text>
+  </g>
+</svg>
+<figcaption>Figure 4 — Les <strong>quatre</strong> nœuds de l'enseigne B, entourés. Chacun porte le nom de l'histoire qui y conduit : (E, I) se lit « la commune a choisi l'Est <em>et</em> A a investi ». Une stratégie de B doit dire quoi faire dans les quatre pastilles jaunes, ni plus ni moins.</figcaption>
+</figure>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Nommer chaque nœud par l'histoire qui y mène</div>
+<p>Un nœud n'a pas de nom écrit dessus. On le nomme par le <strong>chemin parcouru pour l'atteindre</strong>, c'est-à-dire par ce que B a observé en arrivant. D'où l'écriture entre parenthèses.</p>
+
+<table class="data">
+<tr><th>Nœud de B</th><th>Ce que B a vu se produire avant lui</th><th>Ses options</th></tr>
+<tr><td>(E, I)</td><td>la commune a aménagé l'Est, puis A a investi</td><td>I ou N</td></tr>
+<tr><td>(E, N)</td><td>la commune a aménagé l'Est, puis A a renoncé</td><td>I ou N</td></tr>
+<tr><td>(O, I)</td><td>la commune a aménagé l'Ouest, puis A a investi</td><td>I ou N</td></tr>
+<tr><td>(O, N)</td><td>la commune a aménagé l'Ouest, puis A a renoncé</td><td>I ou N</td></tr>
+</table>
+
+<p>Vérifions le compte autrement, sans l'arbre. Avant que B ne joue, il s'est produit deux choses : un choix de la commune (2 possibilités) et un choix de A (2 possibilités). Toutes les combinaisons sont possibles, donc :</p>
+
+<div class="calc">
+<div class="step">
+\[ \underbrace{2}_{\text{choix de C}} \times \underbrace{2}_{\text{choix de A}} = 4 \ \text{situations possibles pour B} \]
+<div class="why">Le symbole \( \underbrace{\ }_{\ } \) est une simple accolade de lecture : elle rappelle d'où vient chaque nombre. Le \( \times \) traduit le mot « et » : pour chacun des 2 choix de la commune, A dispose de 2 choix, ce qui fait \( 2 + 2 = 4 \)… non, attention, \( 2 \times 2 = 4 \). On multiplie, on n'additionne pas — voir l'encadré ci-dessous.</div>
+</div>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 3 — additionner au lieu de multiplier</div>
+<p>« Deux choix pour C, deux choix pour A, ça fait quatre » : ici, \( 2+2 \) et \( 2\times 2 \) donnent tous les deux 4, donc l'erreur ne se voit pas. Elle se verra dès qu'un joueur aura 3 actions.</p>
+<p>Le bon réflexe est de <strong>compter les feuilles de l'arbre</strong> : pour chacune des 2 branches de C, il repart 2 branches de A. On empile donc 2 paquets de 2, soit \( 2\times 2 \). Le « et » d'un enchaînement se traduit toujours par une <strong>multiplication</strong> ; le « ou » d'un choix exclusif, par une addition.</p>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Choisir une action à chacun des quatre nœuds</div>
+<p>La question dit « un exemple » : je suis donc totalement libre. Décidons, arbitrairement, le plan suivant :</p>
+<ul>
+<li>au nœud (E, I) → je joue <strong>I</strong> ;</li>
+<li>au nœud (E, N) → je joue <strong>I</strong> ;</li>
+<li>au nœud (O, I) → je joue <strong>N</strong> ;</li>
+<li>au nœud (O, N) → je joue <strong>I</strong>.</li>
+</ul>
+<p>Rien ne m'oblige à choisir <em>ce</em> plan-là. \( (\text{N},\text{N},\text{N},\text{N}) \) — « je n'investis jamais, quoi qu'il arrive » — est une stratégie parfaitement valable pour la question 3.1, même si elle est stupide économiquement. La question ne demande pas une bonne stratégie ; elle demande une stratégie <strong>bien formée</strong>.</p>
+<p>Cela dit, autant prendre celle-ci : on découvrira à la question 3.3 que c'est justement la stratégie d'équilibre. Un exemple qui resservira, c'est du temps gagné.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> L'écrire proprement, avec la bonne notation</div>
+<p>Deux écritures sont acceptées. La première est explicite et ne peut pas être mal comprise :</p>
+
+<div class="calc">
+<div class="step">
+\[ S_B = \bigl(\ \text{I si (E, I)}\ ;\ \text{I si (E, N)}\ ;\ \text{N si (O, I)}\ ;\ \text{I si (O, N)}\ \bigr) \]
+<div class="why">Se lit à voix haute : « S indice B égale : I si l'Est et A a investi ; I si l'Est et A n'a pas investi ; N si l'Ouest et A a investi ; I si l'Ouest et A n'a pas investi. » La lettre \( S \) est l'initiale de « stratégie » ; l'indice \( B \) dit de qui il s'agit. Les parenthèses signalent qu'on donne une <strong>liste ordonnée</strong>.</div>
+</div>
+<div class="step">
+\[ S_B = (\text{I},\ \text{I},\ \text{N},\ \text{I}) \]
+<div class="why">Version abrégée : on n'écrit plus que les actions, dans l'ordre convenu des nœuds (E, I), (E, N), (O, I), (O, N). Elle n'est lisible que si tu as <strong>écrit cet ordre juste avant</strong>. Sans cette précision, le correcteur ne peut pas savoir quelle action va à quel nœud — et c'est une faute.</div>
+</div>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Réflexe d'écriture — la règle des trois lignes</div>
+<p>Sur ta copie, écris toujours dans cet ordre :</p>
+<ol>
+<li><strong>une phrase</strong> qui annonce le nombre de nœuds : « B a quatre nœuds de décision : (E, I), (E, N), (O, I) et (O, N) » ;</li>
+<li><strong>la stratégie</strong> sous forme de quadruplet ;</li>
+<li><strong>une phrase</strong> qui rappelle la convention : « les actions sont données dans l'ordre des quatre nœuds ci-dessus ».</li>
+</ol>
+<p>Trois lignes, six points. C'est la question la mieux payée de l'examen.</p>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">5.</span> Bonus : combien B a-t-il de stratégies en tout ?</div>
+<p>L'énoncé ne le demande pas en 3.1, mais la question 3.2 le demandera pour A, et c'est exactement le même raisonnement. Autant l'apprendre ici.</p>
+<p>Une stratégie de B, c'est quatre cases à remplir, et dans chaque case je peux mettre I ou N — deux possibilités, indépendamment des autres cases.</p>
+
+<figure>
+<svg viewBox="0 0 470 210" width="100%" style="max-width:12.5cm" role="img" aria-label="Schéma des quatre cases à remplir pour définir une stratégie de B, chacune avec deux possibilités, ce qui donne deux puissance quatre égale seize stratégies">
+  <text x="235" y="18" font-size="12.5" text-anchor="middle" font-weight="bold">Une stratégie de B = quatre cases à remplir</text>
+  <g stroke="#111827" stroke-width="1.4" fill="none">
+    <rect x="30" y="34" width="90" height="34"/>
+    <rect x="140" y="34" width="90" height="34"/>
+    <rect x="250" y="34" width="90" height="34"/>
+    <rect x="360" y="34" width="90" height="34"/>
+  </g>
+  <g font-size="11.5" text-anchor="middle">
+    <text x="75" y="56">nœud (E, I)</text>
+    <text x="185" y="56">nœud (E, N)</text>
+    <text x="295" y="56">nœud (O, I)</text>
+    <text x="405" y="56">nœud (O, N)</text>
+  </g>
+  <g stroke="#4338ca" stroke-width="1.3" fill="none">
+    <line x1="75" y1="68" x2="75" y2="86"/>
+    <line x1="185" y1="68" x2="185" y2="86"/>
+    <line x1="295" y1="68" x2="295" y2="86"/>
+    <line x1="405" y1="68" x2="405" y2="86"/>
+  </g>
+  <g stroke="#4338ca" stroke-width="1.4" fill="#eef2ff">
+    <rect x="42" y="86" width="66" height="30"/>
+    <rect x="152" y="86" width="66" height="30"/>
+    <rect x="262" y="86" width="66" height="30"/>
+    <rect x="372" y="86" width="66" height="30"/>
+  </g>
+  <g font-size="12.5" text-anchor="middle" font-weight="bold">
+    <text x="75" y="106" style="fill:#4338ca">I ou N</text>
+    <text x="185" y="106" style="fill:#4338ca">I ou N</text>
+    <text x="295" y="106" style="fill:#4338ca">I ou N</text>
+    <text x="405" y="106" style="fill:#4338ca">I ou N</text>
+  </g>
+  <g font-size="13" text-anchor="middle" font-weight="bold">
+    <text x="75" y="140">2</text>
+    <text x="185" y="140">2</text>
+    <text x="295" y="140">2</text>
+    <text x="405" y="140">2</text>
+    <text x="130" y="140">×</text>
+    <text x="240" y="140">×</text>
+    <text x="350" y="140">×</text>
+  </g>
+  <text x="235" y="172" font-size="13.5" text-anchor="middle" font-weight="bold">2 × 2 × 2 × 2 = 2 puissance 4 = 16 stratégies</text>
+  <text x="235" y="196" font-size="11.5" text-anchor="middle">une par façon de remplir les quatre cases</text>
+</svg>
+<figcaption>Figure 5 — Le comptage des stratégies, en image. Chaque nœud est une case indépendante à deux valeurs possibles ; le nombre total de plans est le produit des possibilités, jamais leur somme.</figcaption>
+</figure>
+
+<div class="calc">
+<div class="step">
+\[ \text{nombre de stratégies de B} = 2 \times 2 \times 2 \times 2 = 2^4 = 16 \]
+<div class="why">Je multiplie parce que les quatre cases se remplissent <strong>indépendamment</strong> : pour chacune des 2 façons de remplir la première, il y a 2 façons de remplir la deuxième, etc. La notation \( 2^4 \) se lit « deux puissance quatre » et signifie « 2 multiplié par lui-même 4 fois ». Elle vaut \( 2\times2 = 4 \), puis \( 4\times2 = 8 \), puis \( 8\times2 = 16 \).</div>
+</div>
+</div>
+
+<div class="box box-def">
+<div class="box-title">La règle générale : \( n^k \)</div>
+<p>Si un joueur possède <strong>\( k \) nœuds de décision</strong> et dispose de <strong>\( n \) actions à chaque nœud</strong>, alors il possède</p>
+\[ n^k \quad\text{stratégies} \]
+<p>Se lit « n puissance k ». Attention à l'ordre : c'est le nombre d'<em>actions</em> qui est en bas (la base) et le nombre de <em>nœuds</em> qui est en haut (l'exposant). Beaucoup d'étudiants écrivent \( k^n \) : ici cela donnerait \( 4^2 = 16 \), le même résultat par pure coïncidence, mais faux dès que les nombres diffèrent.</p>
+<p>Vérification sur nos trois joueurs : C a \( k=1 \) nœud ⇒ \( 2^1 = 2 \) stratégies ; A a \( k=2 \) nœuds ⇒ \( 2^2 = 4 \) ; B a \( k=4 \) nœuds ⇒ \( 2^4 = 16 \).</p>
+</div>
+</div>
+
+<hr class="soft">
+
+<h2>3. Question 3.2 — l'ensemble des stratégies de l'enseigne A (8 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.2 (8 points)</div>
+<p><strong>3.2)</strong> Donnez l'ensemble des stratégies de l'enseigne A.</p>
+</div>
+
+<h3>3.1 Traduisons la question</h3>
+
+<dl class="lexique">
+<dt>« l'ensemble des stratégies »</dt>
+<dd>
+  On ne te demande plus <em>un exemple</em> (c'était la question 3.1) mais <strong>la liste
+  complète</strong>. « Ensemble » est le mot mathématique pour « collection » : on l'écrit entre
+  accolades \( \{ \ldots \} \), en séparant les éléments par des virgules. Il faut donc les
+  énumérer tous, sans en oublier ni en inventer.
+</dd>
+<dt>« de l'enseigne A »</dt>
+<dd>
+  Attention au changement de joueur. En 3.1 on parlait de B, qui joue à quatre endroits
+  différents. A, lui, ne joue qu'à <strong>deux</strong> endroits : après que la commune a choisi
+  E, et après qu'elle a choisi O. Le nombre de cases à remplir passe donc de quatre à deux.
+</dd>
+</dl>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel de la question 3.1 — la règle qui sert ici</div>
+<p>
+  Une stratégie, c'est un <strong>plan complet</strong> : une action prévue à <em>chacun</em> de
+  tes nœuds de décision, y compris ceux que tu n'atteindras peut-être jamais. Et le nombre total
+  de plans vaut \( n^k \), où \( n \) est le nombre d'actions par nœud et \( k \) le nombre de
+  nœuds. Ici : \( n = 2 \) (investir ou non) et \( k = 2 \) (après E, après O).
+</p>
+</div>
+
+<h3>3.2 La résolution, pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Repérer les nœuds de A</div>
+<p>
+  Je regarde l'arbre et je cherche tous les points où c'est <strong>A</strong> qui décide. Il y
+  en a exactement deux, et ils se distinguent par ce qui s'est passé avant :
+</p>
+<table class="compare">
+<tr><th>Nœud</th><th class="left">L'histoire qui y mène</th><th class="left">Ce que A peut y faire</th></tr>
+<tr><td>1</td><td class="left">la commune a aménagé la zone <strong>Est</strong> (E)</td><td class="left">I ou N</td></tr>
+<tr><td>2</td><td class="left">la commune a aménagé la zone <strong>Ouest</strong> (O)</td><td class="left">I ou N</td></tr>
+</table>
+<p>
+  Pourquoi deux nœuds et pas un seul ? Parce que A <strong>voit</strong> la décision de la commune
+  avant de choisir. Il peut donc se comporter différemment selon la zone : rien ne l'oblige à
+  faire la même chose dans les deux cas. C'est exactement ce que la notion de stratégie doit
+  capturer.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Compter avant d'énumérer</div>
+<div class="calc">
+<div class="step">
+\[ \text{nombre de stratégies de A} = 2 \times 2 = 2^2 = 4 \]
+<div class="why">Deux façons de remplir la première case, et pour chacune d'elles deux façons de
+remplir la seconde : je multiplie. Compter d'abord est un excellent réflexe — cela te dit
+combien d'éléments ta liste doit contenir, donc si tu en as oublié.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Énumérer sans rien oublier</div>
+<p>
+  La méthode sûre : je fixe la première composante, puis je fais varier la seconde. Cela évite les
+  oublis et les doublons. Je note une stratégie sous la forme
+  \( (\text{action après E} \,;\, \text{action après O}) \) — et je précise toujours cette
+  convention sur ma copie, sinon le correcteur ne sait pas dans quel ordre lire.
+</p>
+<table class="compare">
+<tr><th>Stratégie</th><th class="left">Se lit</th></tr>
+<tr><td>\( (I \,;\, I) \)</td><td class="left">« j'investis dans la zone Est, et j'investis aussi dans la zone Ouest » — j'investis quoi qu'il arrive</td></tr>
+<tr><td>\( (I \,;\, N) \)</td><td class="left">« j'investis si c'est l'Est, je m'abstiens si c'est l'Ouest »</td></tr>
+<tr><td>\( (N \,;\, I) \)</td><td class="left">« je m'abstiens si c'est l'Est, j'investis si c'est l'Ouest »</td></tr>
+<tr><td>\( (N \,;\, N) \)</td><td class="left">« je n'investis nulle part » — je m'abstiens quoi qu'il arrive</td></tr>
+</table>
+<p>Quatre lignes : cela colle avec le comptage de l'étape 2. Rien n'a été oublié.</p>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 3.2</div>
+<p>\[ S_A = \big\{\,(I;I),\ (I;N),\ (N;I),\ (N;N)\,\big\} \]</p>
+<p>
+  avec la convention : première composante = action après E, seconde composante = action après O.
+  L'enseigne A dispose donc de <strong>4 stratégies</strong>.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 3.2</div>
+<p>
+  « L'enseigne A a deux nœuds de décision : après E et après O. Une stratégie de A est un couple
+  \( (\text{action après E} ; \text{action après O}) \). Comme elle a 2 actions à chacun de ses
+  2 nœuds, elle possède \( 2^2 = 4 \) stratégies :
+  \( S_A = \{(I;I),\ (I;N),\ (N;I),\ (N;N)\} \). »
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 3.2</div>
+<ul>
+  <li><strong>Répondre « I ou N », soit deux stratégies.</strong> C'est l'erreur classique :
+      confondre les <em>actions</em> (I, N) avec les <em>stratégies</em> (des plans à deux cases).
+      A a deux actions <em>par nœud</em>, mais quatre plans.</li>
+  <li><strong>Oublier de préciser la convention de lecture.</strong> Sans elle, \( (I;N) \) est
+      ambigu : le correcteur ne peut pas savoir si le I s'applique à E ou à O.</li>
+  <li><strong>Écrire les stratégies de A comme des quadruplets</strong>, par mimétisme avec B.
+      Non : le nombre de composantes est le nombre de nœuds <em>de ce joueur-là</em>.</li>
+</ul>
+</div>
+
+<hr class="soft">
+
+<h2>4. Le cours dont tu as besoin (partie II) : sous-jeux, induction à rebours et ENPS</h2>
+
+<p>
+  Nous savons maintenant décrire les plans de chaque joueur. Reste la vraie question : lequel
+  vont-ils choisir ? Pour y répondre, il faut trois notions nouvelles. Prends ton temps sur
+  cette section : elle porte à elle seule les 36 points des questions 3.3 à 3.5.
+</p>
+
+<h3>4.1 Le sous-jeu : un jeu à l'intérieur du jeu</h3>
+
+<div class="box box-def">
+<div class="box-title">Définition — sous-jeu</div>
+<p>
+  Un <span class="term">sous-jeu</span> est un morceau de l'arbre qui commence à un nœud de
+  décision et qui contient <strong>tout ce qui pousse en dessous</strong> (toutes les branches,
+  jusqu'aux payoffs).
+</p>
+<p>
+  Autrement dit : c'est ce qui reste du jeu si on te dépose à ce nœud-là en te disant « voilà où
+  on en est, à toi de jouer ». Un sous-jeu est un jeu à part entière : il a des joueurs, des
+  choix et des résultats.
+</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Exemple — combien de sous-jeux dans notre arbre ?</div>
+<p>
+  On en compte <strong>sept</strong>, un par nœud de décision : les quatre nœuds de B (les plus
+  petits sous-jeux : un seul joueur, deux branches), les deux nœuds de A (chacun contient le
+  choix de A puis les deux réponses possibles de B), et la racine — car le jeu entier est,
+  par convention, un sous-jeu de lui-même.
+</p>
+<p>
+  Astuce de comptage : dans un arbre où chaque joueur voit tout ce qui précède,
+  <strong>il y a exactement autant de sous-jeux que de nœuds de décision</strong>.
+</p>
+</div>
+
+<h3>4.2 L'induction à rebours : commencer par la fin</h3>
+
+<p>
+  Voici l'idée, et elle est simple : <strong>on résout l'arbre en partant de la fin</strong>. On
+  se place d'abord aux tout derniers nœuds, ceux où le joueur n'a plus personne après lui. Là,
+  pas de calcul stratégique : il suffit de comparer deux nombres et de prendre le plus grand.
+</p>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi commencer par la fin, et pas par le début ?</div>
+<p>
+  Parce que la commune, quand elle choisit sa zone, a besoin de savoir ce qui va se passer
+  <em>ensuite</em> — sinon elle ne peut pas comparer ses deux options. Or ce qui se passe ensuite
+  dépend de A, dont le choix dépend lui-même de B. Le seul joueur qui peut décider
+  <strong>sans rien anticiper</strong>, c'est le dernier : B. On le résout donc en premier, puis
+  on remonte.
+</p>
+<p>
+  Une image : tu ne choisis pas ta route à un carrefour sans savoir ce qu'il y a au bout de
+  chaque branche. L'induction à rebours consiste à explorer d'abord tous les bouts, à y inscrire
+  le résultat, puis à remonter jusqu'au carrefour de départ.
+</p>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Méthode — l'induction à rebours en 4 gestes</div>
+<ol>
+  <li><strong>Repère les derniers nœuds de décision</strong> (ici, les quatre nœuds de B).</li>
+  <li><strong>À chacun, compare les payoffs du joueur qui décide là</strong> — et de lui seul.
+      Entoure la branche gagnante. Barre l'autre : elle ne se produira jamais.</li>
+  <li><strong>Remonte d'un étage.</strong> Chaque nœud du dessus mène désormais à un résultat
+      <em>connu</em> (celui de la branche entourée). Compare à nouveau, entoure.</li>
+  <li><strong>Continue jusqu'à la racine.</strong> L'ensemble des branches entourées forme
+      l'équilibre ; le chemin qui part de la racine en suivant les branches entourées est le
+      déroulement effectif du jeu.</li>
+</ol>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège — quel nombre regarder ?</div>
+<p>
+  À un nœud où c'est <strong>B</strong> qui décide, tu compares <strong>uniquement le troisième
+  nombre</strong> de chaque triplet (le payoff de B). Pas le premier, pas la somme, pas « ce qui
+  est le mieux pour tout le monde ». Chaque joueur est égoïste : il regarde sa propre colonne.
+  C'est l'erreur la plus fréquente et elle fait perdre toute la question.
+</p>
+</div>
+
+<h3>4.3 L'équilibre de Nash parfait en sous-jeux (ENPS)</h3>
+
+<div class="box box-def">
+<div class="box-title">Définition — ENPS</div>
+<p>
+  Un profil de stratégies est un <span class="term">équilibre de Nash parfait en sous-jeux</span>
+  si les stratégies qu'il prescrit forment un équilibre de Nash <strong>dans chaque sous-jeu</strong>,
+  y compris dans ceux qu'on n'atteint jamais.
+</p>
+<p>
+  Autrement dit : <em>« mon plan doit être bon partout, même là où je ne mettrai jamais les
+  pieds »</em>. Un plan qui contiendrait une bêtise dans un recoin de l'arbre serait un équilibre
+  de Nash acceptable (personne ne va vérifier), mais pas un ENPS.
+</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Le lien à retenir</div>
+<p>
+  <strong>L'induction à rebours produit toujours un ENPS</strong>, et c'est même sa raison d'être :
+  puisqu'on optimise à chaque nœud séparément, aucun sous-jeu ne peut contenir de choix idiot.
+  Réciproquement, tout ENPS d'un jeu fini à information parfaite s'obtient par induction à
+  rebours. Donc : <em>on te demande un ENPS ⇒ tu fais une induction à rebours</em>.
+</p>
+</div>
+
+<hr class="soft">
+
+<h2>5. Question 3.3 — l'induction à rebours et l'ENPS (20 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.3 (20 points)</div>
+<p>
+  <strong>3.3)</strong> En utilisant le raisonnement de <em>backward induction</em>, identifiez un
+  équilibre de Nash parfait en sous-jeux (ENPS). Détaillez votre raisonnement.
+</p>
+</div>
+
+<p>
+  C'est la question la plus lourde du chapitre : 20 points à elle seule. Elle se traite
+  intégralement avec la méthode en 4 gestes de la section 4.2. On y va nœud par nœud, sans se
+  presser.
+</p>
+
+<h3>5.1 Étage 1 — les quatre décisions de l'enseigne B</h3>
+
+<p>
+  B joue en dernier : à chacun de ses quatre nœuds, il lui suffit de comparer deux nombres,
+  <strong>les siens</strong> — c'est-à-dire le <strong>troisième</strong> de chaque triplet
+  \( (C \,;\, A \,;\, B) \).
+</p>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Nœud « après E puis I » (la commune a pris l'Est, A a investi)</div>
+<div class="calc">
+<div class="step">
+\[ \text{si B investit : } (8 \,;\, 3 \,;\, \mathbf{3}) \qquad \text{si B s'abstient : } (5 \,;\, 7 \,;\, \mathbf{0}) \]
+<div class="why">Je relève les deux triplets au bout des deux branches, et je mets en gras le
+troisième nombre : c'est le seul qui intéresse B.</div>
+</div>
+<div class="step">
+\[ 3 > 0 \quad \Longrightarrow \quad \text{B investit} \]
+<div class="why">Trois vaut mieux que zéro : B choisit I. Remarque au passage que A préférerait
+franchement l'autre branche (7 au lieu de 3) — mais A n'a pas son mot à dire ici. C'est B qui
+tient le stylo à ce nœud.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Nœud « après E puis N » (l'Est, mais A s'est abstenu)</div>
+<div class="calc">
+<div class="step">
+\[ \text{si B investit : } (4 \,;\, 0 \,;\, \mathbf{6}) \qquad \text{si B s'abstient : } (0 \,;\, 0 \,;\, \mathbf{0}) \]
+<div class="why">Même lecture : je ne regarde que le troisième nombre.</div>
+</div>
+<div class="step">
+\[ 6 > 0 \quad \Longrightarrow \quad \text{B investit} \]
+<div class="why">Et il investit avec enthousiasme : seul sur la grande zone Est, sans
+concurrent, il empoche 6 — son meilleur payoff de tout l'arbre.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Nœud « après O puis I » (l'Ouest, et A a investi) — le nœud décisif</div>
+<div class="calc">
+<div class="step">
+\[ \text{si B investit : } (6 \,;\, -2 \,;\, \mathbf{-2}) \qquad \text{si B s'abstient : } (3 \,;\, 5 \,;\, \mathbf{0}) \]
+<div class="why">Attention au signe : \( -2 \) est un nombre <strong>négatif</strong>, une perte.
+La zone Ouest est petite ; si les deux enseignes s'y installent, elles se cannibalisent et
+perdent toutes les deux de l'argent.</div>
+</div>
+<div class="step">
+\[ 0 > -2 \quad \Longrightarrow \quad \text{B s'abstient} \]
+<div class="why">Zéro vaut mieux que perdre 2. C'est le seul nœud où B choisit N — retiens-le,
+c'est celui qui reviendra à la question 3.5.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Nœud « après O puis N » (l'Ouest, A s'est abstenu)</div>
+<div class="calc">
+<div class="step">
+\[ \text{si B investit : } (2 \,;\, 0 \,;\, \mathbf{4}) \qquad \text{si B s'abstient : } (1 \,;\, 0 \,;\, \mathbf{0}) \]
+<div class="why">Toujours le troisième nombre.</div>
+</div>
+<div class="step">
+\[ 4 > 0 \quad \Longrightarrow \quad \text{B investit} \]
+<div class="why">Seul sur l'Ouest, B gagne 4 : petite zone, mais pas de concurrent.</div>
+</div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">La stratégie complète de B</div>
+<p>\[ S_B = (\,I \,;\, I \,;\, N \,;\, I\,) \]</p>
+<p>
+  dans l'ordre : après (E,I) · après (E,N) · après (O,I) · après (O,N). En français :
+  <em>« j'investis partout, sauf si la commune choisit l'Ouest et que A s'y installe déjà —
+  là, je laisse tomber. »</em>
+</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 520 640" width="100%" style="max-width:13cm" role="img"
+     aria-label="L'arbre du jeu avec, à chacun des quatre nœuds de l'enseigne B, la branche choisie tracée en gras et l'autre en pointillés fins">
+  <g font-size="11">
+    <text x="4" y="14" style="fill:#4b5563">C</text>
+    <text x="124" y="14" style="fill:#4b5563">A</text>
+    <text x="246" y="14" style="fill:#4b5563">B décide ici</text>
+    <text x="404" y="14" style="fill:#4b5563">(C ; A ; B)</text>
+  </g>
+  <!-- branches amont, en gris clair -->
+  <g stroke="#9ca3af" stroke-width="1.3" fill="none">
+    <line x1="35" y1="332" x2="155" y2="172"/>
+    <line x1="35" y1="332" x2="155" y2="492"/>
+    <line x1="155" y1="172" x2="275" y2="92"/>
+    <line x1="155" y1="172" x2="275" y2="252"/>
+    <line x1="155" y1="492" x2="275" y2="412"/>
+    <line x1="155" y1="492" x2="275" y2="572"/>
+  </g>
+  <!-- branches abandonnees par B : pointilles fins -->
+  <g stroke="#9ca3af" stroke-width="1.2" fill="none" stroke-dasharray="5 4">
+    <line x1="275" y1="92" x2="390" y2="132"/>
+    <line x1="275" y1="252" x2="390" y2="292"/>
+    <line x1="275" y1="412" x2="390" y2="372"/>
+    <line x1="275" y1="572" x2="390" y2="612"/>
+  </g>
+  <!-- branches choisies par B : gras -->
+  <g stroke="#047857" stroke-width="3.4" fill="none">
+    <line x1="275" y1="92" x2="390" y2="52"/>
+    <line x1="275" y1="252" x2="390" y2="212"/>
+    <line x1="275" y1="412" x2="390" y2="452"/>
+    <line x1="275" y1="572" x2="390" y2="532"/>
+  </g>
+  <g fill="#111827">
+    <circle cx="35" cy="332" r="4"/>
+    <circle cx="155" cy="172" r="4"/>
+    <circle cx="155" cy="492" r="4"/>
+  </g>
+  <g fill="#047857">
+    <circle cx="275" cy="92" r="5.5"/>
+    <circle cx="275" cy="252" r="5.5"/>
+    <circle cx="275" cy="412" r="5.5"/>
+    <circle cx="275" cy="572" r="5.5"/>
+  </g>
+  <g font-size="12.5" font-style="italic" text-anchor="middle" style="fill:#4b5563">
+    <text x="92" y="236">E</text>
+    <text x="92" y="430">O</text>
+    <text x="213" y="122">I</text>
+    <text x="213" y="226">N</text>
+    <text x="213" y="442">I</text>
+    <text x="213" y="546">N</text>
+  </g>
+  <g font-size="12.5" font-weight="bold" text-anchor="middle">
+    <text x="330" y="60" style="fill:#047857">I</text>
+    <text x="330" y="128" style="fill:#9ca3af">N</text>
+    <text x="330" y="220" style="fill:#047857">I</text>
+    <text x="330" y="288" style="fill:#9ca3af">N</text>
+    <text x="330" y="380" style="fill:#9ca3af">I</text>
+    <text x="330" y="448" style="fill:#047857">N</text>
+    <text x="330" y="540" style="fill:#047857">I</text>
+    <text x="330" y="608" style="fill:#9ca3af">N</text>
+  </g>
+  <g font-size="12">
+    <text x="404" y="56.5" font-weight="bold">(8 ; 3 ; 3)</text>
+    <text x="404" y="136.5" style="fill:#9ca3af">(5 ; 7 ; 0)</text>
+    <text x="404" y="216.5" font-weight="bold">(4 ; 0 ; 6)</text>
+    <text x="404" y="296.5" style="fill:#9ca3af">(0 ; 0 ; 0)</text>
+    <text x="404" y="376.5" style="fill:#9ca3af">(6 ; −2 ; −2)</text>
+    <text x="404" y="456.5" font-weight="bold">(3 ; 5 ; 0)</text>
+    <text x="404" y="536.5" font-weight="bold">(2 ; 0 ; 4)</text>
+    <text x="404" y="616.5" style="fill:#9ca3af">(1 ; 0 ; 0)</text>
+  </g>
+  <g font-size="11" text-anchor="middle" style="fill:#047857" font-weight="bold">
+    <text x="290" y="78">3 &gt; 0</text>
+    <text x="290" y="238">6 &gt; 0</text>
+    <text x="290" y="398">0 &gt; −2</text>
+    <text x="290" y="558">4 &gt; 0</text>
+  </g>
+</svg>
+<figcaption>
+  Figure 6 — Premier étage de l'induction à rebours. À chacun de ses quatre nœuds, B compare
+  <em>ses</em> payoffs (le troisième nombre) et garde le plus grand : la branche épaisse. Les
+  branches en pointillés ne se produiront jamais. On lit directement la stratégie de B :
+  (I ; I ; N ; I).
+</figcaption>
+</figure>
+
+<h3>5.2 Étage 2 — les deux décisions de l'enseigne A</h3>
+
+<p>
+  Maintenant que le comportement de B est connu, chaque nœud de A mène à un résultat
+  <strong>certain</strong>. A n'a plus à deviner : il lui suffit de lire au bout de la branche
+  épaisse. On compare alors <strong>le deuxième nombre</strong> de chaque triplet.
+</p>
+
+<div class="etape">
+<div class="etape-title"><span class="num">5.</span> Nœud de A après E</div>
+<div class="calc">
+<div class="step">
+\[ \text{si A investit} \Rightarrow \text{B investit} \Rightarrow (8 \,;\, \mathbf{3} \,;\, 3) \]
+<div class="why">Je suis la branche : A joue I, puis on arrive au nœud de B « après E puis I »,
+où l'on sait que B joue I. Le résultat est donc le triplet (8 ; 3 ; 3), et A y gagne 3.</div>
+</div>
+<div class="step">
+\[ \text{si A s'abstient} \Rightarrow \text{B investit} \Rightarrow (4 \,;\, \mathbf{0} \,;\, 6) \]
+<div class="why">Même raisonnement de l'autre côté : A joue N, B investit quand même, et A
+ne touche rien.</div>
+</div>
+<div class="step">
+\[ 3 > 0 \quad \Longrightarrow \quad \text{A investit} \]
+<div class="why">A préfère 3 à 0 : il investit. Note qu'il investit <em>en sachant</em> que B
+viendra le concurrencer — mais mieux vaut partager la grande zone que la laisser à B.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">6.</span> Nœud de A après O</div>
+<div class="calc">
+<div class="step">
+\[ \text{si A investit} \Rightarrow \text{B s'abstient} \Rightarrow (3 \,;\, \mathbf{5} \,;\, 0) \]
+<div class="why">C'est ici que le travail de l'étage 1 paie. Naïvement, on pourrait croire que si
+A investit sur l'Ouest il perd 2 (le triplet (6 ; −2 ; −2)). Faux : B, lui, ne viendra pas,
+puisqu'on a montré qu'il choisit N à ce nœud. A se retrouve donc <strong>seul</strong> sur
+l'Ouest et gagne 5.</div>
+</div>
+<div class="step">
+\[ \text{si A s'abstient} \Rightarrow \text{B investit} \Rightarrow (2 \,;\, \mathbf{0} \,;\, 4) \]
+<div class="why">S'il laisse la place, c'est B qui la prend, et A ne touche rien.</div>
+</div>
+<div class="step">
+\[ 5 > 0 \quad \Longrightarrow \quad \text{A investit} \]
+<div class="why">A investit aussi sur l'Ouest — et c'est même là qu'il gagne le plus (5 contre 3
+sur l'Est), justement parce que sa présence y décourage B.</div>
+</div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">La stratégie de A</div>
+<p>\[ S_A = (\,I \,;\, I\,) \]</p>
+<p>A investit dans les deux cas — mais pour deux raisons différentes : sur l'Est parce qu'il vaut
+mieux partager que s'effacer, sur l'Ouest parce que sa présence suffit à faire fuir B.</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Le piège majeur de cette étape</div>
+<p>
+  Beaucoup d'étudiants comparent, au nœud « après O », les payoffs \( -2 \) (si A investit) et
+  \( 0 \) (s'il s'abstient), et concluent que A ne doit pas investir. <strong>C'est faux</strong> :
+  le triplet \( (6 ; -2 ; -2) \) suppose que B investit également, or on a démontré à l'étage 1
+  qu'il ne le fera pas. Le résultat pertinent est \( (3 ; 5 ; 0) \).
+</p>
+<p>
+  Règle à retenir : <em>quand tu remontes d'un étage, tu ne lis plus les payoffs bruts de
+  l'arbre — tu lis ceux au bout des branches déjà sélectionnées.</em> C'est tout l'intérêt de la
+  méthode, et c'est là qu'on gagne ou qu'on perd les 20 points.
+</p>
+</div>
+
+<h3>5.3 Étage 3 — la décision de la commune</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">7.</span> Le choix de la zone</div>
+<div class="calc">
+<div class="step">
+\[ \text{si la commune choisit E} \Rightarrow \text{A investit} \Rightarrow \text{B investit} \Rightarrow (\mathbf{8} \,;\, 3 \,;\, 3) \]
+<div class="why">Je descends le long des branches déjà sélectionnées : E, puis I (par A), puis I
+(par B). Le premier nombre, 8, est le payoff de la commune.</div>
+</div>
+<div class="step">
+\[ \text{si la commune choisit O} \Rightarrow \text{A investit} \Rightarrow \text{B s'abstient} \Rightarrow (\mathbf{3} \,;\, 5 \,;\, 0) \]
+<div class="why">Même descente de l'autre côté : la commune n'obtiendrait que 3, parce qu'une
+seule enseigne s'installerait.</div>
+</div>
+<div class="step">
+\[ 8 > 3 \quad \Longrightarrow \quad \text{la commune aménage la zone Est} \]
+<div class="why">La commune préfère l'Est. Économiquement, c'est logique : la grande zone
+accueille <em>deux</em> magasins, donc deux fois plus d'emplois et de recettes, alors que la
+petite n'en accueillerait qu'un.</div>
+</div>
+</div>
+</div>
+
+<figure>
+<svg viewBox="0 0 520 640" width="100%" style="max-width:13cm" role="img"
+     aria-label="L'arbre entièrement résolu : le chemin d'équilibre partant de la commune vers la zone Est, puis l'investissement de A, puis celui de B, est tracé en très gras, et la valeur remontée est inscrite à chaque nœud">
+  <g font-size="11">
+    <text x="4" y="14" style="fill:#4b5563">C</text>
+    <text x="124" y="14" style="fill:#4b5563">A</text>
+    <text x="246" y="14" style="fill:#4b5563">B</text>
+    <text x="404" y="14" style="fill:#4b5563">(C ; A ; B)</text>
+  </g>
+  <!-- toutes les branches en gris -->
+  <g stroke="#d1d5db" stroke-width="1.2" fill="none">
+    <line x1="35" y1="332" x2="155" y2="492"/>
+    <line x1="155" y1="172" x2="275" y2="252"/>
+    <line x1="275" y1="92" x2="390" y2="132"/>
+    <line x1="275" y1="252" x2="390" y2="212"/>
+    <line x1="275" y1="252" x2="390" y2="292"/>
+    <line x1="155" y1="492" x2="275" y2="412"/>
+    <line x1="155" y1="492" x2="275" y2="572"/>
+    <line x1="275" y1="412" x2="390" y2="372"/>
+    <line x1="275" y1="412" x2="390" y2="452"/>
+    <line x1="275" y1="572" x2="390" y2="532"/>
+    <line x1="275" y1="572" x2="390" y2="612"/>
+  </g>
+  <!-- chemin d'equilibre -->
+  <g stroke="#4338ca" stroke-width="4.5" fill="none">
+    <line x1="35" y1="332" x2="155" y2="172"/>
+    <line x1="155" y1="172" x2="275" y2="92"/>
+    <line x1="275" y1="92" x2="390" y2="52"/>
+  </g>
+  <g fill="#4338ca">
+    <circle cx="35" cy="332" r="5.5"/>
+    <circle cx="155" cy="172" r="5.5"/>
+    <circle cx="275" cy="92" r="5.5"/>
+  </g>
+  <g fill="#9ca3af">
+    <circle cx="155" cy="492" r="3.5"/>
+    <circle cx="275" cy="252" r="3.5"/>
+    <circle cx="275" cy="412" r="3.5"/>
+    <circle cx="275" cy="572" r="3.5"/>
+  </g>
+  <g font-size="12.5" font-weight="bold" text-anchor="middle" style="fill:#4338ca">
+    <text x="88" y="234">E</text>
+    <text x="211" y="118">I</text>
+    <text x="330" y="58">I</text>
+  </g>
+  <g font-size="12" text-anchor="middle" style="fill:#9ca3af">
+    <text x="92" y="430">O</text>
+    <text x="213" y="226">N</text>
+    <text x="213" y="442">I</text>
+    <text x="213" y="546">N</text>
+  </g>
+  <g font-size="12">
+    <text x="404" y="56.5" font-weight="bold" style="fill:#4338ca">(8 ; 3 ; 3)</text>
+    <text x="404" y="136.5" style="fill:#9ca3af">(5 ; 7 ; 0)</text>
+    <text x="404" y="216.5" style="fill:#9ca3af">(4 ; 0 ; 6)</text>
+    <text x="404" y="296.5" style="fill:#9ca3af">(0 ; 0 ; 0)</text>
+    <text x="404" y="376.5" style="fill:#9ca3af">(6 ; −2 ; −2)</text>
+    <text x="404" y="456.5" style="fill:#9ca3af">(3 ; 5 ; 0)</text>
+    <text x="404" y="536.5" style="fill:#9ca3af">(2 ; 0 ; 4)</text>
+    <text x="404" y="616.5" style="fill:#9ca3af">(1 ; 0 ; 0)</text>
+  </g>
+  <!-- valeurs remontees -->
+  <g font-size="11" font-weight="bold" style="fill:#047857">
+    <text x="10" y="356">8 pour C</text>
+    <text x="130" y="196">3 pour A</text>
+    <text x="250" y="116">3 pour B</text>
+    <text x="130" y="516">5 pour A</text>
+  </g>
+</svg>
+<figcaption>
+  Figure 7 — L'arbre entièrement résolu. Le chemin épais est le déroulement effectif du jeu :
+  la commune choisit l'Est, A investit, B investit. Sous chaque nœud figure la valeur
+  « remontée » — ce que le joueur obtient en jouant son meilleur coup, une fois connu ce que
+  feront les suivants.
+</figcaption>
+</figure>
+
+<div class="result">
+<div class="result-title">Résultat de la question 3.3 — l'ENPS</div>
+<p>\[ \Big(\ \underbrace{E}_{\text{commune}} \ ;\ \underbrace{(I \,;\, I)}_{\text{enseigne A}} \ ;\ \underbrace{(I \,;\, I \,;\, N \,;\, I)}_{\text{enseigne B}}\ \Big) \]</p>
+<p>
+  C'est un ENPS parce que chaque composante a été obtenue en optimisant <strong>à chaque nœud
+  séparément</strong> : par construction, aucun sous-jeu ne contient de choix regrettable.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 3.3</div>
+<p>
+  « <em>Étape 1 — les nœuds de B (on compare le 3ᵉ payoff).</em> Après (E,I) : 3 > 0 ⇒ I. Après
+  (E,N) : 6 > 0 ⇒ I. Après (O,I) : 0 > −2 ⇒ N. Après (O,N) : 4 > 0 ⇒ I. Donc
+  \( S_B = (I;I;N;I) \).<br>
+  <em>Étape 2 — les nœuds de A (on compare le 2ᵉ payoff, en tenant compte de la réaction de B).</em>
+  Après E : I mène à (8;3;3) donc 3, N mène à (4;0;6) donc 0 ⇒ I. Après O : I mène à (3;5;0) donc
+  5 (B ne suit pas), N mène à (2;0;4) donc 0 ⇒ I. Donc \( S_A = (I;I) \).<br>
+  <em>Étape 3 — la commune (1ᵉʳ payoff).</em> E mène à (8;3;3) donc 8 ; O mène à (3;5;0) donc 3 ;
+  8 > 3 ⇒ E.<br>
+  <strong>ENPS = ( E ; (I;I) ; (I;I;N;I) )</strong>. »
+</p>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Méthode — comment présenter une induction à rebours qui rapporte tous les points</div>
+<ol>
+  <li><strong>Annonce l'ordre</strong> : « je résous d'abord les nœuds du dernier joueur, puis je
+      remonte ». Le correcteur veut voir que tu connais le principe.</li>
+  <li><strong>Un nœud = une ligne</strong>, avec la comparaison chiffrée explicite
+      (« 3 > 0 ⇒ I »). Ne te contente jamais d'annoncer le résultat.</li>
+  <li><strong>Précise à chaque étage quel nombre tu compares</strong> (« le 3ᵉ payoff, celui de
+      B »). C'est ce qui prouve que tu n'as pas confondu les joueurs.</li>
+  <li><strong>Écris les stratégies complètes</strong>, pas seulement le chemin suivi.</li>
+  <li><strong>Conclus par le profil entre parenthèses</strong>, dans l'ordre des joueurs.</li>
+</ol>
+</div>
+
+<hr class="soft">
+
+<h2>6. Question 3.4 — le déroulement effectif du jeu (6 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.4 (6 points)</div>
+<p>
+  <strong>3.4)</strong> Selon cet ENPS, quel est le résultat effectif du jeu : quelle zone est
+  aménagée, quelle(s) enseigne(s) investissent, et quels sont les payoffs des trois joueurs ?
+</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi cette question existe (et pourquoi elle est facile si la 3.3 est faite)</div>
+<p>
+  Une stratégie décrit ce qu'un joueur ferait <em>partout</em> ; le <span class="term">déroulement
+  effectif</span> (on dit aussi le <em>chemin d'équilibre</em>) décrit ce qui se passe
+  <em>vraiment</em>, c'est-à-dire la seule branche que l'on parcourt réellement. La question 3.4
+  te demande simplement de suivre le chemin épais de la figure 7, du départ jusqu'au bout.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Descendre le chemin d'équilibre</div>
+<table class="compare">
+<tr><th>Étape</th><th class="left">Qui décide</th><th class="left">Ce qu'il fait</th><th class="left">Pourquoi</th></tr>
+<tr><td>1</td><td class="left">la commune</td><td class="left">aménage la zone <strong>Est</strong></td><td class="left">8 &gt; 3</td></tr>
+<tr><td>2</td><td class="left">l'enseigne A</td><td class="left"><strong>investit</strong></td><td class="left">3 &gt; 0</td></tr>
+<tr><td>3</td><td class="left">l'enseigne B</td><td class="left"><strong>investit</strong> aussi</td><td class="left">3 &gt; 0</td></tr>
+</table>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 3.4</div>
+<p>
+  La <strong>zone Est</strong> est aménagée, et <strong>les deux enseignes s'y installent</strong>.
+  Les payoffs sont
+</p>
+<p>\[ (\,C \,;\, A \,;\, B\,) = (\,8 \,;\, 3 \,;\, 3\,) \]</p>
+<p>soit 8 pour la commune, 3 pour l'enseigne A et 3 pour l'enseigne B.</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 3.4</div>
+<ul>
+  <li><strong>Confondre le chemin et la stratégie.</strong> Le chemin est « E, puis I, puis I ».
+      La stratégie de B reste \( (I;I;N;I) \), avec ses quatre composantes — même si trois d'entre
+      elles ne servent jamais. Si la question demande le <em>résultat</em>, donne le chemin ; si
+      elle demande l'<em>équilibre</em>, donne les stratégies complètes.</li>
+  <li><strong>Oublier un joueur dans les payoffs.</strong> Ils sont trois : la réponse doit
+      comporter trois nombres, dans l'ordre annoncé par l'énoncé (C ; A ; B).</li>
+  <li><strong>Se tromper de triplet</strong> en relisant l'arbre trop vite. Vérifie que le triplet
+      annoncé est bien celui du bout de la branche parcourue.</li>
+</ul>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 3.4</div>
+<p>
+  « Sur le chemin d'équilibre : la commune aménage la zone <strong>Est</strong>, puis A investit,
+  puis B investit également. Le jeu aboutit au triplet <strong>(8 ; 3 ; 3)</strong> : la commune
+  obtient 8, l'enseigne A obtient 3 et l'enseigne B obtient 3. »
+</p>
+</div>
+
+<hr class="soft">
+
+<h2>7. Question 3.5 — un équilibre de Nash qui n'est pas parfait en sous-jeux (10 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 3.5 (10 points)</div>
+<p>
+  <strong>3.5)</strong> Donnez un équilibre de Nash de ce jeu qui <em>n'est pas</em> parfait en
+  sous-jeux. Vérifiez qu'il s'agit bien d'un équilibre de Nash, puis expliquez précisément
+  pourquoi il n'est pas parfait en sous-jeux : quelle menace n'est pas crédible ?
+</p>
+</div>
+
+<h3>7.1 Traduisons la question</h3>
+
+<p>
+  L'énoncé te demande trois choses distinctes, et le barème les compte séparément :
+  <strong>(a)</strong> exhiber un profil de stratégies, <strong>(b)</strong> démontrer que c'est
+  un équilibre de Nash, <strong>(c)</strong> identifier la menace non crédible. Traite-les dans
+  cet ordre, en trois paragraphes visibles.
+</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — menace non crédible</div>
+<p>
+  Une <span class="term">menace non crédible</span> est une action qu'un joueur annonce (par sa
+  stratégie) mais qu'il <strong>n'aurait pas intérêt à exécuter</strong> si on l'y obligeait
+  vraiment.
+</p>
+<p>
+  Autrement dit : c'est du bluff. Elle peut malgré tout influencer les autres, parce qu'ils
+  ajustent leur comportement <em>pour ne pas avoir à la tester</em> — et du coup, elle n'est
+  jamais testée, donc jamais démentie.
+</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Exemple — la menace non crédible de la vie courante</div>
+<p>
+  « Si tu ne ranges pas ta chambre, on annule les vacances de toute la famille. » L'enfant range
+  peut-être ; mais si jamais il ne rangeait pas, les parents n'annuleraient sûrement pas — ils
+  se puniraient eux-mêmes. La menace fonctionne <em>tant qu'elle n'est pas mise à l'épreuve</em>.
+  C'est exactement la situation de l'enseigne B ci-dessous.
+</p>
+</div>
+
+<h3>7.2 (a) Le profil proposé</h3>
+
+<p>
+  Prenons pour B la stratégie <strong>« j'investis partout, sans exception »</strong> :
+</p>
+
+<div class="result">
+<div class="result-title">Le profil</div>
+<p>\[ \Big(\ E \ ;\ (I \,;\, N) \ ;\ (I \,;\, I \,;\, I \,;\, I)\ \Big) \]</p>
+<p>
+  B menace d'investir même sur l'Ouest en présence de A ; face à cette menace, A renonce à
+  l'Ouest (il joue N après O) mais reste sur l'Est ; et la commune choisit toujours l'Est.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Vérifier d'où sortent les composantes de A et de C</div>
+<div class="calc">
+<div class="step">
+\[ \text{A après E : } I \Rightarrow (8;\mathbf{3};3) \quad\text{contre}\quad N \Rightarrow (4;\mathbf{0};6) \ \Longrightarrow\ I \]
+<div class="why">Face à un B qui investit toujours, A compare 3 et 0 sur l'Est : il investit.</div>
+</div>
+<div class="step">
+\[ \text{A après O : } I \Rightarrow (6;\mathbf{-2};-2) \quad\text{contre}\quad N \Rightarrow (2;\mathbf{0};4) \ \Longrightarrow\ N \]
+<div class="why">Sur l'Ouest, en revanche, A anticipe que B viendra le concurrencer : il perdrait
+2. Il préfère 0. <strong>C'est ici que la menace produit son effet</strong> : elle change le
+comportement de A.</div>
+</div>
+<div class="step">
+\[ \text{C : } E \Rightarrow (\mathbf{8};3;3) \quad\text{contre}\quad O \Rightarrow (\mathbf{2};0;4) \ \Longrightarrow\ E \]
+<div class="why">La commune compare 8 et 2 : elle choisit l'Est. Le déroulement effectif est donc
+E, I, I — exactement le même que celui de l'ENPS, avec les mêmes payoffs (8 ; 3 ; 3).</div>
+</div>
+</div>
+</div>
+
+<h3>7.3 (b) Vérifier que c'est bien un équilibre de Nash</h3>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel — ce qu'il faut montrer</div>
+<p>
+  Un profil est un <strong>équilibre de Nash</strong> si <em>aucun joueur, seul, n'a intérêt à
+  changer sa stratégie</em>, les deux autres gardant la leur. Il faut donc examiner les trois
+  joueurs, un par un. Attention : on compare les payoffs <strong>du jeu entier</strong>, tel qu'il
+  se déroule — pas nœud par nœud (ça, c'est le critère de l'ENPS).
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> La commune peut-elle gagner à dévier ?</div>
+<div class="calc">
+<div class="step">
+\[ \text{en jouant E : } 8 \qquad \text{en jouant O : } 2 \]
+<div class="why">Si elle choisissait l'Ouest, A jouerait N (sa stratégie le prévoit) et B
+investirait : on aboutirait à (2 ; 0 ; 4). La commune passerait de 8 à 2 : elle y perdrait.
+Elle ne dévie pas.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> L'enseigne A peut-elle gagner à dévier ?</div>
+<div class="calc">
+<div class="step">
+\[ \text{sa composante utilisée est « après E » : } I \Rightarrow 3 \quad\text{contre}\quad N \Rightarrow 0 \]
+<div class="why">La commune joue E, donc le seul nœud de A réellement atteint est celui-là. En y
+changeant I pour N, A tomberait à 0. Il ne dévie pas.</div>
+</div>
+<div class="step">
+\[ \text{sa composante « après O » ne change rien : ce nœud n'est jamais atteint} \]
+<div class="why">A pourrait remplacer le N par un I sans que cela modifie son gain (toujours 3),
+puisque la commune ne va jamais sur l'Ouest. Cette indifférence est autorisée : pour un
+équilibre de Nash, il suffit qu'aucune déviation ne soit <em>strictement</em> profitable.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> L'enseigne B peut-elle gagner à dévier ?</div>
+<div class="calc">
+<div class="step">
+\[ \text{son seul nœud atteint est « après E puis I » : } I \Rightarrow 3 \quad\text{contre}\quad N \Rightarrow 0 \]
+<div class="why">3 vaut mieux que 0 : elle ne dévie pas sur le chemin.</div>
+</div>
+<div class="step">
+\[ \text{ses trois autres composantes ne sont jamais utilisées} \]
+<div class="why">Et voilà le point clé : la composante absurde — investir sur l'Ouest à côté de A,
+pour \( -2 \) — se trouve à un nœud qu'on n'atteint jamais. Elle ne coûte donc rien à B. C'est
+précisément pour cela que le profil <strong>survit</strong> au test de Nash.</div>
+</div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Conclusion du (b)</div>
+<p>
+  Aucun des trois joueurs n'améliore son gain en changeant seul de stratégie : le profil
+  \( \big(E \,;\, (I;N) \,;\, (I;I;I;I)\big) \) est bien un <strong>équilibre de Nash</strong>,
+  avec les payoffs (8 ; 3 ; 3).
+</p>
+</div>
+
+<h3>7.4 (c) Pourquoi il n'est pas parfait en sous-jeux</h3>
+
+<p>
+  Le test de l'ENPS est plus exigeant : il faut que la stratégie soit optimale
+  <strong>dans chaque sous-jeu</strong>, y compris dans ceux qu'on n'atteint pas. Allons voir le
+  sous-jeu coupable.
+</p>
+
+<figure>
+<svg viewBox="0 0 460 210" width="100%" style="max-width:12cm" role="img"
+     aria-label="Zoom sur le sous-jeu qui commence après que la commune a choisi l'Ouest et que l'enseigne A y a investi : B peut investir et perdre 2, ou s'abstenir et obtenir 0">
+  <text x="230" y="20" font-size="12.5" text-anchor="middle" font-weight="bold">Le sous-jeu qui commence après (O, I)</text>
+  <g stroke="#be123c" stroke-width="3" fill="none">
+    <line x1="90" y1="110" x2="250" y2="62"/>
+  </g>
+  <g stroke="#047857" stroke-width="3" fill="none">
+    <line x1="90" y1="110" x2="250" y2="158"/>
+  </g>
+  <circle cx="90" cy="110" r="6" fill="#111827"/>
+  <text x="78" y="114" font-size="13.5" font-weight="bold" text-anchor="end">B</text>
+  <text x="160" y="76" font-size="12.5" font-style="italic" text-anchor="middle">I</text>
+  <text x="160" y="152" font-size="12.5" font-style="italic" text-anchor="middle">N</text>
+  <circle cx="250" cy="62" r="4" fill="#ffffff" stroke="#111827" stroke-width="1.3"/>
+  <circle cx="250" cy="158" r="4" fill="#ffffff" stroke="#111827" stroke-width="1.3"/>
+  <text x="264" y="66" font-size="12.5">(6 ; −2 ; <tspan font-weight="bold" style="fill:#be123c">−2</tspan>)</text>
+  <text x="264" y="162" font-size="12.5">(3 ; 5 ; <tspan font-weight="bold" style="fill:#047857">0</tspan>)</text>
+  <text x="264" y="86" font-size="11" style="fill:#be123c">ce que la menace annonce</text>
+  <text x="264" y="182" font-size="11" style="fill:#047857">ce que B ferait vraiment</text>
+  <text x="230" y="203" font-size="11.5" text-anchor="middle" font-weight="bold">0 &gt; −2 : investir ici n'est pas optimal pour B</text>
+</svg>
+<figcaption>
+  Figure 8 — Le sous-jeu de la menace non crédible. Si l'on déposait vraiment B à ce nœud, il
+  choisirait N (0) plutôt que I (−2). Sa stratégie \( (I;I;I;I) \) lui prescrit pourtant I :
+  elle n'est donc pas optimale dans ce sous-jeu, et le profil n'est pas un ENPS.
+</figcaption>
+</figure>
+
+<div class="calc">
+<div class="step">
+\[ \text{dans le sous-jeu après } (O, I) : \quad I \Rightarrow -2 \qquad N \Rightarrow 0 \qquad\text{et}\qquad 0 > -2 \]
+<div class="why">Pris isolément, ce sous-jeu a une réponse évidente : B doit s'abstenir. Or sa
+stratégie lui fait investir. Elle est donc sous-optimale <em>dans ce sous-jeu</em> — ce qui
+suffit à disqualifier le profil comme ENPS.</div>
+</div>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Le raisonnement en une phrase</div>
+<p>
+  B <strong>menace</strong> d'investir sur l'Ouest quoi qu'il arrive. Cette menace décourage A d'y
+  aller — donc elle « marche ». Mais si A l'ignorait et s'installait quand même, B n'exécuterait
+  pas sa menace : il perdrait 2 au lieu de 0. La menace n'est jamais mise à l'épreuve, donc elle
+  ne coûte rien à B ; c'est pour cela que le profil passe le test de Nash. Elle est pourtant
+  <strong>vide</strong>, et c'est pour cela qu'il échoue au test de la perfection en sous-jeux.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 3.5</div>
+<p>
+  « <em>(a)</em> Considérons le profil \( \big(E \,;\, (I;N) \,;\, (I;I;I;I)\big) \) : B investit
+  à ses quatre nœuds, A investit après E mais pas après O, la commune choisit E. Le déroulement
+  est E, I, I, de payoffs (8 ; 3 ; 3).<br>
+  <em>(b) C'est un équilibre de Nash.</em> La commune : dévier vers O donnerait (2 ; 0 ; 4), soit
+  2 &lt; 8. A : au seul nœud atteint (après E), N donnerait 0 &lt; 3 ; sa composante après O
+  n'est jamais utilisée. B : au seul nœud atteint (après E puis I), N donnerait 0 &lt; 3 ; ses
+  autres composantes ne sont jamais utilisées et ne peuvent donc pas lui coûter. Aucune déviation
+  unilatérale n'est profitable.<br>
+  <em>(c) Il n'est pas parfait en sous-jeux.</em> Dans le sous-jeu qui commence après (O, I), la
+  stratégie de B prescrit I, qui lui rapporte −2, alors que N lui rapporterait 0 : elle n'y est
+  pas optimale. <strong>La menace non crédible est celle de B d'investir sur la zone Ouest en
+  présence de A.</strong> Elle dissuade A d'y aller, mais B ne l'exécuterait jamais ; comme ce
+  nœud n'est pas atteint à l'équilibre, elle n'est jamais démentie. »
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 3.5</div>
+<ul>
+  <li><strong>Croire qu'un équilibre non parfait n'est pas un équilibre de Nash.</strong> Si :
+      tout ENPS est un équilibre de Nash, mais l'inverse est faux. L'ensemble des ENPS est
+      <em>inclus</em> dans celui des équilibres de Nash.</li>
+  <li><strong>Ne pas vérifier les trois joueurs.</strong> Le barème donne des points pour la
+      vérification, pas seulement pour la conclusion.</li>
+  <li><strong>Dire « la menace n'est pas crédible » sans dire laquelle.</strong> Il faut nommer
+      le nœud (après O puis I), l'action (investir) et les deux nombres (−2 contre 0).</li>
+  <li><strong>Choisir un profil qui n'est pas un équilibre de Nash du tout.</strong> Toute
+      stratégie farfelue ne convient pas : il faut que la déviation ne soit profitable à
+      personne. Le test des trois joueurs n'est pas décoratif.</li>
+</ul>
+</div>
+
+<hr class="soft">
+
+<h2>8. Récapitulatif : toute la Question 3 sur deux pages</h2>
+
+<h3>8.1 Les cinq réponses</h3>
+
+<table class="compare">
+<tr><th>Q</th><th class="left">Réponse</th><th class="left">Le geste qui rapporte les points</th></tr>
+<tr>
+  <td>3.1<br>(6 pts)</td>
+  <td class="left">un quadruplet, par exemple \( (I;I;N;I) \) ; B a \( 2^4 = 16 \) stratégies</td>
+  <td class="left">dire qu'une stratégie prévoit une action à <em>chacun</em> des 4 nœuds, et donner la convention de lecture</td>
+</tr>
+<tr>
+  <td>3.2<br>(8 pts)</td>
+  <td class="left">\( S_A = \{(I;I),(I;N),(N;I),(N;N)\} \)</td>
+  <td class="left">compter \( 2^2 = 4 \) avant d'énumérer, pour ne rien oublier</td>
+</tr>
+<tr>
+  <td>3.3<br>(20 pts)</td>
+  <td class="left">\( \big(E \,;\, (I;I) \,;\, (I;I;N;I)\big) \)</td>
+  <td class="left">résoudre les 4 nœuds de B, puis les 2 de A <em>en tenant compte de B</em>, puis C</td>
+</tr>
+<tr>
+  <td>3.4<br>(6 pts)</td>
+  <td class="left">zone Est, les deux enseignes investissent, (8 ; 3 ; 3)</td>
+  <td class="left">suivre le chemin d'équilibre et donner les trois payoffs</td>
+</tr>
+<tr>
+  <td>3.5<br>(10 pts)</td>
+  <td class="left">\( \big(E \,;\, (I;N) \,;\, (I;I;I;I)\big) \) : EN mais pas ENPS</td>
+  <td class="left">vérifier les 3 joueurs, puis nommer la menace : B investir sur l'Ouest (−2 contre 0)</td>
+</tr>
+</table>
+
+<h3>8.2 Les quatre idées à emporter</h3>
+
+<div class="box box-methode">
+<div class="box-title">Ce qu'il faut avoir compris</div>
+<ol>
+  <li><strong>Une stratégie n'est pas une action, c'est un plan complet.</strong> Autant de
+      composantes que de nœuds — même ceux qu'on n'atteindra jamais.</li>
+  <li><strong>On résout un jeu séquentiel par la fin.</strong> À chaque nœud, on compare
+      uniquement les payoffs du joueur qui décide là.</li>
+  <li><strong>En remontant, on lit les résultats déjà sélectionnés</strong>, pas les payoffs
+      bruts de l'arbre. C'est ce qui fait que A ose investir sur l'Ouest.</li>
+  <li><strong>Un équilibre de Nash peut contenir une menace vide ; un ENPS, jamais.</strong>
+      C'est toute la différence entre les deux notions.</li>
+</ol>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Checklist avant de tourner la page</div>
+<ol>
+  <li>Ai-je écrit les stratégies avec le <em>bon nombre de composantes</em> (2 pour A, 4 pour B) ?</li>
+  <li>Ai-je précisé ma convention de lecture des composantes ?</li>
+  <li>À chaque nœud, ai-je bien comparé le payoff <em>du joueur qui décide là</em> ?</li>
+  <li>Ai-je écrit toutes les comparaisons chiffrées, et pas seulement les conclusions ?</li>
+  <li>En 3.4, ai-je donné les <em>trois</em> payoffs ?</li>
+  <li>En 3.5, ai-je vérifié les trois joueurs <em>et</em> nommé précisément la menace ?</li>
+</ol>
+</div>
+
+<p>
+  Voilà la Question 3 entièrement décortiquée. Si tu ne devais retenir qu'une chose : dans un jeu
+  séquentiel, on ne devine pas l'avenir — <strong>on le calcule, en partant de la fin</strong>.
+</p>
+</section>

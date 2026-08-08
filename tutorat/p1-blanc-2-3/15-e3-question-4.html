@@ -1,0 +1,1177 @@
+<section class="chapter">
+<div class="chapter-tag">Chapitre 15 — Examen n° 3, Question 4 · 30 points</div>
+<h1>Question 4 : le contrebandier et le douanier — le jeu où il faut être imprévisible</h1>
+<p class="chapter-intro">Trente points, quatre sous-questions, et un jeu que tu connais déjà par cœur sans le savoir : c'est le pierre-feuille-ciseaux du contrôle aux frontières. L'un veut passer là où l'autre n'est pas, l'autre veut être exactement là où le premier passe. Personne ne peut se permettre d'être prévisible. Le volume 1 (chapitre 3, sections 3.4 et 3.5) a déjà construit tout l'outillage : la stratégie mixte, le payoff espéré, le principe d'indifférence. On ne va donc pas le refaire — on va le <em>rappeler en une page</em>, l'appliquer proprement, et surtout consacrer l'essentiel du chapitre à la sous-question 4.4, qui contient le plus beau et le plus contre-intuitif résultat de toute la théorie des jeux élémentaire : <strong>quand tes gains à toi augmentent, ce n'est pas toi qui changes de comportement, c'est ton adversaire.</strong></p>
+
+<h2>0. La carte du chapitre</h2>
+
+<p>Lis cette première section en entier avant d'attaquer les calculs. Elle te donne l'histoire, le plan, et les quatre réponses. Si tu te perds plus loin, c'est ici qu'il faudra revenir.</p>
+
+<h3>0.1 L'histoire, en quatre phrases</h3>
+
+<p>Un <strong>contrebandier</strong> doit faire passer une marchandise à un poste-frontière. Il a deux itinéraires : la <strong>Route</strong> principale (rapide et confortable) ou la <strong>Montagne</strong> (longue, épuisante, coûteuse). En face, un <strong>douanier</strong> ne dispose que d'<em>une seule</em> patrouille : il doit choisir de la poster sur la Route <em>ou</em> dans la Montagne, pas les deux. Les deux choisissent <strong>en même temps</strong>, sans se voir : si le douanier tombe juste, la marchandise est saisie ; s'il se trompe d'endroit, elle passe.</p>
+
+<p>Voilà. C'est tout le jeu. Et tu sens déjà l'ambiance : ce n'est pas un jeu où l'on cherche un terrain d'entente, c'est un jeu de <strong>pure poursuite</strong>. Ce que l'un gagne, l'autre le perd (pas exactement au centime près ici, mais l'esprit y est). Dans ce genre de situation, il y a une règle de survie que tout joueur de poker connaît : <strong>ne jamais devenir prévisible</strong>. Toute la question 4 consiste à transformer cette intuition en chiffres.</p>
+
+<div class="box box-exemple">
+<div class="box-title">Le même jeu, dans ta vie de tous les jours</div>
+<p>Tu joues à « pierre-feuille-ciseaux » avec quelqu'un. Existe-t-il un « meilleur coup » ? Non : dès que ton adversaire devine que tu joues pierre, il joue feuille et tu perds. Le seul comportement raisonnable, c'est de <strong>tirer au sort</strong> ton coup — un tiers, un tiers, un tiers.</p>
+<p>Autres exemples de la même famille : le gardien de but qui plonge à droite ou à gauche pendant que le tireur vise à droite ou à gauche ; le contrôleur qui monte dans le bus de 8 h ou celui de 9 h pendant que le fraudeur choisit lequel prendre ; le service des impôts qui décide quels dossiers vérifier. Dans tous ces cas, l'<strong>imprévisibilité</strong> n'est pas de la fantaisie : c'est la stratégie optimale, et on peut la calculer au chiffre près. C'est exactement ce que fait cette question 4.</p>
+</div>
+
+<h3>0.2 Ce qu'on te demande, sous-question par sous-question</h3>
+
+<table class="data">
+<tr><th>Sous-question</th><th>Ce qu'on te demande, en français simple</th><th>Points</th></tr>
+<tr><td>4.1</td><td>Montrer qu'aucune combinaison « chacun choisit un chemin bien précis » ne tient debout</td><td>6</td></tr>
+<tr><td>4.2</td><td>Calculer avec quelles probabilités chacun doit tirer au sort son choix</td><td>12</td></tr>
+<tr><td>4.3</td><td>Calculer ce que chacun gagne en moyenne quand ils jouent comme ça</td><td>6</td></tr>
+<tr><td>4.4</td><td>Refaire le calcul quand la marchandise vaut plus cher, et dire <em>qui</em> change de comportement</td><td>6</td></tr>
+</table>
+
+<p>Remarque tout de suite l'architecture. La 4.1 sert à <strong>justifier</strong> qu'on a le droit de passer aux probabilités (sinon, pourquoi se compliquer la vie ?). La 4.2 est le cœur calculatoire, et elle vaut à elle seule 12 points sur 30, soit 40 % de la question. La 4.3 est un simple encaissement de la 4.2 : trois lignes. La 4.4 ne vaut que 6 points mais c'est la seule à demander une <em>explication</em>, et c'est là que la plupart des copies s'effondrent.</p>
+
+<h3>0.3 Les quatre réponses, tout de suite</h3>
+
+<p>Je te les donne dès maintenant. Certains mots ne te diront rien pour l'instant : c'est normal et c'est voulu. Reviens lire cet encadré à la fin du chapitre, il te paraîtra transparent.</p>
+
+<div class="result">
+<div class="result-title">Les quatre réponses (à comprendre d'ici la fin du chapitre)</div>
+<ul>
+<li><strong>4.1</strong> — Aucune des quatre cases n'est un équilibre : dans chacune, l'un des deux joueurs a envie de bouger. Les envies de bouger forment une <strong>boucle</strong> sans fin. Donc <strong>pas d'équilibre de Nash en stratégies pures</strong>.</li>
+<li><strong>4.2</strong> — \( \mathbf{p^* = 1/4 = 0{,}25} \) et \( \mathbf{q^* = 3/5 = 0{,}6} \). Le contrebandier prend la Route 1 fois sur 4 ; le douanier y patrouille 3 fois sur 5.</li>
+<li><strong>4.3</strong> — Le contrebandier gagne \( \mathbf{0{,}8} \) en moyenne ; le douanier gagne \( \mathbf{1{,}5} \).</li>
+<li><strong>4.4</strong> — Quand le gain de passage par la Route monte de 8 à 28 : \( q^* \) passe de 0,6 à \( \mathbf{4/5 = 0{,}8} \), et \( p^* \) <strong>ne bouge pas</strong> (toujours 0,25). C'est donc le <strong>douanier</strong> qui change de comportement, alors que ce sont les gains du <em>contrebandier</em> qui ont changé.</li>
+</ul>
+</div>
+
+<p>Relis la dernière ligne. Elle a l'air fausse, non ? On augmente la récompense du contrebandier, et c'est le <em>douanier</em> qui se met à agir autrement ; le contrebandier, lui, continue exactement comme avant. Cette phrase est le sommet du chapitre. Toute la section 5 lui est consacrée.</p>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel express du volume 1 (chapitre 3) — les six briques dont on a besoin ici</div>
+<p>Tout ce chapitre repose sur le chapitre 3 du volume 1. Version compacte, à relire là-bas si l'une des six briques est floue :</p>
+<ul>
+<li><strong>Jeu simultané / forme normale.</strong> Un tableau. Le joueur des <em>lignes</em>, le joueur des <em>colonnes</em>. Dans chaque case, deux nombres : <strong>le premier est le gain du joueur des lignes</strong>, le second celui du joueur des colonnes. Ici : (gain du contrebandier ; gain du douanier).</li>
+<li><strong>Meilleure réponse.</strong> Face à un choix <em>précis</em> de l'autre, mon meilleur choix à moi. On la trouve en comparant deux nombres — les miens.</li>
+<li><strong>Équilibre de Nash en stratégies pures.</strong> Une case où <em>chacun</em> joue une meilleure réponse à l'autre. Test opérationnel : personne ne gagnerait à changer tout seul de ligne (ou de colonne).</li>
+<li><strong>Stratégie mixte.</strong> Au lieu de choisir une action, je tire au sort entre mes actions avec des probabilités que je choisis. « Route avec probabilité \( p \) » se lit : « sur 100 passages, j'en fais \( 100p \) par la route ».</li>
+<li><strong>Payoff espéré.</strong> La moyenne de mes gains possibles, pondérée par leurs probabilités : \( E = \text{proba}_1 \times \text{gain}_1 + \text{proba}_2 \times \text{gain}_2 \).</li>
+<li><strong>Principe (ou théorème) d'indifférence.</strong> Si je mélange vraiment mes deux actions, c'est qu'elles me rapportent exactement la même chose en moyenne. Et — c'est le point qu'on va marteler — <strong>mon indifférence à moi détermine la probabilité de l'autre</strong>.</li>
+</ul>
+<p>Le volume 1 appelait ce dernier point <strong>« le chiasme »</strong> (les équations se croisent en X). On garde le mot : il va nous servir de fil rouge, jusqu'à la 4.4 incluse.</p>
+</div>
+
+<hr class="soft">
+
+<h2>1. Le décor : lire correctement la matrice du jeu</h2>
+
+<p>Avant tout calcul, il faut que ce tableau soit limpide. Prends trente secondes de plus ici, tu en gagneras dix minutes plus loin.</p>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — le jeu (situation commune aux questions 4.1 à 4.4)</div>
+<p>À un poste-frontière, un contrebandier choisit de faire passer sa marchandise par la <strong>Route</strong> principale ou par la <strong>Montagne</strong>. Simultanément, le douanier choisit de poster son unique patrouille sur la <strong>Route</strong> ou dans la <strong>Montagne</strong>. Si le douanier patrouille sur le chemin choisi par le contrebandier, la marchandise est saisie ; sinon, elle passe (le passage par la montagne est toutefois plus coûteux pour le contrebandier). Les gains sont les suivants (le premier nombre est le gain du contrebandier, le second celui du douanier) :</p>
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Douanier</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Route (\( q \))</th><th>Montagne (\( 1-q \))</th></tr>
+<tr><td class="player" rowspan="2">Contrebandier</td><th>Route (\( p \))</th><td>(−4 ; 6)</td><td>(8 ; 0)</td></tr>
+<tr><th>Montagne (\( 1-p \))</th><td>(4 ; 0)</td><td>(−4 ; 2)</td></tr>
+</table>
+</div>
+
+<h3>1.1 Décoder les quatre cases une par une</h3>
+
+<p>Une matrice de jeu, ça ne se « survole » pas : ça se raconte. Voici les quatre histoires possibles, en français.</p>
+
+<dl class="lexique">
+<dt>Case en haut à gauche : (Route ; Route) → (−4 ; 6)</dt>
+<dd>Le contrebandier prend la route, et le douanier est justement sur la route. <strong>Il se fait prendre.</strong> Le contrebandier perd 4 (marchandise saisie, amende) : d'où le <strong>−4</strong>. Le douanier réussit sa mission : il gagne <strong>6</strong>. C'est sa plus belle prise, parce que c'est sur la route que passent les grosses cargaisons.</dd>
+
+<dt>Case en haut à droite : (Route ; Montagne) → (8 ; 0)</dt>
+<dd>Le contrebandier prend la route, le douanier surveille la montagne : <strong>ils se ratent</strong>. La marchandise passe par le chemin le plus commode, le contrebandier empoche <strong>8</strong>. Le douanier a passé sa nuit dans la neige pour rien : <strong>0</strong>.</dd>
+
+<dt>Case en bas à gauche : (Montagne ; Route) → (4 ; 0)</dt>
+<dd>Le contrebandier passe par la montagne, le douanier attend sur la route : <strong>ils se ratent encore</strong>. La marchandise passe, mais le trajet a coûté cher (guide, mules, temps, risque de chute) : le contrebandier ne gagne que <strong>4</strong> au lieu de 8. Douanier : <strong>0</strong>.</dd>
+
+<dt>Case en bas à droite : (Montagne ; Montagne) → (−4 ; 2)</dt>
+<dd>Les deux sont en montagne : <strong>saisie</strong>. Le contrebandier perd 4, comme dans l'autre cas de saisie. Mais le douanier ne gagne que <strong>2</strong>, pas 6 : il a intercepté une petite cargaison de contrebande de montagne, pas le gros arrivage de la route.</dd>
+</dl>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi les nombres sont ceux-là (et pourquoi c'est important de le comprendre)</div>
+<p>Ne prends jamais les payoffs d'un énoncé comme des nombres tombés du ciel. Ils encodent une histoire, et cette histoire t'aide à repérer tes erreurs de recopie. Ici :</p>
+<ul>
+<li><strong>Côté contrebandier</strong> : se faire prendre coûte toujours pareil (\( -4 \), quel que soit le chemin) ; passer par la route rapporte plus que passer par la montagne (\( 8 > 4 \)) parce que la montagne coûte cher.</li>
+<li><strong>Côté douanier</strong> : rater le contrebandier ne rapporte rien (\( 0 \)) ; l'attraper sur la route vaut trois fois plus que l'attraper en montagne (\( 6 \) contre \( 2 \)) parce que la prise y est plus grosse.</li>
+</ul>
+<p>Contrôle de cohérence : les deux joueurs veulent des choses <em>opposées</em>. Le contrebandier veut la case où le douanier n'est pas ; le douanier veut la case où le contrebandier est. C'est cette opposition frontale qui va tout provoquer.</p>
+</div>
+
+<h3>1.2 Les notations \( p \) et \( q \) : à qui appartient quoi ?</h3>
+
+<p>Deux lettres, et 90 % des erreurs de cette question viennent de leur confusion. Grave-les :</p>
+
+<dl class="lexique">
+<dt>\( p \) (lire « p »)</dt>
+<dd>La probabilité que <strong>le contrebandier</strong> prenne la <strong>Route</strong>. C'est <em>sa</em> variable à lui, le joueur des <strong>lignes</strong>. Elle est écrite <em>à gauche</em> du tableau, sur la ligne « Route ». Comme il n'a que deux options, la probabilité qu'il prenne la Montagne vaut forcément \( 1-p \) : les deux probabilités doivent faire 1, parce qu'il choisit forcément l'un des deux chemins.</dd>
+
+<dt>\( q \) (lire « q »)</dt>
+<dd>La probabilité que <strong>le douanier</strong> patrouille sur la <strong>Route</strong>. C'est <em>sa</em> variable à lui, le joueur des <strong>colonnes</strong>. Elle est écrite <em>en haut</em> du tableau, sur la colonne « Route ». Et il patrouille en Montagne avec probabilité \( 1-q \).</dd>
+
+<dt>\( p^* \) et \( q^* \) (lire « p étoile », « q étoile »)</dt>
+<dd>L'étoile signifie « à l'équilibre ». \( p \) et \( q \) tout court désignent n'importe quelles probabilités qu'on se donnerait ; \( p^* \) et \( q^* \) désignent les <em>bonnes</em>, celles qui forment l'équilibre de Nash. C'est une convention universelle en économie : l'étoile marque la valeur optimale ou d'équilibre.</dd>
+</dl>
+
+<div class="box box-piege">
+<div class="box-title">Le piège des lettres, dès maintenant</div>
+<p>Retiens cette phrase, tu la relira trois fois dans ce chapitre : <strong>\( p \) appartient au contrebandier, \( q \) appartient au douanier.</strong> Et pourtant — c'est tout le sel de la question — <strong>tu calculeras \( q \) avec les gains du contrebandier, et \( p \) avec les gains du douanier</strong>. Ce croisement n'est pas une coquetterie de professeur : c'est la nature même de l'équilibre mixte, et le corrigé prévoit explicitement de retirer 3 points si tu inverses. On y revient longuement en section 3.</p>
+</div>
+
+<hr class="soft">
+
+<h2>2. Sous-question 4.1 — Montrer qu'il n'y a aucun équilibre en stratégies pures</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 4.1 (6 points)</div>
+<p>Montrez qu'il n'existe aucun équilibre de Nash en stratégies pures dans ce jeu.</p>
+</div>
+
+<h3>2.1 Traduisons la question en français simple</h3>
+
+<dl class="lexique">
+<dt>« Montrez qu'il n'existe aucun… »</dt>
+<dd>Attention au verbe. On ne te demande pas de <em>chercher</em> puis de conclure au petit bonheur : on te demande une <strong>démonstration d'inexistence</strong>. Pour prouver qu'il n'y a pas d'équilibre, il n'y a qu'une seule méthode acceptable dans un jeu 2×2 : <strong>passer les quatre cases en revue et éliminer chacune</strong>. Une case oubliée, et ta démonstration ne prouve rien.</dd>
+
+<dt>« équilibre de Nash »</dt>
+<dd>Une combinaison de choix telle que <strong>personne ne regrette le sien</strong> une fois le choix de l'autre révélé. Autrement dit : si je te montre ce que l'autre a joué et que tu as toujours envie de garder ton choix, et réciproquement, alors c'est un équilibre de Nash.</dd>
+
+<dt>« en stratégies pures »</dt>
+<dd>« Pure » veut dire : <strong>sans tirage au sort</strong>. Une stratégie pure, c'est « je prends la Route », point. Par opposition à une stratégie <em>mixte</em>, qui serait « je prends la Route une fois sur quatre ». Dans un jeu 2×2, il y a exactement quatre profils de stratégies pures : les quatre cases du tableau. C'est pour ça que la démonstration est finie et courte.</dd>
+</dl>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel (volume 1, chapitre 3) — le test de l'équilibre de Nash en une phrase</div>
+<p>Une case est un équilibre de Nash si, <strong>et seulement si</strong>, elle vérifie les deux conditions suivantes :</p>
+<ul>
+<li>le joueur des <strong>lignes</strong> ne gagne rien à changer de ligne, la colonne restant fixée ;</li>
+<li>le joueur des <strong>colonnes</strong> ne gagne rien à changer de colonne, la ligne restant fixée.</li>
+</ul>
+<p>Le mot clé, c'est <strong>« tout seul »</strong> : on teste des déviations <em>unilatérales</em>. On ne demande jamais aux deux joueurs de bouger en même temps.</p>
+</div>
+
+<h3>2.2 La méthode : souligner les meilleures réponses</h3>
+
+<p>Il existe une technique visuelle qui rend cette question mécanique et pratiquement infaillible. On l'a vue au volume 1, on la re-déroule ici parce qu'elle est la colonne vertébrale de la réponse.</p>
+
+<div class="box box-methode">
+<div class="box-title">Méthode — la chasse aux équilibres purs dans un tableau 2×2</div>
+<ol>
+<li><strong>Je me mets dans la peau du joueur des lignes.</strong> Je regarde <em>uniquement les premiers nombres</em>. Colonne par colonne, j'entoure le plus grand : c'est sa meilleure réponse à cette colonne.</li>
+<li><strong>Je me mets dans la peau du joueur des colonnes.</strong> Je regarde <em>uniquement les seconds nombres</em>. Ligne par ligne, j'entoure le plus grand.</li>
+<li><strong>Je cherche les cases doublement entourées.</strong> Chacune est un équilibre de Nash pur. S'il n'y en a aucune, il n'y a aucun équilibre pur.</li>
+</ol>
+<p>Deux comparaisons de deux nombres pour chaque joueur : quatre comparaisons en tout. C'est aussi simple que ça.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Les meilleures réponses du contrebandier (les premiers nombres)</div>
+<p>Je me place du côté du contrebandier. Je ne regarde <strong>que les premiers nombres</strong> de chaque case : \( -4 \), \( 8 \), \( 4 \), \( -4 \). Les seconds nombres ne le concernent pas du tout, ce sont les gains de son adversaire.</p>
+<div class="calc">
+<div class="step">
+\[ \text{Si le douanier est sur la Route} : \quad \underbrace{-4}_{\text{Route}} \quad \text{contre} \quad \underbrace{4}_{\text{Montagne}} \]
+<div class="why">Je fige la <em>colonne</em> « Route » et je compare les deux gains du contrebandier dans cette colonne, celui du haut (il prend la route : \( -4 \)) et celui du bas (il prend la montagne : \( 4 \)).</div>
+</div>
+<div class="step">
+\[ 4 > -4 \quad \Longrightarrow \quad \text{il préfère la } \textbf{Montagne} \]
+<div class="why">Évidemment : si le douanier est sur la route, y aller c'est se faire prendre. Sa meilleure réponse à « Route » est donc « Montagne ».</div>
+</div>
+<div class="step">
+\[ \text{Si le douanier est en Montagne} : \quad \underbrace{8}_{\text{Route}} \quad \text{contre} \quad \underbrace{-4}_{\text{Montagne}} \]
+<div class="why">Je fige maintenant la colonne « Montagne » et je compare de nouveau les deux gains du contrebandier dans cette colonne.</div>
+</div>
+<div class="step">
+\[ 8 > -4 \quad \Longrightarrow \quad \text{il préfère la } \textbf{Route} \]
+<div class="why">Le douanier est dans la neige : la route est libre, et c'est le chemin le plus rentable. Sa meilleure réponse à « Montagne » est « Route ».</div>
+</div>
+</div>
+<p><strong>Conclusion partielle :</strong> le contrebandier veut toujours aller <em>là où le douanier n'est pas</em>. Il n'a aucune stratégie dominante : son meilleur choix dépend entièrement de ce que fait l'autre.</p>
+</div>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Douanier</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Route</th><th>Montagne</th></tr>
+<tr><td class="player" rowspan="2">Contrebandier</td><th>Route</th><td>(−4 ; 6)</td><td class="hl">(<strong>8</strong> ; 0)</td></tr>
+<tr><th>Montagne</th><td class="hl">(<strong>4</strong> ; 0)</td><td>(−4 ; 2)</td></tr>
+</table>
+<p style="text-align:center"><em>Les deux cases grisées sont les meilleures réponses du contrebandier (une par colonne).</em></p>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Les meilleures réponses du douanier (les seconds nombres)</div>
+<p>Je change de casquette. Je ne regarde plus que les <strong>seconds nombres</strong> : \( 6 \), \( 0 \), \( 0 \), \( 2 \). Et cette fois je compare <strong>ligne par ligne</strong>, parce que le douanier choisit une colonne : sa décision porte sur « gauche ou droite », donc je compare à l'intérieur d'une ligne fixée.</p>
+<div class="calc">
+<div class="step">
+\[ \text{Si le contrebandier prend la Route} : \quad \underbrace{6}_{\text{Route}} \quad \text{contre} \quad \underbrace{0}_{\text{Montagne}} \]
+<div class="why">Je fige la <em>ligne</em> du haut et je compare les gains du douanier : à gauche il est sur la route (6), à droite il est en montagne (0).</div>
+</div>
+<div class="step">
+\[ 6 > 0 \quad \Longrightarrow \quad \text{il préfère la } \textbf{Route} \]
+<div class="why">Normal : le contrebandier est sur la route, il faut y être pour l'attraper.</div>
+</div>
+<div class="step">
+\[ \text{Si le contrebandier prend la Montagne} : \quad \underbrace{0}_{\text{Route}} \quad \text{contre} \quad \underbrace{2}_{\text{Montagne}} \]
+<div class="why">Je fige la ligne du bas et je recompare les deux gains du douanier.</div>
+</div>
+<div class="step">
+\[ 2 > 0 \quad \Longrightarrow \quad \text{il préfère la } \textbf{Montagne} \]
+<div class="why">Il faut aller là où passe la marchandise, même si la prise y est plus petite : 2, c'est toujours mieux que 0.</div>
+</div>
+</div>
+<p><strong>Conclusion partielle :</strong> le douanier veut toujours être <em>exactement là où le contrebandier est</em>. Lui non plus n'a pas de stratégie dominante.</p>
+</div>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Douanier</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Route</th><th>Montagne</th></tr>
+<tr><td class="player" rowspan="2">Contrebandier</td><th>Route</th><td class="hl">(−4 ; <strong>6</strong>)</td><td>(8 ; 0)</td></tr>
+<tr><th>Montagne</th><td>(4 ; 0)</td><td class="hl">(−4 ; <strong>2</strong>)</td></tr>
+</table>
+<p style="text-align:center"><em>Les deux cases grisées sont les meilleures réponses du douanier (une par ligne).</em></p>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Superposer : y a-t-il une case doublement entourée ?</div>
+<p>Superposons les deux tableaux. Les meilleures réponses du contrebandier sont en <strong>haut à droite</strong> et en <strong>bas à gauche</strong>. Celles du douanier sont en <strong>haut à gauche</strong> et en <strong>bas à droite</strong>.</p>
+<p>Ce sont les deux <em>diagonales opposées</em>. Elles ne se rencontrent jamais. Il n'existe donc <strong>aucune case doublement entourée</strong>, c'est-à-dire aucune case où les deux joueurs joueraient simultanément une meilleure réponse.</p>
+<div class="result">
+<div class="result-title">Résultat 4.1</div>
+<p>Ce jeu ne possède <strong>aucun équilibre de Nash en stratégies pures</strong>.</p>
+</div>
+</div>
+
+<h3>2.3 La vérification case par case (ce que le barème attend vraiment)</h3>
+
+<p>Le barème donne 3 points pour les meilleures réponses et <strong>3 points pour « la vérification des 4 profils et la conclusion »</strong>. Autrement dit : la superposition des tableaux ne suffit pas, il faut <em>écrire</em> les quatre déviations. Voici les quatre phrases, une par case. Apprends leur forme, elle est toujours la même.</p>
+
+<table class="compare">
+<tr><th class="left">Case testée</th><th class="left">Qui a envie de bouger ?</th><th class="left">La comparaison qui le prouve</th></tr>
+<tr><td class="left">(Route ; Route)<br>gains (−4 ; 6)</td><td class="left">Le <strong>contrebandier</strong> : il part en Montagne</td><td class="left">Il passe de \( -4 \) à \( 4 \) : \( 4 > -4 \)</td></tr>
+<tr><td class="left">(Route ; Montagne)<br>gains (8 ; 0)</td><td class="left">Le <strong>douanier</strong> : il revient sur la Route</td><td class="left">Il passe de \( 0 \) à \( 6 \) : \( 6 > 0 \)</td></tr>
+<tr><td class="left">(Montagne ; Route)<br>gains (4 ; 0)</td><td class="left">Le <strong>douanier</strong> : il part en Montagne</td><td class="left">Il passe de \( 0 \) à \( 2 \) : \( 2 > 0 \)</td></tr>
+<tr><td class="left">(Montagne ; Montagne)<br>gains (−4 ; 2)</td><td class="left">Le <strong>contrebandier</strong> : il revient sur la Route</td><td class="left">Il passe de \( -4 \) à \( 8 \) : \( 8 > -4 \)</td></tr>
+</table>
+
+<p>Dans les quatre cas, quelqu'un a strictement intérêt à bouger tout seul. Donc aucune de ces quatre cases n'est un équilibre de Nash. Et comme il n'existe que quatre profils de stratégies pures dans un jeu 2×2, on a <strong>fait le tour de toutes les possibilités</strong> : la démonstration est complète.</p>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi il faut vraiment écrire les quatre lignes</div>
+<p>Parce que c'est une preuve d'<strong>inexistence</strong>. Dire « je n'ai pas trouvé d'équilibre » ne prouve rien du tout : peut-être que tu as mal cherché. Dire « voici les quatre candidats possibles, et voici pourquoi chacun tombe » est une preuve complète, du type « épuisement des cas ». C'est la différence entre 3 et 6 points sur cette sous-question, et c'est le même réflexe qui te servira en 4.2 pour justifier qu'on passe aux mixtes.</p>
+</div>
+
+<h3>2.4 La circularité : le vrai contenu de la 4.1</h3>
+
+<p>Maintenant, la partie intéressante. Pourquoi ce jeu n'a-t-il pas d'équilibre pur ? Ce n'est pas un accident de chiffres : c'est <strong>structurel</strong>, et on peut le voir d'un seul coup d'œil.</p>
+
+<p>Reprends les quatre déviations du tableau ci-dessus et enchaîne-les :</p>
+
+<ul>
+<li>On part de (Route ; Route). Le contrebandier fuit vers la Montagne. On arrive en <strong>(Montagne ; Route)</strong>.</li>
+<li>Là, le douanier le poursuit en Montagne. On arrive en <strong>(Montagne ; Montagne)</strong>.</li>
+<li>Là, le contrebandier repart sur la Route. On arrive en <strong>(Route ; Montagne)</strong>.</li>
+<li>Là, le douanier revient sur la Route. On arrive en… <strong>(Route ; Route)</strong>. Le point de départ.</li>
+</ul>
+
+<p>On tourne en rond. Les flèches de déviation forment une <strong>boucle fermée</strong> qui repasse indéfiniment par les quatre cases. C'est exactement l'image de la poursuite : le contrebandier fuit, le douanier poursuit, le contrebandier fuit ailleurs, le douanier le suit… et ça ne s'arrête jamais.</p>
+
+<figure>
+<svg viewBox="0 0 480 340" width="100%" style="max-width:12cm" role="img"
+     aria-label="Matrice du jeu avec les flèches de déviation formant une boucle fermée entre les quatre cases : de Route-Route le contrebandier descend vers Montagne-Route, puis le douanier va vers Montagne-Montagne, puis le contrebandier remonte vers Route-Montagne, puis le douanier revient vers Route-Route">
+  <text x="290" y="30" font-size="13" text-anchor="middle" font-weight="bold">Douanier</text>
+  <text x="220" y="72" font-size="12" text-anchor="middle">Route (q)</text>
+  <text x="360" y="72" font-size="12" text-anchor="middle">Montagne (1−q)</text>
+  <text x="20" y="170" font-size="13" text-anchor="middle" font-weight="bold" transform="rotate(-90 20 170)">Contrebandier</text>
+  <text x="145" y="129" font-size="12" text-anchor="end">Route (p)</text>
+  <text x="145" y="219" font-size="12" text-anchor="end">Montagne (1−p)</text>
+
+  <rect x="150" y="80" width="140" height="90" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <rect x="290" y="80" width="140" height="90" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <rect x="150" y="170" width="140" height="90" fill="none" stroke="#111827" stroke-width="1.4"/>
+  <rect x="290" y="170" width="140" height="90" fill="none" stroke="#111827" stroke-width="1.4"/>
+
+  <text x="240" y="132" font-size="13" text-anchor="middle">(−4 ; 6)</text>
+  <text x="380" y="132" font-size="13" text-anchor="middle">(8 ; 0)</text>
+  <text x="240" y="222" font-size="13" text-anchor="middle">(4 ; 0)</text>
+  <text x="380" y="222" font-size="13" text-anchor="middle">(−4 ; 2)</text>
+
+  <line x1="172" y1="140" x2="172" y2="198" stroke="#be123c" stroke-width="2.4"/>
+  <polygon points="172,208 167,196 177,196" fill="#be123c"/>
+  <line x1="252" y1="243" x2="322" y2="243" stroke="#0369a1" stroke-width="2.4" stroke-dasharray="7 4"/>
+  <polygon points="332,243 320,238 320,248" fill="#0369a1"/>
+  <line x1="408" y1="200" x2="408" y2="142" stroke="#be123c" stroke-width="2.4"/>
+  <polygon points="408,132 403,144 413,144" fill="#be123c"/>
+  <line x1="328" y1="97" x2="258" y2="97" stroke="#0369a1" stroke-width="2.4" stroke-dasharray="7 4"/>
+  <polygon points="248,97 260,92 260,102" fill="#0369a1"/>
+
+  <line x1="150" y1="285" x2="180" y2="285" stroke="#be123c" stroke-width="2.4"/>
+  <polygon points="188,285 178,281 178,289" fill="#be123c"/>
+  <text x="196" y="289" font-size="11.5">le contrebandier change de ligne (il fuit)</text>
+  <line x1="150" y1="310" x2="180" y2="310" stroke="#0369a1" stroke-width="2.4" stroke-dasharray="7 4"/>
+  <polygon points="188,310 178,306 178,314" fill="#0369a1"/>
+  <text x="196" y="314" font-size="11.5">le douanier change de colonne (il poursuit)</text>
+</svg>
+<figcaption>Figure 1 — La circularité du jeu. Dans chaque case, une flèche part : c'est le joueur qui a intérêt à dévier tout seul. Les quatre flèches s'enchaînent en une <strong>boucle fermée</strong> et ne s'arrêtent jamais sur une case. Une case sans flèche sortante serait un équilibre de Nash pur : il n'y en a aucune. Le trait plein (rouge) marque les déviations du contrebandier, le trait pointillé (bleu) celles du douanier.</figcaption>
+</figure>
+
+<div class="box box-def">
+<div class="box-title">À retenir — la signature d'un jeu « de conflit »</div>
+<p>Un jeu où les flèches de déviation tournent en boucle est un jeu de <span class="term">conflit pur</span> (on dit aussi jeu « à somme nulle » ou « de poursuite ») : les intérêts sont <strong>diamétralement opposés</strong>. L'un veut la coïncidence, l'autre veut l'évitement. Dans ce type de jeu :</p>
+<ul>
+<li>il n'y a <strong>jamais</strong> d'équilibre en stratégies pures ;</li>
+<li>il y a <strong>toujours</strong> un équilibre en stratégies mixtes (c'est le théorème de Nash de 1950 : tout jeu fini possède au moins un équilibre, éventuellement en mixtes) ;</li>
+<li>à l'équilibre, chacun est <strong>délibérément imprévisible</strong>.</li>
+</ul>
+<p>Repère cette signature dès la lecture de l'énoncé : dès que tu vois « l'un veut se cacher, l'autre veut trouver », tu sais que la question va finir en stratégies mixtes.</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — question 4.1</div>
+<p><strong>Meilleures réponses du contrebandier</strong> (premiers nombres) : face à Route, il préfère Montagne (\( 4 > -4 \)) ; face à Montagne, il préfère Route (\( 8 > -4 \)).</p>
+<p><strong>Meilleures réponses du douanier</strong> (seconds nombres) : face à Route, il préfère Route (\( 6 > 0 \)) ; face à Montagne, il préfère Montagne (\( 2 > 0 \)).</p>
+<p><strong>Examen des quatre profils purs :</strong></p>
+<ul>
+<li>(Route ; Route) : le contrebandier dévie vers Montagne (\( 4 > -4 \)) → pas un équilibre.</li>
+<li>(Route ; Montagne) : le douanier dévie vers Route (\( 6 > 0 \)) → pas un équilibre.</li>
+<li>(Montagne ; Route) : le douanier dévie vers Montagne (\( 2 > 0 \)) → pas un équilibre.</li>
+<li>(Montagne ; Montagne) : le contrebandier dévie vers Route (\( 8 > -4 \)) → pas un équilibre.</li>
+</ul>
+<p>Aucune case n'est constituée de meilleures réponses mutuelles : <strong>il n'existe aucun équilibre de Nash en stratégies pures</strong>. C'est la signature d'un jeu de conflit : dans chaque case, le « perdant » a intérêt à changer, si bien que les déviations tournent en boucle. Chacun cherche à être imprévisible — il faudra donc chercher l'équilibre en stratégies mixtes (question 4.2).</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 4.1</div>
+<ul>
+<li><strong>Ne tester que deux ou trois cases.</strong> C'est la faute la plus coûteuse : la démonstration d'inexistence exige les quatre. Numérote-les si besoin.</li>
+<li><strong>Comparer les mauvais nombres.</strong> Pour le contrebandier (joueur des lignes) on compare <em>verticalement</em> les <em>premiers</em> nombres ; pour le douanier (joueur des colonnes) on compare <em>horizontalement</em> les <em>seconds</em>. Une inversion et tout le reste du chapitre est faux.</li>
+<li><strong>Le signe moins.</strong> \( -4 \) est plus petit que \( 0 \), qui est plus petit que \( 4 \). Sur une copie stressée, \( -4 > 4 \) arrive plus souvent qu'on ne croit. Trace une petite droite graduée dans la marge si tu doutes.</li>
+<li><strong>Sauter directement aux mixtes.</strong> Certains étudiants « savent » que le jeu va se résoudre en mixtes et écrivent d'emblée les équations d'indifférence. Ils perdent les 6 points de la 4.1, qui rémunèrent uniquement la démonstration d'inexistence.</li>
+<li><strong>Chercher des stratégies dominantes.</strong> Il n'y en a aucune ici (chaque joueur change d'avis selon l'autre). Le mentionner ne coûte rien, mais ne remplace pas l'examen des quatre profils.</li>
+</ul>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">La recette réutilisable — « montrez qu'il n'y a pas d'équilibre pur »</div>
+<ol>
+<li>Souligner les meilleures réponses du joueur des lignes, colonne par colonne (premiers nombres).</li>
+<li>Souligner celles du joueur des colonnes, ligne par ligne (seconds nombres).</li>
+<li>Chercher les cases doublement soulignées.</li>
+<li><strong>Rédiger</strong> les quatre profils avec, pour chacun, qui dévie et vers quoi, chiffres à l'appui.</li>
+<li>Conclure par la phrase-type : « aucune case n'est faite de meilleures réponses mutuelles, donc il n'existe aucun équilibre de Nash en stratégies pures », et enchaîner : « on cherche donc l'équilibre en stratégies mixtes ».</li>
+</ol>
+</div>
+
+<hr class="soft">
+
+<h2>3. Sous-question 4.2 — L'équilibre en stratégies mixtes</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 4.2 (12 points)</div>
+<p>En utilisant le théorème d'indifférence, calculez l'équilibre de Nash en stratégies mixtes \( (p^*, q^*) \), où \( p \) est la probabilité que le contrebandier passe par la route et \( q \) la probabilité que le douanier patrouille sur la route. Détaillez vos calculs.</p>
+</div>
+
+<p>Douze points sur trente : c'est la sous-question la plus chère de la série. Le barème est explicite — 6 points par équation d'indifférence, dont 4 pour la <em>mise en équation</em> et 2 pour la résolution. Autrement dit : <strong>l'essentiel des points est dans le fait d'écrire la bonne équation</strong>, pas dans l'arithmétique qui suit. C'est une excellente nouvelle si tu comprends bien le mécanisme, et une catastrophe si tu inverses les rôles.</p>
+
+<h3>3.1 Traduisons la question en français simple</h3>
+
+<dl class="lexique">
+<dt>« stratégie mixte »</dt>
+<dd>Une façon de jouer qui consiste à <strong>tirer au sort</strong> son action selon des probabilités qu'on choisit soi-même. Exemple concret : « je lance un dé ; s'il fait 1 ou 2, je prends la route ; sinon la montagne » est une stratégie mixte qui joue Route avec probabilité \( 2/6 = 1/3 \). Le contraire d'une stratégie mixte est une stratégie <em>pure</em> (« je prends toujours la route »). Une stratégie pure n'est d'ailleurs qu'un cas particulier de mixte, avec une probabilité de 0 ou de 1.</dd>
+
+<dt>« équilibre de Nash en stratégies mixtes »</dt>
+<dd>Un couple de probabilités \( (p^*, q^*) \) tel que, <strong>connaissant la probabilité de l'autre, aucun des deux ne veut modifier la sienne</strong>. C'est la même définition que pour l'équilibre pur : personne ne regrette. Ce qui change, c'est l'objet du choix : au lieu de choisir une action, on choisit un dosage.</dd>
+
+<dt>« théorème d'indifférence »</dt>
+<dd>L'outil de calcul. Il dit que dans un équilibre mixte, chaque joueur qui mélange doit être <strong>indifférent</strong> entre les actions qu'il mélange — elles doivent lui rapporter exactement la même chose en moyenne. On le construit entièrement dans la section 3.3 : c'est le cœur du chapitre.</dd>
+
+<dt>« Détaillez vos calculs »</dt>
+<dd>Traduction : le correcteur veut voir <strong>les deux payoffs espérés écrits séparément</strong>, puis l'égalité, puis la résolution. Un résultat juste sorti de nulle part vaut 2 points sur 6 ; une mise en équation correcte, même mal résolue, en vaut 4. Écris tout.</dd>
+</dl>
+
+<h3>3.2 Pourquoi on a le droit — et l'obligation — de passer aux mixtes</h3>
+
+<p>La 4.1 vient de nous apprendre qu'il n'y a pas d'équilibre pur. Deux questions se posent alors, et il faut y répondre avant de calculer quoi que ce soit.</p>
+
+<p><strong>Première question : est-ce qu'il existe forcément un équilibre mixte ?</strong> Oui. C'est le grand théorème de John Nash (1950), celui qui lui a valu le prix Nobel : <em>tout jeu fini (nombre fini de joueurs, nombre fini d'actions) possède au moins un équilibre de Nash, éventuellement en stratégies mixtes</em>. Donc puisqu'on n'en a trouvé aucun en pures, il y en a nécessairement au moins un en mixtes. On ne cherche pas dans le vide.</p>
+
+<p><strong>Deuxième question : à quoi ressemble-t-il ?</strong> Ici, à un équilibre où les <em>deux</em> joueurs mélangent vraiment, avec \( 0 < p^* < 1 \) et \( 0 < q^* < 1 \). Pourquoi ? Parce qu'un équilibre où l'un des deux jouerait une stratégie pure, ce serait exactement un des quatre cas qu'on a éliminés en 4.1. Si le contrebandier prenait toujours la route (\( p = 1 \)), le douanier y serait toujours (\( q = 1 \)) — et on retomberait sur (Route ; Route), qu'on sait n'être pas un équilibre. Le seul candidat restant est donc le mélange <strong>strict</strong> des deux côtés.</p>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi la 4.1 n'était pas une simple formalité</div>
+<p>Beaucoup d'étudiants voient la 4.1 comme un échauffement. C'est faux : elle est <strong>logiquement nécessaire</strong> à la 4.2. Sans elle, tu n'as aucune raison de supposer que les deux joueurs mélangent strictement — et c'est précisément cette supposition qui autorise à écrire les équations d'indifférence. La 4.1 n'est pas un préambule, c'est l'<em>hypothèse</em> de la 4.2.</p>
+</div>
+
+<h3>3.3 Le théorème d'indifférence : énoncé et démonstration</h3>
+
+<p>Voici le passage à lire deux fois. C'est la seule vraie idée théorique du chapitre, et une fois qu'elle est comprise, la 4.2 comme la 4.4 deviennent mécaniques.</p>
+
+<div class="box box-def">
+<div class="box-title">Théorème d'indifférence (aussi appelé « principe d'indifférence »)</div>
+<p><strong>Énoncé.</strong> Soit un équilibre de Nash en stratégies mixtes. Si, à cet équilibre, un joueur attribue une probabilité <strong>strictement positive</strong> à plusieurs de ses stratégies pures, alors toutes ces stratégies pures lui procurent <strong>exactement le même payoff espéré</strong> — et ce payoff est aussi le payoff espéré de sa stratégie mixte.</p>
+<p><strong>Version 2×2, celle dont on se sert ici.</strong> Si le contrebandier joue Route avec une probabilité \( p^* \) strictement comprise entre 0 et 1, alors :</p>
+\[ E[\text{Route}] = E[\text{Montagne}] \]
+<p>et la même chose vaut pour le douanier avec ses deux colonnes.</p>
+</div>
+
+<h4>a) Pourquoi c'est vrai — la démonstration en trois lignes de français</h4>
+
+<p>Ce théorème n'est pas une hypothèse commode qu'on pose pour faire marcher les calculs. C'est une <strong>conséquence forcée</strong> de la rationalité. Voici pourquoi, sans une seule formule.</p>
+
+<p>Imagine que le contrebandier mélange (il prend parfois la route, parfois la montagne) et que, malgré tout, la route lui rapporte <em>strictement plus</em> en moyenne que la montagne. Que devrait-il faire ? Augmenter sa probabilité de prendre la route. Et encore. Et encore. Tant que la route rapporte plus, chaque petit transfert de probabilité vers la route <strong>augmente son gain moyen</strong>. Il n'a donc aucune raison de s'arrêter avant \( p = 1 \).</p>
+
+<p>Conclusion : s'il rapportait strictement plus, il <strong>ne mélangerait pas</strong>, il jouerait la route à coup sûr. Donc, par contraposée : <strong>s'il mélange, c'est que les deux actions rapportent pareil.</strong> Ce n'est pas un choix, c'est une obligation logique.</p>
+
+<div class="box box-exemple">
+<div class="box-title">La même idée avec deux distributeurs de billets</div>
+<p>Tu as deux distributeurs sur ton chemin, A et B. Tu observes ton comportement sur un mois : tu vas parfois à A, parfois à B. Un ami te demande : « lequel est le meilleur ? »</p>
+<p>Si A était strictement meilleur (moins de queue, moins de frais), tu irais <em>toujours</em> à A — pourquoi te priverais-tu ? Le simple fait que tu alternes <strong>prouve</strong> que, tout bien pesé, ils se valent. Voilà le théorème d'indifférence en langage de tous les jours : <em>alterner est la signature de l'équivalence</em>.</p>
+</div>
+
+<h4>b) Le point qui déroute tout le monde : mon indifférence fixe la probabilité de l'autre</h4>
+
+<p>Maintenant la subtilité. Écrivons le payoff espéré du contrebandier s'il prend la route. Il dépend de ce que fait le douanier :</p>
+
+<div class="calc">
+<div class="step">
+\[ E[\text{Route}] = q \times (\text{gain si le douanier est sur la Route}) + (1-q) \times (\text{gain s'il est en Montagne}) \]
+<div class="why">Les <strong>probabilités</strong> qui apparaissent dans cette moyenne sont celles du <em>douanier</em> (\( q \) et \( 1-q \)), parce que ce sont elles qui déterminent ce qui va arriver au contrebandier. Les <strong>gains</strong>, eux, sont ceux du <em>contrebandier</em>.</div>
+</div>
+</div>
+
+<p>Regarde bien : dans cette expression, <strong>il n'y a pas de \( p \)</strong>. Aucun. Le contrebandier a déjà décidé « je prends la route » : sa propre probabilité n'intervient plus. Ne subsiste que l'incertitude sur le douanier, c'est-à-dire \( q \).</p>
+
+<p>Donc quand j'écris « \( E[\text{Route}] = E[\text{Montagne}] \) pour le contrebandier », j'obtiens une équation dont la <strong>seule inconnue est \( q \)</strong>. En la résolvant, je trouve… \( q^* \), la stratégie du <em>douanier</em>. Et symétriquement, l'indifférence du douanier ne contient que des \( p \) et livre \( p^* \).</p>
+
+<figure>
+<svg viewBox="0 0 520 240" width="100%" style="max-width:12cm" role="img"
+     aria-label="Schéma du chiasme : les gains du contrebandier mènent, par son équation d'indifférence, à q étoile, la probabilité du douanier ; et les gains du douanier mènent à p étoile, la probabilité du contrebandier. Les deux flèches se croisent en X.">
+  <rect x="14" y="34" width="176" height="52" rx="5" fill="none" stroke="#be123c" stroke-width="1.8"/>
+  <text x="102" y="56" font-size="12" text-anchor="middle" font-weight="bold">Les gains du</text>
+  <text x="102" y="74" font-size="12" text-anchor="middle" font-weight="bold">CONTREBANDIER</text>
+
+  <rect x="14" y="150" width="176" height="52" rx="5" fill="none" stroke="#0369a1" stroke-width="1.8"/>
+  <text x="102" y="172" font-size="12" text-anchor="middle" font-weight="bold">Les gains du</text>
+  <text x="102" y="190" font-size="12" text-anchor="middle" font-weight="bold">DOUANIER</text>
+
+  <rect x="332" y="34" width="176" height="52" rx="5" fill="none" stroke="#0369a1" stroke-width="1.8" stroke-dasharray="6 3"/>
+  <text x="420" y="56" font-size="12" text-anchor="middle" font-weight="bold">q* : la probabilité</text>
+  <text x="420" y="74" font-size="12" text-anchor="middle" font-weight="bold">du DOUANIER</text>
+
+  <rect x="332" y="150" width="176" height="52" rx="5" fill="none" stroke="#be123c" stroke-width="1.8" stroke-dasharray="6 3"/>
+  <text x="420" y="172" font-size="12" text-anchor="middle" font-weight="bold">p* : la probabilité</text>
+  <text x="420" y="190" font-size="12" text-anchor="middle" font-weight="bold">du CONTREBANDIER</text>
+
+  <line x1="194" y1="66" x2="322" y2="164" stroke="#be123c" stroke-width="2.4"/>
+  <polygon points="330,170 316,166 322,156" fill="#be123c"/>
+  <line x1="194" y1="170" x2="322" y2="72" stroke="#0369a1" stroke-width="2.4" stroke-dasharray="7 4"/>
+  <polygon points="330,66 316,70 322,80" fill="#0369a1"/>
+
+  <text x="258" y="112" font-size="11.5" text-anchor="middle">son équation</text>
+  <text x="258" y="128" font-size="11.5" text-anchor="middle">d'indifférence</text>
+  <text x="260" y="226" font-size="12" text-anchor="middle" font-style="italic">Les flèches se croisent : c'est « le chiasme »</text>
+</svg>
+<figcaption>Figure 2 — Le chiasme. L'équation d'indifférence d'un joueur est écrite avec <strong>ses</strong> gains à lui, mais elle a pour inconnue la probabilité de <strong>l'autre</strong>. C'est le point le plus contre-intuitif du chapitre, et c'est aussi celui qui explique entièrement la réponse de la 4.4.</figcaption>
+</figure>
+
+<div class="box box-why">
+<div class="box-title">Mais pourquoi diable ça marche comme ça ? L'explication en langage courant</div>
+<p>Pose-toi la question à l'envers. Pourquoi le douanier choisirait-il de patrouiller sur la route exactement 3 fois sur 5, et pas 2 fois sur 5 ou 4 fois sur 5 ?</p>
+<p>S'il y patrouillait <em>trop rarement</em>, la route deviendrait un boulevard : le contrebandier la prendrait systématiquement, et le douanier se ferait avoir en permanence. S'il y patrouillait <em>trop souvent</em>, le contrebandier passerait systématiquement par la montagne, et le douanier se ferait encore avoir. Il existe un et un seul dosage qui empêche le contrebandier de se fixer sur un chemin : celui qui rend les deux chemins <strong>équivalents pour lui</strong>.</p>
+<p>Voilà l'idée centrale : <strong>chaque joueur ajuste sa propre probabilité de façon à maintenir l'autre indifférent</strong>, donc imprévisible, donc incapable de l'exploiter. Sa probabilité n'est pas là pour maximiser son gain à lui directement : elle est là pour <em>neutraliser</em> l'adversaire. Et pour neutraliser quelqu'un, il faut évidemment regarder les gains de ce quelqu'un — pas les siens.</p>
+<p>Garde cette phrase au chaud : <strong>« ma probabilité est un outil de neutralisation de l'autre »</strong>. Elle contient à elle seule toute la réponse de la 4.4.</p>
+</div>
+
+<h3>3.4 La résolution pas à pas</h3>
+
+<p>On applique la recette. Deux blocs symétriques : d'abord l'indifférence du contrebandier (qui donne \( q^* \)), puis celle du douanier (qui donne \( p^* \)).</p>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Le payoff espéré du contrebandier s'il prend la Route</div>
+<p>Le contrebandier décide de prendre la route. Que lui arrive-t-il ? Deux scénarios, et il ne les maîtrise pas :</p>
+<ul>
+<li>avec probabilité \( q \), le douanier est sur la route → il se fait prendre → il gagne \( -4 \) ;</li>
+<li>avec probabilité \( 1-q \), le douanier est en montagne → il passe → il gagne \( 8 \).</li>
+</ul>
+<p>Je fais la moyenne pondérée de ces deux gains, c'est-à-dire l'espérance.</p>
+<div class="calc">
+<div class="step">
+\[ E[\text{Route}] = q \times (-4) + (1-q) \times 8 \]
+<div class="why">Chaque gain est multiplié par la probabilité que le scénario correspondant se réalise. Les gains \( -4 \) et \( 8 \) sont lus dans la <strong>première ligne</strong> du tableau, en <strong>première position</strong> de chaque case (ce sont les gains du contrebandier).</div>
+</div>
+<div class="step">
+\[ E[\text{Route}] = -4q + 8 - 8q \]
+<div class="why">Je développe. \( q \times (-4) = -4q \), et \( (1-q) \times 8 = 8 \times 1 - 8 \times q = 8 - 8q \) : c'est la distributivité, je multiplie 8 par chacun des deux termes de la parenthèse.</div>
+</div>
+<div class="step">
+\[ E[\text{Route}] = 8 - 12q \]
+<div class="why">Je regroupe les termes en \( q \) : \( -4q - 8q = -12q \). Le résultat est une <strong>droite</strong> en \( q \). Contrôle immédiat : si \( q = 0 \) (le douanier n'est jamais sur la route), j'obtiens 8 — c'est bien le gain d'un passage tranquille ✓. Si \( q = 1 \), j'obtiens \( 8 - 12 = -4 \) — c'est bien la saisie ✓. La droite est décroissante : plus le douanier surveille la route, moins il est intéressant d'y aller. Logique.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Le payoff espéré du contrebandier s'il prend la Montagne</div>
+<p>Même travail sur la deuxième ligne du tableau :</p>
+<ul>
+<li>avec probabilité \( q \), le douanier est sur la route → la montagne est libre → il passe et gagne \( 4 \) ;</li>
+<li>avec probabilité \( 1-q \), le douanier est en montagne → saisie → il gagne \( -4 \).</li>
+</ul>
+<div class="calc">
+<div class="step">
+\[ E[\text{Montagne}] = q \times 4 + (1-q) \times (-4) \]
+<div class="why">Attention à ne pas inverser : ici c'est \( q \) (le douanier sur la route) qui correspond au <em>bon</em> scénario pour le contrebandier, puisqu'il est ailleurs. Les gains \( 4 \) et \( -4 \) sont lus dans la <strong>deuxième ligne</strong>, en première position.</div>
+</div>
+<div class="step">
+\[ E[\text{Montagne}] = 4q - 4 + 4q \]
+<div class="why">Je développe : \( (1-q) \times (-4) = -4 \times 1 - 4 \times (-q) = -4 + 4q \). Le double signe moins donne un plus — c'est ici que se perdent la moitié des copies. Prends le temps de le vérifier ligne à ligne.</div>
+</div>
+<div class="step">
+\[ E[\text{Montagne}] = -4 + 8q \]
+<div class="why">Je regroupe : \( 4q + 4q = 8q \). Contrôle : \( q = 0 \) donne \( -4 \) (le douanier est toujours en montagne, saisie systématique) ✓ ; \( q = 1 \) donne \( 4 \) (la montagne est toujours libre) ✓. Droite croissante, cette fois : plus le douanier est sur la route, plus la montagne est confortable. Logique aussi.</div>
+</div>
+</div>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 306" width="100%" style="max-width:12cm" role="img"
+     aria-label="Les deux payoffs espérés du contrebandier en fonction de q : la droite Route vaut 8 moins 12 q, la droite Montagne vaut moins 4 plus 8 q ; elles se croisent en q égale 0,6 pour une valeur commune de 0,8">
+  <line x1="80" y1="46" x2="80" y2="256" stroke="#111827" stroke-width="1.3"/>
+  <line x1="80" y1="256" x2="432" y2="256" stroke="#111827" stroke-width="1.3"/>
+  <line x1="80" y1="180" x2="428" y2="180" stroke="#9ca3af" stroke-width="1"/>
+
+  <text x="74" y="64" font-size="11.5" text-anchor="end">8</text>
+  <line x1="76" y1="60" x2="84" y2="60" stroke="#111827" stroke-width="1.2"/>
+  <text x="74" y="124" font-size="11.5" text-anchor="end">4</text>
+  <line x1="76" y1="120" x2="84" y2="120" stroke="#111827" stroke-width="1.2"/>
+  <text x="74" y="184" font-size="11.5" text-anchor="end">0</text>
+  <text x="74" y="244" font-size="11.5" text-anchor="end">−4</text>
+  <line x1="76" y1="240" x2="84" y2="240" stroke="#111827" stroke-width="1.2"/>
+  <text x="22" y="150" font-size="11.5" text-anchor="middle" transform="rotate(-90 22 150)">payoff espéré du contrebandier</text>
+
+  <text x="80" y="274" font-size="11.5" text-anchor="middle">0</text>
+  <text x="420" y="274" font-size="11.5" text-anchor="middle">1</text>
+  <text x="250" y="296" font-size="11.5" text-anchor="middle">q = probabilité que le douanier patrouille sur la Route</text>
+
+  <line x1="80" y1="60" x2="420" y2="240" stroke="#be123c" stroke-width="2.6"/>
+  <text x="330" y="212" font-size="11.5" fill="#be123c" font-weight="bold">Route</text>
+  <text x="330" y="226" font-size="11" fill="#be123c">8 − 12q</text>
+  <line x1="80" y1="240" x2="420" y2="120" stroke="#0369a1" stroke-width="2.6" stroke-dasharray="8 4"/>
+  <text x="316" y="106" font-size="11.5" fill="#0369a1" font-weight="bold">Montagne</text>
+  <text x="316" y="120" font-size="11" fill="#0369a1">−4 + 8q</text>
+
+  <line x1="284" y1="168" x2="284" y2="256" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="80" y1="168" x2="284" y2="168" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <circle cx="284" cy="168" r="5.5" fill="#6d28d9"/>
+  <text x="284" y="274" font-size="11.5" text-anchor="middle" fill="#6d28d9" font-weight="bold">q* = 0,6</text>
+  <text x="296" y="158" font-size="11.5" fill="#6d28d9" font-weight="bold">valeur commune : 0,8</text>
+
+  <text x="120" y="34" font-size="11.5">à gauche : il préfère</text>
+  <text x="120" y="48" font-size="11.5">la Route</text>
+  <text x="336" y="34" font-size="11.5">à droite : il préfère</text>
+  <text x="336" y="48" font-size="11.5">la Montagne</text>
+</svg>
+<figcaption>Figure 3 — Les deux payoffs espérés du contrebandier sont deux droites qui se croisent. À gauche du croisement (le douanier patrouille peu sur la route), la Route rapporte plus : le contrebandier y va à coup sûr. À droite, c'est la Montagne. Un seul point met les deux à égalité, \( q^* = 0{,}6 \) : c'est le <strong>seul</strong> \( q \) pour lequel le contrebandier accepte de mélanger — donc le seul candidat à l'équilibre.</figcaption>
+</figure>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Poser l'équation d'indifférence du contrebandier et la résoudre</div>
+<p>Le théorème d'indifférence exige que ces deux droites donnent la même valeur. J'égalise.</p>
+<div class="calc">
+<div class="step">
+\[ \underbrace{-4q + 8(1-q)}_{\text{Route}} \;=\; \underbrace{4q - 4(1-q)}_{\text{Montagne}} \]
+<div class="why">C'est l'équation d'indifférence du contrebandier, écrite sous sa forme brute (avant développement) — c'est ainsi qu'il faut la poser sur la copie, elle montre clairement d'où viennent les nombres.</div>
+</div>
+<div class="step">
+\[ 8 - 12q = -4 + 8q \]
+<div class="why">Je remplace chaque côté par sa forme développée, calculée aux étapes 1 et 2. Une seule inconnue : \( q \). <strong>Aucun \( p \) n'apparaît</strong> — c'est le contrôle instantané du chiasme. Si tu vois un \( p \) ici, tu as lu les mauvais nombres.</div>
+</div>
+<div class="step">
+\[ 8 + 4 = 8q + 12q \]
+<div class="why">Je rassemble les nombres seuls à gauche et les \( q \) à droite. Concrètement : j'ajoute \( 4 \) des deux côtés (pour faire passer le \( -4 \) à gauche) et j'ajoute \( 12q \) des deux côtés (pour faire passer le \( -12q \) à droite). Faire « passer de l'autre côté » n'est rien d'autre que ça.</div>
+</div>
+<div class="step">
+\[ 12 = 20q \]
+<div class="why">J'additionne : \( 8 + 4 = 12 \) à gauche, \( 8q + 12q = 20q \) à droite.</div>
+</div>
+<div class="step">
+\[ q = \frac{12}{20} = \frac{3}{5} = 0{,}6 \]
+<div class="why">Je divise les deux côtés par 20 pour isoler \( q \). Puis je simplifie la fraction en divisant haut et bas par 4 : \( 12/4 = 3 \) et \( 20/4 = 5 \). Vérification que \( q \) est bien une probabilité : \( 0 \le 0{,}6 \le 1 \) ✓.</div>
+</div>
+</div>
+<div class="result">
+<div class="result-title">Première moitié de la réponse</div>
+<p>\[ q^* = \frac{3}{5} = 0{,}6 \]</p>
+<p>Le <strong>douanier</strong> patrouille sur la route avec probabilité 0,6, soit <strong>3 nuits sur 5</strong>.</p>
+</div>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Stop. Relis ce que tu viens de calculer.</div>
+<p>Tu viens d'écrire une équation avec les gains du <strong>contrebandier</strong> (\( -4 \), \( 8 \), \( 4 \), \( -4 \)) et tu as trouvé la probabilité du <strong>douanier</strong>. Ce n'est pas une erreur : c'est exactement ce qu'il fallait faire.</p>
+<p>Le réflexe de contrôle, à appliquer systématiquement : <strong>l'équation d'indifférence d'un joueur ne doit contenir que la lettre de l'autre</strong>. Indifférence du contrebandier → que des \( q \). Indifférence du douanier → que des \( p \). Si ce n'est pas le cas, tu as recopié les mauvais nombres dans le tableau.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Le payoff espéré du douanier, colonne par colonne</div>
+<p>On change de joueur. Le douanier regarde <strong>ses</strong> gains — les seconds nombres : \( 6 \), \( 0 \), \( 0 \), \( 2 \). Et l'incertitude qu'il subit porte sur le contrebandier, donc sur \( p \).</p>
+<p>S'il patrouille sur la Route :</p>
+<ul>
+<li>avec probabilité \( p \), le contrebandier est sur la route → il l'attrape → il gagne \( 6 \) ;</li>
+<li>avec probabilité \( 1-p \), le contrebandier est en montagne → il l'a raté → il gagne \( 0 \).</li>
+</ul>
+<div class="calc">
+<div class="step">
+\[ E[\text{Route}] = p \times 6 + (1-p) \times 0 \]
+<div class="why">Les gains \( 6 \) et \( 0 \) se lisent dans la <strong>colonne « Route »</strong>, en <strong>seconde position</strong> de chaque case : \( (-4 ; \mathbf{6}) \) en haut et \( (4 ; \mathbf{0}) \) en bas.</div>
+</div>
+<div class="step">
+\[ E[\text{Route}] = 6p \]
+<div class="why">Le second terme est nul (\( (1-p) \times 0 = 0 \)), il disparaît. Contrôle : si le contrebandier ne prend jamais la route (\( p = 0 \)), y patrouiller ne rapporte rien ✓ ; s'il la prend toujours (\( p = 1 \)), ça rapporte 6 ✓.</div>
+</div>
+<div class="step">
+\[ E[\text{Montagne}] = p \times 0 + (1-p) \times 2 \]
+<div class="why">Colonne « Montagne », seconds nombres : \( (8 ; \mathbf{0}) \) en haut, \( (-4 ; \mathbf{2}) \) en bas. S'il est en montagne alors que le contrebandier est sur la route, il ne gagne rien.</div>
+</div>
+<div class="step">
+\[ E[\text{Montagne}] = 2 - 2p \]
+<div class="why">Je développe \( (1-p) \times 2 = 2 - 2p \). Droite décroissante : plus le contrebandier privilégie la route, moins il est utile d'aller en montagne. Logique.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">5.</span> Poser l'équation d'indifférence du douanier et la résoudre</div>
+<div class="calc">
+<div class="step">
+\[ \underbrace{6p + 0\,(1-p)}_{\text{Route}} \;=\; \underbrace{0\,p + 2(1-p)}_{\text{Montagne}} \]
+<div class="why">L'équation d'indifférence du douanier, forme brute. J'ai laissé volontairement les termes nuls : sur une copie, ils prouvent au correcteur que tu as bien lu les quatre cases.</div>
+</div>
+<div class="step">
+\[ 6p = 2 - 2p \]
+<div class="why">Je simplifie les deux côtés. Une seule inconnue : \( p \). <strong>Aucun \( q \)</strong> — le chiasme est respecté ✓.</div>
+</div>
+<div class="step">
+\[ 6p + 2p = 2 \]
+<div class="why">J'ajoute \( 2p \) des deux côtés pour rassembler tous les \( p \) à gauche.</div>
+</div>
+<div class="step">
+\[ 8p = 2 \]
+<div class="why">\( 6p + 2p = 8p \).</div>
+</div>
+<div class="step">
+\[ p = \frac{2}{8} = \frac{1}{4} = 0{,}25 \]
+<div class="why">Je divise par 8, puis je simplifie la fraction par 2. Contrôle : \( 0 \le 0{,}25 \le 1 \) ✓, c'est bien une probabilité.</div>
+</div>
+</div>
+<div class="result">
+<div class="result-title">Seconde moitié de la réponse</div>
+<p>\[ p^* = \frac{1}{4} = 0{,}25 \]</p>
+<p>Le <strong>contrebandier</strong> prend la route avec probabilité 0,25, soit <strong>1 fois sur 4</strong>.</p>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">6.</span> Énoncer proprement l'équilibre</div>
+<p>Un résultat de théorie des jeux ne s'écrit jamais sous forme de deux nombres isolés. On énonce le <strong>profil complet</strong>, c'est-à-dire ce que fait chaque joueur, avec ses deux probabilités.</p>
+<div class="result">
+<div class="result-title">Résultat 4.2 — l'équilibre de Nash en stratégies mixtes</div>
+<p>\[ (p^*,\; q^*) = \left( \frac{1}{4},\; \frac{3}{5} \right) = (0{,}25\,;\ 0{,}6) \]</p>
+<ul>
+<li>Le <strong>contrebandier</strong> prend la Route avec probabilité \( 1/4 \) et la Montagne avec probabilité \( 3/4 \).</li>
+<li>Le <strong>douanier</strong> patrouille sur la Route avec probabilité \( 3/5 \) et en Montagne avec probabilité \( 2/5 \).</li>
+</ul>
+</div>
+</div>
+
+<h3>3.5 Lire le résultat : est-il plausible ?</h3>
+
+<p>Un bon réflexe, systématiquement : une fois le résultat obtenu, se demander s'il <em>raconte une histoire crédible</em>. Ici, oui, et c'est instructif.</p>
+
+<p><strong>Le contrebandier passe surtout par la montagne (3 fois sur 4).</strong> Pourtant la montagne lui rapporte moins quand ça marche (4 contre 8). Pourquoi s'y résout-il ? Parce que c'est le seul moyen de tenir le douanier en respect. S'il privilégiait la route, le douanier s'y installerait. Le contrebandier « paie » son imprévisibilité en empruntant souvent le chemin le moins rentable.</p>
+
+<p><strong>Le douanier surveille surtout la route (3 fois sur 5).</strong> Là c'est plus intuitif : la route est le point de passage le plus attractif <em>et</em> le plus payant à surveiller (6 contre 2). Il y consacre donc la majorité de ses nuits.</p>
+
+<p><strong>Le résultat frappant :</strong> le douanier passe 60 % de son temps sur la route alors que le contrebandier n'y passe que 25 % du sien. Ce n'est pas une erreur — souviens-toi que <em>les deux probabilités ne se répondent pas entre elles</em>. \( q^* = 0{,}6 \) est calibré pour neutraliser le contrebandier, et \( p^* = 0{,}25 \) pour neutraliser le douanier. Il n'y a aucune raison pour que ces deux nombres se ressemblent.</p>
+
+<h3>3.6 Vérifier que c'est bien un équilibre</h3>
+
+<p>Le diagramme des <span class="term">meilleures réponses</span> permet de <em>voir</em> l'équilibre plutôt que de le calculer. Chaque joueur y a une courbe : elle indique, pour chaque probabilité de l'adversaire, ce qu'il ferait de mieux. L'équilibre est là où les deux courbes se croisent.</p>
+
+<div class="calc">
+<div class="step">
+\[ \text{Le contrebandier joue Route} \iff 8 - 12q > -4 + 8q \iff q < 0{,}6 \]
+<div class="why">Ce n'est que l'inégalité correspondant à l'équation de l'étape 3. Tant que le douanier surveille la route moins de 6 fois sur 10, la route reste attractive : le contrebandier y va <strong>à coup sûr</strong>, c'est-à-dire \( p = 1 \).</div>
+</div>
+<div class="step">
+\[ \text{Le douanier patrouille sur la Route} \iff 6p > 2 - 2p \iff p > 0{,}25 \]
+<div class="why">De même côté douanier : dès que le contrebandier prend la route plus d'une fois sur quatre, il vaut mieux y être en permanence, c'est-à-dire \( q = 1 \).</div>
+</div>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 372" width="100%" style="max-width:12cm" role="img"
+     aria-label="Diagramme des meilleures réponses : la courbe en escalier du contrebandier et celle du douanier se croisent au point p égale 0,25 et q égale 0,6, l'unique équilibre de Nash en stratégies mixtes">
+  <line x1="80" y1="46" x2="80" y2="280" stroke="#111827" stroke-width="1.3"/>
+  <line x1="80" y1="280" x2="424" y2="280" stroke="#111827" stroke-width="1.3"/>
+
+  <text x="74" y="284" font-size="11.5" text-anchor="end">0</text>
+  <text x="74" y="152" font-size="11.5" text-anchor="end" fill="#6d28d9" font-weight="bold">0,6</text>
+  <text x="74" y="64" font-size="11.5" text-anchor="end">1</text>
+  <line x1="76" y1="60" x2="84" y2="60" stroke="#111827" stroke-width="1.2"/>
+  <text x="80" y="298" font-size="11.5" text-anchor="middle">0</text>
+  <text x="160" y="298" font-size="11.5" text-anchor="middle" fill="#6d28d9" font-weight="bold">0,25</text>
+  <text x="400" y="298" font-size="11.5" text-anchor="middle">1</text>
+  <line x1="400" y1="276" x2="400" y2="284" stroke="#111827" stroke-width="1.2"/>
+
+  <text x="252" y="320" font-size="11.5" text-anchor="middle">p = probabilité que le contrebandier prenne la Route</text>
+  <text x="24" y="164" font-size="11.5" text-anchor="middle" transform="rotate(-90 24 164)">q = proba que le douanier soit sur la Route</text>
+
+  <polyline points="80,280 160,280 160,60 400,60" fill="none" stroke="#0369a1" stroke-width="2.6" stroke-dasharray="8 4"/>
+  <polyline points="400,280 400,148 80,148 80,60" fill="none" stroke="#be123c" stroke-width="2.6"/>
+
+  <line x1="160" y1="148" x2="160" y2="280" stroke="#6d28d9" stroke-width="1.1" stroke-dasharray="3 3"/>
+  <line x1="80" y1="148" x2="160" y2="148" stroke="#6d28d9" stroke-width="1.1" stroke-dasharray="3 3"/>
+  <circle cx="160" cy="148" r="6" fill="#6d28d9"/>
+  <text x="176" y="136" font-size="12" fill="#6d28d9" font-weight="bold">équilibre (0,25 ; 0,6)</text>
+
+  <line x1="80" y1="340" x2="112" y2="340" stroke="#be123c" stroke-width="2.6"/>
+  <text x="120" y="344" font-size="11.5">meilleure réponse du contrebandier</text>
+  <line x1="80" y1="362" x2="112" y2="362" stroke="#0369a1" stroke-width="2.6" stroke-dasharray="8 4"/>
+  <text x="120" y="366" font-size="11.5">meilleure réponse du douanier</text>
+</svg>
+<figcaption>Figure 4 — Le diagramme des meilleures réponses. Chaque courbe est un « escalier ». Celle du douanier (pointillés) reste collée au bas tant que \( p < 0{,}25 \), puis saute tout en haut. Celle du contrebandier (trait plein) reste collée à droite tant que \( q < 0{,}6 \), puis saute tout à gauche. Les deux marches verticales se croisent en un <strong>unique</strong> point : \( (0{,}25\,;\ 0{,}6) \). C'est l'équilibre — et le dessin montre aussi pourquoi il n'y en a pas d'autre.</figcaption>
+</figure>
+
+<div class="box box-why">
+<div class="box-title">Ce que le dessin apprend et que le calcul ne dit pas</div>
+<p>Trois choses, toutes utiles à l'examen :</p>
+<ul>
+<li><strong>Les coins sont vides.</strong> Les quatre coins du carré (0,0), (0,1), (1,0), (1,1) sont les quatre profils purs de la 4.1. Aucun n'est sur les deux courbes à la fois : c'est la traduction graphique de « pas d'équilibre pur ».</li>
+<li><strong>L'équilibre est unique.</strong> Deux escaliers de ce type ne peuvent se croiser qu'une fois. On n'a donc pas d'autre solution à chercher.</li>
+<li><strong>Les segments verticaux et horizontaux sont là parce que l'indifférence rend <em>toutes</em> les probabilités optimales.</strong> Quand \( q \) vaut exactement 0,6, le contrebandier se fiche complètement de ce qu'il joue : n'importe quel \( p \) lui va. C'est pourquoi sa meilleure réponse devient un segment entier plutôt qu'un point. Et c'est exactement ce qui permet à un équilibre d'exister : à l'équilibre, chacun est content de jouer précisément le dosage qui arrange l'autre.</li>
+</ul>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — question 4.2</div>
+<p><strong>Théorème d'indifférence.</strong> À un équilibre en stratégies mixtes où les deux joueurs mélangent strictement, chaque joueur est indifférent entre ses deux stratégies pures. L'indifférence d'un joueur est écrite avec ses propres gains, mais elle a pour inconnue la probabilité de l'<em>autre</em>.</p>
+<p><strong>Indifférence du contrebandier</strong> (elle donne \( q^* \)) :</p>
+<p>\[ -4q + 8(1-q) = 4q - 4(1-q) \]</p>
+<p>\[ 8 - 12q = -4 + 8q \iff 12 = 20q \iff q^* = \tfrac{3}{5} = 0{,}6 \]</p>
+<p><strong>Indifférence du douanier</strong> (elle donne \( p^* \)) :</p>
+<p>\[ 6p + 0(1-p) = 0p + 2(1-p) \]</p>
+<p>\[ 6p = 2 - 2p \iff 8p = 2 \iff p^* = \tfrac{1}{4} = 0{,}25 \]</p>
+<p><strong>Conclusion.</strong> L'unique équilibre de Nash est en stratégies mixtes : \( (p^*, q^*) = \bigl(\tfrac{1}{4}, \tfrac{3}{5}\bigr) \). Le contrebandier passe par la route 1 fois sur 4 (et par la montagne 3 fois sur 4) ; le douanier patrouille sur la route 3 fois sur 5 (et en montagne 2 fois sur 5).</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 4.2 (le barème les sanctionne explicitement)</div>
+<ul>
+<li><strong>Le chiasme inversé.</strong> C'est <em>l'</em>erreur. Utiliser l'indifférence du contrebandier pour trouver \( p^* \) coûte 3 points sur 12, d'après le barème lui-même. Contrôle en une seconde : l'équation du contrebandier ne doit contenir que des \( q \).</li>
+<li><strong>Confondre les positions dans la case.</strong> Premier nombre = contrebandier, second = douanier. Si tu écris \( E[\text{Route}] = 6q + 0(1-q) \) pour le contrebandier, tu as pris les gains du douanier.</li>
+<li><strong>Le double signe moins.</strong> \( (1-q) \times (-4) = -4 + 4q \), pas \( -4 - 4q \). Refais ce développement lentement, c'est le plus gros pourvoyeur de fautes de la question.</li>
+<li><strong>Écrire directement le résultat.</strong> « Détaillez vos calculs » : la mise en équation vaut 4 points sur 6, la résolution 2. Un \( q^* = 0{,}6 \) tombé du ciel ne vaut qu'un tiers des points.</li>
+<li><strong>Oublier de dire ce que sont \( 1-p \) et \( 1-q \).</strong> L'énoncé de l'équilibre doit décrire le comportement complet des deux joueurs, pas juste deux nombres.</li>
+<li><strong>Vérifier que ce sont bien des probabilités.</strong> Si tu trouves \( q^* = 1{,}4 \) ou \( q^* = -0{,}3 \), tu t'es trompé : une probabilité vit entre 0 et 1. C'est un détecteur d'erreur gratuit, utilise-le.</li>
+</ul>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">La recette réutilisable — équilibre mixte dans un jeu 2×2</div>
+<ol>
+<li><strong>Vérifier d'abord</strong> qu'il n'y a pas d'équilibre pur (ou repérer lesquels), pour justifier le passage aux mixtes.</li>
+<li><strong>Nommer les probabilités</strong> : \( p \) et \( 1-p \) pour le joueur des lignes, \( q \) et \( 1-q \) pour celui des colonnes.</li>
+<li><strong>Indifférence du joueur des lignes</strong> : écrire ses deux payoffs espérés en pondérant par \( q \) et \( 1-q \), les égaliser → équation en \( q \) seul → <strong>\( q^* \)</strong>.</li>
+<li><strong>Indifférence du joueur des colonnes</strong> : écrire ses deux payoffs espérés en pondérant par \( p \) et \( 1-p \), les égaliser → équation en \( p \) seul → <strong>\( p^* \)</strong>.</li>
+<li><strong>Contrôles</strong> : chaque probabilité est-elle entre 0 et 1 ? chaque équation ne contient-elle bien que la lettre de l'autre ?</li>
+<li><strong>Énoncer l'équilibre</strong> en une phrase de français, avec les quatre probabilités.</li>
+</ol>
+</div>
+
+<hr class="soft">
+
+<h2>4. Sous-question 4.3 — Les payoffs espérés à l'équilibre</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 4.3 (6 points)</div>
+<p>Calculez le payoff espéré de chaque joueur à l'équilibre.</p>
+</div>
+
+<p>Six points, et sans doute la sous-question la plus rapide de tout l'examen : deux multiplications. Mais elle n'est facile <em>que</em> si tu as compris le théorème d'indifférence. Voyons pourquoi.</p>
+
+<h3>4.1 Traduisons la question</h3>
+
+<dl class="lexique">
+<dt>« payoff espéré »</dt>
+<dd>Le gain <strong>moyen</strong> qu'un joueur obtient s'il joue ce jeu un très grand nombre de fois. Ce n'est pas un gain qu'il touchera un soir donné : un soir donné, le contrebandier gagne 8, ou 4, ou \( -4 \). Le payoff espéré, c'est la moyenne sur le long terme — ici : sur mille nuits de contrebande.</dd>
+
+<dt>« à l'équilibre »</dt>
+<dd>C'est-à-dire quand chacun joue les probabilités trouvées en 4.2 : \( p^* = 0{,}25 \) et \( q^* = 0{,}6 \). On ne recalcule rien, on <em>injecte</em> ces valeurs.</dd>
+</dl>
+
+<h3>4.2 Deux méthodes — et pourquoi l'une est dix fois plus rapide</h3>
+
+<div class="box box-methode">
+<div class="box-title">Méthode 1 (l'astuce de l'indifférence) — recommandée</div>
+<p>Le théorème d'indifférence dit qu'à l'équilibre, les deux stratégies pures d'un joueur lui rapportent <strong>la même chose</strong>. Or sa stratégie mixte n'est qu'une moyenne de ces deux valeurs identiques : elle vaut donc la même chose aussi. Conséquence pratique :</p>
+<p style="text-align:center"><strong>il suffit d'évaluer <em>une seule</em> des deux droites au point d'équilibre.</strong></p>
+<p>Une multiplication par joueur. C'est tout.</p>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Méthode 2 (la somme sur les quatre cases) — plus longue mais bonne aussi</div>
+<p>On calcule la probabilité de chacune des quatre cases (produit des deux probabilités, car les choix sont indépendants), on multiplie chaque probabilité par le gain correspondant, et on additionne les quatre morceaux. Huit multiplications et deux additions par joueur. Le résultat est le même — on s'en servira comme <strong>vérification</strong> en section 4.4.</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Le payoff espéré du contrebandier</div>
+<p>Je reprends sa droite « Route », calculée en 4.2, et j'y remplace \( q \) par \( q^* = 0{,}6 \).</p>
+<div class="calc">
+<div class="step">
+\[ U_C = E[\text{Route}] = 8 - 12\,q^* \]
+<div class="why">C'est la formule établie à l'étape 1 de la section 3.4. \( U_C \) se lit « U indice C » : l'utilité (le payoff espéré) du Contrebandier à l'équilibre.</div>
+</div>
+<div class="step">
+\[ U_C = 8 - 12 \times \frac{3}{5} \]
+<div class="why">Je remplace \( q \) par sa valeur d'équilibre. J'utilise la fraction plutôt que 0,6 : c'est plus sûr et souvent plus rapide.</div>
+</div>
+<div class="step">
+\[ 12 \times \frac{3}{5} = \frac{36}{5} = 7{,}2 \]
+<div class="why">Je multiplie le numérateur par 12 : \( 12 \times 3 = 36 \), le dénominateur ne change pas. Puis \( 36 \div 5 = 7{,}2 \).</div>
+</div>
+<div class="step">
+\[ U_C = 8 - 7{,}2 = 0{,}8 \]
+<div class="why">Une simple soustraction. Le contrebandier gagne 0,8 par nuit en moyenne.</div>
+</div>
+</div>
+<p><strong>Vérification par l'autre droite</strong> — indispensable, elle coûte cinq secondes et détecte toute erreur de 4.2 :</p>
+<div class="calc">
+<div class="step">
+\[ E[\text{Montagne}] = -4 + 8\,q^* = -4 + 8 \times \frac{3}{5} = -4 + \frac{24}{5} \]
+<div class="why">Même valeur de \( q^* \), mais dans l'autre formule. \( 8 \times 3 = 24 \), d'où \( 24/5 = 4{,}8 \).</div>
+</div>
+<div class="step">
+\[ E[\text{Montagne}] = -4 + 4{,}8 = 0{,}8 \quad \checkmark \]
+<div class="why">Identique à \( E[\text{Route}] \). C'est <strong>la preuve que \( q^* \) est juste</strong> : si les deux droites ne donnaient pas la même valeur, c'est que \( q^* \) n'était pas le point de croisement.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Le payoff espéré du douanier</div>
+<div class="calc">
+<div class="step">
+\[ U_D = E[\text{Route}] = 6\,p^* = 6 \times \frac{1}{4} \]
+<div class="why">Sa droite « Route », établie à l'étape 4 de la section 3.4, évaluée en \( p^* = 1/4 \). Attention : c'est bien \( p^* \) qui entre ici, pas \( q^* \) — le payoff du douanier dépend de ce que fait le contrebandier.</div>
+</div>
+<div class="step">
+\[ U_D = \frac{6}{4} = \frac{3}{2} = 1{,}5 \]
+<div class="why">Je simplifie la fraction en divisant haut et bas par 2. Le douanier gagne 1,5 par nuit en moyenne.</div>
+</div>
+</div>
+<p><strong>Vérification par l'autre colonne :</strong></p>
+<div class="calc">
+<div class="step">
+\[ E[\text{Montagne}] = 2 - 2\,p^* = 2 - 2 \times \frac{1}{4} = 2 - 0{,}5 = 1{,}5 \quad \checkmark \]
+<div class="why">Même valeur : \( p^* \) est bien le point d'indifférence du douanier.</div>
+</div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat 4.3</div>
+<p>\[ U_C = 0{,}8 \qquad \text{et} \qquad U_D = 1{,}5 \]</p>
+<p>En moyenne, sur un grand nombre de nuits, le contrebandier gagne 0,8 et le douanier 1,5.</p>
+</div>
+
+<h3>4.3 La vérification complète, case par case</h3>
+
+<p>Faisons-la une fois proprement : elle est instructive, et elle te sauvera si un jour un examen demande explicitement la méthode longue.</p>
+
+<p>Les deux joueurs choisissent <strong>indépendamment</strong> (chacun ignore ce que fait l'autre au moment de décider). La probabilité qu'une case donnée se réalise est donc le <strong>produit</strong> des deux probabilités individuelles. Par exemple : « le contrebandier prend la route ET le douanier y patrouille » a pour probabilité \( 0{,}25 \times 0{,}6 = 0{,}15 \).</p>
+
+<table class="data">
+<tr><th>Case</th><th>Probabilité</th><th>Gain du contrebandier</th><th>Contribution</th><th>Gain du douanier</th><th>Contribution</th></tr>
+<tr><td>Route ; Route</td><td>\( 0{,}25 \times 0{,}6 = 0{,}15 \)</td><td>−4</td><td>−0,60</td><td>6</td><td>0,90</td></tr>
+<tr><td>Route ; Montagne</td><td>\( 0{,}25 \times 0{,}4 = 0{,}10 \)</td><td>8</td><td>0,80</td><td>0</td><td>0,00</td></tr>
+<tr><td>Montagne ; Route</td><td>\( 0{,}75 \times 0{,}6 = 0{,}45 \)</td><td>4</td><td>1,80</td><td>0</td><td>0,00</td></tr>
+<tr><td>Montagne ; Montagne</td><td>\( 0{,}75 \times 0{,}4 = 0{,}30 \)</td><td>−4</td><td>−1,20</td><td>2</td><td>0,60</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>1,00</strong></td><td></td><td><strong>0,80</strong></td><td></td><td><strong>1,50</strong></td></tr>
+</table>
+
+<p>Trois contrôles à faire sur ce tableau, dans cet ordre :</p>
+<ul>
+<li>la colonne des probabilités doit sommer à <strong>1</strong> : \( 0{,}15 + 0{,}10 + 0{,}45 + 0{,}30 = 1 \) ✓ (si ce n'est pas le cas, une des multiplications est fausse) ;</li>
+<li>la somme des contributions du contrebandier doit redonner \( 0{,}8 \) : \( -0{,}60 + 0{,}80 + 1{,}80 - 1{,}20 = 0{,}80 \) ✓ ;</li>
+<li>celle du douanier doit redonner \( 1{,}5 \) : \( 0{,}90 + 0{,}60 = 1{,}50 \) ✓.</li>
+</ul>
+
+<p>Les deux méthodes concordent. Tu peux donc utiliser la courte en toute confiance à l'examen — c'est le sens de l'astuce.</p>
+
+<h3>4.4 Que signifient ces deux nombres ?</h3>
+
+<p><strong>Pour le contrebandier : 0,8, c'est très peu.</strong> Rappelle-toi qu'un passage réussi par la route lui rapporte 8. Son gain moyen représente donc un <em>dixième</em> de son meilleur scénario. La raison : il se fait attraper souvent (dans 45 % des nuits — les cases (R;R) et (M;M), soit \( 0{,}15 + 0{,}30 \)) et, quand il passe, c'est le plus souvent par la montagne, le chemin le moins rentable. La présence d'un douanier qui joue bien laminera toujours le profit de la contrebande.</p>
+
+<p><strong>Pour le douanier : 1,5, c'est modeste aussi.</strong> Sa plus belle prise vaut 6, il n'en obtient en moyenne qu'un quart. Il passe en effet 55 % de ses nuits à surveiller un chemin vide (cases (R;M) et (M;R) : \( 0{,}10 + 0{,}45 \)).</p>
+
+<p><strong>Et ensemble ?</strong> Personne n'est content. C'est la marque des jeux de conflit : l'équilibre n'est pas un compromis heureux, c'est un point où chacun se contente du minimum garanti parce que toute tentative de faire mieux serait immédiatement exploitée par l'adversaire.</p>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — question 4.3</div>
+<p>À l'équilibre mixte, chaque joueur obtient le même payoff espéré avec chacune de ses stratégies pures (théorème d'indifférence). Il suffit donc d'en évaluer une :</p>
+<p>\[ U_C = 8 - 12\,q^* = 8 - 12 \times \tfrac{3}{5} = 8 - 7{,}2 = \mathbf{0{,}8} \]</p>
+<p>\[ U_D = 6\,p^* = 6 \times \tfrac{1}{4} = \mathbf{1{,}5} \]</p>
+<p>Vérification par l'autre stratégie pure : pour le contrebandier, la Montagne donne \( -4 + 8 \times 0{,}6 = 0{,}8 \) ; pour le douanier, la colonne Montagne donne \( 2 - 2 \times 0{,}25 = 1{,}5 \). Les deux coïncident, ce qui confirme l'équilibre trouvé en 4.2.</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 4.3</div>
+<ul>
+<li><strong>Injecter la mauvaise probabilité.</strong> Le payoff du contrebandier se calcule avec \( q^* \) (ce que fait le douanier), celui du douanier avec \( p^* \). Encore le chiasme — il est partout dans cette question.</li>
+<li><strong>Croire qu'il faut faire la somme sur les quatre cases.</strong> Ce n'est pas faux, juste quatre fois plus long et quatre fois plus risqué. L'astuce de l'indifférence est explicitement acceptée par le barème.</li>
+<li><strong>Ne pas vérifier.</strong> La vérification par l'autre stratégie pure est gratuite et rapporte de la crédibilité au correcteur. Fais-la toujours.</li>
+<li><strong>Oublier que ce sont des moyennes.</strong> Ne va pas écrire « le contrebandier gagne 0,8 » comme s'il touchait 0,8 à chaque passage. Écris « en moyenne ».</li>
+</ul>
+</div>
+
+<hr class="soft">
+
+<h2>5. Sous-question 4.4 — Quand la marchandise vaut plus cher : le résultat surprenant</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 4.4 (6 points)</div>
+<p>La valeur de la marchandise augmente : le gain du contrebandier en cas de passage réussi par la route passe de 8 à 28, tous les autres gains restant inchangés. Calculez le nouvel équilibre en stratégies mixtes. Qui, du contrebandier ou du douanier, modifie son comportement à l'équilibre ? Expliquez ce résultat.</p>
+</div>
+
+<p>Six points seulement. Et pourtant, c'est <strong>la</strong> question du chapitre. Elle sépare ceux qui ont appliqué une recette de ceux qui l'ont comprise. Prends ton temps ici : les 25 minutes que tu passes sur cette section valent plus que tout le reste.</p>
+
+<h3>5.1 Traduisons la question</h3>
+
+<dl class="lexique">
+<dt>« tous les autres gains restant inchangés »</dt>
+<dd>Formule rituelle de la <span class="term">statique comparative</span> (on dit aussi <em>ceteris paribus</em>, « toutes choses égales par ailleurs »). Elle t'ordonne de ne toucher qu'<strong>un seul nombre</strong> du tableau et de tout recalculer. C'est un exercice de laboratoire : on isole l'effet d'une seule cause.</dd>
+
+<dt>« Qui modifie son comportement à l'équilibre ? »</dt>
+<dd>Question <strong>fermée</strong> : la réponse attendue est un nom. « Le douanier », ou « le contrebandier ». Sois explicite : le correcteur cherche ce mot. Et « comportement » veut dire <em>probabilité d'équilibre</em> : celui qui change est celui dont l'étoile bouge.</dd>
+
+<dt>« Expliquez ce résultat »</dt>
+<dd>3 points sur 6 — la moitié de la sous-question — sont dans l'explication, pas dans le calcul. On attend un <strong>mécanisme</strong>, pas une paraphrase. La phrase-clé à produire : <em>chacun choisit sa probabilité pour maintenir l'autre indifférent</em>.</dd>
+</dl>
+
+<h3>5.2 La nouvelle matrice</h3>
+
+<p>Un seul nombre change : le \( 8 \) de la case (Route ; Montagne) — le passage réussi par la route — devient \( 28 \). C'est le premier nombre de cette case, donc un gain du contrebandier. Le \( 0 \) qui l'accompagne (gain du douanier) ne bouge pas.</p>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Douanier</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>Route (\( q \))</th><th>Montagne (\( 1-q \))</th></tr>
+<tr><td class="player" rowspan="2">Contrebandier</td><th>Route (\( p \))</th><td>(−4 ; 6)</td><td class="hl">(<strong>28</strong> ; 0)</td></tr>
+<tr><th>Montagne (\( 1-p \))</th><td>(4 ; 0)</td><td>(−4 ; 2)</td></tr>
+</table>
+<p style="text-align:center"><em>Seule la case grisée a changé : 8 devient 28. Les trois autres cases, et les quatre gains du douanier, sont intacts.</em></p>
+
+<div class="box box-why">
+<div class="box-title">L'intuition spontanée (celle qui est fausse) — et pourquoi il faut la formuler quand même</div>
+<p>Avant de calculer, pose-toi honnêtement la question : <em>que va-t-il se passer ?</em> La réponse spontanée de 90 % des étudiants — et de 100 % des gens dans la rue — est :</p>
+<p style="text-align:center">« La route rapporte beaucoup plus maintenant, donc le contrebandier va la prendre plus souvent. »</p>
+<p>C'est faux, et on va le prouver. Mais formule quand même cette intuition dans ta tête : c'est en voyant précisément <em>où</em> elle dérape qu'on comprend le mécanisme. L'intuition n'est d'ailleurs pas complètement bête — elle est vraie <strong>hors équilibre</strong>. Si le douanier continuait bêtement à patrouiller 3 fois sur 5, alors oui, le contrebandier se ruerait sur la route. Mais le douanier n'est pas bête, et c'est justement pour ça qu'il change, lui.</p>
+</div>
+
+<h3>5.3 Le calcul du nouvel équilibre</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Refaire l'indifférence du contrebandier (ses gains ont changé → \( q^* \) change)</div>
+<p>Ses gains ont bougé, donc son équation d'indifférence aussi. Et cette équation, on le sait, détermine \( q^* \) — la probabilité du douanier.</p>
+<div class="calc">
+<div class="step">
+\[ E[\text{Route}] = q \times (-4) + (1-q) \times 28 \]
+<div class="why">Même structure qu'avant, avec 28 à la place de 8. La saisie coûte toujours \( -4 \) : ce nombre-là n'a pas changé.</div>
+</div>
+<div class="step">
+\[ E[\text{Route}] = -4q + 28 - 28q = 28 - 32q \]
+<div class="why">Je développe \( (1-q) \times 28 = 28 - 28q \), puis je regroupe : \( -4q - 28q = -32q \). Contrôle : \( q = 0 \) donne 28 ✓ (passage libre), \( q = 1 \) donne \( 28 - 32 = -4 \) ✓ (saisie). La droite est bien plus pentue qu'avant : la route est devenue une affaire beaucoup plus « à quitte ou double ».</div>
+</div>
+<div class="step">
+\[ E[\text{Montagne}] = 4q - 4(1-q) = -4 + 8q \]
+<div class="why">Cette droite-là est <strong>inchangée</strong>, parce qu'aucun des deux gains de la ligne « Montagne » n'a été modifié. Je la recopie telle quelle depuis la section 3.4.</div>
+</div>
+<div class="step">
+\[ 28 - 32q = -4 + 8q \]
+<div class="why">J'égalise : c'est la nouvelle équation d'indifférence du contrebandier. Toujours une seule inconnue, \( q \) — le chiasme fonctionne exactement comme avant.</div>
+</div>
+<div class="step">
+\[ 28 + 4 = 8q + 32q \]
+<div class="why">J'ajoute \( 4 \) et \( 32q \) des deux côtés pour rassembler les nombres à gauche et les \( q \) à droite.</div>
+</div>
+<div class="step">
+\[ 32 = 40q \]
+<div class="why">\( 28 + 4 = 32 \) et \( 8q + 32q = 40q \).</div>
+</div>
+<div class="step">
+\[ q = \frac{32}{40} = \frac{4}{5} = 0{,}8 \]
+<div class="why">Je divise par 40, puis je simplifie par 8 : \( 32/8 = 4 \), \( 40/8 = 5 \). Contrôle : \( 0{,}8 \) est bien entre 0 et 1 ✓.</div>
+</div>
+</div>
+<div class="result">
+<div class="result-title">Le nouveau \( q^* \)</div>
+<p>\[ q^*_{\text{nouveau}} = \frac{4}{5} = 0{,}8 \qquad \text{(contre } 0{,}6 \text{ avant)} \]</p>
+<p>Le douanier patrouille désormais sur la route <strong>4 nuits sur 5</strong> au lieu de 3 sur 5.</p>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Refaire l'indifférence du douanier (ses gains n'ont pas changé → \( p^* \) ne change pas)</div>
+<p>Là, il n'y a rien à recalculer — mais il faut <strong>le dire et le justifier</strong>, c'est un point du barème.</p>
+<div class="calc">
+<div class="step">
+\[ E[\text{Route}] = 6p \qquad ; \qquad E[\text{Montagne}] = 2 - 2p \]
+<div class="why">Ces deux formules ne font intervenir que les <strong>seconds</strong> nombres des cases : \( 6 \), \( 0 \), \( 0 \), \( 2 \). Or le changement de l'énoncé (8 → 28) a porté sur un <em>premier</em> nombre. Aucun des quatre gains du douanier n'a bougé : ses deux droites sont donc rigoureusement identiques à celles de la 4.2.</div>
+</div>
+<div class="step">
+\[ 6p = 2 - 2p \iff 8p = 2 \iff p^* = \frac{1}{4} = 0{,}25 \]
+<div class="why">Même équation, même solution. \( p^* \) est <strong>inchangé</strong>.</div>
+</div>
+</div>
+<div class="result">
+<div class="result-title">Résultat 4.4 — le nouvel équilibre</div>
+<p>\[ (p^*,\; q^*) = \left( \frac{1}{4},\; \frac{4}{5} \right) = (0{,}25\,;\ 0{,}8) \]</p>
+<p>Le contrebandier prend la route <strong>exactement aussi souvent qu'avant</strong> (1 fois sur 4). Le douanier, lui, y patrouille <strong>plus souvent</strong> : 4 nuits sur 5 au lieu de 3 sur 5.</p>
+<p>C'est donc le <strong>douanier</strong> qui modifie son comportement — alors que ce sont les gains du <em>contrebandier</em> qui ont été modifiés.</p>
+</div>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 330" width="100%" style="max-width:12cm" role="img"
+     aria-label="Superposition des deux situations : la droite Route ancienne 8 moins 12 q coupe la droite Montagne en q égale 0,6 ; la nouvelle droite Route 28 moins 32 q, beaucoup plus haute et plus pentue, la coupe en q égale 0,8. Le croisement a glissé vers la droite.">
+  <line x1="80" y1="42" x2="80" y2="262" stroke="#111827" stroke-width="1.3"/>
+  <line x1="80" y1="258" x2="432" y2="258" stroke="#111827" stroke-width="1.3"/>
+  <line x1="80" y1="223" x2="428" y2="223" stroke="#9ca3af" stroke-width="1"/>
+
+  <text x="74" y="59" font-size="11.5" text-anchor="end">28</text>
+  <line x1="76" y1="55" x2="84" y2="55" stroke="#111827" stroke-width="1.2"/>
+  <text x="74" y="179" font-size="11.5" text-anchor="end">8</text>
+  <line x1="76" y1="175" x2="84" y2="175" stroke="#111827" stroke-width="1.2"/>
+  <text x="74" y="227" font-size="11.5" text-anchor="end">0</text>
+  <text x="74" y="251" font-size="11.5" text-anchor="end">−4</text>
+  <line x1="76" y1="247" x2="84" y2="247" stroke="#111827" stroke-width="1.2"/>
+  <text x="22" y="150" font-size="11.5" text-anchor="middle" transform="rotate(-90 22 150)">payoff espéré du contrebandier</text>
+
+  <text x="80" y="276" font-size="11.5" text-anchor="middle">0</text>
+  <text x="420" y="276" font-size="11.5" text-anchor="middle">1</text>
+  <text x="250" y="300" font-size="11.5" text-anchor="middle">q = probabilité que le douanier patrouille sur la Route</text>
+
+  <line x1="80" y1="175" x2="420" y2="247" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="3 3"/>
+  <text x="150" y="170" font-size="11" fill="#6b7280">Route AVANT : 8 − 12q</text>
+
+  <line x1="80" y1="55" x2="420" y2="247" stroke="#be123c" stroke-width="2.8"/>
+  <text x="150" y="98" font-size="11.5" fill="#be123c" font-weight="bold">Route APRÈS : 28 − 32q</text>
+
+  <line x1="80" y1="247" x2="420" y2="199" stroke="#0369a1" stroke-width="2.6" stroke-dasharray="8 4"/>
+  <text x="300" y="220" font-size="11.5" fill="#0369a1" font-weight="bold">Montagne : −4 + 8q</text>
+  <text x="300" y="234" font-size="11" fill="#0369a1">(inchangée)</text>
+
+  <circle cx="284" cy="218" r="5" fill="none" stroke="#6d28d9" stroke-width="2"/>
+  <line x1="284" y1="218" x2="284" y2="258" stroke="#6d28d9" stroke-width="1.1" stroke-dasharray="3 3"/>
+  <text x="284" y="276" font-size="11.5" text-anchor="middle" fill="#6d28d9">0,6</text>
+
+  <circle cx="352" cy="209" r="5.5" fill="#6d28d9"/>
+  <line x1="352" y1="209" x2="352" y2="258" stroke="#6d28d9" stroke-width="1.1" stroke-dasharray="3 3"/>
+  <text x="352" y="276" font-size="11.5" text-anchor="middle" fill="#6d28d9" font-weight="bold">0,8</text>
+
+  <line x1="292" y1="192" x2="342" y2="192" stroke="#6d28d9" stroke-width="1.8"/>
+  <polygon points="350,192 340,188 340,196" fill="#6d28d9"/>
+  <text x="318" y="184" font-size="11" text-anchor="middle" fill="#6d28d9" font-weight="bold">le croisement glisse</text>
+
+  <text x="250" y="322" font-size="11.5" text-anchor="middle" font-style="italic">le douanier doit patrouiller davantage pour rétablir l'indifférence</text>
+</svg>
+<figcaption>Figure 5 — La statique comparative, vue graphiquement. La droite « Montagne » (pointillés bleus) ne bouge pas : les gains de cette ligne n'ont pas changé. La droite « Route » se relève brutalement — elle part de 28 au lieu de 8 — et devient plus pentue. Résultat : elle coupe la droite « Montagne » <strong>plus à droite</strong>, en \( q^* = 0{,}8 \) au lieu de \( 0{,}6 \). Le nouveau point d'indifférence exige davantage de patrouilles sur la route.</figcaption>
+</figure>
+
+<h3>5.4 Pourquoi c'est le douanier qui bouge : l'explication complète</h3>
+
+<p>On y est. Voici le raisonnement, en quatre temps. Lis-les dans l'ordre, chacun s'appuie sur le précédent.</p>
+
+<h4>Temps 1 — Rappel du mécanisme : ma probabilité neutralise l'autre</h4>
+
+<p>À l'équilibre mixte, ma probabilité n'a pas pour but de maximiser directement mon gain. Elle a pour but de <strong>rendre l'adversaire indifférent</strong>, c'est-à-dire de lui ôter toute raison de privilégier une action plutôt que l'autre. Si je n'y parvenais pas, il se fixerait sur une action, deviendrait prévisible… et je changerais alors ma propre stratégie pour l'exploiter. Ce ne serait donc pas un équilibre.</p>
+
+<p>Conséquence directe : <strong>ma probabilité est calibrée sur les gains de l'autre, pas sur les miens.</strong> C'est le chiasme de la figure 2, et il n'y a rien d'autre à comprendre.</p>
+
+<h4>Temps 2 — Qui a « le pouvoir » sur qui ?</h4>
+
+<p>Reprenons les deux équations d'équilibre et regardons de quoi dépend chaque inconnue :</p>
+
+<table class="compare">
+<tr><th class="left">Cette probabilité…</th><th class="left">…est déterminée par…</th><th class="left">…et donc elle change si…</th></tr>
+<tr><td class="left">\( q^* \) (le douanier)</td><td class="left">l'équation d'indifférence du <strong>contrebandier</strong>, donc les gains du contrebandier</td><td class="left">un gain du <strong>contrebandier</strong> change</td></tr>
+<tr><td class="left">\( p^* \) (le contrebandier)</td><td class="left">l'équation d'indifférence du <strong>douanier</strong>, donc les gains du douanier</td><td class="left">un gain du <strong>douanier</strong> change</td></tr>
+</table>
+
+<p>Lis la troisième colonne à voix haute. Elle donne la règle générale de la statique comparative en stratégies mixtes :</p>
+
+<div class="box box-def">
+<div class="box-title">La règle d'or de la statique comparative en stratégies mixtes</div>
+<p style="text-align:center"><strong>Quand les gains d'un joueur changent, c'est le comportement d'équilibre de son ADVERSAIRE qui se modifie ; le sien reste inchangé.</strong></p>
+<p>Formulation équivalente, à mémoriser telle quelle : <em>« mes gains pilotent sa probabilité ; ses gains pilotent la mienne ».</em></p>
+<p>Il existe une exception à connaître : si le changement est si grand qu'il fait sortir une probabilité de l'intervalle \( [0\,;1] \), l'équilibre mixte disparaît et le jeu bascule vers un équilibre pur. Ici, \( 0{,}8 \) est encore une probabilité valide, donc pas de problème.</p>
+</div>
+
+<h4>Temps 3 — Le récit, en français, de ce qui se passe</h4>
+
+<p>Traduisons le calcul en histoire. Le contrebandier apprend que sa cargaison vaut désormais 28 s'il passe par la route. Que se passe-t-il ?</p>
+
+<ol>
+<li><strong>Premier réflexe (hors équilibre).</strong> Si le douanier continuait à patrouiller 3 fois sur 5 comme avant, la route rapporterait au contrebandier \( 28 - 32 \times 0{,}6 = 28 - 19{,}2 = 8{,}8 \), contre \( 0{,}8 \) pour la montagne. Écart énorme : le contrebandier prendrait la route <strong>systématiquement</strong>.</li>
+<li><strong>Mais le douanier le sait.</strong> Il connaît le tableau, il sait que la marchandise vaut plus. Il anticipe donc que la route est devenue irrésistible, et il y renforce ses patrouilles.</li>
+<li><strong>Jusqu'où renforce-t-il ?</strong> Exactement jusqu'au point où la route redevient tout juste aussi intéressante que la montagne pour le contrebandier, ni plus ni moins : \( q^* = 0{,}8 \). Au-delà, il patrouillerait trop, le contrebandier se réfugierait en montagne, et le douanier gaspillerait ses nuits.</li>
+<li><strong>Et une fois \( q^* = 0{,}8 \) en place ?</strong> Le contrebandier est de nouveau indifférent entre ses deux chemins — la surveillance accrue a exactement annulé l'attrait supplémentaire de la route. Il n'a donc aucune raison de changer sa propre fréquence. Et sa fréquence à lui, \( p^* = 0{,}25 \), reste déterminée par la seule chose qui la détermine : les gains (inchangés) du douanier.</li>
+</ol>
+
+<p>Le mot juste pour décrire ce phénomène : la hausse de la valeur de la marchandise a été <strong>entièrement absorbée par la réaction du douanier</strong>. Le contrebandier ne profite pas de l'aubaine — ni en fréquence, ni en gain moyen (on va le vérifier au temps 4). Tout le bénéfice apparent a été confisqué par le renforcement des contrôles.</p>
+
+<h4>Temps 4 — Et les payoffs ? Le retournement final</h4>
+
+<p>Poussons la vérification jusqu'au bout, parce que le résultat achève de retourner l'intuition. Calculons les nouveaux payoffs espérés.</p>
+
+<div class="calc">
+<div class="step">
+\[ U_C = -4 + 8\,q^* = -4 + 8 \times 0{,}8 = -4 + 6{,}4 = 2{,}4 \]
+<div class="why">J'utilise la droite « Montagne », inchangée, évaluée au nouveau \( q^* = 0{,}8 \). Vérification par l'autre droite : \( 28 - 32 \times 0{,}8 = 28 - 25{,}6 = 2{,}4 \) ✓.</div>
+</div>
+<div class="step">
+\[ U_D = 6\,p^* = 6 \times 0{,}25 = 1{,}5 \]
+<div class="why">\( p^* \) n'a pas bougé et les gains du douanier non plus : son payoff espéré est <strong>exactement le même qu'avant</strong>.</div>
+</div>
+</div>
+
+<table class="compare">
+<tr><th class="left">Grandeur</th><th class="left">Avant (gain de 8)</th><th class="left">Après (gain de 28)</th><th class="left">Verdict</th></tr>
+<tr><td class="left">\( p^* \) — le contrebandier prend la Route</td><td class="left">0,25</td><td class="left">0,25</td><td class="left">inchangé</td></tr>
+<tr><td class="left">\( q^* \) — le douanier patrouille sur la Route</td><td class="left">0,6</td><td class="left">0,8</td><td class="left"><strong>en hausse</strong></td></tr>
+<tr><td class="left">\( U_C \) — gain moyen du contrebandier</td><td class="left">0,8</td><td class="left">2,4</td><td class="left">en hausse</td></tr>
+<tr><td class="left">\( U_D \) — gain moyen du douanier</td><td class="left">1,5</td><td class="left">1,5</td><td class="left">inchangé</td></tr>
+</table>
+
+<p>Le tableau complet est riche d'enseignements, et chaque ligne mérite une phrase :</p>
+
+<ul>
+<li><strong>Le contrebandier ne change pas de comportement mais gagne davantage</strong> (0,8 → 2,4). Il profite donc bien de la hausse — mais <em>passivement</em>, sans rien modifier à sa façon de jouer. Son gain augmente parce que le tableau lui est plus favorable, pas parce qu'il a réagi.</li>
+<li><strong>Le douanier change de comportement mais ne gagne pas davantage</strong> (1,5 → 1,5). Il travaille plus, il patrouille plus souvent sur la route… pour exactement le même résultat moyen. Son effort supplémentaire ne sert pas à améliorer son sort : il sert à <em>éviter que sa situation ne se dégrade</em>.</li>
+</ul>
+
+<p>Autrement dit : <strong>celui qui agit n'est pas celui qui en profite.</strong> On peut difficilement trouver énoncé plus contre-intuitif — et plus caractéristique de la théorie des jeux.</p>
+
+<div class="box box-exemple">
+<div class="box-title">Le même phénomène, dans la vraie vie</div>
+<ul>
+<li><strong>Fraude fiscale.</strong> Une niche fiscale devient plus rentable à exploiter frauduleusement. À l'équilibre, ce n'est pas le nombre de fraudeurs qui augmente : c'est le nombre de contrôles sur ce dispositif. L'administration « absorbe » la tentation.</li>
+<li><strong>Football.</strong> Un attaquant s'entraîne intensivement à tirer côté droit et devient meilleur de ce côté. À l'équilibre, il ne tire pas plus souvent à droite pour autant — mais le gardien, lui, plonge plus souvent à droite.</li>
+<li><strong>Sécurité aéroportuaire.</strong> Une ligne aérienne devient une cible plus « attractive ». Le comportement des attaquants potentiels ne change pas à l'équilibre ; ce sont les moyens de contrôle qui se redéploient vers cette ligne.</li>
+</ul>
+<p>Dans les trois cas, la même logique : <strong>on protège davantage ce qui est devenu plus convoité, et cette protection accrue rétablit exactement l'équilibre initial des tentations.</strong></p>
+</div>

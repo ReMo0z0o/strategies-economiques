@@ -1,0 +1,2075 @@
+<section class="chapter">
+  <div class="chapter-tag">Chapitre 8 — Examen n° 2, Question 2 · 40 points</div>
+  <h1>Combien investir dans un projet risqué ? L'investisseuse, ses 900 euros et le pari à quitte ou double</h1>
+  <p class="chapter-intro">
+    Une investisseuse possède 900 euros. Une jeune entreprise lui propose de miser le montant
+    qu'elle veut dans un projet : une chance sur deux de quadrupler la mise, une chance sur deux de
+    tout perdre. Combien met-elle sur la table ? Quatre sous-questions, 40 points. Cette question
+    reprend exactement le décor du chapitre 2 du volume 1 (utilité, concavité, aversion au risque,
+    équivalent certain) — mais elle y ajoute une <em>décision</em> à optimiser. C'est cette
+    nouveauté-là qu'on va construire ici, brique par brique.
+  </p>
+
+  <div class="box box-methode">
+    <div class="box-title">Comment lire ce chapitre</div>
+    <p>
+      Chaque sous-question suit toujours le même moule : <strong>(1)</strong> l'énoncé rappelé avec
+      son barème ; <strong>(2)</strong> « traduisons la question en français simple », mot par
+      mot ; <strong>(3)</strong> « le cours dont tu as besoin » ; <strong>(4)</strong> la
+      résolution où <em>aucune</em> ligne de calcul n'est écrite sans être justifiée ;
+      <strong>(5)</strong> l'encadré vert « ce qu'il fallait écrire sur la copie » ;
+      <strong>(6)</strong> les pièges et la méthode réutilisable.
+    </p>
+    <p>
+      Une différence avec le volume 1 : tout ce qui a <strong>déjà</strong> été construit là-bas
+      (loterie, utilité espérée, concavité, équivalent certain, prime de risque, dérivée) est ici
+      simplement <strong>rappelé</strong> dans les encadrés bleus. Si un rappel te semble trop
+      rapide, retourne au chapitre 2 du volume 1 : il y est développé sur vingt pages. La
+      profondeur de <em>ce</em> chapitre est réservée aux trois choses qui sont vraiment neuves.
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Les trois nouveautés de ce chapitre (et rien d'autre)</div>
+    <ol>
+      <li><strong>Une richesse finale qui dépend d'une décision.</strong> Dans le volume 1, les
+        deux richesses possibles étaient des nombres (10 000 et 3 600). Ici, ce sont des
+        <em>formules</em> qui contiennent le montant investi \( A \). C'est la question 2.1.</li>
+      <li><strong>Maximiser une somme de racines carrées.</strong> Il va falloir dériver
+        \( \sqrt{900+3A} \) par rapport à \( A \), puis résoudre une équation contenant deux
+        racines. C'est la question 2.2, et c'est le cœur technique du chapitre.</li>
+      <li><strong>Comparer deux aversions au risque.</strong> Le volume 1 disait « concave =
+        averse ». Ici on demande : entre deux fonctions <em>toutes les deux</em> concaves, laquelle
+        rend plus prudent ? C'est la question 2.4.</li>
+    </ol>
+  </div>
+
+  <h2>1. L'énoncé, tel qu'il tombe à l'examen</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 2 (40 points), texte commun</div>
+    <p>
+      Considérez une investisseuse rationnelle disposant d'une richesse \( w = 900 \) euros et
+      ayant la fonction d'utilité de Bernoulli
+    </p>
+    <p>\[ u(w) = \sqrt{w} \qquad \text{où } w \text{ est un montant en euros.} \]</p>
+    <p>
+      Une jeune entreprise lui propose d'investir un montant \( A \in [0\,;\,900] \) de son choix
+      dans un projet risqué. Avec une probabilité \( \tfrac{1}{2} \), le projet réussit et chaque
+      euro investi lui rapporte 4 euros ; avec une probabilité \( \tfrac{1}{2} \), le projet
+      échoue et chaque euro investi est perdu.
+    </p>
+    <p><strong>2.1)</strong> Exprimez la valeur finale de son portefeuille (argent conservé +
+      résultat du projet) dans chacun des deux scénarios, puis écrivez son utilité espérée
+      \( U(A) \). (8 points)</p>
+    <p><strong>2.2)</strong> Calculez le montant optimal \( A^* \) que l'investisseuse choisit
+      d'investir. Détaillez la dérivation complète (condition de premier ordre). (14 points)</p>
+    <p><strong>2.3)</strong> Calculez l'utilité espérée à l'optimum \( U(A^*) \) ainsi que
+      l'équivalent certain du portefeuille optimal. Comparez cet équivalent certain à la richesse
+      initiale et interprétez brièvement. (10 points)</p>
+    <p><strong>2.4)</strong> Sans refaire de calcul : si l'investisseuse était plus averse au
+      risque (par exemple avec \( u(w) = \ln(w) \), plus concave), le montant optimal investi
+      serait-il plus élevé, plus faible ou inchangé ? Expliquez (3 à 5 lignes). (8 points)</p>
+  </div>
+
+  <p>
+    Avant toute chose, la carte du trajet. Les quatre sous-questions s'emboîtent strictement : la
+    formule écrite en 2.1 est dérivée en 2.2, le nombre trouvé en 2.2 est réinjecté en 2.3, et 2.4
+    commente le tout sans calcul. Une erreur en 2.1 se propage jusqu'au bout — d'où l'importance
+    de soigner le début.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 540 132" width="100%" style="max-width:12cm" role="img"
+         aria-label="Chaine des quatre sous-questions : d'abord la formule de l'utilite esperee U de A, puis le montant optimal A etoile egal 600 euros, puis l'utilite 34,64 et l'equivalent certain 1200 euros, puis la comparaison des aversions au risque">
+      <g fill="none" stroke="#111827" stroke-width="1.3">
+        <rect x="8" y="18" width="116" height="78" rx="4"/>
+        <rect x="140" y="18" width="116" height="78" rx="4"/>
+        <rect x="272" y="18" width="122" height="78" rx="4"/>
+        <rect x="410" y="18" width="122" height="78" rx="4"/>
+      </g>
+      <g stroke="#111827" stroke-width="1.6" fill="#111827">
+        <path d="M126 57 L136 57"/><path d="M132 53 L140 57 L132 61 Z"/>
+        <path d="M258 57 L268 57"/><path d="M264 53 L272 57 L264 61 Z"/>
+        <path d="M396 57 L406 57"/><path d="M402 53 L410 57 L402 61 Z"/>
+      </g>
+      <g font-size="12" text-anchor="middle">
+        <text x="66" y="36" font-weight="bold">2.1 — 8 pts</text>
+        <text x="66" y="54">Les 2 richesses</text>
+        <text x="66" y="70">finales, puis</text>
+        <text x="66" y="88" font-weight="bold">U(A)</text>
+
+        <text x="198" y="36" font-weight="bold">2.2 — 14 pts</text>
+        <text x="198" y="54">On dérive,</text>
+        <text x="198" y="70">on annule :</text>
+        <text x="198" y="88" font-weight="bold">A* = 600 €</text>
+
+        <text x="333" y="36" font-weight="bold">2.3 — 10 pts</text>
+        <text x="333" y="54">U(A*) = 34,64</text>
+        <text x="333" y="70">équiv. certain</text>
+        <text x="333" y="88" font-weight="bold">1 200 €</text>
+
+        <text x="471" y="36" font-weight="bold">2.4 — 8 pts</text>
+        <text x="471" y="54">Plus averse</text>
+        <text x="471" y="70">au risque ?</text>
+        <text x="471" y="88" font-weight="bold">elle investit moins</text>
+      </g>
+      <text x="270" y="124" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        chaque case se sert du résultat de la case précédente
+      </text>
+    </svg>
+    <figcaption>
+      Figure 1 — La carte de la question 2. Trois calculs enchaînés, puis une question de
+      raisonnement pur. Les 22 points des questions 2.1 et 2.2 sont les plus rentables du sujet :
+      ce sont eux qui font vivre tout le reste.
+    </figcaption>
+  </figure>
+
+  <h2>2. Décodage de l'énoncé, mot par mot</h2>
+
+  <p>
+    Chaque expression de l'énoncé est un mot de code du cours. En voici la clé complète. Lis-la
+    lentement : la moitié des points de cette question se perd en lisant trop vite la phrase
+    « chaque euro investi lui rapporte 4 euros ».
+  </p>
+
+  <dl class="lexique">
+    <dt>« une investisseuse <em>rationnelle</em> »</dt>
+    <dd>
+      En économie, « rationnelle » ne veut pas dire froide ni calculatrice. Cela signifie seulement
+      que ses préférences sont cohérentes : elle sait toujours dire ce qu'elle préfère, elle ne se
+      contredit pas, et elle préfère plus d'argent à moins. La seule conséquence pratique qui nous
+      serve : <strong>on peut décrire ses choix par une formule</strong>. Ici, la formule qu'elle
+      cherche à rendre la plus grande possible est son utilité espérée.
+    </dd>
+
+    <dt>« disposant d'une richesse \( w = 900 \) euros »</dt>
+    <dd>
+      La <span class="term">richesse</span> est la valeur totale de ce qu'elle possède, en euros.
+      Elle vaut 900 euros <em>avant</em> toute décision. Attention : contrairement au volume 1, ces
+      900 euros ne sont pas séparés en deux morceaux (compte + vélo). Tout est liquide, tout est
+      disponible pour être investi — c'est pour cela que l'énoncé écrit \( A \in [0\,;\,900] \).
+    </dd>
+
+    <dt>« la fonction d'utilité de Bernoulli \( u(w) = \sqrt{w} \) »</dt>
+    <dd>
+      C'est la règle qui transforme un montant d'argent <strong>certain</strong> en niveau de
+      satisfaction : « pour savoir à quel point elle est contente d'avoir \( w \) euros, prends la
+      racine carrée de \( w \) ». Exemple : \( u(900) = \sqrt{900} = 30 \), car
+      \( 30 \times 30 = 900 \). « Bernoulli » est le nom du mathématicien qui a eu l'idée en 1738 ;
+      ce n'est pas une notion supplémentaire à retenir. C'est <em>exactement</em> la même fonction
+      qu'au volume 1.
+    </dd>
+
+    <dt>« investir un montant \( A \in [0\,;\,900] \) de son choix »</dt>
+    <dd>
+      \( A \) se lit « A » et désigne le montant investi, en euros. Le symbole \( \in \) se lit
+      « appartient à », et \( [0\,;\,900] \) désigne <em>tous</em> les nombres entre 0 et 900,
+      bornes comprises. La phrase entière dit donc : « elle choisit un nombre entre 0 et 900 ».
+      Elle peut ne rien investir (\( A = 0 \)), tout investir (\( A = 900 \)), ou n'importe quoi
+      entre les deux. <strong>\( A \) est la variable de décision</strong> : c'est la seule chose
+      qu'elle contrôle, et c'est donc par rapport à elle qu'on dérivera en 2.2.
+    </dd>
+
+    <dt>« un projet <em>risqué</em> »</dt>
+    <dd>
+      « Risqué » signifie ici qu'on ne sait pas à l'avance ce qui va arriver : il y a plusieurs
+      <span class="term">états du monde</span> possibles. Un état du monde est un scénario complet
+      de l'avenir — une fois qu'on sait dans lequel on est, plus rien n'est incertain. Ici il y en
+      a exactement deux : le projet réussit, ou il échoue.
+    </dd>
+
+    <dt>« avec une probabilité \( \tfrac{1}{2} \) »</dt>
+    <dd>
+      Une <span class="term">probabilité</span> est un nombre entre 0 et 1 mesurant la chance qu'un
+      événement se produise : 0 = impossible, 1 = certain. \( \tfrac{1}{2} \) se lit « un demi » et
+      vaut 0,5, soit 50 chances sur 100. Comme les deux scénarios ont la même probabilité, c'est
+      littéralement un pile ou face. Contrôle immédiat :
+      \( \tfrac{1}{2} + \tfrac{1}{2} = 1 \) — les probabilités des états du monde doivent toujours
+      s'additionner à 1.
+    </dd>
+
+    <dt>« le projet réussit et chaque euro investi lui <em>rapporte 4 euros</em> »</dt>
+    <dd>
+      <strong>La phrase la plus dangereuse de l'énoncé.</strong> Elle dit : pour chaque euro qu'elle
+      a mis dans le projet, elle <em>récupère</em> 4 euros. Pas « 4 euros de bénéfice en plus de son
+      euro » (ce qui ferait 5 euros récupérés) : 4 euros <strong>en tout</strong>, l'euro de départ
+      compris. Toute la section 4.2 est consacrée à cette phrase — c'est là que se jouent 5 points
+      sur 8 de la question 2.1.
+    </dd>
+
+    <dt>« le projet échoue et chaque euro investi est perdu »</dt>
+    <dd>
+      Traduction : dans ce scénario, l'argent mis dans le projet ne revient pas du tout. Elle
+      récupère 0 euro par euro investi. Attention : cela ne veut <strong>pas</strong> dire qu'elle
+      se retrouve à zéro ! L'argent qu'elle n'avait <em>pas</em> investi est toujours sur son
+      compte. C'est le même réflexe qu'au volume 1 avec le compte d'épargne qui survit au vol du
+      vélo.
+    </dd>
+
+    <dt>« la valeur finale de son portefeuille (argent conservé + résultat du projet) »</dt>
+    <dd>
+      Le <span class="term">portefeuille</span> est simplement l'ensemble de ce qu'elle possède à
+      la fin. L'énoncé est charitable : il donne lui-même la recette entre parenthèses, en deux
+      morceaux. <strong>Morceau 1</strong> : l'argent qu'elle n'a pas investi et qui est resté sur
+      son compte. <strong>Morceau 2</strong> : ce que le projet lui rend. Recopie cette parenthèse
+      sur ta copie, elle structure toute la réponse.
+    </dd>
+
+    <dt>« son utilité espérée \( U(A) \) »</dt>
+    <dd>
+      \( U \) majuscule (à ne pas confondre avec \( u \) minuscule) est la satisfaction
+      <em>moyenne</em> que lui procure une situation risquée : on calcule l'utilité de chaque
+      scénario séparément, puis on en fait la moyenne pondérée par les probabilités. La notation
+      \( U(A) \) — « U de A » — souligne que cette satisfaction moyenne <strong>dépend du montant
+      investi</strong> : à chaque valeur de \( A \) correspond une situation risquée différente,
+      donc un nombre \( U \) différent. C'est nouveau par rapport au volume 1, où \( U \) était un
+      nombre unique.
+    </dd>
+
+    <dt>« le montant optimal \( A^* \) »</dt>
+    <dd>
+      \( A^* \) se lit « A étoile » ou « A optimal ». L'étoile signale <em>la meilleure</em> valeur
+      de \( A \) : celle qui rend \( U(A) \) le plus grand possible. C'est la valeur qu'une
+      personne rationnelle choisira effectivement.
+    </dd>
+
+    <dt>« condition de premier ordre »</dt>
+    <dd>
+      Abrégée <span class="term">CPO</span>. C'est l'équation « la dérivée s'annule », qu'on écrit
+      pour trouver le sommet d'une fonction. Image à garder : au sommet d'une colline, le sol est
+      plat. Tout est réexpliqué à la section 5.2.
+    </dd>
+  </dl>
+
+  <h2>3. Le cours du volume 1, en cinq rappels compacts</h2>
+
+  <p>
+    Tout ce qui suit a été construit lentement, avec exemples et figures, dans le chapitre 2 du
+    volume 1. Ici, on se contente de le remettre en mémoire. Si l'un de ces cinq encadrés te semble
+    obscur, c'est le signal qu'il faut y retourner avant de continuer.
+  </p>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel 1 — la loterie : états du monde, probabilités, richesses finales</div>
+    <p>
+      Une <span class="term">loterie</span> est une liste de résultats possibles, chacun avec sa
+      probabilité. Le premier geste de toute question de risque est de poser un tableau à trois
+      colonnes : <strong>état du monde / probabilité / richesse finale totale</strong>.
+    </p>
+    <p>
+      Deux règles d'or. <strong>(a)</strong> Les probabilités s'additionnent à 1. <strong>(b)</strong>
+      On écrit toujours des <em>richesses totales possédées</em>, jamais des gains ou des pertes.
+      Un nombre négatif dans la colonne « richesse » est presque toujours une erreur — et rend
+      d'ailleurs la racine carrée impossible à calculer.
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel 2 — \( u \) minuscule contre \( U \) majuscule</div>
+    <ul>
+      <li>\( u \) (Bernoulli) évalue <strong>un montant certain</strong> : \( u(300) = \sqrt{300} \)
+        est la satisfaction d'avoir 300 euros à coup sûr.</li>
+      <li>\( U \) (von Neumann–Morgenstern) évalue <strong>une loterie entière</strong> :
+        \( U = \pi_1 u(w_1) + \pi_2 u(w_2) + \dots \)</li>
+    </ul>
+    <p>
+      Et <strong>l'ordre des opérations ne se renverse pas</strong> : on applique \( u \) d'abord,
+      on fait la moyenne ensuite. En notation compacte,
+      \( E\big[u(w)\big] \ne u\big(E[w]\big) \). Calculer la racine de la moyenne est l'erreur la
+      plus coûteuse de tout le programme.
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel 3 — concavité, utilité marginale décroissante, aversion au risque</div>
+    <p>
+      Une fonction est <span class="term">concave</span> quand elle monte <em>en s'aplatissant</em> :
+      chaque euro supplémentaire apporte moins de satisfaction que le précédent (c'est l'utilité
+      marginale décroissante). Le théorème central du cours :
+    </p>
+    <p>
+      <strong>averse au risque ⟺ utilité marginale décroissante ⟺ \( u \) concave.</strong>
+    </p>
+    <p>
+      Graphiquement, la concavité se lit ainsi : <strong>la corde passe sous la courbe</strong>. Et
+      \( u(w) = \sqrt{w} \) est concave — donc notre investisseuse est averse au risque. Retiens ce
+      point : il paraît contradictoire avec le fait qu'elle va quand même investir 600 euros dans un
+      pari à quitte ou double. On lèvera ce paradoxe en 2.3.
+    </p>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel 4 — VMA, équivalent certain et prime de risque</div>
+    <ul>
+      <li><strong>VMA</strong> (valeur monétaire attendue) : la moyenne des richesses, pondérée par
+        les probabilités. C'est un montant <em>en euros</em>.</li>
+      <li><strong>EC</strong> (équivalent certain) : le montant sûr qui procure la même satisfaction
+        que la loterie. Il est défini par l'équation \( u(\mathrm{EC}) = U \), qu'on résout en
+        « inversant » \( u \) — avec une racine carrée, on inverse en élevant au carré.</li>
+      <li><strong>PRM</strong> (prime de risque) : \( \mathrm{PRM} = \mathrm{VMA} - \mathrm{EC} \).
+        C'est ce que le risque coûte, traduit en euros. Pour une personne averse au risque, elle est
+        toujours strictement positive.</li>
+    </ul>
+  </div>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel 5 — la dérivée, et la condition de premier ordre</div>
+    <p>
+      La <span class="term">dérivée</span> d'une fonction répond à : « si j'augmente l'entrée d'une
+      toute petite quantité, de combien la sortie change-t-elle ? » C'est une pente. On la note avec
+      une apostrophe : \( u'(w) \), lu « u prime de w ».
+    </p>
+    <p>
+      Règle de calcul utilisée partout : la dérivée de \( w^n \) est \( n\,w^{\,n-1} \). Comme
+      \( \sqrt{w} = w^{1/2} \), on obtient la formule à connaître par cœur :
+    </p>
+    <p>\[ u(w) = \sqrt{w} \quad\Longrightarrow\quad u'(w) = \frac{1}{2\sqrt{w}}. \]</p>
+    <p>
+      La <span class="term">condition de premier ordre</span> (CPO) consiste à chercher le point où
+      la dérivée s'annule : c'est là que se trouve le sommet. Au sommet d'une colline, le sol est
+      plat.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>4. Question 2.1 — Les deux richesses finales et l'utilité espérée (8 points)</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 2.1 (8 points)</div>
+    <p>
+      Exprimez la valeur finale de son portefeuille (argent conservé + résultat du projet) dans
+      chacun des deux scénarios, puis écrivez son utilité espérée \( U(A) \).
+    </p>
+    <p>
+      <em>Barème officiel :</em> richesse en cas de réussite — 3 points ; richesse en cas d'échec —
+      2 points ; écriture de \( U(A) \) — 3 points.
+    </p>
+  </div>
+
+  <h3>4.1 Traduisons la question en français simple</h3>
+
+  <p>
+    Trois expressions à décoder, dans l'ordre où elles apparaissent.
+  </p>
+
+  <dl class="lexique">
+    <dt>« Exprimez »</dt>
+    <dd>
+      Ce verbe est un signal : on ne demande <strong>pas un nombre</strong>, on demande une
+      <strong>formule</strong> contenant la lettre \( A \). C'est déroutant quand on débute, mais
+      c'est logique : tant que l'investisseuse n'a pas choisi son montant, la valeur finale ne peut
+      pas être un nombre. Si ta réponse à cette question ne contient pas la lettre \( A \), c'est
+      qu'il y a un problème.
+    </dd>
+
+    <dt>« la valeur finale de son portefeuille »</dt>
+    <dd>
+      « Finale » = après que le sort du projet est connu, c'est-à-dire à la fin de l'histoire.
+      « Portefeuille » = tout ce qu'elle possède alors, en euros. C'est donc exactement la
+      <em>richesse finale</em> du volume 1, sous un autre nom. Le mot « portefeuille » est le
+      vocabulaire de la finance ; le mot « richesse » celui de la théorie de la décision. Même
+      objet.
+    </dd>
+
+    <dt>« (argent conservé + résultat du projet) »</dt>
+    <dd>
+      L'énoncé te donne la décomposition en cadeau. <strong>Argent conservé</strong> : la partie des
+      900 euros qu'elle n'a pas investie, donc \( 900 - A \). <strong>Résultat du projet</strong> :
+      ce que le projet lui rend, qui dépend du scénario. Il n'y a rien d'autre à additionner.
+    </dd>
+
+    <dt>« dans chacun des deux scénarios »</dt>
+    <dd>
+      Deux réponses attendues, pas une : une pour la réussite, une pour l'échec. Le barème le
+      confirme (3 points + 2 points). Écris-les l'une sous l'autre, bien étiquetées.
+    </dd>
+
+    <dt>« puis écrivez son utilité espérée \( U(A) \) »</dt>
+    <dd>
+      Une troisième réponse : la formule complète de la satisfaction moyenne. « Écrivez » — encore
+      une fois, pas « calculez ». On ne peut pas calculer un nombre puisque \( A \) est inconnu.
+    </dd>
+  </dl>
+
+  <div class="box box-why">
+    <div class="box-title">La question, en une phrase</div>
+    <p>
+      « Si elle met \( A \) euros dans le projet, avec combien d'argent finit-elle dans le bon
+      scénario ? dans le mauvais ? et quelle est alors sa satisfaction moyenne ? »
+    </p>
+    <p>
+      Tu peux même te dire, pour te rassurer : je vais répondre trois fois à la même question, une
+      fois pour chaque scénario, puis j'en fais la moyenne.
+    </p>
+  </div>
+
+  <h3>4.2 Le cours dont tu as besoin</h3>
+
+  <h4>a) Une richesse finale, c'est toujours la même construction en trois temps</h4>
+
+  <p>
+    Voici le geste à automatiser. Pour écrire une richesse finale quand une décision est en jeu, on
+    procède <strong>toujours</strong> dans cet ordre :
+  </p>
+
+  <div class="box box-methode">
+    <div class="box-title">Les trois temps d'une richesse finale</div>
+    <ol>
+      <li><strong>Je pars de la richesse initiale.</strong> Ici : 900 euros.</li>
+      <li><strong>Je retire ce qui sort de ma poche au moment de la décision.</strong> Ici : le
+        montant investi \( A \). Il reste \( 900 - A \) sur le compte.</li>
+      <li><strong>J'ajoute ce que je récupère, scénario par scénario.</strong> Ici : \( 4A \) si le
+        projet réussit, \( 0 \) s'il échoue.</li>
+    </ol>
+    <p>
+      L'étape 2 est celle qu'on oublie. Elle est pourtant la plus importante : l'argent investi
+      <strong>a quitté le compte</strong>. On ne peut pas l'y laisser <em>et</em> le voir revenir
+      multiplié.
+    </p>
+  </div>
+
+  <h4>b) Le piège central : « rapporte 4 euros » ne donne pas \( 900 + 4A \)</h4>
+
+  <p>
+    Prenons la phrase de l'énoncé au ralenti : « chaque euro investi lui rapporte 4 euros ».
+    Suivons <strong>un seul euro</strong>, du début à la fin, comme s'il était marqué d'une croix.
+  </p>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple — la trajectoire d'un seul euro</div>
+    <ul>
+      <li><strong>Au départ</strong>, cet euro est sur son compte. Elle possède 900 euros.</li>
+      <li><strong>Elle l'investit.</strong> L'euro quitte le compte et part chez l'entreprise. Sur
+        le compte : 899 euros. Dans le projet : 1 euro.</li>
+      <li><strong>Le projet réussit.</strong> L'entreprise lui rend 4 euros pour cet euro-là. Sur le
+        compte : \( 899 + 4 = 903 \) euros.</li>
+    </ul>
+    <p>
+      Résultat : elle est passée de 900 à 903 euros. Elle a donc gagné <strong>3 euros</strong>, pas
+      4. Les 4 euros reçus contiennent le remboursement de son euro (1 euro) plus un bénéfice de
+      3 euros.
+    </p>
+    <p>
+      Et si le projet échoue ? Elle ne récupère rien : elle reste à 899 euros. Elle a
+      <strong>perdu 1 euro</strong>.
+    </p>
+  </div>
+
+  <p>
+    Généralisons à \( A \) euros investis d'un coup. Le raisonnement est identique, ligne par
+    ligne :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \text{argent conservé} = 900 - A \]
+      <div class="why">
+        Elle avait 900 euros. Elle en sort \( A \) pour les confier à l'entreprise. Ce qui reste sur
+        son compte, dans les <em>deux</em> scénarios, c'est la différence. Remarque bien que cette
+        ligne ne dépend pas du scénario : l'argent sort de la poche <strong>avant</strong> qu'on
+        sache si le projet marche.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{si réussite, le projet rend } 4 \times A = 4A \]
+      <div class="why">
+        « Chaque euro investi rapporte 4 euros » : un euro donne 4 euros, donc \( A \) euros donnent
+        \( 4 \times A \) euros. C'est une simple proportionnalité. Le « 4 » est un
+        <em>multiplicateur</em> appliqué au montant investi.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{si échec, le projet rend } 0 \times A = 0 \]
+      <div class="why">
+        « Chaque euro investi est perdu » : un euro donne 0 euro, donc \( A \) euros donnent
+        0 euro. Rien ne revient.
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Il ne reste plus qu'à additionner les deux morceaux, scénario par scénario. Faisons-le
+    explicitement dans un tableau : c'est la présentation qui rapporte le plus de points.
+  </p>
+
+  <table class="data">
+    <tr>
+      <th>Scénario</th>
+      <th>Probabilité</th>
+      <th>Argent conservé</th>
+      <th>Le projet rend</th>
+      <th>Richesse finale</th>
+    </tr>
+    <tr>
+      <td>Réussite</td>
+      <td>\( \tfrac{1}{2} \)</td>
+      <td>\( 900 - A \)</td>
+      <td>\( +\,4A \)</td>
+      <td>\( 900 - A + 4A = 900 + 3A \)</td>
+    </tr>
+    <tr>
+      <td>Échec</td>
+      <td>\( \tfrac{1}{2} \)</td>
+      <td>\( 900 - A \)</td>
+      <td>\( +\,0 \)</td>
+      <td>\( 900 - A \)</td>
+    </tr>
+  </table>
+
+  <div class="box box-piege">
+    <div class="box-title">LE piège de la question 2.1 — écrire \( 900 + 4A \)</div>
+    <p>
+      L'erreur consiste à lire « rapporte 4 euros » comme « ajoute 4 euros à ma richesse », et à
+      écrire directement \( 900 + 4A \). Cela revient à <strong>compter l'euro investi deux
+      fois</strong> : une fois comme s'il était resté sur le compte (dans les 900), et une fois dans
+      les 4 euros que l'entreprise rend.
+    </p>
+    <p>
+      Le test qui tue le doute : prends \( A = 900 \) (elle investit tout). Avec la bonne formule,
+      la richesse en cas de réussite vaut \( 900 + 3 \times 900 = 3\,600 \) euros — ce qui est bien
+      \( 4 \times 900 \), les 900 euros multipliés par 4. Avec la mauvaise formule, on obtiendrait
+      \( 900 + 4 \times 900 = 4\,500 \) euros, c'est-à-dire cinq fois la mise. L'énoncé n'a jamais
+      promis ça.
+    </p>
+    <p>
+      <strong>Le réflexe à garder :</strong> « rapporte \( k \) euros par euro investi » se traduit
+      toujours par \( -A + kA = (k-1)A \). Ici \( k = 4 \), donc <strong>\( +3A \)</strong>. Le
+      « moins un » est le prix du billet.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Le second piège — écrire 0 en cas d'échec</div>
+    <p>
+      Certaines copies écrivent « échec : richesse = 0 ». C'est faux, sauf si elle a tout investi.
+      Elle ne perd que ce qu'elle a mis dans le projet ; les \( 900 - A \) euros restés sur son
+      compte ne bougent pas. C'est exactement le réflexe du volume 1, où le compte d'épargne
+      survivait au vol du vélo.
+    </p>
+    <p>
+      Contrôle : ta richesse en cas d'échec doit valoir 900 quand \( A = 0 \) (elle n'a rien risqué,
+      elle garde tout) et 0 quand \( A = 900 \) (elle a tout risqué et tout perdu). La formule
+      \( 900 - A \) passe les deux tests.
+    </p>
+  </div>
+
+  <h4>c) Ce que devient la richesse quand \( A \) augmente : l'éventail</h4>
+
+  <p>
+    Prends une seconde pour <em>voir</em> ce que ces deux formules racontent. Quand \( A \)
+    augmente, la richesse en cas de réussite monte (pente \( +3 \)) et la richesse en cas d'échec
+    descend (pente \( -1 \)). Les deux scénarios <strong>s'écartent</strong> : c'est exactement ça,
+    « prendre du risque ».
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 540 320" width="100%" style="max-width:12cm" role="img"
+         aria-label="Deux droites en eventail : la richesse en cas de reussite monte de 900 a 3600 euros quand A passe de 0 a 900, la richesse en cas d'echec descend de 900 a 0 euro ; a A egale 600 les deux valent 2700 et 300 euros">
+      <line x1="70" y1="280" x2="510" y2="280" stroke="#111827" stroke-width="1.3"/>
+      <line x1="70" y1="35" x2="70" y2="280" stroke="#111827" stroke-width="1.3"/>
+
+      <line x1="70" y1="221.2" x2="490" y2="45" stroke="#111827" stroke-width="2.4"/>
+      <line x1="70" y1="221.2" x2="490" y2="280" stroke="#111827" stroke-width="2.4"
+            stroke-dasharray="8 4"/>
+      <line x1="70" y1="221.2" x2="490" y2="162.5" stroke="#111827" stroke-width="1.1"
+            stroke-dasharray="2 3"/>
+
+      <g stroke="#111827" stroke-width="1" stroke-dasharray="4 3">
+        <line x1="350" y1="103.7" x2="350" y2="290"/>
+        <line x1="70" y1="103.7" x2="350" y2="103.7"/>
+        <line x1="70" y1="260.4" x2="350" y2="260.4"/>
+      </g>
+      <g fill="#111827">
+        <circle cx="350" cy="103.7" r="4.5"/>
+        <circle cx="350" cy="260.4" r="4.5"/>
+        <circle cx="70" cy="221.2" r="4.5"/>
+      </g>
+
+      <text x="404" y="42" font-size="12.5" text-anchor="middle" font-weight="bold">réussite</text>
+      <text x="404" y="57" font-size="12" text-anchor="middle">900 + 3A</text>
+      <text x="410" y="272" font-size="12.5" text-anchor="middle" font-weight="bold">échec</text>
+      <text x="410" y="257" font-size="12" text-anchor="middle">900 − A</text>
+      <text x="424" y="152" font-size="11.5" text-anchor="middle">VMA = 900 + A</text>
+
+      <g font-size="12" text-anchor="end">
+        <text x="64" y="226">900</text>
+        <text x="64" y="108">2 700</text>
+        <text x="64" y="265">300</text>
+        <text x="64" y="49">3 600</text>
+      </g>
+      <g font-size="12" text-anchor="middle">
+        <text x="70" y="296">0</text>
+        <text x="350" y="296">A* = 600</text>
+        <text x="490" y="296">900</text>
+      </g>
+      <text x="290" y="314" font-size="12" text-anchor="middle">montant investi A (euros)</text>
+      <text x="76" y="30" font-size="12">richesse finale (euros)</text>
+
+      <g stroke="#111827" stroke-width="1.5">
+        <line x1="368" y1="103.7" x2="368" y2="260.4"/>
+        <path d="M364 109 L368 100 L372 109" fill="none"/>
+        <path d="M364 255 L368 264 L372 255" fill="none"/>
+      </g>
+      <text x="376" y="176" font-size="11.5">l'écart entre</text>
+      <text x="376" y="190" font-size="11.5">les 2 scénarios</text>
+      <text x="376" y="204" font-size="11.5">= le risque pris</text>
+    </svg>
+    <figcaption>
+      Figure 2 — L'éventail. En \( A = 0 \) les deux scénarios se confondent à 900 euros : aucun
+      risque. Plus \( A \) grandit, plus l'éventail s'ouvre — la réussite monte de 3 euros par euro
+      investi, l'échec descend de 1 euro. Le trait fin pointillé au milieu est la moyenne (la VMA),
+      qui vaut \( 900 + A \) : elle monte toujours. Investir, c'est donc échanger de la
+      <em>sécurité</em> contre de la <em>moyenne</em>.
+    </figcaption>
+  </figure>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi cette figure explique tout le reste du chapitre</div>
+    <p>
+      Regarde le trait pointillé fin : la moyenne monte sans jamais redescendre. Une personne
+      <strong>neutre au risque</strong> — qui ne regarde que la moyenne — investirait donc
+      <em>tout</em>, \( A = 900 \).
+    </p>
+    <p>
+      Mais notre investisseuse est averse au risque : plus l'éventail s'ouvre, plus le mauvais
+      scénario lui fait peur. Elle va donc s'arrêter <em>avant</em> le bout. Toute la question 2.2
+      consiste à trouver précisément où. Et la question 2.4 demandera : que se passe-t-il si elle a
+      encore plus peur ? (Réponse : elle s'arrête encore plus tôt.)
+    </p>
+  </div>
+
+  <h4>d) Le vocabulaire du prof : \( y \) et \( x \)</h4>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel — les notations du chapitre A3</div>
+    <p>
+      Dans le cours, le professeur note souvent \( y \) la richesse du <em>bon</em> scénario et
+      \( x \) celle du <em>mauvais</em>. Le modèle du cours est mot pour mot celui de l'examen (avec
+      d'autres nombres) :
+    </p>
+    <p>\[ y = 900 - A + 4A = 900 + 3A \qquad x = 900 - A. \]</p>
+    <p>
+      Tu peux écrire \( y \) et \( x \), ou bien
+      « \( w_{\text{réussite}} \) » et « \( w_{\text{échec}} \) », ou encore
+      \( w_1 \) et \( w_2 \) : tout est accepté tant que tu <strong>dis lesquels sont lesquels</strong>.
+      Ce qui coûte des points, c'est une lettre non définie.
+    </p>
+  </div>
+
+  <h3>4.3 La résolution pas à pas</h3>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Poser l'argent conservé</div>
+    <div class="calc">
+      <div class="step">
+        \[ \text{argent conservé} = 900 - A \]
+        <div class="why">
+          Elle avait 900 euros, elle en investit \( A \). Ce qui reste sur le compte est la
+          différence. Cette quantité est la même dans les deux scénarios, parce que la décision
+          d'investir est prise <em>avant</em> de connaître le résultat du projet.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> La richesse finale en cas de réussite — 3 points</div>
+    <div class="calc">
+      <div class="step">
+        \[ w_{\text{réussite}} = \underbrace{(900 - A)}_{\text{argent gardé}} + \underbrace{4A}_{\text{le projet rend}} \]
+        <div class="why">
+          J'applique la décomposition donnée par l'énoncé : « argent conservé + résultat du projet ».
+          Le projet rend 4 euros par euro investi, donc \( 4 \times A = 4A \). Les accolades ne sont
+          pas obligatoires sur la copie, mais écrire cette ligne <em>avant</em> de simplifier
+          protège de toutes les erreurs de signe.
+        </div>
+      </div>
+      <div class="step">
+        \[ w_{\text{réussite}} = 900 - A + 4A \]
+        <div class="why">
+          J'enlève simplement les parenthèses. Rien n'a changé, je réécris juste la même chose sur
+          une ligne.
+        </div>
+      </div>
+      <div class="step">
+        \[ w_{\text{réussite}} = 900 + 3A \]
+        <div class="why">
+          Je regroupe les deux termes qui contiennent \( A \) : \( -A + 4A = (-1 + 4)A = 3A \). On
+          additionne les coefficients devant la même lettre, exactement comme
+          \( -1 \text{ pomme} + 4 \text{ pommes} = 3 \text{ pommes} \). Le 900, lui, ne contient pas
+          de \( A \) : il reste à part.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> La richesse finale en cas d'échec — 2 points</div>
+    <div class="calc">
+      <div class="step">
+        \[ w_{\text{échec}} = (900 - A) + 0 = 900 - A \]
+        <div class="why">
+          Même décomposition : l'argent gardé, plus ce que rend le projet. Mais ici le projet ne rend
+          rien du tout (« chaque euro investi est perdu »), donc on ajoute zéro. Il ne reste que
+          l'argent qui n'était pas dans le projet.
+        </div>
+      </div>
+    </div>
+    <p>
+      Deux contrôles immédiats, à faire à chaque fois : en \( A = 0 \) les deux formules donnent 900
+      (elle n'a rien fait, elle a toujours ses 900 euros) ; en \( A = 900 \) elles donnent
+      \( 900 + 2\,700 = 3\,600 \) et \( 0 \). C'est cohérent avec « tout investir » : soit elle
+      quadruple, soit elle est ruinée.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Écrire l'utilité espérée — 3 points</div>
+    <div class="calc">
+      <div class="step">
+        \[ U(A) = \tfrac{1}{2}\,u\big(w_{\text{réussite}}\big) + \tfrac{1}{2}\,u\big(w_{\text{échec}}\big) \]
+        <div class="why">
+          J'applique la définition de l'utilité espérée : l'utilité de chaque état du monde,
+          multipliée par la probabilité de cet état, puis on additionne. À ce stade je n'ai remplacé
+          ni \( u \) ni les richesses : j'écris seulement la <strong>structure</strong>. Cette ligne
+          seule vaut déjà des points.
+        </div>
+      </div>
+      <div class="step">
+        \[ U(A) = \tfrac{1}{2}\,u(900 + 3A) + \tfrac{1}{2}\,u(900 - A) \]
+        <div class="why">
+          Je remplace les deux richesses par les formules trouvées aux étapes 2 et 3. Bon réflexe :
+          vérifier l'appariement — la probabilité \( \tfrac{1}{2} \) de gauche va bien avec la
+          réussite, celle de droite avec l'échec (ici elles sont égales, donc l'erreur serait sans
+          conséquence, mais prends l'habitude).
+        </div>
+      </div>
+      <div class="step">
+        \[ U(A) = \tfrac{1}{2}\sqrt{900 + 3A} + \tfrac{1}{2}\sqrt{900 - A} \]
+        <div class="why">
+          Je remplace enfin \( u \) par ce que l'énoncé m'a donné : la racine carrée. Attention au
+          sens de lecture : la racine s'applique à <em>toute</em> la richesse de l'état — le trait
+          horizontal doit couvrir \( 900 + 3A \) en entier, pas seulement le \( 3A \).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat de la question 2.1</div>
+    <p>\[ w_{\text{réussite}} = 900 - A + 4A = \mathbf{900 + 3A} \qquad w_{\text{échec}} = \mathbf{900 - A} \]</p>
+    <p>\[ U(A) = \tfrac{1}{2}\sqrt{900 + 3A} \;+\; \tfrac{1}{2}\sqrt{900 - A} \]</p>
+  </div>
+
+  <p>
+    Représentons enfin la loterie sous forme d'arbre. C'est la figure standard, et elle vaut le
+    détour ici parce que les feuilles de l'arbre ne sont plus des nombres mais des
+    <em>expressions</em>.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 540 262" width="100%" style="max-width:12cm" role="img"
+         aria-label="Arbre a deux branches : depuis 900 euros moins A investis, la branche haute reussite de probabilite un demi mene a 900 plus 3A, la branche basse echec de probabilite un demi mene a 900 moins A">
+      <circle cx="50" cy="130" r="7" fill="#111827"/>
+      <text x="50" y="106" font-size="12.5" text-anchor="middle" font-weight="bold">Elle investit A</text>
+      <text x="50" y="156" font-size="12" text-anchor="middle">elle garde</text>
+      <text x="50" y="172" font-size="12" text-anchor="middle">900 − A</text>
+
+      <line x1="57" y1="130" x2="248" y2="56" stroke="#111827" stroke-width="2"/>
+      <line x1="57" y1="130" x2="248" y2="204" stroke="#111827" stroke-width="2"
+            stroke-dasharray="7 4"/>
+
+      <text x="150" y="80" font-size="13" text-anchor="middle" font-weight="bold">1/2</text>
+      <text x="150" y="96" font-size="11.5" text-anchor="middle">(réussite)</text>
+      <text x="152" y="178" font-size="13" text-anchor="middle" font-weight="bold">1/2</text>
+      <text x="152" y="194" font-size="11.5" text-anchor="middle">(échec)</text>
+
+      <rect x="254" y="24" width="276" height="66" rx="4" fill="none" stroke="#111827"
+            stroke-width="1.4"/>
+      <text x="268" y="45" font-size="12.5" font-weight="bold">Réussite</text>
+      <text x="268" y="63" font-size="12">elle garde 900 − A et reçoit 4A :</text>
+      <text x="268" y="82" font-size="13" font-weight="bold">w = 900 − A + 4A = 900 + 3A</text>
+
+      <rect x="254" y="172" width="276" height="66" rx="4" fill="none" stroke="#111827"
+            stroke-width="1.4" stroke-dasharray="7 4"/>
+      <text x="268" y="193" font-size="12.5" font-weight="bold">Échec</text>
+      <text x="268" y="211" font-size="12">elle garde 900 − A et ne reçoit rien :</text>
+      <text x="268" y="230" font-size="13" font-weight="bold">w = 900 − A + 0 = 900 − A</text>
+
+      <text x="270" y="256" font-size="11.5" text-anchor="middle" style="fill:#4b5563">
+        U(A) = ½ √(900 + 3A) + ½ √(900 − A)
+      </text>
+    </svg>
+    <figcaption>
+      Figure 3 — L'arbre des deux scénarios. Trait plein = le projet réussit, trait pointillé = il
+      échoue. Nouveauté par rapport au volume 1 : au bout des branches, on n'écrit plus des nombres
+      mais des <strong>formules en \( A \)</strong>. Le \( 900 - A \) apparaît dans les deux : c'est
+      l'argent qui n'a jamais quitté le compte.
+    </figcaption>
+  </figure>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie — 2.1</div>
+    <p>
+      Si elle investit \( A \), elle conserve \( 900 - A \) euros sûrs sur son compte. Le projet lui
+      rend \( 4A \) en cas de réussite et 0 en cas d'échec. La valeur finale du portefeuille est
+      donc :
+    </p>
+    <p>\[ \text{réussite : } 900 - A + 4A = 900 + 3A \qquad\qquad \text{échec : } 900 - A \]</p>
+    <p>Son utilité espérée s'écrit :</p>
+    <p>\[ U(A) = \tfrac{1}{2}\sqrt{900 + 3A} + \tfrac{1}{2}\sqrt{900 - A} \]</p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les pièges de la 2.1</div>
+    <ul>
+      <li><strong>Écrire \( 900 + 4A \).</strong> Le piège numéro un : on oublie de retirer d'abord
+        la mise. « Rapporte \( k \) euros par euro investi » donne toujours \( +(k-1)A \), soit ici
+        \( +3A \).</li>
+      <li><strong>Écrire 0 en cas d'échec.</strong> Elle ne perd que ce qu'elle a misé ; le reste
+        dort sur son compte.</li>
+      <li><strong>Faire la moyenne d'abord.</strong> Écrire
+        \( U = \sqrt{\tfrac12 (900+3A) + \tfrac12 (900-A)} \) : c'est
+        \( u(E[w]) \), pas \( E[u(w)] \). L'ordre est « racine d'abord, moyenne ensuite ».</li>
+      <li><strong>Mettre la probabilité sous la racine.</strong> Écrire
+        \( \sqrt{\tfrac12 (900+3A)} \) : la probabilité pondère <em>l'utilité</em>, elle ne
+        fait pas partie de la richesse. La racine ne couvre que la richesse.</li>
+      <li><strong>Donner un nombre.</strong> \( A \) n'est pas encore choisi : la réponse
+        <em>doit</em> contenir la lettre \( A \).</li>
+    </ul>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe de méthode — la richesse d'état en trois temps</div>
+    <p>
+      Devant n'importe quel énoncé de décision risquée (investir, assurer, parier, produire) :
+      <strong>(1)</strong> je pars de la richesse initiale ; <strong>(2)</strong> je retire ce qui
+      sort de la poche au moment de décider ; <strong>(3)</strong> j'ajoute ce que je récupère,
+      <em>état par état</em>. Puis je teste ma formule aux deux extrémités de l'intervalle (ici
+      \( A = 0 \) et \( A = 900 \)) : si les deux cas extrêmes ont un sens, la formule est
+      probablement bonne.
+    </p>
+  </div>
+
+  <hr class="soft">
+
+  <h2>5. Question 2.2 — Le montant optimal \( A^* \) (14 points)</h2>
+
+  <div class="enonce">
+    <div class="enonce-title">Énoncé — question 2.2 (14 points)</div>
+    <p>
+      Calculez le montant optimal \( A^* \) que l'investisseuse choisit d'investir. Détaillez la
+      dérivation complète (condition de premier ordre).
+    </p>
+    <p>
+      <em>Barème officiel :</em> dérivée correcte — 5 points ; poser la CPO — 3 points ; résolution
+      de l'équation — 4 points ; \( A^* = 600 \) et vérification (solution intérieure, c'est bien un
+      maximum) — 2 points.
+    </p>
+  </div>
+
+  <p>
+    C'est la question la plus chère du chapitre, et la seule qui soit vraiment technique. Bonne
+    nouvelle : 12 des 14 points s'obtiennent en écrivant proprement des lignes de calcul, même si le
+    nombre final se dérobe. Le barème récompense la <em>démarche</em>, pas le résultat. On va donc
+    apprendre la démarche jusqu'à pouvoir la réciter.
+  </p>
+
+  <h3>5.1 Traduisons la question en français simple</h3>
+
+  <dl class="lexique">
+    <dt>« Calculez »</dt>
+    <dd>
+      Cette fois, contrairement à la 2.1, on attend bien un <strong>nombre</strong> : un montant en
+      euros. Si ta réponse finale contient encore la lettre \( A \), c'est que le calcul n'est pas
+      terminé.
+    </dd>
+
+    <dt>« le montant optimal \( A^* \) »</dt>
+    <dd>
+      Le montant qui rend \( U(A) \) <strong>maximal</strong>. « Optimal » ne veut pas dire
+      « prudent », ni « raisonnable », ni « recommandé par un conseiller » : cela veut dire, très
+      précisément, <em>celui qui donne le plus grand nombre \( U \)</em>. Tout le reste du
+      raisonnement découle de cette définition et d'elle seule.
+    </dd>
+
+    <dt>« que l'investisseuse <em>choisit</em> d'investir »</dt>
+    <dd>
+      Rappel du sens économique : \( A \) est une décision libre. Personne ne lui impose un montant.
+      Le modèle suppose seulement qu'elle choisit le meilleur pour elle, au sens de son \( U \).
+    </dd>
+
+    <dt>« Détaillez la dérivation complète »</dt>
+    <dd>
+      « Dérivation » a ici son sens mathématique : <strong>le calcul de la dérivée</strong>. La
+      consigne demande donc d'écrire \( U'(A) \) en entier, pas seulement d'annoncer le résultat.
+      C'est là que sont les 5 points les plus faciles de la question : même si tu te trompes ensuite,
+      une dérivée correcte est payée.
+    </dd>
+
+    <dt>« (condition de premier ordre) »</dt>
+    <dd>
+      La parenthèse te donne la méthode attendue. Le professeur te dit : je veux voir l'équation
+      \( U'(A^*) = 0 \) écrite noir sur blanc. Ne cherche pas une autre voie — un tableau de valeurs,
+      un essai-erreur, un raisonnement « au feeling » ne rapporteront pas les points de la CPO.
+    </dd>
+  </dl>
+
+  <div class="box box-why">
+    <div class="box-title">La question, en une phrase</div>
+    <p>
+      « Parmi tous les montants possibles entre 0 et 900 euros, lequel lui donne la plus grande
+      satisfaction moyenne ? Trouve-le en dérivant \( U \) et en cherchant où la pente est nulle. »
+    </p>
+  </div>
+
+  <h3>5.2 Le cours dont tu as besoin</h3>
+
+  <p>
+    Quatre briques, dans l'ordre où on va s'en servir. La brique b) est neuve : c'est la seule
+    difficulté technique réellement nouvelle du chapitre. Les autres sont des rappels du volume 1
+    qu'on remet en place.
+  </p>
+
+  <h4>a) Maximiser une fonction : la colline et le sol plat</h4>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel — la recette « dérivée = 0 » (volume 1, chapitre 0)</div>
+    <p>
+      Imagine que tu marches le long d'une colline. \( U(A) \) est ton altitude quand tu es à la
+      position \( A \). La dérivée \( U'(A) \) est la <strong>pente du sol</strong> sous tes pieds à
+      cet endroit.
+    </p>
+    <ul>
+      <li>Si \( U'(A) > 0 \), ça monte : tu as intérêt à avancer (augmenter \( A \)).</li>
+      <li>Si \( U'(A) < 0 \), ça descend : tu as intérêt à reculer (diminuer \( A \)).</li>
+      <li>Si \( U'(A) = 0 \), le sol est plat : tu es au <strong>sommet</strong>.</li>
+    </ul>
+    <p>
+      D'où la recette en trois temps : <strong>(1)</strong> je calcule la dérivée ;
+      <strong>(2)</strong> je l'égale à zéro ; <strong>(3)</strong> je résous l'équation obtenue. La
+      valeur de \( A \) qui en sort s'appelle \( A^* \).
+    </p>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi « dérivée nulle » et pas simplement « le plus grand nombre »</div>
+    <p>
+      On pourrait imaginer une autre méthode : essayer \( A = 0 \), puis \( A = 1 \), puis
+      \( A = 2 \)… et garder le meilleur. Deux problèmes. Premièrement, il y a une
+      <em>infinité</em> de valeurs possibles entre 0 et 900 (elle peut investir 600,37 euros) : on
+      n'en finirait jamais. Deuxièmement, un examen dure deux heures.
+    </p>
+    <p>
+      La dérivée fait le travail d'un coup, parce qu'elle transforme une question de comparaison
+      (« quelle est la plus grande valeur ? ») en une question d'équation (« où la pente
+      s'annule-t-elle ? »). C'est l'un des plus beaux tours de force des mathématiques, et c'est
+      exactement pour ça que la théorie économique en est truffée.
+    </p>
+  </div>
+
+  <h4>b) La brique neuve : dériver une racine carrée <em>composée</em></h4>
+
+  <p>
+    Tu connais déjà, depuis le volume 1, la dérivée de la racine carrée toute simple :
+  </p>
+
+  <p>\[ \big(\sqrt{w}\big)' = \frac{1}{2\sqrt{w}}. \]</p>
+
+  <p>
+    Mais ici, sous la racine, il n'y a pas simplement \( A \) : il y a \( 900 + 3A \). C'est ce
+    qu'on appelle une <span class="term">fonction composée</span> — une fonction glissée
+    <em>dans</em> une autre. Il nous faut donc la version générale de la règle.
+  </p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — une fonction composée</div>
+    <p>
+      Une fonction composée, c'est une machine branchée sur la sortie d'une autre machine. Ici, la
+      première machine prend \( A \) et fabrique \( 900 + 3A \) ; la seconde prend ce résultat et
+      en calcule la racine carrée.
+    </p>
+    <p>
+      Exemple de la vie courante : « le prix TTC du nombre de croissants que j'achète ». Machine 1 :
+      nombre de croissants \( \to \) prix hors taxes. Machine 2 : prix hors taxes \( \to \) prix
+      TTC. Si j'achète un croissant de plus, l'effet total sur le prix TTC est l'effet sur le prix
+      hors taxes, <em>multiplié</em> par l'effet de la TVA. Les deux effets se multiplient : c'est
+      exactement ce que dit la règle qui suit.
+    </p>
+  </div>
+
+  <div class="box box-def">
+    <div class="box-title">La règle à retenir — dérivée d'une racine composée</div>
+    <p>
+      Si \( u(A) \) est une expression qui dépend de \( A \) et qui reste positive, alors :
+    </p>
+    <p>\[ \Big(\sqrt{u(A)}\Big)' \;=\; \frac{u'(A)}{2\sqrt{u(A)}}. \]</p>
+    <p>
+      En français : <strong>« la dérivée de l'intérieur, divisée par deux fois la racine »</strong>.
+      Répète-toi cette phrase à voix haute deux ou trois fois : elle suffit à traiter toute la
+      question 2.2, et elle reviendra dans tous les exercices d'investissement et d'assurance.
+    </p>
+  </div>
+
+  <p>
+    D'où vient cette formule ? De la <span class="term">règle de la chaîne</span> (aussi appelée
+    règle de dérivation des fonctions composées), qui dit que les effets se multiplient :
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \big(f(g(A))\big)' = f'\big(g(A)\big) \times g'(A) \]
+      <div class="why">
+        La règle générale. Lecture : « la dérivée de la machine extérieure, évaluée là où on en est,
+        multipliée par la dérivée de la machine intérieure ». C'est l'histoire des croissants : effet
+        de la TVA \( \times \) effet du croissant supplémentaire.
+      </div>
+    </div>
+    <div class="step">
+      \[ f(x) = \sqrt{x} \quad\Longrightarrow\quad f'(x) = \frac{1}{2\sqrt{x}} \]
+      <div class="why">
+        La machine extérieure est la racine carrée ; sa dérivée est celle du volume 1. On l'obtient
+        en écrivant \( \sqrt{x} = x^{1/2} \) puis en appliquant \( (x^n)' = n\,x^{n-1} \) :
+        \( \tfrac12 x^{-1/2} = \tfrac{1}{2\sqrt x} \).
+      </div>
+    </div>
+    <div class="step">
+      \[ \Big(\sqrt{u(A)}\Big)' = \frac{1}{2\sqrt{u(A)}} \times u'(A) = \frac{u'(A)}{2\sqrt{u(A)}} \]
+      <div class="why">
+        Je remplace \( x \) par \( u(A) \) dans la dérivée extérieure, et je multiplie par la dérivée
+        intérieure \( u'(A) \). Le \( u'(A) \) « remonte » au numérateur parce que multiplier une
+        fraction par un nombre revient à multiplier son numérateur.
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Appliquons-la maintenant aux deux racines qui nous intéressent, une par une. Ce sont les deux
+    seuls calculs de dérivée de toute la question — autant les faire très lentement.
+  </p>
+
+  <div class="calc">
+    <div class="step">
+      \[ \text{Premier terme : } \sqrt{900 + 3A} \quad\text{avec}\quad u(A) = 900 + 3A \]
+      <div class="why">
+        J'identifie ce qu'il y a sous la racine et je lui donne un nom, \( u(A) \). Ce petit geste
+        d'étiquetage évite l'immense majorité des erreurs de signe.
+      </div>
+    </div>
+    <div class="step">
+      \[ u'(A) = 3 \]
+      <div class="why">
+        La dérivée de \( 900 + 3A \) par rapport à \( A \). Le 900 est une constante : sa dérivée est
+        0 (une constante ne change pas quand \( A \) change). Le \( 3A \) a pour dérivée 3 (si
+        \( A \) augmente de 1, \( 3A \) augmente de 3). Total : \( 0 + 3 = 3 \).
+      </div>
+    </div>
+    <div class="step">
+      \[ \Big(\sqrt{900+3A}\Big)' = \frac{3}{2\sqrt{900+3A}} \]
+      <div class="why">
+        J'applique la règle : dérivée de l'intérieur (\( 3 \)) sur deux fois la racine. Le 3 va bien
+        <em>au-dessus</em> de la barre de fraction, jamais sous la racine.
+      </div>
+    </div>
+    <div class="step">
+      \[ \text{Second terme : } \sqrt{900 - A} \quad\text{avec}\quad u(A) = 900 - A,\ \ u'(A) = -1 \]
+      <div class="why">
+        Même étiquetage. La dérivée de \( 900 - A \) vaut \( -1 \) : le 900 disparaît, et \( -A \)
+        s'écrit \( (-1) \times A \), dont la dérivée est \( -1 \). Ce signe moins est capital : c'est
+        lui qui, tout à l'heure, fera apparaître la soustraction dans \( U'(A) \).
+      </div>
+    </div>
+    <div class="step">
+      \[ \Big(\sqrt{900-A}\Big)' = \frac{-1}{2\sqrt{900-A}} = -\,\frac{1}{2\sqrt{900-A}} \]
+      <div class="why">
+        Toujours la même règle. Je fais simplement remonter le signe moins devant la fraction, ce qui
+        est plus lisible. Interprétation : quand \( A \) augmente, la richesse en cas d'échec
+        <em>diminue</em>, donc l'utilité de cet état diminue aussi — la dérivée est négative, c'est
+        cohérent.
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Vérification numérique — la formule dit-elle vrai ?</div>
+    <p>
+      Testons la première dérivée en \( A = 100 \). La formule annonce une pente de
+      \( \dfrac{3}{2\sqrt{1200}} = \dfrac{3}{2 \times 34{,}641} \approx 0{,}0433 \).
+    </p>
+    <p>
+      Vérifions « à la main », en augmentant \( A \) d'un tout petit peu :
+      \( \sqrt{900 + 3 \times 101} = \sqrt{1203} \approx 34{,}6843 \) contre
+      \( \sqrt{1200} \approx 34{,}6410 \). L'écart vaut \( 0{,}0433 \) pour un euro de plus.
+      Exactement ce que la formule prévoyait. La règle marche.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les trois erreurs classiques sur cette dérivée</div>
+    <ul>
+      <li><strong>Oublier le 3.</strong> Écrire \( \dfrac{1}{2\sqrt{900+3A}} \) : c'est la dérivée
+        qu'on aurait si l'intérieur était \( A \) tout seul. Le facteur 3 est précisément ce qui rend
+        le bon scénario attirant — le perdre, c'est perdre tout l'intérêt du problème (et le bon
+        résultat).</li>
+      <li><strong>Oublier le signe moins.</strong> Écrire \( +\dfrac{1}{2\sqrt{900-A}} \) : alors
+        \( U'(A) \) serait toujours positive, ne s'annulerait jamais, et tu conclurais qu'elle
+        investit tout. Un signe, une question entière.</li>
+      <li><strong>Mettre le 3 sous la racine.</strong> Écrire
+        \( \dfrac{1}{2\sqrt{3(900+3A)}} \) : la règle multiplie <em>en dehors</em> de la racine, pas
+        dedans.</li>
+    </ul>
+  </div>
+
+  <h4>c) Dériver une somme, et sortir les constantes</h4>
+
+  <div class="box box-rappel">
+    <div class="box-title">Rappel — les deux règles de « démontage » (volume 1, chapitre 0)</div>
+    <ul>
+      <li><strong>Dérivée d'une somme = somme des dérivées.</strong>
+        \( \big(f + g\big)' = f' + g' \). On peut donc traiter nos deux racines séparément, puis
+        recoller.</li>
+      <li><strong>Une constante multiplicative reste devant.</strong>
+        \( \big(c \times f\big)' = c \times f' \). Nos deux \( \tfrac12 \) traversent donc la
+        dérivation sans bouger.</li>
+    </ul>
+    <p>
+      Autrement dit : les probabilités \( \tfrac12 \) ne sont <em>pas</em> touchées par la dérivée.
+      Ce sont des nombres fixes, pas des fonctions de \( A \).
+    </p>
+  </div>
+
+  <h4>d) Résoudre une équation qui contient deux racines carrées</h4>
+
+  <p>
+    La CPO va nous donner une équation du type « une fraction avec une racine = une autre fraction
+    avec une racine ». On ne sait pas résoudre ça directement. La stratégie est en deux temps, et
+    elle est très générale.
+  </p>
+
+  <div class="box box-methode">
+    <div class="box-title">La technique « isoler, puis élever au carré »</div>
+    <ol>
+      <li><strong>Faire disparaître les fractions</strong> en multipliant en croix : « produit des
+        extrêmes = produit des moyens ».</li>
+      <li><strong>Mettre l'équation sous la forme</strong> « un truc positif = un autre truc
+        positif », chacun contenant une seule racine.</li>
+      <li><strong>Élever les deux membres au carré.</strong> La racine disparaît, parce que
+        \( \big(\sqrt{X}\big)^2 = X \) : le carré et la racine s'annulent mutuellement.</li>
+      <li><strong>Résoudre l'équation ordinaire</strong> qui reste (ici, du premier degré).</li>
+    </ol>
+  </div>
+
+  <div class="box box-why">
+    <div class="box-title">Pourquoi a-t-on le droit d'élever au carré ? (la petite précaution)</div>
+    <p>
+      Élever au carré n'est pas toujours inoffensif. Regarde : \( -2 \ne 2 \), et pourtant
+      \( (-2)^2 = 4 = 2^2 \). Le carré « écrase » les signes : deux nombres différents peuvent avoir
+      le même carré. En élevant au carré une égalité fausse, on peut donc fabriquer une égalité
+      vraie — et récolter une solution fantôme.
+    </p>
+    <p>
+      La règle de sécurité : <strong>si les deux membres sont positifs (ou nuls), élever au carré est
+      une équivalence parfaite</strong> — on ne perd rien, on n'invente rien. C'est parce que la
+      fonction « mettre au carré » est strictement croissante sur les nombres positifs : elle range
+      les nombres dans le même ordre, donc elle ne peut pas rendre égaux deux nombres qui ne
+      l'étaient pas.
+    </p>
+    <p>
+      Ici, la précaution est facile à prendre. Le montant investi vérifie
+      \( 0 \le A \le 900 \), donc \( 900 - A \ge 0 \) et \( 900 + 3A \ge 900 > 0 \) : les deux
+      racines existent et sont positives, et \( 3\sqrt{900-A} \) l'est aussi. Écris cette phrase sur
+      ta copie — c'est le genre de rigueur qui plaît, et le corrigé officiel la mentionne.
+    </p>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Exemple d'entraînement — la même technique sur un cas minuscule</div>
+    <p>Résous \( 2\sqrt{x} = \sqrt{x + 12} \), avec \( x \ge 0 \).</p>
+    <p>
+      Les deux membres sont positifs, donc j'élève au carré :
+      \( 4x = x + 12 \). Je passe le \( x \) à gauche : \( 3x = 12 \). Donc \( x = 4 \).
+    </p>
+    <p>
+      Contrôle : \( 2\sqrt{4} = 4 \) et \( \sqrt{4 + 12} = \sqrt{16} = 4 \). Égalité vérifiée. Tu
+      viens de faire, en trois lignes, exactement ce que demande la question 2.2 — avec de plus
+      petits nombres.
+    </p>
+  </div>
+
+  <h4>e) Comment savoir que le point trouvé est bien un <em>maximum</em></h4>
+
+  <p>
+    Une dérivée nulle signale un endroit plat. Or il y a trois façons d'être plat : un sommet
+    (maximum), un creux (minimum), ou un palier. Les 2 derniers points du barème récompensent le
+    fait de trancher. Trois arguments possibles, du plus rapide au plus solide.
+  </p>
+
+  <div class="box box-methode">
+    <div class="box-title">Trois façons de justifier « c'est bien un maximum »</div>
+    <ol>
+      <li><strong>L'argument de concavité (le plus rapide, celui du corrigé).</strong> Une somme de
+        fonctions concaves est concave. Ici \( U \) est une somme de deux racines carrées, chacune
+        concave, avec des coefficients positifs \( \tfrac12 \) : donc \( U \) est concave. Or une
+        fonction concave n'a qu'un seul point plat, et c'est un sommet. Une phrase suffit.</li>
+      <li><strong>Le signe de la dérivée de part et d'autre.</strong> On montre que \( U' > 0 \)
+        avant \( A^* \) et \( U' < 0 \) après : ça monte puis ça descend, donc c'est un sommet.</li>
+      <li><strong>La dérivée seconde.</strong> On calcule \( U''(A) \) et on vérifie qu'elle est
+        négative. C'est le critère officiel, mais ici le calcul est pénible et n'apporte rien de
+        plus : les deux premiers arguments sont acceptés.</li>
+    </ol>
+  </div>
+
+  <p>
+    Il faut aussi vérifier que la solution est <span class="term">intérieure</span>, c'est-à-dire
+    qu'elle tombe <em>à l'intérieur</em> de l'intervalle autorisé \( [0\,;\,900] \) et non sur un
+    bord. Ici \( 600 \) est bien strictement entre 0 et 900 : parfait. Si la CPO avait donné
+    \( A = 1\,300 \), la réponse aurait été « elle investit tout, \( A^* = 900 \) », car elle ne peut
+    pas dépasser sa richesse. Une ligne de vérification, un point de barème.
+  </p>
+
+  <h3>5.3 La résolution pas à pas</h3>
+
+  <p>
+    On y va. Sept étapes, aucune ligne sautée. Sur ta copie, tu écriras les étapes 1 à 6 ; l'étape 7
+    (les vérifications) tient en deux phrases mais rapporte les 2 derniers points.
+  </p>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">1.</span> Rappeler la fonction à maximiser</div>
+    <div class="calc">
+      <div class="step">
+        \[ U(A) = \tfrac{1}{2}\sqrt{900+3A} + \tfrac{1}{2}\sqrt{900-A} \]
+        <div class="why">
+          C'est le résultat de la question 2.1. Toujours recopier la fonction juste avant de la
+          dériver : cela évite de dériver de mémoire, et cela permet au correcteur de suivre. Si tu
+          t'es trompé en 2.1, tu peux quand même récolter les points de méthode de la 2.2 en dérivant
+          correctement <em>ta</em> formule.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">2.</span> Annoncer ce qu'on va faire — la CPO</div>
+    <div class="calc">
+      <div class="step">
+        \[ \text{On cherche } A^* \text{ tel que } \quad U'(A^*) = 0. \]
+        <div class="why">
+          Une ligne, mais elle est exigée par l'énoncé (« condition de premier ordre »). Elle dit :
+          je cherche le point où la pente de la satisfaction moyenne est nulle, donc le sommet.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">3.</span> Calculer la dérivée — 5 points</div>
+    <div class="calc">
+      <div class="step">
+        \[ U'(A) = \tfrac{1}{2}\Big(\sqrt{900+3A}\Big)' + \tfrac{1}{2}\Big(\sqrt{900-A}\Big)' \]
+        <div class="why">
+          J'utilise les deux règles de démontage : la dérivée d'une somme est la somme des dérivées,
+          et les constantes \( \tfrac12 \) restent devant. Je n'ai encore rien calculé : j'ai
+          seulement découpé le travail en deux morceaux plus petits.
+        </div>
+      </div>
+      <div class="step">
+        \[ U'(A) = \tfrac{1}{2}\cdot\frac{3}{2\sqrt{900+3A}} \;+\; \tfrac{1}{2}\cdot\frac{-1}{2\sqrt{900-A}} \]
+        <div class="why">
+          Je remplace chaque morceau par la dérivée calculée en 5.2 b) : « dérivée de l'intérieur sur
+          deux fois la racine ». Intérieur du premier : \( 900+3A \), dérivée \( 3 \). Intérieur du
+          second : \( 900-A \), dérivée \( -1 \).
+        </div>
+      </div>
+      <div class="step">
+        \[ U'(A) = \frac{3}{4\sqrt{900+3A}} \;-\; \frac{1}{4\sqrt{900-A}} \]
+        <div class="why">
+          Je fais rentrer les \( \tfrac12 \) : multiplier une fraction par \( \tfrac12 \) revient à
+          multiplier son dénominateur par 2, donc \( 2\sqrt{\;} \) devient \( 4\sqrt{\;} \). Et je
+          remplace \( +\,\dfrac{-1}{\cdots} \) par \( -\,\dfrac{1}{\cdots} \) : ajouter un négatif,
+          c'est soustraire. Voilà les 5 points de la dérivée.
+        </div>
+      </div>
+    </div>
+    <p>
+      Prends dix secondes pour <em>lire</em> cette dérivée, parce qu'elle raconte toute l'économie du
+      problème. Le premier terme est le <strong>bénéfice marginal</strong> d'un euro investi de plus
+      (il pousse la richesse du bon scénario vers le haut). Le second est son <strong>coût
+      marginal</strong> (il tire la richesse du mauvais scénario vers le bas). L'optimum est atteint
+      quand les deux se compensent exactement.
+    </p>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">4.</span> Poser la condition de premier ordre — 3 points</div>
+    <div class="calc">
+      <div class="step">
+        \[ \frac{3}{4\sqrt{900+3A^*}} \;-\; \frac{1}{4\sqrt{900-A^*}} \;=\; 0 \]
+        <div class="why">
+          J'écris simplement « la dérivée vaut zéro », en remplaçant \( A \) par \( A^* \) puisqu'on
+          parle maintenant du point particulier qu'on cherche. C'est l'équation à résoudre.
+        </div>
+      </div>
+      <div class="step">
+        \[ \frac{3}{4\sqrt{900+3A^*}} \;=\; \frac{1}{4\sqrt{900-A^*}} \]
+        <div class="why">
+          Je fais passer le second terme de l'autre côté du signe égal, ce qui le rend positif
+          (« quand un terme change de côté, il change de signe »). Sous cette forme, l'équation se
+          lit : <em>bénéfice marginal = coût marginal</em>. C'est LA condition économique de
+          l'optimum, et l'écrire ainsi vaut à elle seule les 3 points.
+        </div>
+      </div>
+      <div class="step">
+        \[ \frac{3}{\sqrt{900+3A^*}} \;=\; \frac{1}{\sqrt{900-A^*}} \]
+        <div class="why">
+          Je multiplie les deux côtés par 4. Le 4 disparaît des deux dénominateurs, parce qu'il était
+          le même à gauche et à droite. Toujours simplifier ce qui est commun avant de se lancer :
+          moins de symboles, moins d'erreurs.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">5.</span> Résoudre — 4 points</div>
+    <div class="calc">
+      <div class="step">
+        \[ 3\sqrt{900-A^*} \;=\; \sqrt{900+3A^*} \]
+        <div class="why">
+          Je multiplie en croix : le numérateur de gauche (3) va avec le dénominateur de droite, et
+          le numérateur de droite (1) avec le dénominateur de gauche. Concrètement, j'ai multiplié
+          les deux côtés par \( \sqrt{900+3A^*} \times \sqrt{900-A^*} \), et les simplifications ont
+          fait le reste. L'équation ne contient plus aucune fraction.
+        </div>
+      </div>
+      <div class="step">
+        \[ \text{Les deux membres sont} \ge 0 \ \text{car } 0 \le A^* \le 900. \]
+        <div class="why">
+          La petite phrase de sécurité de la section 5.2 d). Comme \( A^* \) est compris entre 0 et
+          900, on a \( 900 - A^* \ge 0 \) et \( 900 + 3A^* > 0 \) : les deux racines existent et sont
+          positives. J'ai donc le droit d'élever au carré sans créer de solution fantôme.
+        </div>
+      </div>
+      <div class="step">
+        \[ \Big(3\sqrt{900-A^*}\Big)^2 \;=\; \Big(\sqrt{900+3A^*}\Big)^2 \]
+        <div class="why">
+          J'élève chaque membre au carré. Attention : le carré s'applique à <em>tout</em> le membre
+          de gauche, le 3 compris — c'est l'erreur qu'on va commenter juste après.
+        </div>
+      </div>
+      <div class="step">
+        \[ 9\,(900 - A^*) \;=\; 900 + 3A^* \]
+        <div class="why">
+          À gauche : \( (3\sqrt{X})^2 = 3^2 \times (\sqrt{X})^2 = 9X \). À droite :
+          \( (\sqrt{Y})^2 = Y \), la racine et le carré s'annulent. Il ne reste plus une seule
+          racine : l'équation est devenue toute simple.
+        </div>
+      </div>
+      <div class="step">
+        \[ 8\,100 - 9A^* \;=\; 900 + 3A^* \]
+        <div class="why">
+          Je développe le membre de gauche : \( 9 \times 900 = 8\,100 \) et
+          \( 9 \times (-A^*) = -9A^* \). Le 9 multiplie les <em>deux</em> termes de la parenthèse.
+        </div>
+      </div>
+      <div class="step">
+        \[ 8\,100 - 900 \;=\; 3A^* + 9A^* \]
+        <div class="why">
+          Je range : les nombres seuls à gauche, les termes en \( A^* \) à droite. J'ai ajouté
+          \( 9A^* \) des deux côtés (ce qui l'efface à gauche et le fait apparaître à droite) et
+          retiré 900 des deux côtés.
+        </div>
+      </div>
+      <div class="step">
+        \[ 7\,200 \;=\; 12A^* \]
+        <div class="why">
+          Je calcule les deux côtés : \( 8\,100 - 900 = 7\,200 \), et
+          \( 3A^* + 9A^* = 12A^* \) (on additionne les coefficients devant la même lettre).
+        </div>
+      </div>
+      <div class="step">
+        \[ A^* = \frac{7\,200}{12} = 600 \]
+        <div class="why">
+          Je divise les deux côtés par 12 pour isoler \( A^* \).
+          \( 7\,200 \div 12 = 600 \) (contrôle mental : \( 12 \times 6 = 72 \), donc
+          \( 12 \times 600 = 7\,200 \) ✓).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">6.</span> Vérifier l'équation de départ</div>
+    <p>
+      Ce contrôle n'est pas exigé, mais il coûte trente secondes et il te dira si tu t'es trompé.
+      Remplace \( A^* = 600 \) dans l'équation obtenue à l'étape 5.
+    </p>
+    <div class="calc">
+      <div class="step">
+        \[ 3\sqrt{900-600} = 3\sqrt{300} \approx 3 \times 17{,}32 = 51{,}96 \]
+        <div class="why">
+          Membre de gauche. \( \sqrt{300} \) vaut environ 17,32 (car \( 17{,}32^2 \approx 300 \)).
+        </div>
+      </div>
+      <div class="step">
+        \[ \sqrt{900 + 3\times 600} = \sqrt{2\,700} \approx 51{,}96 \]
+        <div class="why">
+          Membre de droite. \( 900 + 1\,800 = 2\,700 \), et \( \sqrt{2\,700} \approx 51{,}96 \). Les
+          deux membres coïncident : \( A^* = 600 \) est bien solution.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-title"><span class="num">7.</span> Les deux vérifications qui rapportent les 2 derniers points</div>
+    <p>
+      <strong>Solution intérieure.</strong> \( A^* = 600 \) est strictement compris entre 0 et 900 :
+      le montant trouvé est réalisable, elle a bien 600 euros à investir, et il lui en reste 300.
+      C'est donc une vraie solution du problème, pas un coin de l'intervalle.
+    </p>
+    <p>
+      <strong>C'est bien un maximum.</strong> \( U \) est la somme de deux racines carrées affectées
+      de coefficients positifs. Chaque racine carrée est concave ; une somme de fonctions concaves à
+      coefficients positifs est concave ; donc \( U \) est concave. Une fonction concave ne possède
+      qu'un seul point à pente nulle, et c'est son sommet. Le point trouvé est donc bien le maximum
+      cherché.
+    </p>
+  </div>
+
+  <div class="result">
+    <div class="result-title">Résultat de la question 2.2</div>
+    <p>\[ U'(A) = \frac{3}{4\sqrt{900+3A}} - \frac{1}{4\sqrt{900-A}} \]</p>
+    <p>\[ U'(A^*) = 0 \iff 3\sqrt{900-A^*} = \sqrt{900+3A^*} \iff 9(900-A^*) = 900+3A^* \]</p>
+    <p>\[ 7\,200 = 12A^* \qquad\Longrightarrow\qquad \mathbf{A^* = 600 \text{ euros}} \]</p>
+    <p>
+      Elle investit 600 euros — les deux tiers de sa richesse — et garde 300 euros de côté.
+    </p>
+  </div>
+
+  <h3>5.4 Voir le résultat : la colline \( U(A) \)</h3>
+
+  <p>
+    Un nombre tombé d'un calcul ne veut rien dire tant qu'on ne l'a pas vu. Traçons donc la fonction
+    \( U(A) \) pour toutes les valeurs de \( A \) entre 0 et 900. Voici quelques points calculés à
+    la main (fais-en deux ou trois toi-même, c'est le meilleur entraînement possible) :
+  </p>
+
+  <table class="data">
+    <tr>
+      <th>\( A \)</th><th>0</th><th>150</th><th>300</th><th>450</th>
+      <th>\( \mathbf{600} \)</th><th>750</th><th>850</th><th>900</th>
+    </tr>
+    <tr>
+      <td>\( U(A) \)</td><td>30,00</td><td>32,06</td><td>33,46</td><td>34,32</td>
+      <td><strong>34,64</strong></td><td>34,19</td><td>32,90</td><td>30,00</td>
+    </tr>
+  </table>
+
+  <p>
+    Lecture ligne par ligne : elle part de 30 (ne rien investir, garder ses 900 euros sûrs), monte
+    régulièrement, atteint 34,64 en \( A = 600 \), puis redescend — et retombe exactement à 30 quand
+    elle investit tout. En reliant ces points, on obtient une colline.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 540 360" width="100%" style="max-width:12cm" role="img"
+         aria-label="Courbe de l'utilite esperee U de A sur l'intervalle 0 a 900 euros : elle vaut 30 en A egal 0, monte jusqu'a un sommet de 34,64 en A egal 600, puis redescend jusqu'a 30 en A egal 900 ; la tangente est montante avant le sommet, plate au sommet et descendante apres">
+      <line x1="70" y1="300" x2="522" y2="300" stroke="#111827" stroke-width="1.3"/>
+      <line x1="70" y1="40" x2="70" y2="300" stroke="#111827" stroke-width="1.3"/>
+
+      <polyline fill="none" stroke="#111827" stroke-width="2.6"
+        points="70,259.7 80.8,245 91.5,231.2 102.3,218.2 113,205.9 123.8,194.3 134.5,183.4 145.3,173.1 156,163.3 166.8,154.1 177.5,145.4 188.3,137.3 199,129.6 209.8,122.4 220.5,115.7 231.3,109.5 242,103.7 252.8,98.4 263.5,93.6 274.3,89.2 285,85.3 295.8,81.9 306.5,79 317.3,76.6 328,74.7 338.8,73.4 349.5,72.7 360.3,72.6 371,73.1 381.8,74.4 392.5,76.5 403.3,79.6 414,83.6 424.8,88.8 435.5,95.5 446.3,103.9 457,114.7 467.8,128.6 478.5,147.3 489.3,175.4 500,259.7"/>
+
+      <g stroke="#111827" stroke-width="1" stroke-dasharray="4 3">
+        <line x1="356.7" y1="72.5" x2="356.7" y2="312"/>
+        <line x1="70" y1="72.5" x2="356.7" y2="72.5"/>
+        <line x1="70" y1="259.7" x2="500" y2="259.7"/>
+      </g>
+
+      <line x1="306.7" y1="72.5" x2="406.7" y2="72.5" stroke="#111827" stroke-width="1.6"/>
+      <line x1="115.6" y1="197" x2="215.6" y2="113.2" stroke="#111827" stroke-width="1.4"/>
+      <line x1="412.2" y1="69.3" x2="492.2" y2="149.9" stroke="#111827" stroke-width="1.4"/>
+
+      <g fill="#111827">
+        <circle cx="356.7" cy="72.5" r="5"/>
+        <circle cx="165.6" cy="155.1" r="4"/>
+        <circle cx="452.2" cy="109.6" r="4"/>
+        <circle cx="70" cy="259.7" r="4"/>
+        <circle cx="500" cy="259.7" r="4"/>
+      </g>
+
+      <text x="356.7" y="60" font-size="12.5" text-anchor="middle" font-weight="bold">sommet : U = 34,64</text>
+      <text x="240" y="108" font-size="11.5" text-anchor="end">pente &gt; 0 :</text>
+      <text x="240" y="122" font-size="11.5" text-anchor="end">investir plus</text>
+      <text x="240" y="136" font-size="11.5" text-anchor="end">augmente U</text>
+      <text x="424" y="196" font-size="11.5">pente &lt; 0 :</text>
+      <text x="424" y="210" font-size="11.5">investir plus</text>
+      <text x="424" y="224" font-size="11.5">réduit U</text>
+      <text x="292" y="88" font-size="11.5" text-anchor="end">pente = 0</text>
+
+      <g font-size="12" text-anchor="end">
+        <text x="64" y="264">30</text>
+        <text x="64" y="77">34,64</text>
+      </g>
+      <g font-size="12" text-anchor="middle">
+        <text x="70" y="318">0</text>
+        <text x="213.3" y="318">300</text>
+        <text x="356.7" y="330" font-weight="bold">A* = 600</text>
+        <text x="500" y="318">900</text>
+      </g>
+      <text x="290" y="352" font-size="12.5" text-anchor="middle">montant investi A (euros)</text>
+      <text x="76" y="34" font-size="12.5">utilité espérée U(A)</text>
+      <text x="86" y="252" font-size="11.5">ne rien investir</text>
+      <text x="496" y="252" font-size="11.5" text-anchor="end">tout investir</text>
+    </svg>
+    <figcaption>
+      Figure 4 — La colline \( U(A) \). Trois tangentes sont dessinées : montante à gauche du
+      sommet, <strong>plate au sommet</strong>, descendante à droite. Chercher \( A^* \), c'est
+      chercher l'endroit où la tangente devient horizontale — et c'est exactement ce que dit
+      l'équation \( U'(A^*) = 0 \). Remarque le trait horizontal en bas : les deux extrémités de la
+      colline sont à la même hauteur, \( U = 30 \). Ne rien investir et tout investir procurent la
+      même satisfaction moyenne, et les deux sont bien pires que 600 euros.
+    </figcaption>
+  </figure>
+
+  <div class="box box-exemple">
+    <div class="box-title">La coïncidence des deux extrémités, expliquée</div>
+    <p>
+      Ce n'est pas un hasard si \( U(0) = U(900) = 30 \). En \( A = 0 \), elle a 900 euros à coup
+      sûr : \( U = \sqrt{900} = 30 \). En \( A = 900 \), elle a 3 600 euros avec probabilité
+      \( \tfrac12 \) et 0 euro avec probabilité \( \tfrac12 \) :
+      \( U = \tfrac12\sqrt{3\,600} + \tfrac12\sqrt{0} = \tfrac12 \times 60 + 0 = 30 \).
+    </p>
+    <p>
+      Autrement dit, cette investisseuse est <em>exactement indifférente</em> entre garder ses
+      900 euros bien au chaud et tout miser sur un pile ou face qui quadruple. C'est une jolie
+      coïncidence arithmétique du sujet — et une excellente illustration de la concavité : la
+      moyenne monétaire du pari total est \( \tfrac12(3\,600) + \tfrac12(0) = 1\,800 \) euros, soit
+      le double de 900, et pourtant elle n'en veut pas plus. Tout l'attrait du projet est détruit par
+      le risque quand on le pousse à l'extrême.
+    </p>
+  </div>
+
+  <h3>5.5 L'autre façon de voir l'optimum : bénéfice marginal contre coût marginal</h3>
+
+  <p>
+    Reprenons la CPO sous la forme où on l'a laissée à l'étape 4 :
+  </p>
+
+  <p>\[ \underbrace{\frac{3}{4\sqrt{900+3A}}}_{\text{bénéfice marginal}} \;=\; \underbrace{\frac{1}{4\sqrt{900-A}}}_{\text{coût marginal}} \]</p>
+
+  <div class="box box-def">
+    <div class="box-title">Définition — « marginal »</div>
+    <p>
+      En économie, <span class="term">marginal</span> veut dire « du dernier ». Le bénéfice marginal
+      d'un euro investi, c'est le supplément de satisfaction espérée qu'apporte le
+      <em>tout dernier</em> euro qu'on met dans le projet. Le coût marginal, c'est la satisfaction
+      espérée que ce même dernier euro fait perdre.
+    </p>
+    <p>
+      Analogie : tu manges des parts de gâteau. Le bénéfice marginal de la troisième part, c'est le
+      plaisir que t'apporte cette part-là précisément (pas les trois ensemble). Tu t'arrêtes quand le
+      plaisir de la part suivante n'excède plus le désagrément de trop manger : c'est une CPO.
+    </p>
+  </div>
+
+  <p>
+    Le côté gauche décroît quand \( A \) augmente : plus elle investit, plus la richesse du bon
+    scénario est déjà grande, et plus un euro de plus y apporte peu de satisfaction supplémentaire
+    (utilité marginale décroissante). Le côté droit, lui, <em>croît</em> : plus elle investit, plus
+    la richesse du mauvais scénario est faible, et plus un euro perdu y fait mal. Une courbe qui
+    descend, une courbe qui monte : elles se croisent une fois et une seule.
+  </p>
+
+  <figure>
+    <svg viewBox="0 0 540 350" width="100%" style="max-width:12cm" role="img"
+         aria-label="Deux courbes se croisant en A egal 600 euros : le benefice marginal decroit de 0,025 vers 0,013 tandis que le cout marginal croit de 0,008 vers l'infini quand A approche 900">
+      <line x1="70" y1="300" x2="522" y2="300" stroke="#111827" stroke-width="1.3"/>
+      <line x1="70" y1="40" x2="70" y2="300" stroke="#111827" stroke-width="1.3"/>
+
+      <polyline fill="none" stroke="#111827" stroke-width="2.6"
+        points="70,91.7 82.6,99.8 95.3,107.1 107.9,113.7 120.6,119.6 133.2,125 145.9,129.9 158.5,134.4 171.2,138.6 183.8,142.5 196.5,146.1 209.1,149.5 221.8,152.7 234.4,155.7 247.1,158.5 259.7,161.1 272.4,163.6 285,166 297.6,168.2 310.3,170.4 322.9,172.4 335.6,174.4 348.2,176.2 360.9,178 373.5,179.7 386.2,181.4 398.8,182.9 411.5,184.4 424.1,185.9 436.8,187.3 449.4,188.6 462.1,189.9 474.7,191.2 487.4,192.4 500,193.6"/>
+
+      <polyline fill="none" stroke="#111827" stroke-width="2.6" stroke-dasharray="8 4"
+        points="70,230.6 82.6,229.6 95.3,228.5 107.9,227.5 120.6,226.3 133.2,225.2 145.9,223.9 158.5,222.6 171.2,221.3 183.8,219.8 196.5,218.3 209.1,216.7 221.8,214.9 234.4,213.1 247.1,211.2 259.7,209.1 272.4,206.8 285,204.4 297.6,201.8 310.3,198.9 322.9,195.8 335.6,192.4 348.2,188.6 360.9,184.4 373.5,179.7 386.2,174.4 398.8,168.2 411.5,161.1 424.1,152.7 436.8,142.5 449.4,129.9 462.1,113.7 474.7,91.7 487.4,59.4"/>
+
+      <g stroke="#111827" stroke-width="1" stroke-dasharray="4 3">
+        <line x1="373.5" y1="179.7" x2="373.5" y2="312"/>
+      </g>
+      <circle cx="373.5" cy="179.7" r="5.5" fill="#111827"/>
+
+      <text x="180" y="82" font-size="12.5" font-weight="bold">bénéfice marginal</text>
+      <text x="180" y="97" font-size="12">3 / (4√(900 + 3A)) — il descend</text>
+      <text x="150" y="256" font-size="12.5" font-weight="bold">coût marginal</text>
+      <text x="150" y="271" font-size="12">1 / (4√(900 − A)) — il monte</text>
+
+      <text x="386" y="150" font-size="12" font-weight="bold">ils se croisent :</text>
+      <text x="386" y="165" font-size="12" font-weight="bold">c'est l'optimum</text>
+
+      <g font-size="12" text-anchor="middle">
+        <text x="70" y="318">0</text>
+        <text x="171.2" y="318">200</text>
+        <text x="272.4" y="318">400</text>
+        <text x="373.5" y="330" font-weight="bold">A* = 600</text>
+        <text x="474.7" y="318">800</text>
+      </g>
+      <text x="290" y="346" font-size="12.5" text-anchor="middle">montant investi A (euros)</text>
+      <text x="76" y="34" font-size="12.5">effet sur U du dernier euro investi</text>
+    </svg>
+    <figcaption>
+      Figure 5 — La même chose, vue autrement. Tant que la courbe pleine (le gain du dernier euro)
+      est au-dessus de la courbe pointillée (son coût), il reste intéressant d'investir un euro de
+      plus. Au croisement, les deux s'équilibrent : c'est \( A^* = 600 \). Au-delà, le coût
+      l'emporte, et il s'envole même vers l'infini à l'approche de \( A = 900 \) — car risquer son
+      tout dernier euro, c'est risquer la ruine complète, ce qu'une fonction racine carrée refuse
+      absolument.
+    </figcaption>
+  </figure>
+
+  <div class="box box-copie">
+    <div class="box-title">Ce qu'il fallait écrire sur la copie — 2.2</div>
+    <p>On dérive \( U(A) \) par rapport à \( A \) :</p>
+    <p>\[ U'(A) = \tfrac{1}{2}\cdot\frac{3}{2\sqrt{900+3A}} - \tfrac{1}{2}\cdot\frac{1}{2\sqrt{900-A}} = \frac{3}{4\sqrt{900+3A}} - \frac{1}{4\sqrt{900-A}} \]</p>
+    <p>La condition de premier ordre \( U'(A^*) = 0 \) donne :</p>
+    <p>\[ \frac{3}{\sqrt{900+3A^*}} = \frac{1}{\sqrt{900-A^*}} \quad\Longleftrightarrow\quad 3\sqrt{900-A^*} = \sqrt{900+3A^*} \]</p>
+    <p>Les deux membres étant positifs, on élève au carré :</p>
+    <p>\[ 9\,(900-A^*) = 900 + 3A^* \iff 8\,100 - 9A^* = 900 + 3A^* \iff 7\,200 = 12A^* \]</p>
+    <p>\[ A^* = 600 \text{ euros.} \]</p>
+    <p>
+      Vérifications : \( A^* = 600 \in\; ]0\,;\,900[ \), la solution est intérieure ; et \( U \) est
+      concave (somme de deux fonctions concaves à coefficients positifs), donc la condition de
+      premier ordre caractérise bien un maximum.
+    </p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Les pièges de la 2.2</div>
+    <ul>
+      <li><strong>Élever au carré sans emporter le 3.</strong> Écrire
+        \( 3(900-A) = 900+3A \) au lieu de \( 9(900-A) = 900+3A \) : c'est l'erreur la plus fréquente
+        de la question. Le carré s'applique à tout le membre, donc \( 3^2 = 9 \). Avec le 3, on
+        trouverait \( 2\,700 - 3A = 900 + 3A \), soit \( A = 300 \) — une réponse fausse mais
+        crédible, donc dangereuse.</li>
+      <li><strong>Dériver \( \sqrt{900+3A} \) en \( \dfrac{1}{2\sqrt{900+3A}} \).</strong> Le facteur
+        3 (la dérivée de l'intérieur) manque. Résultat : la CPO devient
+        \( \sqrt{900-A} = \sqrt{900+3A} \), donc \( A = 0 \). On conclurait qu'elle n'investit rien,
+        alors que le projet est très favorable.</li>
+      <li><strong>Perdre le signe moins du second terme.</strong> On obtient une dérivée toujours
+        positive, qui ne s'annule jamais : plus aucune équation à résoudre, et on répond
+        « \( A^* = 900 \) » par défaut.</li>
+      <li><strong>Simplifier une somme de racines.</strong> \( \sqrt{900+3A} \) n'est
+        <em>pas</em> \( 30 + \sqrt{3A} \), et \( \sqrt{900-A} \) n'est pas \( 30 - \sqrt{A} \). La
+        racine d'une somme n'est jamais la somme des racines. Test rapide :
+        \( \sqrt{9+16} = \sqrt{25} = 5 \), alors que \( \sqrt9 + \sqrt{16} = 3 + 4 = 7 \).</li>
+      <li><strong>Ne pas conclure.</strong> Après avoir trouvé 600, il faut écrire la phrase :
+        « elle investit 600 euros ». Un examinateur ne devine pas.</li>
+      <li><strong>Oublier les deux vérifications.</strong> Deux points, deux phrases. Solution
+        intérieure, et concavité de \( U \).</li>
+    </ul>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Réflexe de méthode — maximiser une utilité espérée en six gestes</div>
+    <ol>
+      <li>Recopier \( U(A) \).</li>
+      <li>Annoncer : « CPO : \( U'(A^*) = 0 \) ».</li>
+      <li>Dériver terme par terme, en appliquant à chaque racine
+        « <em>dérivée de l'intérieur sur deux fois la racine</em> ».</li>
+      <li>Poser l'égalité « bénéfice marginal = coût marginal », puis simplifier les facteurs
+        communs.</li>
+      <li>Multiplier en croix, dire que les deux membres sont positifs, élever au carré, résoudre.</li>
+      <li>Vérifier : solution intérieure, et maximum (concavité).</li>
+    </ol>
+    <p>
+      Cette séquence est <strong>exactement</strong> celle de la question d'assurance du volume 1 et
+      celle du chapitre 12 (offre de travail). Apprends-la comme une chanson : elle rapporte des
+      points dans au moins trois questions du programme.
+    </p>
+  </div>
+
+<hr class="soft">
+
+<h2>6. Question 2.3 — l'utilité à l'optimum et l'équivalent certain (10 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 2.3 (10 points)</div>
+<p>
+  <strong>2.3)</strong> Calculez l'utilité espérée à l'optimum \( U(A^*) \) ainsi que l'équivalent
+  certain du portefeuille optimal. Comparez cet équivalent certain à la richesse initiale et
+  interprétez brièvement.
+</p>
+</div>
+
+<h3>6.1 Traduisons la question</h3>
+
+<dl class="lexique">
+<dt>« l'utilité espérée à l'optimum \( U(A^*) \) »</dt>
+<dd>
+  On reprend la formule \( U(A) \) écrite en 2.1 et on y remplace \( A \) par la valeur trouvée en
+  2.2, c'est-à-dire 600. Rien de nouveau : c'est une simple application numérique. Le mot
+  « optimum » signifie seulement « à la valeur qui maximise ».
+</dd>
+<dt>« l'équivalent certain du portefeuille optimal »</dt>
+<dd>
+  L'<span class="term">équivalent certain</span>, c'est le montant que l'investisseuse accepterait
+  <strong>à coup sûr</strong>, sans aucun risque, plutôt que de vivre la loterie. C'est sa façon à
+  elle de mettre un prix sur une situation incertaine.
+</dd>
+<dt>« comparez à la richesse initiale et interprétez »</dt>
+<dd>
+  La richesse initiale, c'est 900 €. On veut savoir si, tout compte fait, l'investissement l'a
+  rendue plus riche <em>en équivalent certain</em>. Deux points de barème sont ici : le calcul, et
+  la phrase d'interprétation. N'oublie jamais la seconde.
+</dd>
+</dl>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel du volume 1 — comment on calcule un équivalent certain</div>
+<p>
+  L'équivalent certain \( C \) est défini par l'égalité <em>« l'utilité de ce montant certain est
+  exactement l'utilité espérée de la loterie »</em> :
+</p>
+<p>\[ u(C) = E[u(w)] \]</p>
+<p>
+  Ici \( u(w) = \sqrt{w} \), donc \( \sqrt{C} = U(A^*) \). Pour isoler \( C \), on élève les deux
+  côtés au carré : \( C = \big(U(A^*)\big)^2 \). Retiens ce geste : <strong>avec une racine
+  carrée, l'équivalent certain est le carré de l'utilité espérée.</strong>
+</p>
+</div>
+
+<h3>6.2 La résolution, pas à pas</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Calculer les deux richesses finales à l'optimum</div>
+<div class="calc">
+<div class="step">
+\[ \text{si le projet réussit : } 900 + 3A^* = 900 + 3 \times 600 = 900 + 1800 = 2700 \]
+<div class="why">Je reprends l'expression de la richesse en cas de succès, établie en 2.1, et j'y
+mets \( A^* = 600 \).</div>
+</div>
+<div class="step">
+\[ \text{si le projet échoue : } 900 - A^* = 900 - 600 = 300 \]
+<div class="why">Même chose pour l'échec : elle perd les 600 investis et ne garde que les 300
+laissés de côté.</div>
+</div>
+</div>
+<p>
+  Un mot sur ces deux nombres : l'écart entre 300 et 2 700 est énorme. Cette investisseuse
+  accepte donc un risque considérable — ce qui est cohérent, puisque le pari est très favorable.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Simplifier les racines avant de calculer</div>
+<p>
+  On pourrait taper \( \sqrt{2700} \) à la calculatrice, mais il est plus élégant (et plus sûr) de
+  simplifier d'abord. La règle est \( \sqrt{a \times b} = \sqrt{a} \times \sqrt{b} \) : on cherche
+  donc un carré parfait caché dans le nombre.
+</p>
+<div class="calc">
+<div class="step">
+\[ \sqrt{2700} = \sqrt{900 \times 3} = \sqrt{900} \times \sqrt{3} = 30\sqrt{3} \]
+<div class="why">2 700 se décompose en \( 900 \times 3 \), et 900 est un carré parfait
+(\( 30 \times 30 \)). Sa racine sort donc de dessous le signe.</div>
+</div>
+<div class="step">
+\[ \sqrt{300} = \sqrt{100 \times 3} = \sqrt{100} \times \sqrt{3} = 10\sqrt{3} \]
+<div class="why">Même méthode : 300 vaut \( 100 \times 3 \), et \( \sqrt{100} = 10 \). Les deux
+racines contiennent le même \( \sqrt{3} \) : c'est ce qui va rendre la suite très simple.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Calculer l'utilité espérée</div>
+<div class="calc">
+<div class="step">
+\[ U(A^*) = \tfrac12\sqrt{2700} + \tfrac12\sqrt{300} \]
+<div class="why">Je reprends la formule de 2.1 : chaque scénario a une chance sur deux, donc
+chaque racine est pondérée par \( \tfrac12 \).</div>
+</div>
+<div class="step">
+\[ U(A^*) = \tfrac12 \times 30\sqrt{3} + \tfrac12 \times 10\sqrt{3} = 15\sqrt{3} + 5\sqrt{3} \]
+<div class="why">Je remplace par les formes simplifiées, puis je multiplie chaque terme par
+\( \tfrac12 \) : la moitié de 30 fait 15, la moitié de 10 fait 5.</div>
+</div>
+<div class="step">
+\[ U(A^*) = 20\sqrt{3} \approx 34{,}64 \]
+<div class="why">Les deux termes ont le même facteur \( \sqrt{3} \) : je les additionne comme
+« 15 pommes + 5 pommes = 20 pommes ». Numériquement, \( \sqrt{3} \approx 1{,}732 \), donc
+\( 20 \times 1{,}732 \approx 34{,}64 \).</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> En déduire l'équivalent certain</div>
+<div class="calc">
+<div class="step">
+\[ \sqrt{C} = U(A^*) = 20\sqrt{3} \]
+<div class="why">J'applique la définition rappelée plus haut : l'utilité du montant certain doit
+égaler l'utilité espérée.</div>
+</div>
+<div class="step">
+\[ C = \big(20\sqrt{3}\big)^2 = 20^2 \times \big(\sqrt{3}\big)^2 = 400 \times 3 = 1200 \]
+<div class="why">J'élève au carré. Attention : le carré s'applique aux <em>deux</em> facteurs.
+\( 20^2 = 400 \), et \( (\sqrt3)^2 = 3 \) puisque élever au carré défait la racine. D'où
+1 200 €.</div>
+</div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">5.</span> Comparer à la richesse initiale et interpréter</div>
+<div class="calc">
+<div class="step">
+\[ C = 1200 \quad > \quad w = 900 \qquad \text{écart : } +300 \text{ €} \]
+<div class="why">L'investisseuse partait de 900 € certains. Après avoir investi de façon
+optimale, sa situation risquée « vaut » pour elle 1 200 € certains : elle a gagné l'équivalent de
+300 € de tranquillité.</div>
+</div>
+</div>
+<div class="box box-why">
+<div class="box-title">Ce que ce résultat signifie vraiment</div>
+<p>
+  L'investisseuse est <strong>averse au risque</strong> — elle n'aime pas l'incertitude. Et
+  pourtant elle accepte de mettre 600 de ses 900 € dans un projet qui peut tout perdre. Pourquoi ?
+  Parce que le pari est <em>largement</em> favorable : chaque euro investi rapporte 4 € une fois
+  sur deux et disparaît une fois sur deux, soit 2 € en moyenne pour 1 € risqué.
+</p>
+<p>
+  L'aversion au risque ne dit pas « refuse le risque » ; elle dit « exige d'être suffisamment
+  payé pour l'accepter ». Ici elle l'est, et son bien-être progresse de 900 à 1 200 en équivalent
+  certain.
+</p>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">6.</span> Le contrôle par la prime de risque (facultatif mais rassurant)</div>
+<div class="calc">
+<div class="step">
+\[ \mathrm{VMA} = \tfrac12(2700) + \tfrac12(300) = 1350 + 150 = 1500 \]
+<div class="why">La valeur monétaire attendue de son portefeuille final : la moyenne des deux
+richesses possibles, sans passer par l'utilité.</div>
+</div>
+<div class="step">
+\[ \mathrm{PRM} = \mathrm{VMA} - C = 1500 - 1200 = 300 \]
+<div class="why">La prime de risque : ce qu'elle « abandonne » en moyenne pour échapper à
+l'incertitude. Elle est <strong>positive</strong>, ce qui confirme l'aversion au risque. Si tu
+trouvais une prime négative, il y aurait une erreur quelque part.</div>
+</div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de la question 2.3</div>
+<p>\[ U(A^*) = 20\sqrt{3} \approx 34{,}64 \qquad C = 1200 \text{ €} \qquad (\text{contre } w = 900 \text{ €}) \]</p>
+<p>
+  L'équivalent certain dépasse la richesse initiale de <strong>300 €</strong> : l'investissement
+  optimal améliore nettement la situation de l'investisseuse, malgré son aversion au risque.
+  (Prime de risque : \( 1500 - 1200 = 300 \) €.)
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 2.3</div>
+<p>
+  « Avec \( A^* = 600 \) : richesse de 2 700 en cas de succès, de 300 en cas d'échec.<br>
+  \( U(A^*) = \tfrac12\sqrt{2700} + \tfrac12\sqrt{300} = 15\sqrt3 + 5\sqrt3 = 20\sqrt3 \approx
+  34{,}64 \).<br>
+  Équivalent certain : \( \sqrt{C} = 20\sqrt3 \Rightarrow C = 400 \times 3 = \mathbf{1200} \) €.<br>
+  Comme \( 1200 > 900 \), l'investissement optimal augmente le bien-être de l'investisseuse de
+  l'équivalent de 300 € certains. Bien qu'averse au risque, elle accepte le pari parce qu'il est
+  très favorable (2 € attendus par euro risqué) ; sa prime de risque vaut
+  \( 1500 - 1200 = 300 \) €. »
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 2.3</div>
+<ul>
+  <li><strong>Comparer \( U(A^*) = 34{,}64 \) à 900.</strong> Ce sont des unités différentes : 34,64
+      est une <em>utilité</em>, 900 des <em>euros</em>. Pour comparer, il faut d'abord repasser en
+      euros — c'est exactement le rôle de l'équivalent certain.</li>
+  <li><strong>Oublier d'élever au carré</strong> et annoncer \( C = 34{,}64 \). L'équivalent
+      certain est un montant, il doit être de l'ordre de grandeur des richesses en jeu.</li>
+  <li><strong>Confondre l'équivalent certain (1 200) et la VMA (1 500).</strong> Le premier tient
+      compte de l'aversion au risque, la seconde non ; leur écart <em>est</em> la prime de
+      risque.</li>
+  <li><strong>Sauter l'interprétation.</strong> L'énoncé demande explicitement de comparer et
+      d'interpréter : deux lignes suffisent, mais elles rapportent des points.</li>
+</ul>
+</div>
+
+<hr class="soft">
+
+<h2>7. Question 2.4 — et si elle était plus averse au risque ? (8 points)</h2>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 2.4 (8 points)</div>
+<p>
+  <strong>2.4)</strong> Sans refaire de calcul : si l'investisseuse était plus averse au risque
+  (par exemple avec \( u(w) = \ln(w) \), plus concave), le montant optimal investi serait-il plus
+  élevé, plus faible ou inchangé ? Expliquez (3 à 5 lignes).
+</p>
+</div>
+
+<h3>7.1 Traduisons la question</h3>
+
+<dl class="lexique">
+<dt>« sans refaire de calcul »</dt>
+<dd>
+  C'est une consigne, pas une suggestion : le correcteur attend un <strong>raisonnement</strong>,
+  pas une nouvelle dérivation. Si tu te lances dans la CPO avec \( \ln \), tu perds du temps et
+  tu risques de rater la question. Trois à cinq lignes bien tournées valent tous les points.
+</dd>
+<dt>« plus averse au risque … plus concave »</dt>
+<dd>
+  L'énoncé te donne la clé : <strong>« plus averse » se traduit par « plus concave »</strong>.
+  Une fonction plus concave se courbe davantage vers le bas : elle s'aplatit plus vite quand la
+  richesse augmente.
+</dd>
+<dt>« le montant optimal investi »</dt>
+<dd>
+  C'est le \( A^* \) de la question 2.2, qui valait 600. La question porte donc sur le sens de
+  variation : va-t-il monter, descendre, ou rester à 600 ?
+</dd>
+</dl>
+
+<h3>7.2 Le raisonnement</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Que fait la concavité, concrètement ?</div>
+<p>
+  Une fonction d'utilité concave signifie que <strong>l'utilité marginale décroît</strong> :
+  chaque euro supplémentaire fait moins plaisir que le précédent. Plus la fonction est concave,
+  plus cette décroissance est rapide, et donc plus l'écart de bien-être entre « être pauvre » et
+  « être riche » se creuse du côté du bas.
+</p>
+<p>
+  Conséquence directe : une personne très concave <strong>redoute énormément les mauvais
+  scénarios</strong>. Tomber à 300 € lui fait beaucoup plus mal qu'à quelqu'un de moins concave,
+  alors que monter à 2 700 € ne lui fait guère plus plaisir.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> L'arbitrage qui détermine \( A^* \)</div>
+<p>
+  Investir un euro de plus, c'est accepter un échange : <em>gagner 3 € de plus si ça marche</em>
+  contre <em>perdre 1 € de plus si ça rate</em>. Le montant optimal est atteint quand ces deux
+  effets, pesés en <strong>utilité</strong> et non en euros, s'équilibrent exactement — c'est ce
+  que dit la condition de premier ordre de la question 2.2.
+</p>
+<p>
+  Si l'on rend la fonction plus concave, le plateau du bas (la douleur en cas d'échec) prend
+  davantage de poids dans cet équilibre. L'égalité se rétablit donc pour un montant investi
+  <strong>plus petit</strong>.
+</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 300" width="100%" style="max-width:12cm" role="img"
+     aria-label="Comparaison de deux fonctions d'utilité, la racine carrée et le logarithme : la seconde est plus courbée, elle chute plus brutalement dans les richesses basses">
+  <line x1="55" y1="30" x2="55" y2="250" stroke="#111827" stroke-width="1.6"/>
+  <line x1="55" y1="250" x2="430" y2="250" stroke="#111827" stroke-width="1.6"/>
+  <text x="436" y="254" font-size="12.5">w</text>
+  <text x="30" y="26" font-size="12.5">utilité</text>
+  <!-- racine : moins concave -->
+  <path d="M 55 250 Q 140 120 240 88 T 420 62" fill="none" stroke="#4338ca" stroke-width="2.8"/>
+  <text x="330" y="56" font-size="12.5" font-weight="bold" style="fill:#4338ca">racine carrée</text>
+  <!-- ln : plus concave -->
+  <path d="M 55 250 Q 110 90 210 66 T 420 44" fill="none" stroke="#be123c" stroke-width="2.8" stroke-dasharray="8 4"/>
+  <text x="316" y="38" font-size="12.5" font-weight="bold" style="fill:#be123c">logarithme (plus concave)</text>
+  <!-- zone basse -->
+  <line x1="105" y1="250" x2="105" y2="30" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="110" y="270" font-size="11.5">richesse basse (échec)</text>
+  <text x="110" y="286" font-size="11.5" style="fill:#be123c">c'est ici que l'écart se creuse : la chute est bien plus brutale</text>
+</svg>
+<figcaption>
+  Figure — Deux degrés d'aversion au risque. La courbe en pointillés (plus concave) s'effondre
+  beaucoup plus vite quand la richesse baisse : les mauvais scénarios y coûtent bien plus cher en
+  bien-être. Celui qui a cette courbe-là investira donc une somme plus faible.
+</figcaption>
+</figure>
+
+<div class="result">
+<div class="result-title">Résultat de la question 2.4</div>
+<p>
+  Le montant optimal investi serait <strong>plus faible</strong> que 600 €.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie — 2.4</div>
+<p>
+  « Le montant investi serait <strong>plus faible</strong>. Une fonction plus concave signifie une
+  utilité marginale qui décroît plus vite : la perte de bien-être en cas d'échec (richesse
+  \( 900 - A \)) pèse alors davantage, tandis que le gain supplémentaire en cas de succès
+  (richesse \( 900 + 3A \)) est de moins en moins valorisé. Dans la condition de premier ordre,
+  le terme négatif prend donc plus de poids, et l'égalité se rétablit pour un \( A \) plus petit.
+  Autrement dit, plus on est averse au risque, moins on expose sa richesse — le rendement attendu
+  du projet, lui, n'a pas changé. »
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges de la 2.4</div>
+<ul>
+  <li><strong>Refaire tout le calcul avec \( \ln \).</strong> L'énoncé l'interdit, et cela ne
+      rapporte rien de plus.</li>
+  <li><strong>Répondre « inchangé » en invoquant le rendement du projet.</strong> Le rendement est
+      effectivement le même, mais le choix dépend aussi des <em>préférences</em> : ce sont elles
+      qui ont changé.</li>
+  <li><strong>Répondre « plus élevé » en pensant qu'il faut investir plus pour se protéger.</strong>
+      Non : investir davantage, c'est s'exposer davantage.</li>
+  <li><strong>Se contenter d'une phrase</strong> du type « il est plus prudent donc il investit
+      moins ». C'est la bonne réponse, mais le barème demande le mécanisme : utilité marginale,
+      poids du mauvais scénario, condition de premier ordre.</li>
+</ul>
+</div>
+
+<hr class="soft">
+
+<h2>8. Récapitulatif : toute la Question 2 sur une page</h2>
+
+<table class="compare">
+<tr><th>Q</th><th class="left">Réponse</th><th class="left">Le geste décisif</th></tr>
+<tr>
+  <td>2.1<br>(8 pts)</td>
+  <td class="left">\( 900 + 3A \) et \( 900 - A \) ; \( U(A) = \tfrac12\sqrt{900+3A} + \tfrac12\sqrt{900-A} \)</td>
+  <td class="left">retirer d'abord le montant investi : le gain net par euro est \( +3 \), pas \( +4 \)</td>
+</tr>
+<tr>
+  <td>2.2<br>(14 pts)</td>
+  <td class="left">\( A^* = 600 \) €</td>
+  <td class="left">dériver chaque racine par \( \frac{u'}{2\sqrt u} \), isoler, élever au carré</td>
+</tr>
+<tr>
+  <td>2.3<br>(10 pts)</td>
+  <td class="left">\( U(A^*) = 20\sqrt3 \approx 34{,}64 \) ; \( C = 1200 \) € &gt; 900 €</td>
+  <td class="left">l'équivalent certain est le <em>carré</em> de l'utilité espérée</td>
+</tr>
+<tr>
+  <td>2.4<br>(8 pts)</td>
+  <td class="left">montant investi plus <strong>faible</strong></td>
+  <td class="left">expliquer par le poids accru du mauvais scénario dans la CPO</td>
+</tr>
+</table>
+
+<div class="box box-copie">
+<div class="box-title">Checklist avant de tourner la page</div>
+<ol>
+  <li>Ai-je bien écrit \( 900 + 3A \) (et non \( 900 + 4A \)) ?</li>
+  <li>Ai-je dérivé les deux racines <em>séparément</em>, avec le bon numérateur (\( +3 \) et \( -1 \)) ?</li>
+  <li>Ai-je vérifié que \( A^* = 600 \) appartient bien à l'intervalle \( [0 \,;\, 900] \) autorisé ?</li>
+  <li>Ai-je élevé l'utilité espérée au carré pour obtenir l'équivalent certain ?</li>
+  <li>Ai-je comparé 1 200 à 900 <em>et</em> écrit une phrase d'interprétation ?</li>
+  <li>En 2.4, ai-je répondu sans calcul, en 3 à 5 lignes, avec le mécanisme ?</li>
+</ol>
+</div>
+</section>

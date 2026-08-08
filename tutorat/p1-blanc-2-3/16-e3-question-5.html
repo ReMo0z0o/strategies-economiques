@@ -1,0 +1,1997 @@
+<section class="chapter">
+<div class="chapter-tag">Chapitre 16 — Examen n° 3, Question 5 (30 points)</div>
+<h1>Le duopole de Stackelberg : celui qui produit en premier gagne-t-il la partie ?</h1>
+<p class="chapter-intro">
+  Dernière question de l'examen n° 3, et thème entièrement neuf. Jusqu'ici, tous les joueurs que
+  tu as croisés choisissaient entre <em>deux ou trois options nommées</em> : H ou B, investir ou
+  ne pas investir, Est ou Ouest. Ici, deux entreprises choisissent <strong>une quantité</strong> —
+  un nombre, n'importe lequel : 12, 27,5, 30, 41… Il y en a une infinité. Un tableau à double
+  entrée devient donc impossible : plus de matrice, plus de cases à comparer. À la place, on va
+  écrire le profit comme une <em>fonction</em> et le maximiser avec une dérivée. Puis on découvrira
+  la notion la plus élégante de tout le cours d'économie industrielle : la
+  <strong>fonction de réaction</strong>, et l'avantage que confère le fait de jouer en premier.
+  On construit absolument tout depuis zéro.
+</p>
+
+<h2>0. La carte du chapitre : où on va et pourquoi</h2>
+
+<p>
+  Lis cette première page avant tout le reste. Elle te dit ce que l'énoncé raconte, ce que les
+  trois sous-questions demandent, et dans quel ordre on va s'y prendre. Si tu te perds plus loin,
+  reviens ici : c'est le plan du voyage.
+</p>
+
+<h3>0.1 L'énoncé, en entier</h3>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 5, chapeau commun (30 points au total)</div>
+  <p>
+    Considérez le jeu séquentiel de Stackelberg suivant, avec la firme 1, <strong>leader</strong>,
+    et la firme 2, <strong>follower</strong>. La fonction de demande inverse est
+    \( p = 80 - Q \), où \( Q = q_1 + q_2 \), et les coûts marginaux (constants) sont
+    \( c_1 = c_2 = 20 \).
+  </p>
+</div>
+
+<p>
+  Trois lignes. Six symboles. Et pourtant, si tu ne sais pas ce qu'est une « demande inverse » ou
+  un « coût marginal », ces trois lignes ne veulent strictement rien dire. C'est normal : ces mots
+  viennent du cours d'<em>économie industrielle</em>, et tu ne les as jamais vus. Les sections 1 et
+  2 de ce chapitre existent uniquement pour les construire, un par un, en partant de zéro.
+</p>
+
+<h3>0.2 Les trois sous-questions</h3>
+
+<table class="data">
+<tr><th>Sous-question</th><th>Ce qu'on te demande</th><th>Points</th></tr>
+<tr><td>5.1</td><td>Résoudre le modèle : quantité du leader, quantité du follower, prix de marché, les deux profits</td><td>12</td></tr>
+<tr><td>5.2</td><td>Redessiner le jeu en tableau 2×2 (forme normale réduite), calculer les 4 cases, trouver tous les équilibres de Nash</td><td>12</td></tr>
+<tr><td>5.3</td><td>Expliquer pourquoi l'un de ces équilibres est parfait en sous-jeux et l'autre non</td><td>6</td></tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi ces trois questions ne forment qu'une seule histoire</div>
+<p>
+  Elles racontent la même idée à trois niveaux de zoom, du plus concret au plus abstrait.
+</p>
+<ul>
+<li><strong>5.1 — le calcul.</strong> On prend le modèle au sérieux, on écrit les profits, on
+  dérive, on trouve les nombres. C'est de la technique pure : si tu connais la recette, les
+  12 points tombent en dix minutes.</li>
+<li><strong>5.2 — la traduction.</strong> On reprend le même jeu, on l'écrase dans un petit tableau
+  à quatre cases, et on vérifie que la réponse de 5.1 y apparaît bien comme un équilibre de Nash.
+  On découvre au passage qu'il y en a un <em>deuxième</em>, qui n'a rien à voir.</li>
+<li><strong>5.3 — le sens.</strong> Pourquoi ce deuxième équilibre est-il un mirage ? Parce qu'il
+  repose sur une <strong>menace que personne ne mettrait à exécution</strong>. C'est exactement
+  l'idée du chapitre 9 (les enseignes d'ameublement), mais avec des quantités au lieu de deux
+  boutons « investir / ne pas investir ».</li>
+</ul>
+<p>
+  Autrement dit : 5.1 te fait <em>calculer</em> la solution, 5.2 te fait <em>vérifier</em> qu'elle
+  est bien un équilibre, 5.3 te fait <em>comprendre</em> pourquoi c'est la bonne.
+</p>
+</div>
+
+<h3>0.3 Les trois réponses, dès maintenant</h3>
+
+<p>
+  Voici les réponses. Tu ne comprends probablement pas encore la moitié des mots — c'est voulu.
+  Reviens les relire à la fin du chapitre : elles te sembleront évidentes, et tu les retrouveras
+  toute seule ou tout seul.
+</p>
+
+<div class="result">
+<div class="result-title">Les trois réponses (à comprendre d'ici la fin du chapitre)</div>
+<ul>
+<li><strong>5.1</strong> — Fonction de réaction du follower : \( q_2 = 30 - \tfrac{1}{2}q_1 \).
+  Le leader la remplace dans son profit et maximise : \( q_1^* = 30 \), donc \( q_2^* = 15 \),
+  \( Q = 45 \), \( p^* = 35 \), \( \pi_1 = 450 \) et \( \pi_2 = 225 \).</li>
+<li><strong>5.2</strong> — Les quatre cases sont \( (450\,;\,225) \), \( (300\,;\,200) \),
+  \( (400\,;\,400) \) et \( (400\,;\,400) \). Il y a <strong>deux</strong> équilibres de Nash :
+  \( \bigl(30\,;\,\text{réaction}\bigr) \) — l'issue de Stackelberg — et
+  \( \bigl(20\,;\,q_2 = 20\bigr) \).</li>
+<li><strong>5.3</strong> — Seul le premier est parfait en sous-jeux : la stratégie
+  « je réponds \( 30 - \tfrac{1}{2}q_1 \) » est optimale <em>après n'importe quel</em>
+  \( q_1 \). La stratégie « je produis 20 quoi qu'il arrive » ne l'est pas : après
+  \( q_1 = 30 \), elle rapporte 200 alors que la meilleure réponse rapporte 225. C'est une
+  <strong>menace non crédible</strong>.</li>
+</ul>
+</div>
+
+<h3>0.4 Le plan du chapitre</h3>
+
+<table class="compare">
+<tr><th>Section</th><th class="left">Contenu</th><th class="left">Pourquoi c'est là</th></tr>
+<tr><td>1</td><td class="left">Le duopole, la demande inverse, le coût marginal, le profit</td><td class="left">Décoder les trois lignes de l'énoncé</td></tr>
+<tr><td>2</td><td class="left">Simultané ou séquentiel, la fonction de réaction, la dérivée qui maximise</td><td class="left">Les deux outils de la résolution</td></tr>
+<tr><td>3</td><td class="left">Question 5.1, pas à pas</td><td class="left">12 points</td></tr>
+<tr><td>4</td><td class="left">Question 5.2, case par case</td><td class="left">12 points</td></tr>
+<tr><td>5</td><td class="left">Question 5.3, l'ENPS et la menace non crédible</td><td class="left">6 points</td></tr>
+<tr><td>6</td><td class="left">Récapitulatif, comparaison Cournot / Stackelberg, auto-test</td><td class="left">Réviser en cinq minutes</td></tr>
+</table>
+
+<div class="box box-methode">
+<div class="box-title">Combien de temps y passer en examen ?</div>
+<p>
+  30 points sur 200, donc environ <strong>27 minutes</strong> sur un examen de 3 heures. Répartition
+  raisonnable : 10 minutes pour 5.1 (c'est du calcul mécanique une fois la recette connue),
+  12 minutes pour 5.2 (quatre calculs de payoffs + la recherche des équilibres), 5 minutes pour 5.3
+  (c'est de la rédaction, aucun calcul nouveau). Et surtout : <strong>5.1 est indépendante du
+  reste</strong>. Même si tu bloques sur 5.2, écris 5.1 : ce sont 12 points qui ne demandent que
+  deux dérivées.
+</p>
+</div>
+
+<hr class="soft">
+
+<h2>1. Le cours dont tu as besoin (partie I) : de quoi parle vraiment cet énoncé ?</h2>
+
+<p>
+  Cette section ne résout aucune question. Elle installe le décor. Prends ton temps : chaque mot
+  de l'énoncé y est démonté, et le reste du chapitre ne fait que s'appuyer dessus.
+</p>
+
+<h3>1.1 Deux vendeurs seuls sur un marché : le duopole</h3>
+
+<div class="box box-def">
+<div class="box-title">Définition — duopole</div>
+<p>
+  Un <span class="term">duopole</span> est un marché où il n'y a que <strong>deux</strong>
+  vendeurs (« duo » = deux, « pôle » vient du grec <em>polein</em>, vendre) face à un grand nombre
+  d'acheteurs.
+</p>
+<p>
+  On l'oppose au <span class="term">monopole</span> (un seul vendeur, qui fait la loi) et à la
+  <span class="term">concurrence parfaite</span> (des milliers de petits vendeurs, dont aucun ne
+  pèse assez pour influencer le prix).
+</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Un exemple concret : deux carrières de sable</div>
+<p>
+  Imagine deux carrières de sable dans la même vallée, seules à approvisionner toute la région en
+  sable de construction. Le sable de l'une est identique à celui de l'autre : un client n'a aucune
+  raison de préférer l'une. Chaque carrière décide, en début de saison, <strong>combien de tonnes
+  extraire</strong> : c'est sa seule décision. Ensuite, tout le sable extrait part sur le marché et
+  le prix s'établit tout seul, en fonction de la quantité totale disponible.
+</p>
+<p>
+  Retiens cette image, on va s'en servir tout le chapitre : la variable de décision est une
+  <strong>quantité</strong>, pas un prix. Le prix, personne ne le choisit — il <em>tombe</em>.
+</p>
+</div>
+
+<p>
+  Le mot « duopole » n'apparaît pas dans l'énoncé, mais il est là en filigrane : « la firme 1 » et
+  « la firme 2 », et personne d'autre. Deux vendeurs, donc deux joueurs. Nous sommes bien en
+  théorie des jeux : ce que fait l'autre change ce que je gagne.
+</p>
+
+<h3>1.2 La demande inverse \( p = 80 - Q \)</h3>
+
+<p>
+  C'est le morceau le plus important de l'énoncé. Décortiquons-le en trois temps : d'abord ce
+  qu'est une <em>demande</em>, ensuite pourquoi on dit <em>inverse</em>, enfin ce que raconte
+  précisément la formule \( p = 80 - Q \).
+</p>
+
+<h4>a) La demande : plus c'est cher, moins on achète</h4>
+
+<div class="box box-def">
+<div class="box-title">Définition — la demande</div>
+<p>
+  La <span class="term">demande</span> d'un marché est la relation entre le <strong>prix</strong>
+  d'un produit et la <strong>quantité</strong> que l'ensemble des clients accepte d'acheter à ce
+  prix.
+</p>
+<p>
+  Elle obéit à une loi de bon sens : <strong>plus le prix est élevé, moins on achète</strong>. À
+  2 € le kilo de fraises, tu en prends trois kilos ; à 12 € le kilo, tu en prends une barquette,
+  ou rien du tout.
+</p>
+</div>
+
+<h4>b) « Inverse » : on écrit la relation dans l'autre sens</h4>
+
+<p>
+  Écrite « normalement », la demande donne la quantité en fonction du prix : \( Q = 80 - p \)
+  (« si le prix est 35, les clients achètent 45 unités »). La <span class="term">demande
+  inverse</span> dit exactement la même chose, mais retournée : elle donne le
+  <strong>prix en fonction de la quantité</strong> :
+</p>
+
+<div class="calc">
+<div class="step">\[ Q = 80 - p \quad\Longleftrightarrow\quad p = 80 - Q \]
+<div class="why">Je passe de l'une à l'autre en isolant \( p \) : j'ajoute \( p \) des deux côtés, puis je retranche \( Q \) des deux côtés. C'est la même droite, lue dans l'autre sens.</div></div>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi les économistes préfèrent la version inverse ici</div>
+<p>
+  Parce que, dans notre histoire, ce sont les firmes qui choisissent les <strong>quantités</strong>,
+  et le prix qui s'ajuste ensuite. La cause, c'est la quantité ; la conséquence, c'est le prix.
+  Une formule se lit toujours mieux « cause → conséquence » : on écrit donc \( p = 80 - Q \), qui
+  se lit « <em>si la quantité totale mise en vente vaut \( Q \), alors le prix qui s'établit vaut
+  \( 80 - Q \)</em> ».
+</p>
+<p>
+  Reprends les carrières de sable : personne n'affiche un prix. Les deux carrières déversent leur
+  sable sur le marché ; les acheteurs se le disputent ; le prix monte s'il y a peu de sable,
+  s'effondre s'il y en a trop. La formule \( p = 80 - Q \) est la règle de ce marchandage.
+</p>
+</div>
+
+<h4>c) Ce que raconte, chiffre par chiffre, la formule \( p = 80 - Q \)</h4>
+
+<dl class="lexique">
+<dt>\( p \)</dt>
+<dd>Le <strong>prix de marché</strong>, en euros par unité. Un seul prix pour les deux firmes :
+  elles vendent un produit identique, donc personne ne peut vendre plus cher que l'autre.
+  Se lit « pé ».</dd>
+<dt>\( Q \) (grand Q)</dt>
+<dd>La <strong>quantité totale</strong> vendue sur le marché, toutes firmes confondues. L'énoncé
+  précise \( Q = q_1 + q_2 \).</dd>
+<dt>\( q_1 \) et \( q_2 \) (petits q)</dt>
+<dd>Les quantités produites <strong>par chaque firme</strong> : \( q_1 \) (« q un ») par la firme 1,
+  \( q_2 \) (« q deux ») par la firme 2. Le petit chiffre en bas est un <strong>indice</strong> :
+  il dit <em>de qui</em> on parle, jamais <em>combien</em>.</dd>
+<dt>Le 80</dt>
+<dd>C'est le prix maximal théorique : si personne ne produit rien (\( Q = 0 \)), le prix serait
+  80. C'est le prix qu'accepterait de payer le client le plus motivé du marché. On l'appelle le
+  <em>prix de choke</em>, mais tu n'as pas besoin de ce mot.</dd>
+<dt>Le signe moins</dt>
+<dd>C'est la loi de la demande : chaque unité supplémentaire mise en vente fait
+  <strong>baisser</strong> le prix. Ici le coefficient vaut 1, donc c'est très simple :
+  <strong>une unité de plus sur le marché = un euro de moins sur le prix</strong>.</dd>
+</dl>
+
+<figure>
+<svg viewBox="0 0 470 300" width="100%" style="max-width:12.5cm" role="img" aria-label="Droite de demande inverse p égale 80 moins Q, avec le prix repéré pour trois quantités totales : 40, 45 et 50, et la droite horizontale du coût marginal à 20">
+  <line x1="60" y1="260" x2="440" y2="260" stroke="#111827" stroke-width="1.6"/>
+  <line x1="60" y1="260" x2="60" y2="30" stroke="#111827" stroke-width="1.6"/>
+  <polygon points="446,260 436,256 436,264" fill="#111827"/>
+  <polygon points="60,24 56,34 64,34" fill="#111827"/>
+  <text x="446" y="278" font-size="12" text-anchor="end">quantité totale Q</text>
+  <text x="66" y="26" font-size="12">prix p</text>
+  <line x1="60" y1="40" x2="420" y2="260" stroke="#4338ca" stroke-width="2.2"/>
+  <text x="300" y="120" font-size="12" font-weight="bold" style="fill:#4338ca">p = 80 − Q</text>
+  <line x1="60" y1="205" x2="420" y2="205" stroke="#be123c" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="424" y="202" font-size="11.5" style="fill:#be123c">coût 20</text>
+  <g stroke="#111827" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="240" y1="260" x2="240" y2="150"/>
+    <line x1="60" y1="150" x2="240" y2="150"/>
+    <line x1="262" y1="260" x2="262" y2="164"/>
+    <line x1="60" y1="164" x2="262" y2="164"/>
+    <line x1="285" y1="260" x2="285" y2="178"/>
+    <line x1="60" y1="178" x2="285" y2="178"/>
+  </g>
+  <g fill="#111827">
+    <circle cx="240" cy="150" r="4"/>
+    <circle cx="262" cy="164" r="4"/>
+    <circle cx="285" cy="178" r="4"/>
+  </g>
+  <g font-size="11.5" text-anchor="middle">
+    <text x="240" y="276">40</text>
+    <text x="264" y="292">45</text>
+    <text x="287" y="276">50</text>
+    <text x="60" y="276">0</text>
+  </g>
+  <g font-size="11.5" text-anchor="end">
+    <text x="56" y="154">40</text>
+    <text x="56" y="168">35</text>
+    <text x="56" y="182">30</text>
+    <text x="56" y="44">80</text>
+  </g>
+</svg>
+<figcaption>Figure 1 — La demande inverse. Chaque unité supplémentaire jetée sur le marché fait perdre un euro au prix. Trois quantités totales sont repérées : 40 (le cas de Cournot, prix 40), 45 (le cas de Stackelberg, prix 35) et 50 (prix 30). La droite rouge en pointillés rappelle le coût de production, 20 par unité : au-dessus, on gagne de l'argent ; en dessous, on en perd.</figcaption>
+</figure>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 1 — croire que chaque firme a « son » prix</div>
+<p>
+  Il n'y a qu'<strong>un seul</strong> prix, et il est le même pour les deux firmes. Ce n'est pas
+  \( p_1 \) et \( p_2 \), c'est \( p \). Pourquoi ? Parce que les deux produits sont identiques :
+  si la firme 1 essayait de vendre plus cher que la firme 2, aucun client n'irait chez elle.
+</p>
+<p>
+  Conséquence énorme, et c'est le cœur du chapitre : <strong>le prix que touche la firme 1 dépend
+  de ce que produit la firme 2</strong>, et réciproquement. Si la firme 2 inonde le marché, le prix
+  s'effondre… y compris pour la firme 1, qui n'y est pour rien. C'est ce qu'on appelle
+  l'<span class="term">interdépendance stratégique</span>. Sans elle, il n'y aurait pas de jeu.
+</p>
+</div>
+
+<h3>1.3 Le coût marginal \( c = 20 \)</h3>
+
+<div class="box box-def">
+<div class="box-title">Définition — coût marginal</div>
+<p>
+  Le <span class="term">coût marginal</span> est ce que coûte la production d'<strong>une unité
+  supplémentaire</strong>. « Marginal » ne veut pas dire « secondaire » : en économie, ce mot
+  signifie toujours « <em>pour une unité de plus</em> ».
+</p>
+<p>
+  Ici, l'énoncé dit \( c_1 = c_2 = 20 \) : produire une tonne de sable de plus coûte 20 €, à la
+  firme 1 comme à la firme 2. Elles ont donc la même technologie, la même efficacité.
+</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi préciser « constants » ?</div>
+<p>
+  L'énoncé écrit « les coûts marginaux (<strong>constants</strong>) ». Cela veut dire que la
+  20<sup>e</sup> tonne coûte 20 €, la 21<sup>e</sup> aussi, la 100<sup>e</sup> aussi. Le coût
+  unitaire ne monte pas quand on produit plus.
+</p>
+<p>
+  C'est une simplification très commode : le coût total de la firme 2 s'écrit alors simplement
+  \( 20 \times q_2 \), c'est-à-dire \( 20 q_2 \). Si les coûts marginaux étaient croissants (ce qui
+  arrive dans la réalité : il faut payer des heures supplémentaires, ouvrir une deuxième carrière…),
+  le coût total serait une fonction plus compliquée, du genre \( q_2^2 \), et les calculs
+  deviendraient plus lourds. Ici, tout reste linéaire. Tant mieux.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 2 — confondre le coût marginal et le coût total</div>
+<p>
+  \( c = 20 \) est le coût <strong>d'une unité</strong>. Le coût <strong>total</strong> de la
+  firme 2, si elle produit \( q_2 \) unités, vaut \( 20 \times q_2 \). Écrire « coût = 20 » dans la
+  formule du profit est l'erreur n° 1 des copies : on retranche 20 euros une seule fois au lieu de
+  20 euros par unité produite. Résultat : tous les calculs suivants sont faux.
+</p>
+</div>
+
+<h3>1.4 Le profit : \( \pi = (p - c)\,q \)</h3>
+
+<p>
+  Voici la formule qui va porter les 30 points. On la construit ensemble, ligne par ligne, en
+  partant de la définition la plus bête possible du profit.
+</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — profit</div>
+<p>
+  Le <span class="term">profit</span> (noté \( \pi \), la lettre grecque « pi », qui se lit
+  « pi » et n'a rien à voir avec le nombre 3,14 des cercles) est ce qui reste quand on retranche
+  les coûts des recettes :
+</p>
+\[ \text{profit} = \text{recette} - \text{coût} \]
+<p>
+  C'est le nombre que chaque firme veut rendre le plus grand possible : c'est son
+  <strong>payoff</strong>, au sens de la théorie des jeux.
+</p>
+</div>
+
+<p>Déroulons-le pour la firme 2, celle dont on aura besoin en premier.</p>
+
+<div class="calc">
+<div class="step">\[ \text{recette}_2 = p \times q_2 \]
+<div class="why">Elle vend \( q_2 \) unités, chacune au prix \( p \). Recette = prix × quantité, comme au marché : 3 kilos à 4 € font 12 €.</div></div>
+<div class="step">\[ \text{coût}_2 = 20 \times q_2 \]
+<div class="why">Chaque unité produite lui coûte 20, et elle en produit \( q_2 \). Attention : c'est bien 20 <em>fois</em> \( q_2 \), pas 20 tout seul (piège n° 2).</div></div>
+<div class="step">\[ \pi_2 = p\,q_2 - 20\,q_2 \]
+<div class="why">Je remplace dans « recette moins coût ».</div></div>
+<div class="step">\[ \pi_2 = (p - 20)\,q_2 \]
+<div class="why">Je mets \( q_2 \) en facteur : les deux termes contiennent \( q_2 \), donc je l'écris une seule fois devant. C'est la mise en facteur du chapitre 0 du volume 1.</div></div>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Lire cette formule en français</div>
+<p>
+  \( \pi_2 = (p - 20)\,q_2 \) se lit : « <strong>la marge unitaire, multipliée par le nombre
+  d'unités vendues</strong> ». La <span class="term">marge unitaire</span> \( p - 20 \) est ce que
+  la firme gagne sur chaque unité : elle la vend \( p \), elle l'a produite pour 20.
+</p>
+<p>
+  Exemple chiffré : si le prix est 35, la marge est \( 35 - 20 = 15 \) euros par unité. En vendre
+  15 unités rapporte donc \( 15 \times 15 = 225 \) euros. Retiens ce petit calcul en deux temps
+  (<em>marge, puis marge × quantité</em>) : c'est exactement comme cela qu'on remplira les quatre
+  cases de la question 5.2, sans jamais se tromper.
+</p>
+</div>
+
+<h4>Et maintenant, on remplace \( p \) par sa valeur</h4>
+
+<p>
+  La formule \( \pi_2 = (p - 20)q_2 \) est jolie mais inutilisable telle quelle : on ne connaît pas
+  \( p \). Heureusement, l'énoncé nous dit exactement d'où vient \( p \). Remplaçons.
+</p>
+
+<div class="calc">
+<div class="step">\[ p = 80 - Q = 80 - q_1 - q_2 \]
+<div class="why">J'utilise la demande inverse, puis je remplace \( Q \) par \( q_1 + q_2 \). Attention au signe : \( -(q_1 + q_2) \) donne \( -q_1 - q_2 \), les deux termes deviennent négatifs.</div></div>
+<div class="step">\[ \pi_2 = (80 - q_1 - q_2 - 20)\,q_2 \]
+<div class="why">Je glisse cette expression de \( p \) à la place du \( p \) dans \( (p - 20)q_2 \).</div></div>
+<div class="step">\[ \pi_2 = (60 - q_1 - q_2)\,q_2 \]
+<div class="why">Je calcule \( 80 - 20 = 60 \). Rien d'autre ne bouge. Voilà la formule de travail.</div></div>
+</div>
+
+<div class="result">
+<div class="result-title">La formule à retenir par cœur</div>
+\[ \pi_i = (80 - q_1 - q_2 - 20)\,q_i = (60 - q_1 - q_2)\,q_i \]
+<p>
+  L'indice \( i \) vaut 1 ou 2 selon la firme dont on parle. Remarque bien : la parenthèse est
+  <strong>la même pour les deux firmes</strong> (c'est la marge unitaire, identique puisque le prix
+  et le coût sont identiques) ; seul le \( q_i \) qui multiplie change. C'est tout.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 3 — oublier de soustraire le coût marginal</div>
+<p>
+  L'erreur la plus fréquente, et la plus coûteuse : écrire \( \pi_2 = (80 - q_1 - q_2)q_2 \) en
+  oubliant le \( -20 \). Ce n'est pas le profit, c'est la <em>recette</em>. Le correcteur le repère
+  instantanément, parce que toute la suite en découle : la fonction de réaction devient
+  \( q_2 = 40 - \tfrac{1}{2}q_1 \) au lieu de \( 30 - \tfrac{1}{2}q_1 \), et les 12 points de la
+  question 5.1 sont perdus.
+</p>
+<p>
+  <strong>Le réflexe qui sauve</strong> : avant de dériver quoi que ce soit, relis ta parenthèse et
+  demande-toi « est-ce que le 20 y est ? ». La parenthèse doit commencer par
+  <strong>60</strong>, pas par 80.
+</p>
+</div>
+
+<h3>1.5 Ce qui change vraiment : la quantité est un nombre, pas un bouton</h3>
+
+<p>
+  Voici la vraie nouveauté du chapitre, celle qui explique pourquoi on ne peut plus travailler
+  comme avant.
+</p>
+
+<table class="compare">
+<tr><th class="left">Dans les chapitres précédents</th><th class="left">Ici</th></tr>
+<tr><td class="left">Le joueur choisit entre 2 ou 3 options nommées : H ou B, I ou N, Est ou Ouest</td><td class="left">La firme choisit un <strong>nombre</strong> : 0, 12, 27,5, 30, 41,3…</td></tr>
+<tr><td class="left">Nombre de stratégies : fini (2, 3, 9…)</td><td class="left">Nombre de stratégies : <strong>infini</strong></td></tr>
+<tr><td class="left">On dessine un tableau et on compare les cases</td><td class="left">Un tableau infini est impossible à dessiner</td></tr>
+<tr><td class="left">Outil : comparer des nombres</td><td class="left">Outil : <strong>la dérivée</strong> (chapitre 0 du volume 1)</td></tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi la dérivée revient au galop</div>
+<p>
+  Quand on choisit parmi trois options, on calcule les trois payoffs et on prend le plus grand.
+  Quand on choisit parmi une infinité de nombres, c'est impossible : on ne va pas tester
+  \( q_2 = 0 \), puis \( 0{,}1 \), puis \( 0{,}2 \)… à l'infini.
+</p>
+<p>
+  Alors on change d'outil. Le profit devient une <strong>fonction</strong> de la quantité :
+  à chaque \( q_2 \) correspond un profit. Cette fonction monte, atteint un sommet, puis
+  redescend. Et pour trouver le sommet d'une fonction, on a un outil magique du volume 1 :
+  <strong>on dérive et on cherche où la dérivée s'annule</strong>. C'est exactement ce qu'on va
+  faire, deux fois.
+</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel du volume 1 (chapitre 0) — maximiser par la dérivée</div>
+<p>
+  Pour trouver la valeur de \( x \) qui rend une fonction \( f(x) \) maximale :
+</p>
+<ol>
+<li>on calcule la <strong>dérivée</strong> \( f'(x) \) ;</li>
+<li>on résout \( f'(x) = 0 \) — c'est la <span class="term">condition du premier ordre</span>
+  (CPO) ;</li>
+<li>on vérifie que la <strong>dérivée seconde</strong> \( f''(x) \) est négative — c'est la
+  condition du second ordre, qui confirme qu'on a bien un sommet (maximum) et non un creux.</li>
+</ol>
+<p>
+  Les deux seules règles de dérivation dont on aura besoin ici :
+  \[ (a\,x)' = a \qquad\text{et}\qquad (x^2)' = 2x \]
+  Autrement dit : la dérivée de \( 60x \) vaut 60, et la dérivée de \( x^2 \) vaut \( 2x \).
+  Rien de plus. Si ces deux lignes te paraissent obscures, retourne cinq minutes au chapitre 0 du
+  volume 1, section « la dérivée ».
+</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Un maximum, ça ressemble à quoi ?</div>
+<p>
+  Prends la fonction \( f(x) = 30x - \tfrac{1}{2}x^2 \) — ce sera exactement le profit du leader,
+  tu la reverras. Calcule-la pour quelques valeurs :
+</p>
+<table class="data">
+<tr><th>\( x \)</th><td>0</td><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td></tr>
+<tr><th>\( f(x) \)</th><td>0</td><td>250</td><td>400</td><td><strong>450</strong></td><td>400</td><td>250</td><td>0</td></tr>
+</table>
+<p>
+  Elle monte jusqu'à 30, puis elle redescend. Le sommet est en \( x = 30 \), et il vaut 450. La
+  dérivée vaut \( f'(x) = 30 - x \) : elle est positive avant 30 (la courbe monte), nulle en 30
+  (le sommet), négative après (la courbe descend). Tout le mécanisme de la dérivée est là, en une
+  ligne de tableau.
+</p>
+</div>
+
+<hr class="soft">
+
+<h2>2. Le cours dont tu as besoin (partie II) : jouer en premier, ça change tout</h2>
+
+<p>
+  Tu sais maintenant lire l'énoncé : deux firmes, une demande inverse, un coût marginal, un profit.
+  Il reste la moitié la plus intéressante de l'histoire : <strong>l'ordre dans lequel les deux
+  firmes décident</strong>. Cette section installe l'outil central du chapitre, la
+  <em>fonction de réaction</em>, et explique pourquoi jouer en premier est un avantage.
+</p>
+
+<h3>2.1 Rappel du volume 1 : simultané contre séquentiel</h3>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel du volume 1 (chapitres 3 et 9) — les deux grandes familles de jeux</div>
+<p>
+  <strong>Jeu simultané.</strong> Les joueurs décident en même temps, ou — ce qui revient au même —
+  chacun décide sans voir ce que l'autre a fait. On le représente par un <strong>tableau</strong>
+  (la « forme normale »), et on cherche les équilibres de Nash en soulignant les meilleures
+  réponses.
+</p>
+<p>
+  <strong>Jeu séquentiel.</strong> Un joueur décide d'abord, l'autre <em>voit</em> ce qui a été
+  décidé, puis décide à son tour. On le représente par un <strong>arbre</strong> (la « forme
+  extensive »), et on le résout par <span class="term">induction à rebours</span> (<em>backward
+  induction</em> en anglais) : on commence par la fin de l'arbre et on remonte.
+</p>
+<p>
+  <strong>L'induction à rebours, en une phrase :</strong> je me mets à la place du <em>dernier</em>
+  joueur, je détermine ce qu'il ferait de mieux dans chaque situation, puis je redescends d'un cran
+  et je choisis, pour le joueur précédent, en tenant compte de cette réaction. On raisonne à
+  l'envers du déroulement du temps — d'où le nom.
+</p>
+</div>
+
+<h3>2.2 Le déroulé exact du jeu de Stackelberg</h3>
+
+<p>
+  Le mot <span class="term">Stackelberg</span> est simplement le nom de l'économiste allemand
+  Heinrich von Stackelberg, qui a décrit ce modèle en 1934. Il ne cache aucune difficulté : c'est
+  un nom propre, rien de plus. Ce que le mot désigne, en revanche, est très précis :
+</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — le duopole de Stackelberg</div>
+<p>
+  Un <span class="term">duopole de Stackelberg</span> est un duopole où les deux firmes choisissent
+  leurs quantités <strong>l'une après l'autre</strong>, et non en même temps. La firme qui joue en
+  premier s'appelle le <span class="term">leader</span> (« celui qui mène ») ; celle qui joue
+  ensuite s'appelle le <span class="term">follower</span> (« celui qui suit »).
+</p>
+<p>
+  Le déroulé, en trois temps :
+</p>
+<ol>
+<li><strong>Temps 1.</strong> Le leader (ici la firme 1) choisit sa quantité \( q_1 \). Une fois
+  choisie, elle est <em>irréversible</em> : il ne peut plus revenir en arrière.</li>
+<li><strong>Temps 2.</strong> Le follower (ici la firme 2) <strong>observe</strong> \( q_1 \) —
+  c'est le point crucial — puis choisit sa propre quantité \( q_2 \).</li>
+<li><strong>Temps 3.</strong> Le marché encaisse la quantité totale \( Q = q_1 + q_2 \), le prix
+  \( p = 80 - Q \) s'établit, chacun encaisse son profit.</li>
+</ol>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 4 — croire que le follower est le perdant du modèle</div>
+<p>
+  Le follower joue en <em>second</em>, et beaucoup d'étudiants en déduisent qu'il est en meilleure
+  position : « il a plus d'information, il connaît déjà \( q_1 \), donc il a l'avantage ». C'est
+  faux, et le calcul va le prouver : le leader gagnera 450 et le follower seulement 225, soit
+  <strong>exactement moitié moins</strong>.
+</p>
+<p>
+  Pourquoi ? Parce que l'information du follower ne lui sert à rien : elle arrive
+  <strong>trop tard</strong>. Quand il apprend que le leader a produit 30, le mal est fait, le
+  marché est déjà à moitié rempli, et tout ce qu'il peut faire c'est s'adapter au moins mal. Dans
+  un jeu séquentiel, ce n'est pas l'information qui compte, c'est
+  <strong>l'engagement irréversible</strong>. Retiens cette phrase, elle est l'âme du chapitre.
+</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 520 350" width="100%" style="max-width:12.6cm" role="img" aria-label="Arbre du jeu séquentiel : la firme 1 choisit une quantité parmi une infinité, la firme 2 observe puis choisit à son tour, et l'on lit les deux profits au bout de chaque branche">
+  <text x="55" y="152" font-size="12.5" font-weight="bold" text-anchor="middle">Firme 1</text>
+  <text x="55" y="205" font-size="11" text-anchor="middle" style="fill:#4b5563">leader</text>
+  <circle cx="55" cy="175" r="6.5" fill="#111827"/>
+  <line x1="61" y1="171" x2="212" y2="52" stroke="#111827" stroke-width="1.3"/>
+  <line x1="61" y1="175" x2="212" y2="175" stroke="#4338ca" stroke-width="2.6"/>
+  <line x1="61" y1="180" x2="212" y2="300" stroke="#111827" stroke-width="1.3"/>
+  <text x="118" y="103" font-size="11.5" transform="rotate(-38 118 103)">q₁ = 20</text>
+  <text x="120" y="168" font-size="11.5" font-weight="bold" style="fill:#4338ca">q₁ = 30</text>
+  <text x="116" y="253" font-size="11.5" transform="rotate(38 116 253)">q₁ = 50</text>
+  <text x="150" y="128" font-size="15" text-anchor="middle" style="fill:#6b7280">⋮</text>
+  <text x="150" y="228" font-size="15" text-anchor="middle" style="fill:#6b7280">⋮</text>
+  <circle cx="218" cy="48" r="5" fill="#6b7280"/>
+  <circle cx="218" cy="303" r="5" fill="#6b7280"/>
+  <g stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="223" y1="46" x2="272" y2="30"/><line x1="223" y1="48" x2="276" y2="48"/><line x1="223" y1="51" x2="272" y2="66"/>
+    <line x1="223" y1="301" x2="272" y2="285"/><line x1="223" y1="303" x2="276" y2="303"/><line x1="223" y1="306" x2="272" y2="320"/>
+  </g>
+  <circle cx="218" cy="175" r="6.5" fill="#4338ca"/>
+  <text x="222" y="152" font-size="12.5" font-weight="bold" style="fill:#4338ca">Firme 2</text>
+  <text x="222" y="205" font-size="11" style="fill:#4b5563">follower — elle a vu q₁ = 30</text>
+  <line x1="224" y1="171" x2="386" y2="112" stroke="#111827" stroke-width="1.3"/>
+  <line x1="224" y1="175" x2="386" y2="175" stroke="#111827" stroke-width="2.4"/>
+  <line x1="224" y1="180" x2="386" y2="240" stroke="#111827" stroke-width="1.3"/>
+  <text x="288" y="132" font-size="11.5" transform="rotate(-20 288 132)">q₂ = 10</text>
+  <text x="292" y="169" font-size="11.5" font-weight="bold">q₂ = 15</text>
+  <text x="288" y="221" font-size="11.5" transform="rotate(20 288 221)">q₂ = 20</text>
+  <text x="392" y="116" font-size="11.5">(600 ; 200)</text>
+  <text x="392" y="179" font-size="12" font-weight="bold">(450 ; 225)</text>
+  <text x="392" y="244" font-size="11.5">(300 ; 200)</text>
+  <text x="392" y="60" font-size="10.5" style="fill:#4b5563">profits</text>
+  <text x="392" y="74" font-size="10.5" style="fill:#4b5563">(firme 1 ; firme 2)</text>
+  <text x="260" y="340" font-size="11" text-anchor="middle" style="fill:#6b7280">Chaque nœud a une infinité de branches : on n'en dessine que trois.</text>
+</svg>
+<figcaption>Figure 2 — L'arbre du jeu séquentiel. La firme 1 choisit d'abord un point sur un segment (0 à 80), pas un bouton parmi deux : chaque nœud porte donc une <em>infinité</em> de branches, dont on ne dessine que trois. Après \( q_1 = 30 \), la firme 2 compare ses profits : 200 si elle produit 10, <strong>225</strong> si elle produit 15, 200 si elle produit 20. Elle choisira 15 — et c'est exactement ce que la fonction de réaction va calculer d'un coup, pour tous les \( q_1 \) à la fois.</figcaption>
+</figure>
+
+<h3>2.3 Ce qu'est une « stratégie » quand on joue en second</h3>
+
+<p>
+  Voici le point qui fait perdre le plus de points à l'examen, et il vaut la peine de s'arrêter deux
+  minutes dessus. Il resservira mot pour mot en 5.2 et en 5.3.
+</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — stratégie dans un jeu séquentiel</div>
+<p>
+  Une <span class="term">stratégie</span> n'est pas une action : c'est un <strong>plan complet</strong>,
+  qui dit ce que le joueur ferait <em>dans chacune des situations où il pourrait se retrouver</em>,
+  y compris celles qui, en fin de compte, ne se produiront pas.
+</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">L'image du parapluie</div>
+<p>
+  « Je prends mon parapluie » est une <em>action</em>. « <em>S'il pleut</em>, je prends mon
+  parapluie ; <em>s'il fait beau</em>, je le laisse » est une <strong>stratégie</strong> : c'est
+  une règle qui couvre tous les cas de figure, décidée à l'avance, avant même de regarder par la
+  fenêtre.
+</p>
+<p>
+  Le lendemain, il ne pleuvra qu'une fois : une seule branche de la règle sera utilisée. Mais la
+  règle, elle, contient bien les deux réponses. C'est cela, une stratégie.
+</p>
+</div>
+
+<p>
+  Applique ça au follower. La firme 2 pourra se retrouver après \( q_1 = 0 \), après
+  \( q_1 = 12{,}5 \), après \( q_1 = 30 \), après \( q_1 = 77 \)… — une infinité de situations
+  possibles. Une stratégie de la firme 2 doit donc dire, pour <strong>chacune</strong> de ces
+  situations, quelle quantité elle produirait. Autrement dit :
+</p>
+
+<div class="result">
+<div class="result-title">À retenir absolument</div>
+<p>
+  Une stratégie du <strong>leader</strong> est un simple <strong>nombre</strong> : \( q_1 \). Il
+  joue en premier, il n'a rien à observer, rien à conditionner.
+</p>
+<p>
+  Une stratégie du <strong>follower</strong> est une <strong>fonction</strong> : une règle
+  \( q_2(q_1) \) qui associe une quantité à chaque \( q_1 \) possible. Se lit « q deux de q un ».
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 5 — écrire « la stratégie de la firme 2 est \( q_2 = 15 \) »</div>
+<p>
+  \( q_2 = 15 \) est ce que la firme 2 <em>fait</em> à l'équilibre, une fois qu'elle a vu
+  \( q_1 = 30 \). Ce n'est pas sa <em>stratégie</em>. Sa stratégie, c'est la règle complète
+  \( q_2 = 30 - \tfrac{1}{2}q_1 \), dont « 15 » n'est qu'une valeur particulière, celle qu'on
+  obtient en y injectant \( q_1 = 30 \).
+</p>
+<p>
+  Cette distinction n'est pas de la pédanterie : c'est <strong>toute</strong> la question 5.3. Un
+  équilibre est parfait en sous-jeux quand la <em>règle entière</em> est bonne, pas seulement la
+  case qu'on utilise. Si tu confonds action et stratégie, la question 5.3 devient
+  incompréhensible.
+</p>
+</div>
+
+<h3>2.4 La fonction de réaction : le cœur du chapitre</h3>
+
+<div class="box box-def">
+<div class="box-title">Définition — fonction de réaction (ou fonction de meilleure réponse)</div>
+<p>
+  La <span class="term">fonction de réaction</span> d'une firme donne, <strong>pour chaque
+  quantité que produirait l'autre</strong>, la quantité qui lui rapporte le plus à elle.
+</p>
+<p>
+  On la note \( q_2^*(q_1) \) — « q deux étoile de q un » — et on la lit :
+  « <em>si l'autre produit \( q_1 \), alors le mieux que je puisse faire est de produire
+  \( q_2^*(q_1) \)</em> ». L'étoile \( ^* \) signale toujours, en économie, une valeur
+  <strong>optimale</strong>.
+</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi une fonction, et pas un nombre ?</div>
+<p>
+  Parce que la bonne quantité <strong>dépend</strong> de ce que fait l'autre, et qu'il n'y a donc
+  pas <em>une</em> bonne réponse mais une bonne réponse <em>par situation</em>.
+</p>
+<p>
+  Intuition, sans aucun calcul : si l'autre inonde le marché, le prix sera déjà bas, tu n'as pas
+  intérêt à en rajouter — tu produis peu. Si l'autre ne produit presque rien, le marché est vide,
+  le prix sera haut, tu as tout intérêt à produire beaucoup. La bonne réponse <strong>décroît</strong>
+  quand la production de l'autre augmente. On dit que les quantités sont des
+  <span class="term">substituts stratégiques</span> : « il en fait plus » ⇒ « j'en fais moins ».
+</p>
+</div>
+
+<h4>Comment on la calcule : la dérivée partielle</h4>
+
+<p>
+  La recette tient en une phrase : <strong>on gèle la quantité de l'autre, comme si c'était un
+  nombre connu, et on maximise son propre profit par rapport à sa propre quantité.</strong>
+  Techniquement, cela s'appelle <em>dériver partiellement</em>.
+</p>
+
+<div class="box box-def">
+<div class="box-title">Définition — dérivée partielle, et le symbole \( \partial \)</div>
+<p>
+  Quand une fonction dépend de <strong>plusieurs</strong> variables — ici \( \pi_2 \) dépend à la
+  fois de \( q_1 \) et de \( q_2 \) — dériver « par rapport à \( q_2 \) » veut dire :
+  <strong>traiter toutes les autres lettres comme des constantes</strong>, comme si \( q_1 \) était
+  un simple nombre du genre 30, et dériver normalement.
+</p>
+<p>
+  Pour signaler qu'on ne dérive que par rapport à une variable parmi plusieurs, on remplace le
+  \( d \) habituel par un \( \partial \), un « d rond ». On écrit :
+</p>
+\[ \frac{\partial \pi_2}{\partial q_2} \]
+<p>
+  et on lit « <em>d rond pi deux sur d rond q deux</em> », ou plus simplement « la dérivée de
+  \( \pi_2 \) par rapport à \( q_2 \) ». C'est le seul symbole nouveau du chapitre, et il ne change
+  strictement rien à la façon de calculer : \( \partial \) est un \( d \) déguisé.
+</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">S'entraîner trente secondes sur la dérivée partielle</div>
+<p>
+  Soit \( f(x, y) = 5y\,x - x^2 + 7y \). Dérivons par rapport à \( x \), donc en traitant
+  \( y \) comme un nombre fixe :
+</p>
+<ul>
+<li>\( 5y\,x \) : c'est « une constante \( \times\, x \) », sa dérivée est cette constante, soit
+  \( 5y \) ;</li>
+<li>\( -x^2 \) : sa dérivée est \( -2x \) ;</li>
+<li>\( 7y \) : il n'y a pas de \( x \) dedans, c'est une constante pure, sa dérivée est
+  <strong>0</strong>.</li>
+</ul>
+\[ \frac{\partial f}{\partial x} = 5y - 2x \]
+<p>
+  Remarque que le résultat contient encore un \( y \) : c'est normal, et c'est même tout l'intérêt.
+  C'est exactement ce qui va se produire avec \( q_1 \) dans la fonction de réaction.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 6 — dériver par rapport à la mauvaise variable</div>
+<p>
+  Quand tu cherches la meilleure réponse de la firme <strong>2</strong>, tu dérives \( \pi_2 \) par
+  rapport à \( q_2 \), <em>jamais</em> par rapport à \( q_1 \). Pourquoi ? Parce que \( q_1 \) n'est
+  pas la firme 2 qui le choisit : elle le <em>subit</em>. On ne dérive que par rapport aux
+  variables que l'on contrôle.
+</p>
+<p>
+  <strong>Le réflexe qui sauve :</strong> avant chaque dérivée, écris à voix haute (ou en marge de
+  ta copie) « <em>je cherche le meilleur choix de la firme 2, donc je dérive \( \pi_2 \) par
+  rapport à \( q_2 \)</em> ». Les indices doivent être les mêmes des trois côtés.
+</p>
+</div>
+
+<h3>2.5 Cournot ou Stackelberg : le même marché, deux calendriers</h3>
+
+<p>
+  Il existe un autre modèle de duopole en quantités, plus ancien, qu'on appelle le modèle de
+  <span class="term">Cournot</span> (du nom d'Antoine Augustin Cournot, 1838). Même demande, mêmes
+  coûts, mêmes firmes ; une seule différence : le <strong>calendrier</strong>.
+</p>
+
+<table class="compare">
+<tr><th class="left">Cournot</th><th class="left">Stackelberg</th></tr>
+<tr><td class="left">Les deux firmes choisissent <strong>en même temps</strong></td><td class="left">La firme 1 choisit, <strong>puis</strong> la firme 2</td></tr>
+<tr><td class="left">Aucune ne voit la décision de l'autre</td><td class="left">La firme 2 <strong>voit</strong> \( q_1 \) avant de décider</td></tr>
+<tr><td class="left">Jeu simultané → forme normale</td><td class="left">Jeu séquentiel → arbre, induction à rebours</td></tr>
+<tr><td class="left">On croise les <em>deux</em> fonctions de réaction</td><td class="left">On utilise <em>une seule</em> fonction de réaction, que le leader s'approprie</td></tr>
+<tr><td class="left">Résultat : \( q_1 = q_2 = 20 \), \( p = 40 \), \( \pi_1 = \pi_2 = 400 \)</td><td class="left">Résultat : \( q_1 = 30 \), \( q_2 = 15 \), \( p = 35 \), \( \pi_1 = 450 \), \( \pi_2 = 225 \)</td></tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi le leader gagne : parce qu'il s'engage, pas parce qu'il sait</div>
+<p>
+  Le leader n'a aucune information supplémentaire. Ce qu'il a, c'est la capacité de rendre son
+  choix <strong>irréversible avant que l'autre ne décide</strong>. Et il sait que l'autre s'y
+  adaptera, puisqu'il connaît sa fonction de réaction.
+</p>
+<p>
+  Concrètement : en produisant 30 au lieu de 20, le leader force le follower à reculer de 20 à 15.
+  Il « mange » une part du marché avant que l'autre ne serve. Il vend certes à un prix plus bas
+  (35 au lieu de 40), mais il en vend tellement plus (30 au lieu de 20) que son profit grimpe de
+  400 à 450. C'est ce qu'on appelle l'<span class="term">avantage du premier joueur</span>
+  (<em>first-mover advantage</em>).
+</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">L'image du volant jeté par la fenêtre</div>
+<p>
+  Deux voitures foncent l'une vers l'autre ; celle qui dévie perd. Si l'un des deux conducteurs
+  arrache son volant et le jette par la fenêtre — <em>en s'assurant que l'autre le voie</em> — il
+  gagne à coup sûr. Il n'a pas plus d'information que l'autre : il a moins d'options. Et c'est
+  justement en <strong>se privant volontairement de la possibilité de reculer</strong> qu'il oblige
+  l'autre à s'écarter.
+</p>
+<p>
+  Le leader de Stackelberg fait exactement cela avec ses 30 unités : une fois extraites, elles sont
+  sur le marché, point final. Le follower n'a plus qu'à s'adapter. En théorie des jeux, on appelle
+  ça un <span class="term">engagement crédible</span> — et c'est le sujet caché de la question 5.3.
+</p>
+</div>
+
+<h3>2.6 La recette générale</h3>
+
+<div class="box box-methode">
+<div class="box-title">Méthode — résoudre n'importe quel Stackelberg en 5 gestes</div>
+<ol>
+<li><strong>Écris le profit du follower</strong> avec le prix remplacé par la demande inverse et le
+  coût marginal soustrait : \( \pi_2 = (p - c)q_2 \), puis \( p = a - q_1 - q_2 \).</li>
+<li><strong>Dérive \( \pi_2 \) par rapport à \( q_2 \)</strong> (en traitant \( q_1 \) comme un
+  nombre), pose la dérivée égale à zéro, isole \( q_2 \) : tu obtiens la
+  <strong>fonction de réaction</strong> \( q_2^*(q_1) \).</li>
+<li><strong>Substitue cette fonction dans le profit du leader</strong>, <em>avant</em> de dériver
+  quoi que ce soit. C'est le geste qui distingue Stackelberg de Cournot, et l'erreur la plus
+  fréquente est de l'oublier.</li>
+<li><strong>Dérive le profit du leader par rapport à \( q_1 \)</strong>, pose égal à zéro : tu
+  obtiens \( q_1^* \), un nombre.</li>
+<li><strong>Remonte la cascade</strong> : \( q_1^* \) donne \( q_2^* \), qui donne \( Q \), qui
+  donne \( p \), qui donnent les deux profits. Toujours dans cet ordre.</li>
+</ol>
+<p>
+  Ces cinq gestes se font en huit lignes de copie. Apprends-les comme une gamme de piano : c'est
+  du réflexe pur, et ça vaut 12 points.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 7 — le plus grave : oublier de substituer avant de dériver</div>
+<p>
+  Si tu dérives \( \pi_1 = (60 - q_1 - q_2)q_1 \) directement par rapport à \( q_1 \), en traitant
+  \( q_2 \) comme une constante, tu obtiens \( 60 - 2q_1 - q_2 = 0 \), c'est-à-dire la fonction de
+  réaction de la firme 1 : \( q_1 = 30 - \tfrac{1}{2}q_2 \). Combinée à celle de la firme 2, elle
+  donne \( q_1 = q_2 = 20 \)… <strong>c'est Cournot, pas Stackelberg</strong>. Tu auras résolu un
+  autre exercice que celui posé.
+</p>
+<p>
+  Pourquoi c'est faux ici ? Parce que le leader <em>sait</em> que \( q_2 \) va bouger en réaction à
+  son \( q_1 \). Pour lui, \( q_2 \) n'est pas une constante : c'est une fonction de son propre
+  choix. Il doit donc l'écrire comme telle <strong>avant</strong> de dériver. Substituer d'abord,
+  dériver ensuite. Dans cet ordre. Toujours.
+</p>
+</div>
+
+<hr class="soft">
+
+<h2>3. Question 5.1 — résoudre le modèle, pas à pas</h2>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 5.1 (12 points)</div>
+  <p>
+    Résolvez le modèle : trouvez la quantité du leader, celle du follower, le prix de marché et les
+    deux profits. Détaillez votre raisonnement.
+  </p>
+  <p>
+    \( q_1^* \) : …… &nbsp;&nbsp; \( q_2^* \) : …… &nbsp;&nbsp; \( p^* \) : …… &nbsp;&nbsp;
+    \( \pi_1 \) : …… &nbsp;&nbsp; \( \pi_2 \) : ……
+  </p>
+</div>
+
+<h3>3.1 Traduisons la question en français simple</h3>
+
+<dl class="lexique">
+<dt>« Résolvez le modèle »</dt>
+<dd>Trouve ce que chaque firme fera si les deux jouent au mieux de leurs intérêts, et déduis-en ce
+  qui se passe sur le marché. « Résoudre » = trouver l'issue prévue par la théorie.</dd>
+<dt>« la quantité du leader »</dt>
+<dd>Le nombre \( q_1 \) que produira la firme 1, celle qui joue en premier. On le note
+  \( q_1^* \) avec une étoile, pour dire « la valeur optimale ».</dd>
+<dt>« celle du follower »</dt>
+<dd>La quantité \( q_2^* \) que produira la firme 2 <em>en réponse</em> à ce \( q_1^* \).</dd>
+<dt>« le prix de marché »</dt>
+<dd>Le \( p \) qui résulte de la quantité totale, via \( p = 80 - Q \). Personne ne le choisit : il
+  se déduit une fois les deux quantités connues.</dd>
+<dt>« les deux profits »</dt>
+<dd>\( \pi_1 \) et \( \pi_2 \), chacun calculé par \( (p - 20) \times q_i \).</dd>
+<dt>« Détaillez votre raisonnement »</dt>
+<dd>Le correcteur veut voir la <strong>méthode</strong>, pas seulement les nombres. Le barème le dit
+  d'ailleurs explicitement : 4 points pour la fonction de réaction, 4 pour la maximisation du
+  leader, 4 pour le prix et les profits. Un résultat juste sans calcul ne vaut que le tiers des
+  points.</dd>
+</dl>
+
+<h3>3.2 La stratégie : commencer par la fin</h3>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi on résout à l'envers</div>
+<p>
+  Tu pourrais avoir envie de commencer par la firme 1, puisque c'est elle qui joue en premier.
+  Impossible : pour savoir ce que la firme 1 gagne avec \( q_1 = 30 \), il faut savoir ce que la
+  firme 2 fera <em>après</em>. Et pour le savoir, il faut d'abord résoudre le problème de la
+  firme 2.
+</p>
+<p>
+  Donc on inverse l'ordre du temps : <strong>d'abord le dernier joueur, ensuite le premier</strong>.
+  C'est l'induction à rebours du chapitre 9, appliquée telle quelle. La différence, c'est qu'ici,
+  au lieu de comparer deux ou trois branches, on résout le problème du follower
+  <em>algébriquement, pour tous les \( q_1 \) d'un seul coup</em> — et le résultat de cette
+  résolution s'appelle précisément la fonction de réaction.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Écrire le profit du follower (la firme 2)</div>
+
+<p>
+  On reprend la formule construite en section 1.4, sans rien changer. Je la réécris entièrement,
+  pour que tu voies chaque substitution.
+</p>
+
+<div class="calc">
+<div class="step">\[ \pi_2 = (p - c_2)\,q_2 \]
+<div class="why">Profit = marge unitaire × quantité vendue. C'est la définition, valable pour n'importe quelle firme.</div></div>
+<div class="step">\[ \pi_2 = (p - 20)\,q_2 \]
+<div class="why">L'énoncé donne \( c_2 = 20 \). Je remplace.</div></div>
+<div class="step">\[ p = 80 - Q = 80 - (q_1 + q_2) = 80 - q_1 - q_2 \]
+<div class="why">La demande inverse, avec \( Q \) remplacé par \( q_1 + q_2 \). Le signe moins se distribue sur les deux termes de la parenthèse.</div></div>
+<div class="step">\[ \pi_2 = (80 - q_1 - q_2 - 20)\,q_2 \]
+<div class="why">Je substitue l'expression de \( p \) dans la ligne précédente. Rien d'autre ne change.</div></div>
+<div class="step">\[ \pi_2 = (60 - q_1 - q_2)\,q_2 \]
+<div class="why">\( 80 - 20 = 60 \). C'est <strong>la</strong> ligne à écrire sur la copie : elle vaut à elle seule une bonne partie des 4 premiers points.</div></div>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Vérifie ta parenthèse : 60, pas 80</div>
+<p>
+  Si tu vois 80 dans ta parenthèse au moment de dériver, c'est que tu as oublié le coût. Arrête-toi
+  et corrige : tout ce qui suit en dépend.
+</p>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Dériver et poser la condition du premier ordre</div>
+
+<p>
+  La firme 2 cherche le \( q_2 \) qui rend \( \pi_2 \) le plus grand possible, <strong>en prenant
+  \( q_1 \) comme donné</strong> — elle l'a vu, il est déjà fixé, c'est pour elle un simple nombre.
+  On dérive donc par rapport à \( q_2 \).
+</p>
+
+<p>
+  Premier réflexe : <strong>développer la parenthèse</strong>. On dérive beaucoup plus sûrement une
+  somme de termes simples qu'un produit.
+</p>
+
+<div class="calc">
+<div class="step">\[ \pi_2 = (60 - q_1 - q_2)\,q_2 = 60\,q_2 - q_1 q_2 - q_2^{\,2} \]
+<div class="why">Je multiplie chacun des trois termes de la parenthèse par \( q_2 \) : \( 60 \times q_2 \), puis \( -q_1 \times q_2 \), puis \( -q_2 \times q_2 = -q_2^{\,2} \).</div></div>
+<div class="step">\[ \frac{\partial \pi_2}{\partial q_2} = 60 - q_1 - 2q_2 \]
+<div class="why">Terme par terme, en traitant \( q_1 \) comme une constante : la dérivée de \( 60q_2 \) vaut 60 ; celle de \( -q_1 q_2 \) vaut \( -q_1 \) (c'est « constante × \( q_2 \) ») ; celle de \( -q_2^{\,2} \) vaut \( -2q_2 \).</div></div>
+<div class="step">\[ 60 - q_1 - 2q_2 = 0 \]
+<div class="why">C'est la <strong>condition du premier ordre</strong> (CPO) : au sommet d'une courbe, la pente est nulle. On pose donc la dérivée égale à zéro.</div></div>
+<div class="step">\[ 2q_2 = 60 - q_1 \]
+<div class="why">J'ajoute \( 2q_2 \) des deux côtés pour le faire passer à droite en positif ; les deux autres termes restent à gauche.</div></div>
+<div class="step">\[ q_2^*(q_1) = \frac{60 - q_1}{2} = 30 - \frac{q_1}{2} \]
+<div class="why">Je divise les deux côtés par 2. Puis je sépare la fraction : \( \frac{60}{2} = 30 \) et \( \frac{q_1}{2} \) reste tel quel. <strong>Voilà la fonction de réaction du follower.</strong></div></div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat intermédiaire — la fonction de réaction du follower</div>
+\[ q_2^*(q_1) = 30 - \tfrac{1}{2}\,q_1 \]
+<p>
+  Elle se lit : « <em>quelle que soit la quantité \( q_1 \) que la firme 1 a produite, la meilleure
+  réponse de la firme 2 est de produire 30 moins la moitié de \( q_1 \)</em> ».
+</p>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2 bis.</span> La vérification du second ordre (30 secondes, 0 point perdu)</div>
+
+<p>
+  La CPO trouve un point où la pente est nulle. Mais un sommet <em>et</em> un creux ont tous les
+  deux une pente nulle. Comment savoir qu'on a bien un maximum ? On dérive une deuxième fois.
+</p>
+
+<div class="calc">
+<div class="step">\[ \frac{\partial^2 \pi_2}{\partial q_2^{\,2}} = -2 \;<\; 0 \]
+<div class="why">Je dérive \( 60 - q_1 - 2q_2 \) une seconde fois par rapport à \( q_2 \) : les deux premiers termes sont des constantes (dérivée 0), et la dérivée de \( -2q_2 \) vaut \( -2 \). Comme \( -2 \) est négatif, la courbe est bien « en cloche » : c'est un maximum.</div></div>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Une ligne qui rassure le correcteur</div>
+<p>
+  Écris toujours cette ligne. Elle prend cinq secondes, montre que tu sais ce que tu fais, et sur
+  certains barèmes elle vaut un demi-point. Ici, le profit est une parabole tournée vers le bas
+  (le coefficient de \( q_2^{\,2} \) vaut \( -1 \), donc négatif) : le maximum existe et il est
+  unique.
+</p>
+</div>
+</div>
+
+<h3>3.3 Comprendre la fonction de réaction avant d'aller plus loin</h3>
+
+<p>
+  Ne passe pas trop vite : cette formule est la vedette du chapitre. Faisons-la parler.
+</p>
+
+<table class="data">
+<tr><th>Si la firme 1 produit \( q_1 \) =</th><td>0</td><td>10</td><td>20</td><td><strong>30</strong></td><td>40</td><td>50</td><td>60</td></tr>
+<tr><th>… la firme 2 répond \( q_2 \) =</th><td>30</td><td>25</td><td>20</td><td><strong>15</strong></td><td>10</td><td>5</td><td>0</td></tr>
+</table>
+
+<dl class="lexique">
+<dt>Le 30 (l'ordonnée à l'origine)</dt>
+<dd>C'est ce que produirait la firme 2 si la firme 1 ne produisait rien du tout : elle serait seule
+  sur le marché, en <strong>monopole</strong>. 30, c'est donc la quantité de monopole.</dd>
+<dt>Le \( -\tfrac{1}{2} \) (la pente)</dt>
+<dd>Pour chaque unité produite en plus par la firme 1, la firme 2 recule d'une
+  <strong>demi-unité</strong>. Elle ne recule pas d'autant : elle « rend » la moitié du terrain
+  gagné par l'autre, et en garde la moitié.</dd>
+<dt>Le fait que la pente soit négative</dt>
+<dd>C'est la substituabilité stratégique dont on parlait : « il en fait plus » ⇒ « j'en fais
+  moins ».</dd>
+<dt>\( q_1 = 60 \)</dt>
+<dd>Au-delà, la formule donnerait un \( q_2 \) négatif, ce qui n'a pas de sens : la firme 2
+  fermerait boutique et produirait 0. Ce cas ne se présentera pas ici, mais il est bon de savoir
+  que la vraie fonction de réaction s'arrête à zéro.</dd>
+</dl>
+
+<div class="box box-why">
+<div class="box-title">La demi-unité, expliquée sans formule</div>
+<p>
+  Pourquoi exactement la <em>moitié</em> ? Quand la firme 1 met une unité de plus sur le marché, le
+  prix baisse d'un euro. Pour la firme 2, la situation ressemble à un marché dont le « plafond »
+  est passé de 80 à 79 : son marché s'est rétréci d'une unité. Or, on l'a vu, la quantité qui
+  maximise le profit se situe toujours à <strong>mi-chemin</strong> entre 0 et la taille du marché
+  restant (c'est le \( \frac{60 - q_1}{2} \) de la CPO). Une unité de marché en moins, c'est donc
+  une <em>demi</em>-unité de production en moins. Le facteur \( \tfrac{1}{2} \) sort de là.
+</p>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 330" width="100%" style="max-width:12.6cm" role="img" aria-label="La fonction de réaction du follower dans le plan des quantités, avec le point de Cournot en 20 20 et le point de Stackelberg en 30 15">
+  <line x1="65" y1="275" x2="440" y2="275" stroke="#111827" stroke-width="1.6"/>
+  <line x1="65" y1="275" x2="65" y2="45" stroke="#111827" stroke-width="1.6"/>
+  <polygon points="446,275 436,271 436,279" fill="#111827"/>
+  <polygon points="65,39 61,49 69,49" fill="#111827"/>
+  <text x="446" y="294" font-size="12" text-anchor="end">q₁ — quantité de la firme 1</text>
+  <text x="72" y="46" font-size="12">q₂ — quantité de la firme 2</text>
+  <line x1="65" y1="104" x2="395" y2="275" stroke="#4338ca" stroke-width="2.4"/>
+  <text x="330" y="222" font-size="12" font-weight="bold" style="fill:#4338ca" transform="rotate(27 330 222)">q₂ = 30 − ½ q₁</text>
+  <line x1="147" y1="104" x2="230" y2="275" stroke="#be123c" stroke-width="1.6" stroke-dasharray="7 4"/>
+  <text x="128" y="96" font-size="11" style="fill:#be123c">réaction de la firme 1</text>
+  <text x="128" y="109" font-size="11" style="fill:#be123c">(utile pour Cournot)</text>
+  <g stroke="#111827" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="175" y1="275" x2="175" y2="161"/><line x1="65" y1="161" x2="175" y2="161"/>
+    <line x1="230" y1="275" x2="230" y2="190"/><line x1="65" y1="190" x2="230" y2="190"/>
+  </g>
+  <circle cx="175" cy="161" r="5.5" fill="#be123c"/>
+  <circle cx="230" cy="190" r="6" fill="#4338ca"/>
+  <text x="182" y="150" font-size="11.5" font-weight="bold" style="fill:#be123c">Cournot (20 ; 20)</text>
+  <text x="238" y="184" font-size="11.5" font-weight="bold" style="fill:#4338ca">Stackelberg (30 ; 15)</text>
+  <g font-size="11.5" text-anchor="middle">
+    <text x="65" y="292">0</text><text x="175" y="292">20</text><text x="230" y="292">30</text><text x="395" y="292">60</text>
+  </g>
+  <g font-size="11.5" text-anchor="end">
+    <text x="59" y="108">30</text><text x="59" y="165">20</text><text x="59" y="194">15</text>
+  </g>
+  <text x="255" y="320" font-size="11" text-anchor="middle" style="fill:#6b7280">Le leader choisit un point de la droite bleue : c'est lui qui décide où l'on se place dessus.</text>
+</svg>
+<figcaption>Figure 3 — La fonction de réaction du follower (trait plein bleu). Elle part de 30 quand la firme 1 ne produit rien, et tombe à 0 quand la firme 1 produit 60. En Cournot (jeu simultané), les <em>deux</em> réactions se croisent en (20 ; 20). En Stackelberg, le leader se sait libre de choisir <strong>n'importe quel point de la droite bleue</strong> — il en profite pour glisser jusqu'à (30 ; 15), là où son profit à lui est le plus élevé.</figcaption>
+</figure>
+
+<div class="box box-exemple">
+<div class="box-title">La bonne image : le leader « choisit son point sur la droite »</div>
+<p>
+  C'est la façon la plus juste de comprendre Stackelberg. En choisissant \( q_1 \), le leader ne
+  choisit pas seulement sa propre quantité : il choisit <strong>le point de la droite bleue où
+  l'on se retrouvera</strong>, puisqu'il sait que la firme 2 s'y placera automatiquement.
+</p>
+<p>
+  Le leader parcourt donc mentalement toute la droite, calcule son profit en chaque point, et
+  s'arrête au meilleur. C'est exactement ce que va faire l'étape 3, avec de l'algèbre à la place du
+  regard.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Le leader s'approprie la réaction du follower</div>
+
+<p>
+  Nous voici au geste décisif. Le profit de la firme 1 s'écrit d'abord comme celui de l'autre :
+</p>
+
+<div class="calc">
+<div class="step">\[ \pi_1 = (60 - q_1 - q_2)\,q_1 \]
+<div class="why">Même parenthèse que pour la firme 2 (le prix et le coût sont identiques), mais multipliée par \( q_1 \), puisque c'est la firme 1 qui vend \( q_1 \) unités.</div></div>
+</div>
+
+<p>
+  Cette expression contient encore \( q_2 \), une lettre que la firme 1 ne contrôle pas. Mais elle
+  n'est pas inconnue pour autant : la firme 1 <strong>sait</strong> que la firme 2 appliquera sa
+  fonction de réaction. Elle remplace donc \( q_2 \) par ce qu'il vaudra réellement.
+</p>
+
+<div class="calc">
+<div class="step">\[ \pi_1 = \Bigl(60 - q_1 - \bigl(30 - \tfrac{1}{2}q_1\bigr)\Bigr)\,q_1 \]
+<div class="why">Je substitue \( q_2 = 30 - \tfrac{1}{2}q_1 \). J'ai mis la substitution entre parenthèses : c'est indispensable, parce qu'il y a un signe moins devant.</div></div>
+<div class="step">\[ 60 - q_1 - 30 + \tfrac{1}{2}q_1 \]
+<div class="why">J'ouvre la parenthèse intérieure. Attention au signe : \( -(30 - \tfrac{1}{2}q_1) \) donne \( -30 \) <strong>et</strong> \( +\tfrac{1}{2}q_1 \). Le moins devant la parenthèse retourne les deux signes. C'est ici que se perdent la moitié des copies.</div></div>
+<div class="step">\[ 60 - 30 = 30 \qquad\text{et}\qquad -q_1 + \tfrac{1}{2}q_1 = -\tfrac{1}{2}q_1 \]
+<div class="why">Je regroupe les nombres d'un côté, les termes en \( q_1 \) de l'autre. Pour le second : \( -1 + \tfrac{1}{2} = -\tfrac{1}{2} \), comme « je dois un euro, on m'en rend cinquante centimes : je dois encore cinquante centimes ».</div></div>
+<div class="step">\[ \pi_1 = \Bigl(30 - \tfrac{1}{2}q_1\Bigr)\,q_1 \]
+<div class="why">La parenthèse simplifiée, remultipliée par \( q_1 \). Le profit du leader ne dépend plus que de sa propre décision : c'est <em>une fonction d'une seule variable</em>, et on sait maximiser ça.</div></div>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Ce qui vient de se passer, en une phrase</div>
+<p>
+  Le leader a transformé un problème à deux inconnues en un problème à une seule, en
+  <strong>absorbant la réaction de l'autre dans sa propre fonction de profit</strong>. C'est la
+  seule idée vraiment nouvelle du chapitre — le reste n'est que dérivées.
+</p>
+<p>
+  Remarque au passage : la parenthèse est passée de « 60 moins un \( q_1 \) entier » à « 30 moins
+  un <em>demi</em> \( q_1 \) ». Autrement dit, le leader constate que produire une unité de plus ne
+  lui coûte que <strong>la moitié</strong> de la baisse de prix qu'il craignait, puisque le
+  follower reculera d'une demi-unité pour compenser. C'est précisément pour cela qu'il va oser
+  produire beaucoup.
+</p>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> Maximiser le profit du leader</div>
+
+<div class="calc">
+<div class="step">\[ \pi_1 = \Bigl(30 - \tfrac{1}{2}q_1\Bigr)q_1 = 30\,q_1 - \tfrac{1}{2}q_1^{\,2} \]
+<div class="why">Je développe avant de dériver, comme à l'étape 2 : \( 30 \times q_1 \), puis \( -\tfrac{1}{2}q_1 \times q_1 = -\tfrac{1}{2}q_1^{\,2} \).</div></div>
+<div class="step">\[ \frac{\partial \pi_1}{\partial q_1} = 30 - q_1 \]
+<div class="why">Dérivée de \( 30q_1 \) : 30. Dérivée de \( -\tfrac{1}{2}q_1^{\,2} \) : \( -\tfrac{1}{2} \times 2q_1 = -q_1 \) — le 2 de l'exposant descend et annule le \( \tfrac{1}{2} \).</div></div>
+<div class="step">\[ 30 - q_1 = 0 \quad\Longrightarrow\quad q_1^* = 30 \]
+<div class="why">Condition du premier ordre : la pente s'annule au sommet. J'ajoute \( q_1 \) des deux côtés et je lis la réponse directement.</div></div>
+<div class="step">\[ \frac{\partial^2 \pi_1}{\partial q_1^{\,2}} = -1 \;<\; 0 \]
+<div class="why">Second ordre : la dérivée de \( 30 - q_1 \) vaut \( -1 \), qui est négatif. C'est bien un maximum.</div></div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat intermédiaire — la quantité du leader</div>
+\[ q_1^* = 30 \]
+<p>
+  Le leader produit 30 unités : c'est <strong>une fois et demie</strong> ce qu'il produirait dans un
+  jeu simultané (20), et c'est exactement la quantité qu'une firme en monopole choisirait. Nous
+  reviendrons sur cette coïncidence remarquable au récapitulatif.
+</p>
+</div>
+</div>
+
+<figure>
+<svg viewBox="0 0 470 300" width="100%" style="max-width:12.4cm" role="img" aria-label="Courbe du profit du leader en fonction de sa quantité, en cloche, avec un sommet à 450 pour une quantité de 30">
+  <line x1="65" y1="255" x2="440" y2="255" stroke="#111827" stroke-width="1.6"/>
+  <line x1="65" y1="255" x2="65" y2="35" stroke="#111827" stroke-width="1.6"/>
+  <polygon points="446,255 436,251 436,259" fill="#111827"/>
+  <polygon points="65,29 61,39 69,39" fill="#111827"/>
+  <text x="446" y="274" font-size="12" text-anchor="end">q₁ — quantité du leader</text>
+  <text x="72" y="36" font-size="12">π₁ — profit du leader</text>
+  <polyline points="65,255 91,197 118,150 145,113 171,87 198,71 224,66 251,71 277,87 304,113 330,150 357,197 383,255" fill="none" stroke="#4338ca" stroke-width="2.4"/>
+  <g stroke="#111827" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="224" y1="255" x2="224" y2="66"/><line x1="65" y1="66" x2="224" y2="66"/>
+    <line x1="171" y1="255" x2="171" y2="87"/><line x1="65" y1="87" x2="171" y2="87"/>
+  </g>
+  <line x1="180" y1="66" x2="268" y2="66" stroke="#be123c" stroke-width="1.8"/>
+  <text x="272" y="63" font-size="11" style="fill:#be123c">pente nulle : le sommet</text>
+  <circle cx="224" cy="66" r="6" fill="#4338ca"/>
+  <circle cx="171" cy="87" r="4.5" fill="#6b7280"/>
+  <text x="118" y="82" font-size="11" text-anchor="end" style="fill:#6b7280">Cournot</text>
+  <g font-size="11.5" text-anchor="middle">
+    <text x="65" y="272">0</text><text x="171" y="272">20</text><text x="224" y="272">30</text><text x="383" y="272">60</text>
+  </g>
+  <g font-size="11.5" text-anchor="end">
+    <text x="59" y="70">450</text><text x="59" y="91">400</text>
+  </g>
+  <text x="255" y="292" font-size="11" text-anchor="middle" style="fill:#6b7280">π₁ = 30 q₁ − ½ q₁² : la courbe monte, culmine en 30, puis redescend.</text>
+</svg>
+<figcaption>Figure 4 — Le profit du leader, une fois la réaction du follower absorbée. La courbe est une parabole tournée vers le bas : elle vaut 0 si le leader ne produit rien (pas de vente), 0 encore s'il produit 60 (le prix tombe alors à son coût), et atteint son sommet de <strong>450</strong> en \( q_1 = 30 \). Le point gris à 20 rappelle la quantité de Cournot : le leader y gagnerait 400, donc moins. La barre rouge horizontale au sommet est la traduction visuelle de la condition du premier ordre : au maximum, la tangente est plate.</figcaption>
+</figure>
+
+<div class="etape">
+<div class="etape-title"><span class="num">5.</span> Redescendre la cascade : \( q_2 \), \( Q \), \( p \), les profits</div>
+
+<p>
+  On a \( q_1^* = 30 \). Tout le reste s'en déduit mécaniquement, dans un ordre imposé : chaque
+  ligne utilise la précédente. Ne saute aucun barreau.
+</p>
+
+<div class="calc">
+<div class="step">\[ q_2^* = 30 - \tfrac{1}{2} \times 30 = 30 - 15 = 15 \]
+<div class="why">J'injecte \( q_1 = 30 \) dans la fonction de réaction. La moitié de 30 vaut 15, et \( 30 - 15 = 15 \). Le follower produit donc 15.</div></div>
+<div class="step">\[ Q = q_1^* + q_2^* = 30 + 15 = 45 \]
+<div class="why">La quantité totale mise sur le marché, c'est la somme des deux.</div></div>
+<div class="step">\[ p^* = 80 - Q = 80 - 45 = 35 \]
+<div class="why">La demande inverse fixe le prix une fois la quantité totale connue. 45 unités sur le marché ⇒ le prix s'établit à 35 €.</div></div>
+<div class="step">\[ p^* - c = 35 - 20 = 15 \]
+<div class="why">La marge unitaire : chaque unité vendue 35 € en a coûté 20, il reste 15 € de marge. Calculer la marge <em>une fois pour toutes</em> évite deux erreurs plus loin.</div></div>
+<div class="step">\[ \pi_1 = 15 \times 30 = 450 \]
+<div class="why">Marge × quantité de la firme 1. Elle vend 30 unités à 15 € de marge chacune.</div></div>
+<div class="step">\[ \pi_2 = 15 \times 15 = 225 \]
+<div class="why">Même marge (c'est le même prix et le même coût), mais seulement 15 unités vendues. D'où un profit exactement deux fois plus petit.</div></div>
+</div>
+</div>
+
+<h3>3.4 Vérifier son résultat en trente secondes</h3>
+
+<div class="box box-methode">
+<div class="box-title">Trois contrôles rapides avant de tourner la page</div>
+<ol>
+<li><strong>Le prix dépasse-t-il le coût ?</strong> \( 35 > 20 \) : oui. Si tu trouvais un prix
+  inférieur à 20, les deux firmes perdraient de l'argent — signe d'une erreur de calcul.</li>
+<li><strong>Le rapport 2 pour 1.</strong> Dans un Stackelberg linéaire avec coûts identiques, on a
+  toujours \( q_1 = 2 q_2 \) et \( \pi_1 = 2\pi_2 \). Ici : \( 30 = 2 \times 15 \) et
+  \( 450 = 2 \times 225 \). Les deux vérifications tombent juste.</li>
+<li><strong>Le leader gagne-t-il plus qu'en Cournot ?</strong> \( 450 > 400 \) : oui. Et le
+  follower moins : \( 225 < 400 \). Si tu trouves l'inverse, tu as probablement inversé les rôles
+  ou oublié la substitution.</li>
+</ol>
+</div>
+
+<div class="result">
+<div class="result-title">Réponse complète à la question 5.1</div>
+<table class="data">
+<tr><th>Grandeur</th><th>Symbole</th><th>Valeur</th></tr>
+<tr><td>Fonction de réaction du follower</td><td>\( q_2^*(q_1) \)</td><td>\( 30 - \tfrac{1}{2}q_1 \)</td></tr>
+<tr><td>Quantité du leader</td><td>\( q_1^* \)</td><td><strong>30</strong></td></tr>
+<tr><td>Quantité du follower</td><td>\( q_2^* \)</td><td><strong>15</strong></td></tr>
+<tr><td>Quantité totale</td><td>\( Q \)</td><td>45</td></tr>
+<tr><td>Prix de marché</td><td>\( p^* \)</td><td><strong>35</strong></td></tr>
+<tr><td>Profit du leader</td><td>\( \pi_1 \)</td><td><strong>450</strong></td></tr>
+<tr><td>Profit du follower</td><td>\( \pi_2 \)</td><td><strong>225</strong></td></tr>
+</table>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie (question 5.1)</div>
+<p>
+  <strong>Résolution par induction à rebours.</strong>
+</p>
+<p>
+  <strong>Étape 1 — le follower.</strong> La firme 2 observe \( q_1 \) et maximise
+  \( \pi_2 = (80 - q_1 - q_2 - 20)q_2 = (60 - q_1 - q_2)q_2 \).
+</p>
+\[ \frac{\partial \pi_2}{\partial q_2} = 60 - q_1 - 2q_2 = 0 \;\Longrightarrow\; q_2^*(q_1) = 30 - \tfrac{1}{2}q_1 \]
+<p>
+  (Second ordre : \( \partial^2\pi_2/\partial q_2^{\,2} = -2 < 0 \), c'est bien un maximum.)
+</p>
+<p>
+  <strong>Étape 2 — le leader.</strong> La firme 1 anticipe cette réaction et l'intègre à son
+  profit :
+</p>
+\[ \pi_1 = \Bigl(60 - q_1 - \bigl(30 - \tfrac{1}{2}q_1\bigr)\Bigr)q_1 = \Bigl(30 - \tfrac{1}{2}q_1\Bigr)q_1 \]
+\[ \frac{\partial \pi_1}{\partial q_1} = 30 - q_1 = 0 \;\Longrightarrow\; q_1^* = 30 \]
+<p>
+  <strong>Étape 3 — valeurs d'équilibre.</strong>
+</p>
+\[ q_2^* = 30 - \tfrac{30}{2} = 15 \;;\quad Q = 45 \;;\quad p^* = 80 - 45 = 35 \]
+\[ \pi_1 = (35 - 20)\times 30 = 450 \;;\quad \pi_2 = (35 - 20)\times 15 = 225 \]
+<p>
+  <em>Conclusion :</em> le leader produit deux fois plus que le follower et obtient deux fois plus
+  de profit : c'est l'avantage du premier joueur.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les quatre erreurs qui coûtent les 12 points</div>
+<ol>
+<li><strong>Oublier le \( -20 \).</strong> La parenthèse doit démarrer à 60. Sinon la réaction
+  devient \( 40 - \tfrac{1}{2}q_1 \) et tout est faux.</li>
+<li><strong>Dériver \( \pi_2 \) par rapport à \( q_1 \)</strong> au lieu de \( q_2 \). Vérifie que
+  les indices se correspondent.</li>
+<li><strong>Ne pas substituer avant de dériver</strong> pour le leader. Tu obtiendrais
+  \( q_1 = 20 \) : c'est la réponse de Cournot, pas de Stackelberg. Zéro sur la partie « leader ».</li>
+<li><strong>Rater le signe dans \( -(30 - \tfrac{1}{2}q_1) \).</strong> Beaucoup écrivent
+  \( 60 - q_1 - 30 - \tfrac{1}{2}q_1 = 30 - \tfrac{3}{2}q_1 \), ce qui donne \( q_1 = 10 \). Le
+  moins devant la parenthèse change les <em>deux</em> signes.</li>
+</ol>
+</div>
+
+<hr class="soft">
+
+<h2>4. Question 5.2 — le même jeu, écrasé dans un tableau à quatre cases</h2>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 5.2 (12 points)</div>
+  <p>
+    Représentez le jeu sous forme normale en vous limitant à deux stratégies pour la firme 1 :
+    [produire 30] et [produire 20], et deux stratégies pour la firme 2 :
+    [\( q_2 = 30 - \tfrac{1}{2}q_1 \)] et [\( q_2 = 20 \) quel que soit \( q_1 \)]. Calculez les
+    quatre paires de payoffs et reportez-les dans la forme normale. Identifiez ensuite tous les
+    équilibres de Nash de ce jeu réduit et vérifiez que l'issue de Stackelberg trouvée en 5.1)
+    correspond à l'un d'entre eux.
+  </p>
+</div>
+
+<h3>4.1 Traduisons la question en français simple</h3>
+
+<dl class="lexique">
+<dt>« sous forme normale »</dt>
+<dd>Sous forme de <strong>tableau</strong> à double entrée, celui du chapitre 3 du volume 1 : une
+  ligne par stratégie du joueur 1, une colonne par stratégie du joueur 2, et dans chaque case le
+  couple de gains (gain du joueur 1 ; gain du joueur 2).</dd>
+<dt>« en vous limitant à deux stratégies »</dt>
+<dd>Chaque firme dispose en réalité d'une infinité de stratégies. L'énoncé en garde deux par firme
+  pour que le tableau soit dessinable. On parle alors de <span class="term">jeu réduit</span> : un
+  extrait du vrai jeu, une sorte de zoom sur quatre cases.</dd>
+<dt>« [produire 30] et [produire 20] »</dt>
+<dd>Les deux lignes. 30, c'est la quantité de Stackelberg trouvée en 5.1 ; 20, c'est la quantité de
+  Cournot. L'énoncé ne le dit pas, mais ce n'est évidemment pas un hasard.</dd>
+<dt>« [\( q_2 = 30 - \tfrac{1}{2}q_1 \)] »</dt>
+<dd>Première colonne : la firme 2 s'engage à appliquer sa fonction de réaction, c'est-à-dire à
+  répondre au mieux <em>quoi que fasse</em> la firme 1. C'est une <strong>règle conditionnelle</strong>.</dd>
+<dt>« [\( q_2 = 20 \) quel que soit \( q_1 \)] »</dt>
+<dd>Deuxième colonne : la firme 2 annonce qu'elle produira 20, un point c'est tout, sans regarder
+  ce que fait l'autre. C'est une <strong>règle constante</strong>, une sorte de menace : « je
+  saturerai le marché avec 20, à toi de voir ».</dd>
+<dt>« les quatre paires de payoffs »</dt>
+<dd>Les quatre couples \( (\pi_1\,;\,\pi_2) \), un par case. C'est 6 points sur 12 : 1,5 point par
+  case. Rien que du calcul.</dd>
+<dt>« tous les équilibres de Nash »</dt>
+<dd>Le mot <em>tous</em> est un avertissement : il y en a plus d'un. Ne t'arrête pas au premier
+  trouvé.</dd>
+<dt>« vérifiez que l'issue de Stackelberg y correspond »</dt>
+<dd>Retrouve, parmi ces équilibres, la case \( (450\,;\,225) \) de la question 5.1. C'est un
+  contrôle de cohérence entre les deux sous-questions.</dd>
+</dl>
+
+<h3>4.2 Peut-on vraiment mettre un jeu séquentiel dans un tableau ?</h3>
+
+<div class="box box-why">
+<div class="box-title">Oui — et c'est même une opération standard</div>
+<p>
+  Un tableau ne représente pas le <em>temps</em>, il représente des <strong>stratégies</strong>. Or
+  une stratégie, on l'a vu en 2.3, est un plan complet décidé <em>à l'avance</em>. On peut donc
+  imaginer que les deux firmes écrivent chacune leur plan sur un bout de papier, les remettent
+  ensemble à un arbitre, et que l'arbitre déroule la partie tout seul. Le résultat est le même que
+  si elles avaient joué l'une après l'autre.
+</p>
+<p>
+  Cette réécriture s'appelle passer de la <span class="term">forme extensive</span> (l'arbre) à la
+  <span class="term">forme normale</span> (le tableau). Elle conserve tous les équilibres de
+  Nash… mais elle <strong>perd l'information sur l'ordre du temps</strong>. C'est précisément cette
+  perte qui va faire apparaître un équilibre supplémentaire, bizarre, dont la question 5.3
+  s'occupera.
+</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Une image pour comprendre la perte d'information</div>
+<p>
+  Imagine que tu photographies un escalier de face, à plat. Sur la photo, les marches deviennent
+  des lignes horizontales : tu vois toutes les marches, mais tu ne vois plus laquelle est
+  <em>au-dessus</em> de laquelle. Le tableau, c'est cette photo à plat de l'arbre. Tout y est,
+  sauf le relief : sauf le fait que la firme 1 a joué <em>avant</em>.
+</p>
+</div>
+
+<h3>4.3 Les quatre cases, une par une</h3>
+
+<p>
+  Toujours la même mécanique, en cinq gestes : (1) quelle est \( q_1 \) ? (2) que fait alors la
+  firme 2, d'après sa règle ? (3) quelle est la quantité totale \( Q \) ? (4) quel prix en
+  résulte ? (5) quelle marge, et donc quels profits ? Ne saute jamais le calcul de la marge : c'est
+  lui qui empêche les erreurs.
+</p>
+
+<div class="etape">
+<div class="etape-title"><span class="num">A.</span> Case (\( q_1 = 30 \) ; réaction \( 30 - \tfrac{1}{2}q_1 \))</div>
+<div class="calc">
+<div class="step">\[ q_1 = 30 \qquad ; \qquad q_2 = 30 - \tfrac{1}{2}\times 30 = 15 \]
+<div class="why">La firme 2 applique sa règle en y injectant \( q_1 = 30 \) : elle produit 15.</div></div>
+<div class="step">\[ Q = 30 + 15 = 45 \qquad ; \qquad p = 80 - 45 = 35 \]
+<div class="why">Quantité totale, puis prix par la demande inverse.</div></div>
+<div class="step">\[ p - c = 35 - 20 = 15 \]
+<div class="why">La marge unitaire, à calculer une seule fois puis à réutiliser pour les deux firmes.</div></div>
+<div class="step">\[ \pi_1 = 15 \times 30 = 450 \qquad ; \qquad \pi_2 = 15 \times 15 = 225 \]
+<div class="why">Marge × quantité, pour chacune. On retrouve exactement l'issue de la question 5.1 — c'est rassurant, et c'est normal : cette case <em>est</em> l'équilibre de Stackelberg.</div></div>
+</div>
+<div class="result"><div class="result-title">Case A</div>\[ (450\;;\;225) \]</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">B.</span> Case (\( q_1 = 30 \) ; \( q_2 = 20 \) quoi qu'il arrive)</div>
+<div class="calc">
+<div class="step">\[ q_1 = 30 \qquad ; \qquad q_2 = 20 \]
+<div class="why">Ici la firme 2 ne regarde pas \( q_1 \) : sa règle dit 20, donc c'est 20. Attention, c'est la case où l'on se trompe le plus souvent en recalculant machinalement \( 30 - \tfrac{1}{2}q_1 \).</div></div>
+<div class="step">\[ Q = 30 + 20 = 50 \qquad ; \qquad p = 80 - 50 = 30 \]
+<div class="why">Il y a plus de marchandise sur le marché qu'en case A (50 au lieu de 45), donc le prix est plus bas : 30 au lieu de 35.</div></div>
+<div class="step">\[ p - c = 30 - 20 = 10 \]
+<div class="why">La marge s'écrase : 10 € par unité seulement.</div></div>
+<div class="step">\[ \pi_1 = 10 \times 30 = 300 \qquad ; \qquad \pi_2 = 10 \times 20 = 200 \]
+<div class="why">Les deux firmes perdent par rapport à la case A. La firme 2 elle-même y perd (200 &lt; 225) : produire 20 face à \( q_1 = 30 \), c'est se tirer une balle dans le pied. Retiens ce détail, c'est <strong>toute</strong> la question 5.3.</div></div>
+</div>
+<div class="result"><div class="result-title">Case B</div>\[ (300\;;\;200) \]</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">C.</span> Case (\( q_1 = 20 \) ; réaction \( 30 - \tfrac{1}{2}q_1 \))</div>
+<div class="calc">
+<div class="step">\[ q_1 = 20 \qquad ; \qquad q_2 = 30 - \tfrac{1}{2}\times 20 = 30 - 10 = 20 \]
+<div class="why">La règle appliquée à \( q_1 = 20 \) donne exactement 20. Curieux ? Non : c'est justement le point fixe, l'équilibre de Cournot, où chacune répond 20 à 20.</div></div>
+<div class="step">\[ Q = 20 + 20 = 40 \qquad ; \qquad p = 80 - 40 = 40 \]
+<div class="why">Moins de marchandise (40) : le prix remonte à 40.</div></div>
+<div class="step">\[ p - c = 40 - 20 = 20 \]
+<div class="why">La marge la plus confortable des quatre cases : 20 € par unité.</div></div>
+<div class="step">\[ \pi_1 = 20 \times 20 = 400 \qquad ; \qquad \pi_2 = 20 \times 20 = 400 \]
+<div class="why">Situation parfaitement symétrique : même quantité, même marge, même profit.</div></div>
+</div>
+<div class="result"><div class="result-title">Case C</div>\[ (400\;;\;400) \]</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">D.</span> Case (\( q_1 = 20 \) ; \( q_2 = 20 \) quoi qu'il arrive)</div>
+<div class="calc">
+<div class="step">\[ q_1 = 20 \qquad ; \qquad q_2 = 20 \]
+<div class="why">La règle constante donne 20.</div></div>
+<div class="step">\[ Q = 40 \qquad ; \qquad p = 40 \qquad ; \qquad p - c = 20 \]
+<div class="why">Exactement les mêmes nombres qu'en case C, pour une raison très simple : les deux <em>règles</em> de la firme 2 aboutissent, face à \( q_1 = 20 \), à la même <em>action</em>, produire 20.</div></div>
+<div class="step">\[ \pi_1 = 20 \times 20 = 400 \qquad ; \qquad \pi_2 = 20 \times 20 = 400 \]
+<div class="why">Payoffs identiques à la case C. Ce n'est pas une erreur de recopie : c'est la clé de la fin de la question.</div></div>
+</div>
+<div class="result"><div class="result-title">Case D</div>\[ (400\;;\;400) \]</div>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi les cases C et D sont-elles identiques ?</div>
+<p>
+  Parce que les deux stratégies de la firme 2 <strong>coïncident en \( q_1 = 20 \)</strong> :
+  \( 30 - \tfrac{1}{2}\times 20 = 20 \). Face à un leader qui produit 20, appliquer la fonction de
+  réaction ou appliquer la règle « toujours 20 » revient exactement au même geste.
+</p>
+<p>
+  Les deux stratégies ne diffèrent que <em>hors</em> de ce cas : si le leader produisait 30, l'une
+  répondrait 15 et l'autre 20. Deux plans distincts peuvent donc produire la même action dans une
+  situation donnée. C'est ce qui rendra la firme 2 <strong>indifférente</strong> entre ses deux
+  stratégies quand la firme 1 joue 20, et c'est ce qui fera naître un deuxième équilibre de Nash.
+</p>
+</div>
+
+<h3>4.4 La forme normale du jeu réduit</h3>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Firme 2 (le follower)</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>[réaction] \( q_2 = 30 - \tfrac{1}{2}q_1 \)</th><th>[rigide] \( q_2 = 20 \) quoi qu'il arrive</th></tr>
+<tr><td class="player" rowspan="2">Firme 1<br>(le leader)</td><th>\( q_1 = 30 \)</th><td>(450 ; 225)</td><td>(300 ; 200)</td></tr>
+<tr><th>\( q_1 = 20 \)</th><td>(400 ; 400)</td><td>(400 ; 400)</td></tr>
+</table>
+
+<div class="box box-methode">
+<div class="box-title">Comment lire une case</div>
+<p>
+  Premier nombre = profit de la firme 1 (celle des <strong>lignes</strong>). Second nombre = profit
+  de la firme 2 (celle des <strong>colonnes</strong>). Toujours dans cet ordre : ligne d'abord,
+  colonne ensuite. Sur ta copie, écris cette convention en une phrase sous le tableau : cela évite
+  au correcteur de deviner, et à toi de t'emmêler.
+</p>
+</div>
+
+<h3>4.5 Chercher les équilibres de Nash : la méthode du soulignement</h3>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel du volume 1 (chapitre 3) — l'équilibre de Nash</div>
+<p>
+  Un <span class="term">équilibre de Nash</span> est une case où <strong>aucun des deux joueurs ne
+  regrette son choix</strong>, sachant celui de l'autre : ni l'un ni l'autre ne gagnerait
+  strictement plus en changeant seul de stratégie.
+</p>
+<p>
+  <strong>La recette du soulignement.</strong> (a) Pour chaque <em>colonne</em>, on repère le
+  meilleur gain de la firme 1 (premier nombre) et on le marque. (b) Pour chaque <em>ligne</em>, on
+  repère le meilleur gain de la firme 2 (second nombre) et on le marque. (c) Les cases marquées
+  <strong>deux fois</strong> sont les équilibres de Nash. Un mot d'attention : quand il y a
+  <em>égalité</em>, on marque les deux cases — la déviation doit être <em>strictement</em>
+  profitable pour casser un équilibre.
+</p>
+</div>
+
+<h4>a) Les meilleures réponses de la firme 1, colonne par colonne</h4>
+
+<p>
+  On fige la stratégie de la firme 2 et on compare les deux premiers nombres de la colonne.
+</p>
+
+<div class="calc">
+<div class="step">\[ \text{colonne [réaction]} : \quad 450 \;>\; 400 \]
+<div class="why">Si la firme 2 applique sa fonction de réaction, la firme 1 gagne 450 en produisant 30 contre 400 en produisant 20. Sa meilleure réponse est donc <strong>30</strong>.</div></div>
+<div class="step">\[ \text{colonne [rigide]} : \quad 300 \;<\; 400 \]
+<div class="why">Si la firme 2 produit 20 quoi qu'il arrive, produire 30 ne sert qu'à faire chuter le prix : 300 seulement, contre 400 en produisant 20. Sa meilleure réponse est donc <strong>20</strong>.</div></div>
+</div>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Firme 2</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>[réaction]</th><th>[rigide] \( q_2 = 20 \)</th></tr>
+<tr><td class="player" rowspan="2">Firme 1</td><th>\( q_1 = 30 \)</th><td class="hl">(<strong>450</strong> ; 225)</td><td>(300 ; 200)</td></tr>
+<tr><th>\( q_1 = 20 \)</th><td>(400 ; 400)</td><td class="hl">(<strong>400</strong> ; 400)</td></tr>
+</table>
+
+<p>
+  <em>Les cases surlignées sont les meilleures réponses de la firme 1, une par colonne.</em>
+</p>
+
+<h4>b) Les meilleures réponses de la firme 2, ligne par ligne</h4>
+
+<p>
+  On fige maintenant la stratégie de la firme 1 et on compare les deux seconds nombres de la ligne.
+</p>
+
+<div class="calc">
+<div class="step">\[ \text{ligne } q_1 = 30 : \quad 225 \;>\; 200 \]
+<div class="why">Si le leader produit 30, la firme 2 gagne 225 en appliquant sa réaction (elle produit alors 15) contre 200 en restant rigide à 20. Sa meilleure réponse est <strong>[réaction]</strong>, strictement.</div></div>
+<div class="step">\[ \text{ligne } q_1 = 20 : \quad 400 \;=\; 400 \]
+<div class="why">Si le leader produit 20, les deux stratégies donnent exactement le même profit — puisqu'elles prescrivent la même action, produire 20. La firme 2 est <strong>indifférente</strong> : ses <em>deux</em> stratégies sont des meilleures réponses, et on surligne donc les deux cases.</div></div>
+</div>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Firme 2</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>[réaction]</th><th>[rigide] \( q_2 = 20 \)</th></tr>
+<tr><td class="player" rowspan="2">Firme 1</td><th>\( q_1 = 30 \)</th><td class="hl">(450 ; <strong>225</strong>)</td><td>(300 ; 200)</td></tr>
+<tr><th>\( q_1 = 20 \)</th><td class="hl">(400 ; <strong>400</strong>)</td><td class="hl">(400 ; <strong>400</strong>)</td></tr>
+</table>
+
+<p>
+  <em>Les cases surlignées sont les meilleures réponses de la firme 2, ligne par ligne — avec
+  <strong>deux</strong> cases surlignées sur la ligne du bas, à cause de l'égalité.</em>
+</p>
+
+<div class="box box-piege">
+<div class="box-title">Piège n° 8 — oublier de surligner les ex æquo</div>
+<p>
+  Beaucoup d'étudiants, face à \( 400 = 400 \), ne surlignent rien (« il n'y a pas de meilleur »)
+  ou surlignent au hasard. Les deux sont faux. La définition de Nash parle de déviation
+  <strong>strictement</strong> profitable : si changer de stratégie ne rapporte pas plus, le joueur
+  n'a aucune raison de changer, donc il ne dévie pas, donc les deux stratégies sont des meilleures
+  réponses. On surligne les deux.
+</p>
+<p>
+  Conséquence directe ici : si tu oublies l'ex æquo, tu rates le second équilibre de Nash — et donc
+  la moitié des points de la deuxième partie de la question, plus toute la question 5.3 qui
+  s'appuie dessus.
+</p>
+</div>
+
+<h4>c) Le croisement : les cases marquées deux fois</h4>
+
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Firme 2</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>[réaction] \( q_2 = 30 - \tfrac{1}{2}q_1 \)</th><th>[rigide] \( q_2 = 20 \)</th></tr>
+<tr><td class="player" rowspan="2">Firme 1</td><th>\( q_1 = 30 \)</th><td class="nash">(<strong>450</strong> ; <strong>225</strong>)</td><td>(300 ; 200)</td></tr>
+<tr><th>\( q_1 = 20 \)</th><td>(400 ; <strong>400</strong>)</td><td class="nash">(<strong>400</strong> ; <strong>400</strong>)</td></tr>
+</table>
+
+<p>
+  Deux cases portent les deux marques : la case A, en haut à gauche, et la case D, en bas à droite.
+</p>
+
+<div class="result">
+<div class="result-title">Réponse à la question 5.2 — les deux équilibres de Nash</div>
+<ul>
+<li><strong>\( \bigl(q_1 = 30 \,;\, [\,q_2 = 30 - \tfrac{1}{2}q_1\,]\bigr) \)</strong>, de payoffs
+  \( (450\,;\,225) \). C'est <strong>exactement l'issue de Stackelberg</strong> de la question 5.1 :
+  la vérification demandée par l'énoncé est faite.</li>
+<li><strong>\( \bigl(q_1 = 20 \,;\, [\,q_2 = 20 \text{ quoi qu'il arrive}\,]\bigr) \)</strong>, de
+  payoffs \( (400\,;\,400) \). Un second équilibre, que la question 5.1 n'avait pas fait
+  apparaître.</li>
+</ul>
+</div>
+
+<h3>4.6 Le détail de la vérification, case par case</h3>
+
+<p>
+  Le barème demande une justification. Voici les quatre phrases à écrire — une par case, y compris
+  pour les cases qui ne sont <em>pas</em> des équilibres : montrer qu'on les a testées vaut des
+  points.
+</p>
+
+<table class="compare">
+<tr><th class="left">Case</th><th class="left">La firme 1 a-t-elle envie de dévier ?</th><th class="left">La firme 2 a-t-elle envie de dévier ?</th><th class="left">Verdict</th></tr>
+<tr><td class="left">A · (30 ; réaction)</td><td class="left">Non : 450 contre 400 si elle passait à 20</td><td class="left">Non : 225 contre 200 si elle passait à [rigide]</td><td class="left"><strong>Équilibre de Nash</strong></td></tr>
+<tr><td class="left">B · (30 ; rigide)</td><td class="left"><strong>Oui</strong> : 400 &gt; 300 en passant à 20</td><td class="left">Oui : 225 &gt; 200 en passant à [réaction]</td><td class="left">Pas un équilibre</td></tr>
+<tr><td class="left">C · (20 ; réaction)</td><td class="left"><strong>Oui</strong> : 450 &gt; 400 en passant à 30</td><td class="left">Non : 400 = 400, aucun gain à dévier</td><td class="left">Pas un équilibre</td></tr>
+<tr><td class="left">D · (20 ; rigide)</td><td class="left">Non : 400 contre 300 si elle passait à 30</td><td class="left">Non : 400 = 400, aucun gain à dévier</td><td class="left"><strong>Équilibre de Nash</strong></td></tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi ce second équilibre existe-t-il ? L'histoire qu'il raconte</div>
+<p>
+  Mets-toi à la place du leader dans l'équilibre D. Il se dit : « la firme 2 a annoncé qu'elle
+  produirait 20 quoi que je fasse. Si je produis 30, le total sera 50, le prix tombera à 30, et je
+  ne gagnerai que 300. Alors que si je me contente de 20, le prix restera à 40 et je gagnerai 400.
+  Donc je produis 20. » Il est <em>dissuadé</em> par la rigidité annoncée de l'autre.
+</p>
+<p>
+  Et la firme 2, de son côté, n'a effectivement aucune raison de changer d'avis, puisque face à
+  \( q_1 = 20 \) ses deux stratégies donnent le même profit. Personne ne bouge : c'est bien un
+  équilibre de Nash, au sens strict de la définition.
+</p>
+<p>
+  <strong>Et pourtant, quelque chose cloche.</strong> Cette histoire repose entièrement sur une
+  <em>annonce</em>. Que se passerait-il si le leader ne se laissait pas impressionner et produisait
+  30 quand même ? La firme 2 aurait-elle vraiment intérêt à mettre sa menace à exécution ? Regarde
+  la case B : elle y gagnerait 200, alors qu'en revenant à sa réaction elle gagnerait 225. Elle
+  n'exécuterait pas. C'est exactement ce dont parle la question 5.3.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie (question 5.2)</div>
+<p>
+  <strong>Calcul des quatre paires de payoffs</strong> (avec \( \pi_i = (80 - Q - 20)q_i \)) :
+</p>
+<ul>
+<li>[30] contre [réaction] : \( q_2 = 15 \), \( Q = 45 \), \( p = 35 \) ⇒ \( \pi_1 = 15\times 30 = 450 \),
+  \( \pi_2 = 15\times 15 = 225 \) ;</li>
+<li>[30] contre [\( q_2 = 20 \)] : \( Q = 50 \), \( p = 30 \) ⇒ \( \pi_1 = 10\times 30 = 300 \),
+  \( \pi_2 = 10\times 20 = 200 \) ;</li>
+<li>[20] contre [réaction] : \( q_2 = 20 \), \( Q = 40 \), \( p = 40 \) ⇒ \( \pi_1 = \pi_2 = 400 \) ;</li>
+<li>[20] contre [\( q_2 = 20 \)] : \( Q = 40 \), \( p = 40 \) ⇒ \( \pi_1 = \pi_2 = 400 \).</li>
+</ul>
+<p><strong>Forme normale</strong> (firme 1 en lignes, firme 2 en colonnes) :</p>
+<table class="game">
+<tr><td class="void"></td><td class="void"></td><th colspan="2">Firme 2</th></tr>
+<tr><td class="void"></td><td class="void"></td><th>\( q_2 = 30 - \tfrac{1}{2}q_1 \)</th><th>\( q_2 = 20 \)</th></tr>
+<tr><td class="player" rowspan="2">Firme 1</td><th>\( q_1 = 30 \)</th><td class="nash">(450 ; 225)</td><td>(300 ; 200)</td></tr>
+<tr><th>\( q_1 = 20 \)</th><td>(400 ; 400)</td><td class="nash">(400 ; 400)</td></tr>
+</table>
+<p><strong>Équilibres de Nash</strong> (meilleures réponses mutuelles) :</p>
+<ul>
+<li>([30] ; [réaction]) : la firme 1 obtient 450, dévier vers [20] ne donnerait que 400 ; la firme 2
+  obtient 225, dévier vers [\( q_2 = 20 \)] ne donnerait que 200. <strong>Équilibre de Nash</strong>,
+  et c'est bien l'issue de Stackelberg de 5.1.</li>
+<li>([20] ; [\( q_2 = 20 \)]) : la firme 1 obtient 400, dévier vers [30] ne donnerait que 300 ; la
+  firme 2 obtient 400 et dévier vers [réaction] donnerait aussi 400 (face à \( q_1 = 20 \), la
+  réaction prescrit justement 20) : aucune déviation strictement profitable.
+  <strong>Équilibre de Nash également.</strong></li>
+<li>([30] ; [\( q_2 = 20 \)]) : la firme 1 dévierait vers [20] (400 &gt; 300) ⇒ pas un équilibre.</li>
+<li>([20] ; [réaction]) : la firme 1 dévierait vers [30] (450 &gt; 400) ⇒ pas un équilibre.</li>
+</ul>
+<p>
+  Le jeu réduit possède donc <strong>deux équilibres de Nash</strong>, dont l'issue de Stackelberg.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les erreurs classiques de la 5.2</div>
+<ol>
+<li><strong>Appliquer la fonction de réaction dans la colonne [rigide].</strong> En case B, la
+  firme 2 produit 20, pas 15. Sa règle ne regarde pas \( q_1 \).</li>
+<li><strong>Se tromper de prix dans une case.</strong> Recalcule \( Q \) puis \( p \) pour
+  <em>chaque</em> case : ils changent d'une case à l'autre (35, 30, 40, 40). Reprendre le prix de la
+  case précédente par habitude est l'erreur la plus répandue.</li>
+<li><strong>Oublier les cases C et D identiques.</strong> Elles le sont vraiment ; ne « corrige »
+  pas ce que tu prends pour une faute.</li>
+<li><strong>S'arrêter au premier équilibre trouvé.</strong> L'énoncé écrit « <em>tous</em> les
+  équilibres de Nash ». Teste les quatre cases, systématiquement.</li>
+<li><strong>Déclarer que ([20] ; [rigide]) n'est pas un équilibre parce qu'il n'est pas
+  « parfait ».</strong> C'en est un, et un vrai. Sa non-perfection est une <em>autre</em> propriété,
+  celle de la question 5.3. Un équilibre non parfait reste un équilibre de Nash.</li>
+</ol>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Méthode — remplir une forme normale sans jamais se tromper</div>
+<p>
+  Pour chaque case, écris <strong>en brouillon</strong> la petite chaîne suivante, dans cet ordre,
+  sans jamais en sauter un maillon :
+</p>
+\[ q_1 \;\rightarrow\; q_2 \;\rightarrow\; Q = q_1 + q_2 \;\rightarrow\; p = 80 - Q \]
+\[ \rightarrow\; \text{marge} = p - 20 \;\rightarrow\; \pi_1 = \text{marge}\times q_1 \;,\;\; \pi_2 = \text{marge}\times q_2 \]
+<p>
+  Sept petits calculs par case, vingt-huit en tout, tous élémentaires. À ce rythme, les six points
+  des payoffs sont acquis en cinq minutes, même si le reste de la question t'échappe.
+</p>
+</div>
+
+<hr class="soft">
+
+<h2>5. Question 5.3 — pourquoi un seul des deux équilibres tient debout</h2>
+
+<div class="enonce">
+  <div class="enonce-title">Énoncé — question 5.3 (6 points)</div>
+  <p>
+    Expliquez pourquoi l'équilibre de Stackelberg est un équilibre de Nash parfait en sous-jeux
+    (ENPS), alors que l'autre équilibre de Nash identifié en 5.2) ne l'est pas.
+  </p>
+</div>
+
+<dl class="lexique">
+<dt>« sous-jeu »</dt>
+<dd>Une <strong>partie de l'arbre</strong> qu'on peut détacher et considérer comme un petit jeu
+  autonome. Ici, chaque quantité \( q_1 \) possible ouvre un sous-jeu : « la firme 2 doit choisir
+  \( q_2 \), sachant que \( q_1 \) vaut telle valeur ».</dd>
+<dt>« parfait en sous-jeux »</dt>
+<dd>Un équilibre est <span class="term">parfait en sous-jeux</span> si les stratégies sont
+  optimales <strong>dans chaque sous-jeu</strong>, y compris ceux qu'on n'atteindra jamais. Le mot
+  « parfait » signifie ici « qui résiste à l'examen partout », pas « le meilleur ».</dd>
+<dt>« Expliquez »</dt>
+<dd>Aucun calcul nouveau n'est attendu : tous les nombres sont déjà dans la 5.2. Ce sont
+  <strong>6 points de rédaction</strong>. Le barème veut deux choses : le critère de l'ENPS
+  (2 points) et la démonstration chiffrée que la menace n'est pas crédible (4 points).</dd>
+</dl>
+
+<div class="box box-rappel">
+<div class="box-title">Rappel du volume 1 (chapitre 9) — ENPS et menace non crédible</div>
+<p>
+  Tout équilibre parfait en sous-jeux est un équilibre de Nash ; l'inverse est faux. Un équilibre
+  de Nash peut reposer sur une <span class="term">menace non crédible</span> : une promesse de
+  représailles que son auteur n'aurait <em>pas intérêt à exécuter</em> le moment venu. L'induction
+  à rebours élimine automatiquement ces équilibres-là, parce qu'elle oblige chaque joueur à jouer
+  optimalement en <em>chaque</em> nœud de l'arbre.
+</p>
+</div>
+
+<h3>5.1 Les sous-jeux de notre modèle</h3>
+
+<p>
+  Notre arbre a une racine (le choix de la firme 1) et une infinité de nœuds au second étage : un
+  par valeur possible de \( q_1 \). Chacun de ces nœuds ouvre un sous-jeu. Une stratégie de la
+  firme 2 est parfaite en sous-jeux si elle prescrit la <strong>meilleure réponse dans tous</strong>,
+  et pas seulement dans celui qu'on atteint effectivement.
+</p>
+
+<h3>5.2 Test de la stratégie [réaction] : elle passe partout</h3>
+
+<p>
+  Par construction, \( q_2 = 30 - \tfrac{1}{2}q_1 \) <em>est</em> la solution du problème de
+  maximisation de la firme 2 pour un \( q_1 \) quelconque — c'est ce qu'on a démontré à l'étape 2 de
+  la question 5.1, sans jamais fixer \( q_1 \). Elle est donc optimale dans <strong>chaque</strong>
+  sous-jeu : après \( q_1 = 0 \) elle prescrit 30, après \( q_1 = 30 \) elle prescrit 15, après
+  \( q_1 = 47 \) elle prescrirait 6,5, et à chaque fois c'est le meilleur choix possible.
+  L'équilibre \( \bigl(30\,;\,[\text{réaction}]\bigr) \) est donc <strong>parfait en sous-jeux</strong> :
+  c'est celui, et le seul, que l'induction à rebours produit.
+</p>
+
+<h3>5.3 Test de la stratégie [rigide] : elle échoue après \( q_1 = 30 \)</h3>
+
+<p>
+  Il suffit d'exhiber <strong>un</strong> sous-jeu où elle n'est pas optimale. Prenons celui qui
+  suit \( q_1 = 30 \) — un sous-jeu qu'on n'atteint pas dans l'équilibre D, puisque le leader y
+  produit 20 ; c'est justement là qu'il faut aller regarder.
+</p>
+
+<div class="calc">
+<div class="step">\[ \text{si } q_2 = 20 : \quad p = 80 - 50 = 30, \quad \pi_2 = (30-20)\times 20 = 200 \]
+<div class="why">C'est ce que la stratégie rigide prescrit, et ce qu'elle rapporte : la case B de la 5.2.</div></div>
+<div class="step">\[ \text{si } q_2 = 15 : \quad p = 80 - 45 = 35, \quad \pi_2 = (35-20)\times 15 = 225 \]
+<div class="why">C'est la meilleure réponse, celle que dicte la fonction de réaction.</div></div>
+<div class="step">\[ 200 \;<\; 225 \]
+<div class="why">La firme 2 perdrait 25 en exécutant sa menace. Elle ne l'exécuterait donc pas. La stratégie [rigide] <strong>n'est pas optimale dans ce sous-jeu</strong> : l'équilibre D n'est pas parfait en sous-jeux.</div></div>
+</div>
+
+<figure>
+<svg viewBox="0 0 500 280" width="100%" style="max-width:12.6cm" role="img" aria-label="Arbre réduit montrant que la stratégie rigide de la firme 2 n'est pas optimale dans le sous-jeu qui suit une production de 30 par la firme 1">
+  <circle cx="48" cy="140" r="6" fill="#111827"/>
+  <text x="48" y="122" font-size="12" font-weight="bold" text-anchor="middle">Firme 1</text>
+  <line x1="54" y1="136" x2="184" y2="74" stroke="#111827" stroke-width="1.4"/>
+  <line x1="54" y1="145" x2="184" y2="204" stroke="#4338ca" stroke-width="2.4"/>
+  <text x="100" y="94" font-size="11.5" transform="rotate(-25 100 94)">q₁ = 20</text>
+  <text x="98" y="190" font-size="11.5" font-weight="bold" style="fill:#4338ca" transform="rotate(24 98 190)">q₁ = 30</text>
+  <circle cx="190" cy="70" r="5.5" fill="#6b7280"/>
+  <circle cx="190" cy="208" r="6" fill="#4338ca"/>
+  <text x="190" y="54" font-size="11.5" text-anchor="middle" style="fill:#6b7280">Firme 2</text>
+  <text x="190" y="244" font-size="11.5" text-anchor="middle" style="fill:#4338ca">Firme 2 — le sous-jeu à tester</text>
+  <line x1="196" y1="67" x2="326" y2="42" stroke="#6b7280" stroke-width="1.3"/>
+  <line x1="196" y1="73" x2="326" y2="98" stroke="#6b7280" stroke-width="1.3"/>
+  <text x="332" y="46" font-size="11.5" style="fill:#4b5563">[réaction] → 20 : (400 ; 400)</text>
+  <text x="332" y="102" font-size="11.5" style="fill:#4b5563">[rigide] → 20 : (400 ; 400)</text>
+  <line x1="196" y1="204" x2="326" y2="164" stroke="#111827" stroke-width="2.4"/>
+  <line x1="196" y1="212" x2="326" y2="252" stroke="#be123c" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <text x="332" y="168" font-size="11.5" font-weight="bold">[réaction] → 15 : (450 ; 225)</text>
+  <text x="332" y="256" font-size="11.5" style="fill:#be123c">[rigide] → 20 : (300 ; 200)</text>
+  <g stroke="#be123c" stroke-width="2"><line x1="252" y1="222" x2="266" y2="236"/><line x1="266" y1="222" x2="252" y2="236"/></g>
+  <text x="250" y="140" font-size="11" text-anchor="middle" style="fill:#be123c">225 &gt; 200 : la firme 2</text>
+  <text x="250" y="153" font-size="11" text-anchor="middle" style="fill:#be123c">n'exécuterait pas la menace</text>
+</svg>
+<figcaption>Figure 5 — Le sous-jeu qui démasque la menace. Après \( q_1 = 20 \) (en haut), les deux stratégies de la firme 2 se confondent : c'est pour cela que l'équilibre D existe. Après \( q_1 = 30 \) (en bas), elles divergent — et la branche « rigide », barrée en rouge, rapporte 200 au lieu de 225. La firme 2 n'y a pas intérêt : sa menace est vide.</figcaption>
+</figure>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi le tableau de la 5.2 ne voyait pas le problème</div>
+<p>
+  Dans le tableau, la stratégie [rigide] n'apparaît que par ses <em>conséquences globales</em>, pas
+  par le détail de ce qu'elle ferait dans chaque situation. La colonne dit « si le leader produit
+  30, la firme 2 gagne 200 » — mais elle ne dit pas que la firme 2 <em>préférerait</em> faire autre
+  chose à ce moment-là. Le tableau a aplati l'escalier : on ne voit plus que la firme 2 décide
+  <strong>après</strong> avoir vu \( q_1 \), et qu'elle est donc libre de changer d'avis.
+</p>
+<p>
+  L'ENPS est précisément le critère qui remet le relief : il exige que la stratégie tienne debout
+  <em>dans chaque nœud</em>, pas seulement en moyenne sur toute la partie.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce qu'il fallait écrire sur la copie (question 5.3)</div>
+<p>
+  Un équilibre parfait en sous-jeux exige que la stratégie de chaque joueur soit optimale
+  <strong>dans chaque sous-jeu</strong>, y compris ceux qui ne sont pas atteints à l'équilibre.
+</p>
+<p>
+  La stratégie [\( q_2 = 30 - \tfrac{1}{2}q_1 \)] prescrit, par construction, la meilleure réponse
+  de la firme 2 dans <em>tous</em> les sous-jeux (après chaque \( q_1 \) possible). L'équilibre
+  ([30] ; [\( 30 - \tfrac{1}{2}q_1 \)]) survit donc à l'induction à rebours :
+  <strong>c'est l'ENPS</strong>, et c'est l'issue de Stackelberg.
+</p>
+<p>
+  L'équilibre ([20] ; [\( q_2 = 20 \) quel que soit \( q_1 \)]) repose au contraire sur une
+  <strong>menace non crédible</strong>. Dans le sous-jeu qui suit \( q_1 = 30 \), la stratégie
+  « produire 20 quoi qu'il arrive » rapporte \( (80 - 50 - 20)\times 20 = 200 \), alors que la
+  meilleure réponse \( q_2 = 15 \) rapporte \( (80 - 45 - 20)\times 15 = 225 \). La firme 2
+  n'exécuterait pas sa menace. Celle-ci dissuade le leader dans la forme normale, mais elle ne
+  résiste pas à l'induction à rebours : <strong>cet équilibre n'est pas parfait en sous-jeux</strong>.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les erreurs de la 5.3</div>
+<ol>
+<li><strong>Écrire que l'équilibre D « n'est pas un équilibre de Nash ».</strong> C'en est un. Il
+  n'est pas <em>parfait</em>, ce qui est une exigence supplémentaire. Confondre les deux coûte la
+  moitié des points.</li>
+<li><strong>Rester dans le vague.</strong> « La menace n'est pas crédible » sans les nombres ne
+  vaut qu'un point. Il faut le sous-jeu (\( q_1 = 30 \)) et la comparaison chiffrée
+  (200 contre 225).</li>
+<li><strong>Choisir le mauvais sous-jeu.</strong> Tester après \( q_1 = 20 \) ne prouve rien : les
+  deux stratégies y coïncident. Il faut aller là où elles diffèrent, donc <em>hors</em> du chemin
+  d'équilibre.</li>
+<li><strong>Dire que le leader gagne « parce qu'il a plus d'information ».</strong> Il en a moins.
+  Il gagne parce qu'il s'engage le premier, de façon irréversible.</li>
+</ol>
+</div>
+
+<hr class="soft">
+
+<h2>6. Récapitulatif : Stackelberg contre Cournot</h2>
+
+<h3>6.1 Le point de comparaison : le même marché en simultané</h3>
+
+<p>
+  Pour mesurer l'avantage du leader, il faut un repère : que se passerait-il si les deux firmes
+  décidaient <strong>en même temps</strong> ? C'est le modèle de Cournot, et il se résout en trois
+  lignes à partir de ce qu'on sait déjà.
+</p>
+
+<div class="calc">
+<div class="step">\[ q_2 = 30 - \tfrac{1}{2}q_1 \qquad\text{et}\qquad q_1 = 30 - \tfrac{1}{2}q_2 \]
+<div class="why">Les deux fonctions de réaction. Celle de la firme 1 s'obtient exactement comme celle de la firme 2, en dérivant \( \pi_1 = (60 - q_1 - q_2)q_1 \) par rapport à \( q_1 \) : le problème est parfaitement symétrique.</div></div>
+<div class="step">\[ q_1 = 30 - \tfrac{1}{2}\bigl(30 - \tfrac{1}{2}q_1\bigr) = 15 + \tfrac{1}{4}q_1 \]
+<div class="why">Je substitue la première dans la seconde. Dans la parenthèse : \( -\tfrac12 \times 30 = -15 \), donc \( 30 - 15 = 15 \) ; et \( -\tfrac12 \times (-\tfrac12 q_1) = +\tfrac14 q_1 \).</div></div>
+<div class="step">\[ \tfrac{3}{4}q_1 = 15 \quad\Longrightarrow\quad q_1 = 20 \quad\Longrightarrow\quad q_2 = 20 \]
+<div class="why">Je retranche \( \tfrac14 q_1 \) des deux côtés (\( 1 - \tfrac14 = \tfrac34 \)), puis je multiplie par \( \tfrac43 \). Par symétrie, \( q_2 = 20 \) aussi. D'où \( Q = 40 \), \( p = 40 \), marge 20, et \( \pi_1 = \pi_2 = 400 \).</div></div>
+</div>
+
+<h3>6.2 Le face-à-face</h3>
+
+<table class="compare">
+<tr><th class="left">&nbsp;</th><th>Cournot (simultané)</th><th>Stackelberg (séquentiel)</th><th class="left">Ce que ça dit</th></tr>
+<tr><td class="left">\( q_1 \) — le leader</td><td>20</td><td><strong>30</strong></td><td class="left">Il produit moitié plus</td></tr>
+<tr><td class="left">\( q_2 \) — le follower</td><td>20</td><td><strong>15</strong></td><td class="left">Il recule d'un quart</td></tr>
+<tr><td class="left">\( Q \) — total</td><td>40</td><td>45</td><td class="left">Plus de biens sur le marché</td></tr>
+<tr><td class="left">\( p \) — prix</td><td>40</td><td>35</td><td class="left">Le prix baisse : les clients gagnent</td></tr>
+<tr><td class="left">\( \pi_1 \)</td><td>400</td><td><strong>450</strong></td><td class="left">+50 : l'avantage du premier joueur</td></tr>
+<tr><td class="left">\( \pi_2 \)</td><td>400</td><td><strong>225</strong></td><td class="left">−175 : le follower paie l'addition</td></tr>
+<tr><td class="left">\( \pi_1 + \pi_2 \)</td><td>800</td><td>675</td><td class="left">Le secteur, dans son ensemble, y perd</td></tr>
+</table>
+
+<figure>
+<svg viewBox="0 0 470 285" width="100%" style="max-width:12.4cm" role="img" aria-label="Barres comparant les profits des deux firmes en Cournot et en Stackelberg">
+  <defs><pattern id="hachF2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#111827" stroke-width="2.4"/></pattern></defs>
+  <line x1="58" y1="232" x2="450" y2="232" stroke="#111827" stroke-width="1.6"/>
+  <line x1="58" y1="232" x2="58" y2="42" stroke="#111827" stroke-width="1.6"/>
+  <g stroke="#d1d5db" stroke-width="1">
+    <line x1="58" y1="161" x2="450" y2="161"/><line x1="58" y1="90" x2="450" y2="90"/>
+  </g>
+  <g font-size="11" text-anchor="end" style="fill:#4b5563"><text x="53" y="165">200</text><text x="53" y="94">400</text></g>
+  <text x="64" y="38" font-size="11.5">profit (€)</text>
+  <rect x="86" y="90" width="46" height="142" fill="#4338ca"/>
+  <rect x="140" y="90" width="46" height="142" fill="url(#hachF2)" stroke="#111827" stroke-width="1.2"/>
+  <rect x="268" y="72" width="46" height="160" fill="#4338ca"/>
+  <rect x="322" y="152" width="46" height="80" fill="url(#hachF2)" stroke="#111827" stroke-width="1.2"/>
+  <g font-size="12" font-weight="bold" text-anchor="middle">
+    <text x="109" y="84">400</text><text x="163" y="84">400</text><text x="291" y="66">450</text><text x="345" y="146">225</text>
+  </g>
+  <g font-size="12" text-anchor="middle" font-weight="bold">
+    <text x="136" y="252">Cournot (simultané)</text><text x="318" y="252">Stackelberg (séquentiel)</text>
+  </g>
+  <rect x="150" y="266" width="14" height="11" fill="#4338ca"/>
+  <text x="170" y="276" font-size="11">firme 1 (leader)</text>
+  <rect x="272" y="266" width="14" height="11" fill="url(#hachF2)" stroke="#111827" stroke-width="1"/>
+  <text x="292" y="276" font-size="11">firme 2 (follower)</text>
+</svg>
+<figcaption>Figure 6 — L'avantage du premier joueur, en barres. Passer du simultané au séquentiel fait gagner 50 au leader (400 → 450) et perdre 175 au follower (400 → 225). Le gain du leader est bien plus petit que la perte du suiveur : le total du secteur tombe de 800 à 675, parce que la quantité totale augmente et que le prix baisse. Ce que les firmes perdent, les consommateurs le gagnent.</figcaption>
+</figure>
+
+<div class="box box-why">
+<div class="box-title">Trois remarques qui font la différence dans une conclusion</div>
+<ul>
+<li><strong>Le leader produit exactement la quantité de monopole (30).</strong> Une firme seule sur
+  ce marché maximiserait \( (60 - q)q \) et produirait 30. Coïncidence du modèle linéaire, mais
+  très commode à retenir : \( q_1^{\text{Stackelberg}} = q^{\text{monopole}} \), et
+  \( q_2 = \tfrac12 q_1 \).</li>
+<li><strong>Le secteur y perd, les clients y gagnent.</strong> Le passage au séquentiel augmente la
+  quantité totale (40 → 45) et fait baisser le prix (40 → 35). Les profits cumulés baissent, mais
+  les consommateurs paient moins cher : Stackelberg est <em>plus concurrentiel</em> que Cournot.</li>
+<li><strong>Le follower n'est pas mal joué : il fait de son mieux.</strong> Ses 225 sont le maximum
+  atteignable une fois que le leader a produit 30. Son malheur ne vient pas d'une erreur, mais du
+  fait qu'il joue en second.</li>
+</ul>
+</div>
+
+<h3>6.3 Le tableau des réponses</h3>
+
+<table class="data">
+<tr><th>Question</th><th>Réponse</th><th>Points</th></tr>
+<tr><td>5.1 — réaction du follower</td><td>\( q_2 = 30 - \tfrac{1}{2}q_1 \)</td><td>4</td></tr>
+<tr><td>5.1 — quantités, prix, profits</td><td>\( q_1 = 30 \), \( q_2 = 15 \), \( Q = 45 \), \( p = 35 \), \( \pi_1 = 450 \), \( \pi_2 = 225 \)</td><td>8</td></tr>
+<tr><td>5.2 — les quatre cases</td><td>(450 ; 225), (300 ; 200), (400 ; 400), (400 ; 400)</td><td>6</td></tr>
+<tr><td>5.2 — équilibres de Nash</td><td>(30 ; [réaction]) et (20 ; [\( q_2 = 20 \)])</td><td>6</td></tr>
+<tr><td>5.3 — ENPS</td><td>Seul (30 ; [réaction]) est parfait : après \( q_1 = 30 \), la stratégie rigide rapporte 200 &lt; 225 ⇒ menace non crédible</td><td>6</td></tr>
+</table>
+
+<h3>6.4 La checklist avant de rendre la copie</h3>
+
+<div class="box box-methode">
+<div class="box-title">Sept vérifications, deux minutes</div>
+<ol>
+<li>Ma parenthèse de profit commence-t-elle par <strong>60</strong> (et pas 80) ?</li>
+<li>Ai-je dérivé \( \pi_2 \) par rapport à \( q_2 \) — les mêmes indices des deux côtés ?</li>
+<li>Ai-je <strong>substitué</strong> la réaction du follower dans \( \pi_1 \) avant de dériver ?</li>
+<li>Le signe : \( -(30 - \tfrac12 q_1) \) donne bien \( -30 + \tfrac12 q_1 \) ?</li>
+<li>Contrôle final : \( q_1 = 2q_2 \) et \( \pi_1 = 2\pi_2 \) ? Prix (35) au-dessus du coût (20) ?</li>
+<li>Dans la 5.2, ai-je recalculé \( Q \) puis \( p \) pour <strong>chacune</strong> des quatre
+  cases, et surligné les <em>ex æquo</em> ?</li>
+<li>Dans la 5.3, ai-je écrit les deux nombres 200 et 225, et nommé le sous-jeu (\( q_1 = 30 \)) ?</li>
+</ol>
+</div>
+
+<h3>6.5 Auto-test</h3>
+
+<p>Réponds sans regarder, puis vérifie juste en dessous.</p>
+
+<ol>
+<li>Que produit le follower si le leader produit 40 ?</li>
+<li>Pourquoi le leader ne produit-il pas 40, puisqu'il a l'avantage ?</li>
+<li>L'équilibre ([20] ; [\( q_2 = 20 \)]) est-il un équilibre de Nash ?</li>
+<li>Dans quel sous-jeu la stratégie rigide échoue-t-elle, et de combien ?</li>
+<li>Le follower préférerait-il jouer en premier ?</li>
+</ol>
+
+<div class="result">
+<div class="result-title">Les réponses</div>
+<ol>
+<li>\( q_2 = 30 - 20 = 10 \).</li>
+<li>Parce que son profit \( (30 - \tfrac12 q_1)q_1 \) vaudrait \( 10 \times 40 = 400 \), soit moins
+  que les 450 obtenus avec 30. Au-delà de 30, le prix baisse plus vite que la quantité ne monte.</li>
+<li><strong>Oui</strong>, pleinement — il n'est simplement pas parfait en sous-jeux.</li>
+<li>Après \( q_1 = 30 \) : elle rapporte 200 au lieu de 225, soit 25 de moins.</li>
+<li>Évidemment : les rôles sont interchangeables, et le leader gagne 450 contre 225. C'est
+  l'avantage du premier joueur, pas une propriété de la firme 1.</li>
+</ol>
+</div>
+
+<p>
+  Tu as terminé le chapitre le plus technique du volume. Retiens surtout ces trois phrases : la
+  parenthèse commence par 60 ; on substitue avant de dériver ; et ce qui donne le pouvoir, ce n'est
+  pas l'information, c'est l'engagement irréversible.
+</p>
+
+</section>
