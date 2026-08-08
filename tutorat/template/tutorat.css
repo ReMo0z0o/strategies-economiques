@@ -409,3 +409,52 @@ hr.soft {
   border-top: 1px solid var(--rule);
   margin: 0.6cm 0;
 }
+
+/* ------------------------------------------------------------------ */
+/* Sommaire paginé : titre … numéro de page                            */
+/* ------------------------------------------------------------------ */
+
+.toc ul.toc-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.45cm 0 0;
+}
+.toc .toc-line {
+  /* align-items: flex-end place le numéro en face de la DERNIÈRE ligne
+     lorsqu'un titre long se replie sur deux lignes. */
+  display: flex;
+  align-items: flex-end;
+  gap: 0.18cm;
+  margin-bottom: 0.08cm;
+  page-break-inside: avoid;
+}
+.toc .toc-line .t { flex: 0 1 auto; }
+.toc .toc-line .dots {
+  flex: 1 1 auto;
+  min-width: 0.5cm;
+  border-bottom: 1px dotted var(--light);
+  margin-bottom: 0.3em;
+}
+.toc .toc-line .p {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--muted);
+}
+.toc .lvl1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 11pt;
+  margin-top: 0.3cm;
+}
+.toc .lvl1 .p { color: var(--ink); }
+.toc .lvl2 {
+  font-size: 10pt;
+  color: var(--muted);
+  padding-left: 0.75cm;
+}
+.toc .toc-hint {
+  font-size: 9.5pt;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0.1cm 0 0.3cm;
+}

@@ -13,6 +13,7 @@
  * Usage : node tutorat/build.mjs [id …]   (sans argument : tous les dossiers)
  */
 import { readdirSync, readFileSync, statSync, writeFileSync, mkdirSync, rmSync } from "node:fs";
+import { spawnSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { chromium } from "playwright-core";
@@ -22,6 +23,8 @@ const DIR = join(ROOT, "tutorat");
 const OUT_DIR = join(DIR, "out");
 const KATEX = join(ROOT, "node_modules", "katex", "dist");
 const CHROMIUM = process.env.CHROMIUM_PATH ?? "/opt/pw-browsers/chromium";
+// Interpréteur disposant de pypdf, pour relever les numéros de page du sommaire.
+const PYTHON = process.env.PYTHON_BIN ?? "/tmp/pv/bin/python";
 
 function cover(meta) {
   return `
@@ -58,17 +61,66 @@ function cover(meta) {
   </section>`;
 }
 
-function toc(meta) {
-  const items = meta.chapters
-    .map((c) => {
-      const subs = (c.sections ?? []).map((s) => `<li>${s}</li>`).join("");
-      return `<li>${c.title}${subs ? `<ol>${subs}</ol>` : ""}</li>`;
+/* Marqueur invisible fermant le sommaire : il sert à l'extracteur de pages
+ * pour savoir à partir d'où chercher les titres (le sommaire les contient tous). */
+const TOC_MARKER = "FinDuSommaireQ7X";
+
+/*
+ * Titres réels du document : un h1 par chapitre, puis ses h2.
+ *
+ * Chaque entrée porte deux formes. `display` conserve les délimiteurs
+ * mathématiques, pour que KaTeX rende la formule dans le sommaire comme dans le
+ * titre. `key` en est débarrassée : Chromium n'expose pas de table Unicode
+ * exploitable pour les glyphes des polices KaTeX, si bien que les formules
+ * n'apparaissent pas du tout dans le texte extrait du PDF — les inclure dans la
+ * clé de recherche rendrait le titre introuvable.
+ */
+function headings(body) {
+  const out = [];
+  const re = /<(h1|h2)\b[^>]*>([\s\S]*?)<\/\1>/gi;
+  let m;
+  while ((m = re.exec(body)) !== null) {
+    const display = m[2]
+      .replace(/<[^>]+>/g, "")
+      .replace(/&nbsp;/g, " ")
+      .replace(/&amp;/g, "&")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/\s+/g, " ")
+      .trim();
+    const key = display
+      .replace(/\\\([\s\S]*?\\\)/g, " ")
+      .replace(/\\\[[\s\S]*?\\\]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (display) out.push({ level: m[1].toLowerCase(), display, key });
+  }
+  return out;
+}
+
+/** Sommaire avec conducteurs de points et numéros de page (si connus). */
+function toc(entries, pages) {
+  const items = entries
+    .map((e, i) => {
+      const n = pages?.[i];
+      return (
+        `<li class="toc-line ${e.level === "h1" ? "lvl1" : "lvl2"}">` +
+        `<span class="t">${e.display}</span>` +
+        `<span class="dots"></span>` +
+        `<span class="p">${n ?? "—"}</span>` +
+        `</li>`
+      );
     })
     .join("");
   return `
   <section class="toc">
     <h2>Sommaire</h2>
-    <ol>${items}</ol>
+    <p class="toc-hint">
+      Les numéros renvoient aux pages de ce document. Les entrées en gras sont les chapitres ;
+      les entrées en retrait, leurs sections.
+    </p>
+    <ul class="toc-list">${items}</ul>
+    <span style="font-size:1px;color:#ffffff">${TOC_MARKER}</span>
   </section>`;
 }
 
@@ -133,19 +185,67 @@ const ids = readdirSync(DIR).filter(
 mkdirSync(OUT_DIR, { recursive: true });
 const browser = await chromium.launch({ executablePath: CHROMIUM });
 
+/** Numéros de page de chaque titre, relevés dans le PDF déjà rendu. */
+function locatePages(pdfPath, entries) {
+  const input = JSON.stringify({
+    pdf: pdfPath,
+    marker: TOC_MARKER,
+    titles: entries.map((e) => e.key),
+  });
+  const res = spawnSync(PYTHON, [join(DIR, "pdf-pages.py")], { input, encoding: "utf8" });
+  if (res.status !== 0) {
+    console.warn(`  ⚠ pagination du sommaire indisponible : ${(res.stderr || "").trim()}`);
+    return null;
+  }
+  return JSON.parse(res.stdout);
+}
+
 for (const id of ids) {
   const dir = join(DIR, id);
   const meta = JSON.parse(readFileSync(join(dir, "meta.json"), "utf8"));
-  const body = meta.chapters.map((c) => readFileSync(join(dir, c.file), "utf8")).join("\n");
+  const fragments = meta.chapters.map((c) => readFileSync(join(dir, c.file), "utf8"));
+  const body = fragments.join("\n");
+
+  /*
+   * Entrées du sommaire. Pour un chapitre, on affiche l'intitulé de meta.json
+   * (il porte le numéro de chapitre, absent du <h1> du fragment) mais on
+   * localise la page grâce au <h1> réel. Pour les sections, le <h2> sert des
+   * deux côtés.
+   */
+  const entries = [];
+  meta.chapters.forEach((c, i) => {
+    const hs = headings(fragments[i]);
+    const h1 = hs.find((h) => h.level === "h1");
+    entries.push({ level: "h1", display: c.title, key: h1 ? h1.key : c.title });
+    for (const h of hs) if (h.level === "h2") entries.push(h);
+  });
   const out = join(OUT_DIR, `${id}-cours-particulier.pdf`);
-  await renderPdf(
-    browser,
-    wrap(cover(meta) + toc(meta) + body),
-    out,
-    join(dir, ".tmp.html"),
-    `${meta.title} — ${meta.part}`,
+  const tmp = join(dir, ".tmp.html");
+  const title = `${meta.title} — ${meta.part}`;
+
+  /*
+   * Deux passes : la première produit le document avec un sommaire dont les
+   * numéros sont inconnus, la seconde le reproduit avec les numéros relevés.
+   * Le nombre de lignes du sommaire ne changeant pas, la pagination est stable ;
+   * on la revérifie tout de même et on recommence une fois si besoin.
+   */
+  let pages = null;
+  for (let pass = 1; pass <= 3; pass++) {
+    await renderPdf(browser, wrap(cover(meta) + toc(entries, pages) + body), out, tmp, title);
+    const found = locatePages(out, entries);
+    if (!found) break;
+    const stable = pages && found.every((p, i) => p === pages[i]);
+    pages = found;
+    if (stable) break;
+    if (pass === 3) {
+      await renderPdf(browser, wrap(cover(meta) + toc(entries, pages) + body), out, tmp, title);
+    }
+  }
+  const missing = pages ? pages.filter((p) => p === null).length : entries.length;
+  console.log(
+    `✓ ${id} → ${out}\n   sommaire : ${entries.length} entrées` +
+      (missing ? `, ${missing} sans numéro de page` : ", toutes paginées"),
   );
-  console.log(`✓ ${id} → ${out}`);
 }
 
 await browser.close();
