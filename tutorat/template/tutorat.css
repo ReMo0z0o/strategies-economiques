@@ -458,3 +458,49 @@ hr.soft {
   font-style: italic;
   margin: 0.1cm 0 0.3cm;
 }
+
+/* ------------------------------------------------------------------ */
+/* Fiche de synthèse : point à retenir + renvoi vers l'app             */
+/* ------------------------------------------------------------------ */
+
+.point {
+  margin: 0.32cm 0 0.36cm;
+  padding-left: 0.5cm;
+  border-left: 2px solid var(--rule);
+  page-break-inside: avoid;
+}
+.point > .point-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 10.8pt;
+  line-height: 1.4;
+  margin-bottom: 0.1cm;
+}
+.point > .point-title .num {
+  display: inline-block;
+  min-width: 0.62cm;
+  margin-left: -0.5cm;
+  color: var(--indigo);
+}
+.point p { margin: 0.1cm 0; font-size: 10.5pt; }
+.point ul, .point ol { margin: 0.12cm 0; font-size: 10.5pt; }
+
+/* Renvoi « où revoir ça dans l'app » */
+.ref-app {
+  display: inline-block;
+  margin-top: 0.12cm;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8.5pt;
+  line-height: 1.5;
+  color: var(--muted);
+  background: #f3f4f6;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.02cm 0.2cm;
+}
+.ref-app::before { content: "↗ app · "; color: var(--light); }
+.ref-app .path {
+  color: var(--light);
+  font-family: "Courier New", monospace;
+  font-size: 8pt;
+}

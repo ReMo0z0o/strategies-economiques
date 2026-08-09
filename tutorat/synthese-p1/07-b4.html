@@ -1,0 +1,359 @@
+<section class="chapter">
+  <div class="chapter-tag">B4 · Partie B — Les interactions stratégiques</div>
+  <h1>Jeux bayésiens</h1>
+  <p class="chapter-intro">Jouer sans connaître l'adversaire : comment décider, et comment définir un équilibre, quand on ignore les gains — donc les préférences — de celui d'en face ?</p>
+
+  <h2>La carte du chapitre</h2>
+
+  <table class="compare">
+    <thead>
+      <tr><th>§</th><th class="left">Section</th><th class="left">Ce qu'elle apporte</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td class="left">Où en est-on dans le cours ?</td><td class="left">B4 = l'équilibre de Nash de B1 + l'espérance de gain d'A3.</td></tr>
+      <tr><td>2</td><td class="left">L'information incomplète, c'est quoi ?</td><td class="left">L'hypothèse qu'on relâche : les gains ne sont plus de notoriété commune.</td></tr>
+      <tr><td>3</td><td class="left">Types, croyances &amp; la Nature</td><td class="left">Les trois mots de vocabulaire qui reviennent dans chaque phrase du chapitre.</td></tr>
+      <tr><td>4</td><td class="left">Le dilemme du prisonnier bayésien</td><td class="left">Premier exemple complet : deux tables de gains, un ENB par dominance.</td></tr>
+      <tr><td>5</td><td class="left">Les stratégies deviennent des règles d'action</td><td class="left">Le changement conceptuel majeur, et le comptage \( n^{k} \).</td></tr>
+      <tr><td>6</td><td class="left">La bataille des sexes bayésienne</td><td class="left">L'exemple central : ici la croyance devient indispensable.</td></tr>
+      <tr><td>7</td><td class="left">L'équilibre de Nash bayésien (ENB)</td><td class="left">La définition formelle et la recette générale de résolution.</td></tr>
+      <tr><td>8</td><td class="left">La forme extensive : dessiner l'incertitude</td><td class="left">La Nature en tête d'arbre, les information sets en pointillés.</td></tr>
+      <tr><td>9</td><td class="left">Le screening : faire parler l'information</td><td class="left">Menu de tarifs, contraintes IC et IR, coût de l'asymétrie, seuil de \( \lambda \).</td></tr>
+      <tr><td>10</td><td class="left">À maîtriser absolument</td><td class="left">La check-list : concepts, savoir-faire, pièges.</td></tr>
+      <tr><td>11</td><td class="left">Exercices corrigés</td><td class="left">Quatre exercices, du comptage au screening type examen.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Les points à retenir</h2>
+
+  <div class="point">
+    <div class="point-title"><span class="num">1.</span> B4 relâche l'hypothèse centrale de B1 : les gains ne sont plus de notoriété commune.</div>
+    <p>En B1, chaque case de la matrice était connue de tous — je connais tes gains, tu sais que je les connais, à l'infini. Ici, <strong>au moins un joueur est incertain de la fonction de gain d'un autre</strong> : ce sont les <span class="term">jeux bayésiens</span>. Conséquence directe : je ne peux plus prédire ton action avec certitude, puisque je la déduisais de tes gains — seulement avec des probabilités.</p>
+    <span class="ref-app">B4 · §2 — L'information incomplète, c'est quoi ? <span class="path">/strategies/theorie/b4#s1</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">2.</span> Information <em>incomplète</em> (j'ignore tes gains) ≠ information <em>imparfaite</em> (j'ignore ton action).</div>
+    <p>L'information imparfaite, c'est déjà B1 : dans un jeu simultané je ne vois pas ton coup, mais je connais parfaitement ta table de gains. Ici, c'est la connaissance des gains eux-mêmes qui saute. Au poker, l'incertitude porte sur la main de l'adversaire, donc sur sa fonction de gain : information incomplète. Le hasard seul ne suffit pas — à la roulette il y a du hasard, mais aucune incertitude sur les préférences des autres.</p>
+    <span class="ref-app">B4 · §2 — L'information incomplète, c'est quoi ? <span class="path">/strategies/theorie/b4#s1</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">3.</span> Le <em>type</em> d'un joueur, c'est sa fonction de gain — et chacun connaît le sien.</div>
+    <p>On modélise « je ne connais pas tes gains » en imaginant l'adversaire en plusieurs versions, chacune avec sa propre table ; une seule est la vraie. Dire « le prisonnier 2 peut être égoïste ou altruiste », c'est écrire <strong>deux matrices</strong>, pas inventer deux joueurs. Le joueur connaît son type ; c'est l'adversaire qui l'ignore.</p>
+    <span class="ref-app">B4 · §3 — Types, croyances &amp; la Nature <span class="path">/strategies/theorie/b4#s2</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">4.</span> La <em>croyance</em> est une distribution de probabilité sur les types de l'adversaire, exogène dans ce cours.</div>
+    <p>Ignorer le type ne veut pas dire n'avoir aucune idée : le joueur non informé attribue une probabilité à chaque type (0,8 égoïste · 0,2 altruiste). Ces probabilités sont <strong>données par l'énoncé</strong> et de notoriété commune ; c'est le <em>résultat</em> du tirage qui reste privé. C'est le même objet qu'en A3, et il sert à la même chose : calculer des espérances.</p>
+    <span class="ref-app">B4 · §3 — Types, croyances &amp; la Nature <span class="path">/strategies/theorie/b4#s2</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">5.</span> La <em>Nature</em> joue en premier et tire le type au sort.</div>
+    <p>Joueur fictif, sans gains ni objectif, placé en tête de l'arbre : elle tire les types selon les probabilités des croyances, puis chaque joueur apprend le sien. C'est elle qui convertit « incertitude sur les préférences » en un jeu dont la <em>structure</em>, elle, est parfaitement connue de tous.</p>
+    <span class="ref-app">B4 · §3 — Types, croyances &amp; la Nature <span class="path">/strategies/theorie/b4#s2</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">6.</span> L'asymétrie fondamentale : l'informé compare des gains certains, le non-informé raisonne en espérance.</div>
+    <p>Le joueur informé connaît sa table : il choisit <strong>type par type</strong>, sans jamais pondérer par des probabilités. Le joueur non informé, lui, ne peut évaluer ses actions qu'en espérance, avec ses croyances. Toute la mécanique du chapitre — et les deux pièges les plus coûteux — découle de cette seule phrase.</p>
+    <span class="ref-app">B4 · §3 — Types, croyances &amp; la Nature <span class="path">/strategies/theorie/b4#s2</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">7.</span> Une stratégie n'est plus une action mais une <strong>règle d'action complète</strong> : une action par type.</div>
+    <p>Elle prescrit quoi faire dans chacune des versions possibles du joueur : « Rouge si T1, Blanc si T2 ». Tout se passe comme si on devait choisir son plan <em>avant</em> d'apprendre son propre type — d'où l'obligation de prévoir chaque cas, pour chaque information set. « La Femme joue Rouge » ne décrit aucune stratégie.</p>
+    <span class="ref-app">B4 · §5 — Les stratégies deviennent des règles d'action <span class="path">/strategies/theorie/b4#s4</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">8.</span> Comptage : \( n^{k} \) stratégies pour \( k \) types et \( n \) actions.</div>
+    <p>La Femme (2 types, 2 actions) en a \( 2^2 = 4 \) ; l'Homme, qui n'a qu'un type, en garde 2. Un joueur à 3 types et 3 actions en a \( 3^3 = 27 \), pas 9 : on <strong>élève à la puissance</strong>, on ne multiplie pas types et actions. C'est une question de comptage classique, ratée par réflexe de B1.</p>
+    <span class="ref-app">B4 · §5 — Les stratégies deviennent des règles d'action <span class="path">/strategies/theorie/b4#s4</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">9.</span> Dilemme du prisonnier bayésien : quand une action domine dans <em>toutes</em> les tables, la croyance ne sert pas.</div>
+    <p>Le prisonnier 2 altruiste subit un coût moral de 4 mois s'il avoue : <em>Se taire</em> devient dominant pour lui, alors qu'<em>Avouer</em> l'est pour le type égoïste. Le prisonnier 1 a les mêmes gains dans les deux tables et Avouer y domine : inutile de calculer une espérance. ENB : ( Avouer ; (Avouer si égoïste · Se taire si altruiste) ).</p>
+    <span class="ref-app">B4 · §4 — Le dilemme du prisonnier bayésien <span class="path">/strategies/theorie/b4#s3</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">10.</span> L'ENB, c'est littéralement un équilibre de Nash calculé en espérance.</div>
+    <p>Un profil \( (S_1, S_2) \) est un <strong>équilibre de Nash bayésien</strong> si ses stratégies sont des <em>meilleures réponses mutuelles</em> : les actions que \( S_1 \) prescrit à chaque type maximisent l'espérance de gain, étant donné la croyance et étant donné la règle \( S_2 \) de l'adversaire. Deux adaptations par rapport à B1 : les choix deviennent des règles, et « meilleur gain » devient « meilleure espérance de gain ».</p>
+    <span class="ref-app">B4 · §7 — L'équilibre de Nash bayésien (ENB) <span class="path">/strategies/theorie/b4#s6</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">11.</span> La recette : fixer le non-informé, répondre type par type, puis vérifier l'étape retour.</div>
+    <p>L'étape « type par type » est facile (comparaisons de gains certains) ; l'<strong>étape retour</strong> est le juge de paix. Bataille des sexes, croyance 0,5 / 0,5, l'Homme joue Viande : la Femme répond (Rouge si T1 · Blanc si T2), puis \( E[\text{Viande}] = 2 \times 0{,}5 = 1 \) contre \( E[\text{Poisson}] = 1 \times 0{,}5 = 0{,}5 \). Meilleures réponses mutuelles : équilibre.</p>
+    <span class="ref-app">B4 · §6 — La bataille des sexes bayésienne <span class="path">/strategies/theorie/b4#s5</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">12.</span> Savoir <em>rejeter</em> un candidat vaut autant que savoir en valider un.</div>
+    <p>Si l'Homme part de Poisson, la Femme répond (Blanc si T1 · Rouge si T2) — mais face à cette règle \( E[\text{Viande}] = 1 > E[\text{Poisson}] = 0{,}5 \) : il dévie, donc pas d'équilibre. En posant \( p = \Pr(\text{T1}) \) : \( E[\text{Viande}] = 2p \) et \( E[\text{Poisson}] = 1 - p \) ; le premier ENB ne casserait que pour \( p < 1/3 \).</p>
+    <span class="ref-app">B4 · §6 — La bataille des sexes bayésienne <span class="path">/strategies/theorie/b4#s5</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">13.</span> La notation d'un ENB : une action pour le non-informé, une règle entre parenthèses pour l'informé.</div>
+    <p>( Viande ; (Rouge si T1 · Blanc si T2) ). La partie « informée » doit couvrir <strong>tous</strong> les types, dans l'ordre annoncé par l'énoncé. Une notation incomplète est comptée fausse même quand le raisonnement qui précède est juste : c'est la forme, pas le fond, qui coûte les points.</p>
+    <span class="ref-app">B4 · §10 — À maîtriser absolument <span class="path">/strategies/theorie/b4#s9</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">14.</span> En forme extensive, c'est l'<em>information set</em> qui code l'information — pas l'ordre vertical.</div>
+    <p>La Nature est en tête ; le jeu se duplique alors en deux univers. L'information set de l'Homme (pointillés) traverse la frontière T1 / T2 : il ne sait pas où il est, donc il doit jouer la même action des deux côtés — d'où ses 2 stratégies seulement. Ceux de la Femme restent chacun dans un univers : elle connaît son type, d'où ses 4 règles.</p>
+    <span class="ref-app">B4 · §8 — La forme extensive : dessiner l'incertitude <span class="path">/strategies/theorie/b4#s7</span></span>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 440 214" width="100%" style="max-width:11cm" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#333" stroke-width="1.1" fill="none">
+        <line x1="220" y1="22" x2="110" y2="72" />
+        <line x1="220" y1="22" x2="330" y2="72" />
+        <line x1="110" y1="72" x2="60" y2="140" />
+        <line x1="110" y1="72" x2="160" y2="140" />
+        <line x1="330" y1="72" x2="280" y2="140" />
+        <line x1="330" y1="72" x2="380" y2="140" />
+        <line x1="60" y1="140" x2="46" y2="172" />
+        <line x1="60" y1="140" x2="74" y2="172" />
+        <line x1="160" y1="140" x2="146" y2="172" />
+        <line x1="160" y1="140" x2="174" y2="172" />
+        <line x1="280" y1="140" x2="266" y2="172" />
+        <line x1="280" y1="140" x2="294" y2="172" />
+        <line x1="380" y1="140" x2="366" y2="172" />
+        <line x1="380" y1="140" x2="394" y2="172" />
+      </g>
+      <g stroke="#333" stroke-width="1.3" stroke-dasharray="5 4" fill="none">
+        <line x1="117" y1="72" x2="323" y2="72" />
+        <line x1="67" y1="140" x2="153" y2="140" />
+        <line x1="287" y1="140" x2="373" y2="140" />
+      </g>
+      <g fill="#111">
+        <circle cx="220" cy="22" r="5" />
+        <circle cx="110" cy="72" r="5" />
+        <circle cx="330" cy="72" r="5" />
+        <circle cx="60" cy="140" r="4" />
+        <circle cx="160" cy="140" r="4" />
+        <circle cx="280" cy="140" r="4" />
+        <circle cx="380" cy="140" r="4" />
+      </g>
+      <g font-family="Georgia, serif" font-size="12" fill="#111">
+        <text x="220" y="13" text-anchor="middle">Nature</text>
+        <text x="163" y="45" text-anchor="end">T1 · 0,5</text>
+        <text x="277" y="45" text-anchor="start">T2 · 0,5</text>
+        <text x="100" y="68" text-anchor="end">Homme</text>
+        <text x="340" y="68" text-anchor="start">Homme</text>
+        <text x="110" y="158" text-anchor="middle">Femme</text>
+        <text x="330" y="158" text-anchor="middle">Femme</text>
+      </g>
+      <g font-family="Georgia, serif" font-size="11" fill="#555">
+        <text x="220" y="96" text-anchor="middle">l'Homme ne distingue pas T1 de T2</text>
+        <text x="110" y="196" text-anchor="middle">univers T1</text>
+        <text x="330" y="196" text-anchor="middle">univers T2</text>
+      </g>
+    </svg>
+    <figcaption>La bataille des sexes bayésienne en forme extensive. Le pointillé de l'Homme <em>traverse</em> les deux univers (il ignore le type) ; ceux de la Femme restent chacun dans un univers — elle connaît son type, mais pas l'action de l'Homme : le jeu est bien simultané.</figcaption>
+  </figure>
+
+  <div class="point">
+    <div class="point-title"><span class="num">15.</span> L'arbre ne rend pas le jeu séquentiel.</div>
+    <p>Dessiner l'Homme « avant » la Femme est une pure convention de dessin. Ce qui code la simultanéité, ce sont les <strong>pointillés de la Femme</strong> : elle ne voit pas l'action de l'Homme au moment de choisir. Un information set = un ensemble de nœuds indistinguables pour le joueur qui doit y jouer.</p>
+    <span class="ref-app">B4 · §8 — La forme extensive : dessiner l'incertitude <span class="path">/strategies/theorie/b4#s7</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">16.</span> Le screening : on ne demande pas le type, on propose un menu et on laisse jouer l'auto-sélection.</div>
+    <p>La compagnie aérienne ne peut ni lire ni faire avouer le consentement à payer (Affaires : 700 en Premium, 400 en Économie ; Touriste : 220 et 200 ; coûts 150 et 100 ; proportion \( \lambda \) d'Affaires). Elle conçoit donc un <strong>menu \( (y, x) \)</strong> tel que chaque type, en choisissant égoïstement, <em>révèle son type de lui-même</em>. Timing : la Nature tire le type, la firme propose le menu, le voyageur choisit — jeu bayésien séquentiel.</p>
+    <span class="ref-app">B4 · §9 — Le screening : faire parler l'information <span class="path">/strategies/theorie/b4#s8</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">17.</span> Garder les prix du « rêve » ne marche pas : le voyageur d'affaires descend en Économie.</div>
+    <p>Avec \( (y, x) = (700,\ 200) \), le Business compare ses surplus : \( 700 - 700 = 0 \) en Premium contre \( 400 - 200 = 200 \) en Économie. Il prend l'Économie. C'est son <strong>information privée</strong> qui lui donne ce pouvoir — d'où la nécessité d'écrire des contraintes d'incitation avant tout calcul.</p>
+    <span class="ref-app">B4 · §9 — Le screening : faire parler l'information <span class="path">/strategies/theorie/b4#s8</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">18.</span> Quatre contraintes : deux <strong>IC</strong> (chacun choisit sa case) et deux <strong>IR</strong> (chacun préfère acheter que partir).</div>
+    <p>IC du Touriste \( 220 - y \le 200 - x \) · IC du Business \( 700 - y \ge 400 - x \), soit \( y - x \le 300 \) · IR du Touriste \( x \le 200 \) · IR du Business \( y \le 700 \). Réécrit \( \Pi_{\text{scr}} = (x-100) + \lambda\,(y-x-50) \), le programme devient limpide : pousser \( x \) au maximum <em>et</em> pousser l'écart \( y - x \) au maximum.</p>
+    <span class="ref-app">B4 · §9 — Le screening : faire parler l'information <span class="path">/strategies/theorie/b4#s8</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">19.</span> Le menu optimal sature l'IR du type faible et l'IC du type fort.</div>
+    <p>L'IR du Touriste plafonne \( x \) à 200 ; l'IC du Business plafonne \( y - x \) à 300, donc \( y = 500 \). Le Touriste est pressé jusqu'à son consentement à payer (surplus nul, IR saturée) ; le Business garde 200 de rente et son IR \( (y \le 700) \) n'est <em>pas contraignante</em>. Toute la résolution tient dans ce repérage : quelles contraintes saturent ?</p>
+    <span class="ref-app">B4 · §9 — Le screening : faire parler l'information <span class="path">/strategies/theorie/b4#s8</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">20.</span> Le coût de l'asymétrie est porté par la firme ; le bénéfice va au type fort.</div>
+    <p>\( \Pi_{\text{scr}} = 100 + 250\lambda \) reste sous \( \Pi_{\text{parf}} = 100 + 450\lambda \) dès que \( \lambda > 0 \). L'écart, \( 200\lambda \), est exactement le surplus abandonné aux voyageurs d'affaires — leur <strong>rente informationnelle</strong>. La discrimination parfaite est un benchmark inatteignable : elle ne sert qu'à chiffrer ce que l'ignorance coûte.</p>
+    <span class="ref-app">B4 · §9 — Le screening : faire parler l'information <span class="path">/strategies/theorie/b4#s8</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">21.</span> Screening contre pooling : le seuil est \( \lambda = 1/3 \).</div>
+    <p>Les quatre menus pooling rapportent 70 (P à 220 pour tous), \( 550\lambda \) (P à 700, B seulement), 100 (E à 200 pour tous) et \( 300\lambda \) (E à 400, B seulement). Le screening bat tout le monde sauf \( \text{P}_B \) : \( 550\lambda > 100 + 250\lambda \iff \lambda > 1/3 \). Intuition : si les Business sont nombreux, brader le Premium à 500 pour servir aussi les touristes coûte trop cher.</p>
+    <span class="ref-app">B4 · §9 — Le screening : faire parler l'information <span class="path">/strategies/theorie/b4#s8</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">22.</span> Quatre formats d'exercice, et un seul enchaînement de gestes.</div>
+    <p>Vocabulaire et comptage ; ENB sur deux matrices données ; construction complète d'un jeu bayésien à partir d'un énoncé ; screening chiffré. Les trois premiers se traitent avec la même recette, le dernier avec les quatre contraintes. La version continue de l'ENB (duopole à coûts privés) tombe au TP.</p>
+    <span class="ref-app">B4 · §11 — Exercices corrigés <span class="path">/strategies/theorie/b4#s10</span></span>
+    <span class="ref-app">TP 4 · Jeux bayésiens &amp; contrats <span class="path">/strategies/exercices/session-4</span></span>
+  </div>
+
+  <h2>Les formules du chapitre</h2>
+
+  <table class="compare">
+    <thead>
+      <tr><th class="left">Formule</th><th class="left">Symboles</th><th class="left">Quand l'utiliser</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left">\( \#\,\text{stratégies} = n^{k} \)</td>
+        <td class="left">\( k \) : nombre de types du joueur ; \( n \) : nombre d'actions</td>
+        <td class="left">Avant toute recherche d'ENB : combien de règles faut-il tester ?</td>
+      </tr>
+      <tr>
+        <td class="left">\( E[\text{Viande}] = 2p \) ; \( E[\text{Poisson}] = 1-p \)</td>
+        <td class="left">\( p = \Pr(\text{T1}) \), face à (Rouge si T1 · Blanc si T2)</td>
+        <td class="left">L'étape retour : l'ENB tient tant que \( p > 1/3 \).</td>
+      </tr>
+      <tr>
+        <td class="left">IC-T : \( 220 - y \le 200 - x \)</td>
+        <td class="left">\( y \) : prix Premium ; \( x \) : prix Économie</td>
+        <td class="left">Le Touriste doit préférer l'Économie au Premium.</td>
+      </tr>
+      <tr>
+        <td class="left">IC-B : \( 700 - y \ge 400 - x \)</td>
+        <td class="left">soit \( y - x \le 300 \)</td>
+        <td class="left">Le Business doit préférer le Premium : c'est elle qui sature.</td>
+      </tr>
+      <tr>
+        <td class="left">IR-T : \( x \le 200 \) · IR-B : \( y \le 700 \)</td>
+        <td class="left">surplus positif pour chaque type sur sa case</td>
+        <td class="left">IR-T sature ; IR-B reste large \( (500 < 700) \).</td>
+      </tr>
+      <tr>
+        <td class="left">\( \Pi_{\text{parf}} = 100 + 450\lambda \)</td>
+        <td class="left">\( \lambda \) : proportion de Business ; marges 550 et 100</td>
+        <td class="left">Benchmark de discrimination parfaite : le maximum théorique.</td>
+      </tr>
+      <tr>
+        <td class="left">\( \Pi_{\text{scr}} = (x-100) + \lambda\,(y-x-50) \)</td>
+        <td class="left">coûts 150 (P) et 100 (E)</td>
+        <td class="left">Forme qui montre quoi maximiser : \( x \), puis l'écart \( y-x \).</td>
+      </tr>
+      <tr>
+        <td class="left">\( x = 200,\ y = 500 \Rightarrow \Pi_{\text{scr}} = 100 + 250\lambda \)</td>
+        <td class="left">menu optimal de screening</td>
+        <td class="left">Écart au benchmark : \( 200\lambda \), la rente du Business.</td>
+      </tr>
+      <tr>
+        <td class="left">\( 550\lambda > 100 + 250\lambda \iff \lambda > 1/3 \)</td>
+        <td class="left">\( \text{P}_B \) : Premium à 700, Business seulement</td>
+        <td class="left">Le seuil qui fait basculer le menu optimal.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Les définitions à savoir réciter</h2>
+
+  <dl class="lexique">
+    <dt>Information incomplète</dt>
+    <dd>Au moins un joueur est incertain de la fonction de gain d'un autre joueur : les gains ne sont plus de notoriété commune.</dd>
+
+    <dt>Information imparfaite</dt>
+    <dd>Un joueur ne connaît pas l'action jouée par un autre (jeu simultané de B1) — les gains, eux, restent connus de tous.</dd>
+
+    <dt>Jeu bayésien</dt>
+    <dd>Jeu à information incomplète, résolu en introduisant des types, des croyances et un tirage de la Nature.</dd>
+
+    <dt>Type</dt>
+    <dd>La fonction de gain d'un joueur. Chaque joueur connaît son propre type ; ses adversaires ne le connaissent pas.</dd>
+
+    <dt>Croyance</dt>
+    <dd>Distribution de probabilité d'un joueur sur les types possibles de ses adversaires. Exogène dans ce cours : elle est dans l'énoncé.</dd>
+
+    <dt>Nature</dt>
+    <dd>Joueur fictif, sans gains, qui joue en premier et tire les types au sort selon les probabilités des croyances.</dd>
+
+    <dt>Stratégie (jeu bayésien)</dt>
+    <dd>Règle d'action complète : une action prescrite pour chaque type possible du joueur. \( n^{k} \) stratégies pour \( k \) types et \( n \) actions.</dd>
+
+    <dt>Équilibre de Nash bayésien</dt>
+    <dd>Profil de stratégies qui sont des meilleures réponses mutuelles, les actions de chaque type maximisant l'espérance de gain étant donné les croyances et la règle de l'adversaire.</dd>
+
+    <dt>Information set</dt>
+    <dd>Ensemble de nœuds de l'arbre indistinguables pour le joueur qui doit y jouer ; il y joue donc la même action partout.</dd>
+
+    <dt>Screening</dt>
+    <dd>Le joueur non informé propose un menu d'options ; le joueur informé, en choisissant, révèle son type.</dd>
+
+    <dt>Auto-sélection</dt>
+    <dd>Mécanisme par lequel chaque type choisit spontanément la case conçue pour lui, ce qui referme le fossé informationnel.</dd>
+
+    <dt>Contrainte d'incitation (IC)</dt>
+    <dd>Condition garantissant qu'un type préfère l'option qui lui est destinée à celle de l'autre type.</dd>
+
+    <dt>Contrainte de participation (IR)</dt>
+    <dd>Condition garantissant qu'un type préfère acheter plutôt que ne rien acheter : son surplus doit rester positif.</dd>
+
+    <dt>Contrainte saturée / non contraignante</dt>
+    <dd>Saturée : vérifiée avec égalité, elle bloque l'optimum. Non contraignante (« not binding ») : vérifiée avec du jeu, elle laisse une rente.</dd>
+
+    <dt>Discrimination parfaite</dt>
+    <dd>Situation fictive où la firme observe les types et fixe à chacun un prix égal à son consentement à payer : le profit de référence.</dd>
+
+    <dt>Pooling</dt>
+    <dd>Menu qui ne sépare pas les types : un seul billet en vente, soit pour tous, soit pour le seul type fort.</dd>
+  </dl>
+
+  <h2>La méthode type</h2>
+
+  <div class="box box-methode">
+    <div class="box-title">Trouver un équilibre de Nash bayésien — en 5 temps</div>
+    <div class="etape"><span class="etape-title">1. Lister les stratégies.</span> Une par joueur, en respectant \( n^{k} \) : le joueur informé a des <em>règles</em>, le non-informé de simples actions s'il n'a qu'un type.</div>
+    <div class="etape"><span class="etape-title">2. Fixer une stratégie du joueur non informé.</span> C'est le point de départ du test — on en essaiera une autre si ce candidat échoue.</div>
+    <div class="etape"><span class="etape-title">3. Meilleure réponse de l'informé, type par type.</span> Il connaît sa table : comparaisons de <strong>gains certains</strong> dans la ligne (ou la colonne) fixée. Jamais d'espérance ici.</div>
+    <div class="etape"><span class="etape-title">4. Vérifier l'étape retour.</span> Face à cette règle, le non-informé calcule ses <strong>espérances</strong> avec ses croyances. S'il veut dévier, le candidat est rejeté — et il faut le dire.</div>
+    <div class="etape"><span class="etape-title">5. Conclure dans la bonne notation.</span> ( action du non-informé ; (action si type 1 · action si type 2) ), tous les types couverts.</div>
+    <div class="result"><span class="result-title">Exemple témoin</span> ( Viande ; (Rouge si T1 · Blanc si T2) ), avec \( E[\text{Viande}] = 1 > E[\text{Poisson}] = 0{,}5 \).</div>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Résoudre un screening — en 4 temps</div>
+    <div class="etape"><span class="etape-title">1. Poser les quatre contraintes.</span> Deux IC (chaque type préfère sa case) et deux IR (chaque type préfère acheter), écrites en <em>surplus</em> : consentement à payer − prix.</div>
+    <div class="etape"><span class="etape-title">2. Repérer celles qui saturent.</span> Réécris le profit pour voir ce qu'il faut pousser, puis identifie le plafond de chaque variable. Typiquement : IR du type faible et IC du type fort.</div>
+    <div class="etape"><span class="etape-title">3. En déduire le menu et le profit.</span> Ici \( x = 200 \), puis \( y = x + 300 = 500 \), d'où \( \Pi_{\text{scr}} = 100 + 250\lambda \). Compare au benchmark \( 100 + 450\lambda \) et nomme la rente laissée au type fort.</div>
+    <div class="etape"><span class="etape-title">4. Comparer aux menus pooling et chercher le seuil.</span> Calcule le profit moyen de chaque menu à un seul billet, élimine les dominés, puis résous l'inégalité en \( \lambda \).</div>
+    <div class="result"><span class="result-title">Résultat type</span> Screening si \( \lambda < 1/3 \) ; \( \text{P}_B \) (Premium à 700, touristes non servis) si \( \lambda > 1/3 \).</div>
+  </div>
+
+  <h2>Les pièges du chapitre</h2>
+
+  <div class="box box-piege">
+    <div class="box-title">Les quatre pièges que le cours signale</div>
+    <ul>
+      <li><strong>Écrire une action au lieu d'une règle complète.</strong> « La Femme joue Rouge » n'est pas une stratégie ; il faut « Rouge si T1, Blanc si T2 ». <em>Une stratégie incomplète = zéro</em>, même avec un raisonnement juste.</li>
+      <li><strong>Faire calculer une espérance au joueur informé sur son propre type.</strong> Il le connaît ! Il compare des gains certains, type par type. Seul le non-informé pondère par ses croyances.</li>
+      <li><strong>Oublier l'étape retour.</strong> Trouver la meilleure réponse du joueur informé ne suffit jamais à conclure « équilibre » : il faut vérifier que le non-informé confirme sa stratégie en espérance.</li>
+      <li><strong>Saturer la mauvaise contrainte en screening.</strong> Monter \( y \) à 700 en oubliant l'IC du Business : il faudrait alors \( x \ge 400 \), ce qui viole l'IR du Touriste \( (x \le 200) \).</li>
+    </ul>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Deux confusions à éliminer avant l'examen</div>
+    <ul>
+      <li><strong>Confondre information incomplète et information imparfaite.</strong> Incomplète : j'ignore <em>tes gains</em> (nouveauté de B4). Imparfaite : j'ignore <em>ton action</em> (déjà B1). Un jeu simultané de B1 n'est pas bayésien.</li>
+      <li><strong>Croire que l'arbre rend le jeu séquentiel.</strong> L'ordre vertical est une convention de dessin. Ce sont les information sets — les pointillés — qui disent qui sait quoi : ceux de la Femme la rendent aveugle à l'action de l'Homme, donc le jeu reste simultané.</li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,339 @@
+<section class="chapter">
+  <div class="chapter-tag">A2 · Partie A — La décision individuelle</div>
+  <h1>Décision inter-temporelle</h1>
+  <p class="chapter-intro">Épargner ou consommer aujourd'hui ? Le taux d'escompte, et les pièges du self-contrôle.</p>
+
+  <h2>La carte du chapitre</h2>
+
+  <table class="compare">
+    <thead>
+      <tr>
+        <th>§</th>
+        <th class="left">Section</th>
+        <th class="left">Ce qu'elle apporte</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td class="left">Pourquoi ce chapitre existe</td>
+        <td class="left">Répartition vs épargne privée, taux de remplacement, pauvreté du grand âge. La question fil rouge : comment faire épargner les gens ?</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="left">La boîte à outils</td>
+        <td class="left">Les quatre briques : \( (1+r) \), valeur présente / future, le facteur d'escompte \( \delta \), la concavité de \( u \).</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="left">Le modèle d'épargne</td>
+        <td class="left">Deux périodes, la dotation \( \omega \), le coût d'opportunité du temps et la droite de budget.</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="left">Les préférences rationnelles</td>
+        <td class="left">Les cinq hypothèses (dont la stationnarité) et le théorème de Koopmans : l'utilité escomptée.</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="left">Le choix optimal</td>
+        <td class="left">Lagrangien, équation d'Euler, ses trois régimes — et la réponse rationnelle : subventionner l'épargne.</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="left">Les problèmes de self-contrôle</td>
+        <td class="left">L'expérience A1/B2, le modèle \( (\beta, \delta) \), biens d'investissement vs biens de tentation, naïf vs sophistiqué.</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="left">Se lier les mains : les commitment devices</td>
+        <td class="left">Ulysse et le mât ; l'énigme de Laibson : bloquer son argent <em>et</em> emprunter peut être optimal.</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td class="left">Les politiques publiques : les nudges</td>
+        <td class="left">Option par défaut, Save More Tomorrow, paternalisme libertaire.</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td class="left">À maîtriser absolument</td>
+        <td class="left">La checklist des 17 points — l'ossature de cette fiche.</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td class="left">Exercices corrigés</td>
+        <td class="left">5 QCM + 3 exercices chiffrés, en plus des deux exercices guidés des § 4 et § 6.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Les points à retenir</h2>
+
+  <h3>Le cadre : deux dates, un prix du temps</h3>
+
+  <div class="point">
+    <div class="point-title"><span class="num">1.</span> Le modèle réduit une vie à deux périodes et une dotation \( \omega = (m_0, m_1) \).</div>
+    <p>Vie active (\( t = 0 \)) et retraite (\( t = 1 \)). La dotation, c'est ce que la personne consommerait <em>sans rien déplacer</em> dans le temps. Les prix valent 1 aux deux dates (pas d'inflation), donc \( \omega \) se lit directement en quantités. Tout le chapitre consiste à choisir un point \( (c_0, c_1) \) autre que \( \omega \), en épargnant (\( c_0 &lt; m_0 \)) ou en empruntant (\( c_0 &gt; m_0 \)).</p>
+    <span class="ref-app">A2 · §3 — Le modèle d'épargne <span class="path">/strategies/theorie/a2#modele</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">2.</span> Avancer dans le temps = multiplier par \( (1+r) \) ; reculer = diviser par \( (1+r) \).</div>
+    <p>La <span class="term">valeur future</span> d'une somme d'aujourd'hui, c'est \( \times(1+r) \) ; la <span class="term">valeur présente</span> d'une somme de demain, c'est \( \div(1+r) \). Avec \( r = 25\,\% \), une promesse de 50 € dans un an vaut \( 50/1{,}25 = 40 \) € aujourd'hui — et 40 € placés donnent bien 50 €. C'est la boussole de tous les calculs du chapitre.</p>
+    <span class="ref-app">A2 · §2 — La boîte à outils <span class="path">/strategies/theorie/a2#outils</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">3.</span> Le prix d'une unité de présent, exprimé en futur, vaut \( (1+r) \).</div>
+    <p>Renoncer à 1 € aujourd'hui « rapporte » \( (1+r) \) € de consommation demain ; consommer 1 € de plus aujourd'hui, en empruntant, « coûte » \( (1+r) \) € demain. Ce coût d'opportunité est le seul prix du modèle : c'est lui qui donnera sa pente à la contrainte de budget.</p>
+    <span class="ref-app">A2 · §3 — Le modèle d'épargne <span class="path">/strategies/theorie/a2#modele</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">4.</span> La contrainte de budget est une droite de pente \( -(1+r) \) qui pivote autour de \( \omega \).</div>
+    <p>Ses deux extrémités sont la valeur présente de la dotation (sur l'axe des \( c_0 \)) et sa valeur future (sur l'axe des \( c_1 \)). Elle passe <em>toujours</em> par \( \omega \), puisque ne rien déplacer reste toujours possible. Quand \( r \) augmente, elle ne se translate pas : elle <strong>pivote</strong> autour de \( \omega \) et devient plus raide. Tout ce qui est sur ou sous la droite est accessible.</p>
+    <span class="ref-app">A2 · §3 — Le modèle d'épargne <span class="path">/strategies/theorie/a2#modele</span></span>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 430 300" width="100%" style="max-width:11cm" role="img" aria-label="Droite de budget pivotant autour de la dotation">
+      <line x1="60" y1="250" x2="418" y2="250" stroke="#111827" stroke-width="1.6"/>
+      <line x1="60" y1="250" x2="60" y2="22" stroke="#111827" stroke-width="1.6"/>
+      <text x="412" y="270" text-anchor="end" font-size="13">c₀</text>
+      <text x="52" y="30" text-anchor="end" font-size="13">c₁</text>
+
+      <line x1="60" y1="30" x2="319" y2="250" stroke="#111827" stroke-width="1.3" stroke-dasharray="6 4"/>
+      <line x1="60" y1="60" x2="360" y2="250" stroke="#111827" stroke-width="2"/>
+
+      <circle cx="200" cy="149" r="4.5" fill="#111827"/>
+      <line x1="226" y1="123" x2="205" y2="144" stroke="#111827" stroke-width="1"/>
+      <text x="228" y="118" font-size="13">ω = (m₀, m₁)</text>
+
+      <text x="68" y="54" font-size="12">(1+r) m₀ + m₁</text>
+      <text x="360" y="268" text-anchor="middle" font-size="12">m₀ + m₁/(1+r)</text>
+      <text x="302" y="196" font-size="12">pente −(1+r)</text>
+      <text x="104" y="52" font-size="12">r ↑</text>
+    </svg>
+    <figcaption>La droite de budget. Elle passe toujours par la dotation ω ; une hausse de r la fait pivoter autour de ce point (en pointillé) : la valeur future monte, la valeur présente recule.</figcaption>
+  </figure>
+
+  <h3>Les préférences : rationalité et escompte</h3>
+
+  <div class="point">
+    <div class="point-title"><span class="num">5.</span> Des préférences rationnelles sont complètes, transitives, monotones, continues et <strong>stationnaires</strong>.</div>
+    <p>« Rationnel » ne veut pas dire « intelligent » : ça veut dire cohérent. Les quatre premières propriétés viennent de A1 ; la cinquième est propre au choix dans le temps. La <span class="term">stationnarité</span> dit que tes préférences sur le futur ne changent pas quand le temps passe : décaler deux programmes d'une période ne renverse pas ton classement. Conséquence pratique : sans imprévu, <strong>pas besoin de réoptimiser</strong> — le plan jugé optimal aujourd'hui le restera demain.</p>
+    <span class="ref-app">A2 · §4 — Les préférences rationnelles <span class="path">/strategies/theorie/a2#prefs</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">6.</span> La stationnarité exclut les habitudes, les addictions et les renversements de préférence.</div>
+    <p>Si mes goûts pour la suite dépendent de ce que j'ai consommé au début (accoutumance, dépendance), ou si ma préférence se retourne simplement parce que l'échéance se rapproche, l'hypothèse tombe. C'est exactement ce qui arrivera en § 6 : c'est le seul verrou que la Partie B fera sauter, et tout le reste du modèle rationnel tient encore.</p>
+    <span class="ref-app">A2 · §4 — Les préférences rationnelles <span class="path">/strategies/theorie/a2#prefs</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">7.</span> Une 6<sup>e</sup> hypothèse : l'indépendance du trade-off initial.</div>
+    <p>La préférence sur les <em>deux premières</em> périodes ne dépend pas de ce qui vient après. Elle interdit d'avoir à la fois \( (1,4,4,\dots) \succ (2,2,4,\dots) \) et \( (1,4,2,\dots) \prec (2,2,2,\dots) \) : si la queue du programme renverse le classement du début, c'est qu'une habitude s'est installée — et ce modèle refuse de la modéliser.</p>
+    <span class="ref-app">A2 · §4 — Les préférences rationnelles <span class="path">/strategies/theorie/a2#prefs</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">8.</span> Théorème de Koopmans (1960) : ces hypothèses ⇒ les préférences se représentent par l'utilité escomptée.</div>
+    <p>C'est un théorème de <em>représentation</em> : il ne suppose pas la formule, il la <strong>déduit</strong> de la rationalité. On additionne le plaisir de chaque période, chacun rapetissé par \( \delta^t \). Comparer deux programmes revient alors à comparer deux nombres : \( c \succsim c' \iff U_0(c) \ge U_0(c') \). C'est ce qu'on fait dans tous les exercices.</p>
+    <span class="ref-app">A2 · §4 — Les préférences rationnelles <span class="path">/strategies/theorie/a2#prefs</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">9.</span> \( \delta &lt; 1 \) = impatience, et c'est de la psychologie, pas du marché.</div>
+    <p>\( (1+r) \) est fixé par la banque ; \( \delta \in [0,1] \) est dans ta tête. Proche de 1 : patient. Proche de 0 : seul le présent compte. Un plaisir dans \( t \) périodes est rapetissé \( t \) fois, soit \( \delta^t \). Point clé : l'escompte est <em>régulier</em>, donc on ne préfère jamais repousser tout son programme d'un bloc.</p>
+    <span class="ref-app">A2 · §2 — La boîte à outils <span class="path">/strategies/theorie/a2#outils</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">10.</span> La concavité \( u'' &lt; 0 \) fait qu'on lisse sa consommation, même à \( r = 0 \).</div>
+    <p>Utilité marginale décroissante : chaque unité en plus fait moins plaisir que la précédente. Une fonction concave déteste donc les extrêmes — \( (50, 50) \) bat \( (100, 0) \) même sans intérêt et même sans patience particulière. C'est ce moteur-là, et non le taux, qui empêche de tout consommer d'un coup.</p>
+    <span class="ref-app">A2 · §2 — La boîte à outils <span class="path">/strategies/theorie/a2#outils</span></span>
+  </div>
+
+  <h3>Le choix optimal et le levier public</h3>
+
+  <div class="point">
+    <div class="point-title"><span class="num">11.</span> L'équation d'Euler \( u'(c_0) = \delta(1+r)\,u'(c_1) \) résume tout le comportement rationnel.</div>
+    <p>Elle sort du lagrangien (voir la méthode type) et arbitre entre deux forces : le lissage (concavité) pousse vers \( c_0 = c_1 \), l'impatience (\( \delta &lt; 1 \)) pousse vers le présent. Comme \( u' \) est décroissante, <em>plus d'utilité marginale = moins de consommation</em>. Tout se joue sur le produit \( \delta(1+r) \), à comparer à 1 : \( = 1 \) lissage parfait (\( c_0 = c_1 \)), \( &lt; 1 \) impatience (\( c_0 &gt; c_1 \)), \( &gt; 1 \) patience (\( c_0 &lt; c_1 \)).</p>
+    <span class="ref-app">A2 · §5 — Le choix optimal <span class="path">/strategies/theorie/a2#choix</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">12.</span> Le levier rationnel de l'État : subventionner l'épargne, \( r = r^*(1+s) \).</div>
+    <p>\( \delta \) est un paramètre de psychologie : inatteignable. En revanche le taux <em>ressenti</em> par l'épargnant se pilote — \( r^* \) est le taux du marché, \( s \) un subside (une taxe si \( s &lt; 0 \)) sur les revenus de l'épargne. Augmenter \( s \) augmente \( r \), fait pivoter la droite de budget et — sous certaines conditions — baisse \( c_0^* \) et monte \( c_1^* \). En Belgique : environ 30 % de subside sur les 1000 premiers euros épargnés chaque année pour la retraite.</p>
+    <span class="ref-app">A2 · §5 — Le choix optimal <span class="path">/strategies/theorie/a2#choix</span></span>
+  </div>
+
+  <h3>Quand la stationnarité tombe : le modèle \( (\beta, \delta) \)</h3>
+
+  <div class="point">
+    <div class="point-title"><span class="num">13.</span> Choisir A1 <em>et</em> B2 viole la stationnarité — c'est la preuve expérimentale du biais.</div>
+    <p>A : 100 € maintenant (A1) ou 110 € dans une semaine (A2) ? B : 100 € dans un an (B1) ou 110 € dans un an et une semaine (B2) ? Les deux situations sont identiques à un décalage près, pourtant 18 % prennent A1 contre seulement 3 % pour B1. Préférer le proche ici et le lointain là, c'est renverser sa préférence selon la distance temporelle : précisément ce que la stationnarité interdit. Documenté chez l'humain (Green et al. 1994) comme chez le pigeon (Ainslie et al. 1981).</p>
+    <span class="ref-app">A2 · §6 — Les problèmes de self-contrôle <span class="path">/strategies/theorie/a2#selfcontrole</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">14.</span> Le modèle \( (\beta, \delta) \) : \( \beta \) rabote tout le futur d'un coup ; \( \beta = 1 \) ⇔ rationnel.</div>
+    <p>Un seul paramètre en plus, \( \beta \in [0,1] \), appliqué à <em>toutes</em> les périodes sauf le présent. Il crée une cassure entre « maintenant » et « pas maintenant », là où \( \delta \) escompte régulièrement. Il résout le paradoxe A1/B2 : entre deux dates futures le \( \beta \) se simplifie et l'individu redevient patient, alors qu'il rabote la comparaison présent / futur. Quand \( \beta = 1 \), on retombe exactement sur la Partie A : le modèle rationnel est un cas particulier.</p>
+    <span class="ref-app">A2 · §6 — Les problèmes de self-contrôle <span class="path">/strategies/theorie/a2#selfcontrole</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">15.</span> Les biens d'investissement sont sous-consommés, les biens de tentation sur-consommés.</div>
+    <p>Un bien qui rapporte \( b_1 \) en période 1 et \( b_2 \) en période 2 est voulu <em>à l'avance</em> si \( b_1 + \delta b_2 &gt; 0 \), mais fait <em>sur le moment</em> si \( b_1 + \beta\delta b_2 &gt; 0 \). Seule différence : \( \beta \) rabote \( b_2 \) au moment d'agir. D'où deux pièges symétriques — <strong>investissement</strong> (\( b_1 &lt; 0 \), \( b_2 &gt; 0 \) : jogging, épargne) qu'on repousse sans cesse, <strong>tentation</strong> (\( b_1 &gt; 0 \), \( b_2 &lt; 0 \) : chips, alcool) à laquelle on craque trop souvent.</p>
+    <span class="ref-app">A2 · §6 — Les problèmes de self-contrôle <span class="path">/strategies/theorie/a2#selfcontrole</span></span>
+  </div>
+
+  <h3>Se protéger de soi-même, et le rôle de l'État</h3>
+
+  <div class="point">
+    <div class="point-title"><span class="num">16.</span> Seul le sophistiqué demande un commitment device ; le naïf n'en voit pas l'intérêt.</div>
+    <p>\( \hat{\beta} \) est l'idée que l'individu se fait de son propre biais. Le <span class="term">naïf</span> (\( \hat{\beta} = 1 \)) croit que son moi de demain sera rationnel : il ne se méfie pas de lui-même, donc ne demande rien. Le <span class="term">sophistiqué</span> (\( \hat{\beta} = \beta \)) sait qu'il va craquer et se lie les mains à l'avance — rendre la tentation indisponible, ou signer en \( t=0 \) un contrat qui contraint le moi futur. Réduire ses propres options paraît irrationnel, mais avec \( \beta &lt; 1 \) cela augmente son bien-être. C'est l'énigme de Laibson (2009) : bloquer son argent dans un actif illiquide <strong>et</strong> emprunter cher en même temps peut être optimal. Les ménages américains détiennent vers 50 ans environ 216 % de leur revenu annuel en actifs illiquides tout en portant ≈ 12 % de dettes de carte de crédit — incompréhensible pour le modèle rationnel, prévu par le modèle \( (\beta, \delta) \) : l'actif bloqué protège du biais, et le même biais pousse ensuite à emprunter pour le présent.</p>
+    <span class="ref-app">A2 · §7 — Se lier les mains : les commitment devices <span class="path">/strategies/theorie/a2#commit</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">17.</span> Les nudges : changer le défaut, ou faire épargner l'augmentation à venir.</div>
+    <p>Option par défaut : en inscrivant automatiquement les employés (sortie libre, un coup de fil), l'épargne passe de 50 % à 86 % (Madrian &amp; Shea, 2001) — la procrastination, un biais, est retournée <em>pour</em> nous. Save More Tomorrow : on s'engage à l'avance à épargner davantage <em>uniquement lors des futures augmentations</em>, donc la paie nette ne baisse jamais et rien n'est à recalculer ; le taux d'épargne passe de 3,5 % à 13,6 % en quatre ans (Thaler &amp; Benartzi, 2004). C'est du <span class="term">paternalisme libertaire</span> : ça aide les biaisés sans rien coûter aux rationnels, qui choisissent de toute façon ce qu'ils voulaient.</p>
+    <span class="ref-app">A2 · §8 — Les politiques publiques : les nudges <span class="path">/strategies/theorie/a2#politiques</span></span>
+  </div>
+
+  <h2>Les formules du chapitre</h2>
+
+  <table class="compare">
+    <thead>
+      <tr>
+        <th class="left">Formule</th>
+        <th class="left">Symboles</th>
+        <th class="left">Quand l'utiliser</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left">\( c_0^{\max} = m_0 + \dfrac{m_1}{1+r} \)</td>
+        <td class="left">\( m_0, m_1 \) : dotation ; \( r \) : taux</td>
+        <td class="left">Valeur présente de \( \omega \) : le bout droit de la droite de budget.</td>
+      </tr>
+      <tr>
+        <td class="left">\( c_1^{\max} = (1+r)m_0 + m_1 \)</td>
+        <td class="left">idem</td>
+        <td class="left">Valeur future de \( \omega \) : le bout haut de la droite.</td>
+      </tr>
+      <tr>
+        <td class="left">\( (1+r)c_0 + c_1 \le (1+r)m_0 + m_1 \)</td>
+        <td class="left">\( c_0, c_1 \) : consommations choisies</td>
+        <td class="left">Contrainte de budget en valeur future — la forme à mettre dans le lagrangien.</td>
+      </tr>
+      <tr>
+        <td class="left">\( U_0(c) = u(c_0) + \delta u(c_1) + \delta^2 u(c_2) + \cdots \)</td>
+        <td class="left">\( \delta \in [0,1] \) ; \( u \) croissante, concave</td>
+        <td class="left">Noter un programme. Le plus gros score gagne.</td>
+      </tr>
+      <tr>
+        <td class="left">\( (a, c_1, c_2, \dots) \succsim (a, c_1', c_2', \dots) \) ⟺ \( (c_1, c_2, \dots) \succsim (c_1', c_2', \dots) \)</td>
+        <td class="left">\( a \) : 1<sup>re</sup> période commune</td>
+        <td class="left">Stationnarité. Montrer qu'un choix (A1 + B2) la viole.</td>
+      </tr>
+      <tr>
+        <td class="left">\( u'(c_0) = \delta(1+r)\,u'(c_1) \)</td>
+        <td class="left">\( u' \) : utilité marginale</td>
+        <td class="left">Équation d'Euler : la condition d'optimalité. Comparer \( \delta(1+r) \) à 1.</td>
+      </tr>
+      <tr>
+        <td class="left">\( U_0^{\beta}(c) = u(c_0) + \beta\delta u(c_1) + \beta\delta^2 u(c_2) + \cdots \)</td>
+        <td class="left">\( \beta \in [0,1] \) : biais du présent</td>
+        <td class="left">Dès qu'il y a incohérence temporelle. \( \beta = 1 \) redonne la Partie A.</td>
+      </tr>
+      <tr>
+        <td class="left">\( b_1 + \delta b_2 &gt; 0 \) &nbsp;vs&nbsp; \( b_1 + \beta\delta b_2 &gt; 0 \)</td>
+        <td class="left">\( b_1, b_2 \) : effets d'utilité du bien</td>
+        <td class="left">Ce qu'on veut ex ante / ce qu'on fait sur le moment : classer un bien en investissement ou tentation.</td>
+      </tr>
+      <tr>
+        <td class="left">\( r = r^*(1+s) \)</td>
+        <td class="left">\( r^* \) : taux du marché ; \( s \) : subside</td>
+        <td class="left">Le levier de politique publique de la Partie A.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Les définitions à savoir réciter</h2>
+
+  <dl class="lexique">
+    <dt>Taux de remplacement</dt>
+    <dd>La pension touchée, rapportée au revenu du temps où l'on travaillait. Un taux de 50 % = la moitié de l'ancien salaire.</dd>
+
+    <dt>Dotation \( \omega = (m_0, m_1) \)</dt>
+    <dd>Le couple de revenus perçus aux deux périodes, c'est-à-dire ce qu'on consommerait sans déplacer d'argent dans le temps.</dd>
+
+    <dt>Valeur présente / valeur future</dt>
+    <dd>Deux mesures de la même richesse. Valeur future : on avance dans le temps, on multiplie par \( (1+r) \). Valeur présente : on recule, on divise par \( (1+r) \).</dd>
+
+    <dt>Coût d'opportunité du temps</dt>
+    <dd>Le prix d'une unité de consommation présente exprimé en consommation future : \( (1+r) \). C'est la pente (au signe près) de la droite de budget.</dd>
+
+    <dt>Facteur d'escompte \( \delta \)</dt>
+    <dd>Le poids que l'individu accorde au plaisir de la période suivante, \( \delta \in [0,1] \). Paramètre psychologique, à ne pas confondre avec le taux de marché \( r \).</dd>
+
+    <dt>Stationnarité</dt>
+    <dd>Les préférences sur le futur ne changent pas quand le temps passe : décaler deux programmes d'une même période ne renverse pas le classement. Sans imprévu, aucune réoptimisation n'est nécessaire.</dd>
+
+    <dt>Utilité escomptée</dt>
+    <dd>La représentation \( U_0(c) = \sum_t \delta^t u(c_t) \) que le théorème de Koopmans (1960) déduit des hypothèses de rationalité.</dd>
+
+    <dt>Équation d'Euler</dt>
+    <dd>\( u'(c_0) = \delta(1+r)u'(c_1) \) : la règle d'or de l'épargnant rationnel, qui relie l'utilité marginale d'aujourd'hui à celle de demain.</dd>
+
+    <dt>Biais du présent \( \beta \)</dt>
+    <dd>Le rabot uniforme appliqué à tout le futur, présent excepté, dans le modèle \( (\beta, \delta) \) d'O'Donoghue &amp; Rabin. Il capture l'impatience de court terme.</dd>
+
+    <dt>Problème de self-contrôle</dt>
+    <dd>Au moment de passer à l'action, l'individu n'arrive pas à mettre en œuvre le plan qu'il avait lui-même jugé optimal à l'avance. « Je m'y mets demain » — et demain ne vient jamais.</dd>
+
+    <dt>Bien d'investissement / bien de tentation</dt>
+    <dd>Coût maintenant et bénéfice plus tard (\( b_1 &lt; 0 \), \( b_2 &gt; 0 \)) : sous-consommé. Plaisir maintenant et regret plus tard (\( b_1 &gt; 0 \), \( b_2 &lt; 0 \)) : sur-consommé.</dd>
+
+    <dt>Naïf / sophistiqué</dt>
+    <dd>Selon l'estimation \( \hat{\beta} \) que l'individu fait de son propre biais : naïf si \( \hat{\beta} = 1 \) (il s'ignore), sophistiqué si \( \hat{\beta} = \beta \) (il se connaît).</dd>
+
+    <dt>Commitment device</dt>
+    <dd>Un dispositif choisi en \( t = 0 \) qui réduit volontairement les options du moi futur (le mât d'Ulysse). Il n'a de valeur que pour un sophistiqué avec \( \beta &lt; 1 \).</dd>
+
+    <dt>Nudge et paternalisme libertaire</dt>
+    <dd>Une politique qui modifie la présentation du choix sans en changer les paramètres économiques ni contraindre personne : paternaliste car elle corrige une erreur, libertaire car on peut toujours refuser.</dd>
+  </dl>
+
+  <h2>La méthode type</h2>
+
+  <div class="box box-methode">
+    <div class="box-title">Résoudre un choix inter-temporel par le lagrangien</div>
+    <ol>
+      <li><strong>Poser la contrainte en valeur future</strong> : \( (1+r)c_0 + c_1 = (1+r)m_0 + m_1 \) (saturée : un individu monotone dépense tout).</li>
+      <li><strong>Écrire le lagrangien</strong> : \[ \mathcal{L} = U(c_0, c_1) - \lambda\big[(1+r)c_0 + c_1 - (1+r)m_0 - m_1\big] \]</li>
+      <li><strong>Dériver et annuler</strong> les trois dérivées : par \( c_0 \) → \( u'(c_0) = \lambda(1+r) \) ; par \( c_1 \) → \( \delta u'(c_1) = \lambda \) ; par \( \lambda \) → la contrainte. Ici \( \lambda \) est l'<strong>utilité marginale du revenu</strong> : le gain de satisfaction que procurerait une unité de dotation en plus.</li>
+      <li><strong>Diviser la première par la seconde</strong> : \( \lambda \) disparaît, il reste l'équation d'Euler \( u'(c_0) = \delta(1+r)u'(c_1) \).</li>
+      <li><strong>Injecter la forme de \( u \)</strong>. Avec \( u = \ln \), \( u'(c) = 1/c \) donne \( c_1 = \delta(1+r)c_0 \) ; avec \( u = \sqrt{\cdot} \), \( u'(c) = 1/(2\sqrt{c}) \) donne \( \sqrt{c_1} = \delta(1+r)\sqrt{c_0} \).</li>
+      <li><strong>Reporter dans la contrainte</strong> pour obtenir \( c_0^* \) et \( c_1^* \) en chiffres, puis lire l'épargne \( m_0 - c_0^* \).</li>
+      <li><strong>Vérifier le régime</strong> : calculer \( \delta(1+r) \) et confirmer le sens du résultat (\( =1 \) ⇒ \( c_0 = c_1 \), \( &lt;1 \) ⇒ \( c_0 &gt; c_1 \), \( &gt;1 \) ⇒ \( c_0 &lt; c_1 \)).</li>
+    </ol>
+    <p>Version \( (\beta, \delta) \) : même recette, mais l'individu qui décide en \( t=1 \) maximise \( u(c_1) + \beta\delta u(c_2) \) — l'Euler devient \( u'(c_1) = \beta\delta(1+r)u'(c_2) \).</p>
+  </div>
+
+  <h2>Les pièges du chapitre</h2>
+
+  <div class="box box-piege">
+    <div class="box-title">Les confusions que le cours signale explicitement</div>
+    <ul>
+      <li><strong>Confondre \( \delta \) et \( \beta \).</strong> \( \delta \) est l'impatience <em>régulière</em> : elle escompte de la même façon à chaque pas de temps et reste parfaitement compatible avec la rationalité. \( \beta \) est le <em>biais du présent</em> : une cassure unique entre « maintenant » et « tout le reste ». Seul \( \beta &lt; 1 \) produit un renversement de préférence.</li>
+      <li><strong>Regarder \( \delta \) seul pour conclure.</strong> Ce n'est jamais \( \delta \) qui décide du régime, c'est le produit \( \delta(1+r) \). Avec \( \delta = 0{,}8 \) et \( r = 25\,\% \) : \( 0{,}8 \times 1{,}25 = 1 \), donc lissage parfait \( c_0 = c_1 \), malgré l'impatience.</li>
+      <li><strong>Croire qu'un transfert forfaitaire de revenu change le choix.</strong> Déplacer de la dotation entre les deux périodes à valeur présente constante laisse la droite de budget <em>identique</em> : \( \omega \) glisse le long d'elle, l'optimum \( (c_0^*, c_1^*) \) ne bouge pas — seul le montant épargné change. Ce qui déplace vraiment l'optimum, c'est un changement de \( r \) (donc du subside \( s \)), qui fait <em>pivoter</em> la droite.</li>
+      <li><strong>Oublier que tout le bloc « rationnel » repose sur la stationnarité.</strong> Contrainte de budget, utilité escomptée, équation d'Euler, subside : ces résultats ne valent que sous les hypothèses du § 4. Dès que \( \beta &lt; 1 \), le plan calculé en \( t=0 \) n'est plus celui qui sera exécuté.</li>
+      <li><strong>Confondre naïf et sophistiqué dans un exercice.</strong> Le naïf raisonne avec ses <em>souhaits</em> (\( \hat{\beta} = 1 \)) : il prévoit que son moi futur suivra le plan, et se retrouve piégé. Le sophistiqué raisonne avec ses <em>prévisions</em> (\( \hat{\beta} = \beta \)) : il calcule d'abord ce que fera son moi futur, puis choisit en conséquence — c'est le seul qui achète un commitment device.</li>
+    </ul>
+  </div>
+</section>

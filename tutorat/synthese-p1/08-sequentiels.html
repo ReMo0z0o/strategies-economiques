@@ -1,0 +1,384 @@
+<section class="chapter">
+<div class="chapter-tag">Transversal · la matière du TP 3</div>
+<h1>Jeux séquentiels et engagement</h1>
+<p class="chapter-intro">
+  Ce chapitre n'existe pas dans l'app : la matière est répartie entre B1, B3 et surtout la séance
+  de TP 3. Comme elle tombe régulièrement à l'examen — forme extensive et ENPS, duopole de
+  Stackelberg — elle méritait sa fiche. Ici, les renvois pointent donc vers le TP 3 plutôt que vers
+  un chapitre de théorie.
+</p>
+
+<h2>Où se trouve cette matière</h2>
+
+<table class="compare">
+<tr><th>§</th><th class="left">Où</th><th class="left">Ce qu'on y trouve</th></tr>
+<tr><td>1</td><td class="left">TP 3 · exercice 1</td><td class="left">« Brûler ses propres navires » : l'engagement crédible</td></tr>
+<tr><td>2</td><td class="left">TP 3 · exercice 2</td><td class="left">Ensembles d'information, sous-jeux et induction à rebours</td></tr>
+<tr><td>3</td><td class="left">TP 3 · exercice 3</td><td class="left">Trois joueurs, un sous-jeu, trois ENPS</td></tr>
+<tr><td>4</td><td class="left">TP 3 · exercice 4</td><td class="left">Offre de pétrole : Cournot, Stackelberg et le cartel de l'OPEP</td></tr>
+<tr><td>—</td><td class="left">B1 · §6</td><td class="left">L'équilibre de Nash, dont tout le reste dérive</td></tr>
+<tr><td>—</td><td class="left">B3 · §3</td><td class="left">La notion de stratégie contingente à l'histoire</td></tr>
+<tr><td>—</td><td class="left">B2 · §1</td><td class="left">L'induction à rebours, appliquée au contrat</td></tr>
+</table>
+
+<h2>Les points à retenir</h2>
+
+<div class="point">
+<div class="point-title"><span class="num">1.</span> Un jeu est séquentiel quand les joueurs jouent l'un après l'autre <em>et observent</em> ce qui précède.</div>
+<p>
+  Ce n'est pas une question de chronologie mais d'<strong>information</strong>. Deux joueurs
+  peuvent décider à des moments différents et rester dans un jeu simultané, si le second ne voit
+  pas le choix du premier. C'est ce que l'observation change qui compte.
+</p>
+<span class="ref-app">TP 3 · Jeux séquentiels &amp; duopole <span class="path">/strategies/exercices/session-3</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">2.</span> La forme extensive est un arbre : nœuds de décision, branches, nœuds terminaux.</div>
+<p>
+  Chaque nœud porte le nom du joueur qui y décide ; chaque branche est une action ; au bout de
+  chaque chemin figure un vecteur de payoffs, lu <strong>dans l'ordre annoncé par l'énoncé</strong>
+  (par exemple \( (C \,;\, A \,;\, B) \)). Vérifie toujours cet ordre avant de comparer quoi que
+  ce soit.
+</p>
+<span class="ref-app">TP 3 · exercice 2 <span class="path">/strategies/exercices/session-3#ex2</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">3.</span> Ce sont les ensembles d'information, pas le dessin, qui disent ce qu'un joueur sait.</div>
+<p>
+  Deux nœuds reliés par des pointillés forment un <span class="term">ensemble d'information</span> :
+  le joueur qui y décide ne sait pas dans lequel des deux il se trouve. Un arbre peut donc décrire
+  un jeu parfaitement simultané. Corollaire important : <strong>un sous-jeu ne coupe jamais un
+  ensemble d'information</strong>.
+</p>
+<span class="ref-app">TP 3 · exercice 2 <span class="path">/strategies/exercices/session-3#ex2</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">4.</span> Un sous-jeu, c'est un nœud et tout ce qui pousse en dessous.</div>
+<p>
+  C'est le jeu qui resterait si on déposait les joueurs à ce nœud en leur disant « voilà où on en
+  est ». Dans un arbre à information parfaite, il y a autant de sous-jeux que de nœuds de
+  décision — le jeu entier compris.
+</p>
+<span class="ref-app">TP 3 · exercice 2 <span class="path">/strategies/exercices/session-3#ex2</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">5.</span> Une stratégie est un plan complet : une action à <em>chaque</em> nœud, même ceux qu'on n'atteindra jamais.</div>
+<p>
+  C'est le point qui coûte le plus de points. Un joueur à \( k \) nœuds et \( n \) actions possède
+  \( n^k \) stratégies. Répondre « il investit » au lieu du quadruplet \( (I;I;N;I) \) est
+  incomplet, donc faux — et les composantes hors du chemin d'équilibre sont précisément celles qui
+  font la différence entre un équilibre de Nash et un ENPS.
+</p>
+<span class="ref-app">B3 · §3 — C'est quoi, un jeu répété ? <span class="path">/strategies/theorie/b3#sec-cadre</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">6.</span> L'induction à rebours résout l'arbre en partant de la fin.</div>
+<p>
+  Au dernier nœud, aucun calcul stratégique n'est nécessaire : on compare deux nombres et on garde
+  le plus grand. Une fois ce choix fixé, l'étage du dessus mène à un résultat <em>connu</em>, et on
+  recommence. On remonte ainsi jusqu'à la racine.
+</p>
+<span class="ref-app">B2 · §1 — Repères, où en sommes-nous ? <span class="path">/strategies/theorie/b2#sec-reperes</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">7.</span> À chaque nœud, on ne compare que les payoffs du joueur qui décide là.</div>
+<p>
+  Pas la somme, pas « ce qui serait bien pour tout le monde », pas le payoff d'un autre joueur.
+  Chacun est égoïste et ne lit que sa propre coordonnée dans le vecteur.
+</p>
+<span class="ref-app">TP 3 · exercice 3 <span class="path">/strategies/exercices/session-3#ex3</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">8.</span> Un ENPS est un équilibre de Nash <em>dans chaque sous-jeu</em>.</div>
+<p>
+  L'induction à rebours en produit toujours un : puisqu'on optimise nœud par nœud, aucun sous-jeu
+  ne peut contenir de choix regrettable. Retiens l'inclusion : <strong>tout ENPS est un équilibre
+  de Nash, l'inverse est faux</strong>.
+</p>
+<span class="ref-app">B1 · §6 — L'équilibre de Nash <span class="path">/strategies/theorie/b1#s5</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">9.</span> Une menace non crédible peut soutenir un équilibre de Nash — jamais un ENPS.</div>
+<p>
+  C'est une action qu'on annonce mais qu'on n'aurait pas intérêt à exécuter. Elle influence
+  pourtant l'adversaire, qui ajuste son comportement <em>pour ne pas avoir à la tester</em> — et
+  comme le nœud n'est jamais atteint, elle ne coûte rien à celui qui l'a proférée. C'est
+  exactement pour cela que le test de la perfection en sous-jeux existe.
+</p>
+<span class="ref-app">TP 3 · exercice 3 <span class="path">/strategies/exercices/session-3#ex3</span></span>
+</div>
+
+<figure>
+<svg viewBox="0 0 440 230" width="100%" style="max-width:11cm" role="img"
+     aria-label="Petit arbre à deux étages : le joueur 1 choisit entre entrer et rester dehors, le joueur 2 réplique ; le chemin d'équilibre est en gras et la branche de la menace non crédible en pointillés">
+  <g stroke="#9ca3af" stroke-width="1.3" fill="none">
+    <line x1="40" y1="115" x2="150" y2="185"/>
+    <line x1="150" y1="45" x2="270" y2="18"/>
+  </g>
+  <g stroke="#4338ca" stroke-width="3.4" fill="none">
+    <line x1="40" y1="115" x2="150" y2="45"/>
+    <line x1="150" y1="45" x2="270" y2="75"/>
+  </g>
+  <g stroke="#be123c" stroke-width="2" fill="none" stroke-dasharray="6 4">
+    <line x1="150" y1="45" x2="270" y2="18"/>
+  </g>
+  <circle cx="40" cy="115" r="5.5" fill="#4338ca"/>
+  <circle cx="150" cy="45" r="5.5" fill="#4338ca"/>
+  <circle cx="150" cy="185" r="4" fill="#9ca3af"/>
+  <text x="30" y="119" font-size="13" font-weight="bold" text-anchor="end">1</text>
+  <text x="141" y="41" font-size="13" font-weight="bold" text-anchor="end">2</text>
+  <g font-size="12" font-style="italic" text-anchor="middle">
+    <text x="88" y="70" style="fill:#4338ca" font-weight="bold">entrer</text>
+    <text x="92" y="167">rester dehors</text>
+    <text x="212" y="20" style="fill:#be123c">guerre</text>
+    <text x="215" y="70" style="fill:#4338ca" font-weight="bold">partager</text>
+  </g>
+  <g font-size="12">
+    <text x="280" y="22" style="fill:#be123c">(−1 ; −1)</text>
+    <text x="280" y="79" font-weight="bold" style="fill:#4338ca">(2 ; 2)</text>
+    <text x="162" y="189" style="fill:#9ca3af">(0 ; 4)</text>
+  </g>
+  <text x="220" y="215" font-size="11" text-anchor="middle">
+    La guerre rapporte −1 au joueur 2 contre 2 s'il partage : la menace n'est pas crédible.
+  </text>
+</svg>
+<figcaption>
+  Un arbre résolu. Le joueur 2 menace la guerre pour dissuader l'entrée, mais il ne l'exécuterait
+  pas : le chemin d'équilibre (en gras) passe par « entrer, puis partager ». L'issue « rester
+  dehors » n'est un équilibre de Nash que grâce à une menace vide — elle n'est pas parfaite en
+  sous-jeux.
+</figcaption>
+</figure>
+
+<div class="point">
+<div class="point-title"><span class="num">10.</span> Pour lister <em>tous</em> les équilibres de Nash d'un jeu séquentiel, il faut passer par la forme normale.</div>
+<p>
+  L'induction à rebours donne l'ENPS, pas l'ensemble des équilibres de Nash. Quand l'énoncé demande
+  les deux, la marche à suivre est fixe : on écrit la matrice dont les lignes et les colonnes sont
+  les <strong>stratégies complètes</strong>, on y cherche les équilibres de Nash, puis on écarte
+  ceux qui prescrivent un mauvais choix dans un sous-jeu. Ce qui reste est parfait en sous-jeux.
+</p>
+<span class="ref-app">TP 3 · exercice 1 <span class="path">/strategies/exercices/session-3#ex1</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">11.</span> Un jeu peut avoir plusieurs ENPS — la perfection en sous-jeux ne garantit pas l'unicité.</div>
+<p>
+  Elle élimine les menaces non crédibles, rien de plus. Si un sous-jeu admet lui-même plusieurs
+  équilibres de Nash — typiquement un sous-jeu simultané avec deux équilibres purs — chacun engendre
+  un ENPS du jeu entier. L'exercice 3 du TP en produit trois à partir d'un seul sous-jeu.
+</p>
+<span class="ref-app">TP 3 · exercice 3 <span class="path">/strategies/exercices/session-3#ex3</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">12.</span> Un nœud qui n'ouvre aucun sous-jeu n'est contraint par rien.</div>
+<p>
+  La perfection en sous-jeux ne teste que les <em>sous-jeux</em>. Un nœud pris dans un ensemble
+  d'information à plusieurs nœuds n'en ouvre pas : l'action qu'on y prescrit peut être n'importe
+  laquelle sans que l'ENPS soit invalidé. C'est pourquoi un même déroulement peut correspondre à
+  plusieurs profils de stratégies tous parfaits en sous-jeux.
+</p>
+<span class="ref-app">TP 3 · exercice 2 <span class="path">/strategies/exercices/session-3#ex2</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">13.</span> S'enlever volontairement une option peut rapporter : c'est l'engagement crédible.</div>
+<p>
+  Brûler ses navires supprime la retraite — et rend la menace de se battre exécutable, donc
+  crédible. Le résultat est contre-intuitif : <strong>avoir moins de choix peut améliorer son
+  sort</strong>, parce que cela change ce que l'adversaire anticipe. C'est le même mécanisme que
+  le commitment device de A2, transposé à un jeu.
+</p>
+<span class="ref-app">TP 3 · exercice 1 <span class="path">/strategies/exercices/session-3#ex1</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">14.</span> En duopole de Cournot, chacun choisit une quantité et le prix s'ajuste.</div>
+<p>
+  La demande inverse donne le prix en fonction de la quantité <em>totale</em> : c'est par là que
+  les deux firmes sont liées. On écrit le profit \( \pi_i = \big(p(Q) - c\big)q_i \), on dérive par
+  rapport à sa propre quantité, et la condition de premier ordre donne la
+  <strong>fonction de réaction</strong> — ma meilleure quantité en fonction de la tienne.
+  L'équilibre est à l'intersection des deux réactions.
+</p>
+<span class="ref-app">TP 3 · exercice 4 <span class="path">/strategies/exercices/session-3#ex4</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">15.</span> Stackelberg : le leader substitue la réaction du follower <em>avant</em> de dériver.</div>
+<p>
+  C'est toute la différence avec Cournot, et l'ordre des opérations est imposé. En anticipant la
+  réponse de son rival, le leader produit davantage et gagne davantage : c'est l'<strong>avantage
+  du premier joueur</strong>. Sur les chiffres du TP : le leader passe de 333,3 à 500, le suiveur
+  tombe à 250.
+</p>
+<span class="ref-app">TP 3 · exercice 4 <span class="path">/strategies/exercices/session-3#ex4</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">16.</span> Le cartel maximise le profit joint, mais chacun a intérêt à tricher.</div>
+<p>
+  En s'entendant sur la quantité de monopole partagée, les deux firmes gagnent plus qu'à Cournot.
+  Mais face au quota de l'autre, la meilleure réponse individuelle est de produire davantage :
+  la structure est celle d'un dilemme du prisonnier. D'où le pont avec B3 — seule la
+  <strong>répétition</strong>, et une patience suffisante, peut faire tenir l'entente.
+</p>
+<span class="ref-app">B3 · §8 — Grim contre grim : la condition δ ≥ 1/2 <span class="path">/strategies/theorie/b3#sec-grim</span></span>
+</div>
+
+<h2>Les formules du chapitre</h2>
+
+<table class="compare">
+<tr><th class="left">Formule</th><th class="left">Symboles</th><th class="left">Quand l'utiliser</th></tr>
+<tr>
+  <td class="left">\( n^k \)</td>
+  <td class="left">\( n \) actions par nœud, \( k \) nœuds du joueur</td>
+  <td class="left">Compter les stratégies avant de les énumérer — le compte sert de contrôle.</td>
+</tr>
+<tr>
+  <td class="left">\( \pi_i = \big(p(Q) - c\big)\,q_i \)</td>
+  <td class="left">\( Q = q_1 + q_2 \), \( c \) coût marginal constant</td>
+  <td class="left">Point de départ de tout duopole en quantités.</td>
+</tr>
+<tr>
+  <td class="left">\( q_2 = \dfrac{a - c - q_1}{2} \)</td>
+  <td class="left">avec la demande inverse \( p = a - Q \)</td>
+  <td class="left">La fonction de réaction, obtenue par la condition de premier ordre du suiveur.</td>
+</tr>
+<tr>
+  <td class="left">\( q_i^{\text{C}} = \dfrac{a-c}{3} \)</td>
+  <td class="left">équilibre de Cournot symétrique</td>
+  <td class="left">Jeu simultané : les deux réactions se croisent.</td>
+</tr>
+<tr>
+  <td class="left">\( q_1^{\text{S}} = \dfrac{a-c}{2} \), \( q_2^{\text{S}} = \dfrac{a-c}{4} \)</td>
+  <td class="left">leader puis suiveur</td>
+  <td class="left">Stackelberg : le leader produit une fois et demie la quantité de Cournot.</td>
+</tr>
+</table>
+
+<h2>Les quatre structures de marché, côte à côte</h2>
+
+<p>
+  Sur les chiffres du TP 3 — demande \( Q^D(p) = 1000 - 5p \), soit \( p = 200 - Q/5 \), coût
+  marginal nul. Les profits sont en millions.
+</p>
+
+<table class="compare">
+<tr><th class="left">Structure</th><th>\( q_1 \)</th><th>\( q_2 \)</th><th>\( Q \)</th><th>\( p \)</th><th>\( \pi_1 \)</th><th>\( \pi_2 \)</th></tr>
+<tr><td class="left">Cartel (monopole partagé)</td><td>250</td><td>250</td><td>500</td><td>100</td><td>25 000</td><td>25 000</td></tr>
+<tr><td class="left">Cournot (simultané)</td><td>333,3</td><td>333,3</td><td>666,7</td><td>66,7</td><td>22 222</td><td>22 222</td></tr>
+<tr><td class="left">Stackelberg (1 joue d'abord)</td><td>500</td><td>250</td><td>750</td><td>50</td><td>25 000</td><td>12 500</td></tr>
+<tr><td class="left">Concurrence parfaite</td><td>—</td><td>—</td><td>1000</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">Ce que ce tableau raconte en une lecture</div>
+<p>
+  Descends la colonne \( Q \) : plus on ajoute de concurrence, plus la quantité totale monte et plus
+  le prix tombe. Le cartel restreint le plus, la concurrence parfaite pousse le prix jusqu'au coût
+  marginal. Le <strong>profit joint</strong> suit l'ordre inverse : 50 000 pour le cartel, 44 444 à
+  Cournot, 37 500 à Stackelberg.
+</p>
+<p>
+  Deux observations qui tombent souvent. D'abord, le leader de Stackelberg gagne exactement autant
+  que sous cartel (25 000) tout en produisant le double : le <strong>premier joueur capte la rente
+  de l'entente à lui seul</strong>. Ensuite, le suiveur, lui, tombe sous son profit de Cournot —
+  l'avantage du premier joueur se paie sur le second.
+</p>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">L'autre jeu de chiffres : celui des examens blancs</div>
+<p>
+  Demande \( p = 80 - Q \), coût marginal 20. Cournot : 20 chacun, prix 40, profit 400 chacun.
+  Stackelberg : leader 30, suiveur 15, prix 35, profits 450 et 225. Le leader gagne 50 de plus qu'à
+  Cournot, le suiveur perd 175. Même structure, chiffres différents : ne récite pas des résultats
+  appris par cœur, refais les deux dérivations.
+</p>
+</div>
+
+<h2>Les définitions à savoir réciter</h2>
+
+<dl class="lexique">
+<dt>Forme extensive</dt>
+<dd>La représentation d'un jeu sous forme d'arbre : qui joue, quand, en sachant quoi, et avec quels payoffs au bout de chaque chemin.</dd>
+<dt>Ensemble d'information</dt>
+<dd>Un groupe de nœuds qu'un joueur ne peut pas distinguer au moment de décider. Un ensemble à un seul nœud signifie information parfaite.</dd>
+<dt>Sous-jeu</dt>
+<dd>Un nœud de décision et tout ce qui en descend, à condition de ne couper aucun ensemble d'information.</dd>
+<dt>Stratégie</dt>
+<dd>Un plan complet : une action prévue à chacun des nœuds du joueur, y compris ceux qui ne seront pas atteints.</dd>
+<dt>Induction à rebours</dt>
+<dd>La résolution d'un arbre en partant des derniers nœuds et en remontant, en remplaçant chaque nœud résolu par le résultat qu'il produit.</dd>
+<dt>Équilibre de Nash parfait en sous-jeux (ENPS)</dt>
+<dd>Un profil de stratégies qui constitue un équilibre de Nash dans chaque sous-jeu, y compris ceux hors du chemin d'équilibre.</dd>
+<dt>Menace non crédible</dt>
+<dd>Une action annoncée par une stratégie mais que son auteur n'aurait pas intérêt à exécuter si le nœud était atteint.</dd>
+<dt>Engagement crédible</dt>
+<dd>Le fait de se priver volontairement d'une option pour rendre une menace exécutable, et donc efficace.</dd>
+<dt>Fonction de réaction</dt>
+<dd>La quantité qui maximise mon profit pour chaque quantité possible de mon rival.</dd>
+<dt>Avantage du premier joueur</dt>
+<dd>Le gain que retire le leader de Stackelberg du fait de choisir en premier, en anticipant la réaction du suiveur.</dd>
+</dl>
+
+<h2>La méthode type</h2>
+
+<div class="box box-methode">
+<div class="box-title">Résoudre un jeu séquentiel par induction à rebours</div>
+<ol>
+  <li>Repérer les <strong>derniers</strong> nœuds de décision.</li>
+  <li>À chacun, comparer les payoffs <strong>du seul joueur qui y décide</strong> et entourer la
+      branche gagnante ; barrer l'autre.</li>
+  <li>Remonter d'un étage : chaque nœud mène désormais au résultat de la branche entourée. Comparer
+      à nouveau, entourer.</li>
+  <li>Continuer jusqu'à la racine. Les branches entourées forment l'ENPS ; le chemin depuis la
+      racine est le déroulement effectif.</li>
+  <li>Écrire les stratégies <strong>en entier</strong>, une composante par nœud — c'est la réponse
+      attendue, pas seulement le chemin.</li>
+</ol>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Résoudre un Stackelberg</div>
+<ol>
+  <li>Écrire le profit du <strong>suiveur</strong> en fonction des deux quantités.</li>
+  <li>Sa condition de premier ordre donne la <strong>fonction de réaction</strong> \( q_2(q_1) \).</li>
+  <li><strong>Substituer</strong> cette réaction dans le profit du leader — avant toute
+      dérivation.</li>
+  <li>Dériver par rapport à \( q_1 \), annuler, en déduire \( q_1 \), puis \( q_2 \), le prix et
+      les deux profits.</li>
+  <li>Comparer à Cournot pour faire apparaître l'avantage du premier joueur.</li>
+</ol>
+</div>
+
+<h2>Les pièges du chapitre</h2>
+
+<div class="box box-piege">
+<div class="box-title">Ce qui coûte des points</div>
+<ul>
+  <li><strong>Confondre la stratégie et le chemin suivi.</strong> Le chemin décrit ce qui se passe ;
+      la stratégie prévoit tout, y compris l'inutilisé.</li>
+  <li><strong>Lire les payoffs bruts en remontant.</strong> Au-dessus du premier étage, on lit les
+      résultats <em>déjà sélectionnés</em>, pas toutes les branches.</li>
+  <li><strong>Comparer le payoff du mauvais joueur</strong> à un nœud. Vérifie la position de sa
+      coordonnée dans le vecteur avant de comparer.</li>
+  <li><strong>Croire qu'un équilibre non parfait n'est pas un équilibre de Nash.</strong> Il l'est ;
+      il échoue seulement au test plus exigeant.</li>
+  <li><strong>Dériver le profit du leader avant d'y substituer la réaction du suiveur.</strong>
+      L'ordre est ce qui distingue Stackelberg de Cournot — l'inverser redonne Cournot.</li>
+  <li><strong>Découper un sous-jeu au milieu d'un ensemble d'information.</strong> C'est interdit :
+      le joueur ne saurait pas où il se trouve.</li>
+</ul>
+</div>
+</section>

@@ -1,0 +1,323 @@
+<section class="chapter">
+  <div class="chapter-tag">A3 · Partie A — La décision individuelle</div>
+  <h1>Décision sous incertitude</h1>
+  <p class="chapter-intro">Risquer, assurer, diversifier : l’utilité espérée et ses limites. Comment un individu choisit-il quand il ne sait pas ce que l’avenir lui réserve ?</p>
+
+  <h2>La carte du chapitre</h2>
+
+  <table class="compare">
+    <thead>
+      <tr><th>§</th><th class="left">Section</th><th class="left">Ce qu’elle apporte</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td class="left">Le mystère de l’argent qui dort</td><td class="left">336 milliards d’euros dorment sur des comptes belges alors que les actions rapportent 7 % par an : l’énigme qui ouvre le chapitre.</td></tr>
+      <tr><td>2</td><td class="left">Actifs risqués et valeur monétaire attendue</td><td class="left">La VMA résume une loterie en un chiffre — et le sondage des 3 M€ montre aussitôt qu’elle ne suffit pas.</td></tr>
+      <tr><td>3</td><td class="left">Préférences rationnelles sur des loteries</td><td class="left">Les quatre propriétés de A1 restent, plus une nouvelle : l’indépendance (l’exemple vin / bière).</td></tr>
+      <tr><td>4</td><td class="left">L’utilité espérée de von Neumann–Morgenstern</td><td class="left">Le théorème central : on moyenne les utilités, pas les montants. Jean contre Sarah.</td></tr>
+      <tr><td>5</td><td class="left">Les trois attitudes face au risque</td><td class="left">Neutre / averse / affinité, et leur traduction exacte en courbure de \( u \).</td></tr>
+      <tr><td>6</td><td class="left">Équivalent certain et prime de risque</td><td class="left">Chiffrer la peur du risque, et savoir la lire sur le graphique corde-courbe.</td></tr>
+      <tr><td>7</td><td class="left">Application 1 · Combien investir dans un projet risqué ?</td><td class="left">Premier programme d’optimisation : \( A^* \) recule quand l’aversion monte.</td></tr>
+      <tr><td>8</td><td class="left">Diversification</td><td class="left">La corrélation entre actifs, et le classement des trois cas à VMA égale.</td></tr>
+      <tr><td>9</td><td class="left">Application 2 · Combien s’assurer ?</td><td class="left">Le programme miroir du § 7, et le théorème de l’assurance complète.</td></tr>
+      <tr><td>10</td><td class="left">Théorie des perspectives</td><td class="left">Point de référence, gains contre pertes, aversion à la perte.</td></tr>
+      <tr><td>11</td><td class="left">Cadrage étroit</td><td class="left">L’argument de Samuelson et le cas de la mauvaise délégation (Thaler).</td></tr>
+      <tr><td>12</td><td class="left">Biais sur les probabilités</td><td class="left">Sur-confiance, erreur du joueur, petites probabilités mal perçues.</td></tr>
+      <tr><td>13</td><td class="left">Synthèse &amp; auto-évaluation</td><td class="left">Le modèle standard complet et la carte des déviations comportementales.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Les points à retenir</h2>
+
+  <div class="point">
+    <div class="point-title"><span class="num">1.</span> Le chapitre part d’une énigme concrète : pourquoi tant d’argent dort-il sur des comptes ?</div>
+    <p>En 2018, 336 milliards d’euros stationnaient sur des comptes belges, dont 80 sur des comptes courants qui ne rapportent rien — alors que les actions rendent environ 7 % par an sur le long terme. Mais 7 %, c’est une <em>moyenne</em> : Apple 1985 contre Lehman 2007. Investir, c’est choisir sans connaître le résultat. Le chapitre construit d’abord la théorie rationnelle (§ 2 – § 9), puis les écarts observés (§ 10 – § 12).</p>
+    <span class="ref-app">A3 · §1 — Le mystère de l’argent qui dort <span class="path">/strategies/theorie/a3#s1</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">2.</span> La VMA résume un actif risqué en un seul chiffre — mais elle ne suffit pas à décider.</div>
+    <p>Un actif risqué (une <em>loterie</em>) est décrit par ses réalisations <strong>et</strong> leurs probabilités. Sa valeur monétaire attendue est la moyenne pondérée : VMA(action) \( = \tfrac12 \times 36 + \tfrac12 \times 1 = 18{,}5\ \$ \) contre 16 \$ pour l’obligation sûre. La VMA choisirait donc l’action. Or 97 % de l’amphi préfère 3 M€ certains à un pile-ou-face de VMA 5 M€ : on laisse 2 M€ de moyenne sur la table pour éviter le risque. Conclusion du cours : il faut une théorie qui intègre l’attitude face au risque.</p>
+    <span class="ref-app">A3 · §2 — Actifs risqués et valeur monétaire attendue <span class="path">/strategies/theorie/a3#s2</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">3.</span> L’indépendance : les réalisations s’excluent, donc les préférences sont linéaires en probabilités.</div>
+    <p>Les quatre propriétés de A1 — complétude, transitivité, monotonie, continuité — s’appliquent telles quelles aux loteries. S’y ajoute une propriété <em>supplémentaire</em>, imposée par la nature des loteries : une seule réalisation se produira. Mélanger deux loteries ne crée donc aucune expérience nouvelle, seules les probabilités bougent — d’où la dépendance <strong>linéaire</strong> des préférences aux probabilités. Si tu es indifférent entre un verre de vin et un verre de bière, tu l’es aussi entre le vin et la loterie « 50 % vin, 50 % bière ». C’est cette linéarité qui rend le théorème vNM possible.</p>
+    <span class="ref-app">A3 · §3 — Préférences rationnelles sur des loteries <span class="path">/strategies/theorie/a3#s3</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">4.</span> Théorème vNM : des préférences rationnelles sur loteries sont représentées par l’utilité espérée.</div>
+    <p>\( U(a) = \pi\, u(y) + (1-\pi)\, u(x) \), où \( u : \mathbb{R}_+ \to \mathbb{R} \), la fonction de <strong>Bernoulli</strong>, est strictement croissante (\( u'(w) &gt; 0 \)). L’individu se comporte <em>comme s’il</em> moyennait non pas les montants, mais les utilités des montants. Conséquence immédiate : deux individus rationnels peuvent choisir l’inverse l’un de l’autre. Jean (\( u = \sqrt{w} \)) obtient \( U(\text{action}) = 3{,}5 &lt; U(\text{obligation}) = 4 \) et prend l’obligation ; Sarah (\( \tilde u = 2w \)) obtient 37 contre 32 et prend l’action. Tout se joue dans la <em>courbure</em> de \( u \).</p>
+    <span class="ref-app">A3 · §4 — L’utilité espérée de von Neumann–Morgenstern <span class="path">/strategies/theorie/a3#s4</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">5.</span> \( u \) évalue un montant certain, \( U \) évalue une loterie : ne jamais intervertir.</div>
+    <p>\( u \) minuscule (Bernoulli) s’applique à une réalisation certaine : \( u(36) \) est l’utilité d’avoir 36 € en poche. \( U \) majuscule (vNM) s’applique à la loterie entière : c’est la moyenne pondérée des \( u \). On calcule \( u \) <em>d’abord</em> sur chaque réalisation, on pondère <em>ensuite</em>. Faire l’inverse donne \( u(\mathrm{VMA}) \ne U(a) \) — et c’est justement cet écart qui devient la prime de risque au § 6. Le cours en fait sa « question d’examen favorite ».</p>
+    <span class="ref-app">A3 · §4 — L’utilité espérée de von Neumann–Morgenstern <span class="path">/strategies/theorie/a3#s4</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">6.</span> Les trois attitudes face au risque se définissent à VMA égale.</div>
+    <p>On compare \( a \) (réalisations \( y \) et \( x \) à 50/50) et \( a' \) (réalisations \( y+z \) et \( x-z \)) : même VMA \( \tfrac12(x+y) \), dispersion plus grande. La comparaison isole donc l’effet <em>pur</em> du risque. <strong>Neutre</strong> = indifférent entre \( a \) et \( a' \) ; <strong>averse</strong> = préfère \( a \) ; <strong>affinité</strong> = préfère \( a' \). En amphi, 82 % choisissent (3 000 ; 2 000) plutôt que (4 000 ; 1 000), de même VMA 2 500 € : la plupart des gens sont averses au risque.</p>
+    <span class="ref-app">A3 · §5 — Les trois attitudes face au risque <span class="path">/strategies/theorie/a3#s5</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">7.</span> Neutralité ⇔ \( u \) linéaire ⇔ classer les actifs par leur VMA.</div>
+    <p>Si \( u(w) = bw + d \) avec \( b &gt; 0 \), alors \( U(a) = b \cdot \mathrm{VMA}(a) + d \) : l’utilité espérée est une transformation croissante de la VMA. Classer par \( U \) ou par VMA revient donc exactement au même, et \( U(a'') \ge U(a''') \iff \mathrm{VMA}(a'') \ge \mathrm{VMA}(a''') \). Sarah (\( \tilde u = 2w \)) est ce cas. C’est la seule situation où la VMA est un critère de décision suffisant.</p>
+    <span class="ref-app">A3 · §5 — Les trois attitudes face au risque <span class="path">/strategies/theorie/a3#s5</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">8.</span> Aversion ⇔ \( u \) concave ⇔ utilité marginale de la richesse décroissante.</div>
+    <p>Formellement \( u''(w) &lt; 0 \) pour tout \( w &gt; 0 \). L’intuition : si chaque euro supplémentaire rapporte moins que le précédent, le gain \( u(w+z) - u(w) \) est plus petit que la perte \( u(w) - u(w-z) \) ; un pari équilibré « \( +z \) ou \( -z \) » fait perdre plus d’utilité qu’il n’en rapporte, donc on le refuse. Symétriquement, affinité ⇔ \( u \) convexe (\( u'' &gt; 0 \)). Diagnostic d’examen : dériver deux fois. \( w^2 \) → affinité ; \( \ln w \) → aversion ; \( 5w+3 \) → neutralité. C’est la même concavité qu’en A1 (diversifier sa consommation) et A2 (lisser dans le temps).</p>
+    <span class="ref-app">A3 · §5 — Les trois attitudes face au risque <span class="path">/strategies/theorie/a3#s5</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">9.</span> L’équivalent certain chiffre exactement ce que vaut la loterie pour l’individu.</div>
+    <p>\( C(a_r) \) est le montant <em>sans risque</em> qui procure la même utilité que l’actif risqué : \( U(a_r) = u\big(C(a_r)\big) \). Traduction : c’est le prix maximum que l’individu accepte de payer pour cet actif — un vendeur doit donc fixer \( p \le C(a_r) \) pour le convaincre. On l’obtient en inversant la Bernoulli, \( C = u^{-1}(U) \) : élever au carré si \( u = \sqrt{\ } \), prendre l’exponentielle si \( u = \ln \).</p>
+    <span class="ref-app">A3 · §6 — Équivalent certain et prime de risque <span class="path">/strategies/theorie/a3#s6</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">10.</span> La prime de risque minimale est le rabais sur la moyenne exigé pour supporter le risque.</div>
+    <p>\( \mathrm{PRM}(a_r) = \mathrm{VMA}(a_r) - C(a_r) \). Pour un averse, la corde passe <em>sous</em> la courbe, donc \( U(a_r) &lt; u(\mathrm{VMA}) \), donc \( C &lt; \mathrm{VMA} \) et \( \mathrm{PRM} &gt; 0 \). Exercice du cours avec \( u = \ln w \), actif (110 € à 75 % ; 70 € à 25 %) : \( \mathrm{VMA} = 100 \), \( U \approx 4{,}5875 \), \( C = e^{4{,}5875} \approx 98{,}25 \), donc \( \mathrm{PRM} \approx 1{,}75 \) €. Il « paie » 1,75 € de moyenne pour se débarrasser du risque.</p>
+    <span class="ref-app">A3 · §6 — Équivalent certain et prime de risque <span class="path">/strategies/theorie/a3#s6</span></span>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 440 310" width="100%" style="max-width:11cm" role="img">
+      <!-- axes -->
+      <line x1="70" y1="40" x2="70" y2="250" stroke="#111" stroke-width="1.6"/>
+      <line x1="70" y1="250" x2="412" y2="250" stroke="#111" stroke-width="1.6"/>
+      <text x="418" y="255" font-size="13" text-anchor="start">w</text>
+      <!-- courbe concave u(w) -->
+      <polyline fill="none" stroke="#111" stroke-width="2"
+        points="70,250 86,205 102,187 135,161 168,140 200,124 232,109 265,95 298,83 330,71 362,60 395,50"/>
+      <text x="398" y="42" font-size="13" text-anchor="start">u(w)</text>
+      <!-- corde -->
+      <line x1="102" y1="187" x2="362" y2="60" stroke="#111" stroke-width="1.1" stroke-dasharray="1 0"/>
+      <!-- repères verticaux -->
+      <line x1="102" y1="250" x2="102" y2="187" stroke="#888" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="200" y1="250" x2="200" y2="124" stroke="#888" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="232" y1="250" x2="232" y2="109" stroke="#888" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="362" y1="250" x2="362" y2="60" stroke="#888" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- repères horizontaux -->
+      <line x1="70" y1="187" x2="102" y2="187" stroke="#888" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="70" y1="124" x2="232" y2="124" stroke="#888" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="70" y1="109" x2="232" y2="109" stroke="#888" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="70" y1="60" x2="362" y2="60" stroke="#888" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- points -->
+      <circle cx="102" cy="187" r="3.4" fill="#111"/>
+      <circle cx="362" cy="60" r="3.4" fill="#111"/>
+      <circle cx="232" cy="109" r="3.4" fill="#111"/>
+      <circle cx="232" cy="124" r="3.4" fill="#fff" stroke="#111" stroke-width="1.8"/>
+      <circle cx="200" cy="124" r="3.4" fill="#111"/>
+      <!-- étiquettes de l'axe vertical -->
+      <text x="66" y="64" font-size="12" text-anchor="end">u(y)</text>
+      <text x="66" y="106" font-size="12" text-anchor="end">u(VMA)</text>
+      <text x="66" y="130" font-size="12" text-anchor="end">U(a)</text>
+      <text x="66" y="191" font-size="12" text-anchor="end">u(x)</text>
+      <!-- étiquettes de l'axe horizontal -->
+      <text x="102" y="267" font-size="12" text-anchor="middle">x</text>
+      <text x="198" y="267" font-size="12" text-anchor="end">C(a)</text>
+      <text x="235" y="267" font-size="12" text-anchor="start">VMA(a)</text>
+      <text x="362" y="267" font-size="12" text-anchor="middle">y</text>
+      <!-- double flèche PRM -->
+      <line x1="200" y1="288" x2="232" y2="288" stroke="#111" stroke-width="1.4"/>
+      <polyline points="206,284 200,288 206,292" fill="none" stroke="#111" stroke-width="1.4"/>
+      <polyline points="226,284 232,288 226,292" fill="none" stroke="#111" stroke-width="1.4"/>
+      <text x="240" y="292" font-size="12" text-anchor="start">PRM = VMA − C</text>
+      <!-- annotation corde -->
+      <text x="268" y="140" font-size="12" text-anchor="start">corde</text>
+    </svg>
+    <figcaption>Le graphique du chapitre. La corde relie \( u(x) \) à \( u(y) \) ; lue à l’abscisse VMA, elle donne \( U(a) \). On revient horizontalement jusqu’à la courbe pour lire \( C(a) \). \( u \) concave ⇒ corde sous la courbe ⇒ \( C &lt; \mathrm{VMA} \) ⇒ \( \mathrm{PRM} &gt; 0 \).</figcaption>
+  </figure>
+
+  <div class="point">
+    <div class="point-title"><span class="num">11.</span> Le montant optimal investi \( A^* \) est d’autant plus petit que l’individu est averse au risque.</div>
+    <p>Richesse \( w = 160 \) €, montant investi \( A \). Chaque euro investi rend 4 € avec probabilité 70 % et 0,20 € sinon, d’où les deux richesses d’état \( y = 160 + 3A \) et \( x = 160 - 0{,}8A \) : chaque euro investi <em>écarte</em> les scénarios (+3 € / −0,80 €). L’individu maximise \( U(A) = \tfrac{7}{10} u(160+3A) + \tfrac{3}{10} u(160-0{,}8A) \), avec la CPO \( \partial U / \partial A = 0 \). Avec \( \sqrt{w} \), \( A^* = 160 \) (tout investir) ; avec \( \ln w \), plus concave, \( A^* = 124 \). Première réponse — parfaitement rationnelle — au mystère du § 1.</p>
+    <span class="ref-app">A3 · §7 — Application 1 · Combien investir dans un projet risqué ? <span class="path">/strategies/theorie/a3#s7</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">12.</span> À VMA égale, corrélation négative &gt; corrélation nulle &gt; corrélation positive.</div>
+    <p>Deux actions valant \( y \) ou \( x \) à 50/50. <strong>Positive parfaite</strong> (deux firmes de parapluies) : \( 2y \) ou \( 2x \). <strong>Négative parfaite</strong> (parapluies + crème solaire) : \( y+x \) à coup sûr — deux actifs risqués fabriquent un portefeuille <em>sans risque</em>. <strong>Nulle</strong> (parapluies + t-shirts des Diables rouges) : \( 2y \) (25 %), \( y+x \) (50 %), \( 2x \) (25 %). Les trois ont la même VMA \( = x+y \), mais pour un averse \( U(\text{cas 2}) &gt; U(\text{cas 3}) &gt; U(\text{cas 1}) \) ; pour un neutre, les trois sont équivalents. Diversifier = chercher des actifs peu ou négativement corrélés ; l’or joue le rôle de la crème solaire.</p>
+    <span class="ref-app">A3 · §8 — Diversification : ne pas mettre tous ses œufs dans le même panier <span class="path">/strategies/theorie/a3#s8</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">13.</span> L’assurance est le miroir de l’investissement : plus on est averse, plus on couvre.</div>
+    <p>30 € en compte et un vélo de 70 € volé avec probabilité 30 % ; couvrir 1 € coûte \( p = 0{,}40 \) €. Les deux richesses d’état sont \( y = 100 - 0{,}4C \) (pas de vol) et \( x = 30 + 0{,}6C \) (vol) : chaque euro couvert <em>rapproche</em> les scénarios. On maximise \( U(C) = \tfrac{7}{10} u(100-0{,}4C) + \tfrac{3}{10} u(30+0{,}6C) \). Fatou (\( \sqrt{w} \)) : \( C^* = 14{,}8 \) € ; Hicham (\( \ln w \)), plus averse : \( C^* = 40 \) €. Tous deux paient alors que cela <em>abaisse</em> la VMA de leur portefeuille — symétrique exact du § 7.</p>
+    <span class="ref-app">A3 · §9 — Application 2 · Combien s’assurer ? <span class="path">/strategies/theorie/a3#s9</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">14.</span> Théorème de l’assurance complète : si le prix est actuariellement juste, on se couvre intégralement.</div>
+    <p>Le prix est <strong>actuariellement juste</strong> quand il égale le coût attendu de l’assureur, soit \( p = \pi \). La CPO du programme d’assurance s’écrit \( \pi(1-p)\,u'(x) = p\,(1-\pi)\,u'(y) \) ; si \( p = \pi \), les coefficients se simplifient et il reste \( u'(x) = u'(y) \). Comme \( u'' &lt; 0 \), \( u' \) est strictement décroissante donc injective : \( x = y \), plus aucun risque, \( C^* = L \). Si \( p &gt; \pi \), la CPO donne \( u'(x) &gt; u'(y) \) donc \( x &lt; y \) : couverture <em>partielle</em> (le cas de Fatou et Hicham, qui paient 0,40 € pour un risque à 0,30 €). Maison de 200 000 € à 2 % : prix juste 0,02 €, \( C^* = 200\,000 \) €, prime 4 000 €, richesse certaine 196 000 €.</p>
+    <span class="ref-app">A3 · §9 — Application 2 · Combien s’assurer ? <span class="path">/strategies/theorie/a3#s9</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">15.</span> Théorie des perspectives : on ne raisonne pas en richesse absolue, mais autour d’un point de référence.</div>
+    <p>Expérience des étrennes : « 300 € puis +100 € certains » et « 500 € puis −100 € certains » donnent la même richesse finale (400 €), et pourtant 68 % prennent l’option sûre quand elle est cadrée en <em>gains</em>, 72 % prennent la loterie quand elle est cadrée en <em>pertes</em>. Un individu vNM ne peut pas faire ça. Kahneman et Tversky remplacent \( u(w) \) par \( u(w, w_{ref}) \), avec trois traits : <strong>(1)</strong> gains concaves — aversion au risque dans les gains ; <strong>(2)</strong> pertes convexes — <em>affinité</em> au risque dans les pertes ; <strong>(3)</strong> aversion à la perte — la courbe est environ deux fois plus pentue à gauche de la référence. Elle explique l’effet de disposition (vendre trop vite les <em>winners</em>, garder les <em>loosers</em>) et le biais de dotation de A1.</p>
+    <span class="ref-app">A3 · §10 — Théorie des perspectives : le point de référence <span class="path">/strategies/theorie/a3#s10</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">16.</span> Cadrage étroit : refuser un pari isolé tout en acceptant dix fois le même est incohérent.</div>
+    <p>Le biais consiste à évaluer chaque alternative risquée <strong>isolément</strong>, au lieu de regarder son effet sur l’ensemble du portefeuille. <em>Argument de Samuelson, par récurrence à rebours</em> : au 10<sup>e</sup> lancer il ne reste qu’un pari, donc situation A, donc tu refuses ; au 9<sup>e</sup> tu anticipes ce refus, le 9<sup>e</sup> devient « le dernier », tu refuses ; et ainsi jusqu’au premier. Or la répétition dilue vraiment le risque : 3 paris « +10 € / −5 € » donnent \( \mathrm{VMA} = 7{,}50 \) € et seulement \( 1/8 = 12{,}5\% \) de chances de finir en perte, contre 50 % pour un pari unique. Cas de Thaler : 3 cadres sur 23 acceptent le projet, alors que le portefeuille des 23 a une VMA de 11,5 M\$ et moins de 5 % de risque de perte globale — le remède est d’évaluer les managers sur le portefeuille, pas projet par projet.</p>
+    <span class="ref-app">A3 · §11 — Cadrage étroit — narrow framing <span class="path">/strategies/theorie/a3#s11</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">17.</span> Trois biais déforment les probabilités \( \pi \) elles-mêmes.</div>
+    <p><strong>Sur-confiance</strong> : surestimer la probabilité des bons états du monde et sous-estimer celle des mauvais (93 % des conducteurs se jugent au-dessus de la médiane, Svenson 1981 ; le <em>planning fallacy</em> de Buehler ; les entrepreneurs). La naïveté de A2 en est un cas particulier. <strong>Sur-inférence / erreur du joueur</strong> : après deux piles, croire que la probabilité de pile est passée sous 50 % — le hasard ne « compense » pas à court terme, la loi des grands nombres agit par dilution. <strong>Petites probabilités</strong> : on distingue mal 1 chance sur un million de 5 chances sur un million, pourtant un facteur 5 — une des raisons du succès des loteries à VMA négative.</p>
+    <span class="ref-app">A3 · §12 — Biais sur les probabilités <span class="path">/strategies/theorie/a3#s12</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">18.</span> Le modèle standard complet réunit A1, A2 et A3 — et chaque ingrédient a son biais attitré.</div>
+    <p>\( U(x) = \sum_{t} \delta^{t} \sum_{s_t} \pi(s_t)\, u(x_t \mid s_t) \) : on <em>espère</em> sur les états du monde (A3), <em>puis</em> on escompte dans le temps (A2), l’utilité de chaque consommation étant celle de A1. L’individu rationnel choisit le programme accessible qui maximise \( U(x) \). La carte des déviations se lit ingrédient par ingrédient :</p>
+    <ul>
+      <li>\( \delta \) constant → biais pour le présent, procrastination (A2) ;</li>
+      <li>\( u \) en niveaux absolus → point de référence, aversion à la perte, biais de dotation (A1 et § 10) ;</li>
+      <li>évaluer le portefeuille entier → cadrage étroit (§ 11) ;</li>
+      <li>\( \pi \) = projections rationnelles → sur-confiance, erreur du joueur, petites probabilités (§ 12).</li>
+    </ul>
+    <span class="ref-app">A3 · §13 — Synthèse &amp; auto-évaluation <span class="path">/strategies/theorie/a3#s13</span></span>
+  </div>
+
+  <h2>Les formules du chapitre</h2>
+
+  <table class="compare">
+    <thead>
+      <tr><th class="left">Formule</th><th class="left">Symboles</th><th class="left">Quand l’utiliser</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left">\( \mathrm{VMA}(a) = \pi y + (1-\pi)x \)</td>
+        <td class="left">\( y \) réalisation haute (probabilité \( \pi \)), \( x \) réalisation basse</td>
+        <td class="left">Résumer un actif risqué en un chiffre. Critère de choix suffisant <em>seulement</em> pour un neutre au risque.</td>
+      </tr>
+      <tr>
+        <td class="left">\( U(a) = \pi u(y) + (1-\pi)u(x) \)</td>
+        <td class="left">\( u \) Bernoulli (montants certains), \( U \) vNM (loterie)</td>
+        <td class="left">Classer deux loteries pour n’importe quel individu rationnel. Appliquer \( u \) avant de pondérer.</td>
+      </tr>
+      <tr>
+        <td class="left">\( u''(w) &lt; 0 \)</td>
+        <td class="left">dérivée seconde de la Bernoulli</td>
+        <td class="left">Diagnostiquer l’attitude : \( &lt; 0 \) averse, \( = 0 \) neutre, \( &gt; 0 \) affinité.</td>
+      </tr>
+      <tr>
+        <td class="left">\( U(a_r) = u\big(C(a_r)\big) \)</td>
+        <td class="left">\( C(a_r) \) équivalent certain</td>
+        <td class="left">Trouver \( C = u^{-1}(U) \) : carré si \( u = \sqrt{\ } \), exponentielle si \( u = \ln \).</td>
+      </tr>
+      <tr>
+        <td class="left">\( \mathrm{PRM}(a_r) = \mathrm{VMA}(a_r) - C(a_r) \)</td>
+        <td class="left">prime de risque minimale</td>
+        <td class="left">Chiffrer le rabais exigé pour supporter le risque. \( &gt; 0 \) ⇔ averse.</td>
+      </tr>
+      <tr>
+        <td class="left">\( \pi(1-p)\,u'(x) = p(1-\pi)\,u'(y) \)</td>
+        <td class="left">\( p \) prix d’un euro de couverture, \( \pi \) probabilité du sinistre</td>
+        <td class="left">CPO du programme d’assurance. Si \( p = \pi \) : \( u'(x) = u'(y) \) donc \( C^* = L \).</td>
+      </tr>
+      <tr>
+        <td class="left">\( U(x) = \sum_{t} \delta^{t} \sum_{s_t} \pi(s_t)\, u(x_t \mid s_t) \)</td>
+        <td class="left">\( \delta \) escompte (A2), \( \pi(s_t) \) probabilité d’état (A3), \( u \) Bernoulli (A1)</td>
+        <td class="left">Le modèle standard complet : grille pour situer chaque biais des trois chapitres.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Les définitions à savoir réciter</h2>
+
+  <dl class="lexique">
+    <dt>Alternative risquée (loterie)</dt>
+    <dd>Alternative entièrement décrite par ses <em>réalisations</em> possibles <strong>et</strong> par les <em>probabilités</em> associées. Ses réalisations sont mutuellement exclusives.</dd>
+
+    <dt>Valeur monétaire attendue (VMA)</dt>
+    <dd>Moyenne des valeurs possibles pondérée par les probabilités : le montant obtenu en moyenne si l’on pouvait rejouer l’actif un très grand nombre de fois.</dd>
+
+    <dt>Indépendance</dt>
+    <dd>Propriété supplémentaire imposée par la nature des loteries : parce qu’une seule réalisation se produira, les préférences dépendent de manière <strong>linéaire</strong> des probabilités.</dd>
+
+    <dt>Fonction d’utilité de Bernoulli \( u \)</dt>
+    <dd>Fonction \( u : \mathbb{R}_+ \to \mathbb{R} \) strictement croissante qui évalue un <em>montant certain</em>. Sa courbure encode l’attitude face au risque.</dd>
+
+    <dt>Utilité espérée (vNM)</dt>
+    <dd>Fonction \( U \) qui représente des préférences rationnelles sur les loteries : moyenne des \( u \) des réalisations, pondérée par les probabilités.</dd>
+
+    <dt>Neutralité au risque</dt>
+    <dd>Indifférence entre deux actifs de même VMA et de dispersions différentes. Équivaut à \( u \) linéaire, et à classer les actifs par leur VMA.</dd>
+
+    <dt>Aversion au risque</dt>
+    <dd>Préférence pour l’actif le moins dispersé à VMA égale. Équivaut à une utilité marginale décroissante, c’est-à-dire à \( u \) concave.</dd>
+
+    <dt>Équivalent certain \( C(a_r) \)</dt>
+    <dd>Montant sans risque qui procure la même utilité que l’actif risqué : \( U(a_r) = u(C(a_r)) \). Prix maximum que l’individu accepte de payer pour l’actif.</dd>
+
+    <dt>Prime de risque minimale (PRM)</dt>
+    <dd>Écart \( \mathrm{VMA}(a_r) - C(a_r) \) : le rabais sur la moyenne qu’exige l’individu pour accepter de supporter le risque. Positive pour un averse.</dd>
+
+    <dt>Diversification</dt>
+    <dd>Combiner des actifs peu ou négativement corrélés pour réduire le risque total du portefeuille <em>sans</em> sacrifier sa VMA.</dd>
+
+    <dt>Prix actuariellement juste</dt>
+    <dd>Prix d’assurance égal au coût attendu pour la compagnie, c’est-à-dire à la VMA de la couverture : \( p = \pi \). Marge nulle pour l’assureur.</dd>
+
+    <dt>Point de référence \( w_{ref} \)</dt>
+    <dd>Niveau de richesse par rapport auquel gains et pertes sont codés. La fonction de valeur devient \( u(w, w_{ref}) \) au lieu de \( u(w) \).</dd>
+
+    <dt>Aversion à la perte</dt>
+    <dd>L’utilité marginale de la première unité perdue vaut environ le double de celle de la première unité gagnée : perdre 10 € fait plus mal que gagner 10 € ne fait plaisir.</dd>
+
+    <dt>Cadrage étroit (<em>narrow framing</em>)</dt>
+    <dd>Évaluer chaque alternative risquée isolément, indépendamment du reste de son portefeuille — alors qu’un portefeuille de nombreux petits paris favorables est très peu risqué.</dd>
+
+    <dt>Sur-confiance</dt>
+    <dd>Tendance à surestimer la probabilité des bons états du monde et à sous-estimer celle des mauvais : l’individu utilise des \( \pi \) trop optimistes.</dd>
+  </dl>
+
+  <h2>La méthode type</h2>
+
+  <div class="box box-methode">
+    <div class="box-title">Poser un problème d’investissement ou d’assurance — 4 temps</div>
+    <ol>
+      <li><strong>Écrire les deux richesses d’état</strong> en fonction de la variable de choix, en incluant <em>toute</em> la richesse. Investissement : \( y = w - A + RA \) (succès), \( x = w - A + rA \) (échec) — dans le cours \( 160+3A \) et \( 160-0{,}8A \). Assurance : \( y = w - pC \) (pas de sinistre), \( x = w - pC - L + C \) (sinistre) — dans le cours \( 100-0{,}4C \) et \( 30+0{,}6C \).</li>
+      <li><strong>Écrire l’utilité espérée</strong> en y substituant : \( U = \pi\, u(y) + (1-\pi)\, u(x) \), fonction de la seule variable de choix.</li>
+      <li><strong>Dériver</strong> par rapport à cette variable, sans oublier la règle de la chaîne : les coefficients (\( +3 \) et \( -0{,}8 \) ; \( -p \) et \( 1-p \)) sortent devant les \( u' \).</li>
+      <li><strong>Annuler la dérivée</strong> — la CPO \( \partial U/\partial A = 0 \) ou \( \partial U/\partial C = 0 \) — puis résoudre et vérifier que la solution est intérieure (\( 0 \le A^* \le w \), \( 0 \le C^* \le L \)) ; sinon c’est une solution de coin, comme \( A^* = 160 \) pour \( \sqrt{w} \).</li>
+    </ol>
+    <p>Lecture économique attendue à l’examen : comparer \( A^* \) ou \( C^* \) entre deux fonctions \( u \) de concavité différente. Plus d’aversion ⇒ <em>moins</em> d’investissement risqué, mais <em>plus</em> de couverture.</p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Calculer l’équivalent certain puis la prime de risque — 3 temps</div>
+    <ol>
+      <li><strong>La VMA</strong> : \( \mathrm{VMA}(a) = \pi y + (1-\pi)x \). Exemple : \( 0{,}75 \times 110 + 0{,}25 \times 70 = 100 \).</li>
+      <li><strong>L’utilité espérée</strong> : \( U(a) = \pi u(y) + (1-\pi)u(x) \) — appliquer \( u \) à chaque réalisation <em>avant</em> de pondérer. Exemple : \( 0{,}75 \ln 110 + 0{,}25 \ln 70 \approx 4{,}5875 \).</li>
+      <li><strong>Inverser puis soustraire</strong> : \( C = u^{-1}\big(U(a)\big) \), puis \( \mathrm{PRM} = \mathrm{VMA} - C \). Exemple : \( C = e^{4{,}5875} \approx 98{,}25 \), \( \mathrm{PRM} \approx 1{,}75 \). Contrôle de cohérence : pour un averse, on doit trouver \( C &lt; \mathrm{VMA} \) et \( \mathrm{PRM} &gt; 0 \).</li>
+    </ol>
+  </div>
+
+  <h2>Les pièges du chapitre</h2>
+
+  <div class="box box-piege">
+    <div class="box-title">Les confusions que le cours signale explicitement</div>
+    <ul>
+      <li><strong>Mélange de probabilités ≠ mélange de biens</strong> (le cours l’étiquette « piège d’examen »). Être indifférent entre vin et bière impose l’indifférence avec la loterie 50/50 vin-bière — jamais avec un demi-verre de vin <em>suivi</em> d’un demi-verre de bière, qui est un troisième bien, avec son propre goût.</li>
+      <li><strong>Confondre \( u \) et \( U \)</strong> (« question d’examen favorite »). \( u \) évalue un montant certain, \( U \) une loterie entière. On calcule \( u \) d’abord, on pondère ensuite : \( u(\mathrm{VMA}) \ne U(a) \) en général — et tout le § 6 repose sur cet écart.</li>
+      <li><strong>Se tromper dans la lecture du graphique.</strong> Concave : corde <em>sous</em> la courbe ⇒ \( C &lt; \mathrm{VMA} \) ⇒ \( \mathrm{PRM} &gt; 0 \). Linéaire : corde <em>sur</em> la courbe ⇒ \( \mathrm{PRM} = 0 \). Convexe : corde <em>au-dessus</em> ⇒ \( C &gt; \mathrm{VMA} \) ⇒ \( \mathrm{PRM} &lt; 0 \).</li>
+      <li><strong>Confondre la VMA du pari et la VMA de la richesse finale.</strong> Dans les applications, \( y \) et \( x \) sont les valeurs du <em>portefeuille entier</em> (\( 160+3A \), pas \( 4A \) ; \( 100-0{,}4C \), pas \( -0{,}4C \)). Oublier l’argent non investi ou le compte en banque fausse toute la CPO.</li>
+      <li><strong>Moyenne simple au lieu de moyenne pondérée.</strong> Pour 80 € à 25 % et 20 € sinon, \( (80+20)/2 = 50 \) est faux : \( \mathrm{VMA} = 0{,}25 \times 80 + 0{,}75 \times 20 = 35 \).</li>
+      <li><strong>Croire qu’un averse refuse tout risque.</strong> Faux : il accepte l’actif risqué dès que son prix descend sous son équivalent certain (\( p \le C(a_r) \)). Fatou et Hicham investissent bien dans de l’incertain — ils exigent seulement une prime.</li>
+    </ul>
+  </div>
+</section>

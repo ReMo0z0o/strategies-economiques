@@ -81,6 +81,8 @@ for (const rel of files) {
       "void", "player", "hl", "nash", "left", "lexique", "term", "soft",
       "cover", "toc", "eyebrow", "sub", "course", "code", "promise", "footnote",
       "math-line",
+      // fiche de synthèse
+      "point", "point-title", "ref-app", "path",
     ]);
     const unknown = new Set();
     for (const el of document.querySelectorAll("[class]")) {

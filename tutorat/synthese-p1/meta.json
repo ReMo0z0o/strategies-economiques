@@ -1,0 +1,62 @@
+{
+  "filename": "synthese-partie-1.pdf",
+  "eyebrow": "Fiche de révision — complément de l'app",
+  "title": "Partie 1 : tout ce qu'il faut retenir",
+  "subtitle": "Les points théoriques essentiels, chacun expliqué en quelques lignes",
+  "code": "Partie 1",
+  "project": "Projet : stratégies et décisions économiques",
+  "part": "Théorie de la décision et Théorie des jeux",
+  "footnote": "Fiche de synthèse (non officielle) reprenant la matière des sept chapitres de théorie de la Partie 1, telle qu'elle est présentée dans l'app. Elle ne remplace pas le cours : elle sert à vérifier vite ce qui est acquis et à repérer ce qui ne l'est pas.",
+  "howto": {
+    "title": "Comment utiliser cette fiche",
+    "lead": "Cette fiche est le <strong>complément condensé de l'app</strong>. Elle ne réexplique pas le cours depuis zéro : elle liste, chapitre par chapitre, les points qu'il faut savoir restituer, avec juste ce qu'il faut d'explication pour vérifier que tu les comprends encore.",
+    "items": [
+      "<strong>Parcours-la point par point.</strong> Lis l'énoncé en gras et demande-toi si tu saurais l'expliquer à quelqu'un. Si oui, passe au suivant ; sinon, lis l'explication en dessous.",
+      "<strong>Si l'explication ne suffit pas</strong>, le renvoi gris en fin de point te dit exactement où retourner dans l'app : le chapitre, le numéro de section et son titre.",
+      "<strong>Chaque chapitre suit le même ordre</strong> : la carte des sections, les points à retenir, les formules, les définitions à savoir réciter, la méthode type et les pièges.",
+      "<strong>L'annexe finale</strong> regroupe tous les pièges et erreurs classiques : c'est la dernière chose à relire avant l'examen."
+    ]
+  },
+  "chapters": [
+    {
+      "file": "00-mode-emploi.html",
+      "title": "Avant de commencer — la carte de la Partie 1"
+    },
+    {
+      "file": "01-a1.html",
+      "title": "A1 — Préférences et choix"
+    },
+    {
+      "file": "02-a2.html",
+      "title": "A2 — Décision inter-temporelle"
+    },
+    {
+      "file": "03-a3.html",
+      "title": "A3 — Décision sous incertitude"
+    },
+    {
+      "file": "04-b1.html",
+      "title": "B1 — Jeux simultanés"
+    },
+    {
+      "file": "05-b2.html",
+      "title": "B2 — Théorie des contrats"
+    },
+    {
+      "file": "06-b3.html",
+      "title": "B3 — Jeux répétés"
+    },
+    {
+      "file": "07-b4.html",
+      "title": "B4 — Jeux bayésiens"
+    },
+    {
+      "file": "08-sequentiels.html",
+      "title": "Jeux séquentiels et engagement — la matière du TP 3"
+    },
+    {
+      "file": "99-pieges.html",
+      "title": "Annexe — les pièges et erreurs classiques"
+    }
+  ]
+}

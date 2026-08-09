@@ -1,0 +1,582 @@
+<section class="chapter">
+  <div class="chapter-tag">A1 · Partie A — La décision individuelle</div>
+  <h1>Préférences et choix</h1>
+  <p class="chapter-intro">Le modèle du choix rationnel… et ce que les humains en font vraiment.</p>
+
+  <h2>La carte du chapitre</h2>
+
+  <table class="compare">
+    <tr>
+      <th>§</th>
+      <th class="left">Section de l'app</th>
+      <th class="left">Ce qu'elle apporte</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td class="left">Pourquoi ce chapitre ?</td>
+      <td class="left">Le besoin d'un modèle du comportement ; positif vs normatif.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td class="left">Le modèle d'offre de travail</td>
+      <td class="left">L'exemple fil rouge : loisir contre consommation, salaire net, contrainte de budget.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td class="left">Les préférences</td>
+      <td class="left">Les trois relations \( \succ, \sim, \succsim \) et les quatre propriétés de rationalité.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td class="left">Les courbes d'indifférence</td>
+      <td class="left">La représentation graphique des préférences, puis leur traduction en utilité.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td class="left">L'optimisation sous contrainte</td>
+      <td class="left">Le Lagrangien, les conditions de premier ordre, la tangence TMS = prix relatif.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td class="left">Application : la redistribution</td>
+      <td class="left">Le modèle tourne : loisir optimal, désincitation, courbe de Laffer.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td class="left">Le critère de Pareto</td>
+      <td class="left">L'outil normatif : domination, efficacité, et ce qu'il refuse de trancher.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td class="left">Économie comportementale : l'idée centrale</td>
+      <td class="left">Le test unique de toute la partie B : la variable non-pertinente.</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td class="left">L'utilité de transaction</td>
+      <td class="left">Biais n° 1 — le prix de référence et la comptabilité mentale.</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td class="left">Les coûts irrécupérables</td>
+      <td class="left">Biais n° 2 — le passé qui pèse sur une décision tournée vers l'avenir.</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td class="left">L'effet de dotation</td>
+      <td class="left">Biais n° 3 — posséder gonfle la valeur : DAP &lt; DAA.</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td class="left">Le framing</td>
+      <td class="left">Biais n° 4 — la formulation renverse le choix entre options identiques.</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td class="left">Rationnel vs comportemental</td>
+      <td class="left">Prescriptif contre descriptif : pourquoi on garde les deux.</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td class="left">Hors du labo : le nudge</td>
+      <td class="left">Documenter, mesurer, corriger — taxis de New York, Haïfa, EITC.</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td class="left">À maîtriser absolument</td>
+      <td class="left">Les 14 énoncés-noyaux du chapitre, en deux blocs.</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td class="left">Exercices corrigés</td>
+      <td class="left">Sept exercices : QCM de vocabulaire et calculs d'optimisation.</td>
+    </tr>
+  </table>
+
+  <h2>Les points à retenir</h2>
+
+  <h3>Partie A — le choix rationnel</h3>
+
+  <div class="point">
+    <div class="point-title"><span class="num">1.</span> Sans modèle du comportement, aucune prédiction n'est possible.</div>
+    <p>Pour évaluer une mesure (une taxe, un transfert), l'économiste doit d'abord savoir ce que
+      les gens vont faire face à elle. L'intuition ne suffit pas : taxer davantage pourrait
+      décourager le travail et appauvrir jusqu'à ceux qu'on voulait aider. Toute la partie A sert à
+      construire ce modèle du choix individuel.</p>
+    <span class="ref-app">A1 · §1 — Pourquoi ce chapitre ? <span class="path">/strategies/theorie/a1#intro</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">2.</span> L'analyse se fait toujours en deux temps : positif d'abord, normatif ensuite.</div>
+    <p>Le <span class="term">positif</span> décrit ce qui est : mesure → modèle → résultat prédit,
+      sans aucun jugement. Le <span class="term">normatif</span> compare ces résultats et dit lequel
+      est préférable — là seulement intervient un jugement de valeur. « La taxe réduit les
+      inégalités » est positif ; « on devrait taxer » est normatif.</p>
+    <span class="ref-app">A1 · §1 — Pourquoi ce chapitre ? <span class="path">/strategies/theorie/a1#intro</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">3.</span> Le fil rouge du chapitre est l'arbitrage loisir / consommation d'un travailleur taxé.</div>
+    <p>Le travailleur répartit sa dotation en temps \( L \) entre le loisir \( l \) et le travail.
+      Chaque heure travaillée rapporte le <span class="term">salaire net</span> \( s(1-t) \) ; on
+      normalise le prix du bien de consommation à \( p_c = 1 \), donc « dépenser 1 € » = « consommer
+      1 unité ». Un panier est un couple \( (l, c) \).</p>
+    <span class="ref-app">A1 · §2 — Le modèle d'offre de travail <span class="path">/strategies/theorie/a1#offre</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">4.</span> La contrainte de budget délimite le possible, et sa pente est le prix relatif du loisir.</div>
+    <p>Dépense en loisir + consommation \( \le \) richesse totale : \( s(1-t)l + c \le s(1-t)L + M \).
+      Prendre du loisir <em>coûte</em> : chaque heure gardée est un salaire net auquel on renonce —
+      c'est le <span class="term">coût d'opportunité</span>. La pente \( -s(1-t) \) est donc le taux
+      d'échange <em>objectif</em> imposé par le marché, et la dotation \( \omega = (L, M) \) est le
+      point « zéro travail ».</p>
+    <span class="ref-app">A1 · §2 — Le modèle d'offre de travail <span class="path">/strategies/theorie/a1#offre</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">5.</span> On suppose un comportement maximisateur, et « préférer » se note avec trois symboles.</div>
+    <p>Parmi les paniers possibles, l'individu choisit celui qu'il préfère. Trois relations et
+      trois seulement : \( x \succ y \) (préférence stricte), \( x \sim y \) (indifférence),
+      \( x \succsim y \) (préférence faible, c'est-à-dire \( \succ \) <em>ou</em> \( \sim \)).</p>
+    <span class="ref-app">A1 · §3 — Les préférences <span class="path">/strategies/theorie/a1#pref</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">6.</span> Des préférences sont « rationnelles » si elles sont transitives, monotones, complètes et continues.</div>
+    <p><strong>Transitivité</strong> : \( x \succsim y \) et \( y \succsim z \) donnent
+      \( x \succsim z \) — c'est la cohérence. <strong>Monotonie</strong> : plus c'est toujours
+      mieux, jamais de satiété. <strong>Complétude</strong> : toute paire est comparable, jamais de
+      « je ne sais pas ». <strong>Continuité</strong> : deux paniers proches sont jugés presque
+      aussi désirables. Sans transitivité, un commerçant malin ferait tourner l'individu en rond et
+      le ruinerait.</p>
+    <span class="ref-app">A1 · §3 — Les préférences <span class="path">/strategies/theorie/a1#pref</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">7.</span> « Rationnel » veut dire cohérent, pas intelligent ni égoïste.</div>
+    <p>La rationalité porte sur la <em>forme</em> des préférences, jamais sur leur contenu.
+      Quelqu'un qui adore les choux de Bruxelles est parfaitement rationnel tant que ses
+      préférences se tiennent. C'est la formulation à ressortir telle quelle en examen.</p>
+    <span class="ref-app">A1 · §3 — Les préférences <span class="path">/strategies/theorie/a1#pref</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">8.</span> Une courbe d'indifférence relie les paniers de même satisfaction — et deux courbes ne se croisent jamais.</div>
+    <p>Si \( x \sim x' \), les deux sont sur la même courbe. L'ensemble des courbes forme la
+      <span class="term">carte d'indifférence</span> ; plus une courbe est haute et à droite, plus
+      la satisfaction est élevée (par monotonie). Deux courbes qui se croiseraient donneraient au
+      point d'intersection deux niveaux de satisfaction à la fois : contradiction logique.</p>
+    <span class="ref-app">A1 · §4 — Les courbes d'indifférence <span class="path">/strategies/theorie/a1#indiff</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">9.</span> La fonction d'utilité traduit les préférences en nombres, et seul l'ordre compte.</div>
+    <p>\( U \) note chaque panier ; elle <em>représente</em> les préférences si elle les classe
+      dans le même ordre : \( x \succ y \iff U(x) > U(y) \), \( x \sim y \iff U(x) = U(y) \). Le
+      nombre n'a pas d'unité — « 25 » ne veut rien dire seul, il sert seulement à comparer. Une
+      courbe d'indifférence = un niveau d'utilité.</p>
+    <span class="ref-app">A1 · §4 — Les courbes d'indifférence <span class="path">/strategies/theorie/a1#indiff</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">10.</span> Le choix optimal est le point de tangence : la plus haute courbe d'indifférence atteignable.</div>
+    <p>On combine les deux pièces : la contrainte de budget (le possible) et la carte
+      d'indifférence (les préférences). Le panier choisi est celui qui atteint la courbe la plus
+      haute sans sortir du budget — géométriquement, le point où la courbe <em>effleure</em> la
+      droite de budget. Le loisir \( l^* \) s'y lit, et le travail offert est le reste, \( L - l^* \).</p>
+    <span class="ref-app">A1 · §4 — Les courbes d'indifférence <span class="path">/strategies/theorie/a1#indiff</span></span>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 340 215" width="100%" style="max-width:10.5cm" role="img" aria-label="Optimum du consommateur : tangence entre la courbe d'indifférence et la droite de budget">
+      <line x1="45" y1="15" x2="45" y2="165" stroke="#111827" stroke-width="1.4"/>
+      <line x1="45" y1="165" x2="318" y2="165" stroke="#111827" stroke-width="1.4"/>
+      <line x1="45" y1="35" x2="290" y2="140" stroke="#e11d48" stroke-width="1.6"/>
+      <path d="M 105 25 C 115 55, 140 75.7, 170 88.6 C 200 101.5, 240 114, 285 119"
+            fill="none" stroke="#2563eb" stroke-width="1.6"/>
+      <line x1="170" y1="88.6" x2="170" y2="165" stroke="#6b7280" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="88.6" x2="170" y2="88.6" stroke="#6b7280" stroke-width="1" stroke-dasharray="3 3"/>
+      <circle cx="170" cy="88.6" r="3.4" fill="#111827"/>
+      <circle cx="290" cy="140" r="3" fill="#e11d48"/>
+      <line x1="290" y1="165" x2="290" y2="170" stroke="#111827" stroke-width="1.2"/>
+      <line x1="170" y1="188" x2="290" y2="188" stroke="#111827" stroke-width="1.1"/>
+      <line x1="170" y1="184" x2="170" y2="192" stroke="#111827" stroke-width="1.1"/>
+      <line x1="290" y1="184" x2="290" y2="192" stroke="#111827" stroke-width="1.1"/>
+      <text x="48" y="12" font-size="11" fill="#111827">consommation c</text>
+      <text x="318" y="180" font-size="11" fill="#111827" text-anchor="end">loisir l</text>
+      <text x="62" y="40" font-size="11" fill="#e11d48">budget : pente −s(1−t)</text>
+      <text x="288" y="112" font-size="11" fill="#2563eb" text-anchor="end">courbe d'indifférence</text>
+      <text x="178" y="82" font-size="11" fill="#111827" font-weight="bold">x*</text>
+      <text x="296" y="146" font-size="11" fill="#e11d48">ω</text>
+      <text x="170" y="180" font-size="11" fill="#111827" text-anchor="middle">l*</text>
+      <text x="290" y="180" font-size="11" fill="#111827" text-anchor="middle">L</text>
+      <text x="40" y="92" font-size="11" fill="#111827" text-anchor="end">c*</text>
+      <text x="230" y="203" font-size="11" fill="#111827" text-anchor="middle">travail offert = L − l*</text>
+    </svg>
+    <figcaption>L'optimum \( x^* \) est le point de tangence : la courbe d'indifférence y a la même
+      pente que la droite de budget. Partout ailleurs elle passe au-dessus de la droite, donc hors
+      du budget. Le travail offert se lit comme le complément du loisir choisi.</figcaption>
+  </figure>
+
+  <div class="point">
+    <div class="point-title"><span class="num">11.</span> Le Lagrangien transforme un problème contraint en une simple annulation de dérivées.</div>
+    <p>Le problème s'écrit \( \max_{l,c} U(l,c) \) sous la contrainte de budget. On pose
+      \( \mathcal{L} = U - \lambda \times (\text{dépense} - \text{budget}) \) : le terme entre
+      parenthèses vaut zéro quand on dépense exactement son budget, et \( \lambda \) joue le rôle
+      d'une pénalité qui force à le respecter. Pas besoin de savoir pourquoi la recette marche —
+      il faut savoir l'appliquer.</p>
+    <span class="ref-app">A1 · §5 — L'optimisation sous contrainte <span class="path">/strategies/theorie/a1#optim</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">12.</span> Les trois conditions de premier ordre donnent la tangence et l'épuisement du revenu.</div>
+    <p>Dériver \( \mathcal{L} \) par rapport à \( x_1 \), \( x_2 \) et \( \lambda \) donne
+      \( U_{m1} = \lambda p_1 \), \( U_{m2} = \lambda p_2 \) et \( p_1x_1^* + p_2x_2^* = m \).
+      La troisième est l'<span class="term">épuisement du revenu</span> : par monotonie on dépense
+      tout, donc l'inégalité \( \le \) devient une égalité. Trois équations, trois inconnues.</p>
+    <span class="ref-app">A1 · §5 — L'optimisation sous contrainte <span class="path">/strategies/theorie/a1#optim</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">13.</span> À l'optimum, le taux d'échange subjectif (TMS) égale le taux d'échange objectif (le rapport des prix).</div>
+    <p>En divisant les deux premières CPO, les \( \lambda \) disparaissent :
+      \( U_{m1}/U_{m2} = p_1/p_2 \). À gauche, le <span class="term">TMS</span> — ce que l'individu
+      est prêt à céder du bien 2 pour une unité du bien 1 sans changer sa satisfaction, soit la
+      pente de la courbe d'indifférence. À droite, la pente de la droite de budget. Tant que les
+      deux diffèrent, un échange avantageux reste possible : on n'est pas au sommet.</p>
+    <span class="ref-app">A1 · §5 — L'optimisation sous contrainte <span class="path">/strategies/theorie/a1#optim</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">14.</span> Le multiplicateur \( \lambda \) est l'utilité marginale du revenu.</div>
+    <p>Ce n'est pas qu'un artifice de calcul : \( \lambda \) mesure de combien la satisfaction
+      augmenterait si on donnait 1 € de plus à l'individu — la « valeur en bonheur » d'un euro
+      supplémentaire.</p>
+    <span class="ref-app">A1 · §5 — L'optimisation sous contrainte <span class="path">/strategies/theorie/a1#optim</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">15.</span> Sur l'île, le loisir optimal vaut \( l^*(t) = a / (s(1-t)) \) : la taxe désincite au travail.</div>
+    <p>Deux groupes de même taille, salaires \( s_H \) et \( s_B \), mêmes préférences
+      \( U(l,c) = c + a\ln(l) \). La condition de tangence donne directement \( l^* \). Quand
+      \( t \) monte, \( (1-t) \) baisse, donc \( l^* \) <strong>augmente</strong> : plus de loisir,
+      donc moins de travail. C'est l'effet de désincitation, obtenu sans aucune hypothèse
+      psychologique.</p>
+    <span class="ref-app">A1 · §6 — Application : la redistribution <span class="path">/strategies/theorie/a1#redistrib</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">16.</span> Le transfert \( M \) reçu ne change pas le choix : les préférences sont quasi-linéaires.</div>
+    <p>La formule \( l^*(t) \) ne contient pas \( M(t) \). Recevoir plus d'argent déplace la
+      consommation vers le haut sans toucher à l'arbitrage travail / loisir. C'est une
+      simplification commode : elle isole le pur effet d'incitation de la taxe, sans effet de
+      revenu qui viendrait le brouiller.</p>
+    <span class="ref-app">A1 · §6 — Application : la redistribution <span class="path">/strategies/theorie/a1#redistrib</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">17.</span> La courbe de Laffer : les recettes sont nulles en \( t = 0 \) comme en \( t = 1 \), donc maximales entre les deux.</div>
+    <p>Le montant redistribué par tête vaut \( M(t) = \frac{(s_H+s_B)t}{2} - \frac{at}{1-t} \).
+      En \( t = 0 \) on ne prélève rien. En \( t = 1 \) le salaire net tombe à zéro, plus personne
+      ne travaille, l'assiette taxable disparaît : 100 % de rien, c'est rien. Entre les deux, les
+      recettes montent puis redescendent — il existe un taux \( t^*_M \) qui les maximise. Au-delà,
+      taxer plus rapporte <em>moins</em>, y compris pour les bas salaires eux-mêmes.</p>
+    <span class="ref-app">A1 · §6 — Application : la redistribution <span class="path">/strategies/theorie/a1#redistrib</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">18.</span> Une allocation en domine une autre au sens de Pareto si personne n'y perd et au moins un y gagne.</div>
+    <p>Formellement : \( U_i(x) \ge U_i(y) \) pour tout \( i \), et \( U_j(x) > U_j(y) \) pour au
+      moins un \( j \). C'est le principe d'<span class="term">unanimité</span> : même les plus
+      égoïstes ne peuvent s'y opposer. Exemple : \( (1,1,5) \) domine \( (1,1,4) \) ; \( (3,3,3) \)
+      ne domine pas \( (1,1,4) \), car le troisième individu y perd.</p>
+    <span class="ref-app">A1 · §7 — Le critère de Pareto <span class="path">/strategies/theorie/a1#pareto</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">19.</span> La domination de Pareto est volontairement partielle : deux allocations peuvent être incomparables.</div>
+    <p>Dès que l'une est meilleure pour Paul mais pire pour Marie, aucune ne domine l'autre. Ce
+      silence est assumé : Pareto refuse d'arbitrer entre gagnants et perdants, précisément pour ne
+      pas imposer un jugement de valeur. C'est un point d'examen classique.</p>
+    <span class="ref-app">A1 · §7 — Le critère de Pareto <span class="path">/strategies/theorie/a1#pareto</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">20.</span> Une allocation est efficace au sens de Pareto si aucune autre allocation faisable ne la domine.</div>
+    <p>Autrement dit : impossible d'améliorer quelqu'un sans dégrader quelqu'un d'autre. Une
+      allocation efficace ne gaspille aucun bien-être. Deux conditions <em>suffisantes</em> :
+      l'allocation est strictement préférée par un individu à toutes les autres faisables, ou bien
+      elle maximise la somme des utilités — ce second test est le raccourci le plus commode.</p>
+    <span class="ref-app">A1 · §7 — Le critère de Pareto <span class="path">/strategies/theorie/a1#pareto</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">21.</span> Sur la taxe, Pareto tranche déjà une partie du problème.</div>
+    <p>Soit \( t^*_{UB} \) le taux qui maximise l'utilité des bas salaires. Au-delà, l'utilité des
+      hauts <em>et</em> celle des bas salaires baissent : ces taux sont dominés au sens de Pareto,
+      aucun gouvernement raisonnable ne devrait les choisir, quel que soit son objectif. En dessous,
+      en revanche, on ne peut plus trancher sans choisir entre riches et pauvres — c'est-à-dire sans
+      jugement de valeur.</p>
+    <span class="ref-app">A1 · §7 — Le critère de Pareto <span class="path">/strategies/theorie/a1#pareto</span></span>
+  </div>
+
+  <h3>Partie B — le choix réel</h3>
+
+  <div class="point">
+    <div class="point-title"><span class="num">22.</span> Toute la partie B tient en une phrase : une décision rationnelle n'est pas influencée par une variable non-pertinente.</div>
+    <p>Une variable est <span class="term">non-pertinente</span> si elle ne change pas les
+      conséquences réelles du choix. La théorie prédit donc : deux situations identiques à une
+      variable non-pertinente près doivent produire le même choix. Chaque sondage de la partie B est
+      la mise à l'épreuve de cette prédiction, en version A et en version B.</p>
+    <span class="ref-app">A1 · §8 — Économie comportementale : l'idée centrale <span class="path">/strategies/theorie/a1#comporte</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">23.</span> Les humains dévient — mais toujours dans le même sens, donc de façon prévisible.</div>
+    <p>C'est ce qui fait une science d'un constat banal : on peut anticiper l'erreur, la mesurer,
+      et concevoir des politiques qui la corrigent. Les écarts sont établis par expériences de
+      pensée, expériences de laboratoire et données réelles.</p>
+    <span class="ref-app">A1 · §8 — Économie comportementale : l'idée centrale <span class="path">/strategies/theorie/a1#comporte</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">24.</span> Biais n° 1 — l'utilité de transaction : on valorise le plaisir de faire une affaire.</div>
+    <p>La comptabilité mentale distingue l'<strong>utilité d'acquisition</strong> (le vrai surplus
+      de la partie A) et l'<strong>utilité de transaction</strong> (prix payé contre prix de
+      référence). Marcher 20 min pour économiser 5 € : 82 % le font sur une calculatrice à 15 €,
+      mais 25 % seulement sur une à 200 € — alors que la vraie question, « 20 min contre 5 € »,
+      est identique. Sur 15 €, économiser 5 € c'est un tiers du prix ; sur 200 €, 2,5 %.</p>
+    <span class="ref-app">A1 · §9 — L'utilité de transaction <span class="path">/strategies/theorie/a1#transaction</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">25.</span> Biais n° 2 — les coûts irrécupérables : on tient compte d'un argent déjà perdu.</div>
+    <p>Un coût irrécupérable est dépensé quoi qu'on décide ensuite : il est donc non-pertinent.
+      Film ennuyeux, place payée 14 € : 52 % quittent la salle, contre 61 % quand la séance était
+      gratuite. La bonne question est toujours tournée vers l'avenir : « en repartant de zéro
+      aujourd'hui, est-ce que je m'y lancerais ? »</p>
+    <span class="ref-app">A1 · §10 — Les coûts irrécupérables <span class="path">/strategies/theorie/a1#sunk</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">26.</span> Biais n° 3 — l'effet de dotation : \( \text{DAP} &lt; \text{DAA} \), posséder gonfle la valeur.</div>
+    <p>La théorie rationnelle exige \( \text{DAP} = \text{DAA} \) : la valeur d'un bien ne dépend
+      pas du fait de le posséder. Ticket de finale à 200 € : 65 % refusent de l'acheter, mais 50 %
+      refusent de le vendre. Version frappante : 127 000 € pour supprimer un risque de mort de
+      1/1000, mais 438 000 € exigés pour l'accepter — même millième de risque.</p>
+    <span class="ref-app">A1 · §11 — L'effet de dotation <span class="path">/strategies/theorie/a1#dotation</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">27.</span> Biais n° 4 — le framing : la formulation renverse le choix entre options identiques.</div>
+    <p>Maladie touchant 600 personnes : « sauver 200 à coup sûr » est choisi par 100 % ; la même
+      mesure formulée « 400 meurent à coup sûr » n'est plus choisie que par 39 %. Cadré en
+      <strong>gains</strong>, on devient prudent ; cadré en <strong>pertes</strong>, on devient
+      preneur de risque. Les mots seuls — variable non-pertinente — retournent la décision.</p>
+    <span class="ref-app">A1 · §12 — Le framing <span class="path">/strategies/theorie/a1#framing</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">28.</span> Les deux théories sont complémentaires : la rationnelle est prescriptive, la comportementale descriptive.</div>
+    <p>La première décrit les <span class="term">Econs</span> (comment on <em>devrait</em>
+      choisir), la seconde les <span class="term">Humans</span> (comment on choisit vraiment). On
+      garde la rationnelle pour trois raisons : c'est un <strong>guide</strong> pour les décisions
+      importantes, c'est le <strong>benchmark</strong> sans lequel le mot « biais » n'aurait aucun
+      sens (un biais est un écart à une norme), et c'est souvent une <strong>bonne
+      approximation</strong>.</p>
+    <span class="ref-app">A1 · §13 — Rationnel vs comportemental <span class="path">/strategies/theorie/a1#vs</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">29.</span> Le programme de recherche tient en trois volets : documenter → mesurer l'impact réel → corriger par le nudge.</div>
+    <p>Un <span class="term">nudge</span> ne force personne et ne change aucune option : il modifie
+      la présentation ou le réglage par défaut. Trois cas hors labo : les taximen de New York
+      travaillent <em>moins</em> les jours de pluie (heuristique de la cible de revenus) ; l'amende
+      de retard des crèches de Haïfa <em>augmente</em> les retards (l'incitant monétaire évince
+      l'incitant moral) ; le rappel EITC fait passer le taux de réclamation de 22 % à 30 % en
+      mentionnant simplement le montant.</p>
+    <span class="ref-app">A1 · §14 — Hors du labo : le nudge <span class="path">/strategies/theorie/a1#nudge</span></span>
+  </div>
+
+  <h2>Les formules du chapitre</h2>
+
+  <table class="compare">
+    <tr>
+      <th class="left">Formule</th>
+      <th class="left">Les symboles</th>
+      <th class="left">Quand l'utiliser</th>
+    </tr>
+    <tr>
+      <td class="left">\( s(1-t)\,l + c \le s(1-t)\,L + M \)</td>
+      <td class="left">\( s \) salaire brut, \( t \) taxe, \( l \) loisir, \( c \) consommation, \( L \) dotation en temps, \( M \) revenu hors travail</td>
+      <td class="left">Écrire les paniers accessibles ; le salaire net \( s(1-t) \) est le prix du loisir.</td>
+    </tr>
+    <tr>
+      <td class="left">\( x \succ y \iff U(x) > U(y) \)</td>
+      <td class="left">\( U \) fonction d'utilité, \( x, y \) paniers</td>
+      <td class="left">Justifier qu'une fonction d'utilité représente bien les préférences.</td>
+    </tr>
+    <tr>
+      <td class="left">\( \mathcal{L} = U(x_1,x_2) - \lambda\,(p_1x_1 + p_2x_2 - m) \)</td>
+      <td class="left">\( \lambda \) multiplicateur, \( p_i \) prix, \( m \) revenu</td>
+      <td class="left">Premier geste de tout exercice d'optimisation sous contrainte.</td>
+    </tr>
+    <tr>
+      <td class="left">\( U_{m1} = \lambda p_1 \) ; \( U_{m2} = \lambda p_2 \) ; \( p_1x_1^* + p_2x_2^* = m \)</td>
+      <td class="left">\( U_{mi} \) utilité marginale du bien \( i \)</td>
+      <td class="left">Les trois CPO : deux dérivées annulées + l'épuisement du revenu.</td>
+    </tr>
+    <tr>
+      <td class="left">\( \dfrac{U_{m1}}{U_{m2}} = \dfrac{p_1}{p_2} \)</td>
+      <td class="left">à gauche le TMS, à droite le rapport des prix</td>
+      <td class="left">La condition de tangence : le cœur de tout optimum intérieur.</td>
+    </tr>
+    <tr>
+      <td class="left">\( U(l,c) = c + a\ln(l) \)</td>
+      <td class="left">\( a > 0 \) poids du loisir</td>
+      <td class="left">Les préférences de l'île : quasi-linéaires en consommation.</td>
+    </tr>
+    <tr>
+      <td class="left">\( l^*(t) = \dfrac{a}{s(1-t)} \)</td>
+      <td class="left">loisir choisi, \( t \) taux de taxe</td>
+      <td class="left">Montrer la désincitation, et que \( M \) n'intervient pas.</td>
+    </tr>
+    <tr>
+      <td class="left">\( M(t) = \dfrac{(s_H+s_B)\,t}{2} - \dfrac{a\,t}{1-t} \)</td>
+      <td class="left">\( s_H, s_B \) hauts et bas salaires</td>
+      <td class="left">Montant redistribué par tête ; nul en \( t=0 \) et \( t=1 \) → Laffer.</td>
+    </tr>
+    <tr>
+      <td class="left">\( U_i(x) \ge U_i(y)\ \forall i \) et \( \exists j : U_j(x) > U_j(y) \)</td>
+      <td class="left">\( i, j \) individus, \( x, y \) allocations</td>
+      <td class="left">Définition exacte de la domination de Pareto, à citer telle quelle.</td>
+    </tr>
+    <tr>
+      <td class="left">\( \text{DAP} = \text{DAA} \) attendu, \( \text{DAP} &lt; \text{DAA} \) observé</td>
+      <td class="left">DAP disposition à payer, DAA disposition à accepter</td>
+      <td class="left">Formuler l'effet de dotation comme un écart à une prédiction.</td>
+    </tr>
+  </table>
+
+  <h2>Les définitions à savoir réciter</h2>
+
+  <dl class="lexique">
+    <dt>Analyse positive / analyse normative</dt>
+    <dd>La première prédit ce qui se passe à partir d'une mesure, sans jugement ; la seconde
+      compare les résultats et dit lequel est souhaitable.</dd>
+
+    <dt>Coût d'opportunité</dt>
+    <dd>Ce à quoi on renonce pour obtenir une chose. Ici : le salaire net perdu pour chaque heure
+      de loisir.</dd>
+
+    <dt>Contrainte de budget · dotation \( \omega \)</dt>
+    <dd>L'ensemble des paniers accessibles — la dépense ne peut pas dépasser la richesse totale ; sa
+      pente est le prix relatif. La dotation \( \omega = (L, M) \) est le panier de départ, sans
+      aucun travail.</dd>
+
+    <dt>Préférences rationnelles</dt>
+    <dd>Des préférences complètes, transitives, monotones et continues. « Rationnel » = cohérent,
+      rien de plus.</dd>
+
+    <dt>Courbe d'indifférence · carte d'indifférence</dt>
+    <dd>L'ensemble des paniers de même satisfaction ; la famille de toutes ces courbes. Deux
+      courbes ne se croisent jamais.</dd>
+
+    <dt>Fonction d'utilité</dt>
+    <dd>Une machine à noter les paniers, qui représente les préférences dès lors qu'elle les classe
+      dans le même ordre.</dd>
+
+    <dt>Utilité marginale · taux marginal de substitution (TMS)</dt>
+    <dd>L'utilité marginale est le gain d'utilité d'une petite unité supplémentaire d'un bien. Le
+      TMS, leur rapport, est le taux d'échange <em>subjectif</em> à satisfaction constante : la
+      pente de la courbe d'indifférence.</dd>
+
+    <dt>Multiplicateur de Lagrange \( \lambda \)</dt>
+    <dd>L'utilité marginale du revenu : le gain de satisfaction d'un euro supplémentaire.</dd>
+
+    <dt>Épuisement du revenu</dt>
+    <dd>À l'optimum, on dépense tout son budget — conséquence directe de la monotonie.</dd>
+
+    <dt>Préférences quasi-linéaires</dt>
+    <dd>Des préférences où un supplément de revenu déplace la consommation sans modifier
+      l'arbitrage travail / loisir. D'où \( l^* \) indépendant de \( M \).</dd>
+
+    <dt>Courbe de Laffer</dt>
+    <dd>La relation entre taux de taxe et recettes : nulle aux deux extrêmes, maximale à un taux
+      intérieur \( t^*_M \).</dd>
+
+    <dt>Domination de Pareto</dt>
+    <dd>\( x \) domine \( y \) si personne ne préfère \( y \) et si au moins un individu préfère
+      strictement \( x \).</dd>
+
+    <dt>Efficacité de Pareto</dt>
+    <dd>Une allocation qu'aucune autre allocation faisable ne domine : on ne peut plus améliorer
+      quelqu'un sans nuire à un autre.</dd>
+
+    <dt>Variable non-pertinente</dt>
+    <dd>Une information qui ne change pas les conséquences réelles du choix. Un décideur rationnel
+      l'ignore ; les Humans non.</dd>
+
+    <dt>Utilité de transaction · comptabilité mentale</dt>
+    <dd>Le plaisir tiré de l'écart entre prix payé et prix de référence, comptabilisé à part de
+      l'utilité d'acquisition.</dd>
+
+    <dt>Coût irrécupérable</dt>
+    <dd>Une dépense déjà engagée qu'aucune décision future ne peut récupérer — donc non-pertinente.</dd>
+
+    <dt>DAP et DAA</dt>
+    <dd>Le maximum qu'on accepterait de payer pour acquérir un bien ; le minimum qu'on exigerait
+      pour s'en séparer.</dd>
+
+    <dt>Framing · nudge</dt>
+    <dd>Le cadrage d'un choix (gains ou pertes) modifie la décision entre options identiques ; le
+      nudge exploite ce levier de présentation sans contraindre ni supprimer d'option.</dd>
+  </dl>
+
+  <h2>La méthode type</h2>
+
+  <div class="box box-methode">
+    <div class="box-title">La recette du Lagrangien, en 4 temps</div>
+    <ol>
+      <li>Écrire le Lagrangien : \( \mathcal{L} = \text{utilité} - \lambda\,(\text{dépense} - \text{budget}) \).
+        La contrainte doit être mise sous la forme « \( \text{dépense} - \text{budget} = 0 \) ».</li>
+      <li>Dériver et annuler par rapport à chaque bien : on obtient \( U_{m1} = \lambda p_1 \) et
+        \( U_{m2} = \lambda p_2 \).</li>
+      <li>Diviser une CPO par l'autre pour éliminer \( \lambda \) : c'est la condition de tangence,
+        \( U_{m1}/U_{m2} = p_1/p_2 \).</li>
+      <li>Injecter ce résultat dans la contrainte <strong>saturée</strong> (dérivée par rapport à
+        \( \lambda \), donc égalité) et résoudre pour obtenir \( x_1^* \) et \( x_2^* \).</li>
+    </ol>
+    <p>Sur l'île : \( U(l,c) = c + a\ln(l) \) donne \( U_{ml} = a/l \) et \( U_{mc} = 1 \), donc la
+      tangence \( (a/l) / 1 = s(1-t) \) fournit immédiatement \( l^* = a/(s(1-t)) \) ; la contrainte
+      donne ensuite \( c^* \). Vérifie toujours à la fin que l'optimum est bien intérieur.</p>
+  </div>
+
+  <h2>Les pièges du chapitre</h2>
+
+  <div class="box box-piege">
+    <div class="box-title">Les six confusions que le cours signale explicitement</div>
+    <ul>
+      <li><strong>Mélanger positif et normatif.</strong> Un fait ne dit jamais à lui seul ce qu'il
+        <em>faut</em> faire. Le mot « devrait » trahit toujours un énoncé normatif.</li>
+      <li><strong>Lire « rationnel » comme « intelligent » ou « égoïste ».</strong> La rationalité ne
+        porte que sur la cohérence des préférences, jamais sur leur contenu.</li>
+      <li><strong>Appliquer la tangence sans vérifier ses conditions.</strong> Elle suppose un
+        optimum <em>intérieur</em> (quantité positive des deux biens) et une utilité partout
+        dérivable. En solution de coin ou avec un angle, il faut raisonner autrement. Et ce sont les
+        <em>rapports</em> qui s'égalisent, pas les utilités marginales : \( U_{m1} = U_{m2} \) est
+        faux dès que \( p_1 \neq p_2 \).</li>
+      <li><strong>Confondre efficace, juste et égalitaire.</strong> Avec 10 unités à partager,
+        \( (10,0,0) \) est parfaitement efficace, tandis que \( (3,3,3) \) ne l'est pas — elle
+        gaspille une unité, et \( (3,3,4) \) la domine. Pareto garantit l'absence de gaspillage,
+        rien d'autre.</li>
+      <li><strong>Croire la domination de Pareto complète.</strong> Deux allocations peuvent être
+        incomparables : dès qu'il y a un gagnant et un perdant, le critère reste silencieux.</li>
+      <li><strong>« J'ai déjà investi, donc je continue. »</strong> Le raisonnement par coût
+        irrécupérable est irrationnel : seul l'avenir compte au moment de décider. Même réflexe à
+        désamorcer pour le prix de référence, la possession et le cadrage — à chaque fois, demande-toi
+        quelle est la <em>vraie</em> question, celle qui reste identique entre les deux versions.</li>
+    </ul>
+  </div>
+</section>

@@ -37,28 +37,45 @@ function cover(meta) {
       <div>${meta.project}</div>
       <div>${meta.part}</div>
     </div>
-    <div class="promise">
-      <h3>Comment lire ce document</h3>
-      <p>
-        Ce document est écrit pour quelqu'un qui <strong>part de zéro</strong> : on ne suppose
-        aucune connaissance préalable du cours. Chaque question de l'examen est reprise, puis
-        expliquée intégralement — y compris les notions des chapitres précédents dont elle a besoin.
-      </p>
-      <ul>
-        <li><strong>Le chapitre 0</strong> est la boîte à outils : le vocabulaire et les maths
-            nécessaires. Lis-le en premier, tout le reste s'appuie dessus.</li>
-        <li><strong>Chaque chapitre suivant</strong> traite une question : l'énoncé rappelé, le
-            cours dont elle a besoin, la résolution où <em>chaque</em> ligne de calcul est
-            justifiée, puis la réponse telle qu'il fallait l'écrire sur la copie.</li>
-        <li><strong>Les encadrés colorés</strong> se lisent d'un coup d'œil : bleu = définition,
-            orange = pourquoi on fait ça, rouge = piège, turquoise = méthode réutilisable,
-            vert = ce qu'il fallait écrire.</li>
-        <li><strong>Le lexique final</strong> reprend tous les termes, à consulter dès qu'un mot
-            te bloque.</li>
-      </ul>
-    </div>
+    ${howto(meta)}
     <div class="footnote">${meta.footnote}</div>
   </section>`;
+}
+
+/*
+ * Encadré « comment lire ce document » de la page de garde.
+ *
+ * Chaque document a son mode d'emploi : `meta.howto = { title, lead, items[] }`.
+ * À défaut, on retombe sur celui des volumes « cours particulier », pour que les
+ * documents déjà produits se reconstruisent à l'identique.
+ */
+const HOWTO_DEFAUT = {
+  title: "Comment lire ce document",
+  lead:
+    "Ce document est écrit pour quelqu'un qui <strong>part de zéro</strong> : on ne suppose " +
+    "aucune connaissance préalable du cours. Chaque question de l'examen est reprise, puis " +
+    "expliquée intégralement — y compris les notions des chapitres précédents dont elle a besoin.",
+  items: [
+    "<strong>Le chapitre 0</strong> est la boîte à outils : le vocabulaire et les maths " +
+      "nécessaires. Lis-le en premier, tout le reste s'appuie dessus.",
+    "<strong>Chaque chapitre suivant</strong> traite une question : l'énoncé rappelé, le cours " +
+      "dont elle a besoin, la résolution où <em>chaque</em> ligne de calcul est justifiée, puis " +
+      "la réponse telle qu'il fallait l'écrire sur la copie.",
+    "<strong>Les encadrés colorés</strong> se lisent d'un coup d'œil : bleu = définition, " +
+      "orange = pourquoi on fait ça, rouge = piège, turquoise = méthode réutilisable, " +
+      "vert = ce qu'il fallait écrire.",
+    "<strong>Le lexique final</strong> reprend tous les termes, à consulter dès qu'un mot te bloque.",
+  ],
+};
+
+function howto(meta) {
+  const h = meta.howto ?? HOWTO_DEFAUT;
+  const items = (h.items ?? []).map((li) => `<li>${li}</li>`).join("");
+  return `<div class="promise">
+      <h3>${h.title}</h3>
+      ${h.lead ? `<p>${h.lead}</p>` : ""}
+      ${items ? `<ul>${items}</ul>` : ""}
+    </div>`;
 }
 
 /* Marqueur invisible fermant le sommaire : il sert à l'extracteur de pages
@@ -219,7 +236,7 @@ for (const id of ids) {
     entries.push({ level: "h1", display: c.title, key: h1 ? h1.key : c.title });
     for (const h of hs) if (h.level === "h2") entries.push(h);
   });
-  const out = join(OUT_DIR, `${id}-cours-particulier.pdf`);
+  const out = join(OUT_DIR, meta.filename || `${id}-cours-particulier.pdf`);
   const tmp = join(dir, ".tmp.html");
   const title = `${meta.title} — ${meta.part}`;
 

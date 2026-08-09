@@ -1,0 +1,507 @@
+<section class="chapter">
+  <div class="chapter-tag">B1 · Partie B — Les interactions stratégiques</div>
+  <h1>Jeux simultanés</h1>
+  <p class="chapter-intro">Matrices, dominance, équilibre de Nash : le langage de la stratégie.</p>
+
+  <h2>La carte du chapitre</h2>
+
+  <table class="compare">
+    <tr>
+      <th>§</th>
+      <th class="left">Section</th>
+      <th class="left">Ce qu'elle apporte</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td class="left">Pourquoi ce chapitre ?</td>
+      <td class="left">Le décalage entre l'intérêt individuel et l'intérêt collectif.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td class="left">C'est quoi, un jeu ?</td>
+      <td class="left">Interaction stratégique, les 3 ingrédients, la notation \( s_{-i} \).</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td class="left">Lire (et écrire) une matrice de jeu</td>
+      <td class="left">La forme normale : traduire une histoire en tableau.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td class="left">Stratégies dominantes &amp; dominées</td>
+      <td class="left">H1, les deux définitions, l'ESD, le dilemme du prisonnier.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td class="left">L'élimination itérative (PSS)</td>
+      <td class="left">H2 et son mécanisme d'itérations ; les profils survivants.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td class="left">L'équilibre de Nash</td>
+      <td class="left">H3, meilleures réponses, soulignage, les 5 jeux types.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td class="left">Trois solutions, un diagramme</td>
+      <td class="left">Forces, faiblesses et emboîtement ESD ⊆ EN ⊆ PSS.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td class="left">Théorie vs joueurs réels : les données du labo</td>
+      <td class="left">Le réalisme de H1, H2, H3 ; « devine 2/3 », Keynes, bulles.</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td class="left">Stratégies mixtes : jouer au hasard, rationnellement</td>
+      <td class="left">Payoff attendu, existence, théorème d'indifférence.</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td class="left">Exercices récapitulatifs</td>
+      <td class="left">Soulignage en 3×3, garantie des dépôts, question de réflexion.</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td class="left">Checklist de maîtrise</td>
+      <td class="left">Les 12 compétences testables du chapitre.</td>
+    </tr>
+  </table>
+
+  <h2>Les points à retenir</h2>
+
+  <div class="point">
+    <div class="point-title"><span class="num">1.</span> Une interaction stratégique, c'est au moins deux joueurs dont les résultats s'entremêlent.</div>
+    <p>Trois conditions : au moins deux joueurs, chacun a un choix à faire, et le résultat dépend
+    des choix de <em>tous</em>. Ta note à un examen ne dépend que de toi : ce n'est pas une
+    interaction stratégique. Le prix de deux stations-service voisines, si.</p>
+    <span class="ref-app">B1 · §2 — C'est quoi, un jeu ? <span class="path">/strategies/theorie/b1#s1</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">2.</span> Un jeu, c'est toujours trois ingrédients : joueurs, stratégies, payoffs.</div>
+    <p>Les <span class="term">joueurs</span> \( \{1, \dots, i, \dots, n\} \) ; les
+    <span class="term">stratégies</span> \( S_i \) de chaque joueur, c'est-à-dire tout ce qu'il
+    peut choisir ; la <span class="term">fonction de payoff</span> \( u_i(\cdot) \) qui associe un
+    nombre à chaque combinaison de choix. C'est la recette de traduction d'une histoire en jeu :
+    toujours dans cet ordre. Notation à connaître : \( (s_i, s_{-i}) \), où \( s_{-i} \) désigne
+    « ce que font les autres ».</p>
+    <span class="ref-app">B1 · §2 — C'est quoi, un jeu ? <span class="path">/strategies/theorie/b1#s1</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">3.</span> Le cadre de B1 : simultané, non-coopératif, information complète, non répété.</div>
+    <p>Simultané ne veut pas dire « en même temps à la seconde près », mais « chacun choisit sans
+    connaître le choix de l'autre ». Non-coopératif : aucun accord contraignant signable avant de
+    jouer. Ces quatre restrictions sont relâchées une à une dans la suite de la partie B.</p>
+    <span class="ref-app">B1 · §2 — C'est quoi, un jeu ? <span class="path">/strategies/theorie/b1#s1</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">4.</span> Résultat et profil de payoffs sont deux choses différentes.</div>
+    <p>Un <span class="term">profil de stratégies</span> produit un <span class="term">résultat</span>
+    concret (« les deux arrivent à l'heure »), et ce résultat est <em>ensuite</em> évalué par chaque
+    joueur. Le profil (H, H) donne le résultat « personne n'attend », auquel est associé le profil
+    de payoffs (0, 0). Question d'examen classique.</p>
+    <span class="ref-app">B1 · §2 — C'est quoi, un jeu ? <span class="path">/strategies/theorie/b1#s1</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">5.</span> Un payoff n'est pas de l'argent : c'est l'utilité du chapitre A1.</div>
+    <p>Si le résultat est une somme d'argent, le payoff est l'utilité que le joueur en tire, pas la
+    somme. Deux joueurs peuvent gagner 100 € et en tirer des payoffs différents. Toute la nouveauté
+    de B1 par rapport à A1 tient en un point : cette utilité dépend maintenant aussi des choix des
+    autres.</p>
+    <span class="ref-app">B1 · §3 — Lire (et écrire) une matrice de jeu <span class="path">/strategies/theorie/b1#s2</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">6.</span> Dans la forme normale, le premier nombre appartient toujours au joueur des lignes.</div>
+    <p>Le joueur 1 choisit la ligne, le joueur 2 la colonne, chaque case contient
+    « payoff du joueur 1 ; payoff du joueur 2 ». L'erreur la plus fréquente à l'examen est
+    d'inverser les deux nombres d'une case. Pour construire la matrice : joueurs, puis stratégies,
+    puis case par case on additionne les éléments d'utilité, un joueur à la fois.</p>
+    <span class="ref-app">B1 · §3 — Lire (et écrire) une matrice de jeu <span class="path">/strategies/theorie/b1#s2</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">7.</span> H1 — la rationalité : on joue sa dominante, jamais une dominée.</div>
+    <p>Un joueur rationnel maximise son payoff. Deux conséquences directement utilisables :
+    il utilise sa stratégie dominante quand il en a une, et il n'utilise <em>jamais</em> une
+    stratégie dominée. C'est mot pour mot la rationalité de A1, appliquée à une interaction.</p>
+    <span class="ref-app">B1 · §4 — Stratégies dominantes &amp; dominées <span class="path">/strategies/theorie/b1#s3</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">8.</span> Dominante se compare à toutes les autres, dominée à une seule.</div>
+    <p>\( s_i^* \) est dominante si elle bat (au sens large) <strong>toutes</strong> les autres
+    stratégies, quel que soit \( s_{-i} \). \( s_i \) est dominée s'il existe <strong>une</strong>
+    stratégie \( s_i' \) qui fait au moins aussi bien, quel que soit \( s_{-i} \). Conséquence :
+    on peut avoir une dominée sans avoir de dominante. Avec 2 stratégies les deux notions
+    coïncident ; à partir de 3, non.</p>
+    <span class="ref-app">B1 · §4 — Stratégies dominantes &amp; dominées <span class="path">/strategies/theorie/b1#s3</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">9.</span> L'ESD est la prédiction la plus solide — et la plus rare.</div>
+    <p>Un <span class="term">équilibre en stratégies dominantes</span> est un profil où
+    <em>chaque</em> joueur joue une stratégie dominante. Il ne demande que H1, donc il est très
+    robuste. Sa limite : beaucoup de jeux n'en ont aucun (dès qu'un seul joueur n'a pas de
+    dominante, il n'y a pas d'ESD).</p>
+    <span class="ref-app">B1 · §4 — Stratégies dominantes &amp; dominées <span class="path">/strategies/theorie/b1#s3</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">10.</span> Le dilemme du prisonnier : un ESD Pareto-dominé.</div>
+    <p>Confesser est dominante pour chacun (si l'autre nie, \( 3 > 2 \) ; s'il confesse,
+    \( 1 > 0 \)), donc (C, C) est l'ESD — alors que (N, N) donnerait (2, 2) aux deux. Un résultat
+    en <span class="term">Pareto-domine</span> un autre si tous y sont au moins aussi bien et au
+    moins un strictement mieux. Ici les incitations individuelles ne sont pas alignées sur
+    l'intérêt collectif : climat, dopage, publicité, surpêche, cartels.</p>
+    <table class="game">
+      <tr>
+        <td class="void"></td><td class="void"></td>
+        <th colspan="2">Prisonnier 2</th>
+      </tr>
+      <tr>
+        <td class="void"></td><td class="void"></td>
+        <th>Nier</th><th>Confesser</th>
+      </tr>
+      <tr>
+        <td class="player" rowspan="2">Prisonnier 1</td>
+        <th>Nier</th><td>2 ; 2</td><td>0 ; 3</td>
+      </tr>
+      <tr>
+        <th>Confesser</th><td>3 ; 0</td><td class="nash">1 ; 1</td>
+      </tr>
+    </table>
+    <span class="ref-app">B1 · §4 — Stratégies dominantes &amp; dominées <span class="path">/strategies/theorie/b1#s3</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">11.</span> H2 — la connaissance réciproque de la rationalité autorise l'élimination itérative.</div>
+    <p>H2.1 : je sais que les autres sont rationnels. H2.2 : je sais qu'ils savent que je le suis.
+    H2.3 : … et ainsi de suite à l'infini. Chaque niveau autorise <em>une itération</em> de
+    raisonnement supplémentaire : j'élimine les stratégies dominées, puis je ré-élimine dans le jeu
+    réduit, etc. À l'examen, cite l'hypothèse qui justifie chaque tour.</p>
+    <span class="ref-app">B1 · §5 — L'élimination itérative (PSS) <span class="path">/strategies/theorie/b1#s4</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">12.</span> Les PSS existent toujours, mais la prédiction est souvent floue.</div>
+    <p>Les <span class="term">profils de stratégies survivants</span> sont ceux qui résistent à
+    l'élimination itérative ; c'est le concept de solution basé sur H1 + H2. Avantage : il en reste
+    toujours au moins un. Inconvénient : souvent beaucoup — le jeu 3×3 du cours en laisse quatre,
+    et la bataille des sexes en a quatre (aucune stratégie n'y est dominée). La théorie ne dit alors
+    pas lequel sera joué.</p>
+    <span class="ref-app">B1 · §5 — L'élimination itérative (PSS) <span class="path">/strategies/theorie/b1#s4</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">13.</span> H3 — les anticipations correctes donnent l'équilibre de Nash.</div>
+    <p>Si les joueurs anticipent correctement ce que font les autres et jouent leur meilleure
+    réponse (H1), ils se coordonnent sur un <span class="term">équilibre de Nash</span> : un profil
+    de <strong>meilleures réponses mutuelles</strong>. Formulation à retenir : personne n'a intérêt
+    à dévier seul, étant donné ce que font les autres.</p>
+    <span class="ref-app">B1 · §6 — L'équilibre de Nash <span class="path">/strategies/theorie/b1#s5</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">14.</span> Les cinq jeux types : reconnaître la structure derrière l'histoire.</div>
+    <p>L'examen attend que tu associes une situation réelle à un archétype, et que tu en déduises le
+    phénomène. Retiens le nombre d'équilibres autant que le nom.</p>
+    <table class="compare">
+      <tr>
+        <th class="left">Jeu</th>
+        <th class="left">Structure</th>
+        <th class="left">Phénomène illustré</th>
+      </tr>
+      <tr>
+        <td class="left">Dilemme du prisonnier</td>
+        <td class="left">1 ESD, Pareto-dominé</td>
+        <td class="left">climat, dopage, publicité, surpêche</td>
+      </tr>
+      <tr>
+        <td class="left">Bataille des sexes</td>
+        <td class="left">2 EN, préférences opposées</td>
+        <td class="left">standards technologiques communs</td>
+      </tr>
+      <tr>
+        <td class="left">Chasse au cerf</td>
+        <td class="left">2 EN, l'un Pareto-domine l'autre</td>
+        <td class="left">paniques bancaires</td>
+      </tr>
+      <tr>
+        <td class="left">Poule mouillée</td>
+        <td class="left">2 EN, chacun préfère celui où il est agressif</td>
+        <td class="left">entrée sur un marché trop petit pour deux</td>
+      </tr>
+      <tr>
+        <td class="left">Matching pennies</td>
+        <td class="left">0 EN pur — conflit pur</td>
+        <td class="left">sport, guerre, police vs criminels</td>
+      </tr>
+    </table>
+    <span class="ref-app">B1 · §6 — L'équilibre de Nash <span class="path">/strategies/theorie/b1#s5</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">15.</span> La panique bancaire est une chasse au cerf, et la garantie des dépôts la supprime.</div>
+    <p>Deux déposants, montant \( m \), intérêt \( r \), garantie publique \( g \). Sans garantie
+    (\( g = 0 \)), (Laisser, Laisser) et (Retirer, Retirer) sont tous deux des EN : la panique est
+    <em>possible et rationnelle</em>, car si je crois que tu retires, ma meilleure réponse est de
+    retirer. Avec \( g \ge m \), Laisser devient dominante et l'équilibre de panique disparaît.</p>
+    <span class="ref-app">B1 · §6 — L'équilibre de Nash <span class="path">/strategies/theorie/b1#s5</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">16.</span> Les trois solutions sont emboîtées : ESD ⊆ EN ⊆ PSS.</div>
+    <p>Plus une solution repose sur des hypothèses fortes, plus elle est sélective. L'ESD (H1) est
+    très robuste mais souvent vide ; les PSS (H1 + H2) existent toujours mais sont imprécis ; l'EN
+    (H1 + H3) est le bon compromis. Attention au sens de l'inclusion : un EN n'est pas forcément un
+    ESD, mais tout EN est un PSS.</p>
+    <span class="ref-app">B1 · §7 — Trois solutions, un diagramme <span class="path">/strategies/theorie/b1#s6</span></span>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 400 232" width="100%" style="max-width:11cm" role="img">
+      <ellipse cx="200" cy="118" rx="192" ry="108" fill="#f3f4f6" stroke="#111827" stroke-width="1.6"/>
+      <ellipse cx="200" cy="132" rx="145" ry="86" fill="#e5e7eb" stroke="#111827" stroke-width="1.6"/>
+      <ellipse cx="200" cy="150" rx="84" ry="55" fill="#cbd5e1" stroke="#111827" stroke-width="1.6"/>
+      <text x="200" y="30" text-anchor="middle" font-size="15" font-weight="bold">PSS</text>
+      <text x="200" y="48" text-anchor="middle" font-size="12">H1 + H2 — existent toujours</text>
+      <text x="200" y="72" text-anchor="middle" font-size="15" font-weight="bold">EN</text>
+      <text x="200" y="90" text-anchor="middle" font-size="12">H1 + H3 — meilleures réponses mutuelles</text>
+      <text x="200" y="130" text-anchor="middle" font-size="15" font-weight="bold">ESD</text>
+      <text x="200" y="148" text-anchor="middle" font-size="12">H1 — dominante</text>
+      <text x="200" y="166" text-anchor="middle" font-size="12">pour chacun</text>
+    </svg>
+    <figcaption>Chaque hypothèse supplémentaire rétrécit l'ensemble prédit. La bataille des sexes
+    a 4 PSS, 2 EN et 0 ESD ; le dilemme du prisonnier a 1 PSS = 1 EN = 1 ESD.</figcaption>
+  </figure>
+
+  <div class="point">
+    <div class="point-title"><span class="num">17.</span> Au labo, H1 tient bien, H2 moyennement, H3 mal.</div>
+    <p>Quand une stratégie dominante existe, 87 % des étudiants la jouent (96 % dans le dilemme du
+    prisonnier). Une stratégie qui ne survit pas à l'élimination itérative a quand même été jouée
+    par 29 % — douter de la rationalité des autres n'est pas absurde. Et dans la bataille des sexes,
+    aucune coordination spontanée au premier round. Trois facteurs l'améliorent : la communication,
+    la répétition (l'équilibre devient une convention, un <span class="term">point focal</span>) et
+    l'expérience jointe à de gros enjeux.</p>
+    <span class="ref-app">B1 · §8 — Théorie vs joueurs réels : les données du labo <span class="path">/strategies/theorie/b1#s7</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">18.</span> Être hyper-rationnel fait perdre au « devine les 2/3 de la moyenne ».</div>
+    <p>L'élimination itérative fait tomber la borne à \( (2/3)^n \cdot 100 \) : le seul PSS est
+    « tout le monde joue 0 ». En labo, la cible du round 1 se situait entre 18,2 et 27,7 — les
+    humains raisonnent à un ou deux niveaux de profondeur. Jouer 0 d'emblée fait donc
+    <strong>perdre</strong> : la vraie rationalité consiste à raisonner un cran plus loin que les
+    autres, pas à l'infini. En répétant, la cible dégringole vers 0 par apprentissage.</p>
+    <span class="ref-app">B1 · §8 — Théorie vs joueurs réels : les données du labo <span class="path">/strategies/theorie/b1#s7</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">19.</span> Keynes : le marché est un concours de beauté, d'où les bulles.</div>
+    <p>Le prix « correct » d'une action est \( p^* = \Pi_0 + \delta \Pi_1 + \delta^2 \Pi_2 + \cdots \).
+    Keynes objecte qu'on ne vote pas pour la candidate qu'on trouve la plus belle, mais pour celle
+    que les autres trouveront belle — la logique itérative du « devine 2/3 ». D'où les bulles : si
+    j'anticipe que les autres achèteront demain plus cher, ma meilleure réponse est d'acheter un
+    actif que je sais surévalué.</p>
+    <span class="ref-app">B1 · §8 — Théorie vs joueurs réels : les données du labo <span class="path">/strategies/theorie/b1#s7</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">20.</span> Une stratégie mixte est une distribution de probabilité, et c'est elle qu'on choisit.</div>
+    <p>Le joueur choisit <em>les probabilités</em> sur ses stratégies pures, pas la pure qui sera
+    tirée. Utile dans les jeux de conflit, où chacun veut être imprévisible. On évalue une mixte par
+    le <span class="term">payoff attendu</span> : la moyenne des payoffs pondérée par les
+    probabilités (par le <em>produit</em> des probabilités si les deux joueurs mixent, les tirages
+    étant indépendants).</p>
+    <span class="ref-app">B1 · §9 — Stratégies mixtes : jouer au hasard, rationnellement <span class="path">/strategies/theorie/b1#s8</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">21.</span> Théorème d'existence : avec les mixtes, tout jeu a au moins un équilibre de Nash.</div>
+    <p>C'est le grand avantage théorique de l'EN : contrairement à l'ESD, il fournit
+    <em>toujours</em> une prédiction, y compris dans matching pennies qui n'a aucun EN pur. C'est
+    aussi ce qui achève le tableau de la §7 : « précis ; existe toujours en mixte ».</p>
+    <span class="ref-app">B1 · §9 — Stratégies mixtes : jouer au hasard, rationnellement <span class="path">/strategies/theorie/b1#s8</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">22.</span> Théorème d'indifférence : ma probabilité sert à rendre l'<em>autre</em> indifférent.</div>
+    <p>À l'équilibre mixte, chaque joueur est indifférent entre les pures qu'il utilise — sinon il
+    jouerait la meilleure à 100 %. D'où la recette : l'indifférence de A ne contient que \( q \) et
+    donne \( q^* \) ; celle de G ne contient que \( p \) et donne \( p^* \). Police vs mafia :
+    quand la police devient plus efficace en banlieue (\( x \) augmente), \( p^* = x/(80+x) \)
+    augmente — elle va <em>plus</em> souvent en ville. Ta stratégie maintient l'autre indifférent,
+    elle n'exploite pas tes propres forces.</p>
+    <span class="ref-app">B1 · §9 — Stratégies mixtes : jouer au hasard, rationnellement <span class="path">/strategies/theorie/b1#s8</span></span>
+  </div>
+
+  <h2>Les formules du chapitre</h2>
+
+  <table class="compare">
+    <tr>
+      <th class="left">Formule</th>
+      <th class="left">Symboles</th>
+      <th class="left">Quand l'utiliser</th>
+    </tr>
+    <tr>
+      <td class="left">\( u_i(s_i^*, s_{-i}) \ge u_i(s_i', s_{-i}) \)<br>pour tout \( s_i' \) et tout \( s_{-i} \)</td>
+      <td class="left">\( s_i^* \) candidate, \( s_i' \) toute autre stratégie de \( i \), \( s_{-i} \) les autres joueurs</td>
+      <td class="left">Prouver qu'une stratégie est <strong>dominante</strong> : un système d'inégalités, une par \( s_{-i} \).</td>
+    </tr>
+    <tr>
+      <td class="left">\( u_i(s_i', s_{-i}) \ge u_i(s_i, s_{-i}) \)<br>pour tout \( s_{-i} \)</td>
+      <td class="left">\( s_i \) la candidate à l'élimination, \( s_i' \) <em>une</em> autre stratégie</td>
+      <td class="left">Prouver que \( s_i \) est <strong>dominée</strong> par \( s_i' \) — le carburant de l'élimination itérative.</td>
+    </tr>
+    <tr>
+      <td class="left">\( u_i(s_i^*, s_{-i}) \ge u_i(s_i', s_{-i}) \)<br>pour tout \( s_i' \), à \( s_{-i} \) fixé</td>
+      <td class="left">idem, mais \( s_{-i} \) est donné et non quantifié</td>
+      <td class="left"><strong>Meilleure réponse</strong>. Si c'est vrai pour tous les joueurs simultanément, le profil est un <strong>équilibre de Nash</strong>.</td>
+    </tr>
+    <tr>
+      <td class="left">\( U_A(p,q) = 20 + 60p + 70q - 100pq \)</td>
+      <td class="left">\( p \) = proba que l'attaquant tire à droite, \( q \) = proba que le gardien y plonge</td>
+      <td class="left"><strong>Payoff attendu</strong> du pénalty : les 4 cases pondérées par le produit des probabilités.</td>
+    </tr>
+    <tr>
+      <td class="left">\( 50q + 80(1-q) = 90q + 20(1-q) \)<br>\( \Longrightarrow q^* = 0{,}6 \)</td>
+      <td class="left">indifférence de l'<strong>attaquant</strong> entre Droit et Gauche</td>
+      <td class="left">Elle ne contient que \( q \) : elle donne la mixte du <em>gardien</em>.</td>
+    </tr>
+    <tr>
+      <td class="left">\( 50p + 10(1-p) = 20p + 80(1-p) \)<br>\( \Longrightarrow p^* = 0{,}7 \)</td>
+      <td class="left">indifférence du <strong>gardien</strong> entre Droit et Gauche</td>
+      <td class="left">Elle ne contient que \( p \) : elle donne la mixte de l'<em>attaquant</em>.</td>
+    </tr>
+  </table>
+
+  <h2>Les définitions à savoir réciter</h2>
+
+  <dl class="lexique">
+    <dt>Interaction stratégique</dt>
+    <dd>Situation à au moins deux joueurs où chacun fait un choix et où le résultat dépend des
+    choix de tous.</dd>
+
+    <dt>Forme normale</dt>
+    <dd>Représentation d'un jeu par un tableau : joueurs, stratégies, et les payoffs de chacun dans
+    chaque case. La « fiche d'identité » du jeu.</dd>
+
+    <dt>Profil de stratégies</dt>
+    <dd>Une combinaison \( (s_1, \dots, s_n) \), un choix par joueur. Elle produit un résultat, qui
+    est ensuite évalué par les fonctions de payoff.</dd>
+
+    <dt>Stratégie dominante</dt>
+    <dd>\( s_i^* \) telle que \( u_i(s_i^*, s_{-i}) \ge u_i(s_i', s_{-i}) \) pour toute autre
+    \( s_i' \) et tout \( s_{-i} \) : quoi que fassent les autres, rien ne fait mieux.</dd>
+
+    <dt>Stratégie dominée</dt>
+    <dd>\( s_i \) telle qu'il existe \( s_i' \) rapportant au moins autant pour tout \( s_{-i} \).
+    Un joueur rationnel ne la joue jamais.</dd>
+
+    <dt>Équilibre en stratégies dominantes (ESD)</dt>
+    <dd>Profil où la stratégie de chaque joueur est dominante. Ne demande que H1.</dd>
+
+    <dt>Pareto-domination</dt>
+    <dd>Un résultat en Pareto-domine un autre si tous les joueurs y sont au moins aussi bien et au
+    moins un strictement mieux.</dd>
+
+    <dt>Connaissance réciproque de la rationalité (H2)</dt>
+    <dd>Chacun sait que les autres sont rationnels, sait qu'ils le savent, et ainsi de suite à
+    l'infini. Chaque niveau autorise une itération d'élimination.</dd>
+
+    <dt>PSS</dt>
+    <dd>Profils de stratégies survivant à l'élimination itérative des stratégies dominées. Concept
+    de solution basé sur H1 + H2.</dd>
+
+    <dt>Meilleure réponse</dt>
+    <dd>Stratégie qui maximise le payoff de \( i \) face à un \( s_{-i} \) donné.</dd>
+
+    <dt>Équilibre de Nash</dt>
+    <dd>Profil où la stratégie de chaque joueur est une meilleure réponse à celles des autres :
+    des meilleures réponses mutuelles, donc aucune déviation unilatérale profitable.</dd>
+
+    <dt>Stratégie mixte</dt>
+    <dd>Distribution de probabilité sur les stratégies pures d'un joueur ; c'est la distribution
+    qu'il choisit. Une stratégie pure est le cas particulier d'une proba égale à 1.</dd>
+
+    <dt>Payoff attendu</dt>
+    <dd>Moyenne des payoffs pondérée par les probabilités des cases. C'est ce qu'un joueur
+    rationnel maximise dès qu'il y a du hasard.</dd>
+
+    <dt>Point focal</dt>
+    <dd>Équilibre sur lequel les joueurs se coordonnent parce qu'une convention le rend saillant
+    (le sens de la marche sur un trottoir).</dd>
+  </dl>
+
+  <h2>La méthode type</h2>
+
+  <div class="box box-methode">
+    <div class="box-title">Recette 1 — trouver <em>tous</em> les EN purs : la méthode du soulignage</div>
+    <ol>
+      <li>Pour <strong>chaque colonne</strong> (chaque stratégie du joueur 2), entoure le payoff
+      du <strong>joueur de ligne</strong> le plus élevé : c'est sa meilleure réponse.</li>
+      <li>Pour <strong>chaque ligne</strong>, entoure le payoff du <strong>joueur de colonne</strong>
+      le plus élevé.</li>
+      <li>Les cases dont les <strong>deux</strong> payoffs sont entourés sont les équilibres de
+      Nash. Aucune case doublement entourée : le jeu n'a pas d'EN pur (matching pennies).</li>
+    </ol>
+    <p>La méthode est infaillible et se transpose telle quelle en 3×3 — pense simplement à traiter
+    les trois colonnes puis les trois lignes. En cas d'ex æquo, entoure les deux.</p>
+  </div>
+
+  <div class="box box-methode">
+    <div class="box-title">Recette 2 — calculer l'équilibre en stratégies mixtes</div>
+    <ol>
+      <li>Fais d'abord le soulignage : s'il existe des EN purs, ils font partie de la réponse et il
+      faut les citer.</li>
+      <li>Note \( p \) la probabilité de la 1<sup>re</sup> stratégie du joueur de ligne,
+      \( q \) celle de la 1<sup>re</sup> stratégie du joueur de colonne.</li>
+      <li>Écris le payoff attendu de <strong>chaque pure</strong> du joueur de ligne face à
+      \( q \), puis pose leur <strong>égalité</strong>. Cette équation ne contient que \( q \) :
+      elle donne \( q^* \).</li>
+      <li>Recommence côté colonne : l'égalité ne contient que \( p \) et donne \( p^* \).</li>
+      <li>Conclus par le profil \( (p^*, q^*) \) et vérifie que les deux valeurs sont bien dans
+      \( [0,1] \).</li>
+    </ol>
+    <p>Pénalty : \( 50q + 80(1-q) = 90q + 20(1-q) \) donne \( 80 - 30q = 20 + 70q \), soit
+    \( q^* = 0{,}6 \) ; côté gardien, \( 10 + 40p = 80 - 60p \) donne \( p^* = 0{,}7 \).</p>
+  </div>
+
+  <h2>Les pièges du chapitre</h2>
+
+  <div class="box box-piege">
+    <div class="box-title">Vocabulaire et lecture</div>
+    <p><strong>Résultat ≠ profil de payoffs.</strong> Le profil de stratégies produit un résultat
+    concret ; le profil de payoffs est l'évaluation de ce résultat par chaque joueur. On te demande
+    parfois l'un, parfois l'autre.</p>
+    <p><strong>Payoff ≠ argent.</strong> C'est l'utilité au sens de A1. Deux joueurs qui reçoivent
+    la même somme peuvent avoir des payoffs différents.</p>
+    <p><strong>Dominante vs dominée — la subtilité qui tue à l'examen.</strong> « Dominante » se
+    compare à <em>toutes</em> les autres stratégies, « dominée » à <em>une seule</em>. On peut donc
+    avoir une stratégie dominée sans avoir de stratégie dominante. Ne conclus jamais « pas de
+    dominante, donc rien à éliminer ».</p>
+    <p><strong>Inverser les deux nombres d'une case.</strong> Le premier est toujours celui du
+    joueur des lignes.</p>
+  </div>
+
+  <div class="box box-piege">
+    <div class="box-title">Raisonnement et calcul</div>
+    <p><strong>Croire que les PSS donnent une prédiction précise.</strong> Ils existent toujours,
+    mais ils sont souvent nombreux : quatre dans le jeu 3×3 du cours, quatre dans la bataille des
+    sexes. « Il reste plusieurs PSS » est une réponse complète, pas un échec.</p>
+    <p><strong>Se tromper de sens dans l'inclusion.</strong> ESD ⊆ EN ⊆ PSS. Un EN unique n'est pas
+    pour autant un ESD, et il n'est pas nécessairement efficace au sens de Pareto — le dilemme du
+    prisonnier le prouve.</p>
+    <p><strong>Calculer sa propre probabilité avec ses propres payoffs.</strong> C'est l'inverse :
+    l'équation d'indifférence d'un joueur donne la probabilité de <em>l'autre</em>. Au pénalty,
+    \( p^* = 0{,}7 \) sort de l'indifférence du gardien.</p>
+    <p><strong>Passer aux mixtes sans vérifier les purs.</strong> Fais toujours le soulignage
+    d'abord : un jeu peut avoir deux EN purs <em>et</em> un EN mixte, et oublier les purs coûte des
+    points.</p>
+  </div>
+</section>

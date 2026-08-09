@@ -1,0 +1,314 @@
+<section class="chapter">
+  <div class="chapter-tag">B3 · Partie B — Les interactions stratégiques</div>
+  <h1>Jeux répétés</h1>
+  <p class="chapter-intro">Quand rejouer change tout : coopération, punition et facteur d'escompte.</p>
+
+  <h2>La carte du chapitre</h2>
+
+  <table class="compare">
+    <thead>
+      <tr><th>§</th><th class="left">Section</th><th class="left">Ce qu'elle apporte</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td class="left">Repères — où en sommes-nous ?</td><td class="left">Les trois briques réutilisées : dilemme du prisonnier (B1), backward induction et ENPS, facteur d'escompte \( \delta \) (A2).</td></tr>
+      <tr><td>2</td><td class="left">Le dilemme du fritkot</td><td class="left">Le jeu de période : (4 ; 4), (6 ; 0), (0 ; 6), (2 ; 2). L'ESD (T, T) n'est pas Pareto-efficace.</td></tr>
+      <tr><td>3</td><td class="left">C'est quoi, un jeu répété ?</td><td class="left">La définition, les quatre caractéristiques, la stratégie comme plan contingent à l'histoire.</td></tr>
+      <tr><td>4</td><td class="left">Deux périodes : la coopération échoue</td><td class="left">\( \Pi = \pi_0 + \delta\pi_1 \), backward induction, définition de grim, et son échec.</td></tr>
+      <tr><td>5</td><td class="left">Le théorème de l'horizon fini</td><td class="left">L'effondrement en domino généralisé à \( N \) périodes, et l'énoncé du théorème.</td></tr>
+      <tr><td>6</td><td class="left">Horizon infini : la boîte à outils</td><td class="left">Le payoff escompté \( \sum \delta^t\pi_t \) et la formule magique \( a/(1-\delta) \).</td></tr>
+      <tr><td>7</td><td class="left">« Toujours trahir » reste un équilibre</td><td class="left">L'infini ne supprime pas le mauvais équilibre ; la méthode « meilleures réponses mutuelles ».</td></tr>
+      <tr><td>8</td><td class="left">Grim contre grim : la condition \( \delta \ge 1/2 \)</td><td class="left">LE résultat du chapitre, démontré en trois étapes.</td></tr>
+      <tr><td>9</td><td class="left">Interpréter &amp; généraliser</td><td class="left">Patience, probabilité de continuation, seuil général \( (t-c)/(t-p) \).</td></tr>
+      <tr><td>10</td><td class="left">Le tournoi d'Axelrod</td><td class="left">Tit-for-Tat gagne ; toutes les stratégies « gentilles » l'emportent.</td></tr>
+      <tr><td>11</td><td class="left">Au laboratoire : et les vrais humains ?</td><td class="left">Quatre observations : on coopère bien plus que prédit, mais on trahit au dernier round.</td></tr>
+      <tr><td>12</td><td class="left">Exercices récapitulatifs</td><td class="left">Cinq exercices, dont « refaire toute la machinerie » avec d'autres payoffs.</td></tr>
+      <tr><td>13</td><td class="left">QCM final &amp; checklist de maîtrise</td><td class="left">Les douze cases à cocher avant l'examen.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Les points à retenir</h2>
+
+  <div class="point">
+    <div class="point-title"><span class="num">1.</span> Une somme reçue en période \( t \) vaut \( \delta^t \) fois cette somme aujourd'hui.</div>
+    <p>Le facteur d'escompte d'A2 est le personnage principal de B3 : \( \delta \) proche de 1 = joueur patient (demain compte presque autant qu'aujourd'hui), \( \delta \) proche de 0 = joueur impatient. Réflexe : demain \( \times\,\delta \), après-demain \( \times\,\delta^2 \). Toute la conclusion du chapitre tiendra dans une inégalité sur \( \delta \).</p>
+    <span class="ref-app">B3 · §1 — Repères — où en sommes-nous ? <span class="path">/strategies/theorie/b3#sec-reperes</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">2.</span> Le dilemme du fritkot est un dilemme du prisonnier : son ESD (T, T) n'est pas Pareto-efficace.</div>
+    <p>Payoffs du jour : (C, C) → (4 ; 4), (T, C) → (6 ; 0), (C, T) → (0 ; 6), (T, T) → (2 ; 2). Ligne par ligne, trahir domine (6 &gt; 4 si l'autre coopère, 2 &gt; 0 s'il trahit) : c'est une stratégie dominante pour les deux. Résultat (2 ; 2) alors que (4 ; 4) était atteignable — la rationalité individuelle détruit le gain collectif. Et le cartel étant illégal, aucun contrat ne peut sauver la mise : s'il y a coopération, elle devra tenir toute seule.</p>
+    <span class="ref-app">B3 · §2 — Le dilemme du fritkot <span class="path">/strategies/theorie/b3#sec-fritkot</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">3.</span> Un jeu répété, c'est un même jeu simultané — le « jeu de période » — joué pendant plusieurs périodes, avec observation publique à la fin de chaque période.</div>
+    <p>À la fin de chaque période, les stratégies jouées sont observées par tous et les payoffs de la période sont réalisés. C'est cette observation publique qui rend une punition possible : sans elle, personne ne saurait qui a trahi ni quand.</p>
+    <span class="ref-app">B3 · §3 — C'est quoi, un jeu répété ? <span class="path">/strategies/theorie/b3#sec-cadre</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">4.</span> Les quatre caractéristiques des jeux de B3 : non-coopératif, séquentiel, information complète mais imparfaite, répété.</div>
+    <p><strong>Non-coopératif</strong> : aucun contrat contraignant. <strong>Séquentiel</strong> : le temps s'écoule, donc on raisonne par backward induction et on cherche un ENPS. <strong>Complète mais imparfaite</strong> : tout le monde connaît les payoffs de tout le monde, mais au sein d'une période on joue en même temps — on ne voit que le passé, jamais le coup courant de l'autre. <strong>Répété</strong> : le même tableau revient période après période, et l'histoire du jeu est connue de tous.</p>
+    <span class="ref-app">B3 · §3 — C'est quoi, un jeu répété ? <span class="path">/strategies/theorie/b3#sec-cadre</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">5.</span> Une stratégie de jeu répété est un plan contingent à toute l'histoire du jeu.</div>
+    <p>En B1, une stratégie se résumait à « C » ou « T ». Ici c'est une règle complète qui dit quoi jouer à chaque période, pour chaque passé possible : « je coopère <em>si</em> tu as coopéré jusqu'ici, sinon je trahis ». C'est exactement ce qui rend la punition — et donc la coopération — envisageable.</p>
+    <span class="ref-app">B3 · §3 — C'est quoi, un jeu répété ? <span class="path">/strategies/theorie/b3#sec-cadre</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">6.</span> À deux périodes, la backward induction fait échouer la coopération.</div>
+    <p>Le payoff total s'écrit \( \Pi = \pi_0 + \delta\pi_1 \). Période 1 : plus de lendemain, donc plus aucune punition possible ⇒ chacun joue sa dominante T, quoi qu'il se soit passé en période 0. Période 0 : sachant que la période 1 sera (T, T) dans tous les cas, coopérer n'achète aucune récompense et trahir ne coûte aucune punition ⇒ (T, T) encore. L'unique ENPS : trahir aux deux périodes.</p>
+    <span class="ref-app">B3 · §4 — Deux périodes : la coopération échoue <span class="path">/strategies/theorie/b3#sec-deux</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">7.</span> La stratégie grim : coopérer en période 0, puis coopérer tant que l'adversaire a toujours coopéré, sinon trahir pour toujours.</div>
+    <p>En un mot : « tant que tu coopères, je coopère ; à la première trahison, je te fais la guerre jusqu'à la fin des temps. » Pour soutenir la coopération, une stratégie doit à la fois <em>punir</em> et rester <em>rationnelle à jouer</em> — grim est la candidate naturelle, puisqu'elle inflige la punition la plus dure possible.</p>
+    <span class="ref-app">B3 · §4 — Deux périodes : la coopération échoue <span class="path">/strategies/theorie/b3#sec-deux</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">8.</span> À deux périodes, (grim, grim) n'est pas un ENPS — quel que soit \( \delta \).</div>
+    <p>Face à \( s_1^{G} \), le joueur 2 compare trois options : grim donne \( 4+4\delta \), trahir d'emblée donne \( 6+2\delta \), et coopérer puis poignarder au dernier jour donne \( 4+6\delta \). Comme \( 4+6\delta \ge 4+4\delta \) (l'écart vaut \( 2\delta \ge 0 \)), \( s_2^{G} \) n'est jamais une meilleure réponse. La menace grim est <em>vide</em> en période 1 : il n'y a plus de lendemain pour punir.</p>
+    <span class="ref-app">B3 · §4 — Deux périodes : la coopération échoue <span class="path">/strategies/theorie/b3#sec-deux</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">9.</span> Le théorème de l'horizon fini, à connaître mot pour mot.</div>
+    <p>« Dans un jeu répété un <strong>nombre fini</strong> de fois, si le jeu simultané répété a un <strong>unique équilibre de Nash</strong>, alors le jeu répété a un <strong>unique ENPS</strong> : le EN du jeu simultané est joué <strong>à chaque période</strong>. » Deux hypothèses, une conclusion. Appliqué au fritkot : festival de durée finie et connue ⇒ trahir tous les jours, et aucune stratégie contingente à l'histoire — grim, tit-for-tat, aucune — n'y change quoi que ce soit.</p>
+    <span class="ref-app">B3 · §5 — Le théorème de l'horizon fini <span class="path">/strategies/theorie/b3#sec-fini</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">10.</span> Le raisonnement du théorème : un effondrement en domino, de la fin vers le début.</div>
+    <p>Dernière période \( N \) : plus de lendemain ⇒ T, quoi qu'il se soit passé avant. Période \( N-1 \) : puisque \( N \) sera (T, T) de toute façon, coopérer n'achète rien et trahir ne coûte rien ⇒ T. Et ainsi de suite jusqu'à la période 0. La phrase-clé du cours : <em>les joueurs ne doivent pas pouvoir anticiper la fin du jeu</em> — la coopération meurt dès qu'on peut compter les jours qui restent.</p>
+    <span class="ref-app">B3 · §5 — Le théorème de l'horizon fini <span class="path">/strategies/theorie/b3#sec-fini</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">11.</span> À horizon infini, le payoff escompté s'écrit \( \Pi = \sum_{t=0}^{\infty}\delta^t\pi_t \).</div>
+    <p>Même logique qu'à deux périodes, mais la somme ne s'arrête plus : le jour \( t \) pèse \( \delta^t \). Chaque payoff futur est rétréci un peu plus que le précédent — c'est ce rétrécissement qui fait converger une somme pourtant infinie vers un nombre fini.</p>
+    <span class="ref-app">B3 · §6 — Horizon infini : la boîte à outils <span class="path">/strategies/theorie/b3#sec-infini</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">12.</span> La formule magique \( \sum_{t=0}^{\infty}\delta^t a = \frac{a}{1-\delta} \) — et son astuce de preuve.</div>
+    <p>Décaler-soustraire : pose \( S = a + \delta a + \delta^2 a + \dots \) ; alors \( \delta S \) est exactement \( S \) privé de son premier terme, donc \( S - \delta S = a \), soit \( S = a/(1-\delta) \). Apprends l'astuce, pas seulement le résultat : elle ressert au § 8 pour mettre \( \delta \) en évidence. Contrôle : la guerre des prix éternelle avec \( \delta = 0{,}9 \) vaut \( 2/0{,}1 = 20 \).</p>
+    <span class="ref-app">B3 · §6 — Horizon infini : la boîte à outils <span class="path">/strategies/theorie/b3#sec-infini</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">13.</span> La méthode de toutes les démonstrations du chapitre : un profil est un équilibre si les stratégies sont des meilleures réponses mutuelles.</div>
+    <p>On fixe la stratégie de l'adversaire, on calcule ce que rapporte la stratégie candidate, on la compare à la <em>meilleure déviation possible</em>. Si aucune déviation ne fait strictement mieux, c'est un équilibre. Rien d'autre — les § 7 et § 8 ne sont que deux applications de ce même geste.</p>
+    <span class="ref-app">B3 · §7 — « Toujours trahir » reste un équilibre <span class="path">/strategies/theorie/b3#sec-tt</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">14.</span> « Toujours trahir » reste un ENPS à horizon infini.</div>
+    <p>Si le joueur 1 trahit toujours, le joueur 2 ne peut obtenir que 2 (en trahissant) ou 0 (en coopérant) à chaque période : \( \pi_t \le 2 \) pour tout \( t \), donc toute stratégie lui rapporte au plus \( 2/(1-\delta) \) — soit exactement ce que rapporte \( s_2^{TT} \). Aucune déviation profitable. Le jeu infini a donc <em>plusieurs</em> ENPS.</p>
+    <span class="ref-app">B3 · §7 — « Toujours trahir » reste un équilibre <span class="path">/strategies/theorie/b3#sec-tt</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">15.</span> Le résultat central : (grim, grim) est un ENPS du dilemme du prisonnier répété à l'infini si \( \delta \ge 1/2 \).</div>
+    <p>Coopérer pour toujours vaut \( 4/(1-\delta) \) ; la meilleure déviation vaut \( 6 + 2\delta/(1-\delta) \). L'inégalité « coopérer ≥ dévier », multipliée par \( (1-\delta) > 0 \), donne \( 4 \ge 6 - 4\delta \), donc \( \delta \ge 1/2 \). Des joueurs rationnels <em>peuvent</em> coopérer, à condition de ne pas être trop impatients ; si \( \delta &lt; 1/2 \), la menace de payoffs futurs réduits ne fait pas assez mal pour dissuader.</p>
+    <span class="ref-app">B3 · §8 — Grim contre grim : la condition δ ≥ 1/2 <span class="path">/strategies/theorie/b3#sec-grim</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">16.</span> Sache lire chaque morceau de la condition centrale.</div>
+    <p>\( 4/(1-\delta) \) = la coopération éternelle. \( 6 \) = la tentation immédiate, encaissée <em>une seule fois</em> (on casse les prix pendant que l'autre reste cher). \( 2\delta/(1-\delta) \) = la punition éternelle, qui ne commence que <em>demain</em> — d'où le \( \delta \) devant. Contrôle avec \( \delta = 0{,}6 \) : coopérer \( 4/0{,}4 = 10 \) contre dévier \( 6 + 2\times 0{,}6/0{,}4 = 9 \).</p>
+    <span class="ref-app">B3 · §8 — Grim contre grim : la condition δ ≥ 1/2 <span class="path">/strategies/theorie/b3#sec-grim</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">17.</span> Pourquoi la déviation étudiée est « 6 puis 2 pour toujours », et pourquoi on la place en \( t = 0 \).</div>
+    <p>Face à un grim, revenir à C après avoir trahi rapporte 0 (tu coopères, il te trahit) : une fois la gâchette pressée, trahir pour toujours est la meilleure suite. Quant à la date : le jeu infini se ressemble vu de n'importe quelle période (stationnarité), donc l'inégalité obtenue pour une première trahison en \( t = 0 \) vaut pour tout \( t \).</p>
+    <span class="ref-app">B3 · §8 — Grim contre grim : la condition δ ≥ 1/2 <span class="path">/strategies/theorie/b3#sec-grim</span></span>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 460 186" width="100%" style="max-width:11cm" role="img" aria-label="Deux flux de payoffs comparés : coopération éternelle contre déviation">
+      <text x="6" y="17" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6b7280">période</text>
+      <text x="128" y="17" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6b7280">0</text>
+      <text x="194" y="17" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6b7280">1</text>
+      <text x="260" y="17" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6b7280">2</text>
+      <text x="326" y="17" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6b7280">3</text>
+      <text x="392" y="17" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6b7280">4</text>
+
+      <text x="90" y="47" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#111827">grim / grim</text>
+      <g fill="#d1fae5" stroke="#047857" stroke-width="1.2">
+        <rect x="100" y="26" width="56" height="32" rx="4"/>
+        <rect x="166" y="26" width="56" height="32" rx="4"/>
+        <rect x="232" y="26" width="56" height="32" rx="4"/>
+        <rect x="298" y="26" width="56" height="32" rx="4"/>
+        <rect x="364" y="26" width="56" height="32" rx="4"/>
+      </g>
+      <g font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#065f46" text-anchor="middle">
+        <text x="128" y="48">4</text><text x="194" y="48">4</text><text x="260" y="48">4</text>
+        <text x="326" y="48">4</text><text x="392" y="48">4</text>
+      </g>
+      <text x="432" y="48" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#065f46">…</text>
+      <text x="100" y="76" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#065f46">total escompté = 4/(1 − δ)</text>
+
+      <text x="90" y="112" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#111827">dévier</text>
+      <text x="90" y="127" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#111827">en t = 0</text>
+      <rect x="100" y="96" width="56" height="32" rx="4" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+      <g fill="#ffe4e6" stroke="#be123c" stroke-width="1.2">
+        <rect x="166" y="96" width="56" height="32" rx="4"/>
+        <rect x="232" y="96" width="56" height="32" rx="4"/>
+        <rect x="298" y="96" width="56" height="32" rx="4"/>
+        <rect x="364" y="96" width="56" height="32" rx="4"/>
+      </g>
+      <text x="128" y="118" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#92400e">6</text>
+      <g font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#9f1239" text-anchor="middle">
+        <text x="194" y="118">2</text><text x="260" y="118">2</text><text x="326" y="118">2</text><text x="392" y="118">2</text>
+      </g>
+      <text x="432" y="118" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#9f1239">…</text>
+      <text x="100" y="146" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#9f1239">total escompté = 6 + δ × 2/(1 − δ)</text>
+
+      <text x="6" y="176" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#374151">+2 une seule fois, aujourd'hui   ·   −2 à chaque période suivante, à partir de demain</text>
+    </svg>
+    <figcaption>Le seul arbitrage du chapitre. La punition ne commence qu'en \( t = 1 \) : c'est de là que vient le \( \delta \) qui multiplie le flux \( 2/(1-\delta) \). Coopérer l'emporte dès que \( \delta \ge 1/2 \).</figcaption>
+  </figure>
+
+  <div class="point">
+    <div class="point-title"><span class="num">18.</span> La coopération tient si la peur du futur pèse plus lourd que la gourmandise du présent.</div>
+    <p>Trahir, c'est échanger +2 aujourd'hui (6 au lieu de 4) contre −2 à chaque période future (2 au lieu de 4). Un joueur patient donne beaucoup de valeur à ces pertes ⇒ il coopère ; un impatient les balaye ⇒ il trahit. Application directe : un cartel tient entre acteurs solidement installés, jamais entre entreprises au bord de la faillite, dont le \( \delta \) effectif est minuscule.</p>
+    <span class="ref-app">B3 · §9 — Interpréter &amp; généraliser <span class="path">/strategies/theorie/b3#sec-interp</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">19.</span> L'infini littéral n'est pas nécessaire : c'est la probabilité de continuation qui compte.</div>
+    <p>Il suffit qu'à chaque période il existe une <strong>probabilité non nulle que le jeu soit répété</strong> à la suivante. Autrement dit, il faut que les joueurs ne puissent jamais dire « c'est la dernière fois » — c'est cette certitude-là qui déclenche l'effet domino du § 5. On peut d'ailleurs relire \( \delta \) comme mêlant impatience <em>et</em> probabilité de survie du jeu.</p>
+    <span class="ref-app">B3 · §9 — Interpréter &amp; généraliser <span class="path">/strategies/theorie/b3#sec-interp</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">20.</span> Le seuil général : \( \delta \ge \frac{t-c}{t-p} \).</div>
+    <p>Avec \( c \) le payoff de coopération, \( t \) la tentation et \( p \) la punition (\( t > c > p \)). Le 1/2 n'a rien de magique, il vient des nombres 4, 6 et 2 : \( (6-4)/(6-2) = 1/2 \). Le dénominateur se décompose en \( t-p = (t-c) + (c-p) \), soit tentation + coût par période de la punition. Sur les payoffs (5, 8, 1) de l'exercice 3 : \( 3/7 \).</p>
+    <span class="ref-app">B3 · §9 — Interpréter &amp; généraliser <span class="path">/strategies/theorie/b3#sec-interp</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">21.</span> Axelrod : Tit-for-Tat gagne, et les stratégies « gentilles » l'emportent toutes.</div>
+    <p>Protocole : des stratégies encodées en programmes, chacune contre chacune, 200 périodes de dilemme du prisonnier répété, meilleur payoff moyen. La gagnante est la plus simple soumise — coopérer en période 0, puis copier ce que l'adversaire a joué en \( t-1 \). Second résultat marquant : <em>toutes</em> les stratégies gentilles (celles qui ne trahissent jamais les premières) ont battu les non gentilles. TfT est punitive <em>et</em> indulgente : elle recoopère dès que l'autre recoopère.</p>
+    <span class="ref-app">B3 · §10 — Le tournoi d'Axelrod <span class="path">/strategies/theorie/b3#sec-axelrod</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">22.</span> Au laboratoire, la trahison au dernier round est la trace empirique de la backward induction.</div>
+    <p>Dilemme du prisonnier joué 10 rounds entre étudiants : une grosse moitié des paires coopère du début à la fin (la théorie prédisait 0 %), aucune paire ne trahit du début à la fin, et personne n'a joué grim — les humains pardonnent. Mais parmi les paires qui ne coopèrent pas jusqu'au bout, la rupture arrive souvent au <strong>dernier round</strong> : l'intuition de fin de partie est bien réelle, elle ne « remonte » simplement pas jusqu'au début.</p>
+    <span class="ref-app">B3 · §11 — Au laboratoire : et les vrais humains ? <span class="path">/strategies/theorie/b3#sec-labo</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">23.</span> La conclusion officielle du chapitre, à savoir reformuler.</div>
+    <p>La coopération peut émerger entre joueurs rationnels, même si les incitants individuels poussent chaque période à trahir, <strong>pourvu que les joueurs ne sachent pas d'avance quelle sera la dernière période</strong>. Elle exige que chacun puisse menacer l'autre d'une punition au coût assez élevé — coût qui dépend des payoffs du jeu simultané et du facteur d'escompte du joueur puni.</p>
+    <span class="ref-app">B3 · §9 — Interpréter &amp; généraliser <span class="path">/strategies/theorie/b3#sec-interp</span></span>
+  </div>
+
+  <h2>Les formules du chapitre</h2>
+
+  <table class="compare">
+    <thead>
+      <tr><th class="left">Formule</th><th class="left">Ce que désignent les symboles</th><th class="left">Quand l'utiliser</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>\( \Pi = \pi_0 + \delta\pi_1 \)</td>
+        <td class="left">\( \Pi \) payoff total du jeu ; \( \pi_t \) payoff de la période \( t \) ; \( \delta \in [0,1] \) facteur d'escompte.</td>
+        <td class="left">Jeu répété deux fois. Majuscule pour le total, minuscules pour les périodes.</td>
+      </tr>
+      <tr>
+        <td>\( \Pi = \sum_{t=0}^{\infty}\delta^t\pi_t \)</td>
+        <td class="left">Même notation, la somme court sur \( t = 0, 1, 2, \dots \) sans fin.</td>
+        <td class="left">Dès qu'on passe à l'horizon infini (§ 6 à § 9).</td>
+      </tr>
+      <tr>
+        <td>\( \sum_{t=0}^{\infty}\delta^t a = \dfrac{a}{1-\delta} \)</td>
+        <td class="left">\( a \) = payoff constant reçu à chaque période.</td>
+        <td class="left">Pour transformer un flux constant en un nombre. À savoir redémontrer (décaler-soustraire).</td>
+      </tr>
+      <tr>
+        <td>\( 4+4\delta \) &nbsp;vs&nbsp; \( 4+6\delta \)</td>
+        <td class="left">Grim contre grim, et « coopérer puis trahir au dernier jour », sur deux périodes.</td>
+        <td class="left">Preuve qu'à horizon fini (grim, grim) n'est pas un ENPS : l'écart \( 2\delta \) est positif.</td>
+      </tr>
+      <tr>
+        <td>\( \dfrac{4}{1-\delta} \ge 6 + \dfrac{2\delta}{1-\delta} \)<br>\( \Rightarrow\ \delta \ge \tfrac{1}{2} \)</td>
+        <td class="left">Gauche : coopération éternelle. Droite : tentation immédiate + punition éternelle escomptée d'une période.</td>
+        <td class="left">La condition centrale du chapitre, à redémontrer les yeux fermés.</td>
+      </tr>
+      <tr>
+        <td>\( \delta \ge \dfrac{t-c}{t-p} \)</td>
+        <td class="left">\( c \) coopération, \( t \) tentation, \( p \) punition, avec \( t > c > p \).</td>
+        <td class="left">Tout autre jeu de payoffs — et vérification de tes propres calculs.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Les définitions à savoir réciter</h2>
+
+  <dl class="lexique">
+    <dt>Jeu répété</dt>
+    <dd>Jeu où un même jeu simultané, le <span class="term">jeu de période</span>, est joué pendant plusieurs périodes ; à la fin de chaque période, les stratégies jouées sont observées par tous et les payoffs de la période sont réalisés.</dd>
+
+    <dt>Stratégie (dans un jeu répété)</dt>
+    <dd>Plan complet contingent à l'<span class="term">histoire du jeu</span> : ce qu'on joue à chaque période, pour chaque passé possible.</dd>
+
+    <dt>Facteur d'escompte \( \delta \)</dt>
+    <dd>Nombre de \( [0,1] \) : recevoir \( \pi \) demain vaut \( \delta\pi \) aujourd'hui. Proche de 1 = patient, proche de 0 = impatient. Se relit comme une probabilité que le jeu continue.</dd>
+
+    <dt>Stratégie grim \( s^{G} \)</dt>
+    <dd>Coopérer en période 0 ; en période \( t \), coopérer si l'adversaire a toujours coopéré, sinon trahir — pour toujours. Ne pardonne jamais.</dd>
+
+    <dt>Stratégie « toujours trahir » \( s^{TT} \)</dt>
+    <dd>Trahir à toutes les périodes, quoi que l'adversaire ait joué. Stratégie « sourde » : elle ignore l'histoire du jeu.</dd>
+
+    <dt>Tit-for-Tat (donnant-donnant)</dt>
+    <dd>Coopérer en période 0 ; en période \( t \), jouer ce que l'adversaire a joué en \( t-1 \). Une seule période de mémoire. Vainqueur du tournoi d'Axelrod.</dd>
+
+    <dt>Stratégie « gentille »</dt>
+    <dd>Stratégie qui ne trahit jamais la première. Chez Axelrod, toutes ont surpassé les stratégies non gentilles.</dd>
+
+    <dt>ENPS</dt>
+    <dd>Équilibre de Nash parfait en sous-jeux : profil de stratégies qui reste un équilibre dans chaque sous-jeu. C'est l'objet cherché à chaque démonstration de B3.</dd>
+
+    <dt>Théorème de l'horizon fini</dt>
+    <dd>Nombre fini de répétitions + équilibre de Nash unique du jeu de période ⇒ unique ENPS, dans lequel cet équilibre est joué à chaque période.</dd>
+
+    <dt>Efficacité de Pareto</dt>
+    <dd>Un résultat est efficace si on ne peut améliorer le sort d'un joueur sans détériorer celui d'un autre. (T, T) = (2 ; 2) ne l'est pas, puisque (4 ; 4) est atteignable.</dd>
+  </dl>
+
+  <h2>La méthode type</h2>
+
+  <div class="box box-methode">
+    <div class="box-title">Établir une condition de soutien de la coopération, en trois temps</div>
+    <ol>
+      <li><strong>Le flux de coopération.</strong> Suppose que les deux joueurs suivent la stratégie candidate et que personne ne dévie : le payoff est le même à chaque période. Somme escomptée : \( c/(1-\delta) \). Ici \( 4/(1-\delta) \).</li>
+      <li><strong>Le flux de la meilleure déviation.</strong> Place la première trahison en \( t = 0 \) (stationnarité). Le déviant encaisse la tentation une seule fois, puis subit la punition à chaque période suivante — escomptée d'une période, puisqu'elle commence demain : \( 6 + \delta\cdot 2/(1-\delta) \). Ne cherche pas d'autre scénario : face à un grim, trahir pour toujours est la meilleure suite.</li>
+      <li><strong>Pose l'inégalité et isole \( \delta \).</strong> « Coopérer ≥ dévier », puis multiplie par \( (1-\delta) > 0 \) — le sens de l'inégalité ne change pas. En notation générale (\( t \) = tentation, pas le temps) : \( c \ge t(1-\delta) + \delta p \), donc \( \delta \ge (t-c)/(t-p) \).</li>
+      <li><strong>Le réflexe : vérifie numériquement.</strong> Prends une valeur de part et d'autre du seuil et compare les deux flux en chiffres. \( \delta = 0{,}6 \) : \( 10 > 9 \), l'entente tient. \( \delta = 0{,}4 \) : \( 4/0{,}6 = 6{,}67 &lt; 6 + 1{,}33 \), elle ne tient pas. Trente secondes qui attrapent presque toutes les erreurs de signe et de \( \delta \) oublié.</li>
+    </ol>
+    <span class="ref-app">B3 · §12 — Exercices récapitulatifs <span class="path">/strategies/theorie/b3#sec-exos</span></span>
+  </div>
+
+  <h2>Les pièges du chapitre</h2>
+
+  <div class="box box-piege">
+    <div class="box-title">Les confusions que le cours signale explicitement</div>
+    <ul>
+      <li><strong>« Horizon infini ⇒ les joueurs coopèrent » est faux.</strong> L'infini rend la coopération <em>possible</em>, pas <em>certaine</em> : (toujours trahir, toujours trahir) reste un ENPS parfaitement valable. Un jeu répété à l'infini a plusieurs ENPS. Formulation correcte : « la coopération peut être soutenue en équilibre si \( \delta \ge 1/2 \) ».</li>
+      <li><strong>Oublier le \( \delta \) devant le terme de punition — « LA faute classique » selon le cours.</strong> Le traître encaisse 6 <em>aujourd'hui</em>, mais la guerre des prix ne commence que <em>demain</em> : le flux \( 2/(1-\delta) \) doit être escompté une fois. Écrire \( 6 + 2/(1-\delta) \) au lieu de \( 6 + 2\delta/(1-\delta) \) fausse tout le seuil.</li>
+      <li><strong>Confondre grim et tit-for-tat.</strong> Les deux commencent par coopérer et punissent la trahison. Mais grim ne pardonne <em>jamais</em> (une trahison = guerre éternelle), tandis que TfT n'a qu'une période de mémoire et recoopère dès que l'adversaire recoopère. La condition \( \delta \ge 1/2 \) a été établie pour grim, pas pour TfT.</li>
+      <li><strong>Appliquer la backward induction à l'horizon infini.</strong> Impossible : il n'y a pas de dernière période d'où partir. À horizon infini, on ne remonte pas le jeu, on compare des flux escomptés.</li>
+      <li><strong>Invoquer le théorème de l'horizon fini sans vérifier ses hypothèses.</strong> Il exige un nombre fini de répétitions <em>et</em> un équilibre de Nash unique du jeu de période. Avec deux EN — la bataille des sexes, par exemple — il ne dit rien du tout. Piège d'énoncé fréquent.</li>
+    </ul>
+    <span class="ref-app">B3 · §13 — QCM final &amp; checklist de maîtrise <span class="path">/strategies/theorie/b3#sec-final</span></span>
+  </div>
+</section>

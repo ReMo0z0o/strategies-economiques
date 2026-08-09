@@ -1,0 +1,359 @@
+<section class="chapter">
+<div class="chapter-tag">Annexe · la dernière relecture</div>
+<h1>Les pièges et erreurs classiques</h1>
+<p class="chapter-intro">
+  Tous les pièges signalés par le cours, rassemblés. Ce sont des erreurs de <em>compréhension</em>,
+  pas d'étourderie : chacune vient d'une confusion précise, et chacune coûte cher. C'est la
+  dernière chose à relire avant l'épreuve.
+</p>
+
+<h2>1. Les dix erreurs qui coûtent le plus de points</h2>
+
+<p>
+  Si tu ne dois retenir qu'une page de cette annexe, c'est celle-ci. L'ordre suit le déroulé du
+  cours, pas la gravité — elles sont toutes graves.
+</p>
+
+<div class="point">
+<div class="point-title"><span class="num">1.</span> Confondre \( u \) et \( U \).</div>
+<p>
+  \( u \) est la fonction de Bernoulli : elle s'applique à un <strong>montant certain</strong>.
+  \( U \) est l'utilité espérée : elle s'applique à une <strong>loterie entière</strong>. Le cours
+  la désigne comme sa « question d'examen favorite ». Écrire \( U(w) = \sqrt{w} \) est faux ;
+  c'est \( u(w) = \sqrt{w} \), et \( U = \pi u(y) + (1-\pi)u(x) \).
+</p>
+<span class="ref-app">A3 · §4 — L'utilité espérée de von Neumann–Morgenstern <span class="path">/strategies/theorie/a3#s4</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">2.</span> Calculer \( u \) de la moyenne au lieu de la moyenne des \( u \).</div>
+<p>
+  \( E[u(w)] \neq u(E[w]) \). Quand \( u \) est concave, l'utilité espérée est
+  <strong>toujours plus petite</strong> que l'utilité de la valeur monétaire attendue — c'est
+  exactement ce que mesure la prime de risque. Confondre les deux revient à supprimer l'aversion
+  au risque du problème.
+</p>
+<span class="ref-app">A3 · §6 — Équivalent certain et prime de risque <span class="path">/strategies/theorie/a3#s6</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">3.</span> Oublier le \( \delta \) devant le terme de punition.</div>
+<p>
+  Le cours appelle cela « LA faute classique ». Quand on dévie, la punition ne commence
+  <strong>que demain</strong> : le flux de déviation s'écrit \( 6 + \frac{2\delta}{1-\delta} \), et
+  non \( 6 + \frac{2}{1-\delta} \). Sans ce \( \delta \), le seuil obtenu est faux.
+</p>
+<span class="ref-app">B3 · §8 — Grim contre grim : la condition δ ≥ 1/2 <span class="path">/strategies/theorie/b3#sec-grim</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">4.</span> Croire qu'« horizon infini » implique que les joueurs coopèrent.</div>
+<p>
+  L'horizon infini rend la coopération <strong>possible</strong>, jamais certaine. « Toujours
+  trahir » reste un équilibre parfait en sous-jeux, quelle que soit la patience des joueurs. La
+  bonne formulation est : <em>si \( \delta \ge 1/2 \), (grim, grim) est un équilibre</em> — pas
+  <em>le</em> résultat du jeu.
+</p>
+<span class="ref-app">B3 · §7 — « Toujours trahir » reste un équilibre <span class="path">/strategies/theorie/b3#sec-tt</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">5.</span> Écrire une action là où l'on attend une stratégie complète.</div>
+<p>
+  Le cours est explicite : « une stratégie incomplète = zéro ». Dans un jeu bayésien, une stratégie
+  prévoit une action <strong>par type</strong> ; dans un jeu séquentiel, une action
+  <strong>par nœud</strong>, y compris ceux qu'on n'atteindra jamais. Répondre « il investit » au
+  lieu de \( (I;I;N;I) \) ne vaut pas les points.
+</p>
+<span class="ref-app">B4 · §5 — Les stratégies deviennent des règles d'action <span class="path">/strategies/theorie/b4#s4</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">6.</span> Faire calculer une espérance au joueur informé.</div>
+<p>
+  Dans un jeu bayésien, le joueur qui <strong>connaît son type</strong> compare des gains
+  certains : il ne pondère rien. Seul le joueur <strong>non informé</strong> raisonne en espérance,
+  avec ses croyances. Inverser les deux rôles fausse tout l'équilibre.
+</p>
+<span class="ref-app">B4 · §3 — Types, croyances &amp; la Nature <span class="path">/strategies/theorie/b4#s2</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">7.</span> Calculer sa propre probabilité avec ses propres payoffs.</div>
+<p>
+  À l'équilibre en stratégies mixtes, <strong>ma</strong> probabilité est celle qui rend
+  <strong>l'autre</strong> indifférent. On obtient donc \( p^* \) en posant l'indifférence de
+  l'adversaire, pas la sienne. C'est contre-intuitif, et c'est la source d'erreur numéro un des
+  exercices de mixtes.
+</p>
+<span class="ref-app">B1 · §9 — Stratégies mixtes : jouer au hasard, rationnellement <span class="path">/strategies/theorie/b1#s8</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">8.</span> Traiter le fixe comme une variable libre dans un principal-agent.</div>
+<p>
+  Le fixe \( \alpha \) n'est jamais libre : il est déterminé par la <strong>contrainte de
+  participation saturée</strong>. Le principal ne laisse jamais à l'agent plus que son utilité de
+  réserve — sinon il baisserait \( \alpha \) sans rien changer à l'effort. Oublier de saturer mène
+  à un problème sans solution finie.
+</p>
+<span class="ref-app">B2 · §6 — Cas 3, le salaire linéaire <span class="path">/strategies/theorie/b2#sec-cas3</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">9.</span> Croire qu'un équilibre non parfait n'est pas un équilibre de Nash.</div>
+<p>
+  Tout équilibre parfait en sous-jeux est un équilibre de Nash, mais l'inverse est faux : les ENPS
+  sont <strong>inclus</strong> dans les équilibres de Nash. Un équilibre reposant sur une menace
+  non crédible reste un équilibre de Nash — il échoue seulement au test plus exigeant de la
+  perfection en sous-jeux.
+</p>
+<span class="ref-app">TP 3 · Jeux séquentiels &amp; duopole <span class="path">/strategies/exercices/session-3</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">10.</span> Conclure trop vite à une domination de Pareto.</div>
+<p>
+  Le critère est <strong>partiel</strong> : dès qu'une personne y perd, il n'y a pas domination, et
+  deux allocations peuvent parfaitement être <em>incomparables</em>. Il faut tester les
+  <strong>deux</strong> sens et nommer le perdant de chaque côté. Et ne jamais additionner les
+  utilités de personnes différentes pour trancher.
+</p>
+<span class="ref-app">A1 · §7 — Le critère de Pareto <span class="path">/strategies/theorie/a1#pareto</span></span>
+</div>
+
+<hr class="soft">
+
+<h2>2. Les pièges, chapitre par chapitre</h2>
+
+<h3>A1 — Préférences et choix</h3>
+
+<table class="compare">
+<tr><th class="left">L'erreur</th><th class="left">Ce qu'il faut dire</th></tr>
+<tr>
+  <td class="left">Glisser du constat au jugement (« les gens travaillent moins, donc il faut baisser la taxe »).</td>
+  <td class="left">L'analyse <strong>positive</strong> prédit, l'analyse <strong>normative</strong> juge. Un fait ne dit jamais à lui seul ce qu'il faut faire.</td>
+</tr>
+<tr>
+  <td class="left">Comprendre « rationnel » comme intelligent, calculateur ou égoïste.</td>
+  <td class="left">« Rationnel » désigne la <strong>cohérence</strong> des préférences : complètes, transitives, monotones, continues. Rien d'autre.</td>
+</tr>
+<tr>
+  <td class="left">Appliquer la condition de tangence en toutes circonstances.</td>
+  <td class="left">Elle suppose un optimum <strong>intérieur</strong> et une utilité <strong>dérivable</strong> partout. En solution de coin, elle ne tient pas.</td>
+</tr>
+<tr>
+  <td class="left">Traiter « efficace au sens de Pareto » comme un compliment.</td>
+  <td class="left">Efficace ≠ juste ≠ égalitaire : donner tout à une seule personne est efficace, un partage égal peut ne pas l'être.</td>
+</tr>
+<tr>
+  <td class="left">« J'ai déjà payé, donc je continue. »</td>
+  <td class="left">Les <strong>coûts irrécupérables</strong> ne doivent jamais entrer dans une décision : seul compte ce qui change encore.</td>
+</tr>
+<tr>
+  <td class="left">Oublier que le transfert forfaitaire ne modifie pas le loisir optimal.</td>
+  <td class="left">Dans \( l^*(t) = \frac{a}{s(1-t)} \), le montant \( M \) n'apparaît pas : seul le salaire net joue.</td>
+</tr>
+</table>
+
+<h3>A2 — Décision inter-temporelle</h3>
+
+<table class="compare">
+<tr><th class="left">L'erreur</th><th class="left">Ce qu'il faut dire</th></tr>
+<tr>
+  <td class="left">Confondre \( \delta \) et \( \beta \).</td>
+  <td class="left">\( \delta \) est l'impatience <strong>régulière</strong>, appliquée période après période. \( \beta \) est le <strong>biais du présent</strong> : il rabote tout le futur d'un seul coup. \( \beta = 1 \) ⇔ rationnel.</td>
+</tr>
+<tr>
+  <td class="left">Utiliser \( U_0 \) pour prédire ce que fera le « moi » de demain.</td>
+  <td class="left">\( U_0 \) donne le <strong>plan</strong>, \( U_1 \) donne le <strong>comportement réel</strong>. Tout l'intérêt du chapitre est qu'ils diffèrent.</td>
+</tr>
+<tr>
+  <td class="left">Traiter le naïf et le sophistiqué de la même façon.</td>
+  <td class="left">Le <strong>naïf</strong> évalue ses options avec les quantités qu'il <em>souhaite</em> ; le <strong>sophistiqué</strong>, avec celles qu'il <em>fera réellement</em>. Seul le second demande un commitment device.</td>
+</tr>
+<tr>
+  <td class="left">Oublier ce que la stationnarité exclut.</td>
+  <td class="left">Elle interdit les habitudes, les addictions et les renversements de préférence : décaler deux programmes dans le temps ne doit pas changer le classement.</td>
+</tr>
+</table>
+
+<h3>A3 — Décision sous incertitude</h3>
+
+<table class="compare">
+<tr><th class="left">L'erreur</th><th class="left">Ce qu'il faut dire</th></tr>
+<tr>
+  <td class="left">Confondre un <em>mélange de probabilités</em> et un <em>mélange de biens</em>.</td>
+  <td class="left">Le cours le signale comme piège d'examen : dans une loterie, les réalisations sont <strong>mutuellement exclusives</strong> — on n'obtient pas un peu des deux, d'où la linéarité en probabilités.</td>
+</tr>
+<tr>
+  <td class="left">Lire le graphique à l'envers.</td>
+  <td class="left">Concave ⇒ prime de risque <strong>positive</strong> ; linéaire ⇒ nulle ; convexe ⇒ négative. La corde passe sous la courbe quand \( u \) est concave.</td>
+</tr>
+<tr>
+  <td class="left">Mélanger la VMA du <em>pari</em> et la VMA de la <em>richesse finale</em>.</td>
+  <td class="left">Ce sont deux nombres distincts. La prime de risque se calcule toujours avec la VMA de la <strong>richesse finale</strong>.</td>
+</tr>
+<tr>
+  <td class="left">Annoncer l'équivalent certain sans l'élever au carré.</td>
+  <td class="left">Avec \( u(w) = \sqrt{w} \), l'équivalent certain est \( C = U^2 \). Un équivalent certain est un <strong>montant</strong>, il doit avoir l'ordre de grandeur des richesses en jeu.</td>
+</tr>
+<tr>
+  <td class="left">Croire qu'un averse au risque refuse tous les paris.</td>
+  <td class="left">Il accepte dès que la prime offerte est suffisante. L'aversion ne dit pas « refuse », elle dit « exige d'être payé pour le risque ».</td>
+</tr>
+</table>
+
+<h3>B1 — Jeux simultanés</h3>
+
+<table class="compare">
+<tr><th class="left">L'erreur</th><th class="left">Ce qu'il faut dire</th></tr>
+<tr>
+  <td class="left">Dire « le résultat du jeu est (3 ; 2) ».</td>
+  <td class="left">Le <strong>résultat</strong> est un profil de stratégies ; (3 ; 2) est le profil de <strong>payoffs</strong> qui en découle.</td>
+</tr>
+<tr>
+  <td class="left">Prendre les payoffs pour de l'argent.</td>
+  <td class="left">Un payoff est une <strong>utilité</strong> au sens de A1 : il intègre déjà tout ce qui compte pour le joueur.</td>
+</tr>
+<tr>
+  <td class="left">Confondre dominante et dominée.</td>
+  <td class="left">La <strong>dominante</strong> se compare à <em>toutes</em> les autres stratégies ; la <strong>dominée</strong> à <em>une seule</em> qui fait mieux. On peut avoir une dominée sans avoir de dominante.</td>
+</tr>
+<tr>
+  <td class="left">Comparer le mauvais nombre dans une case.</td>
+  <td class="left">Le joueur de <strong>ligne</strong> lit le premier nombre, celui de <strong>colonne</strong> le second. À chaque nœud ou case, on ne regarde que le payoff du joueur qui décide.</td>
+</tr>
+<tr>
+  <td class="left">Passer aux stratégies mixtes sans vérifier les pures.</td>
+  <td class="left">On montre d'abord qu'aucune case n'est un équilibre pur — les quatre déviations une par une — puis seulement on mélange.</td>
+</tr>
+</table>
+
+<h3>B2 — Théorie des contrats</h3>
+
+<table class="compare">
+<tr><th class="left">L'erreur</th><th class="left">Ce qu'il faut dire</th></tr>
+<tr>
+  <td class="left">Comprendre « aléa moral » comme un problème de moralité.</td>
+  <td class="left">Le terme est trompeur : le problème vient des <strong>incitations</strong>, pas de la malhonnêteté de l'agent.</td>
+</tr>
+<tr>
+  <td class="left">Proposer le « meilleur monde » (effort élevé, salaire modeste).</td>
+  <td class="left">Un contrat ne peut exiger que ce que l'agent a lui-même intérêt à faire : il doit être <strong>compatible aux incitations</strong>.</td>
+</tr>
+<tr>
+  <td class="left">Rejeter un fixe négatif.</td>
+  <td class="left">\( \alpha < 0 \) est une <strong>franchise</strong> : l'agent achète le droit de garder le résultat. C'est le salaire <em>total</em> qui doit être acceptable, pas le fixe.</td>
+</tr>
+<tr>
+  <td class="left">Oublier la question « qui porte le risque ? ».</td>
+  <td class="left">Le contrat optimal transfère <strong>tout le risque sur l'agent</strong>, qui n'obtient son utilité de réserve qu'<em>en espérance</em>. C'est le détail que le cours signale comme décisif.</td>
+</tr>
+<tr>
+  <td class="left">Dériver par rapport à la mauvaise variable.</td>
+  <td class="left">L'agent choisit \( e \), le principal choisit \( (\alpha, \beta) \). On résout l'agent <strong>d'abord</strong>, par induction à rebours.</td>
+</tr>
+</table>
+
+<h3>B3 — Jeux répétés</h3>
+
+<table class="compare">
+<tr><th class="left">L'erreur</th><th class="left">Ce qu'il faut dire</th></tr>
+<tr>
+  <td class="left">Confondre grim et tit-for-tat.</td>
+  <td class="left"><strong>Grim</strong> ne pardonne jamais : une trahison et c'est fini. <strong>Tit-for-tat</strong> a une mémoire d'une période et pardonne dès que l'autre revient.</td>
+</tr>
+<tr>
+  <td class="left">Appliquer l'induction à rebours à l'horizon infini.</td>
+  <td class="left">Elle exige une <strong>dernière période</strong>. Sans elle, il n'y a rien par quoi commencer — c'est précisément ce qui rend la coopération possible.</td>
+</tr>
+<tr>
+  <td class="left">Oublier une période dans le flux de déviation.</td>
+  <td class="left">Écris le calendrier période par période avec ses poids \( 1, \delta, \delta^2, \ldots \) avant de sommer. Avec une détection retardée, le profit élevé dure plus longtemps et la punition démarre plus tard.</td>
+</tr>
+<tr>
+  <td class="left">S'arrêter à \( \delta^2 \ge 3/5 \).</td>
+  <td class="left">Il reste à prendre la <strong>racine carrée</strong> : \( \delta \ge \sqrt{3/5} \approx 0{,}77 \), un seuil bien plus exigeant que \( 0{,}60 \).</td>
+</tr>
+</table>
+
+<h3>B4 — Jeux bayésiens</h3>
+
+<table class="compare">
+<tr><th class="left">L'erreur</th><th class="left">Ce qu'il faut dire</th></tr>
+<tr>
+  <td class="left">Confondre information incomplète et imparfaite.</td>
+  <td class="left"><strong>Incomplète</strong> : j'ignore <em>tes gains</em>, donc qui tu es. <strong>Imparfaite</strong> : je connais tes gains mais je n'ai pas vu <em>ton action</em> — c'est le cas de tout jeu simultané ordinaire.</td>
+</tr>
+<tr>
+  <td class="left">Croire qu'un arbre rend le jeu séquentiel.</td>
+  <td class="left">Ce sont les <strong>information sets</strong> (les pointillés) qui codent la simultanéité, pas la disposition du dessin.</td>
+</tr>
+<tr>
+  <td class="left">Oublier « l'étape retour ».</td>
+  <td class="left">Après avoir trouvé la meilleure réponse de chaque type, il faut <strong>vérifier</strong> que la stratégie du joueur non informé est bien optimale compte tenu de ses croyances. Sans cette étape, ce n'est pas un équilibre.</td>
+</tr>
+<tr>
+  <td class="left">Saturer la mauvaise contrainte en screening.</td>
+  <td class="left">Monter le prix haut jusqu'à la disposition à payer maximale viole la contrainte d'incitation de l'autre type. Repère d'abord <em>quelles</em> contraintes sont saturées.</td>
+</tr>
+<tr>
+  <td class="left">Compter \( k^n \) stratégies au lieu de \( n^k \).</td>
+  <td class="left">La <strong>base</strong> est le nombre d'actions, l'<strong>exposant</strong> le nombre de types. Deux types et trois actions : \( 3^2 = 9 \), pas \( 2^3 = 8 \).</td>
+</tr>
+</table>
+
+<h3>Jeux séquentiels</h3>
+
+<table class="compare">
+<tr><th class="left">L'erreur</th><th class="left">Ce qu'il faut dire</th></tr>
+<tr>
+  <td class="left">Confondre la stratégie et le chemin suivi.</td>
+  <td class="left">Le chemin d'équilibre est ce qui se produit ; la stratégie prévoit une action à <strong>chaque</strong> nœud, même hors du chemin.</td>
+</tr>
+<tr>
+  <td class="left">Remonter l'arbre en lisant les payoffs bruts.</td>
+  <td class="left">Quand on change d'étage, on lit les résultats <strong>déjà sélectionnés</strong> à l'étage du dessous — pas les payoffs de toutes les branches.</td>
+</tr>
+<tr>
+  <td class="left">Dériver le profit du leader avant d'y substituer la réaction du follower.</td>
+  <td class="left">L'ordre est imposé : on substitue <strong>d'abord</strong> \( q_2 = R(q_1) \), on dérive <strong>ensuite</strong>. C'est ce qui distingue Stackelberg de Cournot.</td>
+</tr>
+</table>
+
+<hr class="soft">
+
+<h2>3. Les réflexes de rédaction</h2>
+
+<div class="box box-copie">
+<div class="box-title">Ce qui fait perdre des points sans être une faute de raisonnement</div>
+<ol>
+  <li><strong>Annoncer un résultat sans le justifier.</strong> Le barème paie la comparaison
+      chiffrée (« 3 &gt; 0 donc I »), pas la conclusion seule.</li>
+  <li><strong>Sauter les lignes intermédiaires.</strong> Une substitution ou une multiplication par
+      \( (1-\delta) \) doit apparaître : c'est là que se trouvent les points de méthode.</li>
+  <li><strong>Ne pas conclure.</strong> Après le calcul, une phrase qui répond littéralement à la
+      question posée (« il prend donc l'abonnement », « aucune allocation ne domine l'autre »).</li>
+  <li><strong>Oublier les unités et les signes.</strong> Un équivalent certain est en euros, une
+      probabilité est entre 0 et 1, une prime de risque est positive pour un averse au risque.</li>
+  <li><strong>Répondre à côté de la consigne.</strong> « Sans calcul » veut dire sans calcul ;
+      « détaillez » veut dire détaillez ; « interprétez » attend des phrases, pas des nombres.</li>
+  <li><strong>Ne pas vérifier le maximum.</strong> Une ligne de dérivée seconde négative suffit à
+      montrer que le point trouvé est bien un maximum.</li>
+</ol>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Les cinq minutes de relecture</div>
+<ol>
+  <li>Chaque question a-t-elle une <strong>phrase de conclusion</strong> ?</li>
+  <li>Les valeurs de contrôle tombent-elles juste : l'utilité de l'agent égale son utilité de
+      réserve, les parts additionnées égalent le surplus total, la prime de risque est positive ?</li>
+  <li>Les stratégies sont-elles écrites <strong>en entier</strong> — une composante par nœud ou
+      par type ?</li>
+  <li>Les probabilités appartiennent-elles bien à l'intervalle \( [0\,;1] \) ?</li>
+  <li>Ai-je bien comparé, à chaque étape, le payoff <strong>du joueur qui décide</strong> ?</li>
+</ol>
+</div>
+</section>

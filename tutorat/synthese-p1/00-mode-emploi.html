@@ -1,0 +1,208 @@
+<section class="chapter">
+<div class="chapter-tag">Ouverture · à lire une fois</div>
+<h1>La carte de la Partie 1</h1>
+<p class="chapter-intro">
+  Avant d'entrer dans les fiches, une page pour situer les sept chapitres les uns par rapport aux
+  autres. Savoir <em>où</em> se trouve une notion est déjà la moitié du travail de révision.
+</p>
+
+<h2>Le fil du cours en une phrase</h2>
+
+<p>
+  La Partie 1 se lit en deux temps. La <strong>Partie A</strong> traite d'un individu qui décide
+  <em>seul</em> : ses préférences, puis ses arbitrages dans le temps, puis face au risque — et à
+  chaque étape, la façon dont les vrais humains s'écartent du modèle. La <strong>Partie B</strong>
+  change la donne : mon résultat dépend désormais aussi des choix des autres, et il faut la
+  théorie des jeux pour raisonner.
+</p>
+
+<div class="box box-def">
+<div class="box-title">Partie A — La décision individuelle</div>
+<p>
+  Comment un individu choisit seul : préférences, arbitrages dans le temps et face au risque — et
+  comment les vrais humains s'écartent du modèle rationnel.
+</p>
+</div>
+
+<div class="box box-def">
+<div class="box-title">Partie B — Les interactions stratégiques</div>
+<p>
+  Quand mon résultat dépend aussi des choix des autres : théorie des jeux, contrats et incitations,
+  coopération répétée et information incomplète.
+</p>
+</div>
+
+<h2>Les sept chapitres</h2>
+
+<table class="compare">
+<tr><th>Code</th><th class="left">Chapitre</th><th class="left">Ce qu'il apporte</th><th>Sections</th><th>TP</th></tr>
+<tr>
+  <td>A1</td><td class="left">Préférences et choix</td>
+  <td class="left">Le modèle du choix rationnel… et ce que les humains en font vraiment.</td>
+  <td>16</td><td>1</td>
+</tr>
+<tr>
+  <td>A2</td><td class="left">Décision inter-temporelle</td>
+  <td class="left">Épargner ou consommer aujourd'hui ? Le taux d'escompte, et les pièges du self-contrôle.</td>
+  <td>10</td><td>1</td>
+</tr>
+<tr>
+  <td>A3</td><td class="left">Décision sous incertitude</td>
+  <td class="left">Risquer, assurer, diversifier : l'utilité espérée et ses limites.</td>
+  <td>13</td><td>1</td>
+</tr>
+<tr>
+  <td>B1</td><td class="left">Jeux simultanés</td>
+  <td class="left">Matrices, dominance, équilibre de Nash : le langage de la stratégie.</td>
+  <td>11</td><td>2, 3</td>
+</tr>
+<tr>
+  <td>B2</td><td class="left">Théorie des contrats</td>
+  <td class="left">Salaire fixe, commission ou mixte ? Concevoir les bonnes incitations.</td>
+  <td>10</td><td>4</td>
+</tr>
+<tr>
+  <td>B3</td><td class="left">Jeux répétés</td>
+  <td class="left">Quand rejouer change tout : coopération, punition et facteur d'escompte.</td>
+  <td>13</td><td>3</td>
+</tr>
+<tr>
+  <td>B4</td><td class="left">Jeux bayésiens</td>
+  <td class="left">Jouer sans connaître l'adversaire : types, croyances et équilibre bayésien.</td>
+  <td>11</td><td>4</td>
+</tr>
+</table>
+
+<h2>Le fil de la Partie A : trois chapitres, une seule formule</h2>
+
+<p>
+  Les trois premiers chapitres se construisent l'un sur l'autre, et le cours les réunit
+  explicitement à la fin de A3. A1 traite du choix <strong>certain</strong>, A2 ajoute le
+  <strong>temps</strong>, A3 ajoute l'<strong>incertitude</strong> :
+</p>
+
+<p>\[ U(x) = \sum_{t=0}^{T}\ \delta^t \sum_{s_t \in S_t} \pi(s_t)\ u\big(x_t \mid s_t\big) \]</p>
+
+<div class="box box-rappel">
+<div class="box-title">Lire cette formule morceau par morceau</div>
+<ul>
+  <li>\( u(\cdot) \) : l'utilité d'une consommation donnée — c'est <strong>A1</strong> ;</li>
+  <li>\( \delta^t \) : le poids d'une période future — c'est <strong>A2</strong> ;</li>
+  <li>\( \pi(s_t) \) : la probabilité d'un état du monde — c'est <strong>A3</strong> ;</li>
+  <li>les deux sommes : on moyenne d'abord sur les états possibles, puis sur les périodes.</li>
+</ul>
+<p>
+  Chaque déviation comportementale du cours consiste à toucher <em>un</em> de ces morceaux : le
+  biais du présent déforme \( \delta \), la théorie des perspectives remplace \( u \) par une
+  fonction de valeur relative à un point de référence, le cadrage étroit casse la somme sur les
+  états, la sur-confiance fausse \( \pi \).
+</p>
+<span class="ref-app">A3 · §13 — Synthèse &amp; auto-évaluation <span class="path">/strategies/theorie/a3#s13</span></span>
+</div>
+
+<h2>Le fil de la Partie B : on relâche les hypothèses une à une</h2>
+
+<div class="point">
+<div class="point-title"><span class="num">1.</span> B1 pose le langage : jeu simultané, information complète.</div>
+<p>
+  Tout le monde connaît les gains de tout le monde ; on ne voit simplement pas le coup de l'autre
+  au moment de jouer. On y construit les trois outils de prédiction — stratégies dominantes,
+  élimination itérative, équilibre de Nash — et les stratégies mixtes.
+</p>
+<span class="ref-app">B1 · §2 — C'est quoi, un jeu ? <span class="path">/strategies/theorie/b1#s1</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">2.</span> B2 applique la théorie à un jeu séquentiel : le contrat.</div>
+<p>
+  Le principal propose, l'agent réagit. On résout par induction à rebours, et l'enjeu devient la
+  conception des incitations plutôt que la prédiction d'un équilibre.
+</p>
+<span class="ref-app">B2 · §1 — Repères, où en sommes-nous ? <span class="path">/strategies/theorie/b2#sec-reperes</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">3.</span> B3 relâche « une seule fois » : le jeu est répété.</div>
+<p>
+  Le même jeu revient période après période. La menace de punitions futures peut rendre la
+  coopération rationnelle — à condition que les joueurs soient assez patients.
+</p>
+<span class="ref-app">B3 · §3 — C'est quoi, un jeu répété ? <span class="path">/strategies/theorie/b3#sec-cadre</span></span>
+</div>
+
+<div class="point">
+<div class="point-title"><span class="num">4.</span> B4 relâche « information complète » : on ignore qui est l'autre.</div>
+<p>
+  Chaque joueur a un <em>type</em> privé. Le joueur non informé raisonne en espérance sur ses
+  croyances, et une stratégie devient une règle d'action par type.
+</p>
+<span class="ref-app">B4 · §2 — L'information incomplète, c'est quoi ? <span class="path">/strategies/theorie/b4#s1</span></span>
+</div>
+
+<h2>Les quatre séances de TP</h2>
+
+<p>
+  Les TP ne suivent pas exactement le découpage des chapitres : garde cette correspondance en tête
+  quand tu cherches un exercice sur une notion précise.
+</p>
+
+<table class="compare">
+<tr><th>TP</th><th class="left">Intitulé</th><th class="left">Ce qu'on y travaille</th><th class="left">Chapitres</th></tr>
+<tr>
+  <td>1</td><td class="left">La décision individuelle</td>
+  <td class="left">Pareto, Lagrangien et taxe, épargne à deux périodes, self-contrôle, utilité espérée, investissement, assurance, cadrage étroit</td>
+  <td class="left">A1, A2, A3</td>
+</tr>
+<tr>
+  <td>2</td><td class="left">Jeux simultanés</td>
+  <td class="left">Dominance, élimination itérative, équilibres purs et mixtes, les jeux classiques</td>
+  <td class="left">B1</td>
+</tr>
+<tr>
+  <td>3</td><td class="left">Jeux séquentiels &amp; duopole</td>
+  <td class="left">Engagement crédible, sous-jeux et induction à rebours, ENPS à trois joueurs, Cournot et le cartel de l'OPEP</td>
+  <td class="left">B1, B3</td>
+</tr>
+<tr>
+  <td>4</td><td class="left">Jeux bayésiens &amp; contrats</td>
+  <td class="left">Équilibre bayésien en duopole, jeu bayésien en forme normale, contrat principal-agent</td>
+  <td class="left">B4, B2</td>
+</tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi cette fiche contient un chapitre « Jeux séquentiels »</div>
+<p>
+  Regarde la ligne du TP 3 : la forme extensive, les sous-jeux, l'ENPS et le duopole y sont
+  travaillés alors qu'<strong>aucun chapitre de théorie ne leur est consacré</strong> — ils sont
+  rattachés à B1 et B3. Comme ces notions tombent régulièrement à l'examen, cette fiche leur
+  consacre un chapitre à part, juste après B4. Ses renvois pointent vers le TP 3.
+</p>
+</div>
+
+<h2>Comment lire un renvoi</h2>
+
+<p>Chaque point à retenir se termine par une pastille grise de cette forme :</p>
+
+<p><span class="ref-app">A3 · §6 — Équivalent certain et prime de risque <span class="path">/strategies/theorie/a3#s6</span></span></p>
+
+<p>
+  Elle se lit : chapitre <strong>A3</strong>, <strong>sixième section</strong>, intitulée
+  « Équivalent certain et prime de risque ». Le chemin en petits caractères est l'adresse exacte
+  dans l'app — le fragment après le dièse fait défiler directement jusqu'à la bonne section.
+</p>
+
+<div class="box box-methode">
+<div class="box-title">Trois façons d'utiliser cette fiche</div>
+<ol>
+  <li><strong>Balayage rapide (30 minutes).</strong> Lis uniquement les titres en gras des points,
+      chapitre après chapitre. Coche mentalement ceux que tu saurais expliquer. Tu obtiens la
+      liste de ce qui reste à travailler.</li>
+  <li><strong>Révision d'un chapitre (1 heure).</strong> Lis la fiche du chapitre en entier, puis
+      va faire le TP correspondant dans l'app. La fiche te dit ce que tu dois avoir en tête avant
+      d'ouvrir l'exercice.</li>
+  <li><strong>Dernière relecture (la veille).</strong> Les tableaux de formules, les définitions à
+      réciter et l'annexe des pièges — rien d'autre.</li>
+</ol>
+</div>
+</section>

@@ -1,0 +1,353 @@
+<section class="chapter">
+  <div class="chapter-tag">B2 · Partie B — Les interactions stratégiques</div>
+  <h1>Théorie des contrats</h1>
+  <p class="chapter-intro">Salaire fixe, commission ou mixte ? Concevoir les bonnes incitations.</p>
+
+  <h2>La carte du chapitre</h2>
+
+  <table class="compare">
+    <thead>
+      <tr>
+        <th>§</th>
+        <th class="left">Section</th>
+        <th class="left">Ce qu'elle apporte</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td class="left">Repères — où en sommes-nous ?</td>
+        <td class="left">B2 est une application de B1 : jeu séquentiel, donc backward induction. Boîte à outils : espérance, CPO, ENPS.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="left">L'histoire du commercial</td>
+        <td class="left">Le vocabulaire officiel : principal, agent, information asymétrique, problème de l'agence, aléa moral.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="left">Le modèle principal-agent</td>
+        <td class="left">Les quatre ingrédients (technologie, contrat, payoffs, timing) et le timing en trois étapes.</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="left">Cas 1 — le salaire fixe</td>
+        <td class="left">\( w = \alpha \) : \( e^* = 0 \), \( \alpha^* = 0 \), aucune valeur créée. L'aléa moral à l'état pur.</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="left">Cas 2 — le salaire proportionnel</td>
+        <td class="left">\( w = \beta z \) : \( e^* = \beta \), \( \beta^* = 1/2 \). Résultat non Pareto-efficace, et pourquoi le mieux est inaccessible.</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="left">Cas 3 — le salaire linéaire</td>
+        <td class="left">Le sommet du chapitre : CP + CI, la recette complète, \( \beta^* = 1 \), \( \alpha^* = -0{,}5 \), franchise et créancier résiduel.</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="left">Les trois contrats côte à côte</td>
+        <td class="left">Le tableau récapitulatif à savoir reconstruire, et la question qui tue : qui porte le risque ?</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td class="left">Et si l'agent est averse au risque ?</td>
+        <td class="left">Section qualitative : l'arbitrage incitants ↔ risque, et le coût d'efficacité de l'information imparfaite.</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td class="left">Exercices résolus</td>
+        <td class="left">Quatre exercices ; les deux premiers changent le coût d'effort (\( c(e) = e^2 \)) — la variation la plus probable en examen.</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td class="left">Bilan — checklist de maîtrise</td>
+        <td class="left">Les dix points à cocher honnêtement avant l'examen.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Les points à retenir</h2>
+
+  <div class="point">
+    <div class="point-title"><span class="num">1.</span> Jeu séquentiel ⇒ backward induction ⇒ on résout l'agent avant le principal.</div>
+    <p>Le contrat est proposé <em>avant</em> que l'effort soit choisi : le dernier à jouer est l'agent, c'est donc par lui qu'on commence. On calcule sa meilleure réponse \( e^*(\alpha, \beta) \), puis le principal choisit son contrat en l'anticipant. Toute la mécanique du chapitre tient dans ces deux CPO, jamais dans l'ordre inverse.</p>
+    <span class="ref-app">B2 · §1 — Repères — où en sommes-nous ? <span class="path">/strategies/theorie/b2#sec-reperes</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">2.</span> Information asymétrique + intérêts mal alignés ⇒ problème de l'agence ⇒ perte d'efficacité.</div>
+    <p>C'est la chaîne logique à réciter. Le principal n'observe ni l'effort \( e \) ni la chance \( x \), seulement le résultat \( z \) — d'où \( w = w(z) \), car un contrat ne peut porter que sur du vérifiable. Et l'effort est productif pour l'un, coûteux pour l'autre. Séparés, ces deux faits sont inoffensifs ; combinés, ils font perdre de la valeur.</p>
+    <span class="ref-app">B2 · §2 — L'histoire du commercial <span class="path">/strategies/theorie/b2#sec-histoire</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">3.</span> « Aléa moral » ne parle pas de morale : ce sont les incitants qui sont en cause.</div>
+    <p>La terminologie est trompeuse. Le problème n'est pas que l'agent se comporte mal : c'est que de <span class="term">mauvais incitants</span> entraînent une réduction de bien-être. Sous salaire fixe, l'agent qui ne fournit aucun effort répond rationnellement au contrat qu'on lui a donné. Le coupable, c'est le contrat.</p>
+    <span class="ref-app">B2 · §2 — L'histoire du commercial <span class="path">/strategies/theorie/b2#sec-histoire</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">4.</span> Le modèle tient en quatre ingrédients, à écrire de mémoire.</div>
+    <p>Technologie \( z = e + x \) avec \( E(x) = 0 \) ; contrat linéaire \( w(z) = \alpha + \beta z \) ; payoffs \( U_p = E(z-w) \) et \( U_a = E(w-c) \) avec \( c(e) = e^2/2 \) ; et le timing. Deux justifications suffisent : \( E(x) = 0 \) fait qu'en espérance seul l'effort compte (\( E(z) = e \), on raye les \( E(x) \)) ; le coût quadratique donne un coût marginal \( e \) croissant — la 15<sup>e</sup> visite épuise plus que la première.</p>
+    <span class="ref-app">B2 · §3 — Le modèle principal-agent <span class="path">/strategies/theorie/b2#sec-modele</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">5.</span> Le timing en trois étapes : proposé, accepté ou refusé, puis effort.</div>
+    <p><strong>1.</strong> Le principal propose un contrat \( w(z) \). <strong>2.</strong> L'agent accepte ou refuse ; s'il refuse il touche son utilité de réserve \( \tilde{u} \) (le cours pose \( \tilde{u} = 0 \)). <strong>3.</strong> S'il accepte, il choisit \( e \), puis le bruit \( x \) est tiré. Jouant en premier, le principal ne <em>décrète</em> jamais l'effort : il le fabrique en concevant le contrat.</p>
+    <span class="ref-app">B2 · §3 — Le modèle principal-agent <span class="path">/strategies/theorie/b2#sec-modele</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">6.</span> Cas 1, salaire fixe : \( e^* = 0 \), \( \alpha^* = 0 \), payoffs (0 ; 0) — aucune valeur créée.</div>
+    <p>Avec \( w = \alpha \), l'agent maximise \( \alpha - e^2/2 \) ; la CPO donne \( -e = 0 \), donc \( e^* = 0 \) <em>quel que soit</em> \( \alpha \). Le principal anticipe : son profit vaut \( -\alpha \), chaque euro de fixe est perdu sans contrepartie, il pousse donc \( \alpha \) au plancher — pas en dessous de 0, sinon l'agent refuse. L'ENPS est (0 ; 0) : le contrat fixe est l'aléa moral à l'état pur.</p>
+    <span class="ref-app">B2 · §4 — Cas 1 — le salaire fixe <span class="path">/strategies/theorie/b2#sec-cas1</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">7.</span> Ce qui motive n'est jamais le niveau du salaire, mais sa sensibilité au résultat.</div>
+    <p>Un fixe généreux de 100 laisse toujours \( e^* = 0 \) : \( \alpha \) est une constante pour l'agent, elle disparaît en dérivant par rapport à \( e \). Seule la pente \( \beta \) entre dans son arbitrage marginal. Un paiement qui ne varie pas avec le résultat transfère de l'argent, il n'incite à rien.</p>
+    <span class="ref-app">B2 · §4 — Cas 1 — le salaire fixe <span class="path">/strategies/theorie/b2#sec-cas1</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">8.</span> Cas 2, salaire proportionnel : \( e^* = \beta \) puis \( \beta^* = 1/2 \), payoffs (0,25 ; 0,125).</div>
+    <p>L'agent maximise \( \beta e - e^2/2 \) : la CPO \( \beta - e = 0 \) donne \( e^*(\beta) = \beta \) — bénéfice marginal \( \beta \) = coût marginal \( e \). Le principal garde une fraction \( (1-\beta) \) d'un résultat espéré \( \beta \), soit \( \beta - \beta^2 \) ; la CPO \( 1 - 2\beta = 0 \) donne \( \beta^* = 1/2 \). D'où \( U_p = 0{,}5 - 0{,}25 = 0{,}25 \) et \( U_a = 0{,}25 - 0{,}125 = 0{,}125 \). Le dilemme : monter \( \beta \) grossit le gâteau mais réduit la part gardée.</p>
+    <span class="ref-app">B2 · §5 — Cas 2 — le salaire proportionnel <span class="path">/strategies/theorie/b2#sec-cas2</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">9.</span> Cet équilibre n'est pas efficace au sens de Pareto.</div>
+    <p>Le contre-exemple du cours, à savoir sortir : \( (e = 1,\; \alpha = 0{,}7,\; \beta = 0) \) donnerait \( U_p = 1 - 0{,}7 = 0{,}3 \) et \( U_a = 0{,}7 - 0{,}5 = 0{,}2 \). Les <em>deux</em> joueurs y gagnent, et ce résultat est techniquement faisable : le Cas 2 laisse donc de la valeur sur la table.</p>
+    <span class="ref-app">B2 · §5 — Cas 2 — le salaire proportionnel <span class="path">/strategies/theorie/b2#sec-cas2</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">10.</span> Ce « meilleur monde » est inaccessible parce qu'il n'est pas compatible aux incitants.</div>
+    <p>Face au contrat \( (\alpha = 0{,}7,\; \beta = 0) \), la meilleure réponse de l'agent n'est pas \( e = 1 \) mais \( e = 0 \) : il empoche les 0,7 et reste chez lui. Un contrat ne peut exiger que ce que l'agent a <em>lui-même</em> intérêt à faire. Attention à bien nommer la contrainte qui casse : ce n'est pas la participation (\( U_a = 0{,}2 > 0 \)), c'est la CI.</p>
+    <span class="ref-app">B2 · §5 — Cas 2 — le salaire proportionnel <span class="path">/strategies/theorie/b2#sec-cas2</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">11.</span> Cas 3, salaire linéaire : deux leviers, deux missions — \( \beta \) pilote l'effort, \( \alpha \) partage l'argent.</div>
+    <p>La CPO de l'agent est inchangée (\( \alpha \) disparaît en dérivant) : \( e^*(\alpha, \beta) = \beta \). Le principal peut donc régler <em>séparément</em> l'efficacité (par \( \beta \)) et la répartition (par \( \alpha \)). C'est exactement ce que les cas 1 et 2 ne pouvaient pas faire, chacun n'ayant qu'un seul instrument — d'où leur infériorité.</p>
+    <span class="ref-app">B2 · §6 — Cas 3 — le salaire linéaire <span class="path">/strategies/theorie/b2#sec-cas3</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">12.</span> Deux contraintes, et une seule se sature : CP et CI.</div>
+    <p>La <strong>CP</strong>, \( E(w-c) \ge \tilde{u} \) : l'agent ne signe que s'il obtient au moins sa meilleure alternative (étape 2 du timing). La <strong>CI</strong>, \( e^*(\alpha, \beta) = \beta \) : le principal prend la réaction de l'agent comme une donnée (étape 3). À l'optimum, la CP est <em>saturée</em> — tout euro laissé au-delà de \( \tilde{u} \) se récupère en baissant \( \alpha \), sans changer ni l'acceptation ni l'effort.</p>
+    <span class="ref-app">B2 · §6 — Cas 3 — le salaire linéaire <span class="path">/strategies/theorie/b2#sec-cas3</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">13.</span> La résolution du Cas 3 : l'objectif du principal devient le surplus total, d'où \( \beta^* = 1 \) et \( \alpha^* = -0{,}5 \).</div>
+    <p>CP saturée \( \Rightarrow \alpha = e^2/2 - \beta e \). On substitue : les \( \beta e \) se compensent et le profit devient \( E(z-w) = e - e^2/2 \), c'est-à-dire <em>le surplus total de la relation</em> — logique, puisque l'agent reçoit exactement 0, le principal empoche tout le gâteau et veut donc le plus gros possible. On injecte la CI (\( e = \beta \)) : \( \beta - \beta^2/2 \), la CPO \( 1 - \beta = 0 \) donne \( \beta^* = 1 \), puis \( \alpha^* = 1/2 - 1 = -0{,}5 \). Payoffs (0,5 ; 0), et le résultat est Pareto-efficace.</p>
+    <span class="ref-app">B2 · §6 — Cas 3 — le salaire linéaire <span class="path">/strategies/theorie/b2#sec-cas3</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">14.</span> Le contrat optimal se lit « franchise + créancier résiduel ».</div>
+    <p>\( \alpha^* = -0{,}5 \) : l'agent <strong>paie une franchise</strong> au principal. \( \beta^* = 1 \) : il garde ensuite l'intégralité du résultat, il est <span class="term">créancier résiduel</span> (<em>residual claimant</em>). Comme il internalise 100 % du fruit de son effort, il choisit l'effort efficace \( e = 1 \) ; la franchise, elle, sert au principal à extraire tout le surplus. Exemple du cours : la licence de taxi — le chauffeur paie la location, puis garde ses recettes.</p>
+    <span class="ref-app">B2 · §6 — Cas 3 — le salaire linéaire <span class="path">/strategies/theorie/b2#sec-cas3</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">15.</span> Le surplus total ne dépend que de l'effort ; \( \alpha \) et \( \beta \) ne font que le répartir.</div>
+    <p>\( S(e) = e - e^2/2 \) est la taille du gâteau : elle ignore complètement le contrat. Elle culmine en \( e = 1 \), là où le bénéfice marginal 1 égale le coût marginal \( e \), pour un gâteau maximal de 0,5. C'est la boussole du chapitre : un contrat est bon s'il pousse l'agent vers \( e = 1 \), et les cas 1 et 2 échouent parce qu'ils induisent \( e = 0 \) et \( e = 0{,}5 \).</p>
+    <span class="ref-app">B2 · §6 — Cas 3 — le salaire linéaire <span class="path">/strategies/theorie/b2#sec-cas3</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">16.</span> Avec un agent neutre au risque, l'asymétrie d'information ne coûte rien au principal.</div>
+    <p>C'est la conclusion officielle du cours, et elle se cite avec sa condition. Le contrat linéaire optimal donne au principal 0,5 — exactement le profit qu'il obtiendrait en information parfaite. Le contrat franchise neutralise complètement l'aléa moral.</p>
+    <span class="ref-app">B2 · §7 — Les trois contrats côte à côte <span class="path">/strategies/theorie/b2#sec-recap</span></span>
+  </div>
+
+  <table class="compare">
+    <thead>
+      <tr>
+        <th class="left">Cas</th>
+        <th>\( w \)</th>
+        <th>Effort</th>
+        <th>Contrat optimal</th>
+        <th>\( U_p \)</th>
+        <th>\( U_a \)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left">Salaire fixe</td>
+        <td>\( \alpha \)</td>
+        <td>\( e^* = 0 \)</td>
+        <td>\( \alpha^* = 0 \)</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td class="left">Salaire prop.</td>
+        <td>\( \beta z \)</td>
+        <td>\( e^* = \beta \)</td>
+        <td>\( \beta^* = 0{,}5 \)</td>
+        <td>0,25</td>
+        <td>0,125</td>
+      </tr>
+      <tr>
+        <td class="left">Salaire linéaire</td>
+        <td>\( \alpha + \beta z \)</td>
+        <td>\( e^* = \beta \)</td>
+        <td>\( \alpha^* = -0{,}5,\; \beta^* = 1 \)</td>
+        <td>0,5</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="point">
+    <div class="point-title"><span class="num">17.</span> Mais ce contrat transfère tout le risque sur l'agent.</div>
+    <p>Le principal reçoit \( z - w = z - (-0{,}5 + z) = 0{,}5 \) <em>quoi qu'il arrive</em> : le hasard \( x \) s'annule dans son profit, il touche une rente certaine. L'agent, lui, n'obtient son utilité de réserve qu'<em>en espérance</em> : son utilité réalisée vaut \( w - c = x \). Bonne année il gagne, mauvaise année il perd — il a quand même payé la franchise.</p>
+    <span class="ref-app">B2 · §7 — Les trois contrats côte à côte <span class="path">/strategies/theorie/b2#sec-recap</span></span>
+  </div>
+
+  <div class="point">
+    <div class="point-title"><span class="num">18.</span> Agent averse au risque : l'arbitrage incitants ↔ risque, et l'information imparfaite se met à coûter.</div>
+    <p>Un \( \beta \) élevé incite (bien) mais expose l'agent au hasard (mal, s'il déteste le risque) : il exige alors une compensation salariale supplémentaire — une prime de risque — pour signer. Le principal recule donc sur \( \beta \), quitte à sacrifier de l'effort ; \( \beta^* \) se situe entre 0 et 1. Il extrait toujours tout le surplus, mais <strong>n'atteint plus le profit d'information parfaite</strong> : l'information imparfaite a désormais un coût d'efficacité.</p>
+    <span class="ref-app">B2 · §8 — Et si l'agent est averse au risque ? <span class="path">/strategies/theorie/b2#sec-risque</span></span>
+  </div>
+
+  <h2>Les formules du chapitre</h2>
+
+  <table class="compare">
+    <thead>
+      <tr>
+        <th class="left">Formule</th>
+        <th class="left">Symboles</th>
+        <th class="left">Quand l'utiliser</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left">\( z = e + x \), \( E(x) = 0 \)</td>
+        <td class="left">\( z \) résultat observé, \( e \) effort, \( x \) bruit d'espérance nulle</td>
+        <td class="left">Poser le modèle ; permet d'écrire \( E(z) = e \) et de rayer tous les \( E(x) \).</td>
+      </tr>
+      <tr>
+        <td class="left">\( w(z) = \alpha + \beta z \)</td>
+        <td class="left">\( \alpha \) fixe, \( \beta \) taux de bonus</td>
+        <td class="left">Le contrat. \( \beta = 0 \) donne le Cas 1, \( \alpha = 0 \) le Cas 2.</td>
+      </tr>
+      <tr>
+        <td class="left">\( c(e) = e^2/2 \)</td>
+        <td class="left">coût de l'effort, convexe</td>
+        <td class="left">Coût marginal \( c'(e) = e \) : c'est lui qu'on égalise au bénéfice marginal.</td>
+      </tr>
+      <tr>
+        <td class="left">\( U_p = E(z-w) \), \( U_a = E(w-c) \)</td>
+        <td class="left">payoffs (joueurs neutres au risque)</td>
+        <td class="left">Les deux objectifs à maximiser, à écrire avant tout calcul.</td>
+      </tr>
+      <tr>
+        <td class="left">\( \beta - e = 0 \Rightarrow e^* = \beta \)</td>
+        <td class="left">CPO de l'agent = la <strong>CI</strong></td>
+        <td class="left">Étape 1 de toute résolution : la meilleure réponse de l'agent.</td>
+      </tr>
+      <tr>
+        <td class="left">\( E(w-c) \ge \tilde{u} \)</td>
+        <td class="left">\( \tilde{u} \) utilité de réserve (\( = 0 \) ici)</td>
+        <td class="left">La <strong>CP</strong> : condition pour que l'agent accepte de signer.</td>
+      </tr>
+      <tr>
+        <td class="left">\( \alpha = \dfrac{e^2}{2} - \beta e \)</td>
+        <td class="left">CP saturée, \( \alpha \) isolé</td>
+        <td class="left">Lie \( \alpha \) à \( \beta \) : une fois \( \beta \) choisi, \( \alpha \) est automatique.</td>
+      </tr>
+      <tr>
+        <td class="left">\( E(z-w) = e - \dfrac{e^2}{2} \)</td>
+        <td class="left">objectif réduit = surplus total</td>
+        <td class="left">Après substitution : le principal maximise le gâteau, maximal en \( e = 1 \).</td>
+      </tr>
+      <tr>
+        <td class="left">\( \beta^* = 1 \), \( \alpha^* = -0{,}5 \)</td>
+        <td class="left">contrat optimal, payoffs (0,5 ; 0)</td>
+        <td class="left">Le résultat central : franchise + créancier résiduel, Pareto-efficace.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Les définitions à savoir réciter</h2>
+
+  <dl class="lexique">
+    <dt>Principal / agent</dt>
+    <dd>Le principal confie une tâche et propose le contrat ; l'agent l'exécute et choisit un effort que le principal n'observe pas. Propriétaire / agence immobilière, actionnaires / PDG, patient / médecin.</dd>
+
+    <dt>Information asymétrique</dt>
+    <dd>Une partie en sait plus que l'autre. Ici le principal n'observe ni \( e \) ni \( x \), seulement \( z \) — conséquence : le salaire ne peut dépendre que de \( z \).</dd>
+
+    <dt>Problème de l'agence</dt>
+    <dd>Information asymétrique et intérêts mal alignés combinés : l'agent, incontrôlable, peut ne pas fournir l'effort souhaité, et l'efficacité en souffre.</dd>
+
+    <dt>Aléa moral</dt>
+    <dd>Le nom du phénomène en entreprise : de mauvais incitants conduisent à une perte de bien-être. Rien à voir avec la morale de l'agent.</dd>
+
+    <dt>Théorie des contrats</dt>
+    <dd>La branche qui étudie comment concevoir les contrats pour atténuer les pertes d'efficacité dues au problème de l'agence.</dd>
+
+    <dt>Contrainte de participation (CP)</dt>
+    <dd>\( E(w-c) \ge \tilde{u} \) : le contrat doit donner à l'agent au moins autant que sa meilleure alternative, sinon il refuse de signer.</dd>
+
+    <dt>Contrainte de compatibilité aux incitants (CI)</dt>
+    <dd>\( e^*(\alpha, \beta) = \beta \) : l'action prescrite doit être la meilleure réponse de l'agent au contrat. On ne décrète pas un effort, on l'incite.</dd>
+
+    <dt>Saturer la CP</dt>
+    <dd>Choisir \( \alpha \) pour que l'agent obtienne <em>exactement</em> \( \tilde{u} \). Tout surplus laissé au-delà serait récupérable sans rien changer d'autre.</dd>
+
+    <dt>Créancier résiduel (residual claimant)</dt>
+    <dd>Celui qui touche ce qui reste une fois les paiements fixes acquittés. Avec \( \beta = 1 \), c'est l'agent : il garde tout \( z \) après la franchise.</dd>
+
+    <dt>Prime de risque</dt>
+    <dd>La compensation salariale supplémentaire qu'un agent averse au risque exige pour accepter un salaire aléatoire. Elle rogne le profit du principal.</dd>
+  </dl>
+
+  <h2>La méthode type</h2>
+
+  <div class="box box-methode">
+    <div class="box-title">La recette du principal-agent, en 6 temps</div>
+    <ol>
+      <li><strong>Résoudre l'agent d'abord.</strong> Écris \( E(w-c) \) en remplaçant \( w \) et \( c \), raye les \( E(x) \), puis CPO par rapport à \( e \). Tu obtiens la meilleure réponse \( e^*(\alpha, \beta) \) : c'est la <strong>CI</strong>.</li>
+      <li><strong>Poser le programme du principal</strong> : \( \max_{\alpha,\beta} E(z-w) \) <em>sous CP et CI</em>. Énonce les deux contraintes explicitement — l'examen les demande en formule et en français.</li>
+      <li><strong>Saturer la CP</strong> (\( E(w-c) = \tilde{u} \)) et <strong>isoler \( \alpha \)</strong>, ici \( \alpha = e^2/2 - \beta e \). Justifie la saturation en une phrase : baisser \( \alpha \) ne change ni l'acceptation ni l'effort.</li>
+      <li><strong>Substituer</strong> \( \alpha \) dans l'objectif. Les termes en \( \beta e \) se compensent : le principal maximise désormais le <strong>surplus total</strong> \( e - e^2/2 \).</li>
+      <li><strong>Injecter la CI</strong> (\( e = \beta \)) et dériver par rapport à \( \beta \). Tu obtiens \( \beta^* \), puis \( \alpha^* \) en repassant par la CP.</li>
+      <li><strong>Calculer les payoffs et dire qui porte le risque.</strong> Vérifie \( U_a = \tilde{u} \), compare \( U_p \) au profit d'information parfaite, et conclus sur la répartition du hasard \( x \).</li>
+    </ol>
+    <p>La recette est robuste aux variantes d'examen : change \( c(e) \) en \( e^2 \) ou \( \tilde{u} \) en 0,1, les six temps sont identiques, seuls les nombres bougent.</p>
+    <span class="ref-app">B2 · §9 — Exercices résolus <span class="path">/strategies/theorie/b2#sec-exos</span></span>
+    <span class="ref-app">TP 4 · Jeux bayésiens &amp; contrats <span class="path">/strategies/exercices/session-4</span></span>
+  </div>
+
+  <div class="box box-exemple">
+    <div class="box-title">Les trois variantes d'examen, chiffrées</div>
+    <ul>
+      <li><strong>Coût plus pénible, \( c(e) = e^2 \), contrat proportionnel.</strong> CPO \( \beta - 2e = 0 \Rightarrow e^* = \beta/2 \) ; le principal maximise \( (\beta - \beta^2)/2 \), donc \( \beta^* = 1/2 \) (inchangé) mais \( e^* = 1/4 \) et les payoffs tombent à (0,125 ; 0,0625). Un effort plus pénible réduit le surplus, pas la forme du dilemme.</li>
+      <li><strong>Coût plus pénible, contrat linéaire.</strong> CP saturée \( \alpha = e^2 - \beta e \) ; l'objectif devient \( e - e^2 \), maximal en \( e = 1/2 \). La CI \( e = \beta/2 \) donne \( \beta^* = 1 \) et \( \alpha^* = -0{,}25 \) ; payoffs (0,25 ; 0). Le \( \beta^* = 1 \) résiste : le créancier résiduel reste la bonne idée.</li>
+      <li><strong>Meilleure alternative, \( \tilde{u} = 0{,}1 \).</strong> La CP saturée devient \( \alpha = 0{,}1 + e^2/2 - \beta e \), l'objectif \( e - e^2/2 - 0{,}1 \) : la constante ne change pas la CPO, donc \( \beta^* = 1 \) et \( e = 1 \) tiennent. Seul \( \alpha^* \) bouge, à \( -0{,}4 \) : la franchise baisse d'exactement \( \tilde{u} \). Payoffs (0,4 ; 0,1).</li>
+    </ul>
+    <p>Le message des trois : \( \tilde{u} \) déplace \( \alpha^* \) sans toucher à \( \beta^* \) ; le coût de l'effort déplace le niveau du surplus sans détruire la logique de la franchise.</p>
+  </div>
+
+  <h2>Les pièges du chapitre</h2>
+
+  <div class="box box-piege">
+    <div class="box-title">Les six erreurs que le cours signale</div>
+    <ul>
+      <li><strong>Croire que « aléa moral » accuse la morale de l'agent.</strong> Ce sont les incitants qui sont en cause : l'agent qui ne fait rien sous salaire fixe est parfaitement rationnel. Formule à ne pas rater : mauvais incitants ⇒ perte de bien-être.</li>
+      <li><strong>Croire qu'un fixe plus généreux motive.</strong> \( \alpha \) sort de la dérivation : \( e^* = 0 \) dans le Cas 1 quel que soit le montant, \( e^* = \beta \) dans le Cas 3 quel que soit \( \alpha \).</li>
+      <li><strong>Oublier que le « meilleur monde » n'est pas compatible aux incitants.</strong> \( (e = 1,\; \alpha = 0{,}7,\; \beta = 0) \) bat l'ENPS du Cas 2 pour les deux joueurs, mais l'agent y dévierait vers \( e = 0 \). Dis bien que c'est la <em>CI</em> qui casse, pas la CP.</li>
+      <li><strong>Le détail qui tue : qui porte le risque ?</strong> Dans le contrat optimal, l'agent n'obtient son utilité de réserve qu'<em>en espérance</em> — son gain réalisé vaut \( x \). C'est le principal qui touche 0,5 avec certitude. Ne conclus jamais « l'agent est indifférent » sans préciser qu'il est supposé neutre au risque.</li>
+      <li><strong>Rejeter un fixe négatif comme une aberration.</strong> \( \alpha^* = -0{,}5 \) n'est pas une erreur de signe : c'est une franchise que l'agent paie pour devenir créancier résiduel — licence de taxi, franchise de restauration, fauteuil loué chez le coiffeur.</li>
+      <li><strong>Traiter \( \alpha \) comme un paramètre libre.</strong> Dans le Cas 3, \( \alpha \) n'est pas choisi indépendamment : il est <em>déterminé</em> par la CP saturée une fois \( \beta \) fixé. Sauter cette étape rend le problème insoluble à deux inconnues.</li>
+    </ul>
+    <span class="ref-app">B2 · §10 — Bilan — checklist de maîtrise <span class="path">/strategies/theorie/b2#sec-bilan</span></span>
+  </div>
+</section>
