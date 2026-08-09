@@ -64,12 +64,16 @@ trop sec ; au-dessus de 9, tu réexpliques — coupe.
 <div class="point">
   <div class="point-title"><span class="num">7.</span> Le titre du point, affirmatif et complet.</div>
   <p>Deux à quatre lignes d'explication : pourquoi c'est vrai, à quoi ça sert, ce que ça implique.</p>
-  <span class="ref-app">A3 · §6 — Équivalent certain et prime de risque <span class="path">/strategies/theorie/a3#s6</span></span>
+  <a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/a3#s6">A3 · §6 — Équivalent certain et prime de risque <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/a3#s6</span></a>
 </div>
 ```
 
-Le `ref-app` est **obligatoire sur chaque point** : c'est la raison d'être du document. Format :
-`CODE · §N — Titre exact de la section` puis le chemin `/strategies/theorie/<id>#<ancre>`.
+Le `ref-app` est **obligatoire sur chaque point** : c'est la raison d'être du document. C'est un
+`<a>` **cliquable dans le PDF** : l'URL complète figure à la fois dans le `href` et, en toutes
+lettres, dans le `<span class="path">`. Libellé : `CODE · §N — Titre exact de la section`.
+
+Base de l'URL : `https://strategies-economiques.vercel.app` · théorie
+`/strategies/theorie/<id>#<ancre>` · TP `/strategies/exercices/session-N#exK`.
 
 ⚠️ Les identifiants d'ancre diffèrent d'un chapitre à l'autre — **prends-les dans
 `src/data/course.ts`**, ne les invente pas :

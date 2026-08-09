@@ -499,8 +499,19 @@ hr.soft {
   padding: 0.02cm 0.2cm;
 }
 .ref-app::before { content: "↗ app · "; color: var(--light); }
+/* La pastille est un lien cliquable dans le PDF : on neutralise la
+ * décoration de lien du navigateur pour qu'elle reste discrète. */
+a.ref-app,
+a.ref-app:visited,
+a.ref-app:hover {
+  text-decoration: none;
+  color: var(--muted);
+}
 .ref-app .path {
-  color: var(--light);
+  color: var(--indigo);
   font-family: "Courier New", monospace;
   font-size: 8pt;
+  /* L'URL reste d'un seul tenant : elle passe à la ligne entière plutôt que
+   * d'être coupée au milieu d'un mot, sinon elle est illisible. */
+  white-space: nowrap;
 }
