@@ -1,0 +1,42 @@
+{
+  "filename": "exos-b3-grim-tt-tft.pdf",
+  "eyebrow": "Entraînement ciblé — B3, jeux répétés",
+  "title": "Grim, toujours trahir, tit-for-tat",
+  "subtitle": "Trois exercices types, leur solutionnaire complet, et les astuces pour les refaire de tête",
+  "code": "B3",
+  "project": "Projet : stratégies et décisions économiques",
+  "part": "Théorie des jeux — les jeux répétés",
+  "footnote": "Document d'entraînement (non officiel). Les trois énoncés sont inédits : ils reprennent la structure exacte de la question 5 de l'examen blanc n° 1 avec d'autres chiffres et d'autres contextes, pour que tu t'entraînes sur des nombres que tu n'as jamais vus.",
+  "howto": {
+    "title": "Comment travailler ce document",
+    "lead": "Trois exercices, un par stratégie. Chacun est bâti de la même façon : l'<strong>énoncé seul</strong> d'abord, puis le <strong>solutionnaire pas à pas</strong>, puis les <strong>astuces de mémorisation</strong>. Le but n'est pas de lire, c'est de refaire.",
+    "items": [
+      "<strong>Fais l'exercice avant de lire la suite.</strong> Chaque énoncé tient sur une page et se termine par un trait : arrête-toi là, prends une feuille, et donne-toi le temps indiqué. Lire un corrigé sans avoir séché ne fait rien apprendre.",
+      "<strong>Le solutionnaire est rédigé comme une copie.</strong> Ce qui est dans les encadrés « ce que tu écris sur la copie » est le minimum attendu par le correcteur — ni plus court, ni beaucoup plus long.",
+      "<strong>Les astuces viennent en dernier</strong>, une fois que tu as vu la difficulté. Elles ne servent à rien avant : on ne retient un truc que si on a d'abord buté sur le problème qu'il résout.",
+      "<strong>Le mémo final</strong> regroupe toutes les astuces sur deux pages, avec une grille vierge pour t'auto-tester. C'est la seule partie à relire la veille."
+    ]
+  },
+  "chapters": [
+    {
+      "file": "00-mode-emploi.html",
+      "title": "Avant de commencer — le gabarit et la boîte à outils"
+    },
+    {
+      "file": "01-grim.html",
+      "title": "Exercice 1 — La stratégie grim : la démonstration centrale"
+    },
+    {
+      "file": "02-toujours-trahir.html",
+      "title": "Exercice 2 — « Toujours trahir » et la pluralité des équilibres"
+    },
+    {
+      "file": "03-tit-for-tat.html",
+      "title": "Exercice 3 — Tit-for-tat : simuler, comparer, restituer"
+    },
+    {
+      "file": "99-memo.html",
+      "title": "Mémo final — tout ce qu'il faut avoir en tête"
+    }
+  ]
+}

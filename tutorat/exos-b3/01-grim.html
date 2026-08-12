@@ -1,0 +1,408 @@
+<section class="chapter">
+<div class="chapter-tag">Exercice 1 · la démonstration centrale</div>
+<h1>La stratégie grim</h1>
+<p class="chapter-intro">
+  C'est LE calcul du chapitre, celui que le cours te demande de savoir « redémontrer les yeux
+  fermés ». Structure identique à la question 5 de l'examen blanc n° 1, chiffres inédits.
+</p>
+
+<h2>L'énoncé</h2>
+
+<div class="enonce">
+<div class="enonce-title">Exercice 1 — Les deux garages de Wépion (30 points · 35 minutes)</div>
+<p>
+  Les deux seuls garages d'un village, <strong>Carrosserie Dupuis</strong> (joueur 1) et
+  <strong>Garage Lambert</strong> (joueur 2), se sont mis d'accord sur un tarif horaire élevé.
+  Chaque mois, chacun choisit simultanément de <strong>respecter l'accord</strong> (R) ou de
+  <strong>casser les prix</strong> (C). Les profits mensuels, en milliers d'euros, sont donnés par
+  la matrice suivante :
+</p>
+
+<table class="game">
+  <tr><td class="void"></td><td class="void"></td><th colspan="2">Garage Lambert</th></tr>
+  <tr><td class="void"></td><td class="void"></td><th>R</th><th>C</th></tr>
+  <tr><td class="player" rowspan="2">Carrosserie Dupuis</td><th>R</th><td>(6 ; 6)</td><td>(1 ; 10)</td></tr>
+  <tr><th>C</th><td>(10 ; 1)</td><td>(4 ; 4)</td></tr>
+</table>
+
+<p>
+  <strong>1.1)</strong> Montrez que ce jeu joué une seule fois est un dilemme du prisonnier :
+  identifiez la stratégie dominante de chaque garage et l'équilibre de Nash. Expliquez ensuite,
+  <em>sans aucun calcul</em>, pourquoi l'accord ne peut être respecté à aucune période si le jeu
+  est répété un nombre de mois fini et connu des deux garages. <em>(10 points)</em>
+</p>
+
+<p>
+  <strong>1.2)</strong> Le jeu est maintenant répété à <strong>horizon infini</strong>, et les deux
+  garages évaluent leurs profits futurs avec le même facteur d'escompte
+  \( \delta \in [0 \,;\, 1[ \). Tous deux jouent la stratégie <strong>grim</strong> : « je joue R
+  tant que mon adversaire a toujours joué R par le passé ; dès qu'il joue C une fois, je joue C à
+  toutes les périodes suivantes ». Calculez le payoff escompté d'un garage lorsque les deux
+  respectent l'accord, puis le payoff escompté de sa meilleure déviation, et déduisez-en la
+  condition sur \( \delta \) pour que (grim ; grim) soit un équilibre. Détaillez la somme
+  géométrique. <em>(12 points)</em>
+</p>
+
+<p>
+  <strong>1.3)</strong> Le taux d'intérêt mensuel du marché est tel que \( \delta = 0{,}6 \).
+  L'accord tient-il ? Justifiez par le calcul des deux payoffs. <em>(4 points)</em>
+</p>
+
+<p>
+  <strong>1.4)</strong> Interprétez économiquement la condition obtenue : que mesure \( \delta \),
+  et pourquoi l'accord s'effondre-t-il lorsque les garages sont trop impatients ? Citez une
+  caractéristique concrète d'un marché qui rendrait l'entente plus facile à tenir.
+  <em>(4 points)</em>
+</p>
+</div>
+
+<p style="text-align:center"><strong>↓ Arrête-toi ici. Prends une feuille, 35 minutes. ↓</strong></p>
+
+<hr class="soft" />
+
+<h2>Le solutionnaire</h2>
+
+<h3>1.1 — Dilemme du prisonnier et horizon fini (10 points)</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Chercher la stratégie dominante de Dupuis</div>
+<p>
+  Une stratégie est <span class="term">dominante</span> si elle est la meilleure réponse
+  <em>quoi que fasse l'adversaire</em>. On teste donc les deux colonnes l'une après l'autre.
+  Dupuis est le joueur en ligne : on lit le <strong>premier</strong> nombre de chaque case.
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \text{Si Lambert joue R : } \quad C \to 10 \;>\; R \to 6 \]
+    <div class="why">colonne de gauche. Casser les prix pendant que l'autre reste cher rapporte
+    10 ; respecter rapporte 6. C est meilleur.</div>
+  </div>
+  <div class="step">
+    \[ \text{Si Lambert joue C : } \quad C \to 4 \;>\; R \to 1 \]
+    <div class="why">colonne de droite. Si l'autre casse déjà les prix, rester cher me laisse 1 ;
+    casser aussi me laisse 4. C est encore meilleur.</div>
+  </div>
+</div>
+<p>
+  Dans les deux cas C l'emporte : <strong>C est la stratégie strictement dominante de Dupuis</strong>.
+  Le jeu étant symétrique, c'est aussi celle de Lambert.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> En déduire l'équilibre de Nash</div>
+<p>
+  Chaque joueur ayant une stratégie strictement dominante, l'unique équilibre de Nash s'obtient en
+  les croisant : <strong>(C ; C)</strong>, avec des profits de <strong>(4 ; 4)</strong>.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Dire pourquoi c'est un dilemme du prisonnier</div>
+<p>
+  Ce n'est pas seulement « il y a une stratégie dominante » : le dilemme, c'est que
+  <strong>l'équilibre est Pareto-dominé</strong>. (R ; R) donne (6 ; 6), donc <em>strictement
+  plus aux deux joueurs</em> que les (4 ; 4) de l'équilibre. La rationalité individuelle conduit
+  à un résultat que les deux joueurs regrettent — c'est la définition même du dilemme du
+  prisonnier.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">4.</span> L'horizon fini, sans calcul</div>
+<p>
+  On invoque le <strong>théorème de l'horizon fini</strong> et on déroule le raisonnement par
+  induction à rebours :
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \text{Mois } N \text{ (le dernier)} \;\Rightarrow\; (C\,;\,C) \]
+    <div class="why">il n'y a plus de lendemain, donc plus aucune punition possible : le jeu du
+    dernier mois est un dilemme du prisonnier isolé, et chacun y joue sa stratégie dominante —
+    <em>quoi qu'il se soit passé avant</em>.</div>
+  </div>
+  <div class="step">
+    \[ \text{Mois } N-1 \;\Rightarrow\; (C\,;\,C) \]
+    <div class="why">les deux garages savent maintenant que le mois \( N \) sera (C ; C) dans tous
+    les cas. Respecter l'accord en \( N-1 \) n'achète donc aucune récompense future, et le casser
+    ne coûte aucune punition future : ce mois-là devient à son tour un dilemme isolé.</div>
+  </div>
+  <div class="step">
+    \[ \text{… et ainsi jusqu'au mois } 0 \]
+    <div class="why">les dominos tombent un à un de la fin vers le début. Aucun mois ne peut
+    « acheter » de coopération future, puisque le dernier est déjà perdu.</div>
+  </div>
+</div>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce que tu écris sur la copie (1.1)</div>
+<p>
+  « Pour Dupuis : si Lambert joue R, C rapporte 10 &gt; 6 ; si Lambert joue C, C rapporte
+  4 &gt; 1. C est donc strictement dominante, et par symétrie de même pour Lambert. L'unique
+  équilibre de Nash est (C ; C) = (4 ; 4). Il est Pareto-dominé par (R ; R) = (6 ; 6) : c'est un
+  dilemme du prisonnier.
+</p>
+<p>
+  Si le jeu est répété un nombre fini et connu \( N \) de mois, le théorème de l'horizon fini
+  s'applique : le jeu de période a un unique équilibre de Nash, donc le jeu répété a un unique
+  ENPS, dans lequel cet équilibre est joué à chaque période. Le raisonnement est celui de
+  l'induction à rebours : au mois \( N \) il n'y a plus de futur, donc plus de menace crédible, et
+  chacun joue C ; sachant cela, le mois \( N-1 \) ne peut rien acheter et devient à son tour un
+  dilemme isolé ; de proche en proche, l'accord s'effondre dès le mois 0. »
+</p>
+</div>
+
+<h3>1.2 — La condition sur δ (12 points)</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Le payoff si tout le monde respecte l'accord</div>
+<p>
+  Si les deux jouent grim, personne ne trahit jamais : la clause de punition ne se déclenche pas et
+  chacun touche 6 à chaque mois, pour toujours.
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \Pi^{\text{coop}} = 6 + 6\delta + 6\delta^2 + 6\delta^3 + \cdots \]
+    <div class="why">le profit du mois 0 n'est pas escompté (il tombe aujourd'hui), celui du mois 1
+    est multiplié par \( \delta \), celui du mois 2 par \( \delta^2 \), etc.</div>
+  </div>
+  <div class="step">
+    \[ \Pi^{\text{coop}} = \frac{6}{1-\delta} \]
+    <div class="why">somme géométrique de raison \( \delta < 1 \) :
+    \( \sum_{t=0}^{\infty} a\,\delta^t = \dfrac{a}{1-\delta} \).</div>
+  </div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Le payoff de la meilleure déviation</div>
+<p>
+  Supposons que Dupuis dévie. Le jeu infini se ressemblant à toutes les périodes, on peut
+  <strong>placer sa première trahison au mois 0</strong> sans rien changer au raisonnement. Il
+  encaisse alors 10. Mais dès le mois 1, le grim de Lambert bascule en punition et joue C pour
+  toujours ; face à un adversaire qui joue C indéfiniment, la meilleure réponse de Dupuis est de
+  jouer C aussi, soit 4 par mois.
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \Pi^{\text{dév}} = 10 + 4\delta + 4\delta^2 + 4\delta^3 + \cdots \]
+    <div class="why">un festin unique de 10 au mois 0, puis une éternité à 4 — la guerre des prix.
+    Remarque bien que la série des 4 <strong>commence à \( \delta^1 \)</strong>, pas à
+    \( \delta^0 \).</div>
+  </div>
+  <div class="step">
+    \[ = 10 + \delta\,\big(4 + 4\delta + 4\delta^2 + \cdots\big) \]
+    <div class="why">on met \( \delta \) en évidence pour faire réapparaître une somme géométrique
+    classique. C'est cette ligne que le correcteur cherche.</div>
+  </div>
+  <div class="step">
+    \[ \Pi^{\text{dév}} = 10 + \delta\,\frac{4}{1-\delta} \]
+    <div class="why">on applique la même formule qu'à l'étape 1 sur la parenthèse.</div>
+  </div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Écrire et résoudre la condition d'équilibre</div>
+<p>
+  (grim ; grim) est un équilibre si aucun joueur ne gagne à dévier seul, c'est-à-dire si respecter
+  rapporte au moins autant que trahir :
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \frac{6}{1-\delta} \;\ge\; 10 + \delta\,\frac{4}{1-\delta} \]
+    <div class="why">la condition de meilleure réponse, posée telle quelle.</div>
+  </div>
+  <div class="step">
+    \[ 6 \;\ge\; 10\,(1-\delta) + 4\delta \]
+    <div class="why">on multiplie les deux membres par \( (1-\delta) \). Comme
+    \( \delta < 1 \), ce facteur est <strong>strictement positif</strong> : le sens de l'inégalité
+    est conservé. Écris cette justification, elle est notée.</div>
+  </div>
+  <div class="step">
+    \[ 6 \;\ge\; 10 - 10\delta + 4\delta \;=\; 10 - 6\delta \]
+    <div class="why">on développe et on regroupe les termes en \( \delta \).</div>
+  </div>
+  <div class="step">
+    \[ 6\delta \;\ge\; 4 \quad\Longleftrightarrow\quad \delta \;\ge\; \frac{2}{3} \]
+    <div class="why">on isole \( \delta \). On divise par 6, qui est positif : le sens est encore
+    conservé.</div>
+  </div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de 1.2</div>
+<p>
+  (grim ; grim) est un équilibre du jeu répété à l'infini si et seulement si
+  \( \boxed{\ \delta \ge 2/3 \approx 0{,}667\ } \). Au-dessus de ce seuil, la menace de guerre des
+  prix perpétuelle suffit à dissuader la trahison ; en dessous, chaque garage préfère empocher le
+  gain immédiat.
+</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Vérification par la formule générale</div>
+<p>
+  Avec \( c = 6 \), \( t = 10 \), \( p = 4 \), le seuil général donne
+  \( \delta \ge \dfrac{t-c}{t-p} = \dfrac{10-6}{10-4} = \dfrac{4}{6} = \dfrac{2}{3} \) ✓. Fais
+  systématiquement cette vérification en fin de calcul : elle prend cinq secondes et détecte
+  immédiatement une erreur de développement.
+</p>
+</div>
+
+<h3>1.3 — Application numérique (4 points)</h3>
+
+<p>
+  \( \delta = 0{,}6 \) et le seuil vaut \( 2/3 \approx 0{,}667 \). Comme
+  \( 0{,}6 < 0{,}667 \), <strong>l'accord ne tient pas</strong>. L'énoncé demande de le justifier
+  par le calcul des deux payoffs :
+</p>
+
+<table class="compare">
+<tr><th class="left">Payoff</th><th class="left">Calcul</th><th>Valeur</th></tr>
+<tr>
+  <td class="left">Respecter l'accord</td>
+  <td class="left">\( \dfrac{6}{1-0{,}6} = \dfrac{6}{0{,}4} \)</td>
+  <td>15</td>
+</tr>
+<tr>
+  <td class="left">Dévier</td>
+  <td class="left">\( 10 + \dfrac{4 \times 0{,}6}{0{,}4} = 10 + 6 \)</td>
+  <td>16</td>
+</tr>
+</table>
+
+<p>
+  \( 16 > 15 \) : la déviation est strictement profitable, donc (grim ; grim) n'est pas un
+  équilibre pour ce facteur d'escompte. Un garage empochera les 10 dès le premier mois, et la
+  guerre des prix s'installera.
+</p>
+
+<div class="box box-methode">
+<div class="box-title">Le réflexe de contrôle</div>
+<p>
+  Quand tu obtiens un seuil, teste-le toujours sur <strong>deux valeurs</strong> : une en dessous,
+  une au-dessus. Ici, avec \( \delta = 0{,}75 \) : coopération \( 6/0{,}25 = 24 \), déviation
+  \( 10 + 4(0{,}75)/0{,}25 = 10 + 12 = 22 \). On a bien \( 24 > 22 \), l'accord tient. Si le test
+  échoue dans un sens, c'est que tu as inversé l'inégalité quelque part.
+</p>
+</div>
+
+<h3>1.4 — Interprétation (4 points)</h3>
+
+<div class="box box-copie">
+<div class="box-title">Ce que tu écris sur la copie (1.4)</div>
+<p>
+  « \( \delta \) mesure la <strong>patience</strong> des garages : le poids qu'ils accordent aux
+  profits futurs par rapport aux profits immédiats — un euro gagné dans un mois vaut aujourd'hui
+  \( \delta \) euro. Il reflète à la fois le taux d'intérêt et, plus largement, la probabilité que
+  la relation se poursuive.
+</p>
+<p>
+  L'accord repose sur un arbitrage : trahir rapporte tout de suite \( t - c = 10 - 6 = 4 \) de
+  plus, mais coûte \( c - p = 6 - 4 = 2 \) à chaque mois suivant. Un garage patient
+  (\( \delta \) élevé) donne beaucoup de valeur à ces pertes futures, elles pèsent lourd, et il
+  renonce à la trahison. Un garage impatient (\( \delta \) faible) les escompte fortement : la
+  menace ne coûte plus assez cher pour le dissuader, et l'entente s'effondre.
+</p>
+<p>
+  Concrètement, l'entente est plus facile à tenir sur un <strong>marché stable où les deux
+  entreprises sont solidement installées</strong> et sûres de se recroiser pendant des années :
+  probabilité de continuation élevée, donc \( \delta \) effectif élevé. À l'inverse, une firme au
+  bord de la faillite ou un marché qui ferme dans trois mois rendent l'entente intenable. »
+</p>
+</div>
+
+<h2>Les astuces pour le refaire de tête</h2>
+
+<div class="box box-rappel">
+<div class="box-title">Astuce n° 1 — La phrase qui écrit les formules à ta place</div>
+<p style="text-align:center; font-size:12pt">
+  «&nbsp;Coopérer pour toujours, ou se gaver une fois puis être puni pour toujours —
+  <strong>à partir de demain</strong>.&nbsp;»
+</p>
+<p>
+  Récite-la avant d'écrire quoi que ce soit, et traduis morceau par morceau :
+</p>
+<table class="compare">
+<tr><th class="left">Le morceau de phrase</th><th class="left">Ce que tu écris</th></tr>
+<tr><td class="left">« Coopérer pour toujours »</td><td class="left">\( \dfrac{c}{1-\delta} \)</td></tr>
+<tr><td class="left">« Se gaver une fois »</td><td class="left">\( t \)</td></tr>
+<tr><td class="left">« Puni pour toujours »</td><td class="left">\( \dfrac{p}{1-\delta} \)</td></tr>
+<tr><td class="left">« À partir de demain »</td><td class="left">le \( \delta \) devant</td></tr>
+</table>
+<p>
+  Le cours appelle l'oubli de ce \( \delta \) « <strong>LA faute classique</strong> ». La phrase
+  existe pour ça.
+</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Astuce n° 2 — Le seuil se lit en français, pas en formule</div>
+<p style="text-align:center">
+  \[ \delta \;\ge\; \frac{t-c}{t-p} \;=\; \frac{\text{ce que je gagne tout de suite}}{\text{ce que je gagne tout de suite} \;+\; \text{ce que je perds chaque mois ensuite}} \]
+</p>
+<p>
+  Le dénominateur se décompose en \( t - p = (t-c) + (c-p) \) : la tentation, plus le coût par
+  période de la punition. Lu comme ça, le seuil devient évident : <strong>plus la tentation est
+  grosse, plus il faut être patient ; plus la punition fait mal, moins il faut l'être</strong>.
+  Tu ne mémorises pas une fraction, tu mémorises une phrase — et si tu oublies la fraction, tu la
+  reconstruis à partir de la phrase.
+</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Astuce n° 3 — Le rituel en quatre gestes</div>
+<ol>
+  <li><strong>Entoure</strong> \( c \), \( t \), \( p \) sur la matrice, et vérifie
+      \( t > c > p > s \). Trente secondes, et tu ne peux plus te tromper de case.</li>
+  <li><strong>Écris</strong> les deux payoffs en développant la série sur trois termes avant de la
+      sommer. Ne saute jamais à la forme compacte : les points sont sur le développement.</li>
+  <li><strong>Multiplie</strong> par \( (1-\delta) \) en écrivant « strictement positif car
+      \( \delta < 1 \), donc le sens de l'inégalité est conservé ».</li>
+  <li><strong>Isole</strong> \( \delta \), puis <strong>vérifie</strong> avec
+      \( (t-c)/(t-p) \).</li>
+</ol>
+<p>
+  Quatre gestes, toujours les mêmes, quels que soient les nombres. C'est ce qui transforme une
+  démonstration à réinventer en une procédure qu'on déroule.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les quatre justifications qui rapportent des points « gratuits »</div>
+<ul>
+  <li><strong>Pourquoi la déviation est placée en \( t = 0 \)</strong> : parce que le jeu infini se
+      ressemble à toutes les périodes, le raisonnement serait identique en partant de n'importe
+      quelle date.</li>
+  <li><strong>Pourquoi « dévier une fois puis revenir » n'est pas envisagé</strong> : face à un
+      grim déclenché, recoopérer rapporte \( s = 1 \) par mois, soit <em>moins</em> que les
+      \( p = 4 \) de la trahison. Une fois la gâchette pressée, trahir pour toujours est la
+      meilleure suite.</li>
+  <li><strong>Pourquoi le sens de l'inégalité ne change pas</strong> : \( 1-\delta > 0 \).</li>
+  <li><strong>Pourquoi on ne teste qu'un joueur</strong> : le jeu est symétrique, donc la condition
+      obtenue pour l'un vaut pour l'autre. Dis-le explicitement.</li>
+</ul>
+</div>
+
+<div class="box box-exemple">
+<div class="box-title">Trois matrices pour t'entraîner en cinq minutes</div>
+<p>
+  Refais uniquement l'étape « seuil » sur ces trois jeux, sans rédiger. Réponses en bas.
+</p>
+<table class="compare">
+<tr><th class="left">Jeu</th><th>\( c \)</th><th>\( t \)</th><th>\( p \)</th><th>Seuil</th></tr>
+<tr><td class="left">A</td><td>5</td><td>8</td><td>2</td><td>?</td></tr>
+<tr><td class="left">B</td><td>10</td><td>18</td><td>6</td><td>?</td></tr>
+<tr><td class="left">C</td><td>3</td><td>7</td><td>1</td><td>?</td></tr>
+</table>
+<p>
+  Réponses : A \( \to (8-5)/(8-2) = 1/2 \) · B \( \to (18-10)/(18-6) = 8/12 = 2/3 \) ·
+  C \( \to (7-3)/(7-1) = 4/6 = 2/3 \).
+</p>
+</div>
+
+<a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-grim">B3 · §7 — Grim contre grim : la condition δ ≥ 1/2 <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-grim</span></a>
+</section>

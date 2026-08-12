@@ -1,0 +1,280 @@
+<section class="chapter">
+<div class="chapter-tag">Mémo · la seule partie à relire la veille</div>
+<h1>Tout ce qu'il faut avoir en tête</h1>
+<p class="chapter-intro">
+  Les trois exercices condensés en quelques pages : les réflexes, les formules, les phrases à
+  recopier, et une grille vierge pour t'auto-tester.
+</p>
+
+<h2>Le réflexe d'ouverture : trois questions avant d'écrire</h2>
+
+<table class="compare">
+<tr><th>#</th><th class="left">La question</th><th class="left">Ce qu'elle déclenche</th></tr>
+<tr>
+  <td>1</td>
+  <td class="left">L'horizon est-il <strong>fini et connu</strong>, ou infini ?</td>
+  <td class="left">Fini → théorème + induction à rebours, <strong>aucun calcul</strong>, \( \delta \) n'apparaît pas. Infini → comparaison de deux payoffs escomptés.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td class="left">Quelle stratégie dois-je tester ?</td>
+  <td class="left">Grim → il y aura un seuil. Toujours trahir → il n'y en aura pas. Tit-for-tat → on ne démontre rien, on simule ou on restitue.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td class="left">Quels sont \( c \), \( t \), \( p \) ?</td>
+  <td class="left">Je les entoure sur la matrice et je vérifie \( t > c > p > s \) avant tout calcul.</td>
+</tr>
+</table>
+
+<h2>Les formules, en un bloc</h2>
+
+<table class="compare">
+<tr><th class="left">Objet</th><th class="left">Formule</th><th class="left">D'où ça vient</th></tr>
+<tr>
+  <td class="left">Somme géométrique, à partir d'aujourd'hui</td>
+  <td class="left">\( \displaystyle\sum_{t=0}^{\infty} a\,\delta^t = \frac{a}{1-\delta} \)</td>
+  <td class="left">L'outil de base</td>
+</tr>
+<tr>
+  <td class="left">Somme géométrique, à partir de demain</td>
+  <td class="left">\( \displaystyle\sum_{t=1}^{\infty} a\,\delta^t = \delta\,\frac{a}{1-\delta} \)</td>
+  <td class="left">La même, avec \( \delta \) mis en évidence</td>
+</tr>
+<tr>
+  <td class="left">Payoff de coopération (grim)</td>
+  <td class="left">\( \dfrac{c}{1-\delta} \)</td>
+  <td class="left">« Coopérer pour toujours »</td>
+</tr>
+<tr>
+  <td class="left">Payoff de la meilleure déviation</td>
+  <td class="left">\( t + \delta\,\dfrac{p}{1-\delta} \)</td>
+  <td class="left">« Se gaver une fois, puis puni pour toujours à partir de demain »</td>
+</tr>
+<tr>
+  <td class="left">Condition de coopération</td>
+  <td class="left">\( \delta \ge \dfrac{t-c}{t-p} \)</td>
+  <td class="left">Tentation / (tentation + coût par période de la punition)</td>
+</tr>
+<tr>
+  <td class="left">Payoff de « toujours trahir »</td>
+  <td class="left">\( \dfrac{p}{1-\delta} \), sans condition</td>
+  <td class="left">Majoration \( \pi_t \le p \) pour tout \( t \)</td>
+</tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">Le seul cas où l'on vérifie les chiffres du cours</div>
+<p>
+  Matrice du cours : \( c = 4 \), \( t = 6 \), \( p = 2 \) → \( \delta \ge (6-4)/(6-2) = 1/2 \).
+  Matrice de l'examen blanc n° 1 : \( c = 6 \), \( t = 12 \), \( p = 2 \) →
+  \( \delta \ge (12-6)/(12-2) = 3/5 \). Si tu retombes sur l'un de ces deux nombres avec d'autres
+  données, méfie-toi : tu as sans doute recopié le cours au lieu de calculer.
+</p>
+</div>
+
+<h2>Les cinq phrases à savoir écrire</h2>
+
+<div class="box box-copie">
+<div class="box-title">1. Le théorème de l'horizon fini (mot pour mot)</div>
+<p>
+  « Dans un jeu répété un nombre <strong>fini</strong> de fois, si le jeu simultané a un
+  <strong>unique équilibre de Nash</strong>, alors le jeu répété a un <strong>unique ENPS</strong> :
+  cet équilibre est joué à <strong>chaque</strong> période. »
+</p>
+<p>
+  Les deux hypothèses comptent autant que la conclusion. Le contre-exemple à avoir en tête : la
+  bataille des sexes a <em>deux</em> équilibres de Nash, donc le théorème ne s'y applique pas,
+  même répétée cinq fois.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">2. L'effondrement par induction à rebours</div>
+<p>
+  « À la dernière période, il n'y a plus de lendemain : aucune punition n'est possible, chacun joue
+  sa stratégie dominante. Sachant cela, coopérer à l'avant-dernière période n'achète aucune
+  récompense future et trahir n'y coûte aucune punition : elle devient à son tour un jeu isolé. De
+  proche en proche, les dominos tombent jusqu'à la première période. »
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">3. Le sens de la condition sur δ</div>
+<p>
+  « \( \delta \) mesure la patience : le poids accordé aux gains futurs par rapport aux gains
+  immédiats. Trahir rapporte \( t - c \) tout de suite, mais coûte \( c - p \) à chaque période
+  ensuite. Un joueur patient valorise ces pertes futures et renonce ; un joueur impatient les
+  escompte fortement, la menace ne le dissuade plus, et la coopération s'effondre. »
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">4. « L'infini n'est pas nécessaire »</div>
+<p>
+  « Il n'est pas nécessaire que le jeu dure réellement une infinité de périodes. Il suffit qu'à
+  chaque période il existe une <strong>probabilité non nulle que le jeu se poursuive</strong>. Ce
+  qui compte n'est pas l'éternité, c'est que les joueurs ne puissent jamais dire "c'est la dernière
+  fois" — car c'est cette certitude qui déclenche l'effondrement. \( \delta \) se relit alors comme
+  mêlant impatience et probabilité de survie de la relation. »
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">5. « Possible n'est pas garanti »</div>
+<p>
+  « L'horizon infini rend la coopération <em>possible</em>, pas <em>certaine</em>. (grim ; grim)
+  est un équilibre si \( \delta \) dépasse le seuil, mais (toujours trahir ; toujours trahir) en
+  est un aussi, sans aucune condition. Le jeu répété à l'infini possède donc plusieurs équilibres,
+  et la théorie ne dit pas lequel sera joué. »
+</p>
+</div>
+
+<h2>Les six erreurs qui coûtent le plus cher</h2>
+
+<table class="compare">
+<tr><th>#</th><th class="left">L'erreur</th><th class="left">Le correctif</th></tr>
+<tr>
+  <td>1</td>
+  <td class="left">Oublier le \( \delta \) devant le terme de punition</td>
+  <td class="left">« La punition commence <strong>demain</strong> » : \( \delta\,\dfrac{p}{1-\delta} \). Le cours appelle ça « LA faute classique ».</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td class="left">Croire que la patience sauve un horizon fini</td>
+  <td class="left">\( \delta \) n'apparaît nulle part dans le théorème. 100 périodes et \( \delta = 0{,}99 \) → trahison partout.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td class="left">Conclure « \( \delta \) au-dessus du seuil, donc ils coopèrent »</td>
+  <td class="left">Possible ≠ garanti. Mentionne toujours l'autre équilibre.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td class="left">Envisager « dévier une fois puis recoopérer » face à un grim</td>
+  <td class="left">Recoopérer rapporte \( s \), moins que \( p \). Après avoir trahi un grim, on trahit pour toujours.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td class="left">Lire la tentation dans la mauvaise coordonnée</td>
+  <td class="left">Case \( (a ; b) \) : \( a \) au joueur en <strong>ligne</strong>. Vérifie \( t > c > p > s \).</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td class="left">Multiplier par \( (1-\delta) \) sans le justifier</td>
+  <td class="left">Une ligne : « \( 1-\delta > 0 \) car \( \delta < 1 \), le sens de l'inégalité est conservé ». C'est noté.</td>
+</tr>
+</table>
+
+<h2>Grim, toujours trahir, tit-for-tat : la comparaison en un tableau</h2>
+
+<table class="compare">
+<tr>
+  <th class="left"></th>
+  <th class="left">Grim</th>
+  <th class="left">Toujours trahir</th>
+  <th class="left">Tit-for-tat</th>
+</tr>
+<tr>
+  <td class="left"><strong>Premier coup</strong></td>
+  <td class="left">Coopère</td>
+  <td class="left">Trahit</td>
+  <td class="left">Coopère</td>
+</tr>
+<tr>
+  <td class="left"><strong>Mémoire</strong></td>
+  <td class="left">Toute l'histoire</td>
+  <td class="left">Aucune (sourde)</td>
+  <td class="left">La période précédente</td>
+</tr>
+<tr>
+  <td class="left"><strong>Pardonne ?</strong></td>
+  <td class="left">Jamais</td>
+  <td class="left">Sans objet</td>
+  <td class="left">Immédiatement</td>
+</tr>
+<tr>
+  <td class="left"><strong>Équilibre ?</strong></td>
+  <td class="left">Oui si \( \delta \ge \frac{t-c}{t-p} \)</td>
+  <td class="left">Oui, pour tout \( \delta \)</td>
+  <td class="left">Hors programme — ne pas démontrer</td>
+</tr>
+<tr>
+  <td class="left"><strong>Ce qu'on te demande</strong></td>
+  <td class="left">La démonstration en 3 étapes</td>
+  <td class="left">La majoration en 3 lignes</td>
+  <td class="left">Simuler, comparer, restituer Axelrod</td>
+</tr>
+<tr>
+  <td class="left"><strong>Ce que dit le labo</strong></td>
+  <td class="left">Personne ne la joue</td>
+  <td class="left">Personne ne la joue tout du long</td>
+  <td class="left">Les humains s'en rapprochent : ils pardonnent</td>
+</tr>
+</table>
+
+<h2>La grille d'auto-test</h2>
+
+<p>
+  Couvre la colonne de droite. Si tu réponds aux dix lignes sans hésiter, ce bloc est acquis.
+</p>
+
+<table class="compare">
+<tr><th class="left">Question</th><th class="left">Réponse</th></tr>
+<tr><td class="left">Payoff de coopération sous grim ?</td><td class="left">\( c/(1-\delta) \)</td></tr>
+<tr><td class="left">Payoff de la meilleure déviation ?</td><td class="left">\( t + \delta\,p/(1-\delta) \)</td></tr>
+<tr><td class="left">Le seuil général ?</td><td class="left">\( \delta \ge (t-c)/(t-p) \)</td></tr>
+<tr><td class="left">Pourquoi un \( \delta \) devant la punition ?</td><td class="left">Elle ne commence que la période suivante</td></tr>
+<tr><td class="left">Condition pour que « toujours trahir » soit un équilibre ?</td><td class="left">Aucune — vrai pour tout \( \delta \)</td></tr>
+<tr><td class="left">Argument central de cette démonstration ?</td><td class="left">La majoration \( \pi_t \le p \) pour tout \( t \)</td></tr>
+<tr><td class="left">Les deux hypothèses du théorème de l'horizon fini ?</td><td class="left">Nombre fini de répétitions + équilibre de Nash unique du jeu de période</td></tr>
+<tr><td class="left">Définition de tit-for-tat ?</td><td class="left">Coopère en \( t=0 \), puis copie l'action de l'adversaire en \( t-1 \)</td></tr>
+<tr><td class="left">Différence grim / tit-for-tat ?</td><td class="left">La mémoire : toute l'histoire sans pardon, contre une période avec pardon</td></tr>
+<tr><td class="left">Les deux résultats d'Axelrod ?</td><td class="left">Victoire de tit-for-tat (Rapoport, 200 périodes, payoff moyen) ; toutes les stratégies « gentilles » ont battu les non gentilles</td></tr>
+</table>
+
+<h2>Le plan de révision, si tu n'as qu'une heure</h2>
+
+<div class="box box-methode">
+<div class="box-title">Une heure, dans cet ordre</div>
+<ol>
+  <li><strong>25 minutes</strong> — refais l'exercice 1 sur les trois matrices d'entraînement
+      (A, B, C), en rédigeant entièrement la première et en ne calculant que le seuil pour les
+      deux autres. Objectif : que le \( \delta \) devant la punition vienne tout seul.</li>
+  <li><strong>10 minutes</strong> — écris de mémoire le théorème de l'horizon fini et la
+      démonstration de « toujours trahir » en trois lignes. Compare avec les phrases ci-dessus.</li>
+  <li><strong>10 minutes</strong> — refais la simulation de l'exercice 3 avec une autre suite de
+      coups que tu inventes, en appliquant les deux règles de remplissage.</li>
+  <li><strong>10 minutes</strong> — récite la fiche d'identité d'Axelrod et les quatre
+      observations du laboratoire.</li>
+  <li><strong>5 minutes</strong> — relis le tableau des six erreurs. C'est la dernière chose à
+      avoir en tête en entrant dans la salle.</li>
+</ol>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Une dernière remarque de vocabulaire</div>
+<p>
+  L'énoncé de l'examen blanc parle d'« équilibre de Nash » là où le cours démontre un
+  <strong>ENPS</strong>. Écris <strong>ENPS</strong> et ajoute une ligne : « le profil est parfait
+  en sous-jeux car, une fois la punition déclenchée, jouer T contre un adversaire qui joue T pour
+  toujours reste une meilleure réponse — la menace est donc crédible dans chaque sous-jeu ». Tu ne
+  peux qu'y gagner, et cela montre au correcteur que tu as compris pourquoi le test de perfection
+  existe.
+</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Où revoir la théorie</div>
+<ul>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-fini">B3 · §4 — Le théorème de l'horizon fini <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-fini</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-infini">B3 · §5 — Horizon infini : la boîte à outils <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-infini</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-tt">B3 · §6 — « Toujours trahir » reste un équilibre <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-tt</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-grim">B3 · §7 — Grim contre grim : la condition δ ≥ 1/2 <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-grim</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-interp">B3 · §8 — Interpréter &amp; généraliser <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-interp</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-axelrod">B3 · §9 — Le tournoi d'Axelrod <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-axelrod</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-labo">B3 · §10 — Au laboratoire : et les vrais humains ? <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-labo</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-exos">B3 · §11 — Exercices récapitulatifs <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-exos</span></a></li>
+</ul>
+</div>
+</section>

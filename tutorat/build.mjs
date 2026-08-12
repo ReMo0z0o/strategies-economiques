@@ -203,10 +203,11 @@ mkdirSync(OUT_DIR, { recursive: true });
 const browser = await chromium.launch({ executablePath: CHROMIUM });
 
 /** Numéros de page de chaque titre, relevés dans le PDF déjà rendu. */
-function locatePages(pdfPath, entries) {
+function locatePages(pdfPath, entries, running) {
   const input = JSON.stringify({
     pdf: pdfPath,
     marker: TOC_MARKER,
+    running,
     titles: entries.map((e) => e.key),
   });
   const res = spawnSync(PYTHON, [join(DIR, "pdf-pages.py")], { input, encoding: "utf8" });
@@ -249,7 +250,7 @@ for (const id of ids) {
   let pages = null;
   for (let pass = 1; pass <= 3; pass++) {
     await renderPdf(browser, wrap(cover(meta) + toc(entries, pages) + body), out, tmp, title);
-    const found = locatePages(out, entries);
+    const found = locatePages(out, entries, title);
     if (!found) break;
     const stable = pages && found.every((p, i) => p === pages[i]);
     pages = found;

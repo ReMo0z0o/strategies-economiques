@@ -70,7 +70,7 @@ trop sec ; au-dessus de 9, tu réexpliques — coupe.
 
 Le `ref-app` est **obligatoire sur chaque point** : c'est la raison d'être du document. C'est un
 `<a>` **cliquable dans le PDF** : l'URL complète figure à la fois dans le `href` et, en toutes
-lettres, dans le `<span class="path">`. Libellé : `CODE · §N — Titre exact de la section`.
+lettres, dans le `<span class="path">`. Libellé : `CODE · REPÈRE — Titre exact de la section`.
 
 Base de l'URL : `https://strategies-economiques.vercel.app` · théorie
 `/strategies/theorie/<id>#<ancre>` · TP `/strategies/exercices/session-N#exK`.
@@ -88,7 +88,20 @@ Base de l'URL : `https://strategies-economiques.vercel.app` · théorie
 | b3 | `sec-reperes`, `sec-fritkot`, `sec-cadre`, `sec-deux`, `sec-fini`, `sec-infini`, `sec-tt`, `sec-grim`, `sec-interp`, `sec-axelrod`, `sec-labo`, `sec-exos`, `sec-final` |
 | b4 | `s0` … `s10` |
 
-Le « §N » est le **rang** de la section dans le chapitre (1 pour la première), pas l'ancre.
+⚠️ Le **REPÈRE** est le `kicker` que l'app affiche en tête de la section, recopié tel quel (seule
+l'espace après `§` est supprimée). Il ne se déduit pas du rang : les conventions diffèrent d'un
+chapitre à l'autre — **prends-le dans le `<Section id=… kicker=…>` de `src/chapters/<id>.tsx`**.
+
+| chapitre | convention du `kicker` | exemples |
+| --- | --- | --- |
+| a1 | lettre + numéro | `A.1 · A.2`, `A.10`, `B.3 · Biais n°2`, `★`, `✎` |
+| a2 | partie + § | `§0 · La motivation`, `Partie A · §3`, `★ · Récapitulatif` |
+| a3 | `§N`, démarre à 1 | `§1` … `§13` |
+| b1 | `Partie N` | `Introduction`, `Partie 5 · Hypothèse 3`, `Partie 10` |
+| b2 | `§N`, **démarre à 0** | `§0 · Jeux séquentiels appliqués`, `§1` … `§9` |
+| b3 | `§N`, **démarre à 0** | `§0` … `§12` |
+| b4 | `§N`, **démarre à 0** | `§0` … `§10` |
+
 Pour un renvoi vers un TP : `TP 3 · Jeux séquentiels & duopole` + `/strategies/exercices/session-3`.
 
 ## Classes autorisées (strictement — le vérificateur refuse toute classe inconnue)

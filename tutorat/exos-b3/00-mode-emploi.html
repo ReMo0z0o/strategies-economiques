@@ -1,0 +1,162 @@
+<section class="chapter">
+<div class="chapter-tag">Ouverture · à lire une fois, puis à oublier</div>
+<h1>Le gabarit de l'examen et la boîte à outils</h1>
+<p class="chapter-intro">
+  Deux pages pour savoir ce qui t'attend et avec quoi tu vas travailler. Ensuite, on passe aux
+  exercices.
+</p>
+
+<h2>Ce que l'examen a réellement demandé</h2>
+
+<p>
+  Une seule question de la Partie 1 a porté sur les jeux répétés : la <strong>question 5 de
+  l'examen blanc n° 1</strong>, 30 points. Elle était découpée en trois, et ce découpage est ton
+  meilleur indicateur de ce qui peut retomber.
+</p>
+
+<table class="compare">
+<tr><th>Sous-question</th><th class="left">Ce qui est demandé</th><th>Points</th><th class="left">Nature</th></tr>
+<tr>
+  <td>5.1</td>
+  <td class="left">Montrer que le jeu est un dilemme du prisonnier (dominance + équilibre de Nash), puis expliquer <em>sans calcul</em> pourquoi l'entente ne tient à aucune période à horizon fini</td>
+  <td>10</td><td class="left">Théorie pure</td>
+</tr>
+<tr>
+  <td>5.2</td>
+  <td class="left">La démonstration grim : payoff de coopération, payoff de la meilleure déviation, condition sur \( \delta \), avec la somme géométrique détaillée</td>
+  <td>14</td><td class="left">Calcul</td>
+</tr>
+<tr>
+  <td>5.3</td>
+  <td class="left">Interpréter économiquement la condition obtenue</td>
+  <td>6</td><td class="left">Rédaction</td>
+</tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">Ce que ce barème t'apprend</div>
+<p>
+  Le calcul ne pèse pas la moitié des points. Un tiers va à de la théorie qu'on récite, un
+  sixième à un paragraphe de français. Autrement dit : <strong>un étudiant qui sait seulement
+  calculer plafonne à 14/30</strong>, et un étudiant qui sait seulement réciter plafonne à 16/30.
+  Il faut les deux, et c'est pour ça que chaque exercice de ce document mélange les trois natures.
+</p>
+</div>
+
+<h2>Les trois nombres à extraire de n'importe quelle matrice</h2>
+
+<p>
+  Tous les énoncés de jeux répétés commencent par une matrice \( 2 \times 2 \) qui est un dilemme
+  du prisonnier. Avant de faire quoi que ce soit, tu en tires <strong>trois nombres</strong>, et
+  ces trois nombres suffisent à tout le reste.
+</p>
+
+<table class="compare">
+<tr><th>Symbole</th><th class="left">Nom</th><th class="left">Où le lire dans la matrice</th></tr>
+<tr>
+  <td>\( c \)</td><td class="left">le gain de <strong>coopération</strong></td>
+  <td class="left">la case où les deux coopèrent — la « bonne » diagonale</td>
+</tr>
+<tr>
+  <td>\( t \)</td><td class="left">la <strong>tentation</strong></td>
+  <td class="left">la case hors diagonale, du côté de celui qui trahit seul : c'est le plus grand nombre de la matrice</td>
+</tr>
+<tr>
+  <td>\( p \)</td><td class="left">la <strong>punition</strong></td>
+  <td class="left">la case où les deux trahissent — l'équilibre de Nash du jeu en un coup</td>
+</tr>
+<tr>
+  <td>\( s \)</td><td class="left">le gain du « pigeon »</td>
+  <td class="left">la case du coopérateur trahi : le plus petit nombre. <strong>Il ne sert jamais dans les calculs</strong> — sauf pour vérifier que \( t > c > p > s \).</td>
+</tr>
+</table>
+
+<div class="box box-piege">
+<div class="box-title">Le piège de lecture qui coûte tout l'exercice</div>
+<p>
+  Dans une case \( (a \,;\, b) \), \( a \) est le payoff du joueur <strong>en ligne</strong> et
+  \( b \) celui du joueur <strong>en colonne</strong>. Si tu prends la tentation du mauvais côté
+  — par exemple le \( 1 \) de \( (1 \,;\, 10) \) au lieu du \( 10 \) — tous tes calculs suivants
+  sont faux, et le correcteur ne peut rien te rendre. <strong>Entoure les trois nombres sur la
+  matrice avant d'écrire la première ligne</strong>, et vérifie que tu as bien
+  \( t > c > p > s \) : si l'ordre n'y est pas, tu t'es trompé de case.
+</p>
+</div>
+
+<h2>La boîte à outils : trois sommes, pas une de plus</h2>
+
+<table class="compare">
+<tr><th class="left">Somme</th><th class="left">Résultat</th><th class="left">Quand elle apparaît</th></tr>
+<tr>
+  <td class="left">\( a + a\delta + a\delta^2 + \cdots \)</td>
+  <td class="left">\( \dfrac{a}{1-\delta} \)</td>
+  <td class="left">Un même gain \( a \) touché <strong>à partir d'aujourd'hui</strong>, pour toujours.</td>
+</tr>
+<tr>
+  <td class="left">\( a\delta + a\delta^2 + a\delta^3 + \cdots \)</td>
+  <td class="left">\( \delta\,\dfrac{a}{1-\delta} \)</td>
+  <td class="left">Un même gain \( a \) touché <strong>à partir de demain</strong>, pour toujours. C'est la punition.</td>
+</tr>
+<tr>
+  <td class="left">\( \pi_0 + \delta\pi_1 + \delta^2\pi_2 + \cdots + \delta^N\pi_N \)</td>
+  <td class="left">— (on somme à la main)</td>
+  <td class="left">Une suite de gains <strong>différents</strong> sur un nombre fini de périodes.</td>
+</tr>
+</table>
+
+<p>
+  La deuxième ligne s'obtient de la première en mettant \( \delta \) en évidence :
+  \( a\delta + a\delta^2 + \cdots = \delta\,(a + a\delta + \cdots) = \delta\,\dfrac{a}{1-\delta} \).
+  Fais-le apparaître sur ta copie, ça vaut des points.
+</p>
+
+<h2>La phrase qui contient tout le chapitre</h2>
+
+<div class="result">
+<div class="result-title">À apprendre mot pour mot</div>
+<p style="text-align:center; font-size:12pt">
+  «&nbsp;<strong>Coopérer pour toujours</strong>, ou <strong>se gaver une fois</strong> puis
+  <strong>être puni pour toujours — à partir de demain</strong>.&nbsp;»
+</p>
+<p>
+  Cette phrase n'est pas une image : elle dicte littéralement les deux formules de l'exercice 1.
+  « Coopérer pour toujours » \( \to \dfrac{c}{1-\delta} \). « Se gaver une fois » \( \to t \).
+  « Être puni pour toujours à partir de demain » \( \to \delta\,\dfrac{p}{1-\delta} \) — et c'est
+  le « <strong>à partir de demain</strong> » qui met le \( \delta \) devant. Récite-la avant
+  d'écrire, et tu ne peux plus oublier ce \( \delta \).
+</p>
+</div>
+
+<h2>Comment utiliser les trois exercices</h2>
+
+<div class="box box-methode">
+<div class="box-title">Le protocole, exercice par exercice</div>
+<ol>
+  <li><strong>Lis l'énoncé, ferme le document.</strong> Chaque énoncé se termine par une ligne
+      « ↓ arrête-toi ici ». Le temps conseillé y est indiqué : tiens-le, c'est celui de
+      l'examen.</li>
+  <li><strong>Rédige comme sur une copie</strong>, pas au brouillon. Phrases complètes,
+      justifications. C'est justement ce qui n'est pas naturel et qui s'entraîne.</li>
+  <li><strong>Corrige-toi avec le solutionnaire</strong>, en repérant non pas « j'ai bon / j'ai
+      faux » mais <em>à quelle étape</em> tu as décroché.</li>
+  <li><strong>Lis les astuces de la fin du chapitre</strong> — elles sont écrites pour l'erreur
+      que tu viens probablement de faire.</li>
+  <li><strong>Refais l'exercice deux jours plus tard</strong>, énoncé seul. Si la deuxième fois
+      passe sans hésitation, c'est acquis.</li>
+</ol>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Où réviser la théorie si un exercice résiste</div>
+<ul>
+  <li>La démonstration grim de référence :
+      <a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-grim">B3 · §7 — Grim contre grim : la condition δ ≥ 1/2 <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-grim</span></a></li>
+  <li>« Toujours trahir » et la pluralité des ENPS :
+      <a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-tt">B3 · §6 — « Toujours trahir » reste un équilibre <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-tt</span></a></li>
+  <li>Le théorème de l'horizon fini :
+      <a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-fini">B3 · §4 — Le théorème de l'horizon fini <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-fini</span></a></li>
+  <li>Tit-for-tat et le tournoi d'Axelrod :
+      <a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-axelrod">B3 · §9 — Le tournoi d'Axelrod <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-axelrod</span></a></li>
+</ul>
+</div>
+</section>

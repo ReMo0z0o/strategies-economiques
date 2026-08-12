@@ -1,0 +1,305 @@
+<section class="chapter">
+<div class="chapter-tag">Exercice 2 · la question courte qui piège</div>
+<h1>« Toujours trahir » et la pluralité des équilibres</h1>
+<p class="chapter-intro">
+  Trois lignes de calcul, mais un raisonnement d'un type nouveau — une <em>majoration</em>, pas une
+  série. Et une conclusion que le cours signale explicitement comme piège d'examen.
+</p>
+
+<h2>L'énoncé</h2>
+
+<div class="enonce">
+<div class="enonce-title">Exercice 2 — Les deux compagnies aériennes (25 points · 30 minutes)</div>
+<p>
+  Deux compagnies aériennes, <strong>Ardenn'Air</strong> (joueur 1) et <strong>Sambre
+  Airways</strong> (joueur 2), sont seules sur la liaison Namur–Barcelone. Chaque semaine, chacune
+  choisit simultanément un <strong>tarif haut</strong> (H) ou un <strong>tarif bas</strong> (B).
+  Les profits hebdomadaires, en milliers d'euros, sont :
+</p>
+
+<table class="game">
+  <tr><td class="void"></td><td class="void"></td><th colspan="2">Sambre Airways</th></tr>
+  <tr><td class="void"></td><td class="void"></td><th>H</th><th>B</th></tr>
+  <tr><td class="player" rowspan="2">Ardenn'Air</td><th>H</th><td>(9 ; 9)</td><td>(2 ; 12)</td></tr>
+  <tr><th>B</th><td>(12 ; 2)</td><td>(5 ; 5)</td></tr>
+</table>
+
+<p>
+  Le jeu est répété à <strong>horizon infini</strong>, avec un facteur d'escompte commun
+  \( \delta \in [0 \,;\, 1[ \). On note \( s^{TT} \) la stratégie « <strong>toujours trahir</strong> » :
+  jouer B à toutes les périodes, quoi que l'adversaire ait fait par le passé.
+</p>
+
+<p>
+  <strong>2.1)</strong> Montrez que le profil \( (s_1^{TT} \,;\, s_2^{TT}) \) est un équilibre du
+  jeu répété, <strong>quelle que soit la valeur de \( \delta \)</strong>. <em>(8 points)</em>
+</p>
+
+<p>
+  <strong>2.2)</strong> Montrez que le profil (grim ; grim) est également un équilibre à condition
+  que \( \delta \) dépasse un seuil que vous déterminerez. <em>(8 points)</em>
+</p>
+
+<p>
+  <strong>2.3)</strong> On suppose \( \delta = 0{,}5 \). Combien d'équilibres avez-vous exhibés ?
+  La théorie permet-elle de prédire lequel sera effectivement joué ? Que répondriez-vous à
+  quelqu'un qui affirme : « puisque le jeu est répété à l'infini et que les compagnies sont
+  patientes, elles vont coopérer » ? <em>(5 points)</em>
+</p>
+
+<p>
+  <strong>2.4)</strong> Vrai ou faux, en justifiant chaque réponse : <em>(4 points)</em>
+</p>
+<p>
+  <strong>a)</strong> Si le jeu était répété 200 fois au lieu d'une infinité, des compagnies très
+  patientes (\( \delta = 0{,}99 \)) pratiqueraient le tarif haut à l'équilibre.<br />
+  <strong>b)</strong> Face à une adversaire qui joue grim, dévier une seule semaine puis revenir au
+  tarif haut pour toujours est une bonne idée si \( \delta \) est élevé.
+</p>
+</div>
+
+<p style="text-align:center"><strong>↓ Arrête-toi ici. Prends une feuille, 30 minutes. ↓</strong></p>
+
+<hr class="soft" />
+
+<h2>Le solutionnaire</h2>
+
+<h3>2.1 — « Toujours trahir » est un équilibre, sans condition (8 points)</h3>
+
+<div class="box box-methode">
+<div class="box-title">La méthode, et pourquoi elle change ici</div>
+<p>
+  Comme partout en B3, montrer qu'un profil est un équilibre revient à montrer que les stratégies
+  sont des <strong>meilleures réponses mutuelles</strong> : aucun joueur ne peut faire strictement
+  mieux en déviant seul, l'autre étant fixé.
+</p>
+<p>
+  La nouveauté, c'est qu'ici on ne peut pas comparer deux séries chiffrées : il faut montrer
+  qu'<em>aucune</em> stratégie, parmi l'infinité des stratégies possibles, ne bat \( s^{TT} \). On
+  procède donc par <strong>majoration</strong> — on borne le payoff de n'importe quelle déviation.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Le payoff du profil lui-même</div>
+<p>
+  Si les deux compagnies jouent \( s^{TT} \), elles pratiquent le tarif bas toutes les semaines et
+  touchent 5 chacune, pour toujours :
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \Pi_2\big(s_1^{TT},\, s_2^{TT}\big) = 5 + 5\delta + 5\delta^2 + \cdots = \frac{5}{1-\delta} \]
+    <div class="why">même somme géométrique qu'à l'exercice 1. C'est la partie facile.</div>
+  </div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Majorer le payoff de n'importe quelle autre stratégie</div>
+<p>
+  Fixons Ardenn'Air sur \( s_1^{TT} \) : elle joue B <strong>à chaque période, quoi qu'il
+  arrive</strong>. Que peut espérer Sambre Airways ? Regarde la colonne « Ardenn'Air joue B » de la
+  matrice : Sambre y touche 2 si elle joue H, et 5 si elle joue B. Donc, semaine après semaine :
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \pi_t \;\le\; 5 \qquad \text{pour tout } t \]
+    <div class="why">c'est <strong>le cœur de la démonstration</strong>. Face à une adversaire
+    sourde qui trahit toujours, le meilleur gain hebdomadaire possible est 5 — il n'existe
+    aucun coup, aucune ruse, aucune histoire passée qui permette d'aller au-delà.</div>
+  </div>
+  <div class="step">
+    \[ \Pi_2\big(s_1^{TT},\, s_2\big) = \pi_0 + \delta\pi_1 + \delta^2\pi_2 + \cdots \;\le\; 5 + 5\delta + 5\delta^2 + \cdots = \frac{5}{1-\delta} \]
+    <div class="why">on remplace chaque \( \pi_t \) par sa borne supérieure 5. Comme tous les
+    \( \delta^t \) sont positifs, l'inégalité se transmet à la somme.</div>
+  </div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Conclusion de 2.1</div>
+<p>
+  Pour toute stratégie \( s_2 \), \( \Pi_2(s_1^{TT}, s_2) \le \dfrac{5}{1-\delta} = \Pi_2(s_1^{TT}, s_2^{TT}) \) :
+  aucune déviation ne fait strictement mieux, donc \( s_2^{TT} \) est une meilleure réponse à
+  \( s_1^{TT} \). Par symétrie du jeu, la réciproque est vraie. Le profil
+  \( (s_1^{TT}, s_2^{TT}) \) est donc un équilibre — <strong>et aucune condition sur
+  \( \delta \) n'est apparue</strong> : c'est vrai pour tout \( \delta \in [0 \,;\, 1[ \).
+</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi il n'y a aucun seuil ici, alors qu'il y en a un pour grim</div>
+<p>
+  Un seuil apparaît quand il y a une <strong>promesse à tenir</strong> : grim promet de coopérer,
+  et il faut vérifier que cette promesse résiste à la tentation. « Toujours trahir » ne promet
+  rien. Il n'y a donc rien qui puisse céder, et la patience du joueur n'entre jamais dans le
+  calcul. Retiens la formule : <strong>pas de promesse, pas de seuil</strong>.
+</p>
+</div>
+
+<h3>2.2 — Le seuil de grim (8 points)</h3>
+
+<p>
+  On applique le rituel de l'exercice 1, avec \( c = 9 \), \( t = 12 \), \( p = 5 \).
+</p>
+
+<div class="calc">
+  <div class="step">
+    \[ \Pi^{\text{coop}} = 9 + 9\delta + 9\delta^2 + \cdots = \frac{9}{1-\delta} \]
+    <div class="why">tarif haut pour toujours.</div>
+  </div>
+  <div class="step">
+    \[ \Pi^{\text{dév}} = 12 + 5\delta + 5\delta^2 + \cdots = 12 + \delta\,\frac{5}{1-\delta} \]
+    <div class="why">12 la première semaine, puis guerre des prix à 5 <em>à partir de la semaine
+    suivante</em> — d'où le \( \delta \) en facteur.</div>
+  </div>
+  <div class="step">
+    \[ \frac{9}{1-\delta} \;\ge\; 12 + \delta\,\frac{5}{1-\delta} \;\Longrightarrow\; 9 \;\ge\; 12(1-\delta) + 5\delta \]
+    <div class="why">on multiplie par \( (1-\delta) > 0 \), le sens est conservé.</div>
+  </div>
+  <div class="step">
+    \[ 9 \;\ge\; 12 - 7\delta \;\Longleftrightarrow\; 7\delta \ge 3 \;\Longleftrightarrow\; \boxed{\ \delta \ge \tfrac{3}{7} \approx 0{,}4286\ } \]
+    <div class="why">vérification par la formule générale :
+    \( (t-c)/(t-p) = (12-9)/(12-5) = 3/7 \) ✓.</div>
+  </div>
+</div>
+
+<h3>2.3 — Deux équilibres, et aucune prédiction (5 points)</h3>
+
+<div class="box box-copie">
+<div class="box-title">Ce que tu écris sur la copie (2.3)</div>
+<p>
+  « Avec \( \delta = 0{,}5 \), on a \( 0{,}5 \ge 3/7 \approx 0{,}43 \) : la condition de 2.2 est
+  remplie. <strong>Deux</strong> équilibres ont donc été exhibés — (grim ; grim), qui soutient le
+  tarif haut, et (toujours trahir ; toujours trahir), qui donne le tarif bas à chaque période. Et
+  ce ne sont pas les seuls : un jeu répété à l'infini en possède en général une infinité.
+</p>
+<p>
+  La théorie <strong>ne permet pas</strong> de prédire lequel sera joué. Elle établit seulement que
+  la coopération est <em>possible</em>, pas qu'elle est <em>certaine</em>. L'affirmation
+  « puisqu'elles sont patientes, elles vont coopérer » est donc <strong>fausse</strong> : la
+  patience est une condition <em>nécessaire</em> à la coopération, pas suffisante. Le passage à
+  l'horizon infini ouvre la porte de la coopération, il n'oblige personne à la franchir ; ce qui
+  détermine l'issue effective relève de la coordination, de la communication ou de la réputation,
+  qui sont hors du modèle. »
+</p>
+</div>
+
+<h3>2.4 — Vrai ou faux (4 points)</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">a)</span> 200 répétitions, \( \delta = 0{,}99 \) : tarif haut à l'équilibre ?</div>
+<p>
+  <strong>FAUX.</strong> 200 est un nombre <em>fini</em> et le jeu de période possède un
+  <em>unique</em> équilibre de Nash, (B ; B) : les deux hypothèses du théorème de l'horizon fini
+  sont réunies. L'unique ENPS consiste donc à jouer (B ; B) à chacune des 200 semaines,
+  <strong>quelle que soit la valeur de \( \delta \)</strong>. La patience ne sauve pas un horizon
+  fini — c'est même précisément ce que le théorème affirme : \( \delta \) n'y figure pas.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">b)</span> Dévier une fois puis revenir au tarif haut ?</div>
+<p>
+  <strong>FAUX.</strong> Une fois la gâchette du grim pressée, l'adversaire joue B pour toujours.
+  Revenir au tarif haut face à elle rapporte \( s = 2 \) par semaine, contre \( p = 5 \) en jouant
+  B. Recoopérer est donc <em>strictement pire</em> que continuer à trahir, et cela quel que soit
+  \( \delta \). C'est exactement pour cette raison que la déviation étudiée en 2.2 est
+  « 12 puis 5 pour toujours » et pas autre chose : <strong>la meilleure suite après avoir trahi un
+  grim est de trahir pour toujours</strong>.
+</p>
+</div>
+
+<h2>Les astuces pour le refaire de tête</h2>
+
+<div class="box box-rappel">
+<div class="box-title">Astuce n° 1 — « Face à un mur, aucune porte »</div>
+<p>
+  C'est l'image à garder pour 2.1. Un joueur qui joue \( s^{TT} \) est un <strong>mur</strong> :
+  il ne réagit à rien, l'histoire du jeu ne l'atteint pas. Face à un mur, tu ne peux pas
+  « négocier » un meilleur résultat — le mieux que tu puisses faire, tu peux le lire directement
+  dans <strong>une seule colonne</strong> de la matrice.
+</p>
+<p>
+  Conséquence pratique : dès que tu vois « montrez que toujours trahir est un équilibre », tu
+  n'écris <em>pas</em> deux séries. Tu écris <strong>trois lignes</strong> :
+  \( \Pi = p/(1-\delta) \), puis \( \pi_t \le p \) pour tout \( t \), puis la somme majorée. Fin.
+</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Astuce n° 2 — « Pas de promesse, pas de seuil »</div>
+<p>
+  Le meilleur moyen de savoir si un \( \delta \) doit apparaître dans ta réponse : demande-toi si
+  la stratégie testée <strong>promet quelque chose</strong>.
+</p>
+<table class="compare">
+<tr><th class="left">Stratégie</th><th class="left">Promet-elle ?</th><th class="left">Y a-t-il un seuil ?</th></tr>
+<tr><td class="left">Toujours trahir</td><td class="left">Non, elle ne coopère jamais</td><td class="left">Non — vrai pour tout \( \delta \)</td></tr>
+<tr><td class="left">Grim</td><td class="left">Oui : « je coopère si tu coopères »</td><td class="left">Oui : \( \delta \ge (t-c)/(t-p) \)</td></tr>
+</table>
+<p>
+  Si tu as trouvé un seuil pour « toujours trahir », tu t'es trompé de démonstration. Si tu n'en as
+  pas trouvé pour grim, tu as oublié de comparer à la déviation.
+</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Astuce n° 3 — La formule « possible ≠ garanti », prête à recopier</div>
+<p style="text-align:center; font-size:11.5pt">
+  «&nbsp;L'horizon infini <strong>ouvre la porte</strong> de la coopération, il <strong>ne pousse
+  personne dedans</strong>.&nbsp;»
+</p>
+<p>
+  Apprends cette phrase et les deux faits qui la fondent : (1) grim-grim est un équilibre si
+  \( \delta \) est assez grand, (2) TT-TT en est un <em>aussi</em>, sans condition. Le jeu répété
+  à l'infini a donc <strong>plusieurs</strong> équilibres, et la théorie est muette sur celui qui
+  sera joué. Le cours signale nommément cette confusion comme « piège d'examen classique ».
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les trois formulations du même piège</div>
+<p>
+  La question « possible ≠ garanti » ne se présente presque jamais sous ce nom. Reconnais-la sous
+  ses déguisements :
+</p>
+<ul>
+  <li>« Avec \( \delta = 0{,}8 \), les joueurs coopèrent-ils ? » → <strong>Pas nécessairement.</strong></li>
+  <li>« Combien d'ENPS ce jeu admet-il ? » → <strong>Au moins deux</strong>, et on les exhibe.</li>
+  <li>« L'horizon infini garantit-il la coopération ? » → <strong>Non</strong>, il la rend
+      possible.</li>
+</ul>
+<p>
+  Dans les trois cas, la réponse complète mentionne <em>les deux</em> équilibres. Une réponse qui
+  ne parle que de grim rate la moitié des points.
+</p>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Comment ne plus jamais confondre les deux horizons</div>
+<p>
+  Le seul mot à repérer dans l'énoncé est <strong>« fini et connu »</strong> (ou un nombre :
+  10 mois, 200 semaines). Il déclenche une réponse totalement différente :
+</p>
+<table class="compare">
+<tr><th class="left">L'énoncé dit…</th><th class="left">Tu fais…</th><th class="left">Rôle de \( \delta \)</th></tr>
+<tr>
+  <td class="left">« répété \( N \) fois », \( N \) connu</td>
+  <td class="left">Théorème de l'horizon fini + induction à rebours. <strong>Aucun calcul.</strong></td>
+  <td class="left"><strong>Aucun</strong> — il n'apparaît pas</td>
+</tr>
+<tr>
+  <td class="left">« répété à l'infini » ou « probabilité de continuation »</td>
+  <td class="left">Comparaison coopération / déviation, seuil sur \( \delta \)</td>
+  <td class="left">Central</td>
+</tr>
+</table>
+<p>
+  Si tu te surprends à calculer une somme géométrique dans une question à horizon fini, arrête-toi :
+  tu es en train de répondre à une autre question.
+</p>
+</div>
+
+<a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-tt">B3 · §6 — « Toujours trahir » reste un équilibre <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-tt</span></a>
+</section>

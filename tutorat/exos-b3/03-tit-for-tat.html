@@ -1,0 +1,375 @@
+<section class="chapter">
+<div class="chapter-tag">Exercice 3 · simuler, comparer, restituer</div>
+<h1>Tit-for-tat</h1>
+<p class="chapter-intro">
+  Le cours ne démontre rien sur tit-for-tat : il la définit, la compare à grim et raconte le
+  tournoi d'Axelrod. Les questions d'examen prennent donc deux formes — <strong>faire tourner</strong>
+  la stratégie sur une suite de coups donnée, et <strong>restituer</strong> ce que le cours en dit.
+</p>
+
+<h2>L'énoncé</h2>
+
+<div class="enonce">
+<div class="enonce-title">Exercice 3 — Les deux brasseries (30 points · 35 minutes)</div>
+<p>
+  Deux brasseries artisanales, <strong>La Houblonnière</strong> (joueur 1) et <strong>Brasserie du
+  Lion</strong> (joueur 2), se partagent le marché d'une ville. Chaque trimestre, chacune peut
+  <strong>coopérer</strong> (C : maintenir son prix) ou <strong>trahir</strong> (T : lancer une
+  promotion agressive). Les profits trimestriels sont :
+</p>
+
+<table class="game">
+  <tr><td class="void"></td><td class="void"></td><th colspan="2">Brasserie du Lion</th></tr>
+  <tr><td class="void"></td><td class="void"></td><th>C</th><th>T</th></tr>
+  <tr><td class="player" rowspan="2">La Houblonnière</td><th>C</th><td>(5 ; 5)</td><td>(0 ; 8)</td></tr>
+  <tr><th>T</th><td>(8 ; 0)</td><td>(2 ; 2)</td></tr>
+</table>
+
+<p>
+  On observe le marché pendant <strong>six trimestres</strong> (\( t = 0 \) à \( t = 5 \)). La
+  Brasserie du Lion suit un plan fixé à l'avance, indépendant de ce que fait sa concurrente :
+</p>
+
+<table class="data">
+<tr><th>Trimestre \( t \)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+<tr><th>Action du Lion</th><td>C</td><td>T</td><td>T</td><td>C</td><td>C</td><td>T</td></tr>
+</table>
+
+<p>
+  <strong>3.1)</strong> Définissez précisément les stratégies <strong>tit-for-tat</strong> et
+  <strong>grim</strong>, et expliquez ce qui les distingue. <em>(5 points)</em>
+</p>
+
+<p>
+  <strong>3.2)</strong> La Houblonnière joue <strong>tit-for-tat</strong>. Complétez le tableau de
+  ses actions et des profits trimestriels des deux brasseries, puis calculez les payoffs escomptés
+  des deux joueuses sur les six trimestres avec \( \delta = 0{,}9 \). Refaites ensuite le même
+  travail en supposant que La Houblonnière joue <strong>grim</strong>. <em>(12 points)</em>
+</p>
+
+<p>
+  <strong>3.3)</strong> Laquelle des deux stratégies protège le mieux La Houblonnière face à
+  <em>cette</em> adversaire ? Ce résultat contredit-il la victoire de tit-for-tat au tournoi
+  d'Axelrod ? <em>(5 points)</em>
+</p>
+
+<p>
+  <strong>3.4)</strong> Décrivez le protocole du tournoi d'Axelrod et ses deux résultats
+  principaux. <em>(5 points)</em>
+</p>
+
+<p>
+  <strong>3.5)</strong> En laboratoire, on fait jouer un dilemme du prisonnier répété 10 fois à des
+  étudiants qui se connaissent et peuvent discuter entre les manches. Citez deux observations qui
+  contredisent la prédiction théorique et une qui la confirme. <em>(3 points)</em>
+</p>
+</div>
+
+<p style="text-align:center"><strong>↓ Arrête-toi ici. Prends une feuille, 35 minutes. ↓</strong></p>
+
+<hr class="soft" />
+
+<h2>Le solutionnaire</h2>
+
+<h3>3.1 — Les deux définitions (5 points)</h3>
+
+<dl class="lexique">
+<dt>Tit-for-tat (donnant-donnant)</dt>
+<dd>
+  Le joueur <strong>coopère en période 0</strong> ; en période \( t \), il <strong>copie l'action
+  jouée par l'adversaire en \( t-1 \)</strong> : il coopère si l'autre a coopéré, il trahit si
+  l'autre a trahi.
+</dd>
+<dt>Grim (gâchette)</dt>
+<dd>
+  Le joueur coopère tant que l'adversaire a <strong>toujours</strong> coopéré par le passé ; dès
+  que l'adversaire trahit une seule fois, il trahit à <strong>toutes</strong> les périodes
+  suivantes, définitivement.
+</dd>
+</dl>
+
+<div class="box box-copie">
+<div class="box-title">La phrase de comparaison à connaître par cœur</div>
+<p>
+  « Les deux stratégies commencent par coopérer et punissent la trahison. Elles diffèrent par la
+  <strong>mémoire</strong> : grim se souvient de <em>toute</em> l'histoire et ne pardonne
+  <em>jamais</em> — une seule trahison déclenche une guerre éternelle ; tit-for-tat ne regarde que
+  <em>la période précédente</em> et pardonne dès que l'adversaire recoopère. Tit-for-tat est donc
+  à la fois <strong>punitive et indulgente</strong>, et c'est cette indulgence qui explique son
+  succès. »
+</p>
+</div>
+
+<h3>3.2 — La simulation (12 points)</h3>
+
+<div class="box box-methode">
+<div class="box-title">Le geste mécanique qui évite toute erreur</div>
+<p>
+  Ne raisonne pas trimestre par trimestre « dans ta tête » : remplis les lignes d'un coup, avec ces
+  deux règles d'écriture.
+</p>
+<ul>
+  <li><strong>La ligne de tit-for-tat</strong> = la ligne de l'adversaire <strong>décalée d'une
+      case vers la droite</strong>, précédée d'un C. Littéralement : tu recopies la ligne du
+      Lion en la glissant d'un cran.</li>
+  <li><strong>La ligne de grim</strong> = des C jusqu'à la première trahison de l'adversaire
+      <strong>comprise</strong>, puis des T partout ensuite. (Comprise, parce qu'au trimestre où
+      l'autre trahit pour la première fois, grim ne l'a pas encore vu.)</li>
+</ul>
+</div>
+
+<h4>Cas A — La Houblonnière joue tit-for-tat</h4>
+
+<table class="data">
+<tr><th>Trimestre \( t \)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+<tr><th>Lion (donné)</th><td>C</td><td>T</td><td>T</td><td>C</td><td>C</td><td>T</td></tr>
+<tr><th>Houblonnière (TfT)</th><td>C</td><td>C</td><td>T</td><td>T</td><td>C</td><td>C</td></tr>
+<tr><th>Case jouée</th><td>(C,C)</td><td>(C,T)</td><td>(T,T)</td><td>(T,C)</td><td>(C,C)</td><td>(C,T)</td></tr>
+<tr><th>\( \pi \) Houblonnière</th><td>5</td><td>0</td><td>2</td><td>8</td><td>5</td><td>0</td></tr>
+<tr><th>\( \pi \) Lion</th><td>5</td><td>8</td><td>2</td><td>0</td><td>5</td><td>8</td></tr>
+</table>
+
+<p>
+  Vérifie la ligne « Houblonnière » : elle commence par C, puis reprend la ligne du Lion décalée
+  — C, T, T, C, C — soit <strong>C, C, T, T, C, C</strong> ✓.
+</p>
+
+<p>Les puissances de \( \delta = 0{,}9 \) dont on a besoin :</p>
+
+<table class="data">
+<tr><th>\( t \)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+<tr><th>\( \delta^t \)</th><td>1</td><td>0,9</td><td>0,81</td><td>0,729</td><td>0,6561</td><td>0,59049</td></tr>
+</table>
+
+<div class="calc">
+  <div class="step">
+    \[ \Pi_1 = 5(1) + 0(0{,}9) + 2(0{,}81) + 8(0{,}729) + 5(0{,}6561) + 0(0{,}59049) \]
+    <div class="why">on multiplie chaque profit par le facteur d'escompte de sa période. Les
+    termes à profit nul se suppriment : inutile de les calculer.</div>
+  </div>
+  <div class="step">
+    \[ \Pi_1 = 5 + 1{,}62 + 5{,}832 + 3{,}2805 \;=\; 15{,}73 \]
+    <div class="why">payoff escompté de La Houblonnière avec tit-for-tat.</div>
+  </div>
+  <div class="step">
+    \[ \Pi_2 = 5 + 8(0{,}9) + 2(0{,}81) + 0 + 5(0{,}6561) + 8(0{,}59049) \]
+    <div class="why">même travail pour le Lion.</div>
+  </div>
+  <div class="step">
+    \[ \Pi_2 = 5 + 7{,}2 + 1{,}62 + 3{,}2805 + 4{,}72392 \;=\; 21{,}82 \]
+    <div class="why">payoff escompté du Lion face à tit-for-tat.</div>
+  </div>
+</div>
+
+<h4>Cas B — La Houblonnière joue grim</h4>
+
+<p>
+  Le Lion trahit pour la première fois au trimestre 1. Grim joue donc C aux trimestres 0 et 1
+  (au trimestre 1 elle n'a pas encore observé la trahison), puis T à partir du trimestre 2 et pour
+  toujours.
+</p>
+
+<table class="data">
+<tr><th>Trimestre \( t \)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+<tr><th>Lion (donné)</th><td>C</td><td>T</td><td>T</td><td>C</td><td>C</td><td>T</td></tr>
+<tr><th>Houblonnière (grim)</th><td>C</td><td>C</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+<tr><th>Case jouée</th><td>(C,C)</td><td>(C,T)</td><td>(T,T)</td><td>(T,C)</td><td>(T,C)</td><td>(T,T)</td></tr>
+<tr><th>\( \pi \) Houblonnière</th><td>5</td><td>0</td><td>2</td><td>8</td><td>8</td><td>2</td></tr>
+<tr><th>\( \pi \) Lion</th><td>5</td><td>8</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+</table>
+
+<div class="calc">
+  <div class="step">
+    \[ \Pi_1 = 5 + 0 + 2(0{,}81) + 8(0{,}729) + 8(0{,}6561) + 2(0{,}59049) \]
+    <div class="why">seuls les trimestres 4 et 5 changent par rapport au cas A.</div>
+  </div>
+  <div class="step">
+    \[ \Pi_1 = 5 + 1{,}62 + 5{,}832 + 5{,}2488 + 1{,}18098 \;=\; 18{,}88 \]
+    <div class="why">payoff escompté de La Houblonnière avec grim.</div>
+  </div>
+  <div class="step">
+    \[ \Pi_2 = 5 + 8(0{,}9) + 2(0{,}81) + 0 + 0 + 2(0{,}59049) \;=\; 15{,}00 \]
+    <div class="why">payoff escompté du Lion face à grim.</div>
+  </div>
+</div>
+
+<div class="result">
+<div class="result-title">Le tableau de synthèse à faire figurer sur la copie</div>
+<table class="compare">
+<tr><th class="left">Situation</th><th>Houblonnière</th><th>Lion</th></tr>
+<tr><td class="left">Coopération des deux aux six trimestres (référence)</td><td>23,43</td><td>23,43</td></tr>
+<tr><td class="left">Houblonnière joue <strong>tit-for-tat</strong></td><td>15,73</td><td>21,82</td></tr>
+<tr><td class="left">Houblonnière joue <strong>grim</strong></td><td>18,88</td><td>15,00</td></tr>
+<tr><td class="left">Trahison des deux aux six trimestres (plancher)</td><td>9,37</td><td>9,37</td></tr>
+</table>
+<p>
+  La référence se calcule d'un coup :
+  \( 5 \times (1 + 0{,}9 + 0{,}81 + 0{,}729 + 0{,}6561 + 0{,}59049) = 5 \times 4{,}686 = 23{,}43 \).
+  Le plancher, c'est la même somme avec 2 au lieu de 5.
+</p>
+</div>
+
+<h3>3.3 — Comparaison et lien avec Axelrod (5 points)</h3>
+
+<div class="box box-copie">
+<div class="box-title">Ce que tu écris sur la copie (3.3)</div>
+<p>
+  « Face à <em>cette</em> adversaire, <strong>grim protège nettement mieux</strong> La
+  Houblonnière : 18,88 contre 15,73, soit plus de 3 points d'écart. La raison est visible aux
+  trimestres 4 et 5 : le Lion revient coopérer au trimestre 3, tit-for-tat lui pardonne
+  immédiatement et recoopère — ce qui permet au Lion de la retrahir au trimestre 5 et de récolter
+  8 une troisième fois. Grim, elle, ne pardonne pas : elle continue de trahir, encaisse 8 au
+  trimestre 4 et évite de se faire exploiter à nouveau. Le Lion passe de 21,82 à 15,00.
+</p>
+<p>
+  Cela <strong>ne contredit pas</strong> le tournoi d'Axelrod, pour deux raisons. D'abord, on
+  compare ici les deux stratégies contre <em>une seule</em> adversaire, choisie exploiteuse, alors
+  qu'Axelrod mesurait un payoff <em>moyen</em> contre l'ensemble des stratégies soumises. Ensuite,
+  la force de tit-for-tat est de <strong>rétablir la coopération</strong> avec un partenaire
+  coopératif — elle y parvient d'ailleurs ici au trimestre 4 — alors que grim, une fois
+  déclenchée, condamne définitivement la relation. Contre un partenaire honnête ayant commis une
+  erreur isolée, l'ordre des deux résultats s'inverserait.
+</p>
+<p>
+  À noter enfin : même en exploitant tit-for-tat, le Lion obtient 21,82, soit <em>moins</em> que
+  les 23,43 d'une coopération continue. Trahir ne l'a pas enrichi : cela a détruit de la valeur
+  pour les deux. »
+</p>
+</div>
+
+<h3>3.4 — Le tournoi d'Axelrod (5 points)</h3>
+
+<div class="box box-copie">
+<div class="box-title">Ce que tu écris sur la copie (3.4)</div>
+<p>
+  « <strong>Le protocole.</strong> Dans les années 1980, le politologue Robert Axelrod invite des
+  chercheurs à soumettre chacun une stratégie <strong>encodée dans un programme
+  informatique</strong>. Chaque stratégie affronte <strong>chacune des autres</strong> sur
+  <strong>200 périodes</strong> de dilemme du prisonnier répété. Le classement se fait au
+  <strong>payoff moyen</strong> obtenu sur l'ensemble des rencontres.
+</p>
+<p>
+  <strong>Premier résultat.</strong> La gagnante est <strong>tit-for-tat</strong>, soumise par
+  <strong>Anatol Rapoport</strong> — et c'était l'une des stratégies les plus <em>simples</em> du
+  tournoi, ce qui constitue en soi le résultat marquant : la sophistication n'a pas payé.
+</p>
+<p>
+  <strong>Second résultat.</strong> Les stratégies dites « <strong>gentilles</strong> » — celles
+  qui ne trahissent <em>jamais les premières</em> — ont <strong>toutes</strong> obtenu de
+  meilleurs résultats que les stratégies non gentilles. Ne pas ouvrir les hostilités a payé
+  systématiquement. »
+</p>
+</div>
+
+<h3>3.5 — Les données de laboratoire (3 points)</h3>
+
+<table class="compare">
+<tr><th class="left">Observation</th><th class="left">Verdict</th></tr>
+<tr>
+  <td class="left">Une grosse moitié des paires a coopéré du début à la fin, sans une seule trahison</td>
+  <td class="left"><strong>Contredit</strong> la théorie, qui prédisait 0 \%</td>
+</tr>
+<tr>
+  <td class="left">Aucune paire n'a trahi du début à la fin : toutes ont connu des manches de coopération mutuelle</td>
+  <td class="left"><strong>Contredit</strong> la théorie</td>
+</tr>
+<tr>
+  <td class="left">Parmi les paires qui n'ont pas coopéré tout du long, la trahison survient souvent à la <em>dernière</em> manche</td>
+  <td class="left"><strong>Confirme</strong> l'intuition de l'induction à rebours — mais elle ne « remonte » pas jusqu'au début</td>
+</tr>
+<tr>
+  <td class="left">Les trahisons de la première manche n'ont pas déclenché de réaction extrême : personne n'a joué grim</td>
+  <td class="left"><strong>Contredit</strong> la stratégie grim — les humains pardonnent, un point de plus pour tit-for-tat</td>
+</tr>
+</table>
+
+<p>
+  Deux qui contredisent, une qui confirme : n'importe quelles deux des trois lignes « contredit »
+  font l'affaire, la ligne « confirme » est celle de la dernière manche.
+</p>
+
+<h2>Les astuces pour le refaire de tête</h2>
+
+<div class="box box-rappel">
+<div class="box-title">Astuce n° 1 — Les deux stratégies se remplissent sans réfléchir</div>
+<table class="compare">
+<tr><th class="left">Stratégie</th><th class="left">Comment remplir la ligne</th></tr>
+<tr>
+  <td class="left">Tit-for-tat</td>
+  <td class="left">Un <strong>C</strong>, puis la ligne de l'adversaire <strong>décalée d'une case à droite</strong>. C'est un simple copier-coller glissé.</td>
+</tr>
+<tr>
+  <td class="left">Grim</td>
+  <td class="left"><strong>C</strong> jusqu'à la première trahison de l'adversaire <em>comprise</em>, puis <strong>T</strong> jusqu'au bout, sans exception.</td>
+</tr>
+</table>
+<p>
+  Ces deux règles suppriment complètement le raisonnement période par période, qui est là où les
+  erreurs se produisent. Le « comprise » de la règle grim est le seul point délicat : au trimestre
+  où l'autre trahit, grim joue encore C — elle ne peut pas réagir à une action qu'elle n'a pas
+  encore observée.
+</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Astuce n° 2 — « Mémoire d'éléphant contre mémoire d'un coup »</div>
+<p>
+  L'image qui fixe la différence : <strong>grim a une mémoire d'éléphant</strong> — elle se
+  souvient de tout, à jamais ; <strong>tit-for-tat a une mémoire d'un seul coup</strong> — elle
+  n'a retenu que le trimestre dernier. De là découle tout le reste : grim est
+  <em>impitoyable</em>, TfT est <em>punitive mais indulgente</em>.
+</p>
+<p>
+  Corollaire pratique : dans une simulation, <strong>grim ne revient jamais à C</strong>. Si ta
+  ligne grim contient un C après un T, tu t'es trompé.
+</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Astuce n° 3 — Les quatre chiffres d'Axelrod</div>
+<p>
+  La question de restitution attend des éléments précis. Retiens-les comme une fiche d'identité :
+</p>
+<table class="compare">
+<tr><th class="left">Élément</th><th class="left">Valeur</th></tr>
+<tr><td class="left">Longueur de chaque rencontre</td><td class="left"><strong>200</strong> périodes</td></tr>
+<tr><td class="left">Format</td><td class="left">chacune contre chacune, stratégies <strong>programmées</strong></td></tr>
+<tr><td class="left">Critère de classement</td><td class="left">le <strong>payoff moyen</strong></td></tr>
+<tr><td class="left">Vainqueur</td><td class="left"><strong>Tit-for-tat</strong>, d'Anatol <strong>Rapoport</strong></td></tr>
+</table>
+<p>
+  Et le second résultat, qui vaut autant de points que le premier : <strong>toutes</strong> les
+  stratégies « gentilles » ont battu <strong>toutes</strong> les non gentilles.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Le piège à ne surtout pas s'inventer</div>
+<p>
+  Le cours <strong>ne démontre jamais</strong> que (tit-for-tat ; tit-for-tat) est un équilibre, et
+  ne te demandera pas de le faire. Si la tentation te prend de recopier la démonstration de grim en
+  changeant le nom de la stratégie, résiste : le calcul est différent et le résultat bien plus
+  fragile, parce que tit-for-tat <em>se punit elle-même</em> — deux TfT qui se croisent après une
+  trahison entrent dans une alternance de représailles au lieu d'un état stable.
+</p>
+<p>
+  Sur tit-for-tat, reste sur ce que le cours établit : la définition, la comparaison avec grim, le
+  tournoi et son enseignement. C'est tout ce qui est attendu, et c'est déjà 10 points.
+</p>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Trois secondes pour vérifier une simulation</div>
+<ol>
+  <li><strong>La ligne des cases</strong> doit correspondre : (C,C) rapporte \( (c ; c) \), (T,C)
+      rapporte \( (t ; s) \), (C,T) rapporte \( (s ; t) \), (T,T) rapporte \( (p ; p) \). Une
+      seule inversion et tout le calcul saute.</li>
+  <li><strong>La somme des deux payoffs par période</strong> vaut \( 2c \) en coopération mutuelle,
+      \( t + s \) en trahison unilatérale, \( 2p \) en trahison mutuelle. Ici : 10, 8, 4.</li>
+  <li><strong>Le résultat final</strong> doit tomber entre le plancher (tous trahissent) et le
+      plafond (tous coopèrent) — ici entre 9,37 et 23,43. En dehors, il y a une erreur.</li>
+</ol>
+</div>
+
+<a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-axelrod">B3 · §9 — Le tournoi d'Axelrod <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b3#sec-axelrod</span></a>
+</section>
