@@ -1,0 +1,104 @@
+<section class="chapter">
+<div class="chapter-tag">Exercice 2 · corrigé express</div>
+<h1>« Toujours trahir » et la pluralité des équilibres</h1>
+<p class="chapter-intro">
+  Matrice des compagnies : \( c = 9 \) (H,H), \( t = 12 \), \( p = 5 \) (B,B), \( s = 2 \).
+</p>
+
+<h2>2.1 — Toujours trahir est un équilibre, sans condition</h2>
+
+<p>
+  Ici on ne compare pas deux séries : on <strong>majore</strong>. Face à une adversaire qui joue B
+  à chaque période quoi qu'il arrive, regarde sa colonne : on y touche 2 (en jouant H) ou 5 (en
+  jouant B). Donc \( \pi_t \le 5 \) pour tout \( t \), et :
+</p>
+
+<p>\[ \Pi_2\big(s_1^{TT}, s_2\big) \;=\; \pi_0 + \delta\pi_1 + \cdots \;\le\; \frac{5}{1-\delta} \;=\; \Pi_2\big(s_1^{TT}, s_2^{TT}\big) \]</p>
+
+<p>
+  Aucune stratégie ne fait strictement mieux : \( s_2^{TT} \) est une meilleure réponse à
+  \( s_1^{TT} \), et par symétrie l'inverse. <strong>Aucune condition sur \( \delta \) n'apparaît</strong> —
+  c'est vrai pour tout \( \delta \in [0 \,;\, 1[ \).
+</p>
+
+<h2>2.2 — Le seuil de grim</h2>
+
+<p>\[ \frac{9}{1-\delta} \ \ge\ 12 + \delta\,\frac{5}{1-\delta} \;\Longleftrightarrow\; 9 \ \ge\ 12 - 7\delta \;\Longleftrightarrow\; \boxed{\ \delta \ \ge\ \tfrac{3}{7} \approx 0{,}43\ } \]</p>
+
+<p>Contrôle : \( (12-9)/(12-5) = 3/7 \) ✓.</p>
+
+<h2>2.3 — Deux équilibres, aucune prédiction</h2>
+
+<div class="box box-copie">
+<div class="box-title">La copie minimale</div>
+<p>
+  « Avec \( \delta = 0{,}5 \ge 3/7 \), <strong>deux</strong> équilibres ont été exhibés :
+  (grim ; grim), qui soutient le tarif haut, et (toujours trahir ; toujours trahir), qui donne le
+  tarif bas. La théorie <strong>ne dit pas</strong> lequel sera joué : l'horizon infini rend la
+  coopération <em>possible</em>, pas <em>certaine</em>. L'affirmation « elles sont patientes donc
+  elles vont coopérer » est donc fausse — la patience est nécessaire, pas suffisante. »
+</p>
+</div>
+
+<h2>2.4 — Les deux vrai/faux</h2>
+
+<p>
+  <strong>a) 200 répétitions, \( \delta = 0{,}99 \) → FAUX.</strong> 200 est fini et le jeu a un
+  unique équilibre de Nash : le théorème de l'horizon fini donne (B ; B) partout,
+  <em>quelle que soit</em> la valeur de \( \delta \). La patience ne sauve pas un horizon fini —
+  \( \delta \) ne figure même pas dans le théorème.
+</p>
+
+<p>
+  <strong>b) Dévier une fois puis revenir → FAUX.</strong> Une fois le grim déclenché, l'adversaire
+  joue B pour toujours ; revenir à H rapporte \( s = 2 \), contre \( p = 5 \) en restant en B.
+  Recoopérer est strictement pire. C'est pour ça que la déviation étudiée est « 12 puis 5 pour
+  toujours ».
+</p>
+
+<h2>Les tips</h2>
+
+<div class="box box-rappel">
+<div class="box-title">Trois réflexes pour cet exercice</div>
+<ol>
+  <li>
+    <strong>« Face à un mur, aucune porte. »</strong> Un joueur qui joue toujours B ne réagit à
+    rien : le mieux que tu puisses faire se lit dans <em>une seule colonne</em>. D'où la
+    majoration \( \pi_t \le p \) — trois lignes, pas deux séries.
+  </li>
+  <li>
+    <strong>« Pas de promesse, pas de seuil. »</strong> Grim promet de coopérer, donc il faut
+    vérifier que la promesse tient → un seuil. Toujours trahir ne promet rien → aucune condition.
+    Si tu trouves un seuil pour « toujours trahir », tu t'es trompé de démonstration.
+  </li>
+  <li>
+    <strong>« L'infini ouvre la porte, il ne pousse personne dedans. »</strong> La phrase à
+    recopier dès qu'on te demande si les joueurs vont coopérer.
+  </li>
+</ol>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Le même piège sous trois déguisements</div>
+<ul>
+  <li>« Avec \( \delta = 0{,}8 \), coopèrent-ils ? » → <strong>pas nécessairement</strong>.</li>
+  <li>« Combien d'ENPS ? » → <strong>au moins deux</strong>, et on les exhibe.</li>
+  <li>« L'horizon infini garantit-il la coopération ? » → <strong>non</strong>, il la rend possible.</li>
+</ul>
+<p>
+  Dans les trois cas, une réponse qui ne parle que de grim rate la moitié des points : mentionne
+  toujours <em>les deux</em> équilibres.
+</p>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Le seul mot à repérer dans l'énoncé</div>
+<p>
+  <strong>« fini et connu »</strong> (ou un nombre : 10 mois, 200 semaines) → théorème + induction
+  à rebours, <strong>aucun calcul</strong>, \( \delta \) n'apparaît pas.
+  <strong>« à l'infini »</strong> (ou « probabilité de continuation ») → comparaison de deux
+  payoffs escomptés et seuil sur \( \delta \). Si tu calcules une somme géométrique dans une
+  question à horizon fini, tu réponds à une autre question.
+</p>
+</div>
+</section>

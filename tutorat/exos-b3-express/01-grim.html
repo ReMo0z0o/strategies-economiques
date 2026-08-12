@@ -1,0 +1,98 @@
+<section class="chapter">
+<div class="chapter-tag">Exercice 1 · corrigé express</div>
+<h1>La stratégie grim</h1>
+<p class="chapter-intro">
+  Matrice des garages : \( c = 6 \) (R,R), \( t = 10 \) (trahir seul), \( p = 4 \) (C,C),
+  \( s = 1 \). Vérifie \( t > c > p > s \) : c'est bien un dilemme du prisonnier.
+</p>
+
+<h2>1.1 — Dominance, Nash, horizon fini</h2>
+
+<p>
+  <strong>Dominance.</strong> Si Lambert joue R : \( 10 > 6 \) → C. S'il joue C : \( 4 > 1 \) → C.
+  Donc C est strictement dominante, et par symétrie pour Lambert aussi.
+  <strong>Équilibre de Nash :</strong> (C ; C) = (4 ; 4), <strong>Pareto-dominé</strong> par
+  (R ; R) = (6 ; 6) — c'est le dilemme.
+</p>
+
+<div class="box box-copie">
+<div class="box-title">La copie minimale — horizon fini</div>
+<p>
+  « Le jeu de période a un <strong>unique</strong> équilibre de Nash et le nombre de répétitions
+  est <strong>fini et connu</strong> : le théorème de l'horizon fini s'applique. L'unique ENPS
+  consiste à jouer (C ; C) à chaque mois. Raisonnement : au dernier mois il n'y a plus de
+  lendemain, donc plus de punition possible, chacun joue sa dominante ; sachant cela, l'avant-
+  dernier mois n'achète plus rien et devient à son tour un jeu isolé ; de proche en proche,
+  l'accord s'effondre dès le premier mois. »
+</p>
+</div>
+
+<h2>1.2 — La condition sur δ</h2>
+
+<p>Trois lignes, toujours les mêmes :</p>
+
+<p>\[ \Pi^{\text{coop}} = \frac{6}{1-\delta} \qquad\qquad \Pi^{\text{dév}} = 10 + \delta\,\frac{4}{1-\delta} \]</p>
+
+<p>\[ \frac{6}{1-\delta} \ \ge\ 10 + \delta\,\frac{4}{1-\delta} \;\underset{\times\,(1-\delta)\,>\,0}{\Longleftrightarrow}\; 6 \ \ge\ 10 - 6\delta \;\Longleftrightarrow\; \boxed{\ \delta \ \ge\ \tfrac{2}{3}\ } \]</p>
+
+<div class="result">
+<div class="result-title">Contrôle en cinq secondes</div>
+<p>
+  \( \dfrac{t-c}{t-p} = \dfrac{10-6}{10-4} = \dfrac{4}{6} = \dfrac{2}{3} \) ✓. Fais cette
+  vérification systématiquement : elle détecte immédiatement une erreur de développement.
+</p>
+</div>
+
+<h2>1.3 — Avec δ = 0,6</h2>
+
+<p>
+  \( 0{,}6 < 2/3 \) : <strong>l'accord ne tient pas</strong>. Coopérer donne
+  \( 6/0{,}4 = 15 \) ; dévier donne \( 10 + (4 \times 0{,}6)/0{,}4 = 16 \). Comme
+  \( 16 > 15 \), la déviation est profitable.
+</p>
+
+<h2>1.4 — Interprétation</h2>
+
+<div class="box box-copie">
+<div class="box-title">La copie minimale</div>
+<p>
+  « \( \delta \) mesure la <strong>patience</strong> : le poids donné aux profits futurs (un euro
+  dans un mois vaut \( \delta \) euro aujourd'hui). Trahir rapporte \( t - c = 4 \) tout de suite,
+  mais coûte \( c - p = 2 \) à chaque mois suivant. Un garage patient valorise ces pertes et
+  renonce ; un garage impatient les escompte, la menace ne le dissuade plus, l'entente s'effondre.
+  L'entente tient donc mieux sur un <strong>marché stable où les deux firmes sont installées
+  durablement</strong> — probabilité de continuation élevée, donc \( \delta \) élevé. »
+</p>
+</div>
+
+<h2>Les tips</h2>
+
+<div class="box box-rappel">
+<div class="box-title">Trois réflexes pour cet exercice</div>
+<ol>
+  <li>
+    <strong>« Coopérer pour toujours, ou se gaver une fois puis être puni pour toujours — à partir
+    de demain. »</strong> Récite-la avant d'écrire : le « à partir de demain » place le
+    \( \delta \) devant la punition. C'est <em>la</em> faute classique du chapitre.
+  </li>
+  <li>
+    <strong>Le seuil se lit en français :</strong> tentation immédiate divisée par
+    (tentation + coût de la punition par période). Si tu oublies \( (t-c)/(t-p) \), tu la
+    reconstruis à partir de la phrase.
+  </li>
+  <li>
+    <strong>Écris « \( 1-\delta > 0 \), le sens est conservé »</strong> quand tu multiplies. Une
+    ligne, des points garantis.
+  </li>
+</ol>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Le piège de lecture</div>
+<p>
+  Dans une case \( (a \,;\, b) \), \( a \) est au joueur <strong>en ligne</strong>. Prendre le 1
+  de \( (1 ; 10) \) au lieu du 10 fausse tout l'exercice sans rattrapage possible. Entoure
+  \( c \), \( t \), \( p \) sur la matrice avant la première ligne de calcul.
+</p>
+</div>
+</section>

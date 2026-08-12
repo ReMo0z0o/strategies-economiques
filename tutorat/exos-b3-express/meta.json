@@ -1,0 +1,26 @@
+{
+  "filename": "exos-b3-corrige-express.pdf",
+  "toc": false,
+  "eyebrow": "Corrigé express — B3, jeux répétés",
+  "title": "Les trois exercices, corrigés en bref",
+  "subtitle": "L'essentiel de chaque réponse, ce qu'il faut écrire, et un tip pour retenir",
+  "code": "B3",
+  "project": "Projet : stratégies et décisions économiques",
+  "part": "Théorie des jeux — les jeux répétés",
+  "footnote": "Version condensée du corrigé. Elle donne le raisonnement et le résultat, pas le détail de chaque ligne : si une étape reste obscure, la version longue « Grim, toujours trahir, tit-for-tat » la déroule intégralement.",
+  "howto": {
+    "title": "Comment lire ce corrigé",
+    "lead": "Une page et demie par exercice, pas plus. Chaque sous-question tient en un bloc : le calcul nu, puis <strong>la copie minimale</strong> — la phrase exacte à écrire — et le <strong>tip</strong> qui évite l'erreur classique.",
+    "items": [
+      "<strong>Les encadrés « copie minimale »</strong> sont le strict nécessaire pour avoir les points. Rien à retrancher, rien à ajouter.",
+      "<strong>Les tips</strong> sont numérotés et tiennent en une ligne : ce sont eux qu'il faut relire la veille, pas le calcul.",
+      "<strong>La dernière page</strong> tient tout le bloc B3 sur une seule feuille : trois formules, trois tips, trois pièges."
+    ]
+  },
+  "chapters": [
+    { "file": "01-grim.html", "title": "Exercice 1 — grim" },
+    { "file": "02-toujours-trahir.html", "title": "Exercice 2 — toujours trahir" },
+    { "file": "03-tit-for-tat.html", "title": "Exercice 3 — tit-for-tat" },
+    { "file": "99-une-page.html", "title": "Tout B3 sur une page" }
+  ]
+}

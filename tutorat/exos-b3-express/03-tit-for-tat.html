@@ -1,0 +1,135 @@
+<section class="chapter">
+<div class="chapter-tag">Exercice 3 · corrigé express</div>
+<h1>Tit-for-tat</h1>
+<p class="chapter-intro">
+  Matrice des brasseries : \( c = 5 \), \( t = 8 \), \( p = 2 \), \( s = 0 \). Suite imposée du
+  Lion : C, T, T, C, C, T. Facteur d'escompte \( \delta = 0{,}9 \).
+</p>
+
+<h2>3.1 — Les deux définitions</h2>
+
+<p>
+  <strong>Tit-for-tat</strong> : coopère en \( t = 0 \), puis <strong>copie l'action de
+  l'adversaire en \( t-1 \)</strong>. <strong>Grim</strong> : coopère tant que l'adversaire a
+  <em>toujours</em> coopéré ; dès une trahison, trahit <strong>définitivement</strong>.
+</p>
+
+<div class="box box-copie">
+<div class="box-title">La copie minimale — la différence</div>
+<p>
+  « Les deux commencent par coopérer et punissent la trahison. Elles diffèrent par la
+  <strong>mémoire</strong> : grim se souvient de toute l'histoire et ne pardonne jamais ;
+  tit-for-tat ne regarde que la période précédente et pardonne dès que l'adversaire recoopère.
+  Tit-for-tat est <strong>punitive et indulgente</strong>. »
+</p>
+</div>
+
+<h2>3.2 — La simulation</h2>
+
+<div class="box box-methode">
+<div class="box-title">Remplis les lignes d'un coup, sans réfléchir période par période</div>
+<ul>
+  <li><strong>Tit-for-tat</strong> = un C, puis la ligne de l'adversaire <strong>décalée d'une case
+      à droite</strong>.</li>
+  <li><strong>Grim</strong> = des C jusqu'à la première trahison <strong>comprise</strong>, puis
+      des T jusqu'au bout. (Comprise : au trimestre où l'autre trahit, grim ne l'a pas encore vu.)</li>
+</ul>
+</div>
+
+<table class="data">
+<tr><th>Trimestre</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+<tr><th>Lion (donné)</th><td>C</td><td>T</td><td>T</td><td>C</td><td>C</td><td>T</td></tr>
+<tr><th>Houblonnière — TfT</th><td>C</td><td>C</td><td>T</td><td>T</td><td>C</td><td>C</td></tr>
+<tr><th>\( \pi \) TfT / Lion</th><td>5 / 5</td><td>0 / 8</td><td>2 / 2</td><td>8 / 0</td><td>5 / 5</td><td>0 / 8</td></tr>
+<tr><th>Houblonnière — grim</th><td>C</td><td>C</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+<tr><th>\( \pi \) grim / Lion</th><td>5 / 5</td><td>0 / 8</td><td>2 / 2</td><td>8 / 0</td><td>8 / 0</td><td>2 / 2</td></tr>
+</table>
+
+<p>
+  Puissances de \( \delta = 0{,}9 \) : 1 · 0,9 · 0,81 · 0,729 · 0,6561 · 0,59049. On ne calcule que
+  les termes à profit non nul.
+</p>
+
+<table class="compare">
+<tr><th class="left">Situation</th><th>Houblonnière</th><th>Lion</th></tr>
+<tr><td class="left">Coopération des deux (référence)</td><td>23,43</td><td>23,43</td></tr>
+<tr><td class="left">Houblonnière joue <strong>tit-for-tat</strong></td><td>15,73</td><td>21,82</td></tr>
+<tr><td class="left">Houblonnière joue <strong>grim</strong></td><td>18,88</td><td>15,00</td></tr>
+<tr><td class="left">Trahison des deux (plancher)</td><td>9,37</td><td>9,37</td></tr>
+</table>
+
+<p>
+  La référence se calcule d'un coup :
+  \( 5 \times (1 + 0{,}9 + 0{,}81 + 0{,}729 + 0{,}6561 + 0{,}59049) = 5 \times 4{,}686 = 23{,}43 \).
+  Le plancher, c'est la même somme avec 2.
+</p>
+
+<h2>3.3 — Comparaison</h2>
+
+<div class="box box-copie">
+<div class="box-title">La copie minimale</div>
+<p>
+  « Face à <em>cette</em> adversaire, <strong>grim protège mieux</strong> : 18,88 contre 15,73.
+  La raison est aux trimestres 4 et 5 — le Lion revient coopérer, tit-for-tat lui pardonne
+  aussitôt, ce qui lui permet de trahir une troisième fois ; grim continue de trahir et encaisse 8.
+  Cela ne contredit pas Axelrod : on compare ici contre <strong>une seule</strong> adversaire
+  choisie exploiteuse, alors que le tournoi mesurait un payoff <strong>moyen</strong> contre
+  toutes. La force de tit-for-tat est de <strong>rétablir la coopération</strong> — elle y parvient
+  d'ailleurs au trimestre 4 — là où grim condamne définitivement la relation. Enfin, même en
+  exploitant, le Lion obtient 21,82, soit moins que les 23,43 d'une coopération continue :
+  trahir a détruit de la valeur. »
+</p>
+</div>
+
+<h2>3.4 et 3.5 — Axelrod et le laboratoire</h2>
+
+<table class="compare">
+<tr><th class="left">Le tournoi d'Axelrod</th><th class="left">À citer</th></tr>
+<tr><td class="left">Format</td><td class="left">Stratégies <strong>programmées</strong>, chacune contre chacune</td></tr>
+<tr><td class="left">Durée d'une rencontre</td><td class="left"><strong>200</strong> périodes</td></tr>
+<tr><td class="left">Classement</td><td class="left">Au <strong>payoff moyen</strong></td></tr>
+<tr><td class="left">Vainqueur</td><td class="left"><strong>Tit-for-tat</strong>, d'Anatol <strong>Rapoport</strong> — l'une des plus simples soumises</td></tr>
+<tr><td class="left">Second résultat</td><td class="left"><strong>Toutes</strong> les stratégies « gentilles » (qui ne trahissent jamais les premières) ont battu <strong>toutes</strong> les autres</td></tr>
+</table>
+
+<p>
+  <strong>Au laboratoire</strong> (dilemme répété 10 fois, joueurs qui se connaissent) :
+  <em>contredisent</em> la théorie — une grosse moitié des paires a coopéré du début à la fin, et
+  aucune n'a trahi tout du long ; <em>confirme</em> — parmi les paires qui n'ont pas coopéré
+  jusqu'au bout, la trahison arrive souvent à la <strong>dernière manche</strong>, trace de
+  l'induction à rebours. Quatrième observation : <strong>personne n'a joué grim</strong>, les
+  humains pardonnent.
+</p>
+
+<h2>Les tips</h2>
+
+<div class="box box-rappel">
+<div class="box-title">Trois réflexes pour cet exercice</div>
+<ol>
+  <li>
+    <strong>« Mémoire d'éléphant contre mémoire d'un coup. »</strong> Grim retient tout et ne
+    pardonne jamais ; tit-for-tat n'a retenu que le tour dernier. Corollaire de contrôle :
+    <strong>une ligne grim ne revient jamais à C après un T</strong>.
+  </li>
+  <li>
+    <strong>Le décalage d'une case</strong> remplit la ligne tit-for-tat sans aucun raisonnement.
+    C'est là que se produisent toutes les erreurs, et ce geste les supprime.
+  </li>
+  <li>
+    <strong>Encadre ton résultat entre le plancher et le plafond</strong> (ici 9,37 et 23,43). En
+    dehors de cet intervalle, il y a forcément une erreur.
+  </li>
+</ol>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Ce qu'il ne faut surtout pas s'inventer</div>
+<p>
+  Le cours <strong>ne démontre jamais</strong> que (tit-for-tat ; tit-for-tat) est un équilibre et
+  ne te le demandera pas. Ne recopie pas la démonstration de grim en changeant le nom : le calcul
+  est différent et bien plus fragile, parce que tit-for-tat <em>se punit elle-même</em> — deux TfT
+  entrent dans une alternance de représailles au lieu d'un état stable. Sur tit-for-tat, tiens-toi
+  à la définition, la comparaison avec grim, le tournoi et le laboratoire.
+</p>
+</div>
+</section>

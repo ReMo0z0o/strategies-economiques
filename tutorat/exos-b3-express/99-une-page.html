@@ -1,0 +1,101 @@
+<section class="chapter">
+<div class="chapter-tag">La veille de l'examen · ne relis que ça</div>
+<h1>Tout B3 sur une page</h1>
+
+<h2>Les formules</h2>
+
+<table class="compare">
+<tr><th class="left">Objet</th><th class="left">Formule</th></tr>
+<tr><td class="left">Somme, à partir d'aujourd'hui</td><td class="left">\( a + a\delta + \cdots = \dfrac{a}{1-\delta} \)</td></tr>
+<tr><td class="left">Somme, à partir de demain</td><td class="left">\( a\delta + a\delta^2 + \cdots = \delta\,\dfrac{a}{1-\delta} \)</td></tr>
+<tr><td class="left">Coopération sous grim</td><td class="left">\( \dfrac{c}{1-\delta} \)</td></tr>
+<tr><td class="left">Meilleure déviation</td><td class="left">\( t + \delta\,\dfrac{p}{1-\delta} \)</td></tr>
+<tr><td class="left"><strong>Condition de coopération</strong></td><td class="left">\( \boxed{\ \delta \ge \dfrac{t-c}{t-p}\ } \)</td></tr>
+<tr><td class="left">Toujours trahir</td><td class="left">\( \dfrac{p}{1-\delta} \), <strong>sans condition</strong></td></tr>
+</table>
+
+<h2>Les trois tips</h2>
+
+<div class="box box-rappel">
+<div class="box-title">À réciter avant d'écrire</div>
+<ol>
+  <li>
+    <strong>« Coopérer pour toujours, ou se gaver une fois puis être puni pour toujours — à partir
+    de demain. »</strong><br />
+    Le « à partir de demain » = le \( \delta \) devant la punition. LA faute classique.
+  </li>
+  <li>
+    <strong>« Pas de promesse, pas de seuil. »</strong><br />
+    Grim promet → il faut un \( \delta \). Toujours trahir ne promet rien → aucune condition.
+  </li>
+  <li>
+    <strong>« L'infini ouvre la porte, il ne pousse personne dedans. »</strong><br />
+    Coopération <em>possible</em>, jamais <em>garantie</em> : il y a toujours au moins deux
+    équilibres.
+  </li>
+</ol>
+</div>
+
+<h2>Les trois pièges</h2>
+
+<table class="compare">
+<tr><th class="left">Piège</th><th class="left">Le correctif</th></tr>
+<tr>
+  <td class="left">Croire que la patience sauve un horizon fini</td>
+  <td class="left">\( \delta \) n'apparaît pas dans le théorème. 200 périodes + \( \delta = 0{,}99 \) → trahison partout.</td>
+</tr>
+<tr>
+  <td class="left">Envisager « dévier une fois puis recoopérer »</td>
+  <td class="left">Face à un grim déclenché, recoopérer rapporte \( s < p \). On trahit pour toujours.</td>
+</tr>
+<tr>
+  <td class="left">Lire la tentation dans la mauvaise coordonnée</td>
+  <td class="left">Case \( (a ; b) \) : \( a \) au joueur en <strong>ligne</strong>. Vérifie \( t > c > p > s \).</td>
+</tr>
+</table>
+
+<h2>Les deux théorèmes à réciter</h2>
+
+<div class="box box-copie">
+<div class="box-title">Horizon fini</div>
+<p>
+  « Dans un jeu répété un nombre <strong>fini</strong> de fois, si le jeu simultané a un
+  <strong>unique équilibre de Nash</strong>, le jeu répété a un <strong>unique ENPS</strong> : cet
+  équilibre est joué à <strong>chaque</strong> période. » — Les deux hypothèses comptent autant que
+  la conclusion. Contre-exemple : la bataille des sexes a deux équilibres, le théorème ne s'y
+  applique pas.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Horizon infini — la conclusion du chapitre</div>
+<p>
+  « La coopération peut émerger entre joueurs rationnels, <strong>pourvu qu'ils ne sachent pas
+  d'avance quelle sera la dernière période</strong>, et si chacun peut menacer l'autre d'une
+  punition suffisamment coûteuse — coût qui dépend des <strong>payoffs du jeu simultané</strong> et
+  du <strong>facteur d'escompte du joueur puni</strong>. L'infini n'est pas nécessaire : une
+  <strong>probabilité non nulle de continuation</strong> suffit. »
+</p>
+</div>
+
+<h2>Les trois stratégies en un coup d'œil</h2>
+
+<table class="compare">
+<tr><th class="left"></th><th class="left">Grim</th><th class="left">Toujours trahir</th><th class="left">Tit-for-tat</th></tr>
+<tr><td class="left">Premier coup</td><td class="left">Coopère</td><td class="left">Trahit</td><td class="left">Coopère</td></tr>
+<tr><td class="left">Mémoire</td><td class="left">Toute l'histoire</td><td class="left">Aucune</td><td class="left">Une période</td></tr>
+<tr><td class="left">Pardonne</td><td class="left">Jamais</td><td class="left">—</td><td class="left">Aussitôt</td></tr>
+<tr><td class="left">Équilibre ?</td><td class="left">Si \( \delta \ge \frac{t-c}{t-p} \)</td><td class="left">Toujours</td><td class="left">Hors programme</td></tr>
+<tr><td class="left">Ce qu'on demande</td><td class="left">La démo en 3 étapes</td><td class="left">La majoration en 3 lignes</td><td class="left">Simuler et restituer</td></tr>
+</table>
+
+<div class="box box-rappel">
+<div class="box-title">Un mot de vocabulaire qui rapporte</div>
+<p>
+  L'énoncé dit souvent « équilibre de Nash » là où le cours démontre un <strong>ENPS</strong>.
+  Écris ENPS et ajoute : « le profil est parfait en sous-jeux car, une fois la punition déclenchée,
+  trahir contre un adversaire qui trahit pour toujours reste une meilleure réponse — la menace est
+  crédible dans chaque sous-jeu ».
+</p>
+</div>
+</section>
