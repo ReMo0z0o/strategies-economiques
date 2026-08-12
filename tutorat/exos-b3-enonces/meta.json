@@ -1,0 +1,26 @@
+{
+  "filename": "exos-b3-enonces-seuls.pdf",
+  "toc": false,
+  "eyebrow": "Feuille d'exercices — B3, jeux répétés",
+  "title": "Trois exercices sur les jeux répétés",
+  "subtitle": "Les énoncés seuls — grim, toujours trahir, tit-for-tat",
+  "code": "B3",
+  "project": "Projet : stratégies et décisions économiques",
+  "part": "Théorie des jeux — les jeux répétés",
+  "footnote": "Feuille d'entraînement (non officielle). Les trois énoncés reprennent la structure de la question 5 de l'examen blanc n° 1 avec d'autres contextes et d'autres chiffres. Les solutionnaires détaillés et les astuces de mémorisation se trouvent dans le document « Grim, toujours trahir, tit-for-tat ».",
+  "howto": {
+    "title": "Mode d'emploi",
+    "lead": "Trois énoncés, un par page, sans aucune correction : de quoi travailler en conditions d'examen. Le barème et le temps conseillé figurent en tête de chaque exercice.",
+    "items": [
+      "<strong>Total : 85 points, 1 h 40.</strong> Tu peux les enchaîner d'une traite pour simuler une épreuve, ou en prendre un seul quand tu as trente minutes devant toi.",
+      "<strong>Rédige comme sur une copie</strong>, en phrases complètes et en justifiant chaque étape — c'est là que se jouent les points, pas dans le résultat final.",
+      "<strong>Ne te corrige pas de tête.</strong> Les solutionnaires pas à pas, les encadrés « ce que tu écris sur la copie » et les astuces de mémorisation sont dans le document compagnon.",
+      "<strong>Refais chaque exercice deux jours plus tard.</strong> Si la deuxième fois passe sans hésitation, la matière est acquise."
+    ]
+  },
+  "chapters": [
+    { "file": "01-enonce-1.html", "title": "Exercice 1 — La stratégie grim" },
+    { "file": "02-enonce-2.html", "title": "Exercice 2 — « Toujours trahir »" },
+    { "file": "03-enonce-3.html", "title": "Exercice 3 — Tit-for-tat" }
+  ]
+}

@@ -247,6 +247,15 @@ for (const id of ids) {
    * Le nombre de lignes du sommaire ne changeant pas, la pagination est stable ;
    * on la revérifie tout de même et on recommence une fois si besoin.
    */
+  // Un document court (feuille d'exercices) n'a pas besoin de sommaire :
+  // `"toc": false` dans meta.json le supprime, et avec lui les passes de
+  // pagination qui n'auraient plus rien à numéroter.
+  if (meta.toc === false) {
+    await renderPdf(browser, wrap(cover(meta) + body), out, tmp, title);
+    console.log(`✓ ${id} → ${out}\n   sans sommaire`);
+    continue;
+  }
+
   let pages = null;
   for (let pass = 1; pass <= 3; pass++) {
     await renderPdf(browser, wrap(cover(meta) + toc(entries, pages) + body), out, tmp, title);

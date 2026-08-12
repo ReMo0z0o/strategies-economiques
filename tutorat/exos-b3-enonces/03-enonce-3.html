@@ -1,0 +1,61 @@
+<section class="chapter">
+<div class="chapter-tag">Exercice 3 · 30 points · 35 minutes</div>
+<h1>Tit-for-tat</h1>
+<p class="chapter-intro">Deux brasseries sur six trimestres. Simuler deux stratégies contre une suite de coups donnée, puis restituer ce que le cours dit d'Axelrod et du laboratoire.</p>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé</div>
+<p>
+  Deux brasseries artisanales, <strong>La Houblonnière</strong> (joueur 1) et <strong>Brasserie du
+  Lion</strong> (joueur 2), se partagent le marché d'une ville. Chaque trimestre, chacune peut
+  <strong>coopérer</strong> (C : maintenir son prix) ou <strong>trahir</strong> (T : lancer une
+  promotion agressive). Les profits trimestriels sont :
+</p>
+
+<table class="game">
+  <tr><td class="void"></td><td class="void"></td><th colspan="2">Brasserie du Lion</th></tr>
+  <tr><td class="void"></td><td class="void"></td><th>C</th><th>T</th></tr>
+  <tr><td class="player" rowspan="2">La Houblonnière</td><th>C</th><td>(5 ; 5)</td><td>(0 ; 8)</td></tr>
+  <tr><th>T</th><td>(8 ; 0)</td><td>(2 ; 2)</td></tr>
+</table>
+
+<p>
+  On observe le marché pendant <strong>six trimestres</strong> (\( t = 0 \) à \( t = 5 \)). La
+  Brasserie du Lion suit un plan fixé à l'avance, indépendant de ce que fait sa concurrente :
+</p>
+
+<table class="data">
+<tr><th>Trimestre \( t \)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+<tr><th>Action du Lion</th><td>C</td><td>T</td><td>T</td><td>C</td><td>C</td><td>T</td></tr>
+</table>
+
+<p>
+  <strong>3.1)</strong> Définissez précisément les stratégies <strong>tit-for-tat</strong> et
+  <strong>grim</strong>, et expliquez ce qui les distingue. <em>(5 points)</em>
+</p>
+
+<p>
+  <strong>3.2)</strong> La Houblonnière joue <strong>tit-for-tat</strong>. Complétez le tableau de
+  ses actions et des profits trimestriels des deux brasseries, puis calculez les payoffs escomptés
+  des deux joueuses sur les six trimestres avec \( \delta = 0{,}9 \). Refaites ensuite le même
+  travail en supposant que La Houblonnière joue <strong>grim</strong>. <em>(12 points)</em>
+</p>
+
+<p>
+  <strong>3.3)</strong> Laquelle des deux stratégies protège le mieux La Houblonnière face à
+  <em>cette</em> adversaire ? Ce résultat contredit-il la victoire de tit-for-tat au tournoi
+  d'Axelrod ? <em>(5 points)</em>
+</p>
+
+<p>
+  <strong>3.4)</strong> Décrivez le protocole du tournoi d'Axelrod et ses deux résultats
+  principaux. <em>(5 points)</em>
+</p>
+
+<p>
+  <strong>3.5)</strong> En laboratoire, on fait jouer un dilemme du prisonnier répété 10 fois à des
+  étudiants qui se connaissent et peuvent discuter entre les manches. Citez deux observations qui
+  contredisent la prédiction théorique et une qui la confirme. <em>(3 points)</em>
+</p>
+</div>
+</section>

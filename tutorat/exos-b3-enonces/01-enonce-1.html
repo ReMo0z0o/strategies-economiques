@@ -1,0 +1,53 @@
+<section class="chapter">
+<div class="chapter-tag">Exercice 1 · 30 points · 35 minutes</div>
+<h1>La stratégie grim</h1>
+<p class="chapter-intro">Deux garages se sont entendus sur un tarif. Dominance, horizon fini, condition sur le facteur d'escompte, application numérique et interprétation.</p>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé</div>
+<p>
+  Les deux seuls garages d'un village, <strong>Carrosserie Dupuis</strong> (joueur 1) et
+  <strong>Garage Lambert</strong> (joueur 2), se sont mis d'accord sur un tarif horaire élevé.
+  Chaque mois, chacun choisit simultanément de <strong>respecter l'accord</strong> (R) ou de
+  <strong>casser les prix</strong> (C). Les profits mensuels, en milliers d'euros, sont donnés par
+  la matrice suivante :
+</p>
+
+<table class="game">
+  <tr><td class="void"></td><td class="void"></td><th colspan="2">Garage Lambert</th></tr>
+  <tr><td class="void"></td><td class="void"></td><th>R</th><th>C</th></tr>
+  <tr><td class="player" rowspan="2">Carrosserie Dupuis</td><th>R</th><td>(6 ; 6)</td><td>(1 ; 10)</td></tr>
+  <tr><th>C</th><td>(10 ; 1)</td><td>(4 ; 4)</td></tr>
+</table>
+
+<p>
+  <strong>1.1)</strong> Montrez que ce jeu joué une seule fois est un dilemme du prisonnier :
+  identifiez la stratégie dominante de chaque garage et l'équilibre de Nash. Expliquez ensuite,
+  <em>sans aucun calcul</em>, pourquoi l'accord ne peut être respecté à aucune période si le jeu
+  est répété un nombre de mois fini et connu des deux garages. <em>(10 points)</em>
+</p>
+
+<p>
+  <strong>1.2)</strong> Le jeu est maintenant répété à <strong>horizon infini</strong>, et les deux
+  garages évaluent leurs profits futurs avec le même facteur d'escompte
+  \( \delta \in [0 \,;\, 1[ \). Tous deux jouent la stratégie <strong>grim</strong> : « je joue R
+  tant que mon adversaire a toujours joué R par le passé ; dès qu'il joue C une fois, je joue C à
+  toutes les périodes suivantes ». Calculez le payoff escompté d'un garage lorsque les deux
+  respectent l'accord, puis le payoff escompté de sa meilleure déviation, et déduisez-en la
+  condition sur \( \delta \) pour que (grim ; grim) soit un équilibre. Détaillez la somme
+  géométrique. <em>(12 points)</em>
+</p>
+
+<p>
+  <strong>1.3)</strong> Le taux d'intérêt mensuel du marché est tel que \( \delta = 0{,}6 \).
+  L'accord tient-il ? Justifiez par le calcul des deux payoffs. <em>(4 points)</em>
+</p>
+
+<p>
+  <strong>1.4)</strong> Interprétez économiquement la condition obtenue : que mesure \( \delta \),
+  et pourquoi l'accord s'effondre-t-il lorsque les garages sont trop impatients ? Citez une
+  caractéristique concrète d'un marché qui rendrait l'entente plus facile à tenir.
+  <em>(4 points)</em>
+</p>
+</div>
+</section>
