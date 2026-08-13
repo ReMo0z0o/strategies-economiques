@@ -1,0 +1,169 @@
+<section class="chapter">
+<div class="chapter-tag">Exemple 1 · examen blanc n° 2, question 1</div>
+<h1>Kappa et Lambda</h1>
+<p class="chapter-intro">
+  Même demande \( p = 96 - y \), même coût marginal \( c = 24 \), trois situations : monopole,
+  Cournot, Stackelberg. Comme les données ne bougent pas, tout ce qui change dans le calcul vient
+  de la <em>structure</em> du marché — c'est l'exemple idéal pour voir ce qui compte vraiment.
+</p>
+
+<h2>1.1 — Monopole : les deux écritures, au choix</h2>
+
+<p>Kappa est seule. Une seule firme, une seule variable.</p>
+
+<table class="compare">
+<tr><th class="left">En dérivant le profit</th><th class="left">En posant Rm = Cm</th></tr>
+<tr>
+  <td class="left">
+    \( \Pi = (96-y)y - 24y = 72y - y^2 \)<br />
+    \( \dfrac{d\Pi}{dy} = 72 - 2y = 0 \)<br />
+    \( y^* = 36 \)
+  </td>
+  <td class="left">
+    \( RT = (96-y)y = 96y - y^2 \)<br />
+    \( Rm = 96 - 2y = 24 = Cm \)<br />
+    \( y^* = 36 \)
+  </td>
+</tr>
+</table>
+
+<p>
+  Puis \( p^* = 96 - 36 = 60 \), \( \Pi^* = (60-24)\times 36 = 1296 \), et le surplus des
+  consommateurs \( SC = \tfrac{1}{2}\times(96-60)\times 36 = 648 \).
+</p>
+
+<div class="result">
+<div class="result-title">Ce que retient cette sous-question</div>
+<p>
+  En monopole, les deux écritures sont strictement interchangeables. Prends celle que tu veux —
+  et remarque que la colonne de gauche fait <strong>une ligne de moins</strong>, parce que le
+  \( -24y \) est déjà dedans.
+</p>
+</div>
+
+<h2>1.2 — Cournot : ici, la dérivée devient partielle</h2>
+
+<p>
+  Lambda arrive. Le prix dépend maintenant de la quantité <strong>totale</strong>
+  \( y_k + y_\ell \), mais Kappa ne choisit que \( y_k \). Son profit :
+</p>
+
+<p>\[ \Pi_k(y_k, y_\ell) \;=\; \big(96 - y_k - y_\ell\big)\,y_k \;-\; 24\,y_k \]</p>
+
+<p>
+  On dérive <strong>par rapport à \( y_k \) seulement</strong>, en traitant \( y_\ell \) comme une
+  constante — c'est tout le sens du mot « partielle » :
+</p>
+
+<p>\[ \frac{\partial \Pi_k}{\partial y_k} = 96 - 2y_k - y_\ell - 24 = 0 \quad\Longrightarrow\quad y_k = \frac{72 - y_\ell}{2} \]</p>
+
+<p>
+  C'est la <span class="term">fonction de meilleure réponse</span>. Par symétrie
+  \( y_\ell = \dfrac{72 - y_k}{2} \), et en posant \( y_k = y_\ell = y \) :
+</p>
+
+<p>\[ 2y = 72 - y \quad\Longrightarrow\quad y_k = y_\ell = 24 \]</p>
+
+<p>
+  Total \( Y = 48 \), prix \( p = 96 - 48 = 48 \), profit \( (48-24)\times 24 = 576 \) pour chacune.
+</p>
+
+<div class="box box-piege">
+<div class="box-title">Le piège : la recette marginale « du marché »</div>
+<p>
+  Si tu appliques mécaniquement \( Rm = Cm \) sur la recette du <strong>marché entier</strong>,
+  tu écris \( RT = (96-Y)Y \), donc \( Rm = 96 - 2Y \), et tu poses :
+</p>
+<p>\[ 96 - 2Y = 24 \quad\Longrightarrow\quad Y = 36 \]</p>
+<p>
+  Le calcul est impeccable, le résultat est faux — ou plutôt, il répond à une autre question. Ces
+  36, c'est la quantité totale du <strong>cartel</strong> (18 chacune, prix 60, profit 648 chacune),
+  pas celle de Cournot (48 au total). En maximisant la recette du marché, tu as fait comme si les
+  deux firmes s'entendaient.
+</p>
+<p>
+  <strong>La bonne recette marginale est individuelle</strong> :
+  \( Rm_k = 96 - 2y_k - y_\ell \). Elle dépend de la quantité du rival, et c'est précisément ce
+  qui distingue un oligopole d'un monopole.
+</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">D'où vient l'écart, économiquement</div>
+<p>
+  Quand Kappa produit une unité de plus, elle fait baisser le prix pour <em>tout le monde</em>.
+  Un monopoleur (ou un cartel) supporte cette baisse sur la totalité des ventes. Kappa, elle, ne la
+  supporte que sur <strong>ses</strong> 24 unités : les 24 de Lambda ne sont pas son problème.
+  Elle sous-estime donc le coût social de produire, et produit trop par rapport au cartel —
+  48 au total au lieu de 36. C'est exactement la tension du dilemme du prisonnier.
+</p>
+<a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei2#cournot">EI2 · §3.1 — La concurrence à la Cournot <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei2#cournot</span></a>
+</div>
+
+<h2>1.3 — Stackelberg : ce qui change, c'est l'ordre des opérations</h2>
+
+<p>
+  Kappa choisit en premier, et Lambda observe avant de répondre. Kappa doit donc
+  <strong>anticiper</strong> la réaction de Lambda, c'est-à-dire l'injecter dans son propre profit
+  <em>avant</em> de dériver :
+</p>
+
+<p>\[ \Pi_k = \Big(96 - y_k - \underbrace{\tfrac{72 - y_k}{2}}_{\text{réaction de Lambda}}\Big) y_k - 24\,y_k \;=\; \big(60 - \tfrac{y_k}{2}\big) y_k - 24 y_k \;=\; 36 y_k - \tfrac{y_k^2}{2} \]</p>
+
+<p>\[ \frac{d\Pi_k}{dy_k} = 36 - y_k = 0 \quad\Longrightarrow\quad y_k = 36 \]</p>
+
+<p>
+  Puis \( y_\ell = \dfrac{72-36}{2} = 18 \), \( Y = 54 \), \( p = 42 \),
+  \( \Pi_k = 18 \times 36 = 648 \) et \( \Pi_\ell = 18 \times 18 = 324 \).
+</p>
+
+<div class="box box-piege">
+<div class="box-title">Le piège : dériver avant de substituer</div>
+<p>
+  Si tu dérives \( \Pi_k \) par rapport à \( y_k \) <em>avant</em> d'y avoir remplacé
+  \( y_\ell \), tu retrouves la fonction de réaction de la question 1.2 — donc l'équilibre de
+  Cournot, \( y_k = 24 \). L'ordre n'est pas une préférence de rédaction :
+  <strong>c'est lui qui encode l'avantage du premier joueur</strong>. L'inverser, c'est effacer
+  l'avantage.
+</p>
+</div>
+
+<h2>Les trois situations côte à côte</h2>
+
+<table class="compare">
+<tr><th class="left">Structure</th><th>\( y_k \)</th><th>\( y_\ell \)</th><th>\( Y \)</th><th>\( p \)</th><th>\( \Pi_k \)</th><th>\( \Pi_\ell \)</th></tr>
+<tr><td class="left">Monopole (Kappa seule)</td><td>36</td><td>—</td><td>36</td><td>60</td><td>1296</td><td>—</td></tr>
+<tr><td class="left">Cartel (les deux s'entendent)</td><td>18</td><td>18</td><td>36</td><td>60</td><td>648</td><td>648</td></tr>
+<tr><td class="left">Cournot (simultané)</td><td>24</td><td>24</td><td>48</td><td>48</td><td>576</td><td>576</td></tr>
+<tr><td class="left">Stackelberg (Kappa d'abord)</td><td>36</td><td>18</td><td>54</td><td>42</td><td>648</td><td>324</td></tr>
+</table>
+
+<div class="box box-rappel">
+<div class="box-title">Trois contrôles gratuits sur ce tableau</div>
+<ul>
+  <li><strong>Cartel et monopole ont le même \( Y \) et le même prix</strong> (36 et 60) : le
+      cartel, c'est le monopole à deux. Si ton « Cournot » retombe sur 36, tu as calculé le cartel.</li>
+  <li><strong>Le leader de Stackelberg produit exactement la quantité de monopole</strong> (36) et
+      empoche <strong>la moitié du profit de monopole</strong> (648 = 1296 / 2). C'est un résultat
+      général avec demande linéaire et coût marginal constant : un excellent test de cohérence.</li>
+  <li><strong>Plus il y a de concurrence, plus \( Y \) monte et plus \( p \) tombe</strong> :
+      36 → 48 → 54 et 60 → 48 → 42. Une inversion dans cet ordre signale une erreur.</li>
+</ul>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Ce que cet exemple prouve</div>
+<p>
+  D'un bout à l'autre, on a fait <strong>la même chose</strong> : écrire un profit et l'annuler en
+  dérivant. Ce qui a changé n'est jamais la « méthode », mais les réponses aux trois questions :
+</p>
+<table class="compare">
+<tr><th class="left"></th><th class="left">Le profit de qui</th><th class="left">Par rapport à quoi</th><th class="left">Particularité</th></tr>
+<tr><td class="left">Monopole</td><td class="left">La seule firme</td><td class="left">\( y \)</td><td class="left">—</td></tr>
+<tr><td class="left">Cournot</td><td class="left">Une firme</td><td class="left">\( y_k \), avec \( y_\ell \) constant</td><td class="left">Dérivée <strong>partielle</strong></td></tr>
+<tr><td class="left">Stackelberg</td><td class="left">Le leader</td><td class="left">\( y_k \)</td><td class="left"><strong>Substituer d'abord</strong> la réaction du suiveur</td></tr>
+</table>
+</div>
+
+<a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei2#stackelberg">EI2 · §3.5 — L'ordre du jeu : l'équilibre de Stackelberg <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei2#stackelberg</span></a>
+</section>

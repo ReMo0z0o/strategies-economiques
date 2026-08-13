@@ -1,0 +1,121 @@
+<section class="chapter">
+<div class="chapter-tag">Mémo · une page</div>
+<h1>Le mémo</h1>
+
+<h2>La règle</h2>
+
+<div class="result">
+<div class="result-title">Il n'y a qu'une méthode</div>
+<p style="text-align:center">
+  \[ \Pi = RT - CT \;\Longrightarrow\; \frac{d\Pi}{dy} = Rm - Cm \;\Longrightarrow\; \Big(\frac{d\Pi}{dy} = 0 \iff Rm = Cm\Big) \]
+</p>
+<p>
+  Deux résultats différents = une erreur d'algèbre, jamais un mauvais choix de méthode.
+  <strong>Contrôle :</strong> avec \( p = a - by \), on a toujours \( Rm = a - 2by \) — le
+  \( 2 \) est la signature. S'il manque, tu as perdu le carré en développant.
+</p>
+</div>
+
+<h2>Les trois questions, avant toute dérivation</h2>
+
+<ol>
+  <li><strong>Le profit de qui ?</strong> Chaque firme maximise le sien.</li>
+  <li><strong>Par rapport à quelle variable ?</strong> Elle ne choisit que la sienne ; tout le
+      reste est constante.</li>
+  <li><strong>Sur quelle demande, contre quel \( Cm \) ?</strong> Ni l'une ni l'autre n'est
+      forcément celle de l'énoncé.</li>
+</ol>
+
+<h2>Le tableau de décision</h2>
+
+<table class="compare">
+<tr><th class="left">Situation</th><th class="left">Tu écris le profit de…</th><th class="left">Tu dérives par rapport à…</th><th class="left">Le piège</th></tr>
+<tr>
+  <td class="left"><strong>Monopole</strong></td>
+  <td class="left">la firme unique</td>
+  <td class="left">\( y \) — dérivée ordinaire</td>
+  <td class="left">Aucun : les deux écritures sont équivalentes</td>
+</tr>
+<tr>
+  <td class="left"><strong>Cournot</strong></td>
+  <td class="left">une firme, \( \Pi_i(y_i, y_j) \)</td>
+  <td class="left">\( y_i \) seulement, \( y_j \) constant</td>
+  <td class="left">Utiliser le \( Rm \) du marché → tu obtiens le <strong>cartel</strong></td>
+</tr>
+<tr>
+  <td class="left"><strong>Stackelberg</strong></td>
+  <td class="left">le leader, après substitution</td>
+  <td class="left">\( y_1 \)</td>
+  <td class="left">Dériver avant de substituer → tu retombes sur <strong>Cournot</strong></td>
+</tr>
+<tr>
+  <td class="left"><strong>Chaîne verticale</strong></td>
+  <td class="left">chaque étage, en partant de la fin</td>
+  <td class="left">\( y \), deux fois</td>
+  <td class="left">\( Cm \) de l'aval = <strong>le prix de l'amont</strong> ; demande de l'amont = la <strong>demande dérivée</strong></td>
+</tr>
+</table>
+
+<h2>Les résultats des deux exemples</h2>
+
+<table class="compare">
+<tr><th class="left">Kappa &amp; Lambda — \( p = 96 - y \), \( c = 24 \)</th><th>\( Y \)</th><th>\( p \)</th><th class="left">Profits</th></tr>
+<tr><td class="left">Monopole</td><td>36</td><td>60</td><td class="left">1296</td></tr>
+<tr><td class="left">Cartel</td><td>36</td><td>60</td><td class="left">648 chacune</td></tr>
+<tr><td class="left">Cournot</td><td>48</td><td>48</td><td class="left">576 chacune</td></tr>
+<tr><td class="left">Stackelberg</td><td>54</td><td>42</td><td class="left">648 (leader) · 324 (suiveur)</td></tr>
+</table>
+
+<table class="compare">
+<tr><th class="left">Brasserie &amp; caviste — \( p_{av} = 20 - y \), \( c = 8 \)</th><th>\( y \)</th><th class="left">Prix</th><th class="left">Profits</th></tr>
+<tr><td class="left">Chaîne (deux marges)</td><td>3</td><td class="left">\( p_{am} = 14 \) · \( p_{av} = 17 \)</td><td class="left">18 + 9 = 27</td></tr>
+<tr><td class="left">Firme intégrée</td><td>6</td><td class="left">14</td><td class="left">36</td></tr>
+</table>
+
+<h2>Trois tests de cohérence gratuits</h2>
+
+<div class="box box-rappel">
+<div class="box-title">Avant de rendre, vérifie</div>
+<ol>
+  <li>
+    <strong>Cartel = monopole.</strong> Le cartel doit produire au total exactement la quantité de
+    monopole, au même prix. Si ton Cournot retombe dessus, tu as calculé le cartel.
+  </li>
+  <li>
+    <strong>Le leader de Stackelberg produit la quantité de monopole</strong> et gagne
+    <strong>la moitié</strong> du profit de monopole (demande linéaire, \( Cm \) constant). Ici :
+    36 et 648 = 1296 / 2.
+  </li>
+  <li>
+    <strong>Plus de concurrence ⇒ plus de quantité, moins de prix.</strong> Monopole → Cournot →
+    Stackelberg : 36 → 48 → 54 et 60 → 48 → 42. Une inversion signale une erreur.
+  </li>
+</ol>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Le réflexe à garder</div>
+<p>
+  <strong>Écris la fonction de profit et dérive-la</strong> : elle contient déjà les coûts fixes,
+  une éventuelle taxe et la quantité du rival. Ajoute une ligne « ce qui équivaut à
+  \( Rm = Cm \) » pour montrer le lien avec la règle du cours. Tu gagnes l'interprétation
+  économique sans courir le risque d'appliquer la règle au mauvais objet.
+</p>
+<p>
+  <strong>Et pour une taxe unitaire \( t \) payée par la firme :</strong> elle ne touche pas la
+  demande, elle s'ajoute au coût marginal. Le nouveau \( Cm \) vaut \( c + t \), et tout le calcul
+  se refait à l'identique.
+</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Où revoir la théorie</div>
+<ul>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei1#maximisation">EI1 · §2.1 · Le cœur technique — La maximisation du profit : Rm = Cm <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei1#maximisation</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei1#recette">EI1 · §2.2 · L'intuition centrale — La recette marginale est inférieure au prix <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei1#recette</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei2#cournot">EI2 · §3.1 — La concurrence à la Cournot <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei2#cournot</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei2#stackelberg">EI2 · §3.5 — L'ordre du jeu : l'équilibre de Stackelberg <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei2#stackelberg</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei3#double-marge">EI3 · §7 — La double marginalisation <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei3#double-marge</span></a></li>
+</ul>
+</div>
+</section>

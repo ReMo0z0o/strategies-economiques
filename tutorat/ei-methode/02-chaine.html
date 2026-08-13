@@ -1,0 +1,150 @@
+<section class="chapter">
+<div class="chapter-tag">Exemple 2 · examen blanc n° 3, question 1</div>
+<h1>La brasserie et le caviste</h1>
+<p class="chapter-intro">
+  Deux firmes, mais pas concurrentes : elles sont <em>en chaîne</em>. On applique donc
+  \( Rm = Cm \) <strong>deux fois</strong> — avec une demande et un coût marginal différents à
+  chaque étage. C'est l'exemple où la troisième question (« sur quelle demande, contre quel
+  \( Cm \) ? ») décide de tout.
+</p>
+
+<div class="box box-def">
+<div class="box-title">Les données</div>
+<p>
+  La brasserie (<strong>Amont</strong>) produit à un coût marginal de 8 et vend au prix
+  \( p_{am} \) au caviste. Le caviste (<strong>Aval</strong>) n'a <em>aucun autre coût</em> que
+  l'achat des caisses, et revend au prix \( p_{av} \). La demande finale est
+  \( y = 20 - p_{av} \), soit \( p_{av} = 20 - y \). Le jeu est séquentiel : Amont fixe son prix,
+  puis Aval le sien.
+</p>
+</div>
+
+<h2>Étage 1 — Aval : son coût marginal, c'est le prix d'Amont</h2>
+
+<p>
+  Voilà le point qui décide de l'exercice. Le caviste achète chaque caisse à \( p_{am} \) et n'a
+  rien d'autre à payer : <strong>son coût marginal est \( p_{am} \), pas 8</strong>. Le 8 est le
+  coût de la brasserie, il ne le concerne pas.
+</p>
+
+<p>\[ \Pi_{av} = \big(p_{av} - p_{am}\big)\,y = \big(20 - y - p_{am}\big)\,y \]</p>
+
+<p>\[ \frac{d\Pi_{av}}{dy} = 20 - 2y - p_{am} = 0 \quad\Longleftrightarrow\quad \underbrace{20 - 2y}_{Rm_{av}} = \underbrace{p_{am}}_{Cm_{av}} \quad\Longrightarrow\quad y = \frac{20 - p_{am}}{2} \]</p>
+
+<div class="result">
+<div class="result-title">Ce qu'on vient d'obtenir</div>
+<p>
+  Ce n'est pas encore un résultat chiffré : c'est la <strong>demande dérivée</strong>, celle
+  qu'Aval adresse à Amont. On la retourne pour l'écrire comme une demande inverse :
+</p>
+<p style="text-align:center">\( y = \dfrac{20 - p_{am}}{2} \quad\Longleftrightarrow\quad p_{am} = 20 - 2y \)</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">La règle du doublement, deuxième apparition</div>
+<p>
+  Compare : demande finale \( p_{av} = 20 - y \) (pente 1), demande dérivée
+  \( p_{am} = 20 - 2y \) (pente 2). <strong>Chaque étage de la chaîne double la pente</strong>,
+  exactement comme le passage de la demande à la recette marginale. Et ce n'est pas une
+  coïncidence : la demande dérivée <em>est</em> la recette marginale d'Aval.
+</p>
+</div>
+
+<h2>Étage 2 — Amont : sa demande, c'est la demande dérivée</h2>
+
+<p>
+  La brasserie ne vend pas aux consommateurs : elle vend au caviste. La demande qu'elle affronte
+  est donc \( p_{am} = 20 - 2y \), et son coût marginal est bien 8.
+</p>
+
+<p>\[ \Pi_{am} = \big(p_{am} - 8\big)\,y = \big(20 - 2y - 8\big)\,y = 12y - 2y^2 \]</p>
+
+<p>\[ \frac{d\Pi_{am}}{dy} = 12 - 4y = 0 \quad\Longleftrightarrow\quad \underbrace{20 - 4y}_{Rm_{am}} = \underbrace{8}_{Cm_{am}} \quad\Longrightarrow\quad y^* = 3 \]</p>
+
+<p>
+  On redescend la chaîne : \( p_{am} = 20 - 2(3) = 14 \) et \( p_{av} = 20 - 3 = 17 \).
+</p>
+
+<table class="compare">
+<tr><th class="left">Firme</th><th class="left">Marge unitaire</th><th>Quantité</th><th>Profit</th></tr>
+<tr><td class="left">Amont (brasserie)</td><td class="left">\( 14 - 8 = 6 \)</td><td>3</td><td>18</td></tr>
+<tr><td class="left">Aval (caviste)</td><td class="left">\( 17 - 14 = 3 \)</td><td>3</td><td>9</td></tr>
+<tr><td class="left"><strong>Total</strong></td><td class="left">\( 17 - 8 = 9 \)</td><td>3</td><td><strong>27</strong></td></tr>
+</table>
+
+<h2>La fusion — un seul étage, un seul calcul</h2>
+
+<p>
+  La brasserie rachète le caviste. Il n'y a plus qu'une firme, qui produit à 8 et vend directement
+  aux consommateurs sur la demande finale \( p = 20 - y \) :
+</p>
+
+<p>\[ \Pi = (20-y)y - 8y = 12y - y^2 \quad\Longrightarrow\quad \frac{d\Pi}{dy} = 12 - 2y = 0 \quad\Longrightarrow\quad y^* = 6 \]</p>
+
+<p>
+  \( p = 20 - 6 = 14 \) et \( \Pi = (14-8)\times 6 = 36 \).
+</p>
+
+<div class="result">
+<div class="result-title">La double marginalisation</div>
+<table class="compare">
+<tr><th class="left"></th><th>Quantité</th><th>Prix final</th><th>Profit joint</th></tr>
+<tr><td class="left">Chaîne (deux firmes)</td><td>3</td><td>17</td><td>27</td></tr>
+<tr><td class="left">Firme intégrée</td><td>6</td><td>14</td><td>36</td></tr>
+</table>
+<p>
+  La fusion <strong>double la quantité, baisse le prix final et augmente le profit total</strong>.
+  Tout le monde y gagne, consommateurs compris — un résultat contre-intuitif pour une
+  concentration. La raison : dans la chaîne, chaque firme ajoute sa propre marge sans tenir compte
+  du tort qu'elle fait à l'autre. Deux marges empilées écrasent la quantité davantage qu'une seule.
+  C'est la <span class="term">double marginalisation</span>.
+</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Un contrôle élégant</div>
+<p>
+  Remarque que le prix d'Amont dans la chaîne (14) est <strong>exactement</strong> le prix de la
+  firme intégrée (14). Ce n'est pas un hasard : avec une demande linéaire et un coût marginal
+  constant, les deux valent toujours \( \frac{a+c}{2} \), ici \( \frac{20+8}{2} = 14 \). Si tes
+  deux calculs ne donnent pas le même nombre à cet endroit, l'un des deux est faux.
+</p>
+<a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei3#double-marge">EI3 · §7 — La double marginalisation <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei3#double-marge</span></a>
+</div>
+
+<h2>Ce que cet exemple prouve</h2>
+
+<div class="box box-piege">
+<div class="box-title">Les deux façons de tout rater ici</div>
+<ul>
+  <li>
+    <strong>Donner à Aval le coût marginal 8.</strong> C'est le coût de la <em>brasserie</em>. Aval
+    achète à \( p_{am} \) : c'est ça, son coût de la caisse suivante. Avec 8, tu calcules
+    directement la firme intégrée et tu obtiens 6 au lieu de 3 — sans jamais voir la double
+    marginalisation, qui est pourtant tout l'objet de la question.
+  </li>
+  <li>
+    <strong>Faire affronter à Amont la demande finale \( p = 20 - y \).</strong> La brasserie ne
+    vend pas aux consommateurs. Sa clientèle, c'est un caviste dont le comportement a été calculé
+    à l'étage 1 : sa demande est \( p_{am} = 20 - 2y \), pente double.
+  </li>
+</ul>
+<p>
+  Dans les deux cas, \( Rm = Cm \) a été appliqué correctement. C'est l'<strong>identification</strong>
+  qui a échoué — pas la règle.
+</p>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">La méthode pour toute chaîne verticale</div>
+<ol>
+  <li><strong>Pars de la fin</strong> (induction à rebours) : la firme la plus proche du
+      consommateur d'abord.</li>
+  <li>Écris <strong>son</strong> profit : \( (\text{son prix} - \text{ce qu'elle paie})\times y \).</li>
+  <li>Dérive : tu obtiens sa quantité <em>en fonction du prix de l'étage au-dessus</em>. Retourne-la :
+      c'est la <strong>demande dérivée</strong>.</li>
+  <li>Remonte d'un étage et recommence, avec cette demande dérivée et le vrai coût de production.</li>
+  <li>Redescends pour chiffrer tous les prix, marges et profits.</li>
+</ol>
+</div>
+</section>

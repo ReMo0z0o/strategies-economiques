@@ -1,0 +1,27 @@
+{
+  "filename": "ei-deriver-le-profit-ou-poser-rm-cm.pdf",
+  "toc": false,
+  "eyebrow": "Méthode — Économie industrielle",
+  "title": "Dériver le profit, ou poser Rm = Cm ?",
+  "subtitle": "Pourquoi c'est la même chose, et les deux situations où il faut faire attention",
+  "code": "Partie 2",
+  "project": "Projet : stratégies et décisions économiques",
+  "part": "Économie industrielle",
+  "footnote": "Document de méthode (non officiel). Les deux exemples sont repris tels quels des examens blancs n° 2 (question 1, Kappa et Lambda) et n° 3 (question 1, la brasserie et le caviste) de la Partie 2. Tous les résultats numériques ont été recalculés.",
+  "howto": {
+    "title": "Ce que ce document règle",
+    "lead": "« Parfois on dérive la fonction de profit, parfois on pose Rm = Cm — et je ne tombe pas sur la même valeur. » La réponse courte : <strong>ce sont deux écritures du même calcul</strong>, elles ne peuvent pas donner deux résultats. Quand elles divergent, l'erreur est ailleurs — et ce document montre exactement où.",
+    "items": [
+      "<strong>La règle</strong> d'abord, démontrée en trois lignes, avec les trois questions à se poser avant de dériver quoi que ce soit.",
+      "<strong>Exemple 1 — Kappa et Lambda</strong> : la même demande traitée en monopole, en Cournot puis en Stackelberg. C'est là qu'on voit ce qui change vraiment d'une situation à l'autre.",
+      "<strong>Exemple 2 — la brasserie et le caviste</strong> : deux firmes en chaîne, donc deux fois « Rm = Cm », mais avec une demande et un coût marginal différents à chaque étage.",
+      "<strong>Le mémo final</strong> tient sur une page : la règle, le tableau de décision et les trois pièges."
+    ]
+  },
+  "chapters": [
+    { "file": "00-la-regle.html", "title": "La règle" },
+    { "file": "01-kappa.html", "title": "Exemple 1 — Kappa et Lambda" },
+    { "file": "02-chaine.html", "title": "Exemple 2 — La brasserie et le caviste" },
+    { "file": "99-memo.html", "title": "Le mémo" }
+  ]
+}

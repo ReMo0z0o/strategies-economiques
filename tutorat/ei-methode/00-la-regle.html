@@ -1,0 +1,112 @@
+<section class="chapter">
+<div class="chapter-tag">La règle · deux pages, et le sujet est clos</div>
+<h1>Ce ne sont pas deux méthodes</h1>
+<p class="chapter-intro">
+  « Dériver le profit » et « poser \( Rm = Cm \) » sont la même équation écrite de deux façons.
+  Elles ne peuvent <em>pas</em> donner deux résultats différents. Voici la démonstration, puis les
+  trois questions qui font toute la difficulté.
+</p>
+
+<h2>La démonstration, en trois lignes</h2>
+
+<p>Le profit est par définition la recette moins le coût :</p>
+
+<p>\[ \Pi(y) \;=\; RT(y) - CT(y) \]</p>
+
+<p>On dérive les deux membres. La dérivée de \( RT \) porte un nom, celle de \( CT \) aussi :</p>
+
+<p>\[ \frac{d\Pi}{dy} \;=\; \underbrace{\frac{dRT}{dy}}_{\textstyle Rm(y)} \;-\; \underbrace{\frac{dCT}{dy}}_{\textstyle Cm(y)} \]</p>
+
+<p>Annuler cette dérivée, c'est donc exactement poser \( Rm = Cm \) :</p>
+
+<p>\[ \frac{d\Pi}{dy} = 0 \quad\Longleftrightarrow\quad Rm(y^*) - Cm(y^*) = 0 \quad\Longleftrightarrow\quad \boxed{\ Rm(y^*) = Cm(y^*)\ } \]</p>
+
+<div class="box box-why">
+<div class="box-title">C'est comme ça que le cours l'établit</div>
+<p>
+  Le chapitre EI1 ne présente pas \( Rm = Cm \) comme une recette tombée du ciel : il maximise
+  \( \Pi \) en annulant sa dérivée, puis <em>constate</em> que ce qu'on obtient s'écrit
+  \( Rm = Cm \) et donne un nom à chaque morceau. La règle d'or est le <em>résultat</em> de la
+  dérivation, pas une alternative à celle-ci.
+</p>
+<a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei1#maximisation">EI1 · §2.1 · Le cœur technique — La maximisation du profit : Rm = Cm <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei1#maximisation</span></a>
+</div>
+
+<div class="result">
+<div class="result-title">Ce qu'il faut en conclure</div>
+<p>
+  Si tes deux calculs ne donnent pas le même \( y \), <strong>ce n'est pas un problème de
+  méthode</strong> : il y a une erreur d'algèbre dans l'un des deux. Ne cherche pas laquelle des
+  deux « il fallait utiliser » — refais le développement.
+</p>
+</div>
+
+<h2>Le contrôle qui attrape 90 \% des erreurs</h2>
+
+<p>
+  Avec une demande inverse <strong>linéaire</strong> \( p = a - b\,y \), la recette totale vaut
+  \( RT = (a - by)y = ay - by^2 \), donc :
+</p>
+
+<p>\[ Rm \;=\; a - 2b\,y \]</p>
+
+<div class="box box-rappel">
+<div class="box-title">La règle du doublement</div>
+<p>
+  <strong>La recette marginale part du même point que la demande, mais avec une pente
+  double.</strong> Le \( 2 \) est sa signature : il vient de la dérivée du \( y^2 \).
+</p>
+<p>
+  Avant de résoudre quoi que ce soit, vérifie que ta dérivée contient bien ce doublement. Si tu as
+  \( p = 40 - y \) et que ta dérivée ne ressemble pas à \( \ldots - 2y \), tu as perdu le carré en
+  développant — et c'est de très loin l'erreur la plus fréquente de tout le chapitre.
+</p>
+</div>
+
+<h2>Les trois questions à se poser avant de dériver</h2>
+
+<p>
+  La vraie difficulté n'est jamais « quelle méthode ». Elle est toujours dans l'identification de
+  ce qu'on manipule. Trois questions, dans cet ordre :
+</p>
+
+<table class="compare">
+<tr><th>#</th><th class="left">La question</th><th class="left">Pourquoi elle compte</th></tr>
+<tr>
+  <td>1</td>
+  <td class="left"><strong>Le profit de qui</strong> ?</td>
+  <td class="left">En oligopole ou en chaîne verticale, il y a plusieurs firmes. Chacune maximise le <em>sien</em>, pas le profit joint.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td class="left"><strong>Par rapport à quelle variable</strong> ?</td>
+  <td class="left">Une firme ne choisit que <em>sa</em> quantité (ou <em>son</em> prix). Les autres variables sont des données qu'elle subit — donc des constantes dans sa dérivation.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td class="left"><strong>Sur quelle demande, contre quel coût marginal</strong> ?</td>
+  <td class="left">La demande adressée à une firme n'est pas toujours la demande finale, et son coût marginal n'est pas toujours celui de l'énoncé.</td>
+</tr>
+</table>
+
+<p>
+  Réponds à ces trois questions et le calcul se déroule tout seul, quelle que soit l'écriture
+  choisie. Saute-les, et \( Rm = Cm \) te donnera un résultat propre… mais à une autre question que
+  celle posée. C'est exactement ce que montrent les deux exemples qui suivent.
+</p>
+
+<div class="box box-methode">
+<div class="box-title">Mon conseil pratique</div>
+<p>
+  <strong>Écris toujours la fonction de profit, puis dérive-la.</strong> La fonction de profit
+  contient tout — les coûts fixes, une taxe éventuelle, la quantité du rival — alors que
+  « \( Rm = Cm \) » t'oblige à te souvenir de <em>quel</em> \( Rm \) et de <em>quel</em>
+  \( Cm \) il s'agit, et c'est là qu'on se trompe.
+</p>
+<p>
+  Ajoute ensuite une ligne : « ce qui équivaut à \( Rm = Cm \) ». Tu montres au correcteur que tu
+  as fait le lien avec la règle du cours, et tu récupères l'interprétation économique sans avoir
+  couru le risque.
+</p>
+</div>
+</section>
