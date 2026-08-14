@@ -1,0 +1,27 @@
+{
+  "filename": "stackelberg-dans-les-deux-parties.pdf",
+  "toc": false,
+  "eyebrow": "Le même modèle, deux examens",
+  "title": "Stackelberg dans les deux parties",
+  "subtitle": "Deux questions d'examen intégralement résolues, et ce que chaque partie attend vraiment",
+  "code": "P1 · P2",
+  "project": "Projet : stratégies et décisions économiques",
+  "part": "Théorie des jeux & Économie industrielle",
+  "footnote": "Document de méthode (non officiel). Les deux énoncés sont repris tels quels de l'examen blanc n° 3 de la Partie 1 (question 5) et de l'examen blanc n° 2 de la Partie 2 (questions 1.3 et 1.4). Tous les résultats ont été recalculés, y compris les équilibres de Nash du jeu réduit.",
+  "howto": {
+    "title": "Pourquoi ce document existe",
+    "lead": "Stackelberg tombe dans les <strong>deux</strong> parties du cours. Le calcul y est identique — mais ce qu'on te demande d'en faire ensuite n'a rien à voir, et c'est là que se perdent les points.",
+    "items": [
+      "<strong>En Partie 1</strong>, le duopole n'est qu'un décor : on teste l'ENPS, la stratégie comme plan complet et la menace non crédible.",
+      "<strong>En Partie 2</strong>, c'est une structure de marché : on compare prix, quantités et surplus, on dissuade une entrée, on parle droit de la concurrence.",
+      "<strong>Les deux énoncés sont résolus pas à pas</strong>, avec à chaque étape ce qu'on écrit sur la copie et pourquoi.",
+      "<strong>Le mémo final</strong> tient sur une page : le calcul commun, les deux prolongements, les pièges et trois contrôles gratuits."
+    ]
+  },
+  "chapters": [
+    { "file": "00-deux-angles.html", "title": "Un modèle, deux usages" },
+    { "file": "01-partie1.html", "title": "Partie 1 — Examen blanc n° 3, question 5" },
+    { "file": "02-partie2.html", "title": "Partie 2 — Examen blanc n° 2, questions 1.3 et 1.4" },
+    { "file": "99-memo.html", "title": "Le mémo" }
+  ]
+}

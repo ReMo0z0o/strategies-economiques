@@ -1,0 +1,233 @@
+<section class="chapter">
+<div class="chapter-tag">Partie 2 · examen blanc n° 2, questions 1.3 et 1.4</div>
+<h1>Stackelberg comme structure de marché</h1>
+<p class="chapter-intro">
+  Mêmes trois gestes de calcul, mais on ne parle plus jamais d'ENPS. Ce qui compte ici : comparer
+  les structures de marché, puis s'en servir pour dissuader une entrée.
+</p>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 1, extraits (23 points)</div>
+<p>
+  L'entreprise <strong>Kappa</strong> fait face à la demande inverse \( p = 96 - y \) et à un coût
+  marginal constant de 24, sans coût fixe. Une seconde entreprise, <strong>Lambda</strong>, produit
+  le même bien aux mêmes coûts. La question 1.2 a établi l'équilibre de <strong>Cournot</strong> :
+  fonction de réaction \( y_k = \dfrac{72 - y_\ell}{2} \), donc 24 chacune, \( p = 48 \) et un
+  profit de 576 pour chacune.
+</p>
+<p>
+  <strong>1.3)</strong> Supposez que, de façon crédible, Kappa puisse établir sa production avant
+  Lambda. Les firmes se font donc une concurrence à la Stackelberg. Quelles sont les productions
+  optimales de chaque firme ? À quel prix vont-elles vendre ces productions ? Quels sont les
+  profits de chaque firme ? Comparez brièvement cette situation avec l'équilibre de Cournot de la
+  question 1.2 : qui y gagne, qui y perd ? <em>(10 points)</em>
+</p>
+<p>
+  <strong>1.4)</strong> Revenez sur la question 1.3, mais supposez que pour s'établir sur le
+  marché, Lambda doive payer un <strong>coût fixe égal à 144</strong>. Kappa n'a aucun coût fixe.
+  Quelle quantité Kappa devrait-elle produire pour empêcher Lambda d'entrer ? À supposer que cette
+  attitude ne soit pas interdite, est-ce une attitude profitable ? Que dirait le droit de la
+  concurrence d'une telle stratégie ? <em>(13 points)</em>
+</p>
+</div>
+
+<h2>1.3 — Résoudre, puis comparer</h2>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> La réaction du suiveur est déjà connue</div>
+<p>
+  L'énoncé la donne implicitement : la question 1.2 l'a établie. Comme le jeu est symétrique, la
+  réaction de Lambda est \( y_\ell = \dfrac{72 - y_k}{2} \). Ne la recalcule pas — cite la question
+  précédente, ça suffit et ça fait gagner du temps.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Substituer dans le profit de Kappa, puis dériver</div>
+<div class="calc">
+  <div class="step">
+    \[ \pi_k = \Big(96 - y_k - \underbrace{\tfrac{72 - y_k}{2}}_{y_\ell(y_k)}\Big)y_k - 24\,y_k \]
+    <div class="why">on injecte la réaction de Lambda <em>avant</em> de dériver : c'est ce qui
+    distingue Stackelberg de Cournot.</div>
+  </div>
+  <div class="step">
+    \[ \pi_k = \big(96 - y_k - 36 + \tfrac{y_k}{2}\big)y_k - 24 y_k = \big(60 - \tfrac{y_k}{2}\big)y_k - 24 y_k \]
+    <div class="why">développement de la parenthèse : \( \tfrac{72 - y_k}{2} = 36 - \tfrac{y_k}{2} \),
+    et le signe moins devant fait changer les deux signes.</div>
+  </div>
+  <div class="step">
+    \[ \pi_k = 36\,y_k - \frac{y_k^2}{2} \quad\Longrightarrow\quad \frac{d\pi_k}{dy_k} = 36 - y_k = 0 \quad\Longrightarrow\quad y_k^* = 36 \]
+    <div class="why">\( 60 - 24 = 36 \). Une seule variable, donc dérivée ordinaire.</div>
+  </div>
+  <div class="step">
+    \[ y_\ell^* = \frac{72 - 36}{2} = 18 \qquad Y = 54 \qquad p = 96 - 54 = 42 \]
+    <div class="why">on redescend : réaction, quantité totale, prix.</div>
+  </div>
+  <div class="step">
+    \[ \pi_k = (42-24)\times 36 = 648 \qquad \pi_\ell = (42-24)\times 18 = 324 \]
+    <div class="why">marge unitaire 18 pour les deux — c'est le même prix de marché.</div>
+  </div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de 1.3</div>
+<p>
+  \( y_k = 36 \), \( y_\ell = 18 \), \( p = 42 \), \( \pi_k = 648 \), \( \pi_\ell = 324 \).
+  <strong>Contrôle :</strong> le monopole produirait 36 pour un profit de 1296 — le leader produit
+  bien la quantité de monopole et gagne bien la moitié du profit de monopole ✓.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">La comparaison demandée — ce que tu écris</div>
+<table class="compare">
+<tr><th class="left"></th><th>\( y_k \)</th><th>\( y_\ell \)</th><th>\( Y \)</th><th>\( p \)</th><th>\( \pi_k \)</th><th>\( \pi_\ell \)</th></tr>
+<tr><td class="left">Cournot (1.2)</td><td>24</td><td>24</td><td>48</td><td>48</td><td>576</td><td>576</td></tr>
+<tr><td class="left">Stackelberg (1.3)</td><td>36</td><td>18</td><td>54</td><td>42</td><td>648</td><td>324</td></tr>
+<tr><td class="left"><strong>Variation</strong></td><td>+12</td><td>−6</td><td>+6</td><td>−6</td><td><strong>+72</strong></td><td><strong>−252</strong></td></tr>
+</table>
+<p>
+  « <strong>Kappa gagne</strong> (+72) : en s'engageant la première sur une quantité élevée, elle
+  force Lambda à se replier sur sa fonction de réaction — c'est l'<strong>avantage du premier
+  joueur</strong>. <strong>Lambda perd</strong> lourdement (−252) : elle produit moins et vend
+  moins cher. <strong>Les consommateurs gagnent</strong> aussi : la quantité totale passe de 48 à
+  54 et le prix de 48 à 42. Le <strong>profit joint diminue</strong> en revanche, de
+  \( 2 \times 576 = 1152 \) à \( 648 + 324 = 972 \) : ce que Kappa gagne (+72) ne compense pas ce
+  que Lambda perd (−252), car on s'éloigne de la solution de monopole. »
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Deux oublis fréquents dans cette comparaison</div>
+<ul>
+  <li>
+    <strong>Ne parler que des firmes.</strong> La question dit « qui gagne, qui perd » — les
+    consommateurs en font partie. Le prix baisse de 48 à 42 : mentionne-le, c'est un point.
+  </li>
+  <li>
+    <strong>Dire que le leader « gagne toujours ».</strong> C'est vrai (il fait au moins aussi bien
+    qu'en Cournot, puisqu'il pourrait toujours choisir 24), mais seulement <strong>si son
+    engagement est crédible</strong>. Le cours insiste : sans moyen de s'engager à ne pas réduire
+    sa production ensuite — investissements irréversibles, surcapacités — l'avantage s'évapore et
+    on retombe sur Cournot.
+  </li>
+</ul>
+</div>
+
+<h2>1.4 — La dissuasion d'entrée</h2>
+
+<div class="box box-why">
+<div class="box-title">Le raisonnement, avant tout calcul</div>
+<p>
+  Lambda entre si, et seulement si, son profit <strong>net</strong> est positif. Or son profit brut
+  dépend de ce que Kappa a déjà produit : plus Kappa produit, moins il reste de place, et moins
+  Lambda gagne. Kappa peut donc choisir une quantité assez grande pour que le meilleur profit
+  possible de Lambda ne couvre plus son coût fixe. On appelle cela la <span class="term">quantité
+  limite</span>.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Exprimer le profit brut de Lambda en fonction de \( y_k \)</div>
+<div class="calc">
+  <div class="step">
+    \[ \pi_\ell^{\text{brut}} = \big(96 - y_k - y_\ell\big)y_\ell - 24\,y_\ell = \big(72 - y_k - y_\ell\big)y_\ell \]
+    <div class="why">même regroupement \( 96 - 24 = 72 \) qu'aux questions précédentes.</div>
+  </div>
+  <div class="step">
+    \[ \text{avec } y_\ell = \frac{72 - y_k}{2} : \quad \pi_\ell^{\text{brut}} = \Big(\frac{72-y_k}{2}\Big)\Big(\frac{72-y_k}{2}\Big) = \Big(\frac{72-y_k}{2}\Big)^2 \]
+    <div class="why">on remplace \( y_\ell \) par sa meilleure réponse : Lambda, si elle entre,
+    jouera au mieux. La parenthèse restante \( 72 - y_k - y_\ell \) vaut elle aussi
+    \( \tfrac{72-y_k}{2} \) — d'où le carré, très pratique.</div>
+  </div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Écrire la condition de non-entrée</div>
+<div class="calc">
+  <div class="step">
+    \[ \Big(\frac{72-y_k}{2}\Big)^2 \;\le\; 144 \]
+    <div class="why">Lambda n'entre pas si son profit brut ne couvre pas le coût fixe de 144.</div>
+  </div>
+  <div class="step">
+    \[ \frac{72-y_k}{2} \;\le\; 12 \quad\Longleftrightarrow\quad 72 - y_k \le 24 \quad\Longleftrightarrow\quad \boxed{\ y_k \ \ge\ 48\ } \]
+    <div class="why">racine carrée des deux membres — les deux côtés sont positifs, donc le sens
+    est conservé. \( \sqrt{144} = 12 \).</div>
+  </div>
+</div>
+<p>
+  <strong>Kappa doit produire au moins 48</strong> (à 48 exactement, Lambda est indifférente : son
+  profit net est nul ; il suffit de produire un cheveu de plus pour la dissuader strictement).
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Est-ce profitable ?</div>
+<p>
+  On compare les deux stratégies possibles de Kappa : <strong>bloquer</strong> l'entrée en
+  produisant 48, ou <strong>accommoder</strong> l'entrée et jouer Stackelberg comme en 1.3.
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \text{Bloquer : } \; y_k = 48 \;\Rightarrow\; p = 96 - 48 = 48 \;\Rightarrow\; \pi_k = (48-24)\times 48 = 1152 \]
+    <div class="why">Lambda n'entre pas, donc Kappa est seule sur le marché : \( Y = y_k \).</div>
+  </div>
+  <div class="step">
+    \[ \text{Accommoder : } \; \pi_k = 648 \quad \text{(question 1.3)} \]
+    <div class="why">c'est le profit du leader quand Lambda entre.</div>
+  </div>
+  <div class="step">
+    \[ 1152 \;>\; 648 \quad\Longrightarrow\quad \text{la dissuasion est profitable} \]
+    <div class="why">et de loin : Kappa gagne 504 de plus.</div>
+  </div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de 1.4</div>
+<table class="compare">
+<tr><th class="left">Stratégie de Kappa</th><th>\( y_k \)</th><th>\( y_\ell \)</th><th>\( p \)</th><th>\( \pi_k \)</th></tr>
+<tr><td class="left">Monopole non menacé (référence)</td><td>36</td><td>—</td><td>60</td><td>1296</td></tr>
+<tr><td class="left"><strong>Bloquer l'entrée</strong></td><td>48</td><td>0</td><td>48</td><td><strong>1152</strong></td></tr>
+<tr><td class="left">Accommoder (Stackelberg)</td><td>36</td><td>18</td><td>42</td><td>648</td></tr>
+</table>
+<p>
+  Bloquer coûte 144 à Kappa par rapport au monopole tranquille (elle doit surproduire, ce qui fait
+  baisser le prix de 60 à 48), mais lui rapporte 504 de plus qu'accommoder l'entrée.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Le volet juridique — ce que tu écris</div>
+<p>
+  « Détenir une <strong>position dominante</strong> n'est pas illégal en soi : une firme peut être
+  seule sur son marché par la qualité de ses produits ou par un brevet. Ce que le droit de la
+  concurrence sanctionne, c'est l'<strong>abus</strong> de cette position — et une surproduction
+  délibérée, sans justification économique autre que d'empêcher un concurrent d'atteindre le seuil
+  de rentabilité, en relève typiquement.
+</p>
+<p>
+  On est ici à la frontière entre une stratégie de <em>prix limite</em> et une pratique
+  d'<strong>éviction</strong>. L'autorité de concurrence regarderait notamment si Kappa vend
+  au-dessus de son coût (c'est le cas : 48 &gt; 24, il ne s'agit donc pas de prix prédateurs) et si
+  la surcapacité a une justification industrielle. Une firme qui investirait dans des capacités
+  manifestement excédentaires dans le seul but de dissuader une entrée s'exposerait à une sanction
+  pour abus de position dominante. »
+</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Le lien avec la Partie 1</div>
+<p>
+  Cette question est, au fond, exactement l'exercice de « brûler ses navires » du TP 3 :
+  <strong>se priver d'une option, ou s'engager de façon irréversible, améliore sa position parce
+  que cela change ce que l'adversaire anticipe</strong>. La différence est qu'on ne te demande pas
+  ici de vérifier la perfection en sous-jeux, mais d'en tirer les conséquences sur le marché — et
+  sur la légalité de la manœuvre.
+</p>
+</div>
+
+<a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei2#entree">EI2 · §3.6 — Empêcher l'entrée d'un concurrent <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei2#entree</span></a>
+</section>

@@ -1,0 +1,124 @@
+<section class="chapter">
+<div class="chapter-tag">Ouverture · deux pages</div>
+<h1>Un modèle, deux usages</h1>
+<p class="chapter-intro">
+  Stackelberg apparaît dans les deux parties du cours. Le calcul central y est rigoureusement le
+  même — mais la question qui suit ne l'est pas du tout.
+</p>
+
+<h2>Où il tombe</h2>
+
+<table class="compare">
+<tr><th class="left">Partie</th><th class="left">Où</th><th>Points</th><th class="left">Ce qui est réellement testé</th></tr>
+<tr>
+  <td class="left"><strong>Partie 1</strong><br />Théorie des jeux</td>
+  <td class="left">Examen blanc n° 3, question 5<br />TP 3, exercice 4.7</td>
+  <td>30</td>
+  <td class="left">ENPS, forme normale, stratégie = plan complet, menace non crédible</td>
+</tr>
+<tr>
+  <td class="left"><strong>Partie 2</strong><br />Économie industrielle</td>
+  <td class="left">Examen blanc n° 2, questions 1.3 et 1.4<br />EI2 §3.5 et §3.6, TP industrielle 2</td>
+  <td>23</td>
+  <td class="left">Comparaison de structures de marché, dissuasion d'entrée, droit de la concurrence</td>
+</tr>
+</table>
+
+<h2>Le calcul commun — le seul morceau identique</h2>
+
+<p>
+  Dans les deux parties, on résout par <strong>induction à rebours</strong>, en trois gestes qui ne
+  changent jamais :
+</p>
+
+<div class="box box-methode">
+<div class="box-title">Les trois gestes de Stackelberg</div>
+<ol>
+  <li>
+    <strong>Le suiveur d'abord.</strong> On écrit son profit en fonction des deux quantités et on
+    dérive par rapport à la sienne : on obtient sa <strong>fonction de réaction</strong>
+    \( q_2(q_1) \).
+  </li>
+  <li>
+    <strong>On substitue.</strong> On remplace \( q_2 \) par \( q_2(q_1) \) dans le profit du
+    leader. <em>Avant</em> toute dérivation.
+  </li>
+  <li>
+    <strong>On dérive le profit du leader</strong> par rapport à \( q_1 \), on annule, puis on
+    redescend : \( q_2 \), le prix, les deux profits.
+  </li>
+</ol>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">L'erreur qui coûte l'exercice, dans les deux parties</div>
+<p>
+  <strong>Dériver avant de substituer.</strong> Si tu dérives le profit du leader par rapport à
+  \( q_1 \) sans y avoir d'abord injecté la réaction du suiveur, tu obtiens la fonction de réaction
+  du leader — donc l'équilibre de <strong>Cournot</strong>. L'ordre des opérations n'est pas une
+  question de style : <strong>c'est lui qui encode l'avantage du premier joueur</strong>.
+  L'inverser, c'est effacer précisément ce que la question veut mesurer.
+</p>
+</div>
+
+<h2>Puis les chemins divergent</h2>
+
+<table class="compare">
+<tr><th class="left"></th><th class="left">Partie 1 — théorie des jeux</th><th class="left">Partie 2 — économie industrielle</th></tr>
+<tr>
+  <td class="left"><strong>Après le calcul, on te demande…</strong></td>
+  <td class="left">d'écrire le jeu en forme normale, de trouver <em>tous</em> les équilibres de Nash, puis de dire lequel est parfait en sous-jeux</td>
+  <td class="left">de comparer avec Cournot et le monopole, de calculer une quantité de dissuasion, de commenter au regard du droit de la concurrence</td>
+</tr>
+<tr>
+  <td class="left"><strong>Le vocabulaire attendu</strong></td>
+  <td class="left">stratégie, sous-jeu, ENPS, <strong>menace non crédible</strong></td>
+  <td class="left"><strong>avantage du premier joueur</strong>, engagement crédible, position dominante</td>
+</tr>
+<tr>
+  <td class="left"><strong>Ce qui compte dans les chiffres</strong></td>
+  <td class="left">les payoffs des <em>joueurs</em>, y compris hors du chemin d'équilibre</td>
+  <td class="left">la quantité totale, le prix, le surplus des consommateurs</td>
+</tr>
+<tr>
+  <td class="left"><strong>Le piège propre à la partie</strong></td>
+  <td class="left">écrire la stratégie du suiveur comme un <em>nombre</em> au lieu d'une <em>fonction</em></td>
+  <td class="left">comparer les profits en oubliant les consommateurs</td>
+</tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">Une différence de fond, pas de forme</div>
+<p>
+  En Partie 1, la question est : <em>« ce comportement est-il rationnellement soutenable ? »</em>
+  On teste la cohérence des anticipations, et le duopole aurait pu être remplacé par n'importe quel
+  jeu séquentiel.
+</p>
+<p>
+  En Partie 2, la question est : <em>« qu'est-ce que cela change pour le marché ? »</em> On regarde
+  qui produit combien, à quel prix, et qui en profite. Le fait que l'équilibre soit parfait en
+  sous-jeux est supposé acquis et n'est jamais rediscuté.
+</p>
+</div>
+
+<h2>Le repère qui marche dans les deux parties</h2>
+
+<div class="result">
+<div class="result-title">Un contrôle gratuit, à faire systématiquement</div>
+<p>
+  Avec une demande <strong>linéaire</strong> et un <strong>coût marginal constant</strong>, le
+  leader de Stackelberg produit <strong>exactement la quantité de monopole</strong> et empoche
+  <strong>la moitié du profit de monopole</strong>.
+</p>
+<table class="compare">
+<tr><th class="left"></th><th class="left">Partie 1 (\( p = 80 - Q \), \( c = 20 \))</th><th class="left">Partie 2 (\( p = 96 - y \), \( c = 24 \))</th></tr>
+<tr><td class="left">Quantité de monopole</td><td class="left">30</td><td class="left">36</td></tr>
+<tr><td class="left">Quantité du leader</td><td class="left">30 ✓</td><td class="left">36 ✓</td></tr>
+<tr><td class="left">Profit de monopole</td><td class="left">900</td><td class="left">1296</td></tr>
+<tr><td class="left">Profit du leader</td><td class="left">450 = 900/2 ✓</td><td class="left">648 = 1296/2 ✓</td></tr>
+</table>
+<p>
+  Cinq secondes de vérification, et une erreur de substitution se voit immédiatement.
+</p>
+</div>
+</section>

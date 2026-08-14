@@ -1,0 +1,134 @@
+<section class="chapter">
+<div class="chapter-tag">Mémo · une page</div>
+<h1>Le mémo</h1>
+
+<h2>Le calcul commun aux deux parties</h2>
+
+<div class="result">
+<div class="result-title">Trois gestes, jamais un de plus</div>
+<ol>
+  <li><strong>Le suiveur d'abord</strong> : \( \dfrac{\partial \pi_2}{\partial q_2} = 0 \) donne sa
+      fonction de réaction \( q_2(q_1) \).</li>
+  <li><strong>Substituer</strong> \( q_2(q_1) \) dans \( \pi_1 \) — <em>avant</em> toute
+      dérivation.</li>
+  <li><strong>Dériver \( \pi_1 \)</strong> par rapport à \( q_1 \), annuler, puis redescendre :
+      \( q_2 \), \( p \), les deux profits.</li>
+</ol>
+<p>
+  Avec \( p = a - Q \) et un coût marginal \( c \) commun :
+  \( q_1 = \dfrac{a-c}{2} \), \( q_2 = \dfrac{a-c}{4} \), \( p = \dfrac{a+3c}{4} \).
+</p>
+</div>
+
+<h2>Ce qui vient après, selon la partie</h2>
+
+<table class="compare">
+<tr><th class="left"></th><th class="left">Partie 1 — théorie des jeux</th><th class="left">Partie 2 — économie industrielle</th></tr>
+<tr>
+  <td class="left"><strong>La suite de la question</strong></td>
+  <td class="left">Forme normale, tous les équilibres de Nash, filtrer par la perfection en sous-jeux</td>
+  <td class="left">Tableau comparatif, effet sur les consommateurs, dissuasion d'entrée, droit</td>
+</tr>
+<tr>
+  <td class="left"><strong>Une stratégie, c'est…</strong></td>
+  <td class="left">une <strong>règle</strong> : \( q_2 = 30 - \tfrac{1}{2}q_1 \), pas un nombre</td>
+  <td class="left">une quantité — la question de la forme normale ne se pose pas</td>
+</tr>
+<tr>
+  <td class="left"><strong>Le mot qui rapporte</strong></td>
+  <td class="left">« menace <strong>non crédible</strong> », « parfait en sous-jeux »</td>
+  <td class="left">« avantage du <strong>premier joueur</strong> », « position dominante »</td>
+</tr>
+<tr>
+  <td class="left"><strong>L'oubli qui coûte</strong></td>
+  <td class="left">ne pas tester le sous-jeu <em>hors</em> du chemin d'équilibre</td>
+  <td class="left">ne pas parler des <strong>consommateurs</strong> dans « qui gagne, qui perd »</td>
+</tr>
+</table>
+
+<h2>Les chiffres des deux exemples</h2>
+
+<table class="compare">
+<tr><th class="left">Partie 1 — \( p = 80 - Q \), \( c = 20 \)</th><th>\( q_1 \)</th><th>\( q_2 \)</th><th>\( p \)</th><th>\( \pi_1 \)</th><th>\( \pi_2 \)</th></tr>
+<tr><td class="left">Monopole</td><td>30</td><td>—</td><td>50</td><td>900</td><td>—</td></tr>
+<tr><td class="left">Cournot</td><td>20</td><td>20</td><td>40</td><td>400</td><td>400</td></tr>
+<tr><td class="left"><strong>Stackelberg</strong></td><td>30</td><td>15</td><td>35</td><td><strong>450</strong></td><td><strong>225</strong></td></tr>
+</table>
+
+<p>Forme normale réduite de la question 5.2 (les deux ✦ sont les équilibres de Nash) :</p>
+
+<table class="game">
+  <tr><td class="void"></td><td class="void"></td><th colspan="2">Firme 2</th></tr>
+  <tr><td class="void"></td><td class="void"></td><th>réaction</th><th>\( q_2 = 20 \) toujours</th></tr>
+  <tr><td class="player" rowspan="2">Firme 1</td><th>produire 30</th><td class="nash">(450 ; 225) ✦</td><td>(300 ; 200)</td></tr>
+  <tr><th>produire 20</th><td>(400 ; 400)</td><td class="nash">(400 ; 400) ✦</td></tr>
+</table>
+
+<table class="compare">
+<tr><th class="left">Partie 2 — \( p = 96 - y \), \( c = 24 \)</th><th>\( y_k \)</th><th>\( y_\ell \)</th><th>\( p \)</th><th>\( \pi_k \)</th><th>\( \pi_\ell \)</th></tr>
+<tr><td class="left">Monopole</td><td>36</td><td>—</td><td>60</td><td>1296</td><td>—</td></tr>
+<tr><td class="left">Cournot</td><td>24</td><td>24</td><td>48</td><td>576</td><td>576</td></tr>
+<tr><td class="left"><strong>Stackelberg</strong></td><td>36</td><td>18</td><td>42</td><td><strong>648</strong></td><td><strong>324</strong></td></tr>
+<tr><td class="left">Entrée bloquée (\( F = 144 \))</td><td>48</td><td>0</td><td>48</td><td>1152</td><td>0</td></tr>
+</table>
+
+<h2>Les trois contrôles gratuits</h2>
+
+<div class="box box-rappel">
+<div class="box-title">Avant de rendre</div>
+<ol>
+  <li>
+    <strong>Le leader produit la quantité de monopole et gagne la moitié du profit de
+    monopole</strong> (demande linéaire, \( Cm \) constant). Partie 1 : 30 et 450 = 900/2.
+    Partie 2 : 36 et 648 = 1296/2.
+  </li>
+  <li>
+    <strong>Le suiveur produit la moitié du leader</strong> : 15 contre 30, 18 contre 36.
+  </li>
+  <li>
+    <strong>Par rapport à Cournot : plus de quantité totale, prix plus bas, leader gagnant,
+    suiveur perdant.</strong> Une inversion dans l'un de ces quatre sens signale une erreur de
+    substitution.
+  </li>
+</ol>
+</div>
+
+<h2>La condition de dissuasion, en une ligne</h2>
+
+<div class="box box-methode">
+<div class="box-title">La recette, avec un coût fixe d'entrée \( F \)</div>
+<p>
+  Le profit brut du concurrent, s'il entre et joue au mieux, vaut
+  \( \Big(\dfrac{a - c - y_k}{2}\Big)^2 \). Il n'entre pas si ce montant ne couvre pas \( F \) :
+</p>
+<p>\[ \Big(\frac{a-c-y_k}{2}\Big)^2 \le F \quad\Longleftrightarrow\quad y_k \ \ge\ (a-c) - 2\sqrt{F} \]</p>
+<p>
+  Sur les chiffres de l'examen : \( 72 - 2\sqrt{144} = 72 - 24 = 48 \) ✓. Ensuite,
+  <strong>compare toujours</strong> le profit de blocage (ici 1152) à celui de l'accommodement
+  (648) : la question « est-ce profitable ? » attend cette comparaison chiffrée, pas une intuition.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les quatre erreurs à ne pas commettre</div>
+<ul>
+  <li><strong>Dériver avant de substituer</strong> → tu retombes sur Cournot, dans les deux parties.</li>
+  <li><strong>Écrire la stratégie du suiveur comme un nombre</strong> en Partie 1 → la forme
+      normale devient impossible à remplir correctement.</li>
+  <li><strong>Ne tester la perfection que sur le chemin d'équilibre</strong> → tu ne peux pas voir
+      la menace non crédible, qui est précisément hors chemin.</li>
+  <li><strong>Oublier les consommateurs</strong> en Partie 2 → tu perds les points de comparaison.</li>
+</ul>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Où revoir la théorie</div>
+<ul>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/exercices/session-3">TP 3 · Jeux séquentiels &amp; duopole <span class="path">https://strategies-economiques.vercel.app/strategies/exercices/session-3</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/theorie/b1#s5">B1 · Partie 5 · Hypothèse 3 — L'équilibre de Nash <span class="path">https://strategies-economiques.vercel.app/strategies/theorie/b1#s5</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei2#cournot">EI2 · §3.1 — La concurrence à la Cournot <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei2#cournot</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei2#stackelberg">EI2 · §3.5 — L'ordre du jeu : l'équilibre de Stackelberg <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei2#stackelberg</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei2#entree">EI2 · §3.6 — Empêcher l'entrée d'un concurrent <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei2#entree</span></a></li>
+</ul>
+</div>
+</section>

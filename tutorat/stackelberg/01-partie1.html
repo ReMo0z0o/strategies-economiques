@@ -1,0 +1,313 @@
+<section class="chapter">
+<div class="chapter-tag">Partie 1 · examen blanc n° 3, question 5</div>
+<h1>Stackelberg comme jeu séquentiel</h1>
+<p class="chapter-intro">
+  30 points en trois sous-questions. Le calcul du duopole n'en vaut que 12 : les 18 autres portent
+  sur la forme normale, les équilibres de Nash et la crédibilité des menaces.
+</p>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé — question 5 (30 points)</div>
+<p>
+  Considérez le jeu séquentiel de Stackelberg suivant, avec la <strong>firme 1, leader</strong>, et
+  la <strong>firme 2, follower</strong>. La fonction de demande inverse est \( p = 80 - Q \), où
+  \( Q = q_1 + q_2 \), et les coûts marginaux (constants) sont \( c_1 = c_2 = 20 \).
+</p>
+<p>
+  <strong>5.1)</strong> Résolvez le modèle : trouvez la quantité du leader, celle du follower, le
+  prix de marché et les deux profits. Détaillez votre raisonnement. <em>(12 points)</em>
+</p>
+<p>
+  <strong>5.2)</strong> Représentez le jeu sous forme normale en vous limitant à deux stratégies
+  pour la firme 1 : [produire 30] et [produire 20], et deux stratégies pour la firme 2 :
+  [\( q_2 = 30 - \tfrac{1}{2}q_1 \)] et [\( q_2 = 20 \) quel que soit \( q_1 \)]. Calculez les
+  quatre paires de payoffs et reportez-les dans la forme normale. Identifiez ensuite tous les
+  équilibres de Nash de ce jeu réduit et vérifiez que l'issue de Stackelberg trouvée en 5.1)
+  correspond à l'un d'entre eux. <em>(12 points)</em>
+</p>
+<p>
+  <strong>5.3)</strong> Expliquez pourquoi l'équilibre de Stackelberg est un équilibre de Nash
+  parfait en sous-jeux (ENPS), alors que l'autre équilibre de Nash identifié en 5.2) ne l'est pas.
+  <em>(6 points)</em>
+</p>
+</div>
+
+<h2>5.1 — Résoudre le modèle</h2>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Le profit du suiveur, et sa fonction de réaction</div>
+<p>
+  On commence par la <strong>fin</strong> du jeu : la firme 2 décide en dernier, en connaissant
+  déjà \( q_1 \). Pour elle, \( q_1 \) est donc un nombre donné.
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \pi_2 = \big(80 - q_1 - q_2\big)q_2 - 20\,q_2 = \big(60 - q_1 - q_2\big)q_2 \]
+    <div class="why">recette moins coût. J'ai regroupé le \( 80 \) et le \( -20 \) tout de suite :
+    ça allège tous les calculs suivants et c'est sans risque, le coût marginal étant constant.</div>
+  </div>
+  <div class="step">
+    \[ \frac{\partial \pi_2}{\partial q_2} = 60 - q_1 - 2q_2 = 0 \]
+    <div class="why">dérivée <strong>partielle</strong> : la firme 2 ne choisit que \( q_2 \),
+    \( q_1 \) est une constante pour elle. Le \( 2 \) devant \( q_2 \) vient du carré — c'est le
+    doublement habituel de la recette marginale.</div>
+  </div>
+  <div class="step">
+    \[ q_2(q_1) = \frac{60 - q_1}{2} = 30 - \frac{q_1}{2} \]
+    <div class="why">la <strong>fonction de réaction</strong> du suiveur. C'est exactement la
+    stratégie que l'énoncé de 5.2 appellera « [\( q_2 = 30 - \tfrac{1}{2}q_1 \)] ».</div>
+  </div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Substituer, <em>puis</em> dériver</div>
+<p>
+  La firme 1 sait que la firme 2 réagira selon cette règle. Elle injecte donc la réaction dans son
+  propre profit <strong>avant</strong> de dériver.
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \pi_1 = \Big(60 - q_1 - \underbrace{\big(30 - \tfrac{q_1}{2}\big)}_{q_2(q_1)}\Big)q_1 \]
+    <div class="why">je pars du profit du leader, écrit avec le même regroupement
+    \( 80 - 20 = 60 \), et j'y remplace \( q_2 \) par la réaction trouvée à l'étape 1.</div>
+  </div>
+  <div class="step">
+    \[ \pi_1 = \big(30 - \tfrac{q_1}{2}\big)q_1 = 30\,q_1 - \frac{q_1^2}{2} \]
+    <div class="why">\( 60 - q_1 - 30 + \tfrac{q_1}{2} = 30 - \tfrac{q_1}{2} \). Le profit du
+    leader ne dépend plus que de sa propre quantité : c'est tout l'intérêt de la substitution.</div>
+  </div>
+  <div class="step">
+    \[ \frac{d\pi_1}{dq_1} = 30 - q_1 = 0 \quad\Longrightarrow\quad q_1^* = 30 \]
+    <div class="why">dérivée ordinaire cette fois : il ne reste qu'une variable.</div>
+  </div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Redescendre : quantité du suiveur, prix, profits</div>
+<div class="calc">
+  <div class="step">
+    \[ q_2^* = 30 - \frac{30}{2} = 15 \qquad Q = 45 \qquad p^* = 80 - 45 = 35 \]
+    <div class="why">on réutilise la fonction de réaction, puis la demande inverse.</div>
+  </div>
+  <div class="step">
+    \[ \pi_1 = (35-20)\times 30 = 450 \qquad \pi_2 = (35-20)\times 15 = 225 \]
+    <div class="why">marge unitaire \( p - c = 15 \), multipliée par la quantité de chacune.</div>
+  </div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de 5.1</div>
+<p>
+  \( q_1^* = 30 \), \( q_2^* = 15 \), \( p^* = 35 \), \( \pi_1 = 450 \), \( \pi_2 = 225 \).
+</p>
+<p>
+  <strong>Contrôle.</strong> Le monopole produirait \( (80-20)/2 = 30 \) au prix 50, pour un profit
+  de 900. Le leader produit bien 30 et gagne bien \( 900/2 = 450 \) ✓. Et à titre de comparaison,
+  l'équilibre de Cournot donnerait \( (80-20)/3 = 20 \) chacune, \( p = 40 \), 400 chacune : le
+  leader gagne 50 de plus, le suiveur perd 175.
+</p>
+</div>
+
+<h2>5.2 — La forme normale et tous les équilibres de Nash</h2>
+
+<div class="box box-piege">
+<div class="box-title">Le point qui fait chuter la moitié de la classe</div>
+<p>
+  Les stratégies de la firme 2 <strong>ne sont pas des quantités</strong> : ce sont des
+  <em>règles</em>. « \( q_2 = 30 - \tfrac{1}{2}q_1 \) » n'est pas un nombre, c'est un plan qui dit
+  quoi faire <em>pour chaque</em> \( q_1 \) possible. C'est la définition même d'une stratégie en
+  jeu séquentiel : un plan complet, une action prévue à chaque nœud.
+</p>
+<p>
+  Conséquence pratique : pour remplir une case de la matrice, tu dois d'abord
+  <strong>appliquer la règle</strong> à la quantité choisie par la firme 1, puis calculer les
+  payoffs.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Calculer les quatre cases, une par une</div>
+<p>
+  À chaque fois : on applique la règle de la firme 2, on en déduit \( Q \), puis
+  \( p = 80 - Q \), puis les profits avec la marge \( p - 20 \).
+</p>
+<table class="data">
+<tr><th>\( q_1 \)</th><th>Stratégie de la firme 2</th><th>\( q_2 \)</th><th>\( Q \)</th><th>\( p \)</th><th>\( \pi_1 \)</th><th>\( \pi_2 \)</th></tr>
+<tr><td>30</td><td>réaction \( 30 - \tfrac{q_1}{2} \)</td><td>15</td><td>45</td><td>35</td><td>450</td><td>225</td></tr>
+<tr><td>30</td><td>\( q_2 = 20 \) toujours</td><td>20</td><td>50</td><td>30</td><td>300</td><td>200</td></tr>
+<tr><td>20</td><td>réaction \( 30 - \tfrac{q_1}{2} \)</td><td>20</td><td>40</td><td>40</td><td>400</td><td>400</td></tr>
+<tr><td>20</td><td>\( q_2 = 20 \) toujours</td><td>20</td><td>40</td><td>40</td><td>400</td><td>400</td></tr>
+</table>
+<p>
+  Remarque la troisième ligne : quand \( q_1 = 20 \), la réaction donne
+  \( 30 - 10 = 20 \) — c'est-à-dire exactement ce que prescrit l'autre stratégie. Les deux
+  colonnes coïncident donc sur la ligne du bas.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Reporter dans la forme normale</div>
+<table class="game">
+  <tr><td class="void"></td><td class="void"></td><th colspan="2">Firme 2</th></tr>
+  <tr><td class="void"></td><td class="void"></td><th>\( q_2 = 30 - \tfrac{1}{2}q_1 \)</th><th>\( q_2 = 20 \) toujours</th></tr>
+  <tr><td class="player" rowspan="2">Firme 1</td><th>produire 30</th><td class="nash">(450 ; 225)</td><td>(300 ; 200)</td></tr>
+  <tr><th>produire 20</th><td>(400 ; 400)</td><td class="nash">(400 ; 400)</td></tr>
+</table>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Chercher les équilibres de Nash, case par case</div>
+<p>
+  On teste les meilleures réponses colonne par colonne, puis ligne par ligne.
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \text{Firme 1 face à la réaction : } 450 > 400 \;\Rightarrow\; \text{produire } 30 \]
+    <div class="why">colonne de gauche, on compare les premiers nombres.</div>
+  </div>
+  <div class="step">
+    \[ \text{Firme 1 face à } q_2 = 20 : 300 < 400 \;\Rightarrow\; \text{produire } 20 \]
+    <div class="why">colonne de droite. La firme 1 change d'avis : c'est ce qui rend l'exercice
+    intéressant.</div>
+  </div>
+  <div class="step">
+    \[ \text{Firme 2 face à } q_1 = 30 : 225 > 200 \;\Rightarrow\; \text{la réaction} \]
+    <div class="why">ligne du haut, on compare les seconds nombres.</div>
+  </div>
+  <div class="step">
+    \[ \text{Firme 2 face à } q_1 = 20 : 400 = 400 \;\Rightarrow\; \text{indifférente} \]
+    <div class="why">ligne du bas : les deux stratégies prescrivent 20, donc les deux sont des
+    meilleures réponses. Dis-le explicitement, c'est ce qui rend la case en bas à droite
+    admissible.</div>
+  </div>
+</div>
+<p>Les deux cases où les deux joueurs jouent une meilleure réponse :</p>
+<table class="compare">
+<tr><th class="left">Équilibre de Nash</th><th class="left">Issue</th><th class="left">Payoffs</th></tr>
+<tr>
+  <td class="left">(produire 30 ; réaction)</td>
+  <td class="left">\( q_1 = 30 \), \( q_2 = 15 \), \( p = 35 \)</td>
+  <td class="left">(450 ; 225) — <strong>c'est l'issue de Stackelberg de 5.1</strong> ✓</td>
+</tr>
+<tr>
+  <td class="left">(produire 20 ; \( q_2 = 20 \) toujours)</td>
+  <td class="left">\( q_1 = q_2 = 20 \), \( p = 40 \)</td>
+  <td class="left">(400 ; 400) — c'est l'issue de Cournot</td>
+</tr>
+</table>
+<p>
+  Les deux autres cases n'en sont pas : en (produire 20 ; réaction), la firme 1 dévierait vers 30
+  (450 &gt; 400) ; en (produire 30 ; \( q_2 = 20 \)), elle dévierait vers 20 (400 &gt; 300).
+</p>
+</div>
+
+<h2>5.3 — Pourquoi l'un est parfait en sous-jeux et l'autre non</h2>
+
+<figure>
+<svg viewBox="0 0 470 250" width="100%" style="max-width:12cm" role="img"
+     aria-label="Arbre du jeu : la firme 1 choisit 30 ou 20, puis la firme 2 répond ; le chemin d'équilibre de Stackelberg est en gras, la branche de la menace non crédible en pointillés rouges">
+  <g stroke="#9ca3af" stroke-width="1.3" fill="none">
+    <line x1="40" y1="120" x2="165" y2="200"/>
+    <line x1="165" y1="200" x2="320" y2="200"/>
+  </g>
+  <g stroke="#4338ca" stroke-width="3.4" fill="none">
+    <line x1="40" y1="120" x2="165" y2="55"/>
+    <line x1="165" y1="55" x2="320" y2="30"/>
+  </g>
+  <g stroke="#be123c" stroke-width="2" fill="none" stroke-dasharray="6 4">
+    <line x1="165" y1="55" x2="320" y2="95"/>
+  </g>
+  <circle cx="40" cy="120" r="5.5" fill="#4338ca"/>
+  <circle cx="165" cy="55" r="5.5" fill="#4338ca"/>
+  <circle cx="165" cy="200" r="5.5" fill="#9ca3af"/>
+  <text x="30" y="124" font-size="13" font-weight="bold" text-anchor="end">1</text>
+  <text x="157" y="51" font-size="13" font-weight="bold" text-anchor="end">2</text>
+  <text x="157" y="196" font-size="13" font-weight="bold" text-anchor="end">2</text>
+  <g font-size="12" text-anchor="middle">
+    <text x="95" y="76" style="fill:#4338ca" font-weight="bold">30</text>
+    <text x="98" y="176">20</text>
+    <text x="245" y="34" style="fill:#4338ca" font-weight="bold">15</text>
+    <text x="248" y="88" style="fill:#be123c">20</text>
+    <text x="243" y="192">20</text>
+  </g>
+  <g font-size="12">
+    <text x="330" y="34" font-weight="bold" style="fill:#4338ca">(450 ; 225)</text>
+    <text x="330" y="99" style="fill:#be123c">(300 ; 200)</text>
+    <text x="330" y="204" style="fill:#6b7280">(400 ; 400)</text>
+  </g>
+  <text x="235" y="236" font-size="11" text-anchor="middle">
+    Au nœud du haut, la firme 2 préfère 225 à 200 : elle jouerait 15, jamais 20.
+  </text>
+</svg>
+<figcaption>
+  Le jeu réduit sous forme extensive. La branche en pointillés rouges est la menace « je produirai
+  20 quoi qu'il arrive » : elle dissuade la firme 1 de produire 30… mais la firme 2 ne l'exécuterait
+  jamais, puisqu'elle y perdrait 25.
+</figcaption>
+</figure>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Identifier les sous-jeux</div>
+<p>
+  Le jeu a deux nœuds de décision pour la firme 2 — un après chaque choix de la firme 1 — et chacun
+  ouvre un <strong>sous-jeu propre</strong>. Il faut donc que la stratégie de la firme 2 prescrive
+  une <em>meilleure réponse dans chacun</em>, y compris celui qui ne sera pas atteint.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Tester l'équilibre de Stackelberg</div>
+<p>
+  La stratégie « jouer la réaction » prescrit \( q_2 = 15 \) après \( q_1 = 30 \) et
+  \( q_2 = 20 \) après \( q_1 = 20 \). Dans les deux cas, c'est la quantité qui maximise le profit
+  de la firme 2 dans le sous-jeu concerné — c'est la définition de la fonction de réaction.
+  <strong>Cet équilibre est donc parfait en sous-jeux.</strong>
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">3.</span> Tester l'autre équilibre</div>
+<p>
+  La stratégie « \( q_2 = 20 \) quel que soit \( q_1 \) » prescrit \( q_2 = 20 \) après
+  \( q_1 = 30 \). Or dans ce sous-jeu :
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \pi_2(q_2 = 15 \mid q_1 = 30) = 225 \;>\; \pi_2(q_2 = 20 \mid q_1 = 30) = 200 \]
+    <div class="why">la firme 2 perdrait 25 en exécutant sa menace. Elle ne le ferait pas.</div>
+  </div>
+</div>
+<p>
+  La stratégie prescrit donc une action <strong>non optimale</strong> dans ce sous-jeu :
+  l'équilibre <strong>n'est pas parfait en sous-jeux</strong>.
+</p>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Ce que tu écris sur la copie (5.3)</div>
+<p>
+  « Le jeu comporte deux sous-jeux propres, un après chaque quantité de la firme 1. Un ENPS exige
+  que la stratégie de la firme 2 induise une meilleure réponse <em>dans chacun</em>, y compris hors
+  du chemin d'équilibre.
+</p>
+<p>
+  L'équilibre de Stackelberg (produire 30 ; réaction) satisfait cette exigence par construction :
+  la fonction de réaction donne, pour chaque \( q_1 \), la quantité qui maximise le profit de la
+  firme 2. C'est donc un ENPS.
+</p>
+<p>
+  L'équilibre (produire 20 ; \( q_2 = 20 \) quel que soit \( q_1 \)) ne la satisfait pas. Dans le
+  sous-jeu qui suit \( q_1 = 30 \), il prescrit \( q_2 = 20 \), qui rapporte 200, alors que la
+  meilleure réponse \( q_2 = 15 \) rapporterait 225. Il repose sur une <strong>menace non
+  crédible</strong> : la firme 2 annonce une réaction qu'elle n'aurait pas intérêt à exécuter. La
+  menace influence pourtant la firme 1, qui préfère alors 20 (400) à 30 (300) — et comme le nœud
+  n'est jamais atteint, la menace ne coûte jamais rien à son auteur. C'est exactement le type
+  d'équilibre que le test de la perfection en sous-jeux sert à éliminer. »
+</p>
+</div>
+
+<a class="ref-app" href="https://strategies-economiques.vercel.app/strategies/exercices/session-3">TP 3 · Jeux séquentiels &amp; duopole <span class="path">https://strategies-economiques.vercel.app/strategies/exercices/session-3</span></a>
+</section>
