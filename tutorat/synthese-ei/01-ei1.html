@@ -1,0 +1,128 @@
+<section class="chapter">
+<div class="chapter-tag">EI1 · Partie 1 — Les structures de marché</div>
+<h1>Le monopole</h1>
+<p class="chapter-intro">
+  Une seule firme face à la demande du marché : comment fixe-t-elle son prix, pourquoi est-ce
+  inefficace, et que peut faire l'État ?
+</p>
+
+<h2>La logique du chapitre</h2>
+
+<p>
+  En concurrence parfaite, la firme est minuscule et le bien homogène : sa demande perçue est
+  <strong>plate</strong>, elle subit le prix du marché et vend à \( p = Cm \). Le monopole, lui,
+  affronte la <strong>demande décroissante du marché entier</strong> : pour vendre plus, il doit
+  baisser son prix — et le baisser <em>sur toutes les unités déjà vendues</em>. C'est ce sacrifice
+  qui fait que \( Rm < p \), et c'est de là que découle tout le chapitre : il produit trop peu,
+  vend trop cher, et détruit du surplus.
+</p>
+
+<div class="box box-def">
+<div class="box-title">Pourquoi les monopoles existent — et ce qui est illégal</div>
+<p>
+  <strong>Monopole naturel</strong> (coûts fixes énormes, coût moyen décroissant),
+  <strong>restrictions légales</strong> (brevet, licence, concession) ou
+  <strong>barrières à l'entrée</strong>. Côté droit : l'article <strong>102 du TFUE</strong>
+  interdit l'<strong>abus</strong> de position dominante — <em>pas</em> la position elle-même.
+</p>
+</div>
+
+<h2>Les formules</h2>
+
+<table class="compare">
+<tr><th class="left">Formule</th><th class="left">Symboles</th><th class="left">À quoi elle sert</th></tr>
+<tr>
+  <td class="left">\( \Pi(y) = p(y)\,y - c(y) \)</td>
+  <td class="left">\( p(y) \) demande inverse, \( c(y) \) coût total</td>
+  <td class="left">Le point de départ : on la dérive, toujours.</td>
+</tr>
+<tr>
+  <td class="left">\( Rm(y) = p(y) + y\,\dfrac{dp}{dy} \;<\; p(y) \)</td>
+  <td class="left">le 2<sup>e</sup> terme est négatif</td>
+  <td class="left">Comprendre <em>pourquoi</em> la recette marginale est sous le prix.</td>
+</tr>
+<tr>
+  <td class="left">\( Rm(y) = a - 2by \)</td>
+  <td class="left">si \( p = a - by \)</td>
+  <td class="left"><strong>La règle du doublement</strong> : même ordonnée, pente double.</td>
+</tr>
+<tr>
+  <td class="left">\( \boxed{Rm(y^*) = cm(y^*)} \)</td>
+  <td class="left">—</td>
+  <td class="left">La condition d'optimum. Le coût <strong>fixe</strong> n'y joue aucun rôle.</td>
+</tr>
+<tr>
+  <td class="left">\( y^* = \dfrac{a-k}{2(b+\beta)} \)</td>
+  <td class="left">\( c(y) = ky + \tfrac{\beta}{2}y^2 \)</td>
+  <td class="left">Le cas général ; avec \( Cm \) constant, \( \beta = 0 \).</td>
+</tr>
+<tr>
+  <td class="left">\( p = \dfrac{k}{1 - \frac{1}{\varepsilon}} \)</td>
+  <td class="left">\( \varepsilon = -\dfrac{p}{y}\dfrac{dy}{dp} \)</td>
+  <td class="left">Le prix par l'élasticité. Se calcule sur la demande <strong>directe</strong>.</td>
+</tr>
+<tr>
+  <td class="left">\( \dfrac{p - Cm}{p} = \dfrac{1}{\varepsilon} \)</td>
+  <td class="left">indice de <strong>Lerner</strong></td>
+  <td class="left">Mesure le pouvoir de marché. Nul en concurrence parfaite.</td>
+</tr>
+<tr>
+  <td class="left">\( p(y^e) = cm(y^e) \)</td>
+  <td class="left">\( y^e \) quantité efficace</td>
+  <td class="left">Le repère par rapport auquel on mesure la perte sèche.</td>
+</tr>
+</table>
+
+<h2>Les résultats à connaître</h2>
+
+<table class="compare">
+<tr><th class="left">Sujet</th><th class="left">Ce qu'il faut pouvoir dire</th></tr>
+<tr>
+  <td class="left"><strong>Élasticité</strong></td>
+  <td class="left">Le monopole opère <strong>toujours</strong> là où \( \varepsilon > 1 \). \( \varepsilon \) grand → quasi-concurrence ; \( \varepsilon \) proche de 1 → le prix flambe.</td>
+</tr>
+<tr>
+  <td class="left"><strong>Inefficacité</strong></td>
+  <td class="left">\( y^* < y^e \) : des échanges gagnant-gagnant ne se font pas. La <strong>perte sèche</strong> est ce surplus non réalisé — perdu pour tous, pas transféré.</td>
+</tr>
+<tr>
+  <td class="left"><strong>Monopole naturel</strong></td>
+  <td class="left">Coût moyen toujours décroissant. Forcer \( p = Cm \) crée des pertes égales au coût fixe → sortie du marché. Deux remèdes : un <strong>subside</strong> (avec ses trois difficultés : légalité, coût des taxes, <em>rent seeking</em>) ou la <strong>tarification au coût moyen</strong> (profit nul, prix entre \( Cm \) et le prix de monopole).</td>
+</tr>
+<tr>
+  <td class="left"><strong>Taxation</strong></td>
+  <td class="left">Taxe sur le <em>profit</em> : <strong>neutre</strong>, le \( y^* \) ne bouge pas. Taxe <em>unitaire</em> \( t \) : elle s'ajoute au coût marginal → production ↓, prix ↑, distorsions renforcées. Avec demande iso-élastique, le prix monte de \( \frac{\varepsilon}{\varepsilon-1}\,t > t \) — <strong>plus que la taxe</strong> (le double si \( \varepsilon = 2 \)).</td>
+</tr>
+<tr>
+  <td class="left"><strong>Concurrence monopolistique</strong></td>
+  <td class="left">Biens différenciés : chaque firme a sa demande décroissante et tarife comme un monopole. La libre entrée annule les profits (demande tangente au coût moyen), mais \( p > Cm \) subsiste. Contrepartie : la <strong>variété</strong> plaît aux consommateurs.</td>
+</tr>
+</table>
+
+<h2>Les pièges</h2>
+
+<div class="box box-piege">
+<div class="box-title">Ce que le cours signale</div>
+<ul>
+  <li>
+    <strong>Lire le prix sur \( Rm \).</strong> \( Rm = Cm \) donne la <em>quantité</em> ; le prix
+    se lit ensuite <strong>sur la demande</strong>.
+  </li>
+  <li>
+    <strong>Croire que le coût fixe change \( y^* \).</strong> Il ne change que le fait de rester
+    ou non sur le marché, jamais la quantité optimale.
+  </li>
+  <li>
+    <strong>Confondre transfert et perte sèche.</strong> Le profit du monopole est pris aux
+    consommateurs ; la perte sèche n'est prise par personne.
+  </li>
+  <li>
+    <strong>Croire qu'une taxe unitaire fait monter le prix de \( t \).</strong> Elle le fait
+    monter de <em>plus</em> que \( t \).
+  </li>
+  <li>
+    <strong>Dire qu'un monopole est illégal.</strong> C'est l'abus de position dominante qui l'est.
+  </li>
+</ul>
+</div>
+</section>

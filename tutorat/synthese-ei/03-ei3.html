@@ -1,0 +1,128 @@
+<section class="chapter">
+<div class="chapter-tag">EI3 · Partie 2 — Stratégies de prix</div>
+<h1>Discrimination et chaînes verticales</h1>
+<p class="chapter-intro">
+  Comment un monopole exploite plus finement son pouvoir : trois degrés de discrimination, le tarif
+  en deux parties, et le problème des monopoles en chaîne.
+</p>
+
+<h2>La logique du chapitre</h2>
+
+<p>
+  <span class="term">Discriminer</span>, c'est pratiquer un écart de prix
+  <strong>non justifié par un écart de coût</strong>. Deux conditions : du <strong>pouvoir de
+  marché</strong>, et l'<strong>impossibilité de revendre</strong> — sinon celui qui paie peu
+  revend à celui qui paie cher et l'écart s'effondre. Ce qui distingue les trois degrés n'est ni la
+  technique ni le bien : c'est <strong>l'information</strong> dont dispose le vendeur.
+</p>
+
+<table class="compare">
+<tr><th>Degré</th><th class="left">Information</th><th class="left">Instrument</th><th class="left">Exemple</th></tr>
+<tr>
+  <td><strong>1<sup>er</sup></strong></td>
+  <td class="left">identité <em>et</em> disposition à payer, unité par unité</td>
+  <td class="left">offres personnalisées <strong>imposées</strong></td>
+  <td class="left">négociation individuelle</td>
+</tr>
+<tr>
+  <td><strong>2<sup>e</sup></strong></td>
+  <td class="left">les profils existants, pas qui est qui</td>
+  <td class="left">menu identique, <strong>libre choix</strong> (auto-sélection)</td>
+  <td class="left">forfaits téléphoniques</td>
+</tr>
+<tr>
+  <td><strong>3<sup>e</sup></strong></td>
+  <td class="left">un signe observable de groupe</td>
+  <td class="left">un prix par groupe, quantité libre</td>
+  <td class="left">tarif étudiant, prix par pays</td>
+</tr>
+</table>
+
+<h2>Les formules</h2>
+
+<table class="compare">
+<tr><th class="left">Régime</th><th class="left">Ce qu'on écrit</th></tr>
+<tr>
+  <td class="left"><strong>Monopole simple</strong> (référence)</td>
+  <td class="left">\( Rm = Cm \) sur la demande <strong>agrégée</strong> — on somme les <em>quantités</em>, jamais les prix.</td>
+</tr>
+<tr>
+  <td class="left"><strong>Valeur d'un lot</strong></td>
+  <td class="left">\( \displaystyle\int_0^{y} p(u)\,du \) ; pour \( p = a - by \) : \( ay - \tfrac{b}{2}y^2 \). C'est l'aire sous la demande.</td>
+</tr>
+<tr>
+  <td class="left"><strong>1<sup>er</sup> degré</strong></td>
+  <td class="left">quantité telle que \( p(y) = Cm \), montant = toute l'aire sous la demande.</td>
+</tr>
+<tr>
+  <td class="left"><strong>2<sup>e</sup> degré</strong></td>
+  <td class="left">participation du <strong>petit</strong> saturée, incitation du <strong>gros</strong> saturée, puis maximiser en \( y_S \). Le gros lot reste efficace.</td>
+</tr>
+<tr>
+  <td class="left"><strong>3<sup>e</sup> degré</strong></td>
+  <td class="left">\( \boxed{Rm_1(y_1) = Rm_2(y_2) = cm} \) · \( p = \dfrac{cm}{1 - \frac{1}{\varepsilon}} \) · \( p_1 < p_2 \iff \varepsilon_1 > \varepsilon_2 \)</td>
+</tr>
+<tr>
+  <td class="left"><strong>Deux parties</strong></td>
+  <td class="left">\( p^* = Cm \) et \( F^* = \) surplus du consommateur à ce prix.</td>
+</tr>
+</table>
+
+<h2>Les résultats à connaître</h2>
+
+<table class="compare">
+<tr><th class="left">Régime</th><th class="left">Profit</th><th class="left">Surplus consommateurs</th><th class="left">Efficacité</th></tr>
+<tr><td class="left">Monopole simple</td><td class="left">54 € — le plus faible</td><td class="left">27 €</td><td class="left">non : \( p > Cm \)</td></tr>
+<tr><td class="left">1<sup>er</sup> degré</td><td class="left"><strong>108 €</strong> — le maximum</td><td class="left">0</td><td class="left"><strong>totale</strong> (18 unités)</td></tr>
+<tr><td class="left">2<sup>e</sup> degré</td><td class="left">96 €</td><td class="left">8 € (rente de L)</td><td class="left">presque : petit lot rationné</td></tr>
+<tr><td class="left">3<sup>e</sup> degré</td><td class="left">intermédiaire</td><td class="left">positif</td><td class="left">non : \( p > Cm \) partout</td></tr>
+</table>
+
+<p>
+  Chiffres du fil rouge L &amp; S. Lots du 1<sup>er</sup> degré : 12 u. → 72 € et 6 u. → 36 €. Lots
+  du 2<sup>e</sup> : 12 u. → 64 € et <strong>4</strong> u. → 32 €. Surplus total potentiel : 108 €.
+</p>
+
+<div class="box box-why">
+<div class="box-title">Le 2<sup>e</sup> degré, en deux distorsions</div>
+<p>
+  L'écart entre 108 et 96 se décompose en <strong>rente d'information</strong> (8 €, un
+  <em>transfert</em> vers le gros client, que le monopole doit lui laisser pour qu'il ne choisisse
+  pas le petit lot) et <strong>rationnement du petit lot</strong> (4 €, une <em>perte sèche</em>
+  que personne ne récupère). Rationner le petit lot est délibéré : cela rend le petit lot moins
+  tentant pour le gros, donc réduit la rente.
+</p>
+</div>
+
+<h2>La double marginalisation</h2>
+
+<div class="box box-def">
+<div class="box-title">Deux monopoles en chaîne</div>
+<p>
+  Un producteur (amont) vend à un distributeur (aval), qui revend aux consommateurs. On résout
+  <strong>par la fin</strong> : l'aval maximise son profit — <strong>son coût marginal est le prix
+  de l'amont</strong>, pas le coût de production — ce qui donne la <span class="term">demande
+  dérivée</span> (de pente double) que l'amont affronte à son tour.
+</p>
+<p>
+  Chaque étage ajoute sa marge sans tenir compte du tort fait à l'autre. Résultat sur le fil rouge :
+  la chaîne donne \( y = 2 \), \( p_{av} = 10 \) et un profit joint de <strong>12 €</strong> ;
+  la fusion donne \( y = 4 \), \( p = 8 \) et <strong>16 €</strong>.
+  <strong>La fusion verticale est une amélioration parétienne</strong> : plus de quantité, prix plus
+  bas, profit plus élevé. Les deux remèdes : la <strong>fusion</strong> ou le contrat de
+  <strong>franchise</strong>.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges</div>
+<ul>
+  <li><strong>Additionner les prix</strong> en agrégeant les demandes — on somme les quantités.</li>
+  <li><strong>Confondre le montant d'un lot et un prix unitaire</strong> : un lot de 12 u. à 72 € n'est pas un prix de 6 €.</li>
+  <li><strong>Évaluer le petit lot avec la demande du petit client</strong> dans le test d'incitation : c'est le <em>gros</em> qui est tenté.</li>
+  <li><strong>Donner au distributeur le coût de production de l'amont</strong> : son coût marginal, c'est le prix qu'il paie.</li>
+  <li><strong>Prendre la pente de la demande inverse</strong> pour l'élasticité au 3<sup>e</sup> degré.</li>
+  <li><strong>Répondre « 3<sup>e</sup> degré » dès qu'on voit deux prix</strong> : un écart justifié par les coûts n'est pas une discrimination.</li>
+</ul>
+</div>
+</section>

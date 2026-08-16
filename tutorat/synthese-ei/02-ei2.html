@@ -1,0 +1,130 @@
+<section class="chapter">
+<div class="chapter-tag">EI2 · Partie 1 — Les structures de marché</div>
+<h1>L'oligopole</h1>
+<p class="chapter-intro">
+  Quelques firmes seulement : chacune a du pouvoir de marché, mais son résultat dépend aussi des
+  autres. Le chapitre le plus riche du cours.
+</p>
+
+<h2>La logique du chapitre</h2>
+
+<p>
+  Tout part d'une question : <strong>sur quoi les firmes se font-elles concurrence ?</strong> Si
+  c'est sur les <strong>quantités</strong>, on est chez <span class="term">Cournot</span> — les
+  quantités sont des <em>substituts stratégiques</em> (si l'autre produit plus, je produis moins).
+  Si c'est sur les <strong>prix</strong> avec un bien homogène, on est chez
+  <span class="term">Bertrand</span>, et le résultat est brutal. Vient ensuite le rôle de
+  l'<strong>ordre du jeu</strong> (Stackelberg) et de l'<strong>entente</strong> (collusion).
+</p>
+
+<div class="box box-methode">
+<div class="box-title">La boussole : quel modèle pour quel marché ?</div>
+<p>
+  <strong>Quantités faciles à ajuster</strong> → Bertrand (achats dématérialisés en ligne : la
+  firme répond à toute variation de demande causée par un changement de prix).
+  <strong>Capacités rigides</strong> → Cournot (industrie lourde). Les conclusions dépendent
+  fortement de ce choix : dis-le explicitement en rédaction.
+</p>
+</div>
+
+<h2>Les formules</h2>
+
+<table class="compare">
+<tr><th class="left">Formule</th><th class="left">Contexte</th><th class="left">Remarque</th></tr>
+<tr>
+  <td class="left">\( \Pi_1(y_1 ; y_2) = p(y_1 + y_2)\,y_1 - c_1(y_1) \)</td>
+  <td class="left">Cournot, point de départ</td>
+  <td class="left">On dérive par rapport à \( y_1 \) <strong>seulement</strong> — dérivée partielle.</td>
+</tr>
+<tr>
+  <td class="left">\( y_1 = R_1(y_2) \) décroissante</td>
+  <td class="left">fonction de meilleure réponse</td>
+  <td class="left">Pente négative = <strong>substituts stratégiques</strong>.</td>
+</tr>
+<tr>
+  <td class="left">\( y_i = \dfrac{a-c}{3} \), \( p = \dfrac{a+2c}{3} \)</td>
+  <td class="left">Cournot symétrique, \( p = a - Y \)</td>
+  <td class="left">Chaque firme gagne \( \big(\tfrac{a-c}{3}\big)^2 \).</td>
+</tr>
+<tr>
+  <td class="left">\( y_i = \dfrac{a-c}{n+1} \), \( p = \dfrac{a+nc}{n+1} \)</td>
+  <td class="left">Cournot à \( n \) firmes</td>
+  <td class="left">\( p \to c \) quand \( n \to \infty \) : la concurrence rétablie par le nombre.</td>
+</tr>
+<tr>
+  <td class="left">\( y_1 = \dfrac{a-c}{2} \), \( y_2 = \dfrac{a-c}{4} \)</td>
+  <td class="left">Stackelberg</td>
+  <td class="left">Le leader produit la <strong>quantité de monopole</strong> et gagne <strong>la moitié du profit de monopole</strong>.</td>
+</tr>
+<tr>
+  <td class="left">\( \boxed{p_1^* = p_2^* = c} \)</td>
+  <td class="left">Bertrand, bien homogène</td>
+  <td class="left">Le <strong>paradoxe de Bertrand</strong> : deux firmes suffisent à ramener le prix au coût marginal.</td>
+</tr>
+<tr>
+  <td class="left">\( p_1^* = p_2^* = \dfrac{12}{2+h} \)</td>
+  <td class="left">Bertrand différencié (fil rouge)</td>
+  <td class="left">\( h \) mesure la substituabilité. Ici les prix sont des <strong>compléments</strong> stratégiques.</td>
+</tr>
+<tr>
+  <td class="left">\( r < \dfrac{1}{n-1} \)</td>
+  <td class="left">stabilité de la collusion</td>
+  <td class="left">L'entente tient si les firmes sont assez patientes et peu nombreuses.</td>
+</tr>
+</table>
+
+<h2>Le tableau à connaître par cœur</h2>
+
+<p>Sur le fil rouge du cours, demande \( p = 60 - y_T \) :</p>
+
+<table class="compare">
+<tr><th class="left">Régime</th><th>\( y_1 \)</th><th>\( y_2 \)</th><th>\( y_T \)</th><th>\( p \)</th><th class="left">Profits</th></tr>
+<tr><td class="left">Collusion (cartel)</td><td>12,5</td><td>5</td><td>17,5</td><td><strong>42,5</strong></td><td class="left">487,5 au total, à partager</td></tr>
+<tr><td class="left">Cournot (simultané)</td><td>13</td><td>8</td><td>21</td><td>39</td><td class="left">338 ; 128</td></tr>
+<tr><td class="left">Stackelberg (1 = leader)</td><td>13,9</td><td>7,8</td><td>21,7</td><td>38,3</td><td class="left">≈ 339,5 ; ≈ 120,7</td></tr>
+<tr><td class="left">Bertrand (homogène)</td><td>—</td><td>—</td><td>max</td><td><strong>\( = Cm \)</strong></td><td class="left">0</td></tr>
+</table>
+
+<div class="result">
+<div class="result-title">La lecture verticale</div>
+<p>
+  Les quantités totales <strong>montent</strong> du cartel vers Bertrand, les prix
+  <strong>descendent</strong> :
+  <strong>collusion &gt; Cournot &gt; Stackelberg &gt; Bertrand</strong>. Plus la concurrence est
+  intense, plus on produit et moins c'est cher. <em>Les consommateurs classent ces régimes
+  exactement à l'envers des firmes.</em>
+</p>
+</div>
+
+<h2>Les autres résultats et les pièges</h2>
+
+<table class="compare">
+<tr><th class="left">Sujet</th><th class="left">Ce qu'il faut pouvoir dire</th></tr>
+<tr>
+  <td class="left"><strong>Collusion</strong></td>
+  <td class="left">On partage la quantité de monopole. Le profit joint est maximal, mais l'accord est <strong>instable</strong> : la meilleure réponse individuelle au quota de l'autre est de produire plus. Seule la <strong>répétition</strong> avec des joueurs patients peut le soutenir.</td>
+</tr>
+<tr>
+  <td class="left"><strong>Stackelberg</strong></td>
+  <td class="left">On substitue la réaction du suiveur <em>avant</em> de dériver. Le leader fait toujours au moins aussi bien qu'en Cournot — mais uniquement si son <strong>engagement est crédible</strong> (investissements irréversibles, surcapacités). Sans crédibilité, retour à Cournot.</td>
+</tr>
+<tr>
+  <td class="left"><strong>Dissuasion d'entrée</strong></td>
+  <td class="left">Le leader produit assez pour que le profit brut du rival ne couvre pas son coût fixe \( F \) : \( y_1 \ge (a-c) - 2\sqrt{F} \). Comparer ensuite <em>bloquer</em> et <em>accommoder</em>.</td>
+</tr>
+<tr>
+  <td class="left"><strong>Nombre de firmes</strong></td>
+  <td class="left">Plus de firmes fait baisser le prix, mais chaque entrée coûte un \( F \) : le surplus total n'est pas croissant en \( n \) sans limite.</td>
+</tr>
+</table>
+
+<div class="box box-piege">
+<div class="box-title">Les pièges</div>
+<ul>
+  <li><strong>Utiliser la recette marginale du marché en Cournot</strong> → tu obtiens le total du <em>cartel</em>, pas Cournot.</li>
+  <li><strong>Dériver avant de substituer en Stackelberg</strong> → tu retombes sur Cournot.</li>
+  <li><strong>Croire qu'il faut beaucoup de firmes pour que le prix tombe à \( Cm \)</strong> → en Bertrand homogène, deux suffisent.</li>
+  <li><strong>Oublier les consommateurs</strong> dans un « qui gagne, qui perd ».</li>
+</ul>
+</div>
+</section>

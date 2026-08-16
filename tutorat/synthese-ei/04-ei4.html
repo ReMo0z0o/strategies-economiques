@@ -1,0 +1,130 @@
+<section class="chapter">
+<div class="chapter-tag">EI4 · Partie 2 — Marchés modernes</div>
+<h1>Les économies de réseau</h1>
+<p class="chapter-intro">
+  Quand la valeur d'un bien dépend du nombre de ses utilisateurs : plateformes, masse critique, et
+  concurrence entre réseaux.
+</p>
+
+<h2>La logique du chapitre</h2>
+
+<p>
+  Un <span class="term">effet de réseau direct</span> : le bien vaut plus pour moi quand d'autres
+  l'utilisent (téléphone, messagerie). <span class="term">Indirect</span> : il vaut plus parce que
+  des produits complémentaires apparaissent (jeux pour une console). Le paramètre \( v \) mesure
+  l'intensité de cet effet, \( t \) le coût de transport de la ville linéaire.
+</p>
+
+<div class="box box-def">
+<div class="box-title">Les trois concepts à savoir expliquer sans formule</div>
+<ul>
+  <li>
+    <strong>Externalité de réseau</strong> — en adhérant, j'augmente l'utilité de tous les autres,
+    bénéfice dont je ne tiens pas compte. Résultat : <strong>trop peu d'utilisateurs</strong> par
+    rapport à l'optimum social, d'où un rôle possible pour l'action publique (accès internet).
+  </li>
+  <li>
+    <strong>Anticipations auto-réalisatrices</strong> — la demande dépend de la taille
+    <em>anticipée</em> du réseau, et l'anticipation doit se réaliser (\( y = y^E \)). « Personne
+    n'y croit » et « tout le monde y croit » peuvent être <em>tous deux</em> des équilibres :
+    croire, c'est créer.
+  </li>
+  <li>
+    <strong>Masse critique</strong> — avec un effet fort (\( v > t \)), l'équilibre intérieur
+    \( y^c \) est <strong>instable</strong> et sépare l'effondrement du décollage. Toute la
+    stratégie de lancement (prix bas, ventes à perte, communication massive) vise à convaincre que
+    \( y^E \) dépassera \( y^c \).
+  </li>
+</ul>
+</div>
+
+<h2>Les formules</h2>
+
+<table class="compare">
+<tr><th class="left">Situation</th><th class="left">Formule</th><th class="left">Lecture</th></tr>
+<tr>
+  <td class="left">Ville linéaire, sans réseau</td>
+  <td class="left">\( y = \tfrac{1}{t}(r - p) \)</td>
+  <td class="left">La demande : \( r \) valeur du bien, \( t \) coût de transport.</td>
+</tr>
+<tr>
+  <td class="left">Monopole, sans réseau</td>
+  <td class="left">\( p^m = \dfrac{r+c}{2} \)</td>
+  <td class="left">La référence.</td>
+</tr>
+<tr>
+  <td class="left">Monopole, réseau \( v < t \)</td>
+  <td class="left">\( p^m = \dfrac{r+c}{2} \) · \( y^m = \dfrac{1}{2}\,\dfrac{r-c}{t-v} \)</td>
+  <td class="left">Prix <strong>inchangé</strong>, ventes <strong>croissantes</strong> en \( v \).</td>
+</tr>
+<tr>
+  <td class="left">Monopole, réseau \( v > t \)</td>
+  <td class="left">pas de formule unique</td>
+  <td class="left"><strong>Trois équilibres</strong> : 0 et 1 stables, \( y^c \) instable = la masse critique.</td>
+</tr>
+<tr>
+  <td class="left">Duopole Hotelling, sans réseau</td>
+  <td class="left">\( p_1 = p_2 = t \) (ou \( c + t \)) · \( y_i = \tfrac{1}{2} \) · \( \pi_i = \tfrac{t}{2} \)</td>
+  <td class="left">La référence du duopole.</td>
+</tr>
+<tr>
+  <td class="left">Duopole Hotelling, réseau</td>
+  <td class="left">\( p_1 = p_2 = t - v \) · \( y_i = \tfrac{1}{2} \) · \( \pi_i = \dfrac{t-v}{2} \)</td>
+  <td class="left">Prix et profits <strong>baissent de \( v \)</strong> ; parts de marché inchangées.</td>
+</tr>
+</table>
+
+<h2>Le résultat central</h2>
+
+<div class="result">
+<div class="result-title">Si tu ne retiens qu'une ligne du chapitre</div>
+<p>
+  <strong>Le même effet de réseau produit deux conclusions opposées selon la structure de
+  marché.</strong>
+</p>
+<table class="compare">
+<tr><th class="left"></th><th class="left">Prix</th><th class="left">Quantité / parts</th></tr>
+<tr>
+  <td class="left"><strong>Monopole</strong> (\( v < t \))</td>
+  <td class="left">ne bouge pas — indépendant de \( v \)</td>
+  <td class="left">les ventes <strong>montent</strong> avec \( v \)</td>
+</tr>
+<tr>
+  <td class="left"><strong>Duopole</strong> (Hotelling)</td>
+  <td class="left"><strong>baisse de \( v \)</strong> — concurrence intensifiée</td>
+  <td class="left">parts de marché <strong>inchangées</strong> (½ chacun)</td>
+</tr>
+</table>
+<p>
+  L'intuition : en monopole, l'effet de réseau rend le bien plus attractif et le monopole
+  transforme cela en <em>volume</em>. En duopole, il rend les deux réseaux plus substituables aux
+  yeux des consommateurs, ce qui <em>intensifie</em> la concurrence en prix — et personne n'y gagne
+  de part de marché.
+</p>
+</div>
+
+<h2>Les pièges</h2>
+
+<div class="box box-piege">
+<div class="box-title">Ce que le cours signale</div>
+<ul>
+  <li>
+    <strong>Croire que l'effet de réseau fait toujours monter les prix.</strong> C'est l'inverse en
+    duopole, et il est neutre en monopole tant que \( v < t \).
+  </li>
+  <li>
+    <strong>Oublier la condition \( v < t \).</strong> Au-delà, le modèle change de nature : plus
+    de formule unique, mais des équilibres multiples et une masse critique.
+  </li>
+  <li>
+    <strong>Confondre externalité et anticipation.</strong> L'externalité explique pourquoi il y a
+    <em>trop peu</em> d'utilisateurs ; les anticipations expliquent pourquoi il peut y en avoir
+    <em>zéro ou beaucoup</em> pour les mêmes paramètres.
+  </li>
+  <li>
+    <strong>Présenter la masse critique comme un équilibre visé.</strong> \( y^c \) est
+    <strong>instable</strong> : c'est un seuil à franchir, pas un point d'arrivée.
+  </li>
+</ul>
+</div>
+</section>

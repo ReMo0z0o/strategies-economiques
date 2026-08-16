@@ -1,0 +1,37 @@
+{
+  "filename": "synthese-economie-industrielle.pdf",
+  "eyebrow": "Synthèse de théorie — Partie 2",
+  "title": "Économie industrielle",
+  "subtitle": "Les quatre chapitres condensés : formules, résultats et pièges",
+  "code": "Partie 2",
+  "project": "Projet : stratégies et décisions économiques",
+  "part": "Les quatre chapitres de théorie",
+  "footnote": "Synthèse (non officielle) des quatre chapitres de théorie de la Partie 2, telle qu'ils sont présentés dans l'app. Elle ne remplace pas le cours : elle sert à vérifier vite ce qui est acquis. Les valeurs numériques citées sont celles des exemples fil rouge du cours.",
+  "howto": {
+    "title": "Comment lire cette synthèse",
+    "lead": "Quatre chapitres, deux pages chacun, toujours dans le même ordre : <strong>la logique</strong>, <strong>les formules</strong>, <strong>les résultats à connaître</strong>, <strong>les pièges</strong>.",
+    "items": [
+      "<strong>Les tableaux de formules</strong> sont le cœur du document : si tu sais les réécrire de mémoire et dire à quoi sert chaque symbole, le chapitre est acquis.",
+      "<strong>Les valeurs chiffrées</strong> sont celles des exemples fil rouge du cours — elles servent de repères, pas de résultats à réciter.",
+      "<strong>Les pièges</strong> sont ceux que le cours signale explicitement. C'est la dernière chose à relire."
+    ]
+  },
+  "chapters": [
+    {
+      "file": "01-ei1.html",
+      "title": "EI1 — Le monopole"
+    },
+    {
+      "file": "02-ei2.html",
+      "title": "EI2 — L'oligopole"
+    },
+    {
+      "file": "03-ei3.html",
+      "title": "EI3 — Discrimination et chaînes verticales"
+    },
+    {
+      "file": "04-ei4.html",
+      "title": "EI4 — Les économies de réseau"
+    }
+  ]
+}
