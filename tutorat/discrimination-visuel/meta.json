@@ -1,0 +1,42 @@
+{
+  "filename": "discrimination-en-graphiques.pdf",
+  "toc": false,
+  "eyebrow": "Voir les calculs — EI3",
+  "title": "La discrimination par les prix, en graphiques",
+  "subtitle": "Quatre schémas pour visualiser p, y, les surplus et ce qui change d'un degré à l'autre",
+  "code": "EI3",
+  "project": "Projet : stratégies et décisions économiques",
+  "part": "Économie industrielle",
+  "footnote": "Document visuel (non officiel). Les quatre schémas partagent la même famille de données — coût marginal de 4, demandes linéaires — pour être directement comparables entre eux. Tous les chiffres ont été recalculés.",
+  "howto": {
+    "title": "Comment lire ce document",
+    "lead": "Un schéma par régime, tous à la <strong>même échelle</strong> et avec le <strong>même coût marginal</strong>, pour que les différences sautent aux yeux. Sous chaque schéma : comment le lire, et le calcul qu'il rend visible.",
+    "items": [
+      "<strong>Trois couleurs, toujours les mêmes</strong> : vert = surplus des consommateurs, bleu = profit du monopole, rouge = perte sèche (surplus détruit, que personne ne récupère).",
+      "<strong>La règle qui gouverne tous les schémas</strong> : l'aire sous la courbe de demande jusqu'à une quantité, c'est <em>ce que cette quantité vaut</em> pour le client. Tout le reste en découle.",
+      "<strong>Refais chaque schéma à main levée</strong> avant l'examen. Un graphique juste vaut souvent plus qu'un calcul exact : il montre au correcteur que tu as compris la structure."
+    ]
+  },
+  "chapters": [
+    {
+      "file": "01-monopole.html",
+      "title": "La référence — le monopole simple"
+    },
+    {
+      "file": "02-premier.html",
+      "title": "Le premier degré"
+    },
+    {
+      "file": "03-deuxieme.html",
+      "title": "Le deuxième degré"
+    },
+    {
+      "file": "04-troisieme.html",
+      "title": "Le troisième degré"
+    },
+    {
+      "file": "05-recap.html",
+      "title": "Le récapitulatif"
+    }
+  ]
+}

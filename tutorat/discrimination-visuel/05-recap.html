@@ -1,0 +1,118 @@
+<section class="chapter">
+<div class="chapter-tag">Récapitulatif · une page à photographier</div>
+<h1>Le récapitulatif</h1>
+<p class="chapter-intro">
+  Une image pour le contraste de fond — ce que le monopole prend et ce qu'il laisse — puis le
+  tableau des quatre régimes.
+</p>
+
+<figure>
+<svg viewBox="0 0 330 165" width="100%" style="max-width:11cm" role="img"
+     aria-label="Deux miniatures sur les mêmes données : à gauche le monopole simple avec ses trois aires, à droite le premier degré où tout le triangle est capté par le monopole">
+  <!-- ① monopole simple -->
+  <g>
+    <polygon points="20,26 20,56 53,56" fill="#bbf7d0"/>
+    <rect x="20" y="56" width="33" height="30" fill="#c7d2fe"/>
+    <polygon points="53,56 53,86 86,86" fill="#fecaca"/>
+    <line x1="20" y1="26" x2="108" y2="106" stroke="#1f2937" stroke-width="1.6"/>
+    <line x1="20" y1="86" x2="114" y2="86" stroke="#be123c" stroke-width="1.2"/>
+    <g stroke="#374151" stroke-width="1.2" fill="none">
+      <line x1="20" y1="112" x2="20" y2="20"/><line x1="16" y1="106" x2="118" y2="106"/>
+    </g>
+    <text x="66" y="128" font-size="11" font-weight="bold" text-anchor="middle" fill="#374151">① Monopole simple</text>
+    <text x="66" y="143" font-size="11" text-anchor="middle" fill="#3730a3">Π 36 · SC 18 · perte 18</text>
+  </g>
+  <!-- ② premier degré -->
+  <g transform="translate(150,0)">
+    <polygon points="20,26 20,86 86,86" fill="#c7d2fe"/>
+    <line x1="20" y1="26" x2="108" y2="106" stroke="#1f2937" stroke-width="1.6"/>
+    <line x1="20" y1="86" x2="114" y2="86" stroke="#be123c" stroke-width="1.2"/>
+    <g stroke="#374151" stroke-width="1.2" fill="none">
+      <line x1="20" y1="112" x2="20" y2="20"/><line x1="16" y1="106" x2="118" y2="106"/>
+    </g>
+    <text x="66" y="128" font-size="11" font-weight="bold" text-anchor="middle" fill="#374151">② Premier degré</text>
+    <text x="66" y="143" font-size="11" text-anchor="middle" fill="#3730a3">Π 72 · SC 0 · perte 0</text>
+  </g>
+  <!-- légende -->
+  <g font-size="11">
+    <rect x="18" y="153" width="12" height="9" fill="#bbf7d0"/><text x="35" y="162" fill="#166534">consommateurs</text>
+    <rect x="126" y="153" width="12" height="9" fill="#c7d2fe"/><text x="143" y="162" fill="#3730a3">profit</text>
+    <rect x="196" y="153" width="12" height="9" fill="#fecaca"/><text x="213" y="162" fill="#9f1239">perte sèche</text>
+  </g>
+</svg>
+<figcaption>
+  Mêmes données des deux côtés. En passant au premier degré, le triangle vert et le triangle rouge
+  sont absorbés d'un coup : le profit double et plus rien n'est perdu. Les 2<sup>e</sup> et
+  3<sup>e</sup> degrés se situent entre ces deux extrêmes.
+</figcaption>
+</figure>
+
+<h2>Les quatre régimes en un tableau</h2>
+
+<table class="compare">
+<tr>
+  <th class="left">Régime</th><th class="left">Ce qu'on voit sur le schéma</th>
+  <th>Profit</th><th>SC</th><th>Perte</th>
+</tr>
+<tr>
+  <td class="left"><strong>Monopole simple</strong><br />un prix</td>
+  <td class="left">Trois aires distinctes. Le monopole s'arrête à \( Rm = Cm \), donc à mi-chemin de la quantité efficace.</td>
+  <td>36</td><td>18</td><td>18</td>
+</tr>
+<tr>
+  <td class="left"><strong>1<sup>er</sup> degré</strong><br />offres imposées</td>
+  <td class="left">Une seule aire. \( Rm \) disparaît, on va jusqu'à \( p = Cm \), tout le triangle est bleu.</td>
+  <td><strong>72</strong></td><td>0</td><td>0</td>
+</tr>
+<tr>
+  <td class="left"><strong>2<sup>e</sup> degré</strong><br />menu au choix</td>
+  <td class="left">Deux demandes. Le petit lot recule ; un triangle vert apparaît entre les deux courbes.</td>
+  <td>96*</td><td>8*</td><td>4*</td>
+</tr>
+<tr>
+  <td class="left"><strong>3<sup>e</sup> degré</strong><br />un prix par groupe</td>
+  <td class="left">Deux graphiques séparés. Le prix monte sur le marché raide, baisse sur le plat.</td>
+  <td>108*</td><td>54*</td><td>—</td>
+</tr>
+</table>
+
+<p style="font-size:9.5pt">
+  * Les 2<sup>e</sup> et 3<sup>e</sup> degrés ont besoin de deux clients ou de deux marchés : leurs
+  chiffres portent sur les exemples à deux demandes des pages précédentes, pas sur la demande
+  unique des schémas ① et ②.
+</p>
+
+<h2>Les trois automatismes de dessin</h2>
+
+<div class="box box-methode">
+<div class="box-title">À reproduire de mémoire en trente secondes</div>
+<ol>
+  <li>
+    <strong>\( Rm \) coupe l'axe à mi-chemin de la demande.</strong> Même point de départ, pente
+    double. Si ta droite \( Rm \) ne coupe pas l'axe exactement au milieu, elle est fausse.
+  </li>
+  <li>
+    <strong>La quantité se lit sous \( Rm = Cm \), le prix se lit sur la demande.</strong> On
+    descend pour la quantité, on remonte à la <em>demande</em> pour le prix — jamais à \( Rm \).
+  </li>
+  <li>
+    <strong>Toute aire sous la demande est une valeur, toute aire sous \( Cm \) est un coût.</strong>
+    Le profit est ce qui reste entre les deux. C'est vrai dans les quatre schémas.
+  </li>
+</ol>
+</div>
+
+<div class="result">
+<div class="result-title">La phrase qui relie les quatre schémas</div>
+<p style="text-align:center; font-size:12pt">
+  «&nbsp;Le monopole cherche à <strong>agrandir le triangle</strong>, puis à <strong>en prendre la
+  plus grande part</strong>.&nbsp;»
+</p>
+<p>
+  Le monopole simple ne fait ni l'un ni l'autre. Le 1<sup>er</sup> degré fait les deux
+  parfaitement. Le 2<sup>e</sup> degré y parvient presque, au prix d'une rente laissée au gros
+  client. Le 3<sup>e</sup> degré n'agrandit rien du tout — il se contente de mieux répartir les
+  prix entre groupes, et peut même rétrécir le gâteau total.
+</p>
+</div>
+</section>

@@ -1,0 +1,106 @@
+<section class="chapter">
+<div class="chapter-tag">Degré 1 · l'idéal du monopole</div>
+<h1>Le premier degré</h1>
+<p class="chapter-intro">
+  Même demande, même coût marginal. Une seule chose change — le monopole ne vend plus à un prix,
+  il vend un <strong>lot</strong> — et le graphique bascule complètement.
+</p>
+
+<figure>
+<svg viewBox="0 0 300 240" width="100%" style="max-width:11.5cm" role="img"
+     aria-label="Graphique du premier degré : le monopole va jusqu'à la quantité 12 où le prix égale le coût marginal, et capte tout le triangle situé entre la demande et le coût marginal, soit 72">
+  <!-- aire captée -->
+  <polygon points="48,40 48,160 180,160" fill="#c7d2fe"/>
+  <!-- rappel du monopole simple -->
+  <g stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 3" fill="none">
+    <line x1="114" y1="200" x2="114" y2="100"/>
+    <line x1="48" y1="100" x2="114" y2="100"/>
+    <line x1="180" y1="200" x2="180" y2="160"/>
+  </g>
+  <!-- axes -->
+  <g stroke="#374151" stroke-width="1.4" fill="none">
+    <line x1="48" y1="210" x2="48" y2="30"/>
+    <line x1="40" y1="200" x2="262" y2="200"/>
+  </g>
+  <!-- courbes -->
+  <line x1="48" y1="40" x2="224" y2="200" stroke="#1f2937" stroke-width="2.2"/>
+  <line x1="48" y1="160" x2="255" y2="160" stroke="#be123c" stroke-width="1.8"/>
+  <circle cx="180" cy="160" r="4" fill="#1f2937"/>
+  <circle cx="114" cy="100" r="3.2" fill="#9ca3af"/>
+  <!-- graduations -->
+  <g font-size="11" fill="#374151">
+    <text x="42" y="204" text-anchor="end">0</text>
+    <text x="42" y="164" text-anchor="end">4</text>
+    <text x="42" y="104" text-anchor="end">10</text>
+    <text x="42" y="44" text-anchor="end">16</text>
+    <text x="114" y="214" text-anchor="middle">6</text>
+    <text x="180" y="214" text-anchor="middle">12</text>
+    <text x="268" y="204">y</text>
+    <text x="48" y="24" text-anchor="middle">p</text>
+  </g>
+  <g font-size="11" paint-order="stroke" stroke="#ffffff" stroke-width="3.5" stroke-linejoin="round">
+    <text x="228" y="188" fill="#1f2937">demande</text>
+    <text x="228" y="155" fill="#be123c">Cm = 4</text>
+    <text x="118" y="94" fill="#6b7280">monopole simple</text>
+  </g>
+  <g font-size="11" font-weight="bold" paint-order="stroke" stroke="#ffffff" stroke-width="3.5" stroke-linejoin="round">
+    <text x="93" y="126" text-anchor="middle" fill="#3730a3">tout capté : 72</text>
+  </g>
+</svg>
+<figcaption>
+  Le monopole pousse jusqu'à \( y = 12 \), là où la demande croise le coût marginal, et réclame en
+  bloc la totalité de l'aire bleue. Le triangle vert et le triangle rouge du schéma précédent ont
+  tous deux disparu — absorbés.
+</figcaption>
+</figure>
+
+<h2>Ce que le schéma montre d'un coup d'œil</h2>
+
+<table class="compare">
+<tr><th class="left"></th><th class="left">Monopole simple</th><th class="left">Premier degré</th></tr>
+<tr><td class="left">Quantité</td><td class="left">6</td><td class="left"><strong>12</strong> (efficace)</td></tr>
+<tr><td class="left">Surplus consommateurs (vert)</td><td class="left">18</td><td class="left"><strong>0</strong> — absorbé</td></tr>
+<tr><td class="left">Perte sèche (rouge)</td><td class="left">18</td><td class="left"><strong>0</strong> — supprimée</td></tr>
+<tr><td class="left">Profit</td><td class="left">36</td><td class="left"><strong>72</strong></td></tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi le monopole va jusqu'à 12, alors qu'il s'arrêtait à 6</div>
+<p>
+  Au prix uniforme, vendre une unité de plus obligeait à baisser le prix sur
+  <em>toutes</em> les unités : voilà pourquoi \( Rm \) était sous la demande, et pourquoi il
+  s'arrêtait tôt. En vendant un lot indivisible, il facture chaque unité à ce qu'elle vaut
+  <em>vraiment</em> pour le client : il n'y a plus de sacrifice sur les précédentes.
+</p>
+<p>
+  Conséquence visible sur le dessin : <strong>la courbe \( Rm \) a disparu</strong>. Elle ne sert
+  plus à rien. La demande <em>est</em> la recette marginale.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Le piège du prix moyen</div>
+<p>
+  L'aire totale sous la demande jusqu'à 12 vaut \( 16 \times 12 - \tfrac{12^2}{2} = 120 \). Le lot
+  se vend donc 120 € pour 12 unités, soit <strong>10 € l'unité en moyenne</strong> — le même
+  chiffre que le prix de monopole. C'est une coïncidence trompeuse : ce n'est
+  <strong>pas</strong> un prix de 10 €. Au prix libre de 10 €, le client n'en prendrait que 6 et
+  garderait 18 de surplus. L'offre est <em>à prendre ou à laisser</em>.
+</p>
+</div>
+
+<h2>La tarification en deux parties donne le même dessin</h2>
+
+<div class="box box-def">
+<div class="box-title">Deux instruments, un seul objectif</div>
+<p>
+  Un forfait \( F \) plus un prix \( p \) par unité produit exactement le même graphique, avec
+  \( p^* = Cm = 4 \) et \( F^* = 72 \), l'aire bleue entière. Le client achète librement 12 unités
+  (puisque le prix est au coût marginal) et paie 72 € d'abonnement pour avoir le droit d'acheter.
+</p>
+<p>
+  <strong>« Le prix fait le gâteau, le forfait le partage. »</strong> Le prix par unité est mis au
+  coût marginal pour que le triangle soit le plus grand possible ; le forfait le prend en entier.
+</p>
+</div>
+</section>

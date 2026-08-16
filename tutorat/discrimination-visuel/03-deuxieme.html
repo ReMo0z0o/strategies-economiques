@@ -1,0 +1,140 @@
+<section class="chapter">
+<div class="chapter-tag">Degré 2 · le monopole ne sait plus qui est qui</div>
+<h1>Le deuxième degré</h1>
+<p class="chapter-intro">
+  Deux clients maintenant : <strong>L</strong> de demande \( p = 16 - y \) et <strong>S</strong> de
+  demande \( p = 16 - 2y \), toujours avec \( Cm = 4 \). Le monopole affiche deux lots et laisse
+  choisir. Tout le schéma tourne autour d'un petit triangle.
+</p>
+
+<figure>
+<svg viewBox="0 0 320 240" width="100%" style="max-width:11.5cm" role="img"
+     aria-label="Graphique du deuxième degré : les demandes de L et de S, le petit lot rationné à 4 unités au lieu de 6, la rente d'information de L en vert entre les deux courbes, et la perte sèche en rouge">
+  <!-- montant payé par S : toute l'aire sous sa demande jusqu'à 4 -->
+  <polygon points="48,40 92,120 92,200 48,200" fill="#c7d2fe"/>
+  <!-- rente d'information de L -->
+  <polygon points="48,40 92,80 92,120" fill="#bbf7d0"/>
+  <!-- perte sèche -->
+  <polygon points="92,120 92,160 114,160" fill="#fecaca"/>
+  <!-- axes -->
+  <g stroke="#374151" stroke-width="1.4" fill="none">
+    <line x1="48" y1="210" x2="48" y2="30"/>
+    <line x1="40" y1="200" x2="282" y2="200"/>
+  </g>
+  <!-- repères -->
+  <g stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 3" fill="none">
+    <line x1="92" y1="200" x2="92" y2="80"/>
+    <line x1="114" y1="200" x2="114" y2="160"/>
+  </g>
+  <!-- courbes -->
+  <line x1="48" y1="40" x2="224" y2="200" stroke="#1f2937" stroke-width="2.2"/>
+  <line x1="48" y1="40" x2="136" y2="200" stroke="#0369a1" stroke-width="2.2"/>
+  <line x1="48" y1="160" x2="275" y2="160" stroke="#be123c" stroke-width="1.8"/>
+  <!-- graduations -->
+  <g font-size="11" fill="#374151">
+    <text x="42" y="204" text-anchor="end">0</text>
+    <text x="42" y="164" text-anchor="end">4</text>
+    <text x="42" y="44" text-anchor="end">16</text>
+    <text x="92" y="214" text-anchor="middle">4</text>
+    <text x="114" y="214" text-anchor="middle">6</text>
+    <text x="288" y="204">y</text>
+    <text x="48" y="24" text-anchor="middle">p</text>
+  </g>
+  <g font-size="11" paint-order="stroke" stroke="#ffffff" stroke-width="3.5" stroke-linejoin="round">
+    <text x="228" y="188" fill="#1f2937">demande de L</text>
+    <text x="140" y="192" fill="#0369a1">demande de S</text>
+    <text x="246" y="155" fill="#be123c">Cm = 4</text>
+  </g>
+  <!-- étiquettes -->
+  <g font-size="11">
+    <text x="150" y="62" fill="#166534" font-weight="bold">rente de L = 8</text>
+    <text x="150" y="112" fill="#3730a3" font-weight="bold">payé par S = 48</text>
+    <text x="150" y="150" fill="#9f1239">perte sèche = 4</text>
+  </g>
+  <g stroke-width="0.9" fill="none">
+    <line x1="147" y1="58" x2="84" y2="82" stroke="#166534"/>
+    <line x1="147" y1="108" x2="74" y2="168" stroke="#3730a3"/>
+    <line x1="147" y1="146" x2="104" y2="152" stroke="#9f1239"/>
+  </g>
+</svg>
+<figcaption>
+  Le petit lot est ramené de 6 à 4 unités. Le triangle vert — l'écart entre les deux demandes sur
+  ces 4 unités — est ce que L gagnerait à prendre le petit lot : le monopole doit le lui laisser.
+  Le triangle rouge est le surplus détruit par ce rationnement.
+</figcaption>
+</figure>
+
+<h2>Le schéma raconte toute la logique</h2>
+
+<div class="box box-methode">
+<div class="box-title">Comment le lire, en trois temps</div>
+<ol>
+  <li>
+    <strong>L'aire sous la demande de S jusqu'à 4</strong> (bleu) est ce que les 4 unités valent
+    pour S : \( 16 \times 4 - 4^2 = 48 \). C'est exactement ce qu'on lui facture — il ne garde
+    rien.
+  </li>
+  <li>
+    <strong>Le triangle vert entre les deux courbes</strong> est ce que <em>L</em> gagnerait en
+    prenant ce même petit lot : il valorise chaque unité davantage que S. L'écart vertical vaut
+    \( y \) à la quantité \( y \), donc l'aire vaut \( \tfrac{4^2}{2} = 8 \). Le monopole est
+    obligé de laisser ces 8 à L, sinon L se ferait passer pour un petit client : c'est la
+    <span class="term">rente d'information</span>.
+  </li>
+  <li>
+    <strong>Le triangle rouge</strong> mesure ce que coûte le rationnement : entre 4 et 6, S aurait
+    payé plus que le coût marginal, mais on ne le sert pas. Aire :
+    \( \tfrac{1}{2}\times(8-4)\times(6-4) = 4 \).
+  </li>
+</ol>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi rationner S ? Le graphique donne la réponse</div>
+<p>
+  Regarde le triangle vert : sa taille dépend uniquement de <strong>la largeur du petit lot</strong>.
+  Plus le lot de S est grand, plus le triangle grossit — et plus la rente à céder à L est chère.
+  En rétrécissant le lot de S, le monopole rétrécit la rente.
+</p>
+<p>
+  Il arbitre donc entre deux triangles : le vert (ce qu'il donne à L) et le rouge (ce qu'il détruit
+  chez S). L'optimum, \( y_S = 4 \), est le point où le gain marginal sur l'un compense la perte
+  marginale sur l'autre.
+</p>
+</div>
+
+<h2>Les chiffres</h2>
+
+<table class="compare">
+<tr><th class="left"></th><th class="left">Lot de L</th><th class="left">Lot de S</th><th>Profit</th><th>SC</th><th>Perte sèche</th></tr>
+<tr>
+  <td class="left">1<sup>er</sup> degré (référence)</td>
+  <td class="left">12 unités, 120 €</td><td class="left">6 unités, 60 €</td>
+  <td>108</td><td>0</td><td>0</td>
+</tr>
+<tr>
+  <td class="left"><strong>2<sup>e</sup> degré</strong></td>
+  <td class="left">12 unités, <strong>112 €</strong></td><td class="left"><strong>4</strong> unités, 48 €</td>
+  <td><strong>96</strong></td><td>8</td><td>4</td>
+</tr>
+</table>
+
+<div class="result">
+<div class="result-title">Les 12 € d'écart, décomposés</div>
+<p>
+  \( 108 - 96 = 12 \), et ces 12 se lisent directement sur le dessin :
+  <strong>8 de rente</strong> (le triangle vert — un <em>transfert</em>, L le récupère) et
+  <strong>4 de perte sèche</strong> (le triangle rouge — <em>détruit</em>, personne ne l'a).
+  C'est la distinction qui rapporte les points de commentaire.
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Ce que le schéma empêche d'oublier</div>
+<p>
+  <strong>Le gros lot n'est pas rationné.</strong> L reçoit toujours ses 12 unités efficaces — on
+  ne touche qu'au petit lot. « Aucune distorsion au sommet » : si tu te retrouves à réduire le lot
+  de L, tu as inversé les deux contraintes.
+</p>
+</div>
+</section>
