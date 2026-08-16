@@ -1,0 +1,28 @@
+{
+  "filename": "exos-discrimination-par-les-prix.pdf",
+  "toc": false,
+  "eyebrow": "Entraînement ciblé — EI3",
+  "title": "La discrimination par les prix",
+  "subtitle": "Trois exercices sur les trois degrés, avec corrigé détaillé et tips",
+  "code": "EI3",
+  "project": "Projet : stratégies et décisions économiques",
+  "part": "Économie industrielle",
+  "footnote": "Document d'entraînement (non officiel). Les énoncés sont inédits : l'exercice 1 reprend la structure de la question 2 de l'examen blanc n° 1 de la Partie 2 avec d'autres chiffres, l'exercice 2 comble un angle mort (le 3e degré n'a jamais été posé en examen blanc, alors qu'il figure dans la checklist du chapitre). Tous les résultats ont été recalculés.",
+  "howto": {
+    "title": "Comment travailler ce document",
+    "lead": "Trois exercices, du plus calculatoire au plus théorique. Chacun donne d'abord <strong>l'énoncé seul</strong> — arrête-toi à la ligne indiquée et cherche — puis le <strong>corrigé pas à pas</strong> et les <strong>tips</strong>.",
+    "items": [
+      "<strong>Exercice 1 (35 pts)</strong> — prix uniforme, puis 1er degré, puis 2e degré sur les mêmes deux clients. C'est le gabarit exact de la question tombée à l'examen blanc n° 1.",
+      "<strong>Exercice 2 (30 pts)</strong> — le 3e degré, avec la comparaison au prix uniforme et la lecture par les élasticités. À traiter en priorité : c'est le seul degré dont tu n'as aucun corrigé d'examen.",
+      "<strong>Exercice 3 (20 pts)</strong> — questions courtes : reconnaître le degré, la condition de non-revente, et la tarification en deux parties.",
+      "<strong>Le mémo final</strong> tient sur deux pages : le tableau des trois degrés, les formules, les pièges et les contrôles de cohérence."
+    ]
+  },
+  "chapters": [
+    { "file": "00-reperes.html", "title": "Les repères avant de commencer" },
+    { "file": "01-exo1.html", "title": "Exercice 1 — 1er et 2e degré" },
+    { "file": "02-exo2.html", "title": "Exercice 2 — 3e degré" },
+    { "file": "03-exo3.html", "title": "Exercice 3 — Questions courtes" },
+    { "file": "99-memo.html", "title": "Le mémo" }
+  ]
+}

@@ -1,0 +1,140 @@
+<section class="chapter">
+<div class="chapter-tag">Repères · à lire une fois</div>
+<h1>Les repères avant de commencer</h1>
+<p class="chapter-intro">
+  Deux pages pour situer les trois degrés les uns par rapport aux autres, et connaître les deux ou
+  trois gestes qui reviennent dans tous les exercices.
+</p>
+
+<h2>Ce qui distingue les trois degrés : l'information</h2>
+
+<p>
+  Ce n'est ni la technique de calcul, ni le type de bien. C'est <strong>ce que le monopole sait de
+  ses clients</strong> — et donc ce qu'il peut leur imposer.
+</p>
+
+<table class="compare">
+<tr><th>Degré</th><th class="left">Information nécessaire</th><th class="left">Instrument</th><th class="left">Exemple réel</th></tr>
+<tr>
+  <td><strong>1<sup>er</sup></strong></td>
+  <td class="left">l'identité <em>et</em> la disposition à payer de chacun, unité par unité</td>
+  <td class="left">offres personnalisées <strong>imposées</strong>, « à prendre ou à laisser »</td>
+  <td class="left">négociation individuelle, marchand de tapis</td>
+</tr>
+<tr>
+  <td><strong>2<sup>e</sup></strong></td>
+  <td class="left">les <em>profils</em> qui existent, mais pas qui est qui</td>
+  <td class="left">menu de lots <strong>identique pour tous</strong>, libre choix (auto-sélection)</td>
+  <td class="left">forfaits téléphoniques, formats de paquets</td>
+</tr>
+<tr>
+  <td><strong>3<sup>e</sup></strong></td>
+  <td class="left">un <strong>signe observable de groupe</strong> (âge, carte, pays…)</td>
+  <td class="left">un prix par groupe, quantité libre au sein du groupe</td>
+  <td class="left">tarif étudiant, prix par pays, tarif senior</td>
+</tr>
+</table>
+
+<div class="box box-def">
+<div class="box-title">La définition, et la condition qui va avec</div>
+<p>
+  La <span class="term">discrimination par les prix</span> est un écart de prix
+  <strong>non justifié par un écart de coût</strong>. Elle exige deux choses : un
+  <strong>pouvoir de marché</strong> (sinon la concurrence ramène tout au coût marginal) et
+  l'<strong>impossibilité de revendre</strong> entre clients (sinon celui qui paie peu revend à
+  celui qui paie cher, et l'écart s'effondre).
+</p>
+</div>
+
+<h2>Le geste qui revient partout : l'aire sous la demande</h2>
+
+<p>
+  Dès qu'on vend un <strong>lot</strong> (1<sup>er</sup> et 2<sup>e</sup> degré) ou qu'on fixe un
+  <strong>forfait</strong>, le montant à faire payer n'est plus « un prix fois une quantité » :
+  c'est <strong>ce que le lot vaut pour le client</strong>, c'est-à-dire l'aire sous sa courbe de
+  demande.
+</p>
+
+<p>\[ \text{valeur de } y \text{ unités pour un client de demande } p(y) \;=\; \int_0^{y} p(u)\,du \]</p>
+
+<div class="box box-rappel">
+<div class="box-title">En pratique, avec une demande linéaire, c'est un trapèze</div>
+<p>
+  Pour \( p = a - by \), la valeur de \( y \) unités vaut \( ay - \tfrac{b}{2}y^2 \). Tu peux aussi
+  la lire géométriquement : c'est le rectangle \( p \times y \) plus le triangle au-dessus, soit
+  \( p\,y + \tfrac{1}{2}(a - p)\,y \).
+</p>
+<p>
+  <strong>Le piège du prix moyen.</strong> Si un lot de 24 unités se vend 384 €, cela fait 16 €
+  l'unité en moyenne — mais ce <em>n'est pas</em> un prix de 16 € l'unité. C'est une offre en bloc.
+  Au prix libre de 16 €, le client en achèterait bien moins et garderait du surplus. Le cours
+  signale nommément cette confusion.
+</p>
+</div>
+
+<h2>Le benchmark : toujours commencer par le monopole simple</h2>
+
+<p>
+  Presque tous les énoncés ouvrent par « supposez d'abord que la firme ne peut pas discriminer ».
+  Ce n'est pas une mise en jambes : c'est le point de comparaison de tout le reste. Deux gestes :
+</p>
+
+<div class="box box-methode">
+<div class="box-title">Le prix uniforme avec plusieurs types de clients</div>
+<ol>
+  <li>
+    <strong>Agréger les demandes horizontalement</strong> — on somme les <em>quantités</em> à
+    chaque prix, jamais les prix. On passe donc en demande directe \( y(p) \), on additionne, puis
+    on retourne pour obtenir la demande inverse du marché.
+  </li>
+  <li>
+    <strong>Appliquer \( Rm = Cm \)</strong> sur cette demande agrégée, puis redescendre : prix,
+    quantités individuelles, profit, surplus.
+  </li>
+</ol>
+<p>
+  ⚠️ L'agrégation n'est valable que sur la plage de prix où <strong>tous</strong> les clients
+  achètent. Si l'un décroche au-dessus d'un certain prix, la demande agrégée a un coude : vérifie
+  toujours, à la fin, que ton prix optimal laisse bien tout le monde sur le marché.
+</p>
+</div>
+
+<h2>Les quatre lignes à savoir remplir</h2>
+
+<p>
+  Quel que soit l'énoncé, la conclusion demandée tient dans ce tableau. Retiens surtout
+  <strong>l'ordre</strong> des colonnes.
+</p>
+
+<table class="compare">
+<tr><th class="left">Régime</th><th class="left">Profit</th><th class="left">Surplus consommateurs</th><th class="left">Efficacité</th></tr>
+<tr><td class="left">Prix uniforme</td><td class="left">le plus faible</td><td class="left">positif</td><td class="left">non : \( p > Cm \)</td></tr>
+<tr><td class="left">1<sup>er</sup> degré</td><td class="left"><strong>le plus élevé</strong></td><td class="left"><strong>nul</strong></td><td class="left"><strong>totale</strong> : tout le surplus est créé, et capté</td></tr>
+<tr><td class="left">2<sup>e</sup> degré</td><td class="left">intermédiaire</td><td class="left">la <strong>rente d'information</strong> du gros client</td><td class="left">presque : le petit lot est rationné</td></tr>
+<tr><td class="left">3<sup>e</sup> degré</td><td class="left">intermédiaire</td><td class="left">positif</td><td class="left">non : \( p > Cm \) sur chaque marché</td></tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">La logique qui relie les trois</div>
+<p>
+  Le 1<sup>er</sup> degré est le cas <em>idéal</em> pour le monopole : il connaît tout, il impose
+  tout, il rafle tout. Les deux autres sont des <strong>réponses à un manque d'information</strong>.
+  Au 2<sup>e</sup> degré, il ne sait pas qui est qui : il doit laisser au gros client de quoi le
+  dissuader de se faire passer pour un petit — c'est la rente. Au 3<sup>e</sup> degré, il voit le
+  groupe mais pas l'individu : il ne peut plus vendre des lots, seulement un prix par groupe.
+</p>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Le protocole de travail</div>
+<ol>
+  <li>Lis l'énoncé, ferme le document, prends une feuille et respecte le temps indiqué.</li>
+  <li>Rédige comme sur une copie — les questions d'interprétation valent autant que les calculs.</li>
+  <li>Corrige-toi en repérant <em>à quelle étape</em> tu as décroché, pas seulement si le résultat
+      est bon.</li>
+  <li>Lis les tips ensuite : ils sont écrits pour l'erreur que tu viens probablement de faire.</li>
+</ol>
+</div>
+
+<a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei3#fil-conducteur">EI3 · §2 — L'exemple fil conducteur : le monopole simple <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei3#fil-conducteur</span></a>
+</section>

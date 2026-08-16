@@ -1,0 +1,328 @@
+<section class="chapter">
+<div class="chapter-tag">Exercice 1 · 35 points · 45 minutes</div>
+<h1>Premier et deuxième degré</h1>
+<p class="chapter-intro">
+  Le gabarit exact de la question 2 de l'examen blanc n° 1, avec d'autres chiffres : prix uniforme,
+  puis offres personnalisées, puis menu en libre choix.
+</p>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé</div>
+<p>
+  La papeterie <strong>Vélin &amp; Cie</strong> est l'unique fabricante d'un papier d'art qu'elle
+  produit à un coût marginal constant de <strong>4 €</strong> la rame, sans coût fixe. Elle n'a que
+  deux clients : l'atelier de reliure <strong>L</strong> (le « gros ») et le calligraphe
+  <strong>S</strong> (le « petit »). Leurs demandes inverses sont :
+</p>
+<p style="text-align:center">
+  \( \text{L} : \; p = 28 - y_L \qquad\qquad \text{S} : \; p = 28 - 2\,y_S \)
+</p>
+<p>
+  où les quantités sont en rames par mois et les prix en euros.
+</p>
+
+<p>
+  <strong>1.1)</strong> Supposez d'abord que la papeterie ne peut pas discriminer : elle affiche un
+  prix unique \( p \) à la rame, auquel chaque client achète la quantité qu'il désire. Déterminez
+  la demande agrégée, puis la quantité totale optimale, le prix optimal et le profit. Précisez les
+  quantités achetées par chacun et le surplus de chacun. <em>(12 points)</em>
+</p>
+
+<p>
+  <strong>1.2)</strong> La papeterie connaît maintenant parfaitement ses deux clients et pratique
+  une <strong>discrimination du premier degré</strong> : elle propose à chacun une offre
+  personnalisée « à prendre ou à laisser » de la forme [montant total \( m \) ; quantité \( y \)].
+  Déterminez les deux offres et le profit. Cette situation est-elle efficace au sens de Pareto ?
+  Que devient le surplus des consommateurs ? <em>(13 points)</em>
+</p>
+
+<p>
+  <strong>1.3)</strong> La papeterie ne peut en réalité pas distinguer ses clients à l'avance : elle
+  affiche les deux lots sur son site et laisse chacun choisir (<strong>deuxième degré</strong>).
+  <strong>(a)</strong> Montrez que le menu de la question 1.2 ne fonctionne pas en libre choix.
+  <strong>(b)</strong> Déterminez le menu optimal — la taille du petit lot, les deux montants — et
+  le profit. <strong>(c)</strong> Commentez les deux distorsions par rapport au premier degré.
+  <em>(10 points)</em>
+</p>
+</div>
+
+<p style="text-align:center"><strong>↓ Arrête-toi ici. Prends une feuille, 45 minutes. ↓</strong></p>
+
+<hr class="soft" />
+
+<h2>1.1 — Le prix uniforme (12 points)</h2>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Agréger les deux demandes</div>
+<p>
+  On somme des <strong>quantités</strong>, donc on passe d'abord en demande directe.
+</p>
+<div class="calc">
+  <div class="step">
+    \[ y_L = 28 - p \qquad\qquad y_S = \frac{28 - p}{2} \]
+    <div class="why">on retourne chaque demande inverse. Attention à S :
+    \( p = 28 - 2y_S \Rightarrow y_S = \tfrac{28-p}{2} \), et non \( 28 - \tfrac{p}{2} \).</div>
+  </div>
+  <div class="step">
+    \[ Y = y_L + y_S = (28 - p)\Big(1 + \tfrac{1}{2}\Big) = \tfrac{3}{2}\,(28 - p) \]
+    <div class="why">les deux demandes ont le même prix de réservation (28), donc les deux clients
+    entrent et sortent du marché en même temps : pas de coude à gérer.</div>
+  </div>
+  <div class="step">
+    \[ p = 28 - \frac{2}{3}\,Y \]
+    <div class="why">on retourne pour obtenir la demande inverse du marché. La pente est passée de
+    1 à 2/3 : agréger aplatit la demande.</div>
+  </div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Appliquer \( Rm = Cm \)</div>
+<div class="calc">
+  <div class="step">
+    \[ Rm = 28 - \frac{4}{3}\,Y \;=\; 4 \quad\Longrightarrow\quad \frac{4}{3}Y = 24 \quad\Longrightarrow\quad Y^* = 18 \]
+    <div class="why">règle du doublement : la pente de \( Rm \) est le double de celle de la
+    demande, \( 2 \times \tfrac{2}{3} = \tfrac{4}{3} \).</div>
+  </div>
+  <div class="step">
+    \[ p^* = 28 - \frac{2}{3}\times 18 = 16 \qquad \Pi = (16 - 4)\times 18 = 216 \]
+    <div class="why">on redescend : prix, puis marge unitaire fois quantité.</div>
+  </div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de 1.1</div>
+<p>
+  \( Y = 18 \), \( p^* = 16 \), \( \Pi = 216 \) €. Répartition :
+  \( y_L = 28 - 16 = 12 \) et \( y_S = \tfrac{28-16}{2} = 6 \) — somme 18 ✓.
+</p>
+<p>
+  Surplus : \( SC_L = \tfrac{1}{2}(28-16)(12) = 72 \) €,
+  \( SC_S = \tfrac{1}{2}(28-16)(6) = 36 \) €, total <strong>108 €</strong>.
+  Surplus total de l'économie : \( 216 + 108 = 324 \) €.
+</p>
+</div>
+
+<h2>1.2 — Le premier degré (13 points)</h2>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> La quantité : là où le prix égale le coût marginal</div>
+<p>
+  Le monopole veut créer le plus grand surplus possible avant de le capter. Il pousse donc chaque
+  client jusqu'à la dernière unité dont la valeur couvre encore le coût.
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \text{L} : \; 28 - y_L = 4 \;\Rightarrow\; y_L = 24 \qquad \text{S} : \; 28 - 2y_S = 4 \;\Rightarrow\; y_S = 12 \]
+    <div class="why">on pose \( p(y) = Cm \) pour chacun séparément. Au-delà, chaque unité vaudrait
+    moins qu'elle ne coûte : produire davantage détruirait de la valeur.</div>
+  </div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Le montant : toute l'aire sous la demande</div>
+<div class="calc">
+  <div class="step">
+    \[ m_L = \int_0^{24}(28 - y)\,dy = \Big[28y - \tfrac{y^2}{2}\Big]_0^{24} = 672 - 288 = 384 \]
+    <div class="why">c'est la valeur totale de 24 rames pour L. Comme l'offre est « à prendre ou à
+    laisser », le monopole peut réclamer exactement cette somme : L reste tout juste
+    indifférent.</div>
+  </div>
+  <div class="step">
+    \[ m_S = \int_0^{12}(28 - 2y)\,dy = \Big[28y - y^2\Big]_0^{12} = 336 - 144 = 192 \]
+    <div class="why">même calcul pour S, avec sa propre demande.</div>
+  </div>
+  <div class="step">
+    \[ \Pi = \underbrace{(384 - 4\times 24)}_{288} + \underbrace{(192 - 4\times 12)}_{144} = 432 \]
+    <div class="why">on retranche le coût de production de chaque lot.</div>
+  </div>
+</div>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Les deux questions de rédaction — ce que tu écris</div>
+<p>
+  « <strong>Efficacité.</strong> Oui, la situation est efficace au sens de Pareto. Chaque client
+  consomme la quantité telle que sa disposition marginale à payer égale le coût marginal : aucune
+  unité supplémentaire ne créerait de valeur, et aucune unité produite ne coûte plus qu'elle ne
+  vaut. La quantité totale (36) est celle qu'un planificateur choisirait — bien supérieure aux 18
+  du prix uniforme.
+</p>
+<p>
+  <strong>Surplus des consommateurs.</strong> Il est <strong>nul</strong>. Le monopole capte
+  l'intégralité du surplus créé : le profit (432 €) égale exactement le surplus total. Efficacité
+  et équité sont donc deux choses distinctes — on est ici au maximum de la première et au minimum
+  de la seconde. »
+</p>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Le piège du prix moyen</div>
+<p>
+  L paie 384 € pour 24 rames, soit 16 € la rame en moyenne. Ce n'est <strong>pas</strong> un prix
+  de 16 € la rame : si L pouvait acheter librement à 16 €, il n'en prendrait que 12 et garderait
+  72 € de surplus (c'est exactement la situation 1.1 !). L'offre du 1<sup>er</sup> degré est
+  <strong>indivisible</strong> : 24 rames pour 384 €, à prendre ou à laisser.
+</p>
+</div>
+
+<h2>1.3 — Le deuxième degré (10 points)</h2>
+
+<h3>(a) Le menu du premier degré ne survit pas au libre choix</h3>
+
+<div class="calc">
+  <div class="step">
+    \[ \text{Valeur pour L du petit lot} = \int_0^{12}(28 - y)\,dy = 336 - 72 = 264 \]
+    <div class="why">attention : on évalue le lot de S <strong>avec la demande de L</strong>. C'est
+    tout le point — L valorise davantage les mêmes 12 rames.</div>
+  </div>
+  <div class="step">
+    \[ \text{Gain net de L s'il prend le petit lot} = 264 - 192 = 72 \;>\; 0 \]
+    <div class="why">alors que le gros lot lui laisse exactement 0 (\( 384 - 384 \)).</div>
+  </div>
+</div>
+
+<p>
+  <strong>L se ferait passer pour un petit client</strong> et empocherait 72 €. Le monopole vendrait
+  deux petits lots, encaisserait \( 2 \times 192 = 384 \) € pour un coût de \( 4 \times 24 = 96 \)
+  €, soit 288 € — moins que les 432 € espérés. Le menu du 1<sup>er</sup> degré n'est
+  <strong>pas incitatif</strong>.
+</p>
+
+<h3>(b) Le menu optimal</h3>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Les deux contraintes qui déterminent les montants</div>
+<p>
+  On laisse le gros lot à sa taille efficace (24) — le monopole n'a aucune raison de brider son
+  meilleur client — et on cherche la taille \( y_S \) du petit lot. Deux contraintes se saturent :
+</p>
+<div class="calc">
+  <div class="step">
+    \[ \textbf{Participation de S : } \; m_S = \int_0^{y_S}(28-2y)\,dy = 28\,y_S - y_S^{\,2} \]
+    <div class="why">S doit juste accepter d'acheter : on lui prend tout son surplus, il reste à
+    zéro. Son gain net est nul.</div>
+  </div>
+  <div class="step">
+    \[ \textbf{Incitation de L : } \; \underbrace{384 - m_L}_{\text{net du gros lot}} = \underbrace{\Big(28y_S - \tfrac{y_S^{\,2}}{2}\Big) - m_S}_{\text{net s'il prend le petit}} = \frac{y_S^{\,2}}{2} \]
+    <div class="why">L doit préférer (au moins faiblement) le gros lot. On lui laisse donc
+    exactement de quoi être indifférent : c'est la <strong>rente d'information</strong>, et elle
+    vaut \( y_S^2/2 \).</div>
+  </div>
+  <div class="step">
+    \[ m_L = 384 - \frac{y_S^{\,2}}{2} \]
+    <div class="why">le montant du gros lot est amputé de la rente. Plus le petit lot est gros,
+    plus la rente coûte cher : voilà pourquoi le monopole va le rationner.</div>
+  </div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Maximiser en \( y_S \)</div>
+<div class="calc">
+  <div class="step">
+    \[ \Pi = m_L + m_S - 4\,(24 + y_S) = 384 - \tfrac{y_S^{2}}{2} + 28y_S - y_S^{2} - 96 - 4y_S \]
+    <div class="why">on somme les deux recettes et on retranche le coût des deux lots.</div>
+  </div>
+  <div class="step">
+    \[ \Pi = 288 + 24\,y_S - \tfrac{3}{2}\,y_S^{\,2} \quad\Longrightarrow\quad \frac{d\Pi}{dy_S} = 24 - 3\,y_S = 0 \quad\Longrightarrow\quad y_S^* = 8 \]
+    <div class="why">le terme \( 24 y_S \) est le gain marginal à agrandir le petit lot, le
+    \( -3y_S \) le coût marginal (rente qui gonfle + coût de production).</div>
+  </div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de 1.3(b)</div>
+<table class="compare">
+<tr><th class="left">Lot</th><th>Quantité</th><th>Montant</th><th class="left">Qui le prend</th></tr>
+<tr><td class="left">Gros</td><td>24</td><td>352 €</td><td class="left">L — il lui reste 32 € de rente</td></tr>
+<tr><td class="left">Petit</td><td>8</td><td>160 €</td><td class="left">S — il lui reste 0 €</td></tr>
+</table>
+<p>
+  \( m_S = 28(8) - 64 = 160 \), rente \( = 8^2/2 = 32 \), \( m_L = 384 - 32 = 352 \), et
+  \( \Pi = 352 + 160 - 4 \times 32 = \mathbf{384} \) €.
+</p>
+</div>
+
+<div class="box box-methode">
+<div class="box-title">Les trois vérifications à faire figurer sur la copie</div>
+<ul>
+  <li><strong>L préfère bien son lot :</strong> net du gros lot \( 384 - 352 = 32 \). Net du petit
+      lot : les 8 rames valent \( 28(8) - \tfrac{8^2}{2} = 192 \) pour lui, donc
+      \( 192 - 160 = 32 \). <strong>Égalité</strong> — la contrainte d'incitation est saturée,
+      c'est normal et voulu.</li>
+  <li><strong>S ne prend pas le gros lot :</strong> 24 rames ne valent au mieux que 196 € pour lui
+      (sa demande s'annule à 14 rames), contre 352 € demandés. Aucun risque.</li>
+  <li><strong>S accepte bien d'acheter :</strong> \( 160 - 160 = 0 \geq 0 \) ✓.</li>
+</ul>
+</div>
+
+<h3>(c) Les deux distorsions</h3>
+
+<div class="box box-copie">
+<div class="box-title">Ce que tu écris</div>
+<p>
+  « Par rapport au premier degré, le monopole perd 48 € (384 contre 432), et cette perte se
+  décompose en deux effets bien distincts.
+</p>
+<p>
+  <strong>1. La rente d'information (32 €).</strong> Ne sachant pas qui est qui, le monopole doit
+  laisser au gros client de quoi le dissuader de choisir le petit lot. Ces 32 € sont un
+  <em>transfert</em> : ils ne disparaissent pas, ils passent du monopole à L. Le surplus des
+  consommateurs n'est donc plus nul, il vaut exactement 32 €.
+</p>
+<p>
+  <strong>2. Le rationnement du petit lot (16 €).</strong> S ne reçoit plus que 8 rames au lieu des
+  12 efficaces. Le monopole le brime <em>délibérément</em>, pour rendre le petit lot moins tentant
+  aux yeux de L et réduire ainsi la rente. Contrairement au transfert, cette perte est
+  <strong>sèche</strong> : personne ne la récupère. On la mesure par
+  \( \int_8^{12}\big[(28-2y) - 4\big]dy = 16 \) €.
+</p>
+<p>
+  Le surplus total passe donc de 432 € à \( 384 + 32 = 416 \) €, soit 16 € de moins — exactement la
+  perte sèche. À noter enfin qu'il n'y a <strong>aucune distorsion sur le gros lot</strong> : L
+  reçoit toujours sa quantité efficace de 24 rames. »
+</p>
+</div>
+
+<h2>Les tips</h2>
+
+<div class="box box-rappel">
+<div class="box-title">Trois réflexes pour cet exercice</div>
+<ol>
+  <li>
+    <strong>« Le petit fixe le prix, le gros fixe la rente. »</strong> C'est l'ordre de résolution
+    du 2<sup>e</sup> degré : la contrainte de <em>participation</em> se sature toujours sur le
+    <strong>petit</strong> client (il reste à zéro), la contrainte d'<em>incitation</em> toujours
+    sur le <strong>gros</strong> (il garde la rente). Deux contraintes, deux clients, jamais
+    l'inverse.
+  </li>
+  <li>
+    <strong>« Aucune distorsion au sommet. »</strong> Le gros lot garde toujours sa taille
+    efficace. Si tu te retrouves à rationner le gros client, tu as interverti les contraintes.
+  </li>
+  <li>
+    <strong>Transfert contre perte sèche.</strong> La rente change de poche (le surplus total n'en
+    souffre pas) ; le rationnement détruit de la valeur (le surplus total baisse). Distingue-les
+    explicitement : c'est là que se gagnent les points de commentaire.
+  </li>
+</ol>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Les erreurs classiques</div>
+<ul>
+  <li><strong>Additionner les prix</strong> au lieu des quantités en agrégeant les demandes.</li>
+  <li><strong>Évaluer le petit lot avec la demande de S</strong> dans le test d'incitation : il faut
+      la demande de <strong>L</strong>, puisque c'est lui qui est tenté.</li>
+  <li><strong>Oublier de retrancher le coût de production</strong> des montants encaissés : le
+      profit n'est pas \( m_L + m_S \).</li>
+  <li><strong>Confondre le montant du lot et un prix unitaire.</strong></li>
+</ul>
+</div>
+
+<a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei3#deuxieme-degre">EI3 · §4 — La discrimination du deuxième degré <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei3#deuxieme-degre</span></a>
+</section>

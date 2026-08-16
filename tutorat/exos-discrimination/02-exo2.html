@@ -1,0 +1,291 @@
+<section class="chapter">
+<div class="chapter-tag">Exercice 2 · 30 points · 35 minutes</div>
+<h1>Troisième degré</h1>
+<p class="chapter-intro">
+  Le degré qui n'est jamais tombé en examen blanc — mais qui figure dans la checklist du chapitre,
+  et qui est de loin le plus répandu dans la vraie vie. À travailler en priorité.
+</p>
+
+<div class="enonce">
+<div class="enonce-title">Énoncé</div>
+<p>
+  L'éditeur <strong>Codex</strong> détient les droits exclusifs d'une base de données
+  bibliographique. Il la vend par abonnements annuels et produit chaque abonnement à un coût
+  marginal constant de <strong>10 €</strong>, sans coût fixe. Il distingue deux groupes de clients,
+  identifiables sans ambiguïté et incapables de se revendre un abonnement :
+</p>
+<p style="text-align:center">
+  \( \text{Étudiants} : \; p_1 = 40 - y_1 \qquad\qquad \text{Cabinets} : \; p_2 = 70 - 2\,y_2 \)
+</p>
+<p>
+  où les quantités sont en milliers d'abonnements et les prix en euros.
+</p>
+
+<p>
+  <strong>2.1)</strong> Codex pratique une <strong>discrimination du troisième degré</strong> :
+  un prix par groupe. Écrivez son programme, énoncez la condition d'optimum, et déterminez les
+  quantités, les prix et le profit sur chaque marché. <em>(12 points)</em>
+</p>
+
+<p>
+  <strong>2.2)</strong> Calculez l'élasticité-prix de la demande de chaque groupe à l'optimum.
+  Vérifiez que le groupe qui paie le prix le plus élevé est bien le moins élastique, et expliquez
+  économiquement pourquoi il en va toujours ainsi. <em>(8 points)</em>
+</p>
+
+<p>
+  <strong>2.3)</strong> Une association de consommateurs obtient l'interdiction du tarif étudiant :
+  Codex doit désormais afficher un <strong>prix unique</strong>. Déterminez ce prix, les quantités
+  et le profit. <em>(6 points)</em>
+</p>
+
+<p>
+  <strong>2.4)</strong> Comparez les deux régimes du point de vue du profit, du surplus des
+  consommateurs et du surplus total. L'association a-t-elle rendu service aux consommateurs ?
+  La discrimination du troisième degré est-elle efficace ? <em>(4 points)</em>
+</p>
+</div>
+
+<p style="text-align:center"><strong>↓ Arrête-toi ici. Prends une feuille, 35 minutes. ↓</strong></p>
+
+<hr class="soft" />
+
+<h2>2.1 — Résoudre les deux marchés (12 points)</h2>
+
+<div class="box box-why">
+<div class="box-title">L'idée à énoncer avant tout calcul</div>
+<p>
+  Les groupes étant étanches, le monopole se comporte comme s'il détenait <strong>deux monopoles
+  séparés</strong>. La seule chose qui les relie, ce sont les coûts : les abonnements des deux
+  groupes sortent de la même production. Comme le coût marginal est <em>constant</em>, ce lien
+  n'impose aucun arbitrage entre les marchés — chacun se résout indépendamment.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Écrire le programme</div>
+<div class="calc">
+  <div class="step">
+    \[ \Pi(y_1, y_2) = p_1(y_1)\,y_1 + p_2(y_2)\,y_2 - c\,(y_1 + y_2) \]
+    <div class="why">deux recettes, un seul coût — c'est bien la production <em>totale</em> qui
+    coûte.</div>
+  </div>
+  <div class="step">
+    \[ \frac{\partial \Pi}{\partial y_1} = 0 \;\text{ et }\; \frac{\partial \Pi}{\partial y_2} = 0 \quad\Longrightarrow\quad \boxed{\ Rm_1(y_1) = Rm_2(y_2) = cm\ } \]
+    <div class="why">c'est <strong>l'équation d'arbitrage du 3<sup>e</sup> degré</strong>, à
+    énoncer explicitement : la dernière unité doit rapporter autant sur chaque marché, et autant
+    qu'elle coûte. Sinon on déplacerait une unité du marché où elle rapporte le moins vers l'autre.</div>
+  </div>
+</div>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Résoudre marché par marché</div>
+<div class="calc">
+  <div class="step">
+    \[ \text{Étudiants : } \; Rm_1 = 40 - 2y_1 = 10 \quad\Longrightarrow\quad y_1 = 15, \quad p_1 = 40 - 15 = 25 \]
+    <div class="why">règle du doublement sur \( p_1 = 40 - y_1 \). Puis on remonte à la demande
+    pour le prix.</div>
+  </div>
+  <div class="step">
+    \[ \text{Cabinets : } \; Rm_2 = 70 - 4y_2 = 10 \quad\Longrightarrow\quad y_2 = 15, \quad p_2 = 70 - 30 = 40 \]
+    <div class="why">la pente de la demande étant 2, celle de \( Rm_2 \) est 4.</div>
+  </div>
+  <div class="step">
+    \[ \pi_1 = (25-10)\times 15 = 225 \qquad \pi_2 = (40-10)\times 15 = 450 \qquad \Pi = 675 \]
+    <div class="why">marge unitaire fois quantité, sur chaque marché.</div>
+  </div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Résultat de 2.1</div>
+<table class="compare">
+<tr><th class="left">Marché</th><th>\( y \)</th><th>\( p \)</th><th>Marge</th><th>Profit</th></tr>
+<tr><td class="left">Étudiants</td><td>15</td><td>25 €</td><td>15</td><td>225</td></tr>
+<tr><td class="left">Cabinets</td><td>15</td><td>40 €</td><td>30</td><td>450</td></tr>
+<tr><td class="left"><strong>Total</strong></td><td>30</td><td>—</td><td>—</td><td><strong>675</strong></td></tr>
+</table>
+</div>
+
+<h2>2.2 — La lecture par les élasticités (8 points)</h2>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Calculer les deux élasticités à l'optimum</div>
+<p>
+  On utilise \( \varepsilon = -\dfrac{p}{y}\dfrac{dy}{dp} \), en partant des demandes
+  <strong>directes</strong>.
+</p>
+<div class="calc">
+  <div class="step">
+    \[ y_1 = 40 - p_1 \;\Rightarrow\; \frac{dy_1}{dp_1} = -1 \;\Rightarrow\; \varepsilon_1 = \frac{25}{15} = \frac{5}{3} \approx 1{,}67 \]
+    <div class="why">le signe moins de la définition compense celui de la dérivée : l'élasticité
+    est positive.</div>
+  </div>
+  <div class="step">
+    \[ y_2 = \frac{70 - p_2}{2} \;\Rightarrow\; \frac{dy_2}{dp_2} = -\frac{1}{2} \;\Rightarrow\; \varepsilon_2 = \frac{40}{15}\times\frac{1}{2} = \frac{4}{3} \approx 1{,}33 \]
+    <div class="why">ne prends pas \( -2 \) comme dérivée : \( -2 \) est la pente de la demande
+    <em>inverse</em>. Il faut celle de la demande directe, soit \( -\tfrac{1}{2} \).</div>
+  </div>
+</div>
+<p>
+  \( \varepsilon_1 > \varepsilon_2 \) et \( p_1 < p_2 \) : le groupe le plus élastique — les
+  étudiants — paie bien le prix le plus bas ✓.
+</p>
+</div>
+
+<div class="etape">
+<div class="etape-title"><span class="num">2.</span> Vérifier par la formule du cours</div>
+<p>
+  La condition d'optimum se réécrit \( p = \dfrac{k}{1 - \frac{1}{\varepsilon}} \) avec
+  \( k = cm = 10 \) :
+</p>
+<div class="calc">
+  <div class="step">
+    \[ p_1 = \frac{10}{1 - \tfrac{3}{5}} = \frac{10}{2/5} = 25 \qquad p_2 = \frac{10}{1 - \tfrac{3}{4}} = \frac{10}{1/4} = 40 \]
+    <div class="why">les deux prix retombent exactement : c'est un excellent contrôle de tout
+    l'exercice.</div>
+  </div>
+</div>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">L'explication économique — ce que tu écris</div>
+<p>
+  « La formule \( p = \dfrac{cm}{1 - 1/\varepsilon} \) montre que le prix est d'autant plus élevé
+  que \( \varepsilon \) est faible : \( p_1 < p_2 \iff \varepsilon_1 > \varepsilon_2 \).
+</p>
+<p>
+  L'intuition est directe. Augmenter le prix d'un euro rapporte davantage sur chaque unité encore
+  vendue, mais fait perdre des clients. Sur un marché <strong>élastique</strong>, la perte de
+  volume est forte : le monopole n'ose pas monter le prix. Sur un marché
+  <strong>peu élastique</strong>, les clients partent peu : il peut presser davantage.
+  <strong>Le groupe le moins élastique paie donc le plus cher</strong> — ce qui explique pourquoi,
+  dans la vraie vie, les tarifs réduits vont aux étudiants et aux seniors, dont la demande réagit
+  fortement au prix. »
+</p>
+</div>
+
+<h2>2.3 — Le prix unique (6 points)</h2>
+
+<div class="calc">
+  <div class="step">
+    \[ Y = (40 - p) + \frac{70 - p}{2} = 75 - \frac{3}{2}\,p \quad\Longrightarrow\quad p = 50 - \frac{2}{3}\,Y \]
+    <div class="why">agrégation horizontale, valable tant que \( p \le 40 \) — au-delà, les
+    étudiants décrochent. On vérifiera à la fin.</div>
+  </div>
+  <div class="step">
+    \[ Rm = 50 - \frac{4}{3}\,Y = 10 \quad\Longrightarrow\quad Y = 30, \qquad p = 50 - 20 = 30 \]
+    <div class="why">\( 30 \le 40 \) : les deux groupes restent bien sur le marché, l'agrégation
+    était licite ✓.</div>
+  </div>
+  <div class="step">
+    \[ y_1 = 40 - 30 = 10 \qquad y_2 = \frac{70-30}{2} = 20 \qquad \Pi = (30-10)\times 30 = 600 \]
+    <div class="why">répartition entre les deux groupes, puis profit.</div>
+  </div>
+</div>
+
+<h2>2.4 — La comparaison (4 points)</h2>
+
+<div class="etape">
+<div class="etape-title"><span class="num">1.</span> Calculer les surplus</div>
+<div class="calc">
+  <div class="step">
+    \[ \text{Discrimination : } SC = \tfrac{1}{2}(40-25)(15) + \tfrac{1}{2}(70-40)(15) = 112{,}5 + 225 = 337{,}5 \]
+    <div class="why">un triangle par marché, avec le prix de réservation propre à chaque groupe.</div>
+  </div>
+  <div class="step">
+    \[ \text{Prix unique : } SC = \tfrac{1}{2}(40-30)(10) + \tfrac{1}{2}(70-30)(20) = 50 + 400 = 450 \]
+    <div class="why">même méthode, avec le prix commun de 30.</div>
+  </div>
+</div>
+</div>
+
+<div class="result">
+<div class="result-title">Le tableau de comparaison</div>
+<table class="compare">
+<tr><th class="left">Régime</th><th>\( y_1 \)</th><th>\( y_2 \)</th><th>\( Y \)</th><th>Profit</th><th>SC</th><th>Surplus total</th></tr>
+<tr><td class="left">Prix unique</td><td>10</td><td>20</td><td><strong>30</strong></td><td>600</td><td>450</td><td><strong>1050</strong></td></tr>
+<tr><td class="left">3<sup>e</sup> degré</td><td>15</td><td>15</td><td><strong>30</strong></td><td>675</td><td>337,5</td><td><strong>1012,5</strong></td></tr>
+</table>
+</div>
+
+<div class="box box-copie">
+<div class="box-title">Le commentaire attendu</div>
+<p>
+  « <strong>Le profit augmente</strong> avec la discrimination (675 contre 600) : c'est toujours le
+  cas, puisque le monopole pouvait déjà choisir le prix unique et ne l'a pas fait.
+</p>
+<p>
+  <strong>Les consommateurs y perdent globalement</strong> (337,5 contre 450), mais pas tous : les
+  étudiants gagnent (prix 25 au lieu de 30, quantité 15 au lieu de 10), les cabinets perdent
+  lourdement (prix 40 au lieu de 30). <strong>L'association a donc rendu service aux cabinets, pas
+  aux étudiants qu'elle prétendait défendre</strong> — l'interdiction du tarif réduit a fait monter
+  le prix pour le groupe le plus fragile.
+</p>
+<p>
+  <strong>Le 3<sup>e</sup> degré n'est pas efficace</strong> : sur chaque marché, le prix reste
+  supérieur au coût marginal (25 et 40 contre 10), donc des échanges mutuellement avantageux ne se
+  font pas. Ici, le surplus total <em>baisse</em> même de 37,5 par rapport au prix unique. »
+</p>
+</div>
+
+<div class="box box-why">
+<div class="box-title">Pourquoi le bien-être baisse alors que la quantité totale est identique</div>
+<p>
+  Les 30 unités sont produites dans les deux cas — mais elles ne sont pas réparties de la même
+  façon. Sous prix unique, la disposition marginale à payer vaut 30 sur les <em>deux</em> marchés :
+  l'allocation entre groupes est efficace. Sous discrimination, elle vaut 25 chez les étudiants et
+  40 chez les cabinets : cinq unités sont passées d'un usage à 40 vers un usage à 25.
+</p>
+<p>
+  On peut chiffrer exactement ce déplacement :
+  \( \int_{15}^{20}(70-2y)\,dy = 175 \) de valeur perdue chez les cabinets, contre
+  \( \int_{10}^{15}(40-y)\,dy = 137{,}5 \) de valeur gagnée chez les étudiants — soit
+  <strong>37,5 de perte nette</strong>, exactement l'écart du tableau ✓. C'est le résultat classique :
+  <strong>à quantité totale inchangée, la discrimination du 3<sup>e</sup> degré réduit le
+  bien-être</strong>.
+</p>
+</div>
+
+<h2>Les tips</h2>
+
+<div class="box box-rappel">
+<div class="box-title">Trois réflexes pour cet exercice</div>
+<ol>
+  <li>
+    <strong>« Deux monopoles, un seul coût. »</strong> Avec un coût marginal constant, les deux
+    marchés se résolvent séparément : \( Rm_1 = cm \), puis \( Rm_2 = cm \). N'agrège
+    <em>jamais</em> les demandes au 3<sup>e</sup> degré — l'agrégation, c'est pour le prix unique.
+  </li>
+  <li>
+    <strong>L'élasticité se calcule sur la demande directe.</strong> Avec \( p = 70 - 2y \), la
+    dérivée à utiliser est \( \tfrac{dy}{dp} = -\tfrac{1}{2} \), pas \( -2 \). C'est l'erreur
+    la plus fréquente, et elle inverse la conclusion.
+  </li>
+  <li>
+    <strong>Vérifie par \( p = \dfrac{cm}{1 - 1/\varepsilon} \).</strong> Si tes prix ne retombent
+    pas, c'est qu'une élasticité est fausse. Dix secondes de contrôle.
+  </li>
+</ol>
+</div>
+
+<div class="box box-piege">
+<div class="box-title">Deux pièges d'énoncé</div>
+<ul>
+  <li>
+    <strong>Un marché peut ne pas être servi.</strong> Si le prix de réservation d'un groupe est
+    inférieur au coût marginal, sa quantité optimale serait négative : on pose alors \( y = 0 \).
+    Vérifie toujours que tes quantités sont positives.
+  </li>
+  <li>
+    <strong>Coût marginal croissant.</strong> Si \( cm \) dépend de la production totale, les deux
+    marchés ne se découplent plus : il faut résoudre le système
+    \( Rm_1 = Rm_2 = cm(y_1 + y_2) \) simultanément. Le cours reste au cas constant, mais lis bien
+    l'énoncé avant de découpler.
+  </li>
+</ul>
+</div>
+
+<a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei3#troisieme-degre">EI3 · §5 — La discrimination du troisième degré <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei3#troisieme-degre</span></a>
+</section>

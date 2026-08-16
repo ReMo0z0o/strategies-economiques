@@ -1,0 +1,186 @@
+<section class="chapter">
+<div class="chapter-tag">Mémo · deux pages</div>
+<h1>Le mémo</h1>
+
+<h2>Les trois degrés en un tableau</h2>
+
+<table class="compare">
+<tr><th class="left"></th><th class="left">1<sup>er</sup> degré</th><th class="left">2<sup>e</sup> degré</th><th class="left">3<sup>e</sup> degré</th></tr>
+<tr>
+  <td class="left"><strong>Information</strong></td>
+  <td class="left">identité + disposition à payer, unité par unité</td>
+  <td class="left">les profils, pas qui est qui</td>
+  <td class="left">un signe de groupe observable</td>
+</tr>
+<tr>
+  <td class="left"><strong>Instrument</strong></td>
+  <td class="left">offres personnalisées imposées</td>
+  <td class="left">menu identique, libre choix</td>
+  <td class="left">un prix par groupe</td>
+</tr>
+<tr>
+  <td class="left"><strong>Quantité</strong></td>
+  <td class="left">efficace pour tous</td>
+  <td class="left">efficace pour le gros, rationnée pour le petit</td>
+  <td class="left">trop faible sur chaque marché</td>
+</tr>
+<tr>
+  <td class="left"><strong>Surplus consommateur</strong></td>
+  <td class="left">nul</td>
+  <td class="left">la rente d'information du gros</td>
+  <td class="left">positif</td>
+</tr>
+<tr>
+  <td class="left"><strong>Efficacité</strong></td>
+  <td class="left">totale</td>
+  <td class="left">presque</td>
+  <td class="left">non</td>
+</tr>
+</table>
+
+<h2>Les formules</h2>
+
+<table class="compare">
+<tr><th class="left">Objet</th><th class="left">Formule</th></tr>
+<tr><td class="left">Valeur de \( y \) unités pour un client</td><td class="left">\( \displaystyle\int_0^{y} p(u)\,du \) — pour \( p = a-by \) : \( ay - \tfrac{b}{2}y^2 \)</td></tr>
+<tr><td class="left">Monopole simple</td><td class="left">\( Rm = Cm \) sur la demande agrégée</td></tr>
+<tr><td class="left">1<sup>er</sup> degré</td><td class="left">\( p(y) = Cm \) pour la quantité · \( m = \) aire sous la demande</td></tr>
+<tr><td class="left">2<sup>e</sup> degré</td><td class="left">participation du <strong>petit</strong> saturée, incitation du <strong>gros</strong> saturée, puis maximiser en \( y_S \)</td></tr>
+<tr><td class="left">3<sup>e</sup> degré</td><td class="left">\( Rm_1(y_1) = Rm_2(y_2) = cm \) · \( p = \dfrac{cm}{1 - \frac{1}{\varepsilon}} \) · \( p_1 < p_2 \iff \varepsilon_1 > \varepsilon_2 \)</td></tr>
+<tr><td class="left">Deux parties</td><td class="left">\( p^* = Cm \) · \( F^* = SC \) au prix \( Cm \)</td></tr>
+<tr><td class="left">Élasticité</td><td class="left">\( \varepsilon = -\dfrac{p}{y}\dfrac{dy}{dp} \) — sur la demande <strong>directe</strong></td></tr>
+</table>
+
+<h2>Les quatre tips</h2>
+
+<div class="box box-rappel">
+<div class="box-title">À réciter avant d'écrire</div>
+<ol>
+  <li>
+    <strong>« Le petit fixe le prix, le gros fixe la rente. »</strong><br />
+    2<sup>e</sup> degré : participation saturée sur le petit client, incitation saturée sur le gros.
+    Jamais l'inverse.
+  </li>
+  <li>
+    <strong>« Aucune distorsion au sommet. »</strong><br />
+    Le gros lot garde toujours sa taille efficace. Si tu rationnes le gros client, tu as interverti
+    les contraintes.
+  </li>
+  <li>
+    <strong>« Deux monopoles, un seul coût. »</strong><br />
+    3<sup>e</sup> degré : on résout chaque marché séparément avec \( Rm_i = cm \). On n'agrège
+    jamais — l'agrégation, c'est pour le prix unique.
+  </li>
+  <li>
+    <strong>« Le prix fait le gâteau, le forfait le partage. »</strong><br />
+    Deux parties : \( p^* = Cm \) pour maximiser le surplus créé, \( F^* = SC \) pour le capter.
+  </li>
+</ol>
+</div>
+
+<h2>Les six erreurs qui coûtent le plus</h2>
+
+<table class="compare">
+<tr><th>#</th><th class="left">L'erreur</th><th class="left">Le correctif</th></tr>
+<tr>
+  <td>1</td>
+  <td class="left">Additionner les <em>prix</em> en agrégeant les demandes</td>
+  <td class="left">On somme des <strong>quantités</strong> à prix donné : passe en \( y(p) \), additionne, puis retourne.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td class="left">Confondre le montant d'un lot et un prix unitaire</td>
+  <td class="left">384 € pour 24 unités n'est <strong>pas</strong> 16 €/unité : c'est une offre en bloc.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td class="left">Évaluer le petit lot avec la demande du petit client dans le test d'incitation</td>
+  <td class="left">C'est le <strong>gros</strong> qui est tenté : évalue avec <em>sa</em> demande à lui.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td class="left">Oublier de retrancher le coût de production des montants encaissés</td>
+  <td class="left">\( \Pi = m_L + m_S - Cm\,(y_L + y_S) \).</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td class="left">Prendre la pente de la demande <em>inverse</em> dans l'élasticité</td>
+  <td class="left">Avec \( p = 70-2y \), on utilise \( \tfrac{dy}{dp} = -\tfrac{1}{2} \), pas \( -2 \).</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td class="left">Répondre « 3<sup>e</sup> degré » dès qu'on voit deux prix</td>
+  <td class="left">Un écart <strong>justifié par les coûts</strong> n'est pas une discrimination.</td>
+</tr>
+</table>
+
+<h2>Les contrôles de cohérence</h2>
+
+<div class="box box-methode">
+<div class="box-title">Avant de rendre</div>
+<ol>
+  <li>
+    <strong>L'ordre des profits</strong> : 1<sup>er</sup> degré &gt; 2<sup>e</sup> degré &gt;
+    3<sup>e</sup> degré &gt; prix uniforme. Une inversion signale une erreur.
+  </li>
+  <li>
+    <strong>Au 1<sup>er</sup> degré, profit = surplus total</strong> et surplus consommateur nul.
+    Si ce n'est pas le cas, tu n'as pas pris toute l'aire sous la demande.
+  </li>
+  <li>
+    <strong>Au 2<sup>e</sup> degré</strong>, vérifie explicitement les trois inégalités : le gros
+    préfère (au moins faiblement) son lot, le petit accepte, et le petit ne veut pas du gros lot.
+  </li>
+  <li>
+    <strong>Au 3<sup>e</sup> degré</strong>, recalcule les prix par
+    \( p = \dfrac{cm}{1 - 1/\varepsilon} \). Ils doivent retomber exactement.
+  </li>
+</ol>
+</div>
+
+<h2>Les résultats des trois exercices</h2>
+
+<table class="compare">
+<tr><th class="left">Exo 1 — L : \( p=28-y \) · S : \( p=28-2y \) · \( Cm=4 \)</th><th>Profit</th><th>SC</th><th>Surplus total</th></tr>
+<tr><td class="left">Prix uniforme (\( p=16 \), \( Y=18 \))</td><td>216</td><td>108</td><td>324</td></tr>
+<tr><td class="left">1<sup>er</sup> degré — lots (24 ; 384) et (12 ; 192)</td><td><strong>432</strong></td><td>0</td><td>432</td></tr>
+<tr><td class="left">2<sup>e</sup> degré — lots (24 ; 352) et (8 ; 160)</td><td>384</td><td>32</td><td>416</td></tr>
+</table>
+
+<table class="compare">
+<tr><th class="left">Exo 2 — M1 : \( p=40-y \) · M2 : \( p=70-2y \) · \( cm=10 \)</th><th>Profit</th><th>SC</th><th>Surplus total</th></tr>
+<tr><td class="left">Prix unique (\( p=30 \), \( Y=30 \))</td><td>600</td><td>450</td><td><strong>1050</strong></td></tr>
+<tr><td class="left">3<sup>e</sup> degré (\( p_1=25 \), \( p_2=40 \), \( Y=30 \))</td><td><strong>675</strong></td><td>337,5</td><td>1012,5</td></tr>
+</table>
+
+<table class="compare">
+<tr><th class="left">Exo 3 — \( p=20-y \) · \( Cm=4 \)</th><th>Séances</th><th>Profit</th><th>SC</th></tr>
+<tr><td class="left">Prix uniforme</td><td>8</td><td>64</td><td>32</td></tr>
+<tr><td class="left">Deux parties (\( p^*=4 \), \( F^*=128 \))</td><td>16</td><td><strong>128</strong></td><td>0</td></tr>
+</table>
+
+<div class="box box-why">
+<div class="box-title">Le point le plus contre-intuitif du chapitre</div>
+<p>
+  À l'exercice 2, la quantité totale est <strong>identique</strong> dans les deux régimes (30), et
+  pourtant le surplus total <em>baisse</em> avec la discrimination. La raison n'est pas un problème
+  de volume mais d'<strong>allocation</strong> : sous prix unique, la disposition marginale à payer
+  est la même sur les deux marchés ; sous discrimination, elle vaut 25 d'un côté et 40 de l'autre,
+  et des unités partent vers l'usage le moins valorisé. Retiens la formule :
+  <strong>à quantité totale inchangée, la discrimination du 3<sup>e</sup> degré réduit le
+  bien-être</strong>.
+</p>
+</div>
+
+<div class="box box-rappel">
+<div class="box-title">Où revoir la théorie</div>
+<ul>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei3#fil-conducteur">EI3 · §2 — L'exemple fil conducteur : le monopole simple <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei3#fil-conducteur</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei3#premier-degre">EI3 · §3 — La discrimination du premier degré <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei3#premier-degre</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei3#deuxieme-degre">EI3 · §4 — La discrimination du deuxième degré <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei3#deuxieme-degre</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei3#troisieme-degre">EI3 · §5 — La discrimination du troisième degré <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei3#troisieme-degre</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei3#deux-parties">EI3 · §6 — La tarification en deux parties <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei3#deux-parties</span></a></li>
+  <li><a class="ref-app" href="https://strategies-economiques.vercel.app/industrielle/theorie/ei3#synthese">EI3 · §8 — À maîtriser absolument <span class="path">https://strategies-economiques.vercel.app/industrielle/theorie/ei3#synthese</span></a></li>
+</ul>
+</div>
+</section>
