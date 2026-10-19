@@ -35,11 +35,12 @@ interface Frame {
   Y: (dy: number) => number;
 }
 
-function makeFrame(XM: number, YM: number): Frame {
-  const L = 52;
-  const R = 456;
-  const T = 28;
-  const B = 336;
+function makeFrame(
+  XM: number,
+  YM: number,
+  box: { L: number; R: number; T: number; B: number } = { L: 52, R: 456, T: 28, B: 336 },
+): Frame {
+  const { L, R, T, B } = box;
   return {
     L,
     R,
@@ -81,6 +82,45 @@ function PlotAxes({ fr, xLabel, yLabel }: { fr: Frame; xLabel: string; yLabel: s
         {yLabel}
       </text>
     </g>
+  );
+}
+
+/** Texte SVG avec halo (reste lisible par-dessus un tracé), thème clair/sombre. */
+function HaloText({
+  x,
+  y,
+  children,
+  color = "var(--color-foreground)",
+  anchor = "start",
+  size = 12,
+  weight = 600,
+  italic = false,
+}: {
+  x: number;
+  y: number;
+  children: ReactNode;
+  color?: string;
+  anchor?: "start" | "middle" | "end";
+  size?: number;
+  weight?: number;
+  italic?: boolean;
+}) {
+  return (
+    <text
+      x={x}
+      y={y}
+      textAnchor={anchor}
+      fontSize={size}
+      fontWeight={weight}
+      fontStyle={italic ? "italic" : undefined}
+      fill={color}
+      stroke="var(--color-card)"
+      strokeWidth={3.5}
+      strokeLinejoin="round"
+      paintOrder="stroke"
+    >
+      {children}
+    </text>
   );
 }
 
@@ -259,7 +299,23 @@ export function ReplacementChart() {
           );
         })}
       </svg>
+      <div className="mt-1 flex flex-wrap justify-center gap-x-4 gap-y-1 text-[12.5px] text-muted-foreground">
+        {[
+          { c: "#e11d48", t: "moins de 50 %" },
+          { c: "#059669", t: "de 50 à 67 %" },
+          { c: "#4f46e5", t: "plus de 67 %" },
+        ].map((k) => (
+          <span key={k.t} className="inline-flex items-center gap-1.5">
+            <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: k.c }} />
+            {k.t}
+          </span>
+        ))}
+      </div>
       <p className="mt-2 text-center text-[13px] text-muted-foreground">
+        <strong>Taux de remplacement</strong> = niveau de la pension (publique + privée
+        obligatoire, <em>hors épargne volontaire</em>) rapporté aux revenus de la vie active.
+      </p>
+      <p className="mt-1 text-center text-[13px] text-muted-foreground">
         De 29 % (Royaume-Uni) à 101 % (Pays-Bas). Plus la barre est courte, plus l'épargne privée
         volontaire doit compenser.
       </p>
@@ -273,112 +329,167 @@ export function ReplacementChart() {
 /* ------------------------------------------------------------------ */
 
 export function BudgetPlayground() {
-  const m0 = 4;
-  const m1 = 6;
+  // Dotation des slides 5-7 : on gagne plus en vie active (m0) qu'à la retraite (m1).
+  const m0 = 8;
+  const m1 = 4;
   const [rPct, setRPct] = useState(0); // 0 → 150 (%)
+  const [c0Pick, setC0Pick] = useState(6); // consommation choisie aujourd'hui
 
   const r = rPct / 100;
-  const pv = m0 + m1 / (1 + r);
-  const fv = (1 + r) * m0 + m1;
-  const fr = makeFrame(11, 17);
+  const pv = m0 + m1 / (1 + r); // valeur présente = c0 max
+  const fv = (1 + r) * m0 + m1; // valeur future = c1 max
+  const c0Max = Math.floor(pv * 10 + 1e-9) / 10;
+  const c0 = Math.min(c0Pick, c0Max);
+  const s = m0 - c0; // épargne (> 0) ou emprunt (< 0)
+  const c1 = m1 + (1 + r) * s; // = fv − (1+r)c0
+  const atOmega = Math.abs(s) < 1e-9;
 
-  // extrémités de la droite de budget
-  const x1 = fr.X(pv);
-  const y1 = fr.Y(0);
-  const x2 = fr.X(0);
-  const y2 = fr.Y(fv);
-  // position du libellé de pente (aux 2/3 de la droite, depuis le haut)
-  const t = 0.66;
-  const lx = x2 + (x1 - x2) * t;
-  const ly = y2 + (y1 - y2) * t;
+  const fr = makeFrame(13.5, 26, { L: 60, R: 476, T: 44, B: 352 });
+  const GREEN = "#059669";
+  const ROSE = "#e11d48";
+  const tone = atOmega ? "var(--color-foreground)" : s > 0 ? GREEN : ROSE;
+
+  // points de la droite : (0 ; fv) → ω → (pv ; 0)
+  const P = (c: number) => ({ x: fr.X(c), y: fr.Y(fv - (1 + r) * c) });
+  const top = P(0);
+  const om = P(m0);
+  const bot = P(pv);
+  const slopeAt = P(0.22 * m0);
+  const saveAt = P(0.65 * m0);
+  const borrowAt = P((m0 + pv) / 2);
+  const pick = P(c0);
+  const pvX = Math.max(78, Math.min(fr.X(pv), 520 - 78));
 
   return (
     <InteractiveCard
       title="Joue avec le taux d'intérêt"
       subtitle={
         <>
-          Dotation fixée à ω = (4 ; 6). Monte <M tex="r" /> et regarde la droite de budget pivoter.
+          Dotation ω = (8 ; 4) : tu gagnes plus pendant ta vie active (8) qu'à la retraite (4).
+          Monte <M tex="r" /> et regarde la droite de budget pivoter ; déplace ton choix{" "}
+          <M tex="c_0" /> le long de la droite.
         </>
       }
       controls={
-        <SliderControl
-          label={<>Taux d'intérêt r</>}
-          value={rPct}
-          onChange={setRPct}
-          min={0}
-          max={150}
-          step={5}
-          format={(v) => `${v} %`}
-        />
+        <>
+          <SliderControl
+            label={<>Taux d'intérêt r</>}
+            value={rPct}
+            onChange={(v) => {
+              setRPct(v);
+              const max = Math.floor((m0 + m1 / (1 + v / 100)) * 10 + 1e-9) / 10;
+              setC0Pick((c) => Math.min(c, max));
+            }}
+            min={0}
+            max={150}
+            step={5}
+            format={(v) => `${v} %`}
+          />
+          <SliderControl
+            label={<>c₀ choisi (consommation pendant la vie active)</>}
+            value={c0}
+            onChange={setC0Pick}
+            min={0}
+            max={c0Max}
+            step={0.1}
+            format={(v) => fmtFr(v, 1)}
+          />
+        </>
       }
       footer={
         <>
-          la droite <strong>pivote autour de ω</strong> (ne rien déplacer reste toujours possible).
-          Augmenter <M tex="r" /> rend l'épargne plus rémunératrice (l'ordonnée à l'origine — la
-          valeur future — monte) mais l'emprunt plus cher (l'abscisse maximale — la valeur présente
-          — recule).
+          la droite <strong>pivote autour de ω</strong> (ne rien transférer reste toujours possible).
+          Augmenter <M tex="r" /> rend l'épargne plus rémunératrice (la valeur future, en haut, monte)
+          mais l'emprunt plus cher (la valeur présente, à droite, recule). À gauche de ω tu épargnes,
+          à droite tu empruntes.
         </>
       }
     >
       <div className="grid items-center gap-5 md:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
-        <svg
-          viewBox="0 0 480 380"
-          className="mx-auto block h-auto w-full max-w-[480px]"
-          role="img"
-          aria-label="Droite de budget inter-temporelle"
-        >
-          <PlotAxes fr={fr} xLabel="c₀" yLabel="c₁" />
-          {/* droite de budget */}
-          <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="#e11d48" strokeWidth={2.4} />
-          {/* pointillés vers la dotation */}
-          <line
-            x1={fr.X(m0)}
-            y1={fr.Y(0)}
-            x2={fr.X(m0)}
-            y2={fr.Y(m1)}
-            stroke="var(--color-muted-foreground)"
-            strokeWidth={1.2}
-            strokeDasharray="4 4"
-          />
-          <line
-            x1={fr.L}
-            y1={fr.Y(m1)}
-            x2={fr.X(m0)}
-            y2={fr.Y(m1)}
-            stroke="var(--color-muted-foreground)"
-            strokeWidth={1.2}
-            strokeDasharray="4 4"
-          />
-          {/* dotation ω */}
-          <circle cx={fr.X(m0)} cy={fr.Y(m1)} r={5} fill="var(--color-foreground)" />
-          <text
-            x={fr.X(m0) + 9}
-            y={fr.Y(m1) - 7}
-            fontSize={13}
-            fontStyle="italic"
-            fill="var(--color-foreground)"
+        <div>
+          <svg
+            viewBox="0 0 520 412"
+            className="mx-auto block h-auto w-full max-w-[520px]"
+            role="img"
+            aria-label="Droite de budget inter-temporelle : ensemble accessible, dotation, épargne et emprunt"
           >
-            ω
-          </text>
-          <text x={fr.X(m0)} y={fr.B + 15} fontSize={11} fill="var(--color-muted-foreground)" textAnchor="middle">
-            m₀
-          </text>
-          <text x={fr.L - 7} y={fr.Y(m1) + 4} fontSize={11} fill="var(--color-muted-foreground)" textAnchor="end">
-            m₁
-          </text>
-          {/* libellé de pente */}
-          <text x={lx + 9} y={ly + 4} fontSize={12} fontStyle="italic" fill="#e11d48">
-            −(1+r)
-          </text>
-        </svg>
+            {/* ensemble accessible (triangle grisé) */}
+            <polygon
+              points={`${fr.L},${fr.B} ${top.x},${top.y} ${bot.x},${bot.y}`}
+              fill="var(--color-muted-foreground)"
+              fillOpacity={0.12}
+            />
+            <PlotAxes fr={fr} xLabel="c₀" yLabel="c₁" />
+            {/* pointillés vers la dotation */}
+            <line x1={om.x} y1={fr.B} x2={om.x} y2={om.y} stroke="var(--color-muted-foreground)" strokeWidth={1.2} strokeDasharray="4 4" />
+            <line x1={fr.L} y1={om.y} x2={om.x} y2={om.y} stroke="var(--color-muted-foreground)" strokeWidth={1.2} strokeDasharray="4 4" />
+            {/* droite de budget : vert = épargne, rose = emprunt */}
+            <line x1={top.x} y1={top.y} x2={om.x} y2={om.y} stroke={GREEN} strokeWidth={3} strokeLinecap="round" />
+            <line x1={om.x} y1={om.y} x2={bot.x} y2={bot.y} stroke={ROSE} strokeWidth={3} strokeLinecap="round" />
+            <circle cx={top.x} cy={top.y} r={3.5} fill={GREEN} />
+            <circle cx={bot.x} cy={bot.y} r={3.5} fill={ROSE} />
+            {/* programme choisi : écart s sur l'axe c0, (1+r)s sur l'axe c1 */}
+            {!atOmega && (
+              <g>
+                <line x1={pick.x} y1={fr.B} x2={pick.x} y2={pick.y} stroke={tone} strokeWidth={1.2} strokeDasharray="2 3" />
+                <line x1={fr.L} y1={pick.y} x2={pick.x} y2={pick.y} stroke={tone} strokeWidth={1.2} strokeDasharray="2 3" />
+                <line x1={pick.x} y1={fr.B} x2={om.x} y2={fr.B} stroke={tone} strokeWidth={5} strokeLinecap="round" />
+                <line x1={fr.L} y1={pick.y} x2={fr.L} y2={om.y} stroke={tone} strokeWidth={5} strokeLinecap="round" />
+                <HaloText x={(pick.x + om.x) / 2} y={fr.B - 8} anchor="middle" color={tone}>
+                  {s > 0 ? `épargne ${fmtFr(s, 1)}` : `emprunt ${fmtFr(-s, 1)}`}
+                </HaloText>
+                <HaloText x={fr.L + 8} y={(pick.y + om.y) / 2 + 4} color={tone}>
+                  {s > 0 ? `+ ${fmtFr((1 + r) * s)}` : `− ${fmtFr(-(1 + r) * s)}`}
+                </HaloText>
+              </g>
+            )}
+            {/* dotation ω */}
+            <circle cx={om.x} cy={om.y} r={5} fill="var(--color-foreground)" />
+            <HaloText x={om.x + 9} y={om.y - 8} size={14} italic>
+              ω
+            </HaloText>
+            <HaloText x={om.x} y={fr.B + 16} anchor="middle" color="var(--color-muted-foreground)">
+              m₀ = 8
+            </HaloText>
+            <HaloText x={fr.L - 6} y={om.y + 4} anchor="end" color="var(--color-muted-foreground)">
+              m₁ = 4
+            </HaloText>
+            {/* programme choisi */}
+            <circle cx={pick.x} cy={pick.y} r={6} fill="var(--color-card)" stroke={tone} strokeWidth={2.5} />
+            {/* intercepts : valeur future (haut) et valeur présente (droite) */}
+            <HaloText x={fr.L + 10} y={top.y - 8} color={GREEN}>
+              valeur future (1+r)m₀ + m₁ = {fmtFr(fv)}
+            </HaloText>
+            <HaloText x={pvX} y={fr.B + 34} anchor="middle" color={ROSE}>
+              valeur présente
+            </HaloText>
+            <HaloText x={pvX} y={fr.B + 50} anchor="middle" color={ROSE}>
+              m₀ + m₁/(1+r) = {fmtFr(pv)}
+            </HaloText>
+            {/* libellés de la droite */}
+            <HaloText x={slopeAt.x + 10} y={slopeAt.y - 8} italic color="var(--color-foreground)">
+              pente −(1+r) = −{fmtFr(1 + r)}
+            </HaloText>
+            <HaloText x={saveAt.x + 10} y={saveAt.y - 8} color={GREEN}>
+              épargne (c₀ &lt; m₀)
+            </HaloText>
+            <HaloText x={borrowAt.x + 10} y={borrowAt.y - 8} color={ROSE}>
+              emprunt (c₀ &gt; m₀)
+            </HaloText>
+          </svg>
+          <p className="mt-1 text-center text-[12.5px] text-muted-foreground">
+            Zone grisée : programmes accessibles (contrainte de budget respectée). Rond blanc : ton
+            programme (c₀ ; c₁). Les deux axes n'ont pas la même échelle.
+          </p>
+        </div>
         <div>
           <Readout
             rows={[
-              { label: <>Dotation ω</>, value: "(4 ; 6)" },
+              { label: <>Dotation ω</>, value: "(8 ; 4)" },
               {
                 label: (
                   <>
-                    Valeur présente <M tex="c_0^{\max}" />
+                    Valeur présente <M tex="m_0+\tfrac{m_1}{1+r}" />
                   </>
                 ),
                 value: fmtFr(pv),
@@ -386,22 +497,40 @@ export function BudgetPlayground() {
               {
                 label: (
                   <>
-                    Valeur future <M tex="c_1^{\max}" />
+                    Valeur future <M tex="(1+r)m_0+m_1" />
                   </>
                 ),
                 value: fmtFr(fv),
               },
-              { label: "Pente", value: `−${fmtFr(1 + r)}` },
+              { label: "Pente −(1+r)", value: `−${fmtFr(1 + r)}` },
+              { label: <>Ton choix (c₀ ; c₁)</>, value: `(${fmtFr(c0)} ; ${fmtFr(c1)})` },
             ]}
           />
+          {atOmega ? (
+            <Verdict tone="neutral">
+              Tu consommes exactement ta dotation : ni épargne ni emprunt (tu es au point ω).
+            </Verdict>
+          ) : s > 0 ? (
+            <Verdict tone="smooth">
+              Tu épargnes <M tex="m_0-c_0" /> = {fmtFr(s)} ⇒ tu récupères (1+r) × {fmtFr(s)} ={" "}
+              {fmtFr((1 + r) * s)} demain : <M tex="c_1" /> = m₁ + {fmtFr((1 + r) * s)} = {fmtFr(c1)}.
+            </Verdict>
+          ) : (
+            <Verdict tone="now">
+              Tu empruntes <M tex="c_0-m_0" /> = {fmtFr(-s)} ⇒ tu rembourses (1+r) × {fmtFr(-s)} ={" "}
+              {fmtFr(-(1 + r) * s)} demain : <M tex="c_1" /> = m₁ − {fmtFr(-(1 + r) * s)} ={" "}
+              {fmtFr(c1)}.
+            </Verdict>
+          )}
           {r < 0.001 ? (
             <Verdict tone="neutral">
-              À <M tex="r=0" />, présent et futur valent pareil : la droite est à 45°.
+              À <M tex="r=0" />, la pente vaut −1 : 1 € aujourd'hui = 1 € demain. Valeur présente et
+              valeur future sont égales (12).
             </Verdict>
           ) : (
             <Verdict tone="later">
-              La droite pivote autour de ω : 1 € épargné aujourd'hui rapporte {fmtFr(1 + r)} € à la
-              retraite. Épargner devient plus payant.
+              La droite a pivoté autour de ω : 1 € épargné aujourd'hui rapporte {fmtFr(1 + r)} € à la
+              retraite, et 1 € emprunté coûte {fmtFr(1 + r)} € à rembourser.
             </Verdict>
           )}
         </div>
@@ -412,32 +541,49 @@ export function BudgetPlayground() {
 
 /* ------------------------------------------------------------------ */
 /* Widget 2 : l'optimum d'Euler                                        */
-/* Formules du source, u(c)=√c, dotation (6;6) :                       */
+/* u(c)=√c, dotation (8;4), modes « taux r » et « subside s » :        */
 /*   W1 = (1+r)m0+m1 ; c0 = W1/((1+r)(1+δ²(1+r))) ; c1 = (δ(1+r))²c0   */
 /* ------------------------------------------------------------------ */
 
-export function EulerPlayground() {
-  const m0 = 6;
-  const m1 = 6;
-  const [delta, setDelta] = useState(1); // 0,40 → 1,00
-  const [rPct, setRPct] = useState(0); // 0 → 100 (%)
+type EulerPreset = "lissage" | "impatience" | "patience" | "aucun";
+const EULER_PRESETS: Record<Exclude<EulerPreset, "aucun">, { delta: number; rPct: number }> = {
+  lissage: { delta: 1, rPct: 0 },
+  impatience: { delta: 0.6, rPct: 0 },
+  patience: { delta: 1, rPct: 50 },
+};
+const R_STAR = 0.1; // taux du marché r* du mode « subside » (slide 19)
 
-  const r = rPct / 100;
-  const W1 = (1 + r) * m0 + m1;
-  const dr = delta * (1 + r);
-  const c0 = W1 / ((1 + r) * (1 + delta * delta * (1 + r)));
-  const c1 = dr * dr * c0;
-  const Ustar = Math.sqrt(c0) + delta * Math.sqrt(c1);
-
-  const fr = makeFrame(13, 19);
+/** Optimum avec u(c) = √c : c0* = VP/(1 + δ²(1+r)) et c1* = (δ(1+r))²·c0*. */
+function eulerOpt(m0: number, m1: number, delta: number, r: number) {
   const pv = m0 + m1 / (1 + r);
-  const fv = W1;
+  const c0 = pv / (1 + delta * delta * (1 + r));
+  const c1 = (delta * (1 + r)) ** 2 * c0;
+  return { pv, fv: (1 + r) * pv, c0, c1 };
+}
 
-  // échantillonnage de la courbe d'indifférence passant par l'optimum
+export function EulerPlayground() {
+  // Dotation des slides : plus de revenu en vie active qu'à la retraite.
+  const m0 = 8;
+  const m1 = 4;
+  const [mode, setMode] = useState<"taux" | "subside">("taux");
+  const [delta, setDelta] = useState(1); // 0,40 → 1,00
+  const [rPct, setRPct] = useState(0); // mode taux : 0 → 100 (%)
+  const [sub, setSub] = useState(0); // mode subside : s ∈ [−1 ; 3]
+
+  const r = mode === "taux" ? rPct / 100 : R_STAR * (1 + sub);
+  const { pv, fv, c0, c1 } = eulerOpt(m0, m1, delta, r);
+  const dr = delta * (1 + r);
+  const Ustar = Math.sqrt(c0) + delta * Math.sqrt(c1);
+  const sav = m0 - c0; // épargne (> 0) ou emprunt (< 0)
+  const ref = eulerOpt(m0, m1, delta, R_STAR); // référence s = 0 (r = r*)
+
+  const fr = makeFrame(13, 22, { L: 56, R: 480, T: 40, B: 360 });
+
+  // courbe d'indifférence passant par l'optimum : c1 = ((U* − √c0)/δ)²
   const pts: string[] = [];
-  const N = 80;
+  const N = 120;
   for (let i = 0; i <= N; i++) {
-    const cx = 0.25 + (fr.XM - 0.25) * (i / N);
+    const cx = 0.2 + (fr.XM - 0.2) * (i / N);
     const root = (Ustar - Math.sqrt(cx)) / delta;
     if (root < 0) continue;
     const yv = root * root;
@@ -445,21 +591,79 @@ export function EulerPlayground() {
     pts.push(`${fr.X(cx).toFixed(1)},${fr.Y(yv).toFixed(1)}`);
   }
 
+  // verdict fondé sur les valeurs affichées (cohérent avec la lecture)
   const regime: "smooth" | "now" | "later" =
-    Math.abs(dr - 1) < 0.02 ? "smooth" : dr < 1 ? "now" : "later";
+    fmtFr(c0) === fmtFr(c1) ? "smooth" : c0 > c1 ? "now" : "later";
+  const exact = Math.abs(dr - 1) < 1e-9;
+  const active: EulerPreset =
+    mode === "taux"
+      ? ((Object.keys(EULER_PRESETS) as Array<Exclude<EulerPreset, "aucun">>).find(
+          (k) => Math.abs(EULER_PRESETS[k].delta - delta) < 1e-9 && EULER_PRESETS[k].rPct === rPct,
+        ) ?? "aucun")
+      : "aucun";
+
+  // flèche ω → c* le long de la droite de budget
+  const GREEN = "#059669";
+  const AMBER = "#d97706";
+  const arrowColor = sav > 0 ? GREEN : AMBER;
+  const ox = fr.X(m0);
+  const oy = fr.Y(m1);
+  const px = fr.X(c0);
+  const py = fr.Y(c1);
+  const len = Math.hypot(px - ox, py - oy);
+  const showArrow = Math.abs(sav) >= 0.05 && len > 16;
+  const ux = len > 0 ? (px - ox) / len : 0;
+  const uy = len > 0 ? (py - oy) / len : 0;
+  const tipX = px - ux * 8;
+  const tipY = py - uy * 8;
+  const baseX = tipX - ux * 10;
+  const baseY = tipY - uy * 10;
+  const midX = (ox + px) / 2;
+  const midY = (oy + py) / 2;
 
   return (
     <InteractiveCard
       title={
         <>
-          Le choix optimal en direct — <M tex="u(c)=\sqrt{c}" />, dotation (6 ; 6)
+          Le choix optimal en direct — <M tex="u(c)=\sqrt{c}" />, dotation ω = (8 ; 4)
         </>
       }
-      subtitle="Bouge la patience δ et le taux r : le point optimal c* glisse le long du budget."
+      subtitle="Bouge la patience δ et le taux r (ou le subside s) : le point optimal c* glisse le long du budget."
       controls={
         <>
+          <ChoiceChips
+            label="Mode"
+            value={mode}
+            onChange={(v) => {
+              setMode(v);
+              if (v === "subside") {
+                setDelta(0.9);
+                setSub(0);
+              }
+            }}
+            options={[
+              { value: "taux", label: "Taux r libre" },
+              { value: "subside", label: "Subside s (r* = 10 %)" },
+            ]}
+          />
+          {mode === "taux" && (
+            <ChoiceChips
+              label="Exemples du slide 18"
+              value={active}
+              onChange={(k) => {
+                if (k === "aucun") return;
+                setDelta(EULER_PRESETS[k].delta);
+                setRPct(EULER_PRESETS[k].rPct);
+              }}
+              options={[
+                { value: "lissage", label: "Lissage (r = 0, δ = 1)" },
+                { value: "impatience", label: "Impatience (r = 0, δ = 0,6)" },
+                { value: "patience", label: "Patience (r = 50 %, δ = 1)" },
+              ]}
+            />
+          )}
           <SliderControl
-            label={<>Patience δ</>}
+            label={<>Facteur d'escompte δ (patience)</>}
             value={delta}
             onChange={setDelta}
             min={0.4}
@@ -467,15 +671,27 @@ export function EulerPlayground() {
             step={0.02}
             format={(v) => fmtFr(v)}
           />
-          <SliderControl
-            label={<>Taux d'intérêt r</>}
-            value={rPct}
-            onChange={setRPct}
-            min={0}
-            max={100}
-            step={5}
-            format={(v) => `${v} %`}
-          />
+          {mode === "taux" ? (
+            <SliderControl
+              label={<>Taux d'intérêt r</>}
+              value={rPct}
+              onChange={setRPct}
+              min={0}
+              max={100}
+              step={5}
+              format={(v) => `${v} %`}
+            />
+          ) : (
+            <SliderControl
+              label={<>Subside s (taxe si s &lt; 0)</>}
+              value={sub}
+              onChange={setSub}
+              min={-1}
+              max={3}
+              step={0.1}
+              format={(v) => `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.round(Math.abs(v) * 100)}\u00a0%`}
+            />
+          )}
         </>
       }
       footer={
@@ -485,83 +701,73 @@ export function EulerPlayground() {
           d'indifférence qui passe par l'optimum : elles sont toujours <strong>tangentes</strong> en{" "}
           <M tex="c^*" /> — c'est l'équation d'Euler en version graphique. Tout se joue sur le
           produit <M tex="\delta(1+r)" /> : égal à 1 → lissage, inférieur à 1 → plus de présent,
-          supérieur à 1 → plus de futur.
+          supérieur à 1 → plus de futur. La flèche part de ω : vers la gauche, tu épargnes ; vers la
+          droite, tu empruntes. En mode subside, <M tex="r=r^*(1+s)" /> : un subside{" "}
+          <M tex="s>0" /> rend la droite plus pentue et, ici, <M tex="c_0^*" /> baisse (l'épargne
+          monte).
         </>
       }
     >
       <div className="grid items-center gap-5 md:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
         <svg
-          viewBox="0 0 480 380"
-          className="mx-auto block h-auto w-full max-w-[480px]"
+          viewBox="0 0 520 400"
+          className="mx-auto block h-auto w-full max-w-[520px]"
           role="img"
-          aria-label="Optimum inter-temporel : tangence entre courbe d'indifférence et budget"
+          aria-label="Optimum inter-temporel : tangence entre courbe d'indifférence et budget, flèche de la dotation vers l'optimum"
         >
           <PlotAxes fr={fr} xLabel="c₀" yLabel="c₁" />
           {/* budget */}
-          <line
-            x1={fr.X(pv)}
-            y1={fr.Y(0)}
-            x2={fr.X(0)}
-            y2={fr.Y(fv)}
-            stroke="#e11d48"
-            strokeWidth={2.4}
-          />
+          <line x1={fr.X(pv)} y1={fr.Y(0)} x2={fr.X(0)} y2={fr.Y(fv)} stroke="#e11d48" strokeWidth={2.4} />
           {/* courbe d'indifférence */}
           {pts.length > 1 ? (
             <polyline points={pts.join(" ")} fill="none" stroke="#4f46e5" strokeWidth={2.2} />
           ) : null}
           {/* pointillés vers l'optimum */}
-          <line
-            x1={fr.X(c0)}
-            y1={fr.Y(0)}
-            x2={fr.X(c0)}
-            y2={fr.Y(c1)}
-            stroke="var(--color-muted-foreground)"
-            strokeWidth={1.2}
-            strokeDasharray="4 4"
-          />
-          <line
-            x1={fr.L}
-            y1={fr.Y(c1)}
-            x2={fr.X(c0)}
-            y2={fr.Y(c1)}
-            stroke="var(--color-muted-foreground)"
-            strokeWidth={1.2}
-            strokeDasharray="4 4"
-          />
+          <line x1={px} y1={fr.B} x2={px} y2={py} stroke="var(--color-muted-foreground)" strokeWidth={1.2} strokeDasharray="4 4" />
+          <line x1={fr.L} y1={py} x2={px} y2={py} stroke="var(--color-muted-foreground)" strokeWidth={1.2} strokeDasharray="4 4" />
+          <HaloText x={px} y={fr.B + 17} anchor="middle" italic>
+            c₀*
+          </HaloText>
+          <HaloText x={fr.L - 6} y={py + 4} anchor="end" italic>
+            c₁*
+          </HaloText>
+          {/* flèche ω → c* : épargne (vert) ou emprunt (orange) */}
+          {showArrow && (
+            <g>
+              <line x1={ox} y1={oy} x2={baseX} y2={baseY} stroke={arrowColor} strokeWidth={3.2} strokeLinecap="round" />
+              <polygon
+                points={`${tipX},${tipY} ${baseX - uy * 5},${baseY + ux * 5} ${baseX + uy * 5},${baseY - ux * 5}`}
+                fill={arrowColor}
+              />
+              <HaloText x={midX - 12} y={midY + 26} anchor="end" color={arrowColor}>
+                {sav > 0
+                  ? `épargne = m₀ − c₀* = ${fmtFr(sav)}`
+                  : `emprunt = c₀* − m₀ = ${fmtFr(-sav)}`}
+              </HaloText>
+            </g>
+          )}
           {/* dotation */}
-          <circle cx={fr.X(m0)} cy={fr.Y(m1)} r={3.5} fill="var(--color-muted-foreground)" />
-          <text x={fr.X(m0) + 8} y={fr.Y(m1) + 14} fontSize={11} fill="var(--color-muted-foreground)">
+          <circle cx={ox} cy={oy} r={4.5} fill="var(--color-foreground)" />
+          <HaloText x={ox + 9} y={oy + 17} italic>
             ω
-          </text>
+          </HaloText>
           {/* optimum */}
-          <circle
-            cx={fr.X(c0)}
-            cy={fr.Y(c1)}
-            r={5.5}
-            fill="#4f46e5"
-            stroke="var(--color-card)"
-            strokeWidth={2}
-          />
-          <text
-            x={fr.X(c0) + 9}
-            y={fr.Y(c1) - 7}
-            fontSize={13}
-            fontStyle="italic"
-            fontWeight={600}
-            fill="#4f46e5"
-          >
+          <circle cx={px} cy={py} r={5.5} fill="#4f46e5" stroke="var(--color-card)" strokeWidth={2} />
+          <HaloText x={px + 10} y={py - 10} size={14} italic color="#4f46e5">
             c*
-          </text>
+          </HaloText>
         </svg>
         <div>
           <Readout
             rows={[
+              ...(mode === "subside"
+                ? [{ label: <M tex="r=r^*(1+s)" />, value: pctFr(r) }]
+                : []),
               { label: <M tex="\delta(1+r)" />, value: fmtFr(dr) },
               {
                 label: (
                   <>
-                    Conso présente <M tex="c_0^*" />
+                    Conso vie active <M tex="c_0^*" />
                   </>
                 ),
                 value: fmtFr(c0),
@@ -574,23 +780,35 @@ export function EulerPlayground() {
                 ),
                 value: fmtFr(c1),
               },
+              {
+                label: sav >= 0 ? <>Épargne <M tex="m_0-c_0^*" /></> : <>Emprunt <M tex="c_0^*-m_0" /></>,
+                value: fmtFr(Math.abs(sav)),
+              },
             ]}
           />
           {regime === "smooth" ? (
             <Verdict tone="smooth">
-              Lissage parfait : <M tex="\delta(1+r)=1" />, donc <M tex="c_0 = c_1" />.
+              Lissage parfait : <M tex={exact ? "\\delta(1+r)=1" : "\\delta(1+r)\\approx 1"} />, donc{" "}
+              <M tex="c_0^* = c_1^*" />.
             </Verdict>
           ) : regime === "now" ? (
             <Verdict tone="now">
               Impatience : <M tex="\delta(1+r)<1" /> → on consomme plus tôt (
-              <M tex="c_0 > c_1" />
+              <M tex="c_0^* > c_1^*" />
               ).
             </Verdict>
           ) : (
             <Verdict tone="later">
               Patience : <M tex="\delta(1+r)>1" /> → attendre paie, on garde plus pour la retraite (
-              <M tex="c_0 < c_1" />
+              <M tex="c_0^* < c_1^*" />
               ).
+            </Verdict>
+          )}
+          {mode === "subside" && (
+            <Verdict tone="neutral">
+              Sans subside (s = 0, r = 10 %) : épargne {fmtFr(m0 - ref.c0)}. Avec s ={" "}
+              {Math.round(sub * 100)} % (r = {pctFr(r)}) : {sav >= 0 ? "épargne" : "emprunt"}{" "}
+              {fmtFr(Math.abs(sav))}.
             </Verdict>
           )}
         </div>
@@ -601,15 +819,18 @@ export function EulerPlayground() {
 
 /* ------------------------------------------------------------------ */
 /* Widget 3 : classifieur de biens (investissement / tentation)        */
-/* Formules du source : ex-ante = b1 + δ·b2 ; sur le moment = b1+βδb2  */
+/* ex-ante = b1+δb2 ; prévision = b1+β̂δb2 ; sur le moment = b1+βδb2   */
 /* ------------------------------------------------------------------ */
 
 type PresetKey = "jogging" | "chips" | "exo" | "custom";
 
-const PRESETS: Record<Exclude<PresetKey, "custom">, { b1: number; b2: number; beta: number; delta: number }> = {
-  jogging: { b1: -2, b2: 3, beta: 0.5, delta: 1 },
-  chips: { b1: 2, b2: -3, beta: 0.5, delta: 1 },
-  exo: { b1: -3, b2: 8, beta: 0.5, delta: 0.5 },
+const PRESETS: Record<
+  Exclude<PresetKey, "custom">,
+  { b1: number; b2: number; beta: number; delta: number; betaHat: number }
+> = {
+  jogging: { b1: -2, b2: 3, beta: 0.5, delta: 1, betaHat: 1 },
+  chips: { b1: 2, b2: -3, beta: 0.5, delta: 1, betaHat: 1 },
+  exo: { b1: -3, b2: 8, beta: 0.5, delta: 0.5, betaHat: 1 },
 };
 
 export function GoodClassifier() {
@@ -618,6 +839,7 @@ export function GoodClassifier() {
   const [delta, setDelta] = useState(1);
   const [b1, setB1] = useState(-2);
   const [b2, setB2] = useState(3);
+  const [betaHat, setBetaHat] = useState(1); // ce qu'il croit de lui-même, β̂ ∈ [β ; 1]
 
   function applyPreset(key: PresetKey) {
     setPreset(key);
@@ -627,6 +849,7 @@ export function GoodClassifier() {
       setB2(p.b2);
       setBeta(p.beta);
       setDelta(p.delta);
+      setBetaHat(p.betaHat);
     }
   }
 
@@ -637,11 +860,14 @@ export function GoodClassifier() {
     };
   }
 
+  const bh = Math.max(betaHat, beta);
   const exAnte = b1 + delta * b2;
   const moment = b1 + beta * delta * b2;
+  const forecast = b1 + bh * delta * b2;
   const type = b1 < 0 && b2 > 0 ? "investissement" : b1 > 0 && b2 < 0 ? "tentation" : "mixte";
   const wants = exAnte > 0;
   const does = moment > 0;
+  const believes = forecast > 0;
 
   let verdict: ReactNode;
   let tone: "neutral" | "now";
@@ -661,31 +887,56 @@ export function GoodClassifier() {
     }
   } else if (wants && !does) {
     tone = "now";
-    verdict = (
-      <>
-        Conflit ! De loin il <strong>veut</strong> le faire (ex-ante positif), mais sur le moment il{" "}
-        <strong>lâche</strong>. Bien d'investissement <strong>sous-consommé</strong> — le jogging,
-        l'épargne…
-      </>
-    );
+    verdict =
+      type === "investissement" ? (
+        <>
+          Conflit ! De loin il <strong>veut</strong> le faire (ex-ante positif), mais sur le moment il{" "}
+          <strong>lâche</strong>. Bien d'investissement <strong>sous-consommé</strong> — le jogging,
+          l'épargne…
+        </>
+      ) : (
+        <>
+          Conflit entre l'intention et l'action : de loin il <strong>veut</strong> consommer le bien
+          (ex-ante positif), mais sur le moment il ne le fait pas (critère du moment nul ou négatif).
+        </>
+      );
   } else {
     tone = "now";
-    verdict = (
-      <>
-        Conflit ! De loin il ne voulait <strong>pas</strong> (ex-ante négatif ou nul), mais sur le
-        moment il <strong>craque</strong>. Bien de tentation <strong>sur-consommé</strong> — les
-        chips, l'alcool…
-      </>
-    );
+    verdict =
+      type === "tentation" ? (
+        <>
+          Conflit ! De loin il ne voulait <strong>pas</strong> (ex-ante négatif ou nul), mais sur le
+          moment il <strong>craque</strong>. Bien de tentation <strong>sur-consommé</strong> — les
+          chips, l'alcool…
+        </>
+      ) : (
+        <>
+          Conflit entre l'intention et l'action : de loin il ne voulait <strong>pas</strong>{" "}
+          consommer le bien, mais sur le moment il le fait.
+        </>
+      );
   }
+
+  // Prévision (β̂) contre réalité (β) — slides 27-29
+  const awareness =
+    beta >= 1 - 1e-9
+      ? "Pas de problème de self-contrôle (β = 1)"
+      : Math.abs(bh - beta) < 1e-9
+        ? "Sophistiqué (β̂ = β)"
+        : bh >= 1 - 1e-9
+          ? "Naïf (β̂ = 1)"
+          : "Partiellement conscient (β < β̂ < 1)";
+  const lucid = believes === does;
+  const plan = (yes: boolean) => (yes ? "consommera le bien" : "ne le consommera pas");
 
   return (
     <InteractiveCard
       title="Testeur de biens : investissement ou tentation ?"
       subtitle={
         <>
-          Compare le critère ex-ante <M tex="b_1+\delta b_2" /> (ce qu'il veut à l'avance) au
-          critère du moment <M tex="b_1+\beta\delta b_2" /> (ce qu'il fait vraiment).
+          Compare le critère ex-ante <M tex="b_1+\delta b_2" /> (ce qu'il veut à l'avance), sa
+          prévision <M tex="b_1+\hat\beta\delta b_2" /> (ce qu'il croit qu'il fera) et le critère du
+          moment <M tex="b_1+\beta\delta b_2" /> (ce qu'il fait vraiment).
         </>
       }
       controls={
@@ -695,22 +946,34 @@ export function GoodClassifier() {
             value={preset}
             onChange={applyPreset}
             options={[
-              { value: "jogging", label: "🏃 Jogging" },
-              { value: "chips", label: "🍟 Chips" },
-              { value: "exo", label: "🏃 Exo du cours" },
+              { value: "jogging", label: "🏃 Jogging (slide 26)" },
+              { value: "chips", label: "🍟 Chips (slide 26)" },
+              { value: "exo", label: "📘 Exercice (slide 29)" },
             ]}
           />
           <SliderControl
             label={<>Biais de self-contrôle β</>}
             value={beta}
-            onChange={custom(setBeta)}
+            onChange={custom((v) => {
+              setBeta(v);
+              setBetaHat((h) => Math.max(h, v));
+            })}
             min={0}
             max={1}
             step={0.05}
             format={(v) => fmtFr(v)}
           />
           <SliderControl
-            label={<>Patience δ</>}
+            label={<>β̂ : ce qu'il croit de lui-même (entre β et 1)</>}
+            value={bh}
+            onChange={setBetaHat}
+            min={beta}
+            max={1}
+            step={0.05}
+            format={(v) => fmtFr(v)}
+          />
+          <SliderControl
+            label={<>Facteur d'escompte δ</>}
             value={delta}
             onChange={custom(setDelta)}
             min={0}
@@ -740,9 +1003,11 @@ export function GoodClassifier() {
       }
       footer={
         <>
-          le conflit apparaît dès que les deux critères n'ont <strong>pas le même signe</strong> :
-          l'unique différence entre eux est le β qui rabote le bénéfice futur b₂ au moment d'agir.
-          Mets β = 1 : le conflit disparaît toujours — c'est le retour au rationnel.
+          le conflit apparaît dès que les critères ex-ante et du moment n'ont{" "}
+          <strong>pas le même signe</strong> : l'unique différence entre eux est le β qui rabote le
+          bénéfice futur b₂ au moment d'agir. Mets β = 1 : le conflit disparaît toujours — c'est le
+          retour au rationnel. Pour la prévision, β̂ remplace β : sophistiqué (β̂ = β), il prévoit
+          juste ; naïf (β̂ = 1), il croit qu'il fera ce qu'il veut ex-ante.
         </>
       }
     >
@@ -753,7 +1018,7 @@ export function GoodClassifier() {
             {
               label: (
                 <>
-                  Ex-ante : <M tex="b_1+\delta b_2" />
+                  Ex-ante (ce qu'il veut) : <M tex="b_1+\delta b_2" />
                 </>
               ),
               value: fmtFr(exAnte),
@@ -761,14 +1026,36 @@ export function GoodClassifier() {
             {
               label: (
                 <>
-                  Sur le moment : <M tex="b_1+\beta\delta b_2" />
+                  Ce qu'il croit qu'il fera : <M tex="b_1+\hat\beta\delta b_2" />
+                </>
+              ),
+              value: fmtFr(forecast),
+            },
+            {
+              label: (
+                <>
+                  Sur le moment (réalité) : <M tex="b_1+\beta\delta b_2" />
                 </>
               ),
               value: fmtFr(moment),
             },
           ]}
         />
-        <Verdict tone={tone}>{verdict}</Verdict>
+        <div>
+          <Verdict tone={tone}>{verdict}</Verdict>
+          <Verdict tone={lucid ? "smooth" : "now"}>
+            <strong>{awareness}</strong> : il croit qu'il {plan(believes)} (
+            <M tex="b_1+\hat\beta\delta b_2" /> = {fmtFr(forecast)}).{" "}
+            {lucid ? (
+              <>Et c'est bien ce qui se passe : sa prévision est juste (lucide).</>
+            ) : (
+              <>
+                Mais sur le moment il {plan(does)} (<M tex="b_1+\beta\delta b_2" /> = {fmtFr(moment)}
+                ) : <strong>il se trompe sur lui-même</strong>.
+              </>
+            )}
+          </Verdict>
+        </div>
       </div>
     </InteractiveCard>
   );
@@ -900,112 +1187,10 @@ export function CommitCase({
 /* Axe zoomé 2,85 → 3,02 comme dans le source.                         */
 /* ------------------------------------------------------------------ */
 
-const U0_BARS: Array<{ label: string; sub: string; value: number; color: string; em?: boolean }> = [
-  { label: "Référence", sub: "plan idéal", value: 3.008, color: "#d97706" },
-  { label: "Naïf", sub: "a = 0", value: 2.89, color: "#e11d48", em: true },
-  { label: "Cas 1", sub: "outil parfait", value: 3.008, color: "#059669", em: true },
-  { label: "Cas 2", sub: "actif coûteux", value: 2.96, color: "#4f46e5" },
-  { label: "Cas 3", sub: "+ emprunt", value: 2.93, color: "#4f46e5" },
-];
 
-export function U0Chart() {
-  // mapping linéaire : U0 = 3,008 → y = 54 ; U0 = 2,85 → y = 240 (base)
-  const yOf = (v: number) => 54 + ((3.008 - v) / (3.008 - 2.85)) * (240 - 54);
-  const slotW = 78;
-  const barW = 50;
-  const left = 71;
-
-  return (
-    <figure className="my-6 rounded-2xl border bg-card p-4 sm:p-5">
-      <figcaption className="mb-2 text-center text-[13.5px] font-semibold text-muted-foreground">
-        Utilité ex-ante <M tex="U_0" /> (en unités de β) selon le programme suivi
-      </figcaption>
-      <svg
-        viewBox="0 0 480 300"
-        className="mx-auto block h-auto w-full max-w-[520px]"
-        role="img"
-        aria-label="Comparaison de l'utilité ex-ante des cinq programmes"
-      >
-        {[3.0, 2.9].map((g) => (
-          <g key={g}>
-            <line
-              x1={52}
-              y1={yOf(g)}
-              x2={464}
-              y2={yOf(g)}
-              stroke="var(--color-border)"
-              strokeWidth={1}
-            />
-            <text
-              x={46}
-              y={yOf(g) + 4}
-              fontSize={11}
-              fill="var(--color-muted-foreground)"
-              textAnchor="end"
-            >
-              {fmtFr(g, 2)}
-            </text>
-          </g>
-        ))}
-        <line x1={52} y1={240} x2={464} y2={240} stroke="var(--color-muted-foreground)" strokeWidth={1.4} />
-        {/* plafond du plan idéal */}
-        <line
-          x1={52}
-          y1={54}
-          x2={464}
-          y2={54}
-          stroke="#d97706"
-          strokeWidth={1.3}
-          strokeDasharray="5 4"
-          opacity={0.8}
-        />
-        <text x={462} y={49} fontSize={11} fontStyle="italic" fill="#b45309" textAnchor="end">
-          plan idéal
-        </text>
-        {U0_BARS.map((b, i) => {
-          const x = left + i * slotW;
-          const y = yOf(b.value);
-          return (
-            <g key={b.label}>
-              <rect x={x} y={y} width={barW} height={240 - y} rx={3} fill={b.color} />
-              <text
-                x={x + barW / 2}
-                y={y - 8}
-                fontSize={12.5}
-                fontWeight={600}
-                fill="var(--color-foreground)"
-                textAnchor="middle"
-              >
-                {fmtFr(b.value, b.value === 3.008 ? 3 : 2)}
-              </text>
-              <text
-                x={x + barW / 2}
-                y={258}
-                fontSize={12}
-                fontWeight={b.em ? 600 : 400}
-                fill={b.em ? b.color : "var(--color-muted-foreground)"}
-                textAnchor="middle"
-              >
-                {b.label}
-              </text>
-              <text x={x + barW / 2} y={273} fontSize={10.5} fill="var(--color-muted-foreground)" textAnchor="middle">
-                {b.sub}
-              </text>
-            </g>
-          );
-        })}
-      </svg>
-      <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">
-        Axe vertical <strong className="text-foreground/80">zoomé</strong> (2,85 → 3,02) pour rendre
-        les petits écarts visibles. Lecture : le naïf (rouge) est tout en bas. Les trois stratégies
-        du sophistiqué (Cas 1–3) le dépassent toutes ; le Cas 1 touche même le plafond idéal.
-      </p>
-    </figure>
-  );
-}
 
 /* ------------------------------------------------------------------ */
-/* Checklist de maîtrise (17 points, cochables)                        */
+/* Checklist de maîtrise (18 points, cochables)                        */
 /* ------------------------------------------------------------------ */
 
 export function MasteryChecklist({

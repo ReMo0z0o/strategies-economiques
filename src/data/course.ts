@@ -122,7 +122,7 @@ const strategiesChaptersData: ChapterData[] = [
     title: "Préférences et choix",
     tagline: "Le modèle du choix rationnel… et ce que les humains en font vraiment.",
     description:
-      "Offre de travail, courbes d'indifférence, optimisation sous contrainte, critère de Pareto — puis les biais comportementaux : coûts irrécupérables, effet de dotation, framing et nudges.",
+      "Approche rationnelle : offre de travail, courbes d'indifférence, optimisation sous contrainte, redistribution et critère de Pareto — puis approche comportementale : utilité de transaction, coûts irrécupérables, effet de dotation, framing, exemples hors labo et politiques comportementales (nudges).",
     color: {
       gradient: "from-sky-500 to-blue-600",
       badge: "bg-sky-100 text-sky-800",
@@ -143,7 +143,7 @@ const strategiesChaptersData: ChapterData[] = [
       { id: "dotation", title: "L'effet de dotation" },
       { id: "framing", title: "Le framing" },
       { id: "vs", title: "Rationnel vs comportemental" },
-      { id: "nudge", title: "Hors du labo : le nudge" },
+      { id: "nudge", title: "Hors du labo & politiques comportementales" },
       { id: "synthese", title: "À maîtriser absolument" },
       { id: "exos", title: "Exercices corrigés" },
     ],
@@ -155,9 +155,9 @@ const strategiesChaptersData: ChapterData[] = [
     code: "A2",
     slug: "a2",
     title: "Décision inter-temporelle",
-    tagline: "Épargner ou consommer aujourd'hui ? Le taux d'escompte, et les pièges du self-contrôle.",
+    tagline: "Épargner ou consommer aujourd'hui ? Le facteur d'escompte, et les problèmes de self-contrôle.",
     description:
-      "Le modèle d'épargne à deux périodes, la contrainte de budget en valeur présente, le choix optimal par le Lagrangien — puis le biais présent (β, δ), les commitment devices et les nudges d'épargne.",
+      "Le modèle d'épargne à deux périodes, la contrainte de budget en valeur présente, le choix optimal par le Lagrangien — puis les problèmes de self-contrôle (modèle (β, δ)), les commitment devices et les nudges d'épargne.",
     color: {
       gradient: "from-teal-500 to-cyan-600",
       badge: "bg-teal-100 text-teal-800",
@@ -172,7 +172,7 @@ const strategiesChaptersData: ChapterData[] = [
       { id: "choix", title: "Le choix optimal" },
       { id: "selfcontrole", title: "Les problèmes de self-contrôle" },
       { id: "commit", title: "Se lier les mains : les commitment devices" },
-      { id: "politiques", title: "Les politiques publiques : les nudges" },
+      { id: "politiques", title: "Politiques comportementales sur l'épargne : les nudges" },
       { id: "maitrise", title: "À maîtriser absolument" },
       { id: "exos", title: "Exercices corrigés" },
     ],
@@ -186,7 +186,7 @@ const strategiesChaptersData: ChapterData[] = [
     title: "Décision sous incertitude",
     tagline: "Risquer, assurer, diversifier : l'utilité espérée et ses limites.",
     description:
-      "Loteries et valeur monétaire attendue, utilité espérée de von Neumann–Morgenstern, aversion au risque, équivalent certain et prime de risque, investissement et assurance optimale — puis théorie des perspectives et biais sur les probabilités.",
+      "Actifs risqués et valeur monétaire attendue, utilité espérée de von Neumann–Morgenstern, attitudes face au risque, équivalent certain et prime de risque, investissement, diversification et assurance — puis théorie des perspectives, cadrage étroit et biais sur les probabilités.",
     color: {
       gradient: "from-violet-500 to-purple-600",
       badge: "bg-violet-100 text-violet-800",
@@ -196,7 +196,7 @@ const strategiesChaptersData: ChapterData[] = [
     sections: [
       { id: "s1", title: "Le mystère de l'argent qui dort" },
       { id: "s2", title: "Actifs risqués et valeur monétaire attendue" },
-      { id: "s3", title: "Préférences rationnelles sur des loteries" },
+      { id: "s3", title: "Préférences rationnelles sur des alternatives risquées" },
       { id: "s4", title: "L'utilité espérée de von Neumann–Morgenstern" },
       { id: "s5", title: "Les trois attitudes face au risque" },
       { id: "s6", title: "Équivalent certain et prime de risque" },

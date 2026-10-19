@@ -229,3 +229,11 @@
     background-color 0.2s ease,
     box-shadow 0.2s ease;
 }
+
+/* Les titres affichés en majuscules (encadrés, étiquettes de formules, en-têtes de
+ * tableau) ne doivent pas transformer les lettres des formules : sans cette règle,
+ * δ deviendrait Δ, ω deviendrait Ω et λ deviendrait Λ. */
+.katex,
+.katex * {
+  text-transform: none;
+}
