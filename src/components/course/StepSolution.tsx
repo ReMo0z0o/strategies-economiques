@@ -84,7 +84,7 @@ export function ExerciseBlock({
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary text-[15px] font-extrabold text-primary-foreground">
             {number}
           </span>
-          <h2 className="min-w-0 flex-1 text-lg font-bold leading-snug sm:text-xl">{title}</h2>
+          <h2 className="min-w-[12rem] flex-1 text-lg font-bold leading-snug sm:text-xl">{title}</h2>
           <ReadAloudButton targetRef={articleRef} label="Écouter l'exercice" />
           {done ? (
             <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-bold text-emerald-800">
