@@ -15,6 +15,7 @@ const registry: Record<CourseId, Record<string, LazyComp>> = {
     a2: lazy(() => import("@/chapters/a2")),
     a3: lazy(() => import("@/chapters/a3")),
     b1: lazy(() => import("@/chapters/b1")),
+    bseq: lazy(() => import("@/chapters/bseq")),
     b2: lazy(() => import("@/chapters/b2")),
     b3: lazy(() => import("@/chapters/b3")),
     b4: lazy(() => import("@/chapters/b4")),

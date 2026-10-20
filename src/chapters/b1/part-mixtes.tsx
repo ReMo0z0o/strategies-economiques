@@ -1580,6 +1580,9 @@ export function PartMixtes() {
             séquentiels, les joueurs jouent l'un après l'autre. Garde tes réflexes : forme normale
             → dominances → élimination → meilleures réponses → Nash.
           </p>
+          <p>
+            <TheoryRef chapter="bseq" />
+          </p>
         </Callout>
       </Section>
     </>

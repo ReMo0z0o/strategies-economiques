@@ -223,6 +223,14 @@ export default function Chapter() {
       {/* §0 — Repères & boîte à outils                                 */}
       {/* ============================================================ */}
       <Section id="sec-reperes" kicker="§ 0 · Jeux séquentiels appliqués" title="Repères — où en sommes-nous ?">
+        <Callout variant="attention" title="Chapitre de l'ancien programme">
+          <p>
+            Dans le nouveau cours, le chapitre B2 s'intitule « Jeux séquentiels » et ne parle pas
+            de théorie des contrats : <TheoryRef chapter="bseq" />. Ce chapitre-ci (ex-B2) reste
+            disponible en attendant de savoir si la théorie des contrats revient plus loin dans
+            le cours. Pour réviser B2, commence par « Jeux séquentiels ».
+          </p>
+        </Callout>
         <p className="text-[1.15rem] leading-relaxed">
           Une entreprise embauche un commercial, mais elle ne peut pas surveiller ses efforts.
           Quel contrat de salaire proposer pour qu'il se donne à fond ? Ce chapitre applique les
@@ -282,9 +290,9 @@ export default function Chapter() {
               fois par cas : une fois pour l'agent, une fois pour le principal.
             </li>
             <li>
-              <strong>B1 — Jeux séquentiels :</strong> le chapitre précédent t'a donné la méthode
-              de résolution (<em>backward induction</em>) et le concept de solution (<em>ENPS</em>).
-              B2 est une <strong>application</strong> de B1 à un vrai problème d'entreprise.
+              <strong>B2 — Jeux séquentiels :</strong> ce chapitre-là t'a donné la méthode de
+              résolution (<em>backward induction</em>) et le concept de solution (<em>ENPS</em>).
+              Ce chapitre-ci en est une <strong>application</strong> à un vrai problème d'entreprise.
             </li>
           </ul>
           <p className="mt-2 flex flex-wrap gap-1.5">
@@ -703,7 +711,7 @@ export default function Chapter() {
 
         <H4>Ingrédient 4 — le timing du jeu</H4>
         <p>
-          C'est ici que B1 entre en scène : nous avons un <strong>jeu séquentiel</strong> en
+          C'est ici que les jeux séquentiels entrent en scène : nous avons un <strong>jeu séquentiel</strong> en
           trois temps.
         </p>
 
