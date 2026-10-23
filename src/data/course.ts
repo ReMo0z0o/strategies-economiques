@@ -243,7 +243,7 @@ const strategiesChaptersData: ChapterData[] = [
   {
     id: "bseq",
     part: "B",
-    code: "B2",
+    code: "B2.1",
     slug: "jeux-sequentiels",
     title: "Jeux séquentiels",
     tagline: "Arbres de jeu, menaces non crédibles et backward induction : quand jouer après l'autre change tout.",
@@ -273,10 +273,10 @@ const strategiesChaptersData: ChapterData[] = [
   {
     id: "b2",
     part: "B",
-    code: "ex-B2",
+    code: "B2.2",
     slug: "b2",
     title: "Théorie des contrats",
-    tagline: "Salaire fixe, commission ou mixte ? Concevoir les bonnes incitations.",
+    tagline: "Les jeux séquentiels appliqués : salaire fixe, commission ou franchise ? Concevoir les bonnes incitations.",
     description:
       "Le modèle principal-agent : effort inobservable, salaire fixe, proportionnel ou linéaire, contrainte de participation et d'incitation, partage du risque quand l'agent est averse au risque.",
     color: {

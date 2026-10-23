@@ -2,7 +2,7 @@
  * Chapitre B2 — Théorie des contrats : composants interactifs.
  *
  * Recréation fidèle des widgets du manuel interactif source :
- *  - PollIntuition      : le sondage « combien de clients visites-tu ? »
+ *  - PollIntuition      : question d'intuition « combien de clients visites-tu ? »
  *  - GameTreeTimeline   : l'arbre du jeu séquentiel en 3 étapes cliquables
  *  - EffortExplorer     : la courbe d'utilité de l'agent pilotée par α et β
  *  - SurplusExplorer    : le « gâteau » S(e) = e − e²/2 et son maximum
@@ -178,7 +178,7 @@ function Axes({
         </text>
       ) : null}
       {ylab ? (
-        <text x={yAxisX} y={m.t - 8} textAnchor="middle" fontSize={14.5} fontStyle="italic" fill={TXT}>
+        <text x={yAxisX - 6} y={m.t - 8} textAnchor="start" fontSize={14.5} fontStyle="italic" fill={TXT}>
           {ylab}
         </text>
       ) : null}
@@ -191,9 +191,9 @@ function Axes({
 /* ------------------------------------------------------------------ */
 
 const POLL_OPTS = [
-  { label: "Le maximum, par conscience professionnelle", pct: 14, short: "Le maximum" },
-  { label: "Quelques-uns, pour donner le change", pct: 47, short: "Quelques-uns" },
-  { label: "Le strict minimum, voire zéro", pct: 39, short: "Le minimum" },
+  { label: "Le maximum, par conscience professionnelle", short: "Le maximum" },
+  { label: "Quelques-uns, pour donner le change", short: "Quelques-uns" },
+  { label: "Le strict minimum, voire zéro", short: "Le minimum" },
 ];
 
 export function PollIntuition() {
@@ -220,31 +220,14 @@ export function PollIntuition() {
         </div>
       ) : (
         <div className="mt-3 animate-in fade-in">
-          {POLL_OPTS.map((o, i) => (
-            <div key={i} className="my-1.5 flex items-center gap-2.5 text-sm">
-              <span
-                className={cn(
-                  "w-28 shrink-0 text-right text-[12.5px]",
-                  i === voted ? "font-bold text-violet-800" : "text-muted-foreground",
-                )}
-              >
-                {o.short}
-                {i === voted ? " (toi)" : ""}
-              </span>
-              <div className="h-5 flex-1 overflow-hidden rounded-full border bg-background">
-                <div
-                  className="h-full rounded-full bg-violet-500/75 transition-all duration-700"
-                  style={{ width: `${o.pct}%` }}
-                />
-              </div>
-              <span className="w-10 shrink-0 text-[12.5px] font-bold tabular-nums">{o.pct} %</span>
-            </div>
-          ))}
+          <p className="text-[14px]">
+            Ta réponse : <strong className="text-violet-800">{POLL_OPTS[voted].short}</strong>.
+          </p>
           <p className="mt-2.5 text-[12.5px] leading-relaxed text-muted-foreground">
-            Répartition indicative de réponses d'étudiants (à titre illustratif). La théorie
-            prédit « zéro » pour un agent purement intéressé — on le démontrera au Cas 1. La
-            vraie vie est plus nuancée (souviens-toi de l'économie comportementale du chapitre
-            A1 !), mais le modèle capte une force bien réelle.
+            La théorie prédit « zéro » pour un agent purement intéressé — on le démontrera au
+            Cas 1 : payé pareil quoi qu'il fasse, il n'a aucune raison de subir le coût d'un
+            effort. La vraie vie est plus nuancée (souviens-toi de l'économie comportementale du
+            chapitre A1 !), mais le modèle capte une force bien réelle.
           </p>
         </div>
       )}

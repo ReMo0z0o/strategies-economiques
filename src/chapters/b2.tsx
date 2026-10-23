@@ -1,5 +1,5 @@
 /*
- * Chapitre B2 — Théorie des contrats.
+ * Chapitre B2.2 — Jeux séquentiels appliqués à la théorie des contrats.
  *
  * Conversion fidèle du manuel interactif « B2 · Théorie des contrats »
  * (cours ECGEB366, d'après les slides de B. Decerf) : le problème de
@@ -223,12 +223,14 @@ export default function Chapter() {
       {/* §0 — Repères & boîte à outils                                 */}
       {/* ============================================================ */}
       <Section id="sec-reperes" kicker="§ 0 · Jeux séquentiels appliqués" title="Repères — où en sommes-nous ?">
-        <Callout variant="attention" title="Chapitre de l'ancien programme">
+        <Callout variant="intuition" title="📚 Où se situe ce chapitre ?">
           <p>
-            Dans le nouveau cours, le chapitre B2 s'intitule « Jeux séquentiels » et ne parle pas
-            de théorie des contrats : <TheoryRef chapter="bseq" />. Ce chapitre-ci (ex-B2) reste
-            disponible en attendant de savoir si la théorie des contrats revient plus loin dans
-            le cours. Pour réviser B2, commence par « Jeux séquentiels ».
+            Le chapitre B2 du cours a deux parties : <strong>B2.1 — Jeux séquentiels</strong>{" "}
+            (la méthode : arbre du jeu, ENPS, backward induction) et{" "}
+            <strong>B2.2 — Jeux séquentiels appliqués à la théorie des contrats</strong> (ce
+            chapitre-ci). Ici, on n'apprend pas de nouvel outil de théorie des jeux : on applique
+            la backward induction de B2.1 à un problème d'entreprise. Si la méthode n'est pas
+            encore claire, revois d'abord <TheoryRef chapter="bseq" section="s4" />.
           </p>
         </Callout>
         <p className="text-[1.15rem] leading-relaxed">
@@ -271,8 +273,8 @@ export default function Chapter() {
 
         <p className="text-[1.05rem]">
           Ce chapitre n'arrive pas de nulle part : il <em>recycle</em> presque tout ce qu'on a
-          construit ensemble jusqu'ici. Si tu maîtrises les briques ci-dessous, B2 est surtout
-          une question d'assemblage.
+          construit ensemble jusqu'ici. Si tu maîtrises les briques ci-dessous, ce chapitre est
+          surtout une question d'assemblage.
         </p>
 
         <Callout variant="intuition" title="🔗 Liens avec les chapitres précédents">
@@ -290,7 +292,7 @@ export default function Chapter() {
               fois par cas : une fois pour l'agent, une fois pour le principal.
             </li>
             <li>
-              <strong>B2 — Jeux séquentiels :</strong> ce chapitre-là t'a donné la méthode de
+              <strong>B2.1 — Jeux séquentiels :</strong> ce chapitre-là t'a donné la méthode de
               résolution (<em>backward induction</em>) et le concept de solution (<em>ENPS</em>).
               Ce chapitre-ci en est une <strong>application</strong> à un vrai problème d'entreprise.
             </li>
@@ -298,7 +300,7 @@ export default function Chapter() {
           <p className="mt-2 flex flex-wrap gap-1.5">
             <TheoryRef chapter="a1" />
             <TheoryRef chapter="a2" />
-            <TheoryRef chapter="b1" />
+            <TheoryRef chapter="bseq" />
           </p>
         </Callout>
 
@@ -687,7 +689,7 @@ export default function Chapter() {
           s'intéressent qu'aux <em>espérances</em>, sans prime pour la sécurité.
         </p>
         <FormulaBox
-          tex="\text{Principal : } U_p = E(z - w) \qquad\cdot\qquad \text{Agent : } U_a = E(w - c)"
+          tex="\begin{gathered} \text{Principal : } U_p = E(z - w) \\ \text{Agent : } U_a = E(w - c) \end{gathered}"
           label="Payoffs"
           caption={
             <>
@@ -856,6 +858,33 @@ export default function Chapter() {
           </>
         }
       >
+        <Callout variant="methode" title="🗺️ La feuille de route des trois cas (slide 9)">
+          <p>
+            Pour un agent <strong>neutre au risque</strong> dont l'utilité par défaut vaut{" "}
+            <M tex="\tilde{u} = 0" />, le cours compare trois ensembles de contrats. Retiens
+            d'emblée leur verdict, on le démontre dans les § 3 à 5 :
+          </p>
+          <ul>
+            <li>
+              <strong>Cas 1 — salaire fixe</strong> <M tex="w(z) = \alpha" /> : pas d'incitant à
+              l'effort.
+            </li>
+            <li>
+              <strong>Cas 2 — salaire proportionnel</strong> <M tex="w(z) = \beta z" /> : l'effort
+              induit est inefficace.
+            </li>
+            <li>
+              <strong>Cas 3 — salaire linéaire</strong> <M tex="w(z) = \alpha + \beta z" /> :
+              l'effort induit est efficace et le principal extrait tout le surplus.
+            </li>
+          </ul>
+          <p>
+            Pour chaque cas, on trouve l'<strong>ENPS</strong> de ce jeu séquentiel par{" "}
+            <strong>backward induction</strong> : d'abord l'agent (son effort), puis le principal
+            (son contrat).
+          </p>
+        </Callout>
+
         <p className="text-[1.1rem] leading-relaxed">
           Premier contrat candidat, le plus simple du monde : un salaire fixe, identique quel que
           soit le résultat. Si l'agent refuse le contrat, il obtient son utilité par défaut{" "}
@@ -909,7 +938,7 @@ export default function Chapter() {
         <Steps
           items={[
             <>
-              <MB tex="\max_{\alpha} \; E(z - w) = e^*(\alpha) + E(x) - w(\alpha) = 0 + 0 - \alpha" />
+              <MB tex="\begin{aligned} \max_{\alpha} \; E(z - w) &= e^*(\alpha) + E(x) - w(\alpha) \\ &= 0 + 0 - \alpha \end{aligned}" />
               <p>
                 Le profit attendu vaut simplement <M tex="-\alpha" /> : chaque euro de fixe est
                 un euro perdu, sans effort en retour.
@@ -1012,7 +1041,11 @@ export default function Chapter() {
                 <strong>On développe</strong> l'utilité espérée en remplaçant{" "}
                 <M tex="w = \beta z" /> puis <M tex="z = e + x" /> :
               </p>
-              <MB tex="E(w - c) = E\!\left(\beta z - \frac{e^2}{2}\right) = \beta e + \beta E(x) - \frac{e^2}{2} = \beta e - \frac{e^2}{2}" />
+              <MB tex="\begin{aligned} E(w - c) &= E\!\left(\beta z - \frac{e^2}{2}\right) \\ &= \beta E(e + x) - \frac{e^2}{2} \\ &= \beta e + \beta E(x) - \frac{e^2}{2} \\ &= \beta e - \frac{e^2}{2} \end{aligned}" />
+              <p>
+                (On sort la constante <M tex="\beta" /> de l'espérance, puis on utilise{" "}
+                <M tex="E(e + x) = e + E(x)" /> et <M tex="E(x) = 0" />.)
+              </p>
             </>,
             <>
               <p>
@@ -1044,7 +1077,12 @@ export default function Chapter() {
         <Steps
           items={[
             <>
-              <MB tex="E(z - w) = E(z) - \beta E(z) = (1 - \beta)\cdot e^*(\beta) = (1 - \beta)\beta = \beta - \beta^2" />
+              <MB tex="\begin{aligned} E(z - w) &= E\big(z(\beta)\big) - \beta\, E\big(z(\beta)\big) \\ &= e^*(\beta) + E(x) - \beta\, e^*(\beta) - \beta\, E(x) \\ &= \beta - \beta^2 \end{aligned}" />
+              <p>
+                (Ligne 2 : on remplace <M tex="z = e^* + x" /> ; ligne 3 : <M tex="E(x) = 0" /> et{" "}
+                <M tex="e^*(\beta) = \beta" />. On peut aussi l'écrire{" "}
+                <M tex="(1 - \beta)\cdot e^*(\beta)" />.)
+              </p>
               <p>
                 Lecture : le principal garde une fraction <M tex="(1 - \beta)" /> du résultat, et
                 le résultat espéré vaut <M tex="e^* = \beta" />. D'où le <strong>dilemme</strong>{" "}
@@ -1063,7 +1101,7 @@ export default function Chapter() {
                 <strong>Payoffs à l'ENPS</strong> <M tex="(\beta^* = 1/2,\; e^* = 1/2)" /> : le
                 principal paie la moitié du résultat.
               </p>
-              <MB tex="U_p = 0{,}5 - 0{,}25 = \mathbf{0{,}25} \qquad\cdot\qquad U_a = 0{,}25 - \frac{(0{,}5)^2}{2} = \mathbf{0{,}125}" />
+              <MB tex="\begin{gathered} U_p = 0{,}5 - 0{,}25 = \mathbf{0{,}25} \\ U_a = 0{,}25 - \frac{(0{,}5)^2}{2} = \mathbf{0{,}125} \end{gathered}" />
             </>,
           ]}
         />
@@ -1074,7 +1112,7 @@ export default function Chapter() {
           autre résultat, techniquement faisable : <M tex="e = 1" />,{" "}
           <M tex="\alpha = 0{,}7" /> et <M tex="\beta = 0" />. Les payoffs seraient :
         </p>
-        <MB tex="U_p = 1 - 0{,}7 = \mathbf{0{,}3} \;\; (> 0{,}25) \qquad\cdot\qquad U_a = 0{,}7 - \frac{1^2}{2} = \mathbf{0{,}2} \;\; (> 0{,}125)" />
+        <MB tex="\begin{gathered} U_p = 1 - 0{,}7 = \mathbf{0{,}3} \;\; (> 0{,}25) \\ U_a = 0{,}7 - \frac{1^2}{2} = \mathbf{0{,}2} \;\; (> 0{,}125) \end{gathered}" />
         <p>
           <strong>Les deux joueurs préfèrent ce résultat-là !</strong> L'ENPS du Cas 2 n'est donc
           pas efficace au sens de Pareto : on laisse de la valeur sur la table.
@@ -1311,7 +1349,7 @@ export default function Chapter() {
               <p>
                 <strong>Substitution</strong> dans le profit du principal :
               </p>
-              <MB tex="E(z - w) = E\big(e + x - (\alpha + \beta(e + x))\big) = e - \left(\frac{e^2}{2} - \beta e\right) - \beta e = e - \frac{e^2}{2}" />
+              <MB tex="\begin{aligned} E(z - w) &= E\big(e + x - (\alpha + \beta(e + x))\big) \\ &= e - \left(\frac{e^2}{2} - \beta e\right) - \beta e \\ &= e - \frac{e^2}{2} \end{aligned}" />
               <p>
                 Résultat remarquable : tous les <M tex="\beta e" /> se compensent ! Le profit du
                 principal devient... <strong>le surplus total de la relation</strong> : la valeur
@@ -1326,7 +1364,7 @@ export default function Chapter() {
                 <strong>CI injectée</strong> (<M tex="e = \beta" />), puis CPO sur{" "}
                 <M tex="\beta" /> :
               </p>
-              <MB tex="E(z - w) = \beta - \frac{\beta^2}{2} \;\;\Rightarrow\;\; 1 - \beta = 0 \;\;\Rightarrow\;\; \boxed{\beta^* = 1}" />
+              <MB tex="\begin{gathered} E(z - w) = \beta - \frac{\beta^2}{2} \\ \text{CPO : } 1 - \beta = 0 \;\Rightarrow\; \boxed{\beta^* = 1} \end{gathered}" />
             </>,
             <>
               <p>
@@ -1343,7 +1381,7 @@ export default function Chapter() {
               <p>
                 <strong>Payoffs à l'ENPS</strong> :
               </p>
-              <MB tex="U_p = 1 - (-0{,}5 + 1) = \mathbf{0{,}5} \qquad\cdot\qquad U_a = -0{,}5 + 1 - \frac{1^2}{2} = \mathbf{0}" />
+              <MB tex="\begin{gathered} U_p = 1 - (-0{,}5 + 1) = \mathbf{0{,}5} \\ U_a = -0{,}5 + 1 - \frac{1^2}{2} = \mathbf{0} \end{gathered}" />
             </>,
           ]}
         />
@@ -1387,9 +1425,10 @@ export default function Chapter() {
           <p>
             <strong>Exemple du cours : la licence de taxi.</strong> Le chauffeur paie une somme
             fixe pour sa licence (ou la location du véhicule), puis garde l'intégralité de ses
-            recettes. Autres exemples de la vraie vie : la franchise McDonald's (le franchisé
-            paie une redevance et garde les profits du restaurant), le salon de coiffure qui loue
-            ses fauteuils à des coiffeurs indépendants.
+            recettes. Autres exemples de la vraie vie (illustratifs, pas dans les slides) : la
+            franchise de restauration rapide (le franchisé paie une redevance et garde les
+            profits du restaurant), le salon de coiffure qui loue ses fauteuils à des coiffeurs
+            indépendants.
           </p>
         </Callout>
 
@@ -1660,9 +1699,11 @@ export default function Chapter() {
       {/* ============================================================ */}
       <Section id="sec-risque" kicker="§ 7" title="Et si l'agent est averse au risque ?">
         <p className="text-[1.1rem] leading-relaxed">
-          Jusqu'ici l'agent acceptait le risque sans broncher. Dans la réalité, la plupart des
-          salariés préfèrent 2 000 € sûrs à « pile 4 000 €, face 0 € ». Cette dernière
-          section — <em>qualitative, sans calculs</em> — montre que l'aversion au risque change
+          Jusqu'ici l'agent acceptait le risque sans broncher. Mais un agent{" "}
+          <strong>averse au risque</strong> préfère par exemple 2 000 € sûrs à « pile 4 000 €,
+          face 0 € » (exemple illustratif) — c'est l'aversion au risque vue en{" "}
+          <TheoryRef chapter="a3" />. Cette dernière section — <em>qualitative, sans
+          calculs</em>, comme dans les slides 21-22 — montre que l'aversion au risque change
           profondément la conclusion.
         </p>
 
@@ -1730,8 +1771,8 @@ export default function Chapter() {
             En une ligne pour l'examen :{" "}
             <em>
               agent neutre au risque → l'aléa moral ne coûte rien (contrat franchise) ; agent
-              averse au risque → l'aléa moral coûte (arbitrage incitants/assurance,{" "}
-              <M tex="\beta^*" /> intermédiaire entre 0 et 1).
+              averse au risque → l'aléa moral coûte (arbitrage incitants/assurance ; intuitivement,{" "}
+              <M tex="\beta^*" /> se situe entre 0 et 1 — le cours ne calcule pas ce cas).
             </em>
           </p>
         </Callout>
@@ -1768,9 +1809,10 @@ export default function Chapter() {
               explain: (
                 <>
                   Exact. Le principal recule sur <M tex="\beta" /> pour réduire le risque
-                  transféré (et donc la compensation exigée), au prix d'un effort plus faible. Le{" "}
-                  <M tex="\beta" /> optimal se situe entre 0 et 1 : ni assurance totale, ni
-                  incitation totale.
+                  transféré (et donc la compensation exigée), au prix d'un effort plus faible.
+                  Intuitivement, le <M tex="\beta" /> optimal se situe alors entre 0 et 1 : ni
+                  assurance totale, ni incitation totale (le cours s'arrête à cet arbitrage, sans
+                  le calculer).
                 </>
               ),
             },
@@ -1855,7 +1897,7 @@ export default function Chapter() {
               title: "a) L'agent d'abord (backward induction → toujours lui d'abord)",
               content: (
                 <>
-                  <MB tex="E(w - c) = \beta e - e^2 \;\;\Rightarrow\;\; \text{CPO : } \beta - 2e = 0 \;\;\Rightarrow\;\; \boxed{e^* = \beta/2}" />
+                  <MB tex="\begin{gathered} E(w - c) = \beta e - e^2 \\ \text{CPO : } \beta - 2e = 0 \;\Rightarrow\; \boxed{e^* = \beta/2} \end{gathered}" />
                   <p>
                     (La dérivée de <M tex="e^2" /> est <M tex="2e" /> : coût marginal plus raide
                     → moitié moins d'effort qu'avant pour un même bonus.)
@@ -1868,7 +1910,7 @@ export default function Chapter() {
               content: (
                 <>
                   <MB tex="E(z - w) = (1 - \beta)\cdot e^* = \frac{(1 - \beta)\beta}{2} = \frac{\beta - \beta^2}{2}" />
-                  <MB tex="\text{CPO : } \frac{1 - 2\beta}{2} = 0 \;\;\Rightarrow\;\; \boxed{\beta^* = 1/2} \;\;\Rightarrow\;\; e^* = 1/4" />
+                  <MB tex="\begin{gathered} \text{CPO : } \frac{1 - 2\beta}{2} = 0 \;\Rightarrow\; \boxed{\beta^* = 1/2} \\ \Rightarrow\; e^* = 1/4 \end{gathered}" />
                 </>
               ),
             },
@@ -1876,7 +1918,7 @@ export default function Chapter() {
               title: "Les payoffs",
               content: (
                 <>
-                  <MB tex="U_p = (1 - \tfrac{1}{2})\cdot\tfrac{1}{4} = \mathbf{0{,}125} \qquad\cdot\qquad U_a = \tfrac{1}{2}\cdot\tfrac{1}{4} - \left(\tfrac{1}{4}\right)^2 = \tfrac{1}{8} - \tfrac{1}{16} = \mathbf{0{,}0625}" />
+                  <MB tex="\begin{gathered} U_p = (1 - \tfrac{1}{2})\cdot\tfrac{1}{4} = \mathbf{0{,}125} \\ U_a = \tfrac{1}{2}\cdot\tfrac{1}{4} - \left(\tfrac{1}{4}\right)^2 = \tfrac{1}{8} - \tfrac{1}{16} = \mathbf{0{,}0625} \end{gathered}" />
                 </>
               ),
             },
@@ -1922,7 +1964,7 @@ export default function Chapter() {
             {
               title: "② CP saturée",
               content: (
-                <MB tex="E(w - c) = 0 \;\Rightarrow\; \alpha + \beta e - e^2 = 0 \;\Rightarrow\; \alpha = e^2 - \beta e" />
+                <MB tex="\begin{gathered} E(w - c) = 0 \;\Rightarrow\; \alpha + \beta e - e^2 = 0 \\ \Rightarrow\; \alpha = e^2 - \beta e \end{gathered}" />
               ),
             },
             {
@@ -1947,7 +1989,7 @@ export default function Chapter() {
             {
               title: "Les payoffs",
               content: (
-                <MB tex="U_p = \tfrac{1}{2} - \tfrac{1}{4} = \mathbf{0{,}25} \; (= \text{le gâteau maximal}) \qquad\cdot\qquad U_a = \mathbf{0}" />
+                <MB tex="\begin{gathered} U_p = \tfrac{1}{2} - \tfrac{1}{4} = \mathbf{0{,}25} \; (= \text{le gâteau maximal}) \\ U_a = \mathbf{0} \end{gathered}" />
               ),
             },
           ]}
@@ -2022,7 +2064,7 @@ export default function Chapter() {
             {
               title: "Les payoffs",
               content: (
-                <MB tex="U_p = 0{,}5 - 0{,}1 = \mathbf{0{,}4} \qquad\cdot\qquad U_a = \mathbf{0{,}1} \; (= \tilde{u},\ \text{la CP est saturée})" />
+                <MB tex="\begin{gathered} U_p = 0{,}5 - 0{,}1 = \mathbf{0{,}4} \\ U_a = \mathbf{0{,}1} \; (= \tilde{u},\ \text{la CP est saturée}) \end{gathered}" />
               ),
             },
           ]}
@@ -2197,9 +2239,9 @@ export default function Chapter() {
         </Callout>
 
         <p className="mt-8 text-center text-[12.5px] text-muted-foreground">
-          Manuel interactif ECGEB366 · Chapitre B2 — Jeux séquentiels appliqués à la théorie des
-          contrats (d'après les slides de B. Decerf). Formules vérifiées numériquement · Les
-          pourcentages du sondage et la courbe d'utilité concave sont illustratifs.
+          Manuel interactif ECGEB366 · Chapitre B2.2 — Jeux séquentiels appliqués à la théorie
+          des contrats (d'après les slides de B. Decerf). Formules vérifiées numériquement · La
+          courbe d'utilité concave est illustrative.
         </p>
       </Section>
     </ChapterShell>
