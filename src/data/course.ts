@@ -278,7 +278,7 @@ const strategiesChaptersData: ChapterData[] = [
     title: "Théorie des contrats",
     tagline: "Les jeux séquentiels appliqués : salaire fixe, commission ou franchise ? Concevoir les bonnes incitations.",
     description:
-      "Le modèle principal-agent : effort inobservable, salaire fixe, proportionnel ou linéaire, contrainte de participation et d'incitation, partage du risque quand l'agent est averse au risque.",
+      "Le modèle principal-agent : effort inobservable, salaire fixe, proportionnel ou linéaire, contraintes de participation (CP) et de compatibilité aux incitants (CI), transfert du risque et arbitrage incitants/risque quand l'agent est averse au risque.",
     color: {
       gradient: "from-rose-500 to-pink-600",
       badge: "bg-rose-100 text-rose-800",
@@ -409,7 +409,7 @@ const strategiesTpData: TpSessionData[] = [
     subtitle:
       "Forme extensive, sous-jeux, équilibre de Nash parfait en sous-jeux (ENPS), duopole de Cournot et cartel de l'OPEP.",
     exerciseCount: 4,
-    chapters: ["b1", "b3"],
+    chapters: ["b1", "bseq", "b3"],
     topics: [
       "« Brûler ses navires » : engagement crédible",
       "Sous-jeux et backward induction",

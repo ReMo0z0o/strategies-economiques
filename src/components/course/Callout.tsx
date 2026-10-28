@@ -92,7 +92,9 @@ export function Callout({
     <aside className={cn("my-5 rounded-xl border px-4 py-3.5 sm:px-5", v.frame, className)}>
       <div className="flex items-center gap-2">
         <Icon className={cn("h-4 w-4 shrink-0", v.iconColor)} aria-hidden />
-        <span className={cn("text-[13px] font-bold uppercase tracking-wide", v.labelColor)}>
+        {/* Pas de majuscules forcées : elles changeraient le sens des variables et des
+            lettres grecques des titres (e* deviendrait E*, α deviendrait Α…). */}
+        <span className={cn("text-[14px] font-bold leading-snug", v.labelColor)}>
           {title ?? v.label}
         </span>
       </div>
